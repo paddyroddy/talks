@@ -1,5 +1,6 @@
 ---
 title: Talks
+format: html
 listing:
   contents: .
   date-format: iso
