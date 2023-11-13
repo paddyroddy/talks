@@ -1,0 +1,6 @@
+---
+title: Automating Dependency Management
+author: Patrick J. Roddy
+date: '2023-11-14'
+toc: true
+---

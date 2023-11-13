@@ -1,2 +1,4 @@
 _site
-.quarto
+/.quarto/
+index-listing.json
+site_libs
