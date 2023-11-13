@@ -1,0 +1,16 @@
+name: Linting
+
+on:
+  push:
+    branches:
+      - main
+      - "renovate/**"
+  pull_request:
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: paddyroddy/.github/actions/linting@v0
+        with:
+          pre-commit-config: ./.pre-commit-config.yaml
