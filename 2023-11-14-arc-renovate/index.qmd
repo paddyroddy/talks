@@ -5,10 +5,10 @@ date: 2023-11-14
 format: revealjs
 ---
 
-##
+## Automation
 
-[![Automation](automation.png)](https://xkcd.com/1319)
+![https://xkcd.com/1319](automation.png)
 
-##
+## Dependencies
 
-[![Dependencies](dependency.png)](https://xkcd.com/2347)
+![https://xkcd.com/2347](dependency.png)
