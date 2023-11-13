@@ -4,15 +4,10 @@ project:
 website:
   title: ""
   site-path: /talks/
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
 
 format:
   html:
     theme: darkly
-    toc: true
   revealjs:
     incremental: true
     theme: moon

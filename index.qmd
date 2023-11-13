@@ -2,6 +2,7 @@
 title: Talks
 listing:
   contents: .
+  date-format: iso
   sort: date
   type: table
 ---
