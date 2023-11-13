@@ -1,1 +1,1 @@
-Sitemap: https://paddyroddy.github.io/talks/sitemap.xml
+Sitemap: https://github.com/paddyroddy/talks/sitemap.xml
