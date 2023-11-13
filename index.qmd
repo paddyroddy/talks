@@ -4,6 +4,8 @@ format: html
 listing:
   contents: .
   date-format: iso
+  exclude:
+    title: Page Not Found
   sort: date
   type: table
 ---
