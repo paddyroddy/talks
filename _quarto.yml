@@ -3,12 +3,11 @@ project:
 
 website:
   title: ""
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
+  site-path: /talks/
 
 format:
   html:
     theme: darkly
-    toc: true
+  revealjs:
+    incremental: true
+    theme: moon

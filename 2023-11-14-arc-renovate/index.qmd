@@ -1,0 +1,14 @@
+---
+title: Automating Dependency Management
+author: Patrick J. Roddy
+date: 2023-11-14
+format: revealjs
+---
+
+##
+
+[![Automation](automation.png)](https://xkcd.com/1319)
+
+##
+
+[![Dependencies](dependency.png)](https://xkcd.com/2347)
