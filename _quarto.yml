@@ -2,8 +2,15 @@ project:
   type: website
 
 website:
-  title: ""
+  favicon: /assets/images/favicon.ico
   site-path: /talks/
+  title: ""
+  navbar:
+    tools:
+      - icon: house
+        href: https://paddyroddy.github.io
+      - icon: github
+        href: https://github.com/paddyroddy/talks
 
 format:
   html:
