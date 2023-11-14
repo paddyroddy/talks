@@ -5,6 +5,9 @@ format:
   html:
     theme: darkly
   revealjs:
+    footer: >-
+      {{< meta title >}}:
+      <https://paddyroddy.github.io/talks>{.external target="_blank"}
     incremental: true
     slide-number: true
     transition: slide

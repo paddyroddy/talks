@@ -4,9 +4,6 @@ author: Patrick J. Roddy
 date: 2023-11-14
 format:
   revealjs:
-    footer: >-
-      Automating Dependency Management:
-      <https://paddyroddy.github.io/talks>{.external target="_blank"}
     theme: moon
 ---
 
@@ -127,7 +124,8 @@ format:
 ```
 
 ::: footer
-See in action: <https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>{.external target="_blank"}
 :::
 
 ## Config is Reusable!
@@ -150,13 +148,14 @@ See in action: <https://github.com/paddyroddy/.github/blob/main/renovate/default
 ```
 
 ::: footer
-See in action: <https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>{.external target="_blank"}
 :::
 
 ## Automerging
 
 The
-[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
+[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request){.external target="_blank"}
 setting is required
 
 ![](figures/automerge.png)
@@ -206,7 +205,8 @@ on:
 :::
 
 ::: footer
-See in action: <https://developer.mend.io/github/paddyroddy/.github>
+See in action:
+<https://developer.mend.io/github/paddyroddy/.github>{.external target="_blank"}
 :::
 
 # Conclusions
@@ -224,6 +224,6 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 
 ## Demo Time
 
-<https://developer.mend.io>
+<https://developer.mend.io>{.external target="_blank"}
 
 ![](figures/demo.jpg)
