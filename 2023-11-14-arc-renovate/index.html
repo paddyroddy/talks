@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -339,18 +404,238 @@ Patrick J. Roddy
 
   <p class="date">2023-11-14</p>
 </section>
-<section id="automation" class="slide level2">
-<h2>Automation</h2>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
-<img data-src="automation.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/1319</p></section>
-<section id="dependencies" class="slide level2">
-<h2>Dependencies</h2>
+</section>
+<section id="dependencies-are-inevitable" class="slide level2">
+<h2>Dependencies Are Inevitable</h2>
 
+<img data-src="dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
+<section id="automation-saves-time" class="slide level2">
+<h2>Automation Saves Time?</h2>
 
-<img data-src="dependency.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/2347</p><div class="footer footer-default">
-<p><a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+<img data-src="automation.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:1319</p></section>
+<section id="weve-all-done-this-at-some-point" class="slide level2">
+<h2>We’ve All Done This At Some Point</h2>
+
+<img data-src="bump.png" class="r-stretch"></section>
+<section id="what-about-security-updates" class="slide level2">
+<h2>What About Security Updates?</h2>
+
+<img data-src="dependabot.png" class="r-stretch"></section>
+<section id="why-should-i-update" class="slide level2">
+<h2>Why Should I Update?</h2>
+
+<img data-src="updates.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2224</p></section></section>
+<section>
+<section id="renovate" class="title-slide slide level1 center">
+<h1>Renovate</h1>
+
+<img data-src="renovate.jpg" class="r-stretch"></section>
+<section id="why-use-renovate" class="slide level2">
+<h2>Why Use Renovate?</h2>
+<ul>
+<li class="fragment">Get automated Pull Requests to update your dependencies
+<ul>
+<li class="fragment">Reduce noise by running Renovate on a schedule, for example:
+<ul>
+<li class="fragment">on weekends</li>
+<li class="fragment">outside of working hours</li>
+<li class="fragment">each week</li>
+<li class="fragment">each month</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Relevant package files are discovered automatically</li>
+</ul>
+</section>
+<section id="why-use-renovate-1" class="slide level2">
+<h2>Why Use Renovate?</h2>
+<ul>
+<li class="fragment">Supports monorepo architectures with workspaces with no extra configuration</li>
+<li class="fragment">Bot behavior is customisable via configuration files (config as code)</li>
+<li class="fragment">Use ESLint-like shared config presets for ease of use and simplifying configuration (JSON format only)</li>
+<li class="fragment">Lock files are supported and updated in the same commit, including immediately resolving conflicts whenever PRs are merged</li>
+</ul>
+</section>
+<section id="why-use-renovate-2" class="slide level2">
+<h2>Why Use Renovate?</h2>
+<ul>
+<li class="fragment">Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with most managers, see <a href="https://github.com/renovatebot/renovate/issues/14149" class="external" target="_blank">issue 14149</a> for exceptions</li>
+<li class="fragment">Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or used via the Mend Renovate App</li>
+</ul>
+</section>
+<section id="open-source-projects" class="slide level2">
+<h2>Open Source Projects</h2>
+<ul>
+<li class="fragment"><a href="https://github.com/paddyroddy/talks" class="external" target="_blank">https://github.com/paddyroddy/talks</a></li>
+<li class="fragment"><a href="https://github.com/renovatebot/renovate" class="external" target="_blank">https://github.com/renovatebot/renovate</a></li>
+<li class="fragment"><a href="https://github.com/astro-informatics/sleplet" class="external" target="_blank">https://github.com/astro-informatics/sleplet</a></li>
+<li class="fragment"><a href="https://github.com/microsoft/lage" class="external" target="_blank">https://github.com/microsoft/lage</a></li>
+<li class="fragment"><a href="https://github.com/loopbackio/loopback-next" class="external" target="_blank">https://github.com/loopbackio/loopback-next</a></li>
+<li class="fragment"><a href="https://github.com/ampproject/amphtml" class="external" target="_blank">https://github.com/ampproject/amphtml</a></li>
+<li class="fragment">…</li>
+</ul>
+</section></section>
+<section>
+<section id="how-to-setup" class="title-slide slide level1 center">
+<h1>How to Setup</h1>
+
+</section>
+<section id="install-the-application" class="slide level2">
+<h2>Install the Application</h2>
+<p><a href="https://github.com/apps/renovate" class="external" target="_blank">https://github.com/apps/renovate</a></p>
+
+<img data-src="application.png" class="r-stretch"></section>
+<section id="example-config" class="slide level2">
+<h2>Example Config</h2>
+<div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>{</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  extends: [</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    "config:best-practices",</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    "schedule:weekdays",</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    ":assignAndReview(paddyroddy)",</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    ":automergeBranch",</span>
+<span id="cb1-8"><a href="#cb1-8"></a>    ":automergeDigest",</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    ":automergeMinor",</span>
+<span id="cb1-10"><a href="#cb1-10"></a>    ":automergePatch",</span>
+<span id="cb1-11"><a href="#cb1-11"></a>    ":disableDependencyDashboard",</span>
+<span id="cb1-12"><a href="#cb1-12"></a>    ":enablePreCommit",</span>
+<span id="cb1-13"><a href="#cb1-13"></a>    ":label(renovate)",</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    ":maintainLockFilesMonthly",</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    ":noUnscheduledUpdates",</span>
+<span id="cb1-16"><a href="#cb1-16"></a>  ],</span>
+<span id="cb1-17"><a href="#cb1-17"></a>  commitMessageAction: "Renovate:",</span>
+<span id="cb1-18"><a href="#cb1-18"></a>  "git-submodules": {</span>
+<span id="cb1-19"><a href="#cb1-19"></a>    enabled: true,</span>
+<span id="cb1-20"><a href="#cb1-20"></a>  },</span>
+<span id="cb1-21"><a href="#cb1-21"></a>  packageRules: [</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    {</span>
+<span id="cb1-23"><a href="#cb1-23"></a>      description: "Only allow major updates",</span>
+<span id="cb1-24"><a href="#cb1-24"></a>      enabled: false,</span>
+<span id="cb1-25"><a href="#cb1-25"></a>      matchDepNames: ["renovatebot/pre-commit-hooks"],</span>
+<span id="cb1-26"><a href="#cb1-26"></a>      matchUpdateTypes: ["minor", "patch", "pin"],</span>
+<span id="cb1-27"><a href="#cb1-27"></a>    },</span>
+<span id="cb1-28"><a href="#cb1-28"></a>    {</span>
+<span id="cb1-29"><a href="#cb1-29"></a>      description: "Combine updates together",</span>
+<span id="cb1-30"><a href="#cb1-30"></a>      groupName: "paddyroddy/.github",</span>
+<span id="cb1-31"><a href="#cb1-31"></a>      matchDepNames: ["paddyroddy/.github"],</span>
+<span id="cb1-32"><a href="#cb1-32"></a>    },</span>
+<span id="cb1-33"><a href="#cb1-33"></a>    {</span>
+<span id="cb1-34"><a href="#cb1-34"></a>      description: "Shorten commit titles",</span>
+<span id="cb1-35"><a href="#cb1-35"></a>      commitMessageTopic: "{{depName}}",</span>
+<span id="cb1-36"><a href="#cb1-36"></a>      matchManagers: ["github-actions", "pre-commit"],</span>
+<span id="cb1-37"><a href="#cb1-37"></a>    },</span>
+<span id="cb1-38"><a href="#cb1-38"></a>  ],</span>
+<span id="cb1-39"><a href="#cb1-39"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5</a></p>
 </div>
 </section>
+<section id="config-is-reusable" class="slide level2">
+<h2>Config is Reusable!</h2>
+<div class="sourceCode" id="cb2" data-code-line-numbers="2|4|5|7-13"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>{</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  extends: [</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    "github&gt;paddyroddy/.github//renovate/default-config.json5",</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    "schedule:monthly",</span>
+<span id="cb2-6"><a href="#cb2-6"></a>  ],</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  "pre-commit": {</span>
+<span id="cb2-8"><a href="#cb2-8"></a>    fileMatch: [</span>
+<span id="cb2-9"><a href="#cb2-9"></a>      "precommit/general/general-hooks.yml",</span>
+<span id="cb2-10"><a href="#cb2-10"></a>      "precommit/latex/latex-hooks.yml",</span>
+<span id="cb2-11"><a href="#cb2-11"></a>      "precommit/python/python-hooks.yml",</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    ],</span>
+<span id="cb2-13"><a href="#cb2-13"></a>  },</span>
+<span id="cb2-14"><a href="#cb2-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5</a></p>
+</div>
+</section>
+<section id="automerging" class="slide level2">
+<h2>Automerging</h2>
+<p>The <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">GitHub automerge</a> setting is required</p>
+
+<img data-src="automerge.png" class="r-stretch"><div class="fragment fade-left">
+<p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rulesets---status-checks" class="slide level2">
+<h2>Rulesets - Status Checks</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="status_checks_1.png"></p>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="status_checks_2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="rulesets---pull-requests" class="slide level2">
+<h2>Rulesets - Pull Requests</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="pull_requests_1.png"></p>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="pull_requests_2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="monitoring" class="slide level2">
+<h2>Monitoring</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="logging_1.png"></p>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="logging_2.png"></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>See in action: <a href="https://developer.mend.io/github/paddyroddy/.github" class="uri">https://developer.mend.io/github/paddyroddy/.github</a></p>
+</div>
+</section></section>
+<section>
+<section id="conclusions" class="title-slide slide level1 center">
+<h1>Conclusions</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">Renovate is massively flexible</li>
+<li class="fragment">Maintainers respond incredibly quickly</li>
+<li class="fragment">Renovate is widely used</li>
+<li class="fragment">If you think it can be automated, it probably can</li>
+<li class="fragment">Be careful with CI use in private projects (ask MIRSG 😉)</li>
+<li class="fragment">Embrace automerging (if you like inbox zero)</li>
+<li class="fragment">Renovate <code>renovates</code> itself very frequently</li>
+<li class="fragment">There’s always more to learn!</li>
+</ul>
+</section>
+<section id="demo-time" class="slide level2">
+<h2>Demo Time</h2>
+<p><a href="https://developer.mend.io" class="uri">https://developer.mend.io</a></p>
+
+
+<img data-src="demo.jpg" class="r-stretch"><div class="footer footer-default">
+<p>Automating Dependency Management: <a href="https://paddyroddy.github.io/talks" class="external" target="_blank">https://paddyroddy.github.io/talks</a></p>
+</div>
+</section></section>
     </div>
   </div>
 
@@ -403,7 +688,7 @@ Patrick J. Roddy
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -508,7 +793,7 @@ Patrick J. Roddy
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

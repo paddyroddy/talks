@@ -7,17 +7,129 @@
     "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2023-11-14\n\n\nAutomating Dependency Management\n\n\nPatrick J. Roddy\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "2023-11-14-arc-renovate/index.html#automation",
-    "href": "2023-11-14-arc-renovate/index.html#automation",
+    "objectID": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
+    "href": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
     "title": "Automating Dependency Management",
-    "section": "Automation",
-    "text": "Automation\n\nhttps://xkcd.com/1319"
+    "section": "Dependencies Are Inevitable",
+    "text": "Dependencies Are Inevitable\n\nxkcd:2347"
   },
   {
-    "objectID": "2023-11-14-arc-renovate/index.html#dependencies",
-    "href": "2023-11-14-arc-renovate/index.html#dependencies",
+    "objectID": "2023-11-14-arc-renovate/index.html#automation-saves-time",
+    "href": "2023-11-14-arc-renovate/index.html#automation-saves-time",
     "title": "Automating Dependency Management",
-    "section": "Dependencies",
-    "text": "Dependencies\n\n\nhttps://xkcd.com/2347\nhttps://paddyroddy.github.io/talks"
+    "section": "Automation Saves Time?",
+    "text": "Automation Saves Time?\n\nxkcd:1319"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#weve-all-done-this-at-some-point",
+    "href": "2023-11-14-arc-renovate/index.html#weve-all-done-this-at-some-point",
+    "title": "Automating Dependency Management",
+    "section": "We’ve All Done This At Some Point",
+    "text": "We’ve All Done This At Some Point"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#what-about-security-updates",
+    "href": "2023-11-14-arc-renovate/index.html#what-about-security-updates",
+    "title": "Automating Dependency Management",
+    "section": "What About Security Updates?",
+    "text": "What About Security Updates?"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#why-should-i-update",
+    "href": "2023-11-14-arc-renovate/index.html#why-should-i-update",
+    "title": "Automating Dependency Management",
+    "section": "Why Should I Update?",
+    "text": "Why Should I Update?\n\nxkcd:2224"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#why-use-renovate",
+    "href": "2023-11-14-arc-renovate/index.html#why-use-renovate",
+    "title": "Automating Dependency Management",
+    "section": "Why Use Renovate?",
+    "text": "Why Use Renovate?\n\nGet automated Pull Requests to update your dependencies\n\nReduce noise by running Renovate on a schedule, for example:\n\non weekends\noutside of working hours\neach week\neach month\n\n\nRelevant package files are discovered automatically"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#why-use-renovate-1",
+    "href": "2023-11-14-arc-renovate/index.html#why-use-renovate-1",
+    "title": "Automating Dependency Management",
+    "section": "Why Use Renovate?",
+    "text": "Why Use Renovate?\n\nSupports monorepo architectures with workspaces with no extra configuration\nBot behavior is customisable via configuration files (config as code)\nUse ESLint-like shared config presets for ease of use and simplifying configuration (JSON format only)\nLock files are supported and updated in the same commit, including immediately resolving conflicts whenever PRs are merged"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#why-use-renovate-2",
+    "href": "2023-11-14-arc-renovate/index.html#why-use-renovate-2",
+    "title": "Automating Dependency Management",
+    "section": "Why Use Renovate?",
+    "text": "Why Use Renovate?\n\nGet replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with most managers, see issue 14149 for exceptions\nOpen source (installable via npm/Yarn or Docker Hub) so can be self-hosted or used via the Mend Renovate App"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#open-source-projects",
+    "href": "2023-11-14-arc-renovate/index.html#open-source-projects",
+    "title": "Automating Dependency Management",
+    "section": "Open Source Projects",
+    "text": "Open Source Projects\n\nhttps://github.com/paddyroddy/talks\nhttps://github.com/renovatebot/renovate\nhttps://github.com/astro-informatics/sleplet\nhttps://github.com/microsoft/lage\nhttps://github.com/loopbackio/loopback-next\nhttps://github.com/ampproject/amphtml\n…"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#install-the-application",
+    "href": "2023-11-14-arc-renovate/index.html#install-the-application",
+    "title": "Automating Dependency Management",
+    "section": "Install the Application",
+    "text": "Install the Application\nhttps://github.com/apps/renovate"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#example-config",
+    "href": "2023-11-14-arc-renovate/index.html#example-config",
+    "title": "Automating Dependency Management",
+    "section": "Example Config",
+    "text": "Example Config\n{\n  $schema: \"https://docs.renovatebot.com/renovate-schema.json\",\n  extends: [\n    \"config:best-practices\",\n    \"schedule:weekdays\",\n    \":assignAndReview(paddyroddy)\",\n    \":automergeBranch\",\n    \":automergeDigest\",\n    \":automergeMinor\",\n    \":automergePatch\",\n    \":disableDependencyDashboard\",\n    \":enablePreCommit\",\n    \":label(renovate)\",\n    \":maintainLockFilesMonthly\",\n    \":noUnscheduledUpdates\",\n  ],\n  commitMessageAction: \"Renovate:\",\n  \"git-submodules\": {\n    enabled: true,\n  },\n  packageRules: [\n    {\n      description: \"Only allow major updates\",\n      enabled: false,\n      matchDepNames: [\"renovatebot/pre-commit-hooks\"],\n      matchUpdateTypes: [\"minor\", \"patch\", \"pin\"],\n    },\n    {\n      description: \"Combine updates together\",\n      groupName: \"paddyroddy/.github\",\n      matchDepNames: [\"paddyroddy/.github\"],\n    },\n    {\n      description: \"Shorten commit titles\",\n      commitMessageTopic: \"{{depName}}\",\n      matchManagers: [\"github-actions\", \"pre-commit\"],\n    },\n  ],\n}\n\nSee in action: https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#config-is-reusable",
+    "href": "2023-11-14-arc-renovate/index.html#config-is-reusable",
+    "title": "Automating Dependency Management",
+    "section": "Config is Reusable!",
+    "text": "Config is Reusable!\n{\n  $schema: \"https://docs.renovatebot.com/renovate-schema.json\",\n  extends: [\n    \"github&gt;paddyroddy/.github//renovate/default-config.json5\",\n    \"schedule:monthly\",\n  ],\n  \"pre-commit\": {\n    fileMatch: [\n      \"precommit/general/general-hooks.yml\",\n      \"precommit/latex/latex-hooks.yml\",\n      \"precommit/python/python-hooks.yml\",\n    ],\n  },\n}\n\nSee in action: https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#automerging",
+    "href": "2023-11-14-arc-renovate/index.html#automerging",
+    "title": "Automating Dependency Management",
+    "section": "Automerging",
+    "text": "Automerging\nThe GitHub automerge setting is required\n\n\nIt is highly recommended to ensure you have tests that will operate on the Renovate branches.\non:\n  push:\n    branches:\n      - main\n      - \"renovate/**\"\n  pull_request:"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#rulesets---status-checks",
+    "href": "2023-11-14-arc-renovate/index.html#rulesets---status-checks",
+    "title": "Automating Dependency Management",
+    "section": "Rulesets - Status Checks",
+    "text": "Rulesets - Status Checks"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#rulesets---pull-requests",
+    "href": "2023-11-14-arc-renovate/index.html#rulesets---pull-requests",
+    "title": "Automating Dependency Management",
+    "section": "Rulesets - Pull Requests",
+    "text": "Rulesets - Pull Requests"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#monitoring",
+    "href": "2023-11-14-arc-renovate/index.html#monitoring",
+    "title": "Automating Dependency Management",
+    "section": "Monitoring",
+    "text": "Monitoring\n\n\n\n\n\n\n\n\n\n\n\nSee in action: https://developer.mend.io/github/paddyroddy/.github"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#summary",
+    "href": "2023-11-14-arc-renovate/index.html#summary",
+    "title": "Automating Dependency Management",
+    "section": "Summary",
+    "text": "Summary\n\nRenovate is massively flexible\nMaintainers respond incredibly quickly\nRenovate is widely used\nIf you think it can be automated, it probably can\nBe careful with CI use in private projects (ask MIRSG 😉)\nEmbrace automerging (if you like inbox zero)\nRenovate renovates itself very frequently\nThere’s always more to learn!"
+  },
+  {
+    "objectID": "2023-11-14-arc-renovate/index.html#demo-time",
+    "href": "2023-11-14-arc-renovate/index.html#demo-time",
+    "title": "Automating Dependency Management",
+    "section": "Demo Time",
+    "text": "Demo Time\nhttps://developer.mend.io\n\n\n\nAutomating Dependency Management: https://paddyroddy.github.io/talks"
   }
 ]
