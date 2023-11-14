@@ -412,28 +412,28 @@ Patrick J. Roddy
 <section id="dependencies-are-inevitable" class="slide level2">
 <h2>Dependencies Are Inevitable</h2>
 
-<img data-src="dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
+<img data-src="figures/dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
 <section id="automation-saves-time" class="slide level2">
 <h2>Automation Saves Time?</h2>
 
-<img data-src="automation.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:1319</p></section>
+<img data-src="figures/automation.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:1319</p></section>
 <section id="weve-all-done-this-at-some-point" class="slide level2">
 <h2>We’ve All Done This At Some Point</h2>
 
-<img data-src="bump.png" class="r-stretch"></section>
+<img data-src="figures/bump.png" class="r-stretch"></section>
 <section id="what-about-security-updates" class="slide level2">
 <h2>What About Security Updates?</h2>
 
-<img data-src="dependabot.png" class="r-stretch"></section>
+<img data-src="figures/dependabot.png" class="r-stretch"></section>
 <section id="why-should-i-update" class="slide level2">
 <h2>Why Should I Update?</h2>
 
-<img data-src="updates.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2224</p></section></section>
+<img data-src="figures/updates.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2224</p></section></section>
 <section>
 <section id="renovate" class="title-slide slide level1 center">
 <h1>Renovate</h1>
 
-<img data-src="renovate.jpg" class="r-stretch"></section>
+<img data-src="figures/renovate.jpg" class="r-stretch"></section>
 <section id="why-use-renovate" class="slide level2">
 <h2>Why Use Renovate?</h2>
 <ul>
@@ -487,10 +487,10 @@ Patrick J. Roddy
 <h2>Install the Application</h2>
 <p><a href="https://github.com/apps/renovate" class="external" target="_blank">https://github.com/apps/renovate</a></p>
 
-<img data-src="application.png" class="r-stretch"></section>
+<img data-src="figures/application.png" class="r-stretch"></section>
 <section id="example-config" class="slide level2">
 <h2>Example Config</h2>
-<div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>{</span>
+<div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>{</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
 <span id="cb1-3"><a href="#cb1-3"></a>  extends: [</span>
 <span id="cb1-4"><a href="#cb1-4"></a>    "config:best-practices",</span>
@@ -557,7 +557,7 @@ Patrick J. Roddy
 <h2>Automerging</h2>
 <p>The <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">GitHub automerge</a> setting is required</p>
 
-<img data-src="automerge.png" class="r-stretch"><div class="fragment fade-left">
+<img data-src="figures/automerge.png" class="r-stretch"><div class="fragment fade-left">
 <p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">on</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
@@ -572,10 +572,10 @@ Patrick J. Roddy
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="status_checks_1.png"></p>
+<p><img data-src="figures/status_checks_1.png"></p>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="status_checks_2.png"></p>
+<p><img data-src="figures/status_checks_2.png"></p>
 </div>
 </div>
 </div>
@@ -585,10 +585,10 @@ Patrick J. Roddy
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="pull_requests_1.png"></p>
+<p><img data-src="figures/pull_requests_1.png"></p>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="pull_requests_2.png"></p>
+<p><img data-src="figures/pull_requests_2.png"></p>
 </div>
 </div>
 </div>
@@ -598,10 +598,10 @@ Patrick J. Roddy
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="logging_1.png"></p>
+<p><img data-src="figures/logging_1.png"></p>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="logging_2.png"></p>
+<p><img data-src="figures/logging_2.png"></p>
 </div>
 </div>
 </div>
@@ -632,7 +632,7 @@ Patrick J. Roddy
 <p><a href="https://developer.mend.io" class="uri">https://developer.mend.io</a></p>
 
 
-<img data-src="demo.jpg" class="r-stretch"><div class="footer footer-default">
+<img data-src="figures/demo.jpg" class="r-stretch"><div class="footer footer-default">
 <p>Automating Dependency Management: <a href="https://paddyroddy.github.io/talks" class="external" target="_blank">https://paddyroddy.github.io/talks</a></p>
 </div>
 </section></section>
