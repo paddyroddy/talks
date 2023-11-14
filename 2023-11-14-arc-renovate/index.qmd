@@ -31,4 +31,10 @@ format: revealjs
 
 ## Open Source Users
 
+- <https://github.com/paddyroddy/talks>
 - <https://github.com/renovatebot/renovate>
+- <https://github.com/astro-informatics/sleplet>
+- <https://github.com/microsoft/lage>
+- <https://github.com/loopbackio/loopback-next>
+- <https://github.com/ampproject/amphtml>
+- ...
