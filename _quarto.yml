@@ -5,8 +5,8 @@ format:
   html:
     theme: darkly
   revealjs:
-    footer: <https://paddyroddy.github.io/talks>
     incremental: true
+    slide-number: true
     transition: slide
 
 website:

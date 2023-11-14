@@ -4,8 +4,13 @@ author: Patrick J. Roddy
 date: 2023-11-14
 format:
   revealjs:
+    footer: >-
+      Automating Dependency Management:
+      <https://paddyroddy.github.io/talks>{.external target="_blank"}
     theme: moon
 ---
+
+# Introduction
 
 ## Dependencies Are Inevitable
 
@@ -61,15 +66,21 @@ format:
 
 ## Open Source Projects
 
-- <https://github.com/paddyroddy/talks>
-- <https://github.com/renovatebot/renovate>
-- <https://github.com/astro-informatics/sleplet>
-- <https://github.com/microsoft/lage>
-- <https://github.com/loopbackio/loopback-next>
-- <https://github.com/ampproject/amphtml>
+- <https://github.com/paddyroddy/talks>{.external target="_blank"}
+- <https://github.com/renovatebot/renovate>{.external target="_blank"}
+- <https://github.com/astro-informatics/sleplet>{.external target="_blank"}
+- <https://github.com/microsoft/lage>{.external target="_blank"}
+- <https://github.com/loopbackio/loopback-next>{.external target="_blank"}
+- <https://github.com/ampproject/amphtml>{.external target="_blank"}
 - ...
 
 # How to Setup
+
+## Install the Application
+
+<https://github.com/apps/renovate>{.external target="_blank"}
+
+![](application.png)
 
 ## Example Config
 
@@ -197,3 +208,22 @@ on:
 ::: footer
 See in action: <https://developer.mend.io/github/paddyroddy/.github>
 :::
+
+# Conclusions
+
+## Summary
+
+- Renovate is massively flexible
+- Maintainers respond incredibly quickly
+- Renovate is widely used
+- If you think it can be automated, it probably can
+- Be careful with CI use in private projects (ask MIRSG 😉)
+- Embrace automerging (if you like inbox zero)
+- Renovate `renovates` itself very frequently
+- There's always more to learn!
+
+## Demo Time
+
+<https://developer.mend.io>
+
+![](demo.jpg)
