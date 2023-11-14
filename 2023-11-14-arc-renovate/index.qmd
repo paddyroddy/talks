@@ -14,27 +14,27 @@ format:
 
 ## Dependencies Are Inevitable
 
-![xkcd:2347](dependency.png)
+![xkcd:2347](figures/dependency.png)
 
 ## Automation Saves Time?
 
-![xkcd:1319](automation.png)
+![xkcd:1319](figures/automation.png)
 
 ## We've All Done This At Some Point
 
-![](bump.png)
+![](figures/bump.png)
 
 ## What About Security Updates?
 
-![](dependabot.png)
+![](figures/dependabot.png)
 
 ## Why Should I Update?
 
-![xkcd:2224](updates.png)
+![xkcd:2224](figures/updates.png)
 
 # Renovate
 
-![](renovate.jpg)
+![](figures/renovate.jpg)
 
 ## Why Use Renovate?
 
@@ -80,7 +80,7 @@ format:
 
 <https://github.com/apps/renovate>{.external target="_blank"}
 
-![](application.png)
+![](figures/application.png)
 
 ## Example Config
 
@@ -159,7 +159,7 @@ The
 [GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
 setting is required
 
-![](automerge.png)
+![](figures/automerge.png)
 
 ::: {.fragment .fade-left}
 It is **highly recommended** to ensure you have tests that will operate on the
@@ -178,30 +178,30 @@ on:
 ## Rulesets - Status Checks
 
 :::{layout-ncol=2}
-![](status_checks_1.png)
+![](figures/status_checks_1.png)
 
 ::: {.fragment .fade-left}
-![](status_checks_2.png)
+![](figures/status_checks_2.png)
 :::
 :::
 
 ## Rulesets - Pull Requests
 
 :::{layout-ncol=2}
-![](pull_requests_1.png)
+![](figures/pull_requests_1.png)
 
 ::: {.fragment .fade-left}
-![](pull_requests_2.png)
+![](figures/pull_requests_2.png)
 :::
 :::
 
 ## Monitoring
 
 :::{layout-ncol=2}
-![](logging_1.png)
+![](figures/logging_1.png)
 
 ::: {.fragment .fade-left}
-![](logging_2.png)
+![](figures/logging_2.png)
 :::
 :::
 
@@ -226,4 +226,4 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 
 <https://developer.mend.io>
 
-![](demo.jpg)
+![](figures/demo.jpg)
