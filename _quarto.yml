@@ -10,6 +10,7 @@ format:
     transition: slide
 
 website:
+  google-analytics: G-SCSTN0WCDT
   favicon: /assets/images/favicon.ico
   navbar:
     tools:
