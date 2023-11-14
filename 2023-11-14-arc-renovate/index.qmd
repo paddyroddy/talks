@@ -4,9 +4,6 @@ author: Patrick J. Roddy
 date: 2023-11-14
 format:
   revealjs:
-    footer: >-
-      Automating Dependency Management:
-      <https://paddyroddy.github.io/talks>{.external target="_blank"}
     theme: moon
 ---
 
