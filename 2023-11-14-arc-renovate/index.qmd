@@ -5,10 +5,30 @@ date: 2023-11-14
 format: revealjs
 ---
 
-## Automation
+## Dependencies Are Inevitable
 
-![https://xkcd.com/1319](automation.png)
+![xkcd:2347](dependency.png)
 
-## Dependencies
+## Automation Saves Time?
 
-![https://xkcd.com/2347](dependency.png)
+![xkcd:1319](automation.png)
+
+## We've All Done This At Some Point
+
+![](bump.png)
+
+## What About Security Updates?
+
+![](dependabot.png)
+
+## Why Should I Update?
+
+![xkcd:2224](updates.png)
+
+# Renovate
+
+![](renovate.jpg)
+
+## Open Source Users
+
+- <https://github.com/renovatebot/renovate>

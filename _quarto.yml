@@ -16,6 +16,7 @@ format:
   html:
     theme: darkly
   revealjs:
+    footer: <https://paddyroddy.github.io/talks>
     incremental: true
     theme: moon
-    footer: <https://paddyroddy.github.io/talks>
+    transition: slide
