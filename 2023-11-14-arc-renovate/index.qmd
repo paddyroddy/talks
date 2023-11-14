@@ -155,7 +155,7 @@ See in action:
 ## Automerging
 
 The
-[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
+[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request){.external target="_blank"}
 setting is required
 
 ![](figures/automerge.png)
@@ -224,6 +224,6 @@ See in action:
 
 ## Demo Time
 
-<https://developer.mend.io>
+<https://developer.mend.io>{.external target="_blank"}
 
 ![](figures/demo.jpg)
