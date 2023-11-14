@@ -124,7 +124,8 @@ format:
 ```
 
 ::: footer
-See in action: <https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>{.external target="_blank"}
 :::
 
 ## Config is Reusable!
@@ -147,7 +148,8 @@ See in action: <https://github.com/paddyroddy/.github/blob/main/renovate/default
 ```
 
 ::: footer
-See in action: <https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>{.external target="_blank"}
 :::
 
 ## Automerging
@@ -203,7 +205,8 @@ on:
 :::
 
 ::: footer
-See in action: <https://developer.mend.io/github/paddyroddy/.github>
+See in action:
+<https://developer.mend.io/github/paddyroddy/.github>{.external target="_blank"}
 :::
 
 # Conclusions
