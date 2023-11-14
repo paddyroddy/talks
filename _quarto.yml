@@ -18,3 +18,4 @@ format:
   revealjs:
     incremental: true
     theme: moon
+    footer: <https://paddyroddy.github.io/talks>
