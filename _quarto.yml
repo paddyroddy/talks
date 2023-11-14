@@ -7,7 +7,6 @@ format:
   revealjs:
     footer: <https://paddyroddy.github.io/talks>
     incremental: true
-    theme: moon
     transition: slide
 
 website:
@@ -18,5 +17,5 @@ website:
         href: https://paddyroddy.github.io
       - icon: github
         href: https://github.com/paddyroddy/talks
-  site-path: /talks/
+  site-url: https://github.com/paddyroddy/talks
   title: ""

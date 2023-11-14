@@ -2,7 +2,9 @@
 title: Automating Dependency Management
 author: Patrick J. Roddy
 date: 2023-11-14
-format: revealjs
+format:
+  revealjs:
+    theme: moon
 ---
 
 ## Dependencies Are Inevitable
