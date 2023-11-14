@@ -1,21 +1,21 @@
 project:
   type: website
 
+format:
+  html:
+    theme: darkly
+  revealjs:
+    incremental: true
+    slide-number: true
+    transition: slide
+
 website:
   favicon: /assets/images/favicon.ico
-  site-path: /talks/
-  title: ""
   navbar:
     tools:
       - icon: house
         href: https://paddyroddy.github.io
       - icon: github
         href: https://github.com/paddyroddy/talks
-
-format:
-  html:
-    theme: darkly
-  revealjs:
-    incremental: true
-    theme: moon
-    footer: <https://paddyroddy.github.io/talks>
+  site-url: https://github.com/paddyroddy/talks
+  title: ""
