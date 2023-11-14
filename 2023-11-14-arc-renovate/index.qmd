@@ -120,5 +120,31 @@ format:
     },
   ],
 }
-
 ```
+
+::: footer
+See in action: <https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
+:::
+
+## Config is Reusable!
+
+```{.json5 code-line-numbers="2|4|5|7-13"}
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "github>paddyroddy/.github//renovate/default-config.json5",
+    "schedule:monthly",
+  ],
+  "pre-commit": {
+    fileMatch: [
+      "precommit/general/general-hooks.yml",
+      "precommit/latex/latex-hooks.yml",
+      "precommit/python/python-hooks.yml",
+    ],
+  },
+}
+```
+
+::: footer
+See in action: <https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>
+:::
