@@ -69,6 +69,8 @@ format:
 - <https://github.com/ampproject/amphtml>
 - ...
 
+# How to Setup
+
 ## Example Config
 
 ```{.json5 code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|21,38|22-27|28-32|33-37"}
@@ -142,12 +144,15 @@ See in action: <https://github.com/paddyroddy/.github/blob/main/.renovaterc.json
 
 ## Automerging
 
+::: {.fragment .fade-up}
 The
 [GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
 setting is required
 
 ![](automerge.png)
+:::
 
+::: {.fragment .fade-left}
 It is **highly recommended** to ensure you have tests that will operate on the
 Renovate branches.
 
@@ -159,3 +164,28 @@ on:
       - "renovate/**"
   pull_request:
 ```
+:::
+
+## Rulesets - Status Checks
+
+:::{layout-ncol=2}
+::: {.fragment .fade-right}
+![](status_checks_1.png)
+:::
+
+::: {.fragment .fade-left}
+![](status_checks_2.png)
+:::
+:::
+
+## Rulesets - Pull Requests
+
+:::{layout-ncol=2}
+::: {.fragment .fade-right}
+![](pull_requests_1.png)
+:::
+
+::: {.fragment .fade-left}
+![](pull_requests_2.png)
+:::
+:::
