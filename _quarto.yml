@@ -1,17 +1,6 @@
 project:
   type: website
 
-website:
-  favicon: /assets/images/favicon.ico
-  site-path: /talks/
-  title: ""
-  navbar:
-    tools:
-      - icon: house
-        href: https://paddyroddy.github.io
-      - icon: github
-        href: https://github.com/paddyroddy/talks
-
 format:
   html:
     theme: darkly
@@ -20,3 +9,14 @@ format:
     incremental: true
     theme: moon
     transition: slide
+
+website:
+  favicon: /assets/images/favicon.ico
+  navbar:
+    tools:
+      - icon: house
+        href: https://paddyroddy.github.io
+      - icon: github
+        href: https://github.com/paddyroddy/talks
+  site-path: /talks/
+  title: ""

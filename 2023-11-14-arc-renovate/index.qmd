@@ -29,6 +29,43 @@ format: revealjs
 
 ![](renovate.jpg)
 
+## Why Use Renovate?
+
+::: {.nonincremental}
+::: panel-tabset
+### 1
+
+- Get automated Pull Requests to update your dependencies
+  - Reduce noise by running Renovate on a schedule, for example:
+    - on weekends
+    - outside of working hours
+    - each week
+    - each month
+
+### 2
+
+- Relevant package files are discovered automatically
+- Supports monorepo architectures with workspaces with no extra configuration
+- Bot behavior is customisable via configuration files (config as code)
+- Use ESLint-like shared config presets for ease of use and simplifying
+  configuration (JSON format only)
+
+### 3
+
+- Lock files are supported and updated in the same commit, including immediately
+  resolving conflicts whenever PRs are merged
+- Get replacement PRs to migrate from a deprecated dependency to the community
+  suggested replacement, works with most managers, see
+  [issue 14149](https://github.com/renovatebot/renovate/issues/14149){.external target="_blank"}
+  for exceptions
+
+### 4
+
+- Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or
+  used via the Mend Renovate App
+:::
+:::
+
 ## Open Source Users
 
 - <https://github.com/paddyroddy/talks>
