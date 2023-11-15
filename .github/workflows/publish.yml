@@ -1,5 +1,6 @@
 name: Quarto Publish
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -17,9 +18,11 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: Set up Quarto
+        # yamllint disable-line rule:line-length
         uses: quarto-dev/quarto-actions/setup@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # v2
 
       - name: Render and Publish
+        # yamllint disable-line rule:line-length
         uses: quarto-dev/quarto-actions/publish@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # v2
         with:
           target: gh-pages
