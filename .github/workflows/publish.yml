@@ -1,3 +1,4 @@
+---
 name: Quarto Publish
 
 # yamllint disable-line rule:truthy
@@ -5,26 +6,14 @@ on:
   push:
     branches:
       - main
-      - "renovate/**"
-  pull_request:
 
 jobs:
-  quarto:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Check out repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-
-      - name: Set up Quarto
-        # yamllint disable-line rule:line-length
-        uses: quarto-dev/quarto-actions/setup@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # v2
-
-      - name: Render and Publish
-        # yamllint disable-line rule:line-length
-        uses: quarto-dev/quarto-actions/publish@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # v2
+      # yamllint disable-line rule:line-length
+      - uses: paddyroddy/.github/actions/github-pages/quarto@b45ffef611d12e0263916cf6f650a9b2cc13aa4f # v0
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
