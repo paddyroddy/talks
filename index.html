@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -165,9 +165,6 @@ gtag('config', 'G-SCSTN0WCDT', { 'anonymize_ip': true});
          <option value="listing-title-sort" data-direction="asc">
           Title
         </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -185,21 +182,15 @@ gtag('config', 'G-SCSTN0WCDT', { 'anonymize_ip': true});
 <th>
 <a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1701438038293" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Automating Dependency Management" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1702660679137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Automating Dependency Management" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023-11-14</span>
 </td>
 <td>
 <a href="./2023-11-14-arc-renovate/index.html" class="title listing-title">Automating Dependency Management</a>
-</td>
-<td>
-<span class="listing-author">Patrick J. Roddy</span>
 </td>
 </tr>
 </tbody>
