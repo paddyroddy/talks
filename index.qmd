@@ -6,6 +6,9 @@ listing:
   date-format: iso
   exclude:
     title: Page Not Found
+  fields:
+    - date
+    - title
   sort: date
   type: table
 ---
