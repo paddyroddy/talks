@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\n2023-11-14\n\n\nAutomating Dependency Management\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
     "href": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
     "title": "Automating Dependency Management",
@@ -131,5 +124,12 @@
     "title": "Automating Dependency Management",
     "section": "Demo Time",
     "text": "Demo Time\nhttps://developer.mend.io\n\n\n\n\nAutomating Dependency Management: https://paddyroddy.github.io/talks"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\n2023-11-14\n\n\nAutomating Dependency Management\n\n\n\n\n\nNo matching items"
   }
 ]
