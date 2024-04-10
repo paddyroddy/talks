@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\n2023-11-14\n\n\nAutomating Dependency Management\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
     "href": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
     "title": "Automating Dependency Management",
@@ -88,7 +81,7 @@
     "href": "2023-11-14-arc-renovate/index.html#config-is-reusable",
     "title": "Automating Dependency Management",
     "section": "Config is Reusable!",
-    "text": "Config is Reusable!\n{\n  $schema: \"https://docs.renovatebot.com/renovate-schema.json\",\n  extends: [\n    \"github&gt;paddyroddy/.github//renovate/default-config.json5\",\n    \"schedule:monthly\",\n  ],\n  \"pre-commit\": {\n    fileMatch: [\n      \"precommit/general/general-hooks.yml\",\n      \"precommit/latex/latex-hooks.yml\",\n      \"precommit/python/python-hooks.yml\",\n    ],\n  },\n}\n\nSee in action: https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5"
+    "text": "Config is Reusable!\n{\n  $schema: \"https://docs.renovatebot.com/renovate-schema.json\",\n  extends: [\n    \"github&gt;paddyroddy/.github//renovate/default-config.json5\",\n    \"schedule:monthly\",\n  ],\n  \"pre-commit\": {\n    fileMatch: [\n      \"precommit/general/general-hooks.yaml\",\n      \"precommit/latex/latex-hooks.yaml\",\n      \"precommit/python/python-hooks.yaml\",\n    ],\n  },\n}\n\nSee in action: https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5"
   },
   {
     "objectID": "2023-11-14-arc-renovate/index.html#automerging",
@@ -131,5 +124,12 @@
     "title": "Automating Dependency Management",
     "section": "Demo Time",
     "text": "Demo Time\nhttps://developer.mend.io\n\n\n\n\nAutomating Dependency Management: https://paddyroddy.github.io/talks"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\n2023-11-14\n\n\nAutomating Dependency Management\n\n\n\n\n\nNo matching items"
   }
 ]
