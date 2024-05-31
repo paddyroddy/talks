@@ -1,0 +1,17 @@
+---
+name: Add issues to project board
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-issue-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      # yamllint disable-line rule:line-length
+      - uses: paddyroddy/.github/actions/add-to-project@v0
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          app-pem: ${{ secrets.APP_PEM }}
