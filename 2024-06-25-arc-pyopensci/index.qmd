@@ -12,56 +12,65 @@ format:
 ## JOSS
 
 :::{layout-ncol=2}
-[![Kevin Mattheus Moerman](figures/joss_logo.png)](https://joss.theoj.org){.external target="_blank"}
+[![Kevin Mattheus Moerman](figures/joss_logo.png)](https://joss.theoj.org)
 
 - JOSS is a **developer friendly**, open access
 journal for research software packages.
 
-- I previously gave a talk on JOSS, the
-recording of which can be [accessed
-here](https://liveuclac.sharepoint.com/:v:/r/sites/RITSstaff/Shared%20Documents/Collaborations/Recordings/ARC%20Collaborations%20Group%20Meeting-20230606_140109-Meeting%20Recording.mp4?csf=1&web=1&e=qhKamX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7InN0YXJ0VGltZUluU2Vjb25kcyI6MTk4OC4wOH19){.external target="_blank"}.
+- I previously gave a talk on JOSS, the recording of which can be [accessed
+here](https://liveuclac.sharepoint.com/:v:/r/sites/RITSstaff/Shared%20Documents/Collaborations/Recordings/ARC%20Collaborations%20Group%20Meeting-20230606_140109-Meeting%20Recording.mp4?csf=1&web=1&e=qhKamX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7InN0YXJ0VGltZUluU2Vjb25kcyI6MTk4OC4wOH19).
 :::
 
-## JOSS
-
-> What exactly do you mean by 'journal'
+## What Exactly Do You Mean by 'Journal'?
 
 - The Journal of Open Source Software (JOSS) is an academic journal (ISSN
 2475-9066) with a formal peer review process that is designed to improve the
 quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI is
 minted and we list your paper on the JOSS website.
 
-## JOSS
-
->Don't we have enough journals already?
+## Don't We Have Enough Journals Already?
 
 - Perhaps, and in a perfect world we'd rather papers about software weren't
 necessary but we recognize that for most researchers, papers and not software
 are the currency of academic research and that citations are required for a good
 career.
 
-## JOSS
-
->Don't we have enough journals already?
-
-::: {.nonincremental}
-- We built this journal because we believe that after you've done the hard work of
-writing  great software, it shouldn't take weeks and months to write a paper
+- We built this journal because we believe that after you've done the hard work
+of writing  great software, it shouldn't take weeks and months to write a paper
 about your work.
-:::
 
-## JOSS
 
-> You said developer friendly, what do you mean?
+## You Said Developer Friendly, What Do You mMan?
 
 - We have a simple submission workflow and [extensive
-documentation](https://joss.readthedocs.io/en/latest/submitting.html){.external target="_blank"}
+documentation](https://joss.readthedocs.io/en/latest/submitting.html)
 to help you prepare your submission. If your software is already well documented
 then paper preparation should take no more than an hour.
 
-## JOSS
+- You can read more about our motivations to build JOSS in our [announcement blog
+post](https://www.arfon.org/announcing-the-journal-of-open-source-software).
 
-You can read more about our motivations to build JOSS in our [announcement blog
-post](https://www.arfon.org/announcing-the-journal-of-open-source-software){.external target="_blank"}.
+## My Submission
 
-[![](figures/joss_sleplet.png)](https://joss.theoj.org/papers/10.21105/joss.05221){.external target="_blank"}
+[![](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2/status.svg)](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2)
+
+[![](figures/joss_review.png)](https://joss.theoj.org/papers/10.21105/joss.05221)
+
+# pyOpenSci
+
+## pyOpenSci
+
+:::{layout="[30,70]"}
+![](figures/pyopensci_logo.png)
+
+- We support the scientific Python tools that drive open science through peer
+review, training and community building.
+
+- We build diverse community that supports free and open Python tools for
+processing scientific data. We also build technical skills needed to contribute
+to open source and that support open science. Join our global community.
+:::
+
+## Presubmission Inquiry
+
+[![](figures/pyopensci_presubmission.png)](https://github.com/pyOpenSci/software-submission/issues/148)
