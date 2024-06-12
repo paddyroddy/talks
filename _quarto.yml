@@ -11,7 +11,7 @@ format:
       target="_blank"}
     incremental: true
     slide-number: true
-    transition: slide
+    transition: fade
 
 website:
   google-analytics: G-SCSTN0WCDT
