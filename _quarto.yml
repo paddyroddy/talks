@@ -10,8 +10,9 @@ format:
       {{< meta title >}}: <https://paddyroddy.github.io/talks>{.external
       target="_blank"}
     incremental: true
+    link-external-newwindow: true
     slide-number: true
-    transition: slide
+    transition: fade
 
 website:
   google-analytics: G-SCSTN0WCDT

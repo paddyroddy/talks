@@ -1,0 +1,207 @@
+---
+title: pyOpenSci
+author: Patrick J. Roddy
+date: 2024-06-25
+format:
+  revealjs:
+    theme: night
+---
+
+# The Journal of Open Source Software (JOSS)
+
+## JOSS
+
+:::{layout-ncol=2}
+[![Kevin Mattheus Moerman](figures/joss_logo.png)](https://joss.theoj.org)
+
+- JOSS is a **developer friendly**, open access
+journal for research software packages.
+
+- I previously gave a talk on JOSS, the recording of which can be [accessed
+here](https://liveuclac.sharepoint.com/:v:/r/sites/RITSstaff/Shared%20Documents/Collaborations/Recordings/ARC%20Collaborations%20Group%20Meeting-20230606_140109-Meeting%20Recording.mp4?csf=1&web=1&e=qhKamX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7InN0YXJ0VGltZUluU2Vjb25kcyI6MTk4OC4wOH19).
+:::
+
+## What Exactly Do You Mean by 'Journal'?
+
+- The Journal of Open Source Software (JOSS) is an academic journal (ISSN
+2475-9066) with a formal peer review process that is designed to improve the
+quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI is
+minted and we list your paper on the JOSS website.
+
+## Don't We Have Enough Journals Already?
+
+- Perhaps, and in a perfect world we'd rather papers about software weren't
+necessary but we recognize that for most researchers, papers and not software
+are the currency of academic research and that citations are required for a good
+career.
+
+- We built this journal because we believe that after you've done the hard work
+of writing  great software, it shouldn't take weeks and months to write a paper
+about your work.
+
+
+## You Said Developer Friendly, What Do You Mean?
+
+- We have a simple submission workflow and [extensive
+documentation](https://joss.readthedocs.io/en/latest/submitting.html)
+to help you prepare your submission. If your software is already well documented
+then paper preparation should take no more than an hour.
+
+- You can read more about our motivations to build JOSS in our [announcement blog
+post](https://www.arfon.org/announcing-the-journal-of-open-source-software).
+
+## My Submission
+
+[![](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2/status.svg)](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2)
+
+[![](figures/joss_review.png)](https://joss.theoj.org/papers/10.21105/joss.05221)
+
+# pyOpenSci
+
+## pyOpenSci
+
+:::{layout="[30,70]"}
+![](figures/pyopensci_logo.png)
+
+- We support the scientific Python tools that drive open science through peer
+review, training and community building.
+
+- We build diverse community that supports free and open Python tools for
+processing scientific data. We also build technical skills needed to contribute
+to open source and that support open science. Join our global community.
+:::
+
+## Pre-Submission Inquiry
+
+[![](figures/pyopensci_presubmission.png)](https://github.com/pyOpenSci/software-submission/issues/148)
+
+## Review Process
+
+Documentation:
+
+- [ ] **A statement of need** clearly stating problems the software is designed
+to solve and its target audience in README.
+- [ ] **Installation instructions:** for the development version of the package
+and any non-standard dependencies in README.
+- [ ] **Vignette(s)** demonstrating major functionality that runs successfully
+locally.
+
+## Review Process
+
+Documentation:
+
+- [ ] **Function Documentation:** for all user-facing functions.
+- [ ] **Examples** for all user-facing functions.
+- [ ] **Community guidelines** including contribution guidelines in the README
+or CONTRIBUTING.
+- [ ] **Metadata** including author(s), author e-mail(s), a url, and any other
+relevant metadata e.g., in a `pyproject.toml` file or elsewhere.
+
+## Review Process
+
+`README.md`:
+
+- [ ] The package name
+- [ ] Badges for:
+    - [ ] Continuous integration and test coverage,
+    - [ ] Docs building (if you have a documentation website),
+    - [ ] A [repostatus.org](https://www.repostatus.org/) badge,
+    - [ ] Python versions supported,
+    - [ ] Current package version (on PyPI / Conda).
+
+## Review Process
+
+`README.md`:
+
+- [ ] Short description of package goals.
+- [ ] Package installation instructions
+- [ ] Any additional setup required to use the package (authentication tokens,
+etc.)
+
+## Review Process
+
+`README.md`:
+
+- [ ] Descriptive links to all vignettes. If the package is small, there may
+only be a need for one vignette which could be placed in the README.md file.
+    - [ ] Brief demonstration of package usage (as it makes sense - links to
+    vignettes could also suffice here if package description is clear)
+- [ ] Link to your documentation website.
+
+## Review Process
+
+`README.md`:
+
+- [ ] If applicable, how the package compares to other similar packages and/or
+how it relates to other packages in the scientific ecosystem.
+- [ ] Citation information
+
+## Review Process
+
+Usability:
+
+- [ ] Package documentation is clear and easy to find and use.
+- [ ] The need for the package is clear
+- [ ] All functions have documentation and associated examples for use
+- [ ] The package is easy to install
+
+## Review Process
+
+Functionality:
+
+- [ ] **Installation:** Installation succeeds as documented.
+- [ ] **Functionality:** Any functional claims of the software been confirmed.
+- [ ] **Performance:** Any performance claims of the software been confirmed.
+
+## Review Process
+
+Functionality:
+
+- [ ] **Automated tests:**
+  - [ ] All tests pass on the reviewer's local machine for the package version
+  submitted by the author. Ideally this should be a tagged version making it
+  easy for reviewers to install.
+  - [ ] Tests cover essential functions of the package and a reasonable range of
+  inputs and conditions.
+
+## Review Process
+
+Functionality:
+
+- [ ] **Continuous Integration:** Has continuous integration setup (We suggest
+using Github actions but any CI platform is acceptable for review)
+- [ ] **Packaging guidelines**: The package conforms to the pyOpenSci [packaging
+guidelines](https://www.pyopensci.org/python-package-guide).
+    - [ ] Package supports modern versions of Python and not [End of life
+    versions](https://endoflife.date/python).
+    - [ ] Code format is standard throughout package and follows PEP 8
+    guidelines (CI tests for linting pass)
+
+## Package Acception
+
+:::{layout-ncol=2}
+[![](figures/pyopensci_packages.png)](https://www.pyopensci.org/python-packages.html)
+
+If the package has an **obvious research application** according to JOSS's
+definition in their [submission
+requirements](http://joss.theoj.org/about#submission_requirements), then one may
+submit their package to JOSS through pyOpenSci.
+
+[![](https://img.shields.io/badge/PyOpenSci-Peer%20Reviewed-success.svg)](https://github.com/pyOpenSci/software-submission/issues/149)
+:::
+
+## Blog Post (Optional)
+
+[![](figures/pyopensci_blog.png){width=80%}](https://www.pyopensci.org/blog/sleplet-slepian-wavelets)
+
+# Conclusions
+
+## Summary
+
+- pyOpenSci still in its infancy (32 packages as of 2024-06-12)
+- Easily integrates with JOSS
+- Exposure for your package (potentionally more so in the future)
+- [rOpenSci](https://ropensci.org/) for Python, see [blog
+launch](https://ropensci.org/blog/2013/05/16/pyopensci)
+- Always looking for [package
+reviewers](https://www.pyopensci.org/about-peer-review/index.html)
