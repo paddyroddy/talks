@@ -7,8 +7,7 @@ format:
     theme: darkly
   revealjs:
     footer: >-
-      {{< meta title >}}: <https://paddyroddy.github.io/talks>{.external
-      target="_blank"}
+      {{< meta title >}}: <https://paddyroddy.github.io/talks>
     incremental: true
     link-external-newwindow: true
     slide-number: true
@@ -21,8 +20,8 @@ website:
     tools:
       - icon: house
         href: https://paddyroddy.github.io
+        target: _blank
       - icon: github
         href: https://github.com/paddyroddy/talks
-  repo-url: https://github.com/paddyroddy/talks
-  site-url: https://paddyroddy.github.io/talks
+        target: _blank
   title: ""
