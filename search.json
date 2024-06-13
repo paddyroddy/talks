@@ -137,7 +137,7 @@
     "href": "2024-06-25-arc-pyopensci/index.html#summary",
     "title": "pyOpenSci",
     "section": "Summary",
-    "text": "Summary\n\npyOpenSci still in its infancy (32 packages as of 2024-06-12)\nEasily integrates with JOSS\nExposure for your package (potentionally more so in the future)\nrOpenSci for Python, see blog launch\nAlways looking for package reviewers\n\n\n\n\npyOpenSci: https://paddyroddy.github.io/talks"
+    "text": "Summary\n\npyOpenSci still in its infancy (32 packages as of 2024-06-12)\nEasily integrates with JOSS\nExposure for your package (potentionally more so in the future)\nrOpenSci for Python, see blog launch\nAlways looking for package reviewers"
   },
   {
     "objectID": "2023-11-14-arc-renovate/index.html#dependencies-are-inevitable",
