@@ -8,6 +8,7 @@ format:
   revealjs:
     footer: "{{< meta title >}}: <https://paddyroddy.github.io/talks>"
     incremental: true
+    link-external-icon: true
     link-external-newwindow: true
     slide-number: true
     theme: night
