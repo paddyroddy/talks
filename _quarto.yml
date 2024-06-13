@@ -10,6 +10,7 @@ format:
     incremental: true
     link-external-newwindow: true
     slide-number: true
+    theme: night
     transition: fade
 
 website:
