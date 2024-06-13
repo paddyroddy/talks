@@ -3,8 +3,7 @@ title: pyOpenSci
 author: Patrick J. Roddy
 date: 2024-06-25
 format:
-  revealjs:
-    theme: night
+  revealjs
 ---
 
 # The Journal of Open Source Software (JOSS)

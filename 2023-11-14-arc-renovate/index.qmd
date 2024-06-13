@@ -3,8 +3,7 @@ title: Automating Dependency Management
 author: Patrick J. Roddy
 date: 2023-11-14
 format:
-  revealjs:
-    theme: moon
+  revealjs
 ---
 
 # Introduction
