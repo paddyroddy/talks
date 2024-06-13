@@ -11,7 +11,7 @@ format:
 ## JOSS
 
 :::{layout-ncol=2}
-[![Kevin Mattheus Moerman](figures/joss_logo.png)](https://joss.theoj.org)
+[![](figures/joss_logo.png)](https://joss.theoj.org)
 
 - JOSS is a **developer friendly**, open access
 journal for research software packages.
@@ -72,7 +72,7 @@ to open source and that support open science. Join our global community.
 
 ## Pre-Submission Inquiry
 
-[![](figures/pyopensci_presubmission.png)](https://github.com/pyOpenSci/software-submission/issues/148)
+[![](figures/pyopensci_presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
 
 ## Review Process
 
