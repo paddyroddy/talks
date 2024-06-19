@@ -1,5 +1,5 @@
 ---
-title: pyOpenSci
+title: "pyOpenSci: My Experience"
 author: Patrick J. Roddy
 date: 2024-06-25
 format:

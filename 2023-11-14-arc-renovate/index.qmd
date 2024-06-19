@@ -1,5 +1,5 @@
 ---
-title: Automating Dependency Management
+title: "Renovate: Automating Dependency Management"
 author: Patrick J. Roddy
 date: 2023-11-14
 format:
