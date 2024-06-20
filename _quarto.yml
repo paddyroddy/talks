@@ -10,6 +10,8 @@ format:
     incremental: true
     link-external-icon: true
     link-external-newwindow: true
+    mermaid:
+      theme: dark
     slide-number: true
     theme: dark
     transition: fade
