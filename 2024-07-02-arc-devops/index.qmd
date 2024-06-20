@@ -84,8 +84,8 @@ flowchart TB;
 > align to strategic goals and deliver customer impact. Agile can help guide
 > DevOps teams.
 
-![Jira](figures/jira.png){width=50%} ![Trello](figures/trello.png){width=100%}
-![Confluence](figures/confluence.png){width=50%}
+![Jira](figures/jira.png){width=35%} ![Trello](figures/trello.png){width=100%}
+![Confluence](figures/confluence.png){width=35%}
 
 :::
 
@@ -97,7 +97,7 @@ flowchart TB;
 > is an iterative approach to project management and software development that
 > helps teams break work into smaller pieces to deliver incremental value.
 
-![Azure Boards](figures/azure_boards.png){width=50%}
+![Azure Boards](figures/azure_boards.png){width=35%}
 ![Asana](figures/asana.png){width=100%}
 ![Monday.com](figures/monday.png){width=100%}
 
@@ -112,9 +112,9 @@ flowchart TB;
 > led to many innovative and powerful workflows and tools for the development
 > build process.
 
-![Jenkins](figures/jenkins.png){width=45%}
-![GitLab CI](figures/gitlab_ci.png){width=50%}
-![GitHub Actions](figures/github_actions.png){width=50%}
+![Jenkins](figures/jenkins.png){width=35%}
+![GitLab CI](figures/gitlab_ci.png){width=35%}
+![GitHub Actions](figures/github_actions.png){width=35%}
 
 :::
 
@@ -128,9 +128,9 @@ flowchart TB;
 > help development teams gain reassurance in the quality and predictability of
 > code once deployed.
 
-![Selenium](figures/selenium.png){width=50%}
-![JUnit](figures/junit.png){width=50%}
-![Postman](figures/postman.png){width=50%}
+![Selenium](figures/selenium.png){width=35%}
+![JUnit](figures/junit.png){width=35%}
+![Postman](figures/postman.png){width=35%}
 
 :::
 
@@ -144,9 +144,9 @@ flowchart TB;
 > than all at once. This approach improves velocity, productivity, and
 > sustainability of software development teams.
 
-![Ansible](figures/ansible.png){width=40%}
-![Terraform](figures/terraform.png){width=40%}
-![Kubernetes](figures/kubernetes.png){width=60%}
+![Ansible](figures/ansible.png){width=35%}
+![Terraform](figures/terraform.png){width=35%}
+![Kubernetes](figures/kubernetes.png){width=35%}
 
 :::
 
@@ -158,8 +158,8 @@ flowchart TB;
 > practices involved in design, implementation, configuration, deployment, and
 > maintenance of all IT infrastructure that supports an organization’s services.
 
-![Docker](figures/docker.png){width=60%}
-![Puppet](figures/puppet.png){width=70%} ![Chef](figures/chef.png){width=60%}
+![Docker](figures/docker.png){width=35%}
+![Puppet](figures/puppet.png){width=35%} ![Chef](figures/chef.png){width=35%}
 
 :::
 
@@ -171,9 +171,9 @@ flowchart TB;
 > functionality. Automatically notify your team of changes, high-risk actions,
 > or failures, so you can keep services on.
 
-![Prometheus](figures/prometheus.png){width=60%}
-![Grafana](figures/grafana.png){width=50%}
-![New Relic](figures/new_relic.png){width=30%}
+![Prometheus](figures/prometheus.png){width=35%}
+![Grafana](figures/grafana.png){width=35%}
+![New Relic](figures/new_relic.png){width=35%}
 
 :::
 
@@ -185,9 +185,9 @@ flowchart TB;
 > future releases. By gathering continuous feedback, teams can improve their
 > processes and incorporate customer feedback to improve the next release.
 
-![Slack](figures/slack.png){width=50%}
-![Microsoft Teams](figures/microsoft_teams.png){width=50%}
-![PagerDuty](figures/pager_duty.png){width=80%}
+![Slack](figures/slack.png){width=35%}
+![Microsoft Teams](figures/microsoft_teams.png){width=35%}
+![PagerDuty](figures/pager_duty.png){width=35%}
 
 :::
 
