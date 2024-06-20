@@ -2,7 +2,8 @@
 title: "Renovate: Automating Dependency Management"
 author: Patrick J. Roddy
 date: 2023-11-14
-format: revealjs
+format:
+  revealjs
 ---
 
 # Introduction
@@ -53,9 +54,8 @@ format: revealjs
 ## Why Use Renovate?
 
 - Get replacement PRs to migrate from a deprecated dependency to the community
-  suggested replacement, works with most managers, see
-  [issue 14149](https://github.com/renovatebot/renovate/issues/14149) for
-  exceptions
+  suggested replacement, works with most managers, see [issue
+  14149](https://github.com/renovatebot/renovate/issues/14149) for exceptions
 - Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or
   used via the Mend Renovate App
 
@@ -121,13 +121,9 @@ format: revealjs
 }
 ```
 
-<!-- prettier-ignore -->
 ::: footer
-
 See in action:
 <https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
-
-<!-- prettier-ignore -->
 :::
 
 ## Config is Reusable!
@@ -149,9 +145,10 @@ See in action:
 }
 ```
 
-<!-- prettier-ignore -->
-::: footer See in action:
-<https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5> :::
+::: footer
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>
+:::
 
 ## Automerging
 
@@ -161,8 +158,9 @@ setting is required
 
 ![](figures/automerge.png)
 
-::: {.fragment .fade-left} It is **highly recommended** to ensure you have tests
-that will operate on the Renovate branches.
+::: {.fragment .fade-left}
+It is **highly recommended** to ensure you have tests that will operate on the
+Renovate branches.
 
 ```yaml
 on:
@@ -172,28 +170,41 @@ on:
       - "renovate/**"
   pull_request:
 ```
-
 :::
 
 ## Rulesets - Status Checks
 
-:::{layout-ncol=2} ![](figures/status_checks_1.png)
+:::{layout-ncol=2}
+![](figures/status_checks_1.png)
 
-::: {.fragment .fade-left} ![](figures/status_checks_2.png) ::: :::
+::: {.fragment .fade-left}
+![](figures/status_checks_2.png)
+:::
+:::
 
 ## Rulesets - Pull Requests
 
-:::{layout-ncol=2} ![](figures/pull_requests_1.png)
+:::{layout-ncol=2}
+![](figures/pull_requests_1.png)
 
-::: {.fragment .fade-left} ![](figures/pull_requests_2.png) ::: :::
+::: {.fragment .fade-left}
+![](figures/pull_requests_2.png)
+:::
+:::
 
 ## Monitoring
 
-:::{layout-ncol=2} ![](figures/logging_1.png)
+:::{layout-ncol=2}
+![](figures/logging_1.png)
 
-::: {.fragment .fade-left} ![](figures/logging_2.png) ::: :::
+::: {.fragment .fade-left}
+![](figures/logging_2.png)
+:::
+:::
 
-::: footer See in action: <https://developer.mend.io/github/paddyroddy/.github>
+::: footer
+See in action:
+<https://developer.mend.io/github/paddyroddy/.github>
 :::
 
 # Conclusions
