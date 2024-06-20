@@ -102,14 +102,14 @@
     "href": "2023-11-14-arc-renovate/index.html#rulesets---pull-requests",
     "title": "Renovate: Automating Dependency Management",
     "section": "Rulesets - Pull Requests",
-    "text": "Rulesets - Pull Requests"
+    "text": "Rulesets - Pull Requests\n:::{layout-ncol=2}\n\n\n :::"
   },
   {
     "objectID": "2023-11-14-arc-renovate/index.html#monitoring",
     "href": "2023-11-14-arc-renovate/index.html#monitoring",
     "title": "Renovate: Automating Dependency Management",
     "section": "Monitoring",
-    "text": "Monitoring\n\n\n\n\n\n\n\n\n\n\n\nSee in action: https://developer.mend.io/github/paddyroddy/.github"
+    "text": "Monitoring\n:::{layout-ncol=2}\n\n\n :::\n\n\nSee in action: https://developer.mend.io/github/paddyroddy/.github"
   },
   {
     "objectID": "2023-11-14-arc-renovate/index.html#summary",
