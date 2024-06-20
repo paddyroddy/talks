@@ -194,3 +194,12 @@ flowchart TB;
 # Conclusions
 
 ## Summary
+
+- Portmanteau of "development" and "operations"
+- Many different definitions out there
+- New subgroup = new opportunities
+-
+
+##
+
+![](figures/meme.jpg)
