@@ -6,9 +6,32 @@ format:
   revealjs
 ---
 
+# Introduction
+
+## [What is DevOps?](https://en.wikipedia.org/wiki/DevOps)
+
+> DevOps is a methodology in the software development and IT industry. Used as a
+set of practices and tools, DevOps integrates and automates the work of software
+development (Dev) and IT operations (Ops) as a means for improving and
+shortening the systems development life cycle. DevOps is complementary to agile
+software development; several DevOps aspects came from the agile way of working.
+Automation is an important part of DevOps. Software programmers and architects
+should use "fitness functions" to keep their software in check.
+
+## [What is DevOps?](https://en.wikipedia.org/wiki/DevOps)
+
+> ... a portmanteau ... academics and practitioners have not developed a
+universal definition for the term "DevOps". Most often, DevOps is characterised
+by key principles: `shared ownership`, `workflow automation`, and `rapid
+feedback`. ... suggested defining DevOps as "a set of practices intended to
+reduce the time between committing a change to a system and the change being
+placed into normal production, while ensuring high quality". However, the term
+is used in multiple contexts. At its most successful, DevOps is a combination of
+specific practices, culture change, and tools.
+
 # ARC
 
-## Subgroups
+## Current Subgroups
 
 ```{mermaid}
 flowchart TB;
@@ -43,3 +66,5 @@ flowchart TB;
                   JavaScript
                 "];
 ```
+
+## A New Subgroup?
