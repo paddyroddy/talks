@@ -2,8 +2,7 @@
 title: "Renovate: Automating Dependency Management"
 author: Patrick J. Roddy
 date: 2023-11-14
-format:
-  revealjs
+format: revealjs
 ---
 
 # Introduction
@@ -54,8 +53,9 @@ format:
 ## Why Use Renovate?
 
 - Get replacement PRs to migrate from a deprecated dependency to the community
-  suggested replacement, works with most managers, see [issue
-  14149](https://github.com/renovatebot/renovate/issues/14149) for exceptions
+  suggested replacement, works with most managers, see
+  [issue 14149](https://github.com/renovatebot/renovate/issues/14149) for
+  exceptions
 - Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or
   used via the Mend Renovate App
 
@@ -200,8 +200,7 @@ on:
 
 ::: {.fragment .fade-left}
 
-![](figures/pull_requests_2.png)
-:::
+![](figures/pull_requests_2.png) :::
 
 :::
 
@@ -213,15 +212,13 @@ on:
 
 ::: {.fragment .fade-left}
 
-![](figures/logging_2.png)
-:::
+![](figures/logging_2.png) :::
 
 :::
 
 ::: footer
 
-See in action:
-<https://developer.mend.io/github/paddyroddy/.github>
+See in action: <https://developer.mend.io/github/paddyroddy/.github>
 
 :::
 
