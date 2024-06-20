@@ -11,7 +11,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     slide-number: true
-    theme: night
+    theme: dark
     transition: fade
 
 website:
