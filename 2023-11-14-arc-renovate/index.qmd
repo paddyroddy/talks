@@ -122,8 +122,10 @@ format:
 ```
 
 ::: footer
+
 See in action:
 <https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
+
 :::
 
 ## Config is Reusable!
@@ -146,8 +148,10 @@ See in action:
 ```
 
 ::: footer
+
 See in action:
 <https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5>
+
 :::
 
 ## Automerging
@@ -159,6 +163,7 @@ setting is required
 ![](figures/automerge.png)
 
 ::: {.fragment .fade-left}
+
 It is **highly recommended** to ensure you have tests that will operate on the
 Renovate branches.
 
@@ -170,41 +175,54 @@ on:
       - "renovate/**"
   pull_request:
 ```
+
 :::
 
 ## Rulesets - Status Checks
 
 :::{layout-ncol=2}
+
 ![](figures/status_checks_1.png)
 
 ::: {.fragment .fade-left}
+
 ![](figures/status_checks_2.png)
+
 :::
+
 :::
 
 ## Rulesets - Pull Requests
 
 :::{layout-ncol=2}
+
 ![](figures/pull_requests_1.png)
 
 ::: {.fragment .fade-left}
+
 ![](figures/pull_requests_2.png)
 :::
+
 :::
 
 ## Monitoring
 
 :::{layout-ncol=2}
+
 ![](figures/logging_1.png)
 
 ::: {.fragment .fade-left}
+
 ![](figures/logging_2.png)
 :::
+
 :::
 
 ::: footer
+
 See in action:
 <https://developer.mend.io/github/paddyroddy/.github>
+
 :::
 
 # Conclusions

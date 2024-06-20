@@ -11,6 +11,7 @@ format:
 ## JOSS
 
 :::{layout-ncol=2}
+
 [![](figures/joss_logo.png)](https://joss.theoj.org)
 
 - JOSS is a **developer friendly**, open access
@@ -18,6 +19,7 @@ journal for research software packages.
 
 - I previously gave a talk on JOSS, the recording of which can be [accessed
 here](https://liveuclac.sharepoint.com/:v:/r/sites/RITSstaff/Shared%20Documents/Collaborations/Recordings/ARC%20Collaborations%20Group%20Meeting-20230606_140109-Meeting%20Recording.mp4?csf=1&web=1&e=qhKamX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7InN0YXJ0VGltZUluU2Vjb25kcyI6MTk4OC4wOH19).
+
 :::
 
 ## What Exactly Do You Mean by 'Journal'?
@@ -60,6 +62,7 @@ post](https://www.arfon.org/announcing-the-journal-of-open-source-software).
 ## pyOpenSci
 
 :::{layout="[30,70]"}
+
 ![](figures/pyopensci_logo.png)
 
 - We support the scientific Python tools that drive open science through peer
@@ -68,6 +71,7 @@ review, training and community building.
 - We build diverse community that supports free and open Python tools for
 processing scientific data. We also build technical skills needed to contribute
 to open source and that support open science. Join our global community.
+
 :::
 
 ## Pre-Submission Inquiry
@@ -179,6 +183,7 @@ guidelines](https://www.pyopensci.org/python-package-guide).
 ## Package Acception
 
 :::{layout-ncol=2}
+
 [![](figures/pyopensci_packages.png)](https://www.pyopensci.org/python-packages.html)
 
 If the package has an **obvious research application** according to JOSS's
@@ -187,6 +192,7 @@ requirements](http://joss.theoj.org/about#submission_requirements), then one may
 submit their package to JOSS through pyOpenSci.
 
 [![](https://img.shields.io/badge/PyOpenSci-Peer%20Reviewed-success.svg)](https://github.com/pyOpenSci/software-submission/issues/149)
+
 :::
 
 ## Blog Post (Optional)
