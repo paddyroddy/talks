@@ -295,6 +295,7 @@ flowchart TB;
 - Training opportunities out there
 - Need to identify skill gaps/requirements
 - Join the `#subgroup-devops` Slack channel
+- Talk at TI!
 
 ## {data-menu-title="Fin"}
 
