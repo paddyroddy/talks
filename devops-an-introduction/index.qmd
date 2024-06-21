@@ -244,7 +244,9 @@ flowchart TB;
 - Many different definitions out there
 - Everyone is doing some part of the DevOps lifecycle
 - New subgroup = new opportunities
--
+- Training opportunities out there
+- Need to identify skill gaps/requirements
+- Join the `#subgroup-devops` Slack channel
 
 ## {data-menu-title="Fin"}
 
