@@ -7,11 +7,15 @@ format:
     theme: darkly
   revealjs:
     footer: "{{< meta title >}}: <https://paddyroddy.github.io/talks>"
+    hash-type: number
+    history: false
     incremental: true
     link-external-icon: true
     link-external-newwindow: true
+    mermaid:
+      theme: dark
     slide-number: true
-    theme: night
+    theme: dark
     transition: fade
 
 website:

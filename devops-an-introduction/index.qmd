@@ -1,0 +1,253 @@
+---
+author: Patrick J. Roddy
+date: 2024-07-02
+format: revealjs
+subtitle: ARC Collaborations Hour
+title: "DevOps: An Introduction"
+---
+
+# ARC
+
+## Current Subgroups
+
+```{mermaid}
+flowchart TB;
+    Collaborations --> _["Data Science"] & DevOps & Healthcare & HPC & MIRSG & WebDev;
+    _["Data Science"] -.-> data_science_responsibilities["
+                             AI
+                             Machine learning
+                             Signal processing
+                             Statistics
+                           "];
+    DevOps -.-> ?;
+    Healthcare -.-> healthcare_responsibilities["
+                      EMAP
+                      Hospital projects
+                    "];
+    HPC -.-> hpc_responsibilities["
+               C++
+               FPGAs
+               Fortran
+               GPUs
+               MPI
+               OpenMP
+             "];
+    MIRSG -.-> mirsg_responsibilities["
+                 Medical imaging
+                 OMERO
+                 XNAT
+               "];
+    WebDev -.-> webdev_responsibilities["
+                  CSS
+                  HTML
+                  JavaScript
+                "];
+```
+
+## A New Subgroup?
+
+- What skills are there currently in the group?
+- Monthly HPC Hour-like meeting?
+- `Area: DevOps` label in `research-software-opportunities`
+- Get the ball rolling (again) at TI (I won't be there 😞)
+- What training/skils do we want as a group?
+- What overlap does DevOps have with the other subgroups?
+- How can we collaborate with ISD to share training opportunities?
+
+## ISD Training
+
+![](figures/isd.png)
+
+# DevOps
+
+## What is DevOps?
+
+[Wikipedia](https://en.wikipedia.org/wiki/DevOps):
+
+> DevOps is a methodology in the software development and IT industry. Used as a
+> set of practices and tools, DevOps integrates and automates the work of
+> software development (Dev) and IT operations (Ops) as a means for improving
+> and shortening the systems development life cycle. DevOps is complementary to
+> agile software development; several DevOps aspects came from the agile way of
+> working. Automation is an important part of DevOps. Software programmers and
+> architects should use "fitness functions" to keep their software in check.
+
+## What is DevOps?
+
+[Wikipedia](https://en.wikipedia.org/wiki/DevOps):
+
+> ... academics and practitioners have not developed a universal definition for
+> the term "DevOps". Most often, DevOps is characterised by key principles:
+> `shared ownership`, `workflow automation`, and `rapid feedback`. ... "a set of
+> practices intended to reduce the time between committing a change to a system
+> and the change being placed into normal production, while ensuring high
+> quality". ... At its most successful, DevOps is a combination of specific
+> practices, culture change, and tools.
+
+## DevOps Lifecycle
+
+![Atlassian](figures/lifecycle.png)
+
+## Discover
+
+:::{layout="[65,35]"}
+
+> Building software is a team sport. In preparation for the upcoming sprint,
+> teams must workshop to explore, organize, and prioritize ideas. Ideas must
+> align to strategic goals and deliver customer impact. Agile can help guide
+> DevOps teams.
+
+::: {.fragment .fade-left}
+
+![Jira](figures/jira.png){width=35%} ![Trello](figures/trello.png){width=100%}
+![Confluence](figures/confluence.png){width=35%}
+
+:::
+
+:::
+
+## Plan
+
+:::{layout="[65,35]"}
+
+> DevOps teams should adopt agile practices to improve speed and quality. Agile
+> is an iterative approach to project management and software development that
+> helps teams break work into smaller pieces to deliver incremental value.
+
+::: {.fragment .fade-left}
+
+![Azure Boards](figures/azure_boards.png){width=35%}
+![Asana](figures/asana.png){width=100%}
+![Monday.com](figures/monday.png){width=100%}
+
+:::
+
+:::
+
+## Build
+
+:::{layout="[65,35]"}
+
+> Git is a free and open source version control system. It offers excellent
+> support for branching, merging, and rewriting repository history, which has
+> led to many innovative and powerful workflows and tools for the development
+> build process.
+
+::: {.fragment .fade-left}
+
+![Jenkins](figures/jenkins.png){width=35%}
+![GitLab CI](figures/gitlab_ci.png){width=35%}
+![GitHub Actions](figures/github_actions.png){width=35%}
+
+:::
+
+:::
+
+## Test
+
+:::{layout="[65,35]"}
+
+> Continuous integration (CI) allows multiple developers to contribute to a
+> single shared repository. When code changes are merged, automated tests are
+> run to ensure correctness before integration. Merging and testing code often
+> help development teams gain reassurance in the quality and predictability of
+> code once deployed.
+
+::: {.fragment .fade-left}
+
+![Selenium](figures/selenium.png){width=35%}
+![JUnit](figures/junit.png){width=35%}
+![Postman](figures/postman.png){width=35%}
+
+:::
+
+:::
+
+## Deploy
+
+:::{layout="[65,35]"}
+
+> Continuous deployment (CD) allows teams to release features frequently into
+> production in an automated fashion. Teams also have the option to deploy with
+> feature flags, delivering new code to users steadily and methodically rather
+> than all at once. This approach improves velocity, productivity, and
+> sustainability of software development teams.
+
+::: {.fragment .fade-left}
+
+![Ansible](figures/ansible.png){width=35%}
+![Terraform](figures/terraform.png){width=35%}
+![Kubernetes](figures/kubernetes.png){width=35%}
+
+:::
+
+:::
+
+## Operate
+
+:::{layout="[65,35]"}
+
+> Manage the end-to-end delivery of IT services to customers. This includes the
+> practices involved in design, implementation, configuration, deployment, and
+> maintenance of all IT infrastructure that supports an organization’s services.
+
+::: {.fragment .fade-left}
+
+![Docker](figures/docker.png){width=35%}
+![Puppet](figures/puppet.png){width=35%} ![Chef](figures/chef.png){width=35%}
+
+:::
+
+:::
+
+## Observe
+
+:::{layout="[65,35]"}
+
+> Quickly identify and resolve issues that impact product uptime, speed, and
+> functionality. Automatically notify your team of changes, high-risk actions,
+> or failures, so you can keep services on.
+
+::: {.fragment .fade-left}
+
+![Prometheus](figures/prometheus.png){width=35%}
+![Grafana](figures/grafana.png){width=35%}
+![New Relic](figures/new_relic.png){width=35%}
+
+:::
+
+:::
+
+## Continuous Feedback
+
+:::{layout="[65,35]"}
+
+> DevOps teams should evaluate each release and generate reports to improve
+> future releases. By gathering continuous feedback, teams can improve their
+> processes and incorporate customer feedback to improve the next release.
+
+::: {.fragment .fade-left}
+
+![Slack](figures/slack.png){width=35%}
+![Microsoft Teams](figures/microsoft_teams.png){width=35%}
+![PagerDuty](figures/pager_duty.png){width=35%}
+
+:::
+
+:::
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Portmanteau of "development" and "operations"
+- Many different definitions out there
+- Everyone is doing some part of the DevOps lifecycle
+- New subgroup = new opportunities
+- Training opportunities out there
+- Need to identify skill gaps/requirements
+- Join the `#subgroup-devops` Slack channel
+
+## {data-menu-title="Fin"}
+
+![](figures/meme.jpg)
