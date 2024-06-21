@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/2023-11-14-arc-renovate/index.html</loc>
-    <lastmod>2024-06-20T19:39:18.452Z</lastmod>
+    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
+    <lastmod>2024-06-21T10:54:46.668Z</lastmod>
   </url>
   <url>
-    <loc>https://paddyroddy.github.io/talks/2024-06-25-arc-pyopensci/index.html</loc>
-    <lastmod>2024-06-20T19:39:18.460Z</lastmod>
+    <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
+    <lastmod>2024-06-21T10:54:46.656Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2024-06-20T19:39:18.460Z</lastmod>
+    <lastmod>2024-06-21T10:54:46.656Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
+    <lastmod>2024-06-21T10:54:46.664Z</lastmod>
   </url>
 </urlset>

@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.4.555">
 
   <meta name="author" content="Patrick J. Roddy">
-  <meta name="dcterms.date" content="2024-06-25">
-  <title>pyOpenSci: My Experience</title>
+  <meta name="dcterms.date" content="2024-07-02">
+  <title>DevOps: An Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -331,13 +331,18 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="dark">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">pyOpenSci: My Experience</h1>
+<section class="quarto-title-block center">
+  <h1 class="title">DevOps: An Introduction</h1>
+  <p class="subtitle">ARC Collaborations Hour</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -347,229 +352,244 @@ Patrick J. Roddy
 </div>
 </div>
 
-  <p class="date">2024-06-25</p>
+  <p class="date">2024-07-02</p>
 </section>
 <section>
-<section id="the-journal-of-open-source-software-joss" class="title-slide slide level1 center">
-<h1>The Journal of Open Source Software (JOSS)</h1>
+<section class="title-slide slide level1 center">
+<h1>ARC</h1>
 
 </section>
-<section id="joss" class="slide level2">
-<h2>JOSS</h2>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="https://joss.theoj.org"><img data-src="figures/joss_logo.png"></a></p>
+<section class="slide level2">
+<h2>Current Subgroups</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB;
+    Collaborations --&gt; _["Data Science"] &amp; DevOps &amp; Healthcare &amp; HPC &amp; MIRSG &amp; WebDev;
+    _["Data Science"] -.-&gt; data_science_responsibilities["
+                             AI
+                             Machine learning
+                             Signal processing
+                             Statistics
+                           "];
+    DevOps -.-&gt; ?;
+    Healthcare -.-&gt; healthcare_responsibilities["
+                      EMAP
+                      Hospital projects
+                    "];
+    HPC -.-&gt; hpc_responsibilities["
+               C++
+               FPGAs
+               Fortran
+               GPUs
+               MPI
+               OpenMP
+             "];
+    MIRSG -.-&gt; mirsg_responsibilities["
+                 Medical imaging
+                 OMERO
+                 XNAT
+               "];
+    WebDev -.-&gt; webdev_responsibilities["
+                  CSS
+                  HTML
+                  JavaScript
+                "];
+</pre>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li class="fragment"><p>JOSS is a <strong>developer friendly</strong>, open access journal for research software packages.</p></li>
-<li class="fragment"><p>I previously gave a talk on JOSS, the recording of which can be <a href="https://liveuclac.sharepoint.com/:v:/r/sites/RITSstaff/Shared%20Documents/Collaborations/Recordings/ARC%20Collaborations%20Group%20Meeting-20230606_140109-Meeting%20Recording.mp4?csf=1&amp;web=1&amp;e=qhKamX&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7InN0YXJ0VGltZUluU2Vjb25kcyI6MTk4OC4wOH19">accessed here</a>.</p></li>
-</ul>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 </section>
-<section id="what-exactly-do-you-mean-by-journal" class="slide level2">
-<h2>What Exactly Do You Mean by ‘Journal’?</h2>
+<section class="slide level2">
+<h2>A New Subgroup?</h2>
 <ul>
-<li class="fragment">The Journal of Open Source Software (JOSS) is an academic journal (ISSN 2475-9066) with a formal peer review process that is designed to improve the quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI is minted and we list your paper on the JOSS website.</li>
+<li class="fragment">What skills are there currently in the group?</li>
+<li class="fragment">Monthly HPC Hour-like meeting?</li>
+<li class="fragment"><code>Area: DevOps</code> label in <code>research-software-opportunities</code></li>
+<li class="fragment">Get the ball rolling (again) at TI (I won’t be there 😞)</li>
+<li class="fragment">What training/skils do we want as a group?</li>
+<li class="fragment">What overlap does DevOps have with the other subgroups?</li>
+<li class="fragment">How can we collaborate with ISD to share training opportunities?</li>
 </ul>
 </section>
-<section id="dont-we-have-enough-journals-already" class="slide level2">
-<h2>Don’t We Have Enough Journals Already?</h2>
-<ul>
-<li class="fragment"><p>Perhaps, and in a perfect world we’d rather papers about software weren’t necessary but we recognize that for most researchers, papers and not software are the currency of academic research and that citations are required for a good career.</p></li>
-<li class="fragment"><p>We built this journal because we believe that after you’ve done the hard work of writing great software, it shouldn’t take weeks and months to write a paper about your work.</p></li>
-</ul>
-</section>
-<section id="you-said-developer-friendly-what-do-you-mean" class="slide level2">
-<h2>You Said Developer Friendly, What Do You Mean?</h2>
-<ul>
-<li class="fragment"><p>We have a simple submission workflow and <a href="https://joss.readthedocs.io/en/latest/submitting.html">extensive documentation</a> to help you prepare your submission. If your software is already well documented then paper preparation should take no more than an hour.</p></li>
-<li class="fragment"><p>You can read more about our motivations to build JOSS in our <a href="https://www.arfon.org/announcing-the-journal-of-open-source-software">announcement blog post</a>.</p></li>
-</ul>
-</section>
-<section id="my-submission" class="slide level2">
-<h2>My Submission</h2>
-<p><a href="https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2"><img data-src="https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2/status.svg"></a></p>
-<p><a href="https://joss.theoj.org/papers/10.21105/joss.05221"><img data-src="figures/joss_review.png"></a></p>
-</section></section>
+<section class="slide level2">
+<h2>ISD Training</h2>
+
+<img data-src="figures/isd.png" class="r-stretch"></section></section>
 <section>
-<section id="pyopensci" class="title-slide slide level1 center">
-<h1>pyOpenSci</h1>
+<section class="title-slide slide level1 center">
+<h1>DevOps</h1>
 
 </section>
-<section id="pyopensci-1" class="slide level2">
-<h2>pyOpenSci</h2>
-<div class="quarto-layout-panel" data-layout="[30,70]">
+<section class="slide level2">
+<h2>What is DevOps?</h2>
+<p><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia</a>:</p>
+<blockquote>
+<p>DevOps is a methodology in the software development and IT industry. Used as a set of practices and tools, DevOps integrates and automates the work of software development (Dev) and IT operations (Ops) as a means for improving and shortening the systems development life cycle. DevOps is complementary to agile software development; several DevOps aspects came from the agile way of working. Automation is an important part of DevOps. Software programmers and architects should use “fitness functions” to keep their software in check.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+<h2>What is DevOps?</h2>
+<p><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia</a>:</p>
+<blockquote>
+<p>… academics and practitioners have not developed a universal definition for the term “DevOps”. Most often, DevOps is characterised by key principles: <code>shared ownership</code>, <code>workflow automation</code>, and <code>rapid feedback</code>. … “a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality”. … At its most successful, DevOps is a combination of specific practices, culture change, and tools.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+<h2>DevOps Lifecycle</h2>
+
+<img data-src="figures/lifecycle.png" class="r-stretch quarto-figure-center"><p class="caption">Atlassian</p></section>
+<section class="slide level2">
+<h2>Discover</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: center;">
-<p><img data-src="figures/pyopensci_logo.png"></p>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Building software is a team sport. In preparation for the upcoming sprint, teams must workshop to explore, organize, and prioritize ideas. Ideas must align to strategic goals and deliver customer impact. Agile can help guide DevOps teams.</p>
+</blockquote>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<ul>
-<li class="fragment"><p>We support the scientific Python tools that drive open science through peer review, training and community building.</p></li>
-<li class="fragment"><p>We build diverse community that supports free and open Python tools for processing scientific data. We also build technical skills needed to contribute to open source and that support open science. Join our global community.</p></li>
-</ul>
-</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/jira.png" style="width:35.0%" alt="Jira"> <img data-src="figures/trello.png" style="width:100.0%" alt="Trello"> <img data-src="figures/confluence.png" style="width:35.0%" alt="Confluence"></p>
 </div>
 </div>
+</div>
 </section>
-<section id="pre-submission-inquiry" class="slide level2">
-<h2>Pre-Submission Inquiry</h2>
-<p><a href="https://github.com/pyOpenSci/software-submission/issues/148"><img data-src="figures/pyopensci_presubmission.png" style="width:90.0%"></a></p>
-</section>
-<section id="review-process" class="slide level2">
-<h2>Review Process</h2>
-<p>Documentation:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox"><strong>A statement of need</strong> clearly stating problems the software is designed to solve and its target audience in README.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Installation instructions:</strong> for the development version of the package and any non-standard dependencies in README.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Vignette(s)</strong> demonstrating major functionality that runs successfully locally.</label></li>
-</ul>
-</section>
-<section id="review-process-1" class="slide level2">
-<h2>Review Process</h2>
-<p>Documentation:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox"><strong>Function Documentation:</strong> for all user-facing functions.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Examples</strong> for all user-facing functions.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Community guidelines</strong> including contribution guidelines in the README or CONTRIBUTING.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Metadata</strong> including author(s), author e-mail(s), a url, and any other relevant metadata e.g., in a <code>pyproject.toml</code> file or elsewhere.</label></li>
-</ul>
-</section>
-<section id="review-process-2" class="slide level2">
-<h2>Review Process</h2>
-<p><code>README.md</code>:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">The package name</label></li>
-<li class="fragment"><label><input type="checkbox">Badges for:</label>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Continuous integration and test coverage,</label></li>
-<li class="fragment"><label><input type="checkbox">Docs building (if you have a documentation website),</label></li>
-<li class="fragment"><label><input type="checkbox">A <a href="https://www.repostatus.org/">repostatus.org</a> badge,</label></li>
-<li class="fragment"><label><input type="checkbox">Python versions supported,</label></li>
-<li class="fragment"><label><input type="checkbox">Current package version (on PyPI / Conda).</label></li>
-</ul></li>
-</ul>
-</section>
-<section id="review-process-3" class="slide level2">
-<h2>Review Process</h2>
-<p><code>README.md</code>:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Short description of package goals.</label></li>
-<li class="fragment"><label><input type="checkbox">Package installation instructions</label></li>
-<li class="fragment"><label><input type="checkbox">Any additional setup required to use the package (authentication tokens, etc.)</label></li>
-</ul>
-</section>
-<section id="review-process-4" class="slide level2">
-<h2>Review Process</h2>
-<p><code>README.md</code>:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Descriptive links to all vignettes. If the package is small, there may only be a need for one vignette which could be placed in the README.md file.</label>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Brief demonstration of package usage (as it makes sense - links to vignettes could also suffice here if package description is clear)</label></li>
-</ul></li>
-<li class="fragment"><label><input type="checkbox">Link to your documentation website.</label></li>
-</ul>
-</section>
-<section id="review-process-5" class="slide level2">
-<h2>Review Process</h2>
-<p><code>README.md</code>:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">If applicable, how the package compares to other similar packages and/or how it relates to other packages in the scientific ecosystem.</label></li>
-<li class="fragment"><label><input type="checkbox">Citation information</label></li>
-</ul>
-</section>
-<section id="review-process-6" class="slide level2">
-<h2>Review Process</h2>
-<p>Usability:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Package documentation is clear and easy to find and use.</label></li>
-<li class="fragment"><label><input type="checkbox">The need for the package is clear</label></li>
-<li class="fragment"><label><input type="checkbox">All functions have documentation and associated examples for use</label></li>
-<li class="fragment"><label><input type="checkbox">The package is easy to install</label></li>
-</ul>
-</section>
-<section id="review-process-7" class="slide level2">
-<h2>Review Process</h2>
-<p>Functionality:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox"><strong>Installation:</strong> Installation succeeds as documented.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Functionality:</strong> Any functional claims of the software been confirmed.</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Performance:</strong> Any performance claims of the software been confirmed.</label></li>
-</ul>
-</section>
-<section id="review-process-8" class="slide level2">
-<h2>Review Process</h2>
-<p>Functionality:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox"><strong>Automated tests:</strong></label>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">All tests pass on the reviewer’s local machine for the package version submitted by the author. Ideally this should be a tagged version making it easy for reviewers to install.</label></li>
-<li class="fragment"><label><input type="checkbox">Tests cover essential functions of the package and a reasonable range of inputs and conditions.</label></li>
-</ul></li>
-</ul>
-</section>
-<section id="review-process-9" class="slide level2">
-<h2>Review Process</h2>
-<p>Functionality:</p>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox"><strong>Continuous Integration:</strong> Has continuous integration setup (We suggest using Github actions but any CI platform is acceptable for review)</label></li>
-<li class="fragment"><label><input type="checkbox"><strong>Packaging guidelines</strong>: The package conforms to the pyOpenSci <a href="https://www.pyopensci.org/python-package-guide">packaging guidelines</a>.</label>
-<ul class="task-list">
-<li class="fragment"><label><input type="checkbox">Package supports modern versions of Python and not <a href="https://endoflife.date/python">End of life versions</a>.</label></li>
-<li class="fragment"><label><input type="checkbox">Code format is standard throughout package and follows PEP 8 guidelines (CI tests for linting pass)</label></li>
-</ul></li>
-</ul>
-</section>
-<section id="package-acception" class="slide level2">
-<h2>Package Acception</h2>
-<div class="quarto-layout-panel" data-layout-ncol="2">
+<section class="slide level2">
+<h2>Plan</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="https://www.pyopensci.org/python-packages.html"><img data-src="figures/pyopensci_packages.png"></a></p>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>DevOps teams should adopt agile practices to improve speed and quality. Agile is an iterative approach to project management and software development that helps teams break work into smaller pieces to deliver incremental value.</p>
+</blockquote>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>If the package has an <strong>obvious research application</strong> according to JOSS’s definition in their <a href="http://joss.theoj.org/about#submission_requirements">submission requirements</a>, then one may submit their package to JOSS through pyOpenSci.</p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="https://github.com/pyOpenSci/software-submission/issues/149"><img data-src="https://img.shields.io/badge/PyOpenSci-Peer%20Reviewed-success.svg"></a></p>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/azure_boards.png" style="width:35.0%" alt="Azure Boards"> <img data-src="figures/asana.png" style="width:100.0%" alt="Asana"> <img data-src="figures/monday.png" style="width:100.0%" alt="Monday.com"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="blog-post-optional" class="slide level2">
-<h2>Blog Post (Optional)</h2>
-<p><a href="https://www.pyopensci.org/blog/sleplet-slepian-wavelets"><img data-src="figures/pyopensci_blog.png" style="width:80.0%"></a></p>
+<section class="slide level2">
+<h2>Build</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Git is a free and open source version control system. It offers excellent support for branching, merging, and rewriting repository history, which has led to many innovative and powerful workflows and tools for the development build process.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/jenkins.png" style="width:35.0%" alt="Jenkins"> <img data-src="figures/gitlab_ci.png" style="width:35.0%" alt="GitLab CI"> <img data-src="figures/github_actions.png" style="width:35.0%" alt="GitHub Actions"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Test</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Continuous integration (CI) allows multiple developers to contribute to a single shared repository. When code changes are merged, automated tests are run to ensure correctness before integration. Merging and testing code often help development teams gain reassurance in the quality and predictability of code once deployed.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/selenium.png" style="width:35.0%" alt="Selenium"> <img data-src="figures/junit.png" style="width:35.0%" alt="JUnit"> <img data-src="figures/postman.png" style="width:35.0%" alt="Postman"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Deploy</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Continuous deployment (CD) allows teams to release features frequently into production in an automated fashion. Teams also have the option to deploy with feature flags, delivering new code to users steadily and methodically rather than all at once. This approach improves velocity, productivity, and sustainability of software development teams.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/ansible.png" style="width:35.0%" alt="Ansible"> <img data-src="figures/terraform.png" style="width:35.0%" alt="Terraform"> <img data-src="figures/kubernetes.png" style="width:35.0%" alt="Kubernetes"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Operate</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Manage the end-to-end delivery of IT services to customers. This includes the practices involved in design, implementation, configuration, deployment, and maintenance of all IT infrastructure that supports an organization’s services.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/docker.png" style="width:35.0%" alt="Docker"> <img data-src="figures/puppet.png" style="width:35.0%" alt="Puppet"> <img data-src="figures/chef.png" style="width:35.0%" alt="Chef"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Observe</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>Quickly identify and resolve issues that impact product uptime, speed, and functionality. Automatically notify your team of changes, high-risk actions, or failures, so you can keep services on.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/prometheus.png" style="width:35.0%" alt="Prometheus"> <img data-src="figures/grafana.png" style="width:35.0%" alt="Grafana"> <img data-src="figures/new_relic.png" style="width:35.0%" alt="New Relic"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Continuous Feedback</h2>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<blockquote>
+<p>DevOps teams should evaluate each release and generate reports to improve future releases. By gathering continuous feedback, teams can improve their processes and incorporate customer feedback to improve the next release.</p>
+</blockquote>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><img data-src="figures/slack.png" style="width:35.0%" alt="Slack"> <img data-src="figures/microsoft_teams.png" style="width:35.0%" alt="Microsoft Teams"> <img data-src="figures/pager_duty.png" style="width:35.0%" alt="PagerDuty"></p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="conclusions" class="title-slide slide level1 center">
+<section class="title-slide slide level1 center">
 <h1>Conclusions</h1>
 
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+<section class="slide level2" data-menu-title="Summary">
+<h2></h2>
 <ul>
-<li class="fragment">pyOpenSci still in its infancy (32 packages as of 2024-06-12)</li>
-<li class="fragment">Easily integrates with JOSS</li>
-<li class="fragment">Exposure for your package (potentionally more so in the future)</li>
-<li class="fragment"><a href="https://ropensci.org/">rOpenSci</a> for Python, see <a href="https://ropensci.org/blog/2013/05/16/pyopensci">blog launch</a></li>
-<li class="fragment">Always looking for <a href="https://www.pyopensci.org/about-peer-review/index.html">package reviewers</a></li>
+<li class="fragment">Portmanteau of “development” and “operations”</li>
+<li class="fragment">Many different definitions out there</li>
+<li class="fragment">Everyone is doing some part of the DevOps lifecycle</li>
+<li class="fragment">New subgroup = new opportunities</li>
+<li class="fragment">Training opportunities out there</li>
+<li class="fragment">Need to identify skill gaps/requirements</li>
+<li class="fragment">Join the <code>#subgroup-devops</code> Slack channel</li>
 </ul>
-</section></section>
-<section id="talk-on-quarto-next" class="title-slide slide level1 center">
-<h1>Talk on <a href="https://quarto.org">quarto</a> next?</h1>
-
-<div class="quarto-auto-generated-content">
-<div class="footer footer-default">
-<p>pyOpenSci: My Experience: <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
-</div>
-</div>
 </section>
+<section class="slide level2" data-menu-title="Fin">
+<h2></h2>
+
+
+<img data-src="figures/meme.jpg" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p>DevOps: An Introduction: <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+</div>
+</div>
+</section></section>
     </div>
   </div>
 
@@ -637,7 +657,7 @@ Patrick J. Roddy
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: true,
+        history: false,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

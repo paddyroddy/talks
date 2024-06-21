@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-subtitle','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -215,25 +215,45 @@ window.Quarto = {
 <a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
 </th>
 <th>
+Subtitle
+</th>
+<th>
 <a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1718912358452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="556" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1718967286656" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100" data-listing-title-sort="DevOps: An Introduction" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-date">2023-11-14</span>
+<span class="listing-date">2024-07-02</span>
 </td>
 <td>
-<a href="./2023-11-14-arc-renovate/index.html" class="title listing-title">Renovate: Automating Dependency Management</a>
+<span class="listing-subtitle">ARC Collaborations Hour</span>
+</td>
+<td>
+<a href="./devops-an-introduction/index.html" class="title listing-title">DevOps: An Introduction</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1718912358460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="938" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1718967286664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="938" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-06-25</span>
 </td>
 <td>
-<a href="./2024-06-25-arc-pyopensci/index.html" class="title listing-title">pyOpenSci: My Experience</a>
+<span class="listing-subtitle">ARC Collaborations Hour</span>
+</td>
+<td>
+<a href="./pyopensci-my-experience/index.html" class="title listing-title">pyOpenSci: My Experience</a>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1718967286668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="556" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2023-11-14</span>
+</td>
+<td>
+<span class="listing-subtitle">ARC Collaborations Hour</span>
+</td>
+<td>
+<a href="./renovate-automating-dependency-management/index.html" class="title listing-title">Renovate: Automating Dependency Management</a>
 </td>
 </tr>
 </tbody>

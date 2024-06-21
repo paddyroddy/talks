@@ -401,8 +401,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section class="quarto-title-block center">
   <h1 class="title">Renovate: Automating Dependency Management</h1>
+  <p class="subtitle">ARC Collaborations Hour</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -415,36 +416,36 @@ Patrick J. Roddy
   <p class="date">2023-11-14</p>
 </section>
 <section>
-<section id="introduction" class="title-slide slide level1 center">
+<section class="title-slide slide level1 center">
 <h1>Introduction</h1>
 
 </section>
-<section id="dependencies-are-inevitable" class="slide level2">
+<section class="slide level2">
 <h2>Dependencies Are Inevitable</h2>
 
 <img data-src="figures/dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
-<section id="automation-saves-time" class="slide level2">
+<section class="slide level2">
 <h2>Automation Saves Time?</h2>
 
 <img data-src="figures/automation.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:1319</p></section>
-<section id="weve-all-done-this-at-some-point" class="slide level2">
+<section class="slide level2">
 <h2>We’ve All Done This At Some Point</h2>
 
 <img data-src="figures/bump.png" class="r-stretch"></section>
-<section id="what-about-security-updates" class="slide level2">
+<section class="slide level2">
 <h2>What About Security Updates?</h2>
 
 <img data-src="figures/dependabot.png" class="r-stretch"></section>
-<section id="why-should-i-update" class="slide level2">
+<section class="slide level2">
 <h2>Why Should I Update?</h2>
 
 <img data-src="figures/updates.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2224</p></section></section>
 <section>
-<section id="renovate" class="title-slide slide level1 center">
+<section class="title-slide slide level1 center">
 <h1>Renovate</h1>
 
 <img data-src="figures/renovate.jpg" class="r-stretch"></section>
-<section id="why-use-renovate" class="slide level2">
+<section class="slide level2">
 <h2>Why Use Renovate?</h2>
 <ul>
 <li class="fragment">Get automated Pull Requests to update your dependencies
@@ -460,7 +461,7 @@ Patrick J. Roddy
 <li class="fragment">Relevant package files are discovered automatically</li>
 </ul>
 </section>
-<section id="why-use-renovate-1" class="slide level2">
+<section class="slide level2">
 <h2>Why Use Renovate?</h2>
 <ul>
 <li class="fragment">Supports monorepo architectures with workspaces with no extra configuration</li>
@@ -469,14 +470,14 @@ Patrick J. Roddy
 <li class="fragment">Lock files are supported and updated in the same commit, including immediately resolving conflicts whenever PRs are merged</li>
 </ul>
 </section>
-<section id="why-use-renovate-2" class="slide level2">
+<section class="slide level2">
 <h2>Why Use Renovate?</h2>
 <ul>
 <li class="fragment">Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with most managers, see <a href="https://github.com/renovatebot/renovate/issues/14149">issue 14149</a> for exceptions</li>
 <li class="fragment">Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or used via the Mend Renovate App</li>
 </ul>
 </section>
-<section id="open-source-projects" class="slide level2">
+<section class="slide level2">
 <h2>Open Source Projects</h2>
 <ul>
 <li class="fragment"><a href="https://github.com/paddyroddy/talks" class="uri">https://github.com/paddyroddy/talks</a></li>
@@ -489,16 +490,16 @@ Patrick J. Roddy
 </ul>
 </section></section>
 <section>
-<section id="how-to-setup" class="title-slide slide level1 center">
+<section class="title-slide slide level1 center">
 <h1>How to Setup</h1>
 
 </section>
-<section id="install-the-application" class="slide level2">
+<section class="slide level2">
 <h2>Install the Application</h2>
 <p><a href="https://github.com/apps/renovate" class="uri">https://github.com/apps/renovate</a></p>
 
 <img data-src="figures/application.png" class="r-stretch"></section>
-<section id="example-config" class="slide level2">
+<section class="slide level2">
 <h2>Example Config</h2>
 <div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>{</span>
 <span id="cb1-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
@@ -543,7 +544,7 @@ Patrick J. Roddy
 <p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5</a></p>
 </div>
 </section>
-<section id="config-is-reusable" class="slide level2">
+<section class="slide level2">
 <h2>Config is Reusable!</h2>
 <div class="sourceCode" id="cb2" data-code-line-numbers="2|4|5|7-13"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>{</span>
 <span id="cb2-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
@@ -563,7 +564,7 @@ Patrick J. Roddy
 <p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5</a></p>
 </div>
 </section>
-<section id="automerging" class="slide level2">
+<section class="slide level2">
 <h2>Automerging</h2>
 <p>The <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">GitHub automerge</a> setting is required</p>
 
@@ -577,7 +578,7 @@ Patrick J. Roddy
 <span id="cb3-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="rulesets---status-checks" class="slide level2">
+<section class="slide level2">
 <h2>Rulesets - Status Checks</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -590,7 +591,7 @@ Patrick J. Roddy
 </div>
 </div>
 </section>
-<section id="rulesets---pull-requests" class="slide level2">
+<section class="slide level2">
 <h2>Rulesets - Pull Requests</h2>
 <p>:::{layout-ncol=2}</p>
 <p><img data-src="figures/pull_requests_1.png"></p>
@@ -598,7 +599,7 @@ Patrick J. Roddy
 <p><img data-src="figures/pull_requests_2.png"> :::</p>
 </div>
 </section>
-<section id="monitoring" class="slide level2">
+<section class="slide level2">
 <h2>Monitoring</h2>
 <p>:::{layout-ncol=2}</p>
 <p><img data-src="figures/logging_1.png"></p>
@@ -610,11 +611,11 @@ Patrick J. Roddy
 </div>
 </section></section>
 <section>
-<section id="conclusions" class="title-slide slide level1 center">
+<section class="title-slide slide level1 center">
 <h1>Conclusions</h1>
 
 </section>
-<section id="summary" class="slide level2">
+<section class="slide level2">
 <h2>Summary</h2>
 <ul>
 <li class="fragment">Renovate is massively flexible</li>
@@ -627,7 +628,7 @@ Patrick J. Roddy
 <li class="fragment">There’s always more to learn!</li>
 </ul>
 </section>
-<section id="demo-time" class="slide level2">
+<section class="slide level2">
 <h2>Demo Time</h2>
 <p><a href="https://developer.mend.io" class="uri">https://developer.mend.io</a></p>
 
@@ -705,7 +706,7 @@ Patrick J. Roddy
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: true,
+        history: false,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

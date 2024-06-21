@@ -2,8 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/2023-11-14-arc-renovate/index.html",
-      "/2024-06-25-arc-pyopensci/index.html"
+      "/devops-an-introduction/index.html",
+      "/pyopensci-my-experience/index.html",
+      "/renovate-automating-dependency-management/index.html"
     ]
   }
 ]
