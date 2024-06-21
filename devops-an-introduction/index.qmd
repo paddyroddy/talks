@@ -97,8 +97,12 @@ flowchart TB;
 > align to strategic goals and deliver customer impact. Agile can help guide
 > DevOps teams.
 
+::: {.fragment .fade-left}
+
 ![Jira](figures/jira.png){width=35%} ![Trello](figures/trello.png){width=100%}
 ![Confluence](figures/confluence.png){width=35%}
+
+:::
 
 :::
 
@@ -110,9 +114,13 @@ flowchart TB;
 > is an iterative approach to project management and software development that
 > helps teams break work into smaller pieces to deliver incremental value.
 
+::: {.fragment .fade-left}
+
 ![Azure Boards](figures/azure_boards.png){width=35%}
 ![Asana](figures/asana.png){width=100%}
 ![Monday.com](figures/monday.png){width=100%}
+
+:::
 
 :::
 
@@ -125,9 +133,13 @@ flowchart TB;
 > led to many innovative and powerful workflows and tools for the development
 > build process.
 
+::: {.fragment .fade-left}
+
 ![Jenkins](figures/jenkins.png){width=35%}
 ![GitLab CI](figures/gitlab_ci.png){width=35%}
 ![GitHub Actions](figures/github_actions.png){width=35%}
+
+:::
 
 :::
 
@@ -141,9 +153,13 @@ flowchart TB;
 > help development teams gain reassurance in the quality and predictability of
 > code once deployed.
 
+::: {.fragment .fade-left}
+
 ![Selenium](figures/selenium.png){width=35%}
 ![JUnit](figures/junit.png){width=35%}
 ![Postman](figures/postman.png){width=35%}
+
+:::
 
 :::
 
@@ -157,9 +173,13 @@ flowchart TB;
 > than all at once. This approach improves velocity, productivity, and
 > sustainability of software development teams.
 
+::: {.fragment .fade-left}
+
 ![Ansible](figures/ansible.png){width=35%}
 ![Terraform](figures/terraform.png){width=35%}
 ![Kubernetes](figures/kubernetes.png){width=35%}
+
+:::
 
 :::
 
@@ -171,8 +191,12 @@ flowchart TB;
 > practices involved in design, implementation, configuration, deployment, and
 > maintenance of all IT infrastructure that supports an organization’s services.
 
+::: {.fragment .fade-left}
+
 ![Docker](figures/docker.png){width=35%}
 ![Puppet](figures/puppet.png){width=35%} ![Chef](figures/chef.png){width=35%}
+
+:::
 
 :::
 
@@ -184,9 +208,13 @@ flowchart TB;
 > functionality. Automatically notify your team of changes, high-risk actions,
 > or failures, so you can keep services on.
 
+::: {.fragment .fade-left}
+
 ![Prometheus](figures/prometheus.png){width=35%}
 ![Grafana](figures/grafana.png){width=35%}
 ![New Relic](figures/new_relic.png){width=35%}
+
+:::
 
 :::
 
@@ -198,21 +226,26 @@ flowchart TB;
 > future releases. By gathering continuous feedback, teams can improve their
 > processes and incorporate customer feedback to improve the next release.
 
+::: {.fragment .fade-left}
+
 ![Slack](figures/slack.png){width=35%}
 ![Microsoft Teams](figures/microsoft_teams.png){width=35%}
 ![PagerDuty](figures/pager_duty.png){width=35%}
 
 :::
 
+:::
+
 # Conclusions
 
-## Summary
+## {data-menu-title="Summary"}
 
 - Portmanteau of "development" and "operations"
 - Many different definitions out there
+- Everyone is doing some part of the DevOps lifecycle
 - New subgroup = new opportunities
 -
 
-##
+## {data-menu-title="Fin"}
 
 ![](figures/meme.jpg)
