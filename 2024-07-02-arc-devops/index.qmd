@@ -1,8 +1,9 @@
 ---
-title: "DevOps: An Introduction"
 author: Patrick J. Roddy
 date: 2024-07-02
 format: revealjs
+subtitle: ARC Collaborations Hour
+title: "DevOps: An Introduction"
 ---
 
 # ARC
