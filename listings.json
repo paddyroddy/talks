@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/devops-an-introduction/index.html",
       "/pyopensci-my-experience/index.html",
+      "/devops-an-introduction/index.html",
       "/renovate-automating-dependency-management/index.html"
     ]
   }
