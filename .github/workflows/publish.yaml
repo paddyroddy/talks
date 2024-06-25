@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+      - renovate/**
+  pull_request:
 
 jobs:
   build-and-deploy:
@@ -13,6 +15,6 @@ jobs:
       contents: write
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/github-pages/quarto@69431c4ec1e375c5fe5f8fa96ae1e05f371d8326 # v0
+      - uses: paddyroddy/.github/actions/github-pages/quarto@0003b990ab302de666732de5b350a756b2742b6c # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
