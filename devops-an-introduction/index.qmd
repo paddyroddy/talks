@@ -50,7 +50,7 @@ flowchart TB;
 - Monthly HPC Hour-like meeting?
 - `Area: DevOps` label in `research-software-opportunities`
 - Get the ball rolling (again) at TI (I won't be there 😞)
-- What training/skils do we want as a group?
+- What training/skills do we want as a group?
 - What overlap does DevOps have with the other subgroups?
 - How can we collaborate with ISD to share training opportunities?
 
