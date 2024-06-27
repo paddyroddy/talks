@@ -32,7 +32,7 @@ title: "pyOpenSci: My Experience"
 ## Don't We Have Enough Journals Already?
 
 > Perhaps, and in a perfect world we'd rather papers about software weren't
-> necessary but we recognize that for most researchers, papers and not software
+> necessary but we recognise that for most researchers, papers and not software
 > are the currency of academic research and that citations are required for a
 > good career.
 
