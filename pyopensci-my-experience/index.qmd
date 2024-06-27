@@ -1,6 +1,6 @@
 ---
 author: Patrick J. Roddy
-date: 2024-07-23
+date: ""
 format: revealjs
 subtitle: ARC Collaborations Hour
 title: "pyOpenSci: My Experience"
@@ -24,31 +24,31 @@ title: "pyOpenSci: My Experience"
 
 ## What Exactly Do You Mean by 'Journal'?
 
-- The Journal of Open Source Software (JOSS) is an academic journal (ISSN
-  2475-9066) with a formal peer review process that is designed to improve the
-  quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI
-  is minted and we list your paper on the JOSS website.
+> The Journal of Open Source Software (JOSS) is an academic journal (ISSN
+> 2475-9066) with a formal peer review process that is designed to improve the
+> quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI
+> is minted and we list your paper on the JOSS website.
 
 ## Don't We Have Enough Journals Already?
 
-- Perhaps, and in a perfect world we'd rather papers about software weren't
-  necessary but we recognise that for most researchers, papers and not software
-  are the currency of academic research and that citations are required for a
-  good career.
+> Perhaps, and in a perfect world we'd rather papers about software weren't
+> necessary but we recognise that for most researchers, papers and not software
+> are the currency of academic research and that citations are required for a
+> good career.
 
-- We built this journal because we believe that after you've done the hard work
-  of writing great software, it shouldn't take weeks and months to write a paper
-  about your work.
+> We built this journal because we believe that after you've done the hard work
+> of writing great software, it shouldn't take weeks and months to write a paper
+> about your work.
 
 ## You Said Developer Friendly, What Do You Mean?
 
-- We have a simple submission workflow and
-  [extensive documentation](https://joss.readthedocs.io/en/latest/submitting.html)
-  to help you prepare your submission. If your software is already well
-  documented then paper preparation should take no more than an hour.
+> We have a simple submission workflow and
+> [extensive documentation](https://joss.readthedocs.io/en/latest/submitting.html)
+> to help you prepare your submission. If your software is already well
+> documented then paper preparation should take no more than an hour.
 
-- You can read more about our motivations to build JOSS in our
-  [announcement blog post](https://www.arfon.org/announcing-the-journal-of-open-source-software).
+> You can read more about our motivations to build JOSS in our
+> [announcement blog post](https://www.arfon.org/announcing-the-journal-of-open-source-software).
 
 ## My Submission
 
@@ -60,17 +60,21 @@ title: "pyOpenSci: My Experience"
 
 ## pyOpenSci
 
-:::{layout="[30,70]"}
+:::{layout="[75,25]"}
+
+::: {#first-column}
+
+> We support the scientific Python tools that drive open science through peer
+> review, training and community building.
+
+> We build diverse community that supports free and open Python tools for
+> processing scientific data. We also build technical skills needed to
+> contribute to open source and that support open science. Join our global
+> community.
+
+:::
 
 ![](figures/pyopensci_logo.png)
-
-- We support the scientific Python tools that drive open science through peer
-  review, training and community building.
-
-- We build diverse community that supports free and open Python tools for
-  processing scientific data. We also build technical skills needed to
-  contribute to open source and that support open science. Join our global
-  community.
 
 :::
 
@@ -187,10 +191,10 @@ Functionality:
 
 [![](figures/pyopensci_packages.png)](https://www.pyopensci.org/python-packages.html)
 
-If the package has an **obvious research application** according to JOSS's
-definition in their
-[submission requirements](http://joss.theoj.org/about#submission_requirements),
-then one may submit their package to JOSS through pyOpenSci.
+> If the package has an **obvious research application** according to JOSS's
+> definition in their
+> [submission requirements](http://joss.theoj.org/about#submission_requirements),
+> then one may submit their package to JOSS through pyOpenSci.
 
 [![](https://img.shields.io/badge/PyOpenSci-Peer%20Reviewed-success.svg)](https://github.com/pyOpenSci/software-submission/issues/149)
 
@@ -202,7 +206,7 @@ then one may submit their package to JOSS through pyOpenSci.
 
 # Conclusions
 
-## Summary
+## {data-menu-title="Summary"}
 
 - pyOpenSci still in its infancy (32 packages as of 2024-06-12)
 - Easily integrates with JOSS
