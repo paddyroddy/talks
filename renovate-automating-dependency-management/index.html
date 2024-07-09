@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.556">
+  <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Patrick J. Roddy">
   <meta name="dcterms.date" content="2023-11-14">
@@ -44,7 +44,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -580,6 +580,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Rulesets - Status Checks</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -593,30 +596,31 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Rulesets - Pull Requests</h2>
-<p>:::{layout-ncol=2}</p>
+<div data-layout-ncol="2">
 <p><img data-src="figures/pull_requests_1.png"></p>
 <div class="fragment fade-left">
 <p><img data-src="figures/pull_requests_2.png"> :::</p>
 </div>
-</section>
 <section class="slide level2">
 <h2>Monitoring</h2>
-<p>:::{layout-ncol=2}</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img data-src="figures/logging_1.png"></p>
-<div class="fragment fade-left">
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><img data-src="figures/logging_2.png"> :::</p>
 </div>
-<div class="footer">
+</div>
+<div class="quarto-layout-row">
+<div class="footer quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>See in action: <a href="https://developer.mend.io/github/paddyroddy/.github" class="uri">https://developer.mend.io/github/paddyroddy/.github</a></p>
 </div>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Conclusions</h1>
-
-</section>
-<section class="slide level2">
-<h2>Summary</h2>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Summary</strong></p>
 <ul>
 <li class="fragment">Renovate is massively flexible</li>
 <li class="fragment">Maintainers respond incredibly quickly</li>
@@ -627,16 +631,27 @@ Patrick J. Roddy
 <li class="fragment">Renovate <code>renovates</code> itself very frequently</li>
 <li class="fragment">There’s always more to learn!</li>
 </ul>
-</section>
-<section class="slide level2">
-<h2>Demo Time</h2>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Demo Time</strong></p>
 <p><a href="https://developer.mend.io" class="uri">https://developer.mend.io</a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/demo.jpg"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
 
-
-<img data-src="figures/demo.jpg" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="footer footer-default">
 <p>Renovate: Automating Dependency Management: <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
 </div>
+</div>
+</div>
+</div>
+</section>
 </div>
 </section></section>
     </div>
@@ -881,18 +896,7 @@ Patrick J. Roddy
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -924,7 +928,29 @@ Patrick J. Roddy
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/paddyroddy\.github\.io\/talks\/");
@@ -932,7 +958,7 @@ Patrick J. Roddy
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

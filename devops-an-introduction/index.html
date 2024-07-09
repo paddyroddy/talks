@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.556">
+  <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Patrick J. Roddy">
   <meta name="dcterms.date" content="2024-06-25">
@@ -445,6 +445,9 @@ Patrick J. Roddy
 <img data-src="figures/lifecycle.png" class="r-stretch quarto-figure-center"><p class="caption">Atlassian</p></section>
 <section class="slide level2">
 <h2>Discover</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -461,6 +464,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Plan</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -477,6 +483,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Build</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -493,6 +502,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Test</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -509,6 +521,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Deploy</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -525,6 +540,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Operate</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -541,6 +559,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Observe</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -557,6 +578,9 @@ Patrick J. Roddy
 </section>
 <section class="slide level2">
 <h2>Continuous Feedback</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[70,30]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
@@ -841,18 +865,7 @@ Patrick J. Roddy
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -884,7 +897,29 @@ Patrick J. Roddy
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/paddyroddy\.github\.io\/talks\/");
@@ -892,7 +927,7 @@ Patrick J. Roddy
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
