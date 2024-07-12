@@ -201,7 +201,9 @@ on:
 
 ::: {.fragment .fade-left}
 
-![](figures/pull_requests_2.png) :::
+![](figures/pull_requests_2.png)
+
+:::
 
 :::
 
@@ -213,7 +215,9 @@ on:
 
 ::: {.fragment .fade-left}
 
-![](figures/logging_2.png) :::
+![](figures/logging_2.png)
+
+:::
 
 :::
 
