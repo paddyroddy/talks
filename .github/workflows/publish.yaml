@@ -15,7 +15,7 @@ jobs:
       contents: write
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/github-pages/quarto@a1810383a00eaf58c7929bd854c3d460bc217737 # v0
+      - uses: paddyroddy/.github/actions/github-pages/quarto@29271f6d0fc9e460485605d44f12c1e1812f57ea # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           requirements-txt: ${{ github.workspace }}/requirements.txt
