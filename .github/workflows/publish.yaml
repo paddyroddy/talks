@@ -14,6 +14,13 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Set up python
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
+        with:
+          python-version: 3.x
+          cache: pip
+          cache-dependency-path: requirements.txt
+
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/github-pages/quarto@1123715f6605eb373cdcb8138a6d02be6d7f1c6b # v0
         with:
