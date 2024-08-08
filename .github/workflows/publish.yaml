@@ -15,6 +15,6 @@ jobs:
       contents: write
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/github-pages/quarto@92b990221dd2e24d8fa6a0db8ddbbe6ec7b1dc2c # v0
+      - uses: paddyroddy/.github/actions/github-pages/quarto@cd920971be23f64c6174969604f86ea2e78718ba # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
