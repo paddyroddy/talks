@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2024-07-22T13:37:45.092Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2024-07-22T13:37:45.104Z</lastmod>
+    <lastmod>2024-08-08T22:08:46.229Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2024-07-22T13:37:45.100Z</lastmod>
+    <lastmod>2024-08-08T22:08:46.233Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
+    <lastmod>2024-08-08T22:08:46.241Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2024-07-22T13:37:45.092Z</lastmod>
+    <lastmod>2024-08-08T22:08:46.229Z</lastmod>
   </url>
 </urlset>
