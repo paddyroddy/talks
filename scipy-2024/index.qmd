@@ -402,6 +402,7 @@ m
 - SciPy community are very friendly
 - Conference was very well organised (timings of talks etc.)
 - Conferences are exhausting
+- Made some Connections {{< fa brands strava >}} > {{< fa brands linkedin >}}
 - Jet lag isn't fun
 - Holidays are great
 - Would highly recommend Washington state
