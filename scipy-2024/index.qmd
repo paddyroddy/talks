@@ -6,7 +6,7 @@ subtitle: ARC Collaborations Hour
 title: SciPy 2024
 ---
 
-# Part 1: Conference
+# Conference
 
 ## Location
 
@@ -67,9 +67,9 @@ m
 
 :::
 
-# Part 2: Holiday
+# Holiday: Olympic National Park
 
-## ONP: National Forest
+## National Forest
 
 ::: {.r-hstack}
 
@@ -95,7 +95,7 @@ m
 
 :::
 
-## ONP: Hurricane Ridge
+## Hurricane Ridge
 
 ::: {.r-hstack}
 
@@ -125,7 +125,7 @@ m
 
 :::
 
-## ONP: Port Angeles
+## Port Angeles
 
 ::: {.r-hstack}
 
@@ -147,7 +147,7 @@ m
 
 :::
 
-## ONP: Waterfalls
+## Waterfalls
 
 ::: {.r-hstack}
 
@@ -169,7 +169,7 @@ m
 
 :::
 
-## ONP: Beaches
+## Beaches
 
 ::: {.r-hstack}
 
@@ -199,7 +199,7 @@ m
 
 :::
 
-## ONP: Forks
+## Forks
 
 ::: {.r-hstack}
 
@@ -209,7 +209,7 @@ m
 
 :::
 
-## ONP: Hoh Rainforest
+## Hoh Rainforest
 
 ::: {.r-hstack}
 
@@ -235,7 +235,9 @@ m
 
 :::
 
-## Seattle: Poo Poo Point
+# Holiday: Seattle
+
+## Poo Poo Point
 
 ::: {.r-hstack}
 
@@ -257,7 +259,7 @@ m
 
 :::
 
-## Seattle: Museum of Flight
+## Museum of Flight
 
 ::: {.r-hstack}
 
@@ -287,7 +289,7 @@ m
 
 :::
 
-## Seattle: Baseball
+## Baseball
 
 ::: {.r-hstack}
 
@@ -309,7 +311,7 @@ m
 
 :::
 
-## Seattle: Tall Buildings
+## Tall Buildings
 
 ::: {.r-hstack}
 
@@ -339,7 +341,7 @@ m
 
 :::
 
-## Seattle: Museum of Glass
+## Museum of Glass
 
 ::: {.r-hstack}
 
@@ -369,7 +371,7 @@ m
 
 :::
 
-## Seattle: Pike Place Market
+## Pike Place Market
 
 ::: {.r-hstack}
 
@@ -390,3 +392,20 @@ m
 :::
 
 :::
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Thanks for the opportunity
+- Solo conferencing forces you to talk to people
+- SciPy community are very friendly
+- Conference was very well organised (timings of talks etc.)
+- Conferences are exhausting
+- Jet lag isn't fun
+- Holidays are great
+- Would highly recommend Washington state
+
+## {data-menu-title="Fin"}
+
+![](figures/airport.jpg)
