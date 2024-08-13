@@ -65,7 +65,7 @@ Reasons you may have heard of it:
 ```{=html}
 <iframe
     height="500"
-    src="https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html"
+    src="https://docs.xarray.dev/en/stable/user-guide/data-structures.html"
     title="Xarray Documentation"
     width="250"
 >
@@ -93,6 +93,15 @@ Reasons you may have heard of it:
 ```
 
 ## Talks
+
+- Each day started with a keynote followed by updates from various NumFOCUS
+  libraries, and ended with lightning talks
+- A mixture of talks and birds of a feather sessions
+- Everything well timed, with sufficient breaks
+- Talks were a mix of a library demonstration or someone's experience with a
+  particular tool
+- Free stash (I got 5 T-shirts, 2 pairs of socks)
+- Sponsor standards in the lobby throughout the day
 
 ## Sprints
 
