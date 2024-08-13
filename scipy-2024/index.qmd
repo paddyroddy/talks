@@ -6,6 +6,8 @@ subtitle: ARC Collaborations Hour
 title: SciPy 2024
 ---
 
+# Part 1: Conference
+
 ## Location
 
 ```{python}
@@ -20,3 +22,371 @@ m = Map(
 m.add_layer(Marker(location=(52.204793, 360.121558)))
 m
 ```
+
+## Tacoma
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/conference/other/1.jpg){.fragment}
+
+![](figures/conference/other/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/conference/other/3.jpg){.fragment}
+
+![](figures/conference/other/4.jpg){.fragment}
+
+:::
+
+:::
+
+## Runs
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/conference/runs/1.jpg){.fragment}
+
+![](figures/conference/runs/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/conference/runs/3.jpg){.fragment}
+
+![](figures/conference/runs/4.jpg){.fragment}
+
+:::
+
+:::
+
+# Part 2: Holiday
+
+## ONP: National Forest
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/national-forest/1.jpg){.fragment}
+
+![](figures/olympic-national-park/national-forest/2.jpg){.fragment}
+
+![](figures/olympic-national-park/national-forest/3.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/national-forest/4.jpg){.fragment}
+
+![](figures/olympic-national-park/national-forest/5.jpg){.fragment}
+
+![](figures/olympic-national-park/national-forest/6.jpg){.fragment}
+
+:::
+
+:::
+
+## ONP: Hurricane Ridge
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/hurricane-ridge/1.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/2.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/3.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/4.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/hurricane-ridge/5.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/6.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/7.jpg){.fragment}
+
+![](figures/olympic-national-park/hurricane-ridge/8.jpg){.fragment}
+
+:::
+
+:::
+
+## ONP: Port Angeles
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/port-angeles/1.jpg){.fragment}
+
+![](figures/olympic-national-park/port-angeles/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/port-angeles/3.jpg){.fragment}
+
+![](figures/olympic-national-park/port-angeles/4.jpg){.fragment}
+
+:::
+
+:::
+
+## ONP: Waterfalls
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/waterfalls/1.jpg){.fragment}
+
+![](figures/olympic-national-park/waterfalls/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/waterfalls/3.jpg){.fragment}
+
+![](figures/olympic-national-park/waterfalls/4.jpg){.fragment}
+
+:::
+
+:::
+
+## ONP: Beaches
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/beaches/1.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/2.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/3.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/4.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/beaches/5.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/6.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/7.jpg){.fragment}
+
+![](figures/olympic-national-park/beaches/8.jpg){.fragment}
+
+:::
+
+:::
+
+## ONP: Forks
+
+::: {.r-hstack}
+
+![](figures/olympic-national-park/forks/1.jpg){.fragment}
+
+![](figures/olympic-national-park/forks/2.jpg){.fragment}
+
+:::
+
+## ONP: Hoh Rainforest
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/hoh-rainforest/1.jpg){.fragment}
+
+![](figures/olympic-national-park/hoh-rainforest/2.jpg){.fragment}
+
+![](figures/olympic-national-park/hoh-rainforest/3.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/olympic-national-park/hoh-rainforest/4.jpg){.fragment}
+
+![](figures/olympic-national-park/hoh-rainforest/5.jpg){.fragment}
+
+![](figures/olympic-national-park/hoh-rainforest/6.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Poo Poo Point
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/poo-poo-point/1.jpg){.fragment}
+
+![](figures/seattle/poo-poo-point/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/poo-poo-point/3.jpg){.fragment}
+
+![](figures/seattle/poo-poo-point/4.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Museum of Flight
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/museum-of-flight/1.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/2.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/3.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/4.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/museum-of-flight/5.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/6.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/7.jpg){.fragment}
+
+![](figures/seattle/museum-of-flight/8.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Baseball
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/baseball/1.jpg){.fragment}
+
+![](figures/seattle/baseball/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/baseball/3.jpg){.fragment}
+
+![](figures/seattle/baseball/4.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Tall Buildings
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/tall-buildings/1.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/2.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/3.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/4.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/tall-buildings/5.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/6.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/7.jpg){.fragment}
+
+![](figures/seattle/tall-buildings/8.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Museum of Glass
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/museum-of-glass/1.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/2.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/3.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/4.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/museum-of-glass/5.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/6.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/7.jpg){.fragment}
+
+![](figures/seattle/museum-of-glass/8.jpg){.fragment}
+
+:::
+
+:::
+
+## Seattle: Pike Place Market
+
+::: {.r-hstack}
+
+::: {.r-stack}
+
+![](figures/seattle/pike-place-market/1.jpg){.fragment}
+
+![](figures/seattle/pike-place-market/2.jpg){.fragment}
+
+:::
+
+::: {.r-stack}
+
+![](figures/seattle/pike-place-market/3.jpg){.fragment}
+
+![](figures/seattle/pike-place-market/4.jpg){.fragment} 
+
+:::
+
+:::
