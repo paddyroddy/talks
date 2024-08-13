@@ -29,6 +29,27 @@ m.add_layer(Marker(location=seatac_coords))
 m
 ```
 
+## Tacoma
+
+:::{layout="[60,40]"}
+
+::: {#first-column}
+
+Reasons you may have heard of it:
+
+- Tacoma Narrows Bridge Collapse
+- Toyatoa Tacoma
+- 10 Things I Hate About You
+- Sea-Tac Airport
+- Mount Rainier
+- Dale Chihuly
+
+:::
+
+![](figures/bridge.gif)
+
+:::
+
 ## Photos
 
 ::: {.r-hstack}
