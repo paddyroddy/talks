@@ -1,4 +1,5 @@
 ---
+exclude: ^_extensions
 repos:
   - repo: https://github.com/paddyroddy/.github
     rev: v0.213.0

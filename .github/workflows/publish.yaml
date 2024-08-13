@@ -18,3 +18,4 @@ jobs:
       - uses: paddyroddy/.github/actions/github-pages/quarto@cd920971be23f64c6174969604f86ea2e78718ba # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          requirements-txt: ${{ github.workspace }}/requirements.txt
