@@ -1,6 +1,6 @@
 ---
 author: Patrick J. Roddy
-date: 2024-08-13
+date: 2024-08-20
 format: revealjs
 subtitle: ARC Collaborations Hour
 title: SciPy 2024
