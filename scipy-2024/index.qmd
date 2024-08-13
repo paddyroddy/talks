@@ -50,6 +50,60 @@ Reasons you may have heard of it:
 
 :::
 
+## Tutorials
+
+```{=html}
+<iframe
+    height="500"
+    src="https://ibis-project.org/tutorials/getting_started"
+    title="Ibis Documentation"
+    width="250"
+>
+</iframe>
+```
+
+```{=html}
+<iframe
+    height="500"
+    src="https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html"
+    title="Xarray Documentation"
+    width="250"
+>
+</iframe>
+```
+
+```{=html}
+<iframe
+    height="500"
+    src="https://anywidget.dev/en/getting-started"
+    title="anywidget Documentation"
+    width="250"
+>
+</iframe>
+```
+
+```{=html}
+<iframe
+    height="500"
+    src="https://hypothesis.readthedocs.io/en/latest/quickstart.html"
+    title="Hypothesis Documentation"
+    width="250"
+>
+</iframe>
+```
+
+## Talks
+
+## Sprints
+
+- Weekend
+- Maintainers from various NumFOCUS libraries
+- Worked on NumPy
+- Many people left by then
+- Didn't get as much out of it as I hoped
+- Euros + Copa America finals
+- Fatigue
+
 ## Photos
 
 ::: {.r-hstack}
