@@ -29,45 +29,31 @@ m.add_layer(Marker(location=seatac_coords))
 m
 ```
 
-## Tacoma
+## Photos
 
 ::: {.r-hstack}
 
 ::: {.r-stack}
 
-![](figures/conference/other/1.jpg){.fragment height=550}
+![](figures/conference/1.jpg){.fragment height=550}
 
-![](figures/conference/other/2.jpg){.fragment height=550}
+![](figures/conference/2.jpg){.fragment height=550}
 
-:::
+![](figures/conference/3.jpg){.fragment height=550}
 
-::: {.r-stack}
-
-![](figures/conference/other/3.jpg){.fragment height=550}
-
-![](figures/conference/other/4.jpg){.fragment height=550}
-
-:::
-
-:::
-
-## Morning Runs
-
-::: {.r-hstack}
-
-::: {.r-stack}
-
-![](figures/conference/runs/1.jpg){.fragment height=550}
-
-![](figures/conference/runs/2.jpg){.fragment height=550}
+![](figures/conference/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](figures/conference/runs/3.jpg){.fragment height=550}
+![](figures/conference/5.jpg){.fragment height=550}
 
-![](figures/conference/runs/4.jpg){.fragment height=550}
+![](figures/conference/6.jpg){.fragment height=550}
+
+![](figures/conference/7.jpg){.fragment height=550}
+
+![](figures/conference/8.jpg){.fragment height=550}
 
 :::
 
