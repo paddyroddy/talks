@@ -38,7 +38,7 @@ m
 Reasons you may have heard of it:
 
 - Tacoma Narrows Bridge Collapse
-- Toyatoa Tacoma
+- Toyota Tacoma
 - 10 Things I Hate About You
 - Sea-Tac Airport
 - Mount Rainier
@@ -516,7 +516,7 @@ m
 - SciPy community are very friendly
 - Conference was very well organised (timings of talks etc.)
 - Made some Connections {{< fa brands strava >}} > {{< fa brands linkedin >}}
-- Share your post conference plans with fellow attendees, they might joint you!
+- Share your post conference plans with fellow attendees, they might join you!
 - Jet lag isn't fun
 - Holidays are great
 - Would highly recommend Washington state
