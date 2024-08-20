@@ -210,7 +210,7 @@ Functionality:
 
 - pyOpenSci still in its infancy (32 packages as of 2024-06-12)
 - Easily integrates with JOSS
-- Exposure for your package (potentionally more so in the future)
+- Exposure for your package (potentially more so in the future)
 - [rOpenSci](https://ropensci.org/) for Python, see
   [blog launch](https://ropensci.org/blog/2013/05/16/pyopensci)
 - Always looking for
