@@ -82,7 +82,7 @@ title: "pyOpenSci: My Experience"
 
 [![](figures/pyopensci_presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
 
-## Review Process
+## Review Process {data-menu-title="Review Process 1"}
 
 Documentation:
 
@@ -93,7 +93,7 @@ Documentation:
 - [ ] **Vignette(s)** demonstrating major functionality that runs successfully
       locally.
 
-## Review Process
+## Review Process {data-menu-title="Review Process 2"}
 
 Documentation:
 
@@ -104,7 +104,7 @@ Documentation:
 - [ ] **Metadata** including author(s), author e-mail(s), a url, and any other
       relevant metadata e.g., in a `pyproject.toml` file or elsewhere.
 
-## Review Process
+## Review Process {data-menu-title="Review Process 3"}
 
 `README.md`:
 
@@ -116,7 +116,7 @@ Documentation:
   - [ ] Python versions supported,
   - [ ] Current package version (on PyPI / Conda).
 
-## Review Process
+## Review Process {data-menu-title="Review Process 4"}
 
 `README.md`:
 
@@ -125,7 +125,7 @@ Documentation:
 - [ ] Any additional setup required to use the package (authentication tokens,
       etc.)
 
-## Review Process
+## Review Process {data-menu-title="Review Process 5"}
 
 `README.md`:
 
@@ -136,7 +136,7 @@ Documentation:
         vignettes could also suffice here if package description is clear)
 - [ ] Link to your documentation website.
 
-## Review Process
+## Review Process {data-menu-title="Review Process 6"}
 
 `README.md`:
 
@@ -144,7 +144,7 @@ Documentation:
       how it relates to other packages in the scientific ecosystem.
 - [ ] Citation information
 
-## Review Process
+## Review Process {data-menu-title="Review Process 7"}
 
 Usability:
 
@@ -153,7 +153,7 @@ Usability:
 - [ ] All functions have documentation and associated examples for use
 - [ ] The package is easy to install
 
-## Review Process
+## Review Process {data-menu-title="Review Process 8"}
 
 Functionality:
 
@@ -161,7 +161,7 @@ Functionality:
 - [ ] **Functionality:** Any functional claims of the software been confirmed.
 - [ ] **Performance:** Any performance claims of the software been confirmed.
 
-## Review Process
+## Review Process {data-menu-title="Review Process 9"}
 
 Functionality:
 
@@ -172,7 +172,7 @@ Functionality:
   - [ ] Tests cover essential functions of the package and a reasonable range of
         inputs and conditions.
 
-## Review Process
+## Review Process {data-menu-title="Review Process 10"}
 
 Functionality:
 
