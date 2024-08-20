@@ -185,7 +185,7 @@ Functionality:
   - [ ] Code format is standard throughout package and follows PEP 8 guidelines
         (CI tests for linting pass)
 
-## Package Acception
+## Package Acceptance
 
 :::{layout-ncol=2}
 
