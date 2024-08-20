@@ -32,7 +32,7 @@ title: "Renovate: Automating Dependency Management"
 
 ![](figures/renovate.jpg)
 
-## Why Use Renovate?
+## Why Use Renovate? {data-menu-title="Why Use Renovate? (i)"}
 
 - Get automated Pull Requests to update your dependencies
   - Reduce noise by running Renovate on a schedule, for example:
@@ -42,7 +42,7 @@ title: "Renovate: Automating Dependency Management"
     - each month
 - Relevant package files are discovered automatically
 
-## Why Use Renovate?
+## Why Use Renovate? {data-menu-title="Why Use Renovate? (ii)"}
 
 - Supports monorepo architectures with workspaces with no extra configuration
 - Bot behaviour is customisable via configuration files (config as code)
@@ -51,7 +51,7 @@ title: "Renovate: Automating Dependency Management"
 - Lock files are supported and updated in the same commit, including immediately
   resolving conflicts whenever PRs are merged
 
-## Why Use Renovate?
+## Why Use Renovate? {data-menu-title="Why Use Renovate? (iii)"}
 
 - Get replacement PRs to migrate from a deprecated dependency to the community
   suggested replacement, works with most managers, see

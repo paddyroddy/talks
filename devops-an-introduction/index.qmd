@@ -60,7 +60,7 @@ flowchart TB;
 
 # DevOps
 
-## What is DevOps?
+## What is DevOps? {data-menu-title="What is DevOps? (i)"}
 
 [Wikipedia](https://en.wikipedia.org/wiki/DevOps):
 
@@ -72,7 +72,7 @@ flowchart TB;
 > working. Automation is an important part of DevOps. Software programmers and
 > architects should use "fitness functions" to keep their software in check.
 
-## What is DevOps?
+## What is DevOps? {data-menu-title="What is DevOps? (ii)"}
 
 [Wikipedia](https://en.wikipedia.org/wiki/DevOps):
 
