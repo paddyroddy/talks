@@ -10,8 +10,9 @@ listing:
     subtitle: Event
   fields:
     - date
-    - subtitle
     - title
+    - subtitle
+    - author
   page-size: 10
   sort: date desc
   type: table
