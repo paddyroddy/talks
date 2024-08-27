@@ -1,5 +1,5 @@
 ---
-author: Patrick J. Roddy
+author: Collaborations DevObs Subgroup
 date: 2024-09-10
 format: revealjs
 subtitle: ARC Collaborations Hour
