@@ -6,6 +6,8 @@ listing:
   date-format: iso
   exclude:
     title: Page Not Found
+  field-display-names:
+    subtitle: Event
   fields:
     - date
     - subtitle
