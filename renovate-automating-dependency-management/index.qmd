@@ -1,7 +1,9 @@
 ---
 author: Patrick J. Roddy
 date: 2023-11-14
-format: revealjs
+format:
+  revealjs:
+    theme: dark
 subtitle: ARC Collaborations Hour
 title: "Renovate: Automating Dependency Management"
 ---

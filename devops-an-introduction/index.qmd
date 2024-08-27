@@ -1,7 +1,9 @@
 ---
 author: Patrick J. Roddy
 date: 2024-06-25
-format: revealjs
+format:
+  revealjs:
+    theme: league
 subtitle: ARC Collaborations Hour
 title: "DevOps: An Introduction"
 ---

@@ -1,7 +1,9 @@
 ---
 author: DevOps Subgroup
 date: 2024-09-10
-format: revealjs
+format:
+  revealjs:
+    theme: dark
 subtitle: ARC Collaborations Hour
 title: "CI/CD: Faster, Easier Development"
 ---
