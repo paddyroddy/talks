@@ -1,9 +1,7 @@
 ---
 author: Patrick J. Roddy
 date: 2024-07-23
-format:
-  revealjs:
-    theme: moon
+format: revealjs
 subtitle: ARC Collaborations Hour
 title: "pyOpenSci: My Experience"
 ---
