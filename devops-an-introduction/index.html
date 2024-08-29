@@ -347,7 +347,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick J. Roddy 
+<a href="https://paddyroddy.github.io">Patrick J. Roddy</a> 
 </div>
 </div>
 </div>
@@ -936,11 +936,6 @@ Patrick J. Roddy
             if (link.dataset.originalHref !== undefined) {
               link.href = link.dataset.originalHref;
             }
-              // target, if specified
-              link.setAttribute("target", "_blank");
-              if (link.getAttribute("rel") === null) {
-                link.setAttribute("rel", "noopener");
-              }
               // default icon
               link.classList.add("external");
           }

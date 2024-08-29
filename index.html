@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-subtitle','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -140,27 +140,27 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
         <div class="quarto-navbar-tools tools-end">
-    <a href="https://paddyroddy.github.io" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-house"></i></a>
-    <a href="https://github.com/paddyroddy/talks" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://paddyroddy.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house"></i></a>
+    <a href="https://github.com/paddyroddy/talks" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -169,7 +169,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -201,6 +201,9 @@ window.Quarto = {
          <option value="listing-title-sort" data-direction="asc">
           Title
         </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -215,56 +218,71 @@ window.Quarto = {
 <a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
 </th>
 <th>
-Subtitle
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
 <th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+Event
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
 </th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1724112000000" data-listing-file-modified-sort="1724171476109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="621" data-listing-title-sort="SciPy 2024" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-date-sort="1724112000000" data-listing-file-modified-sort="1724943760274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="621" data-listing-title-sort="SciPy 2024" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-08-20</span>
 </td>
 <td>
+<a href="./scipy-2024/index.html" class="title listing-title">SciPy 2024</a>
+</td>
+<td>
 <span class="listing-subtitle">ARC Collaborations Hour</span>
 </td>
 <td>
-<a href="./scipy-2024/index.html" class="title listing-title">SciPy 2024</a>
+<span class="listing-author"><a href="https://paddyroddy.github.io">Patrick J. Roddy</a></span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1721692800000" data-listing-file-modified-sort="1724171476077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="957" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-listing-date-sort="1721692800000" data-listing-file-modified-sort="1724943760242" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="957" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-07-23</span>
 </td>
 <td>
+<a href="./pyopensci-my-experience/index.html" class="title listing-title">pyOpenSci: My Experience</a>
+</td>
+<td>
 <span class="listing-subtitle">ARC Collaborations Hour</span>
 </td>
 <td>
-<a href="./pyopensci-my-experience/index.html" class="title listing-title">pyOpenSci: My Experience</a>
+<span class="listing-author"><a href="https://paddyroddy.github.io">Patrick J. Roddy</a></span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1724171476073" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="DevOps: An Introduction" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1724943760234" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="DevOps: An Introduction" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-06-25</span>
 </td>
 <td>
+<a href="./devops-an-introduction/index.html" class="title listing-title">DevOps: An Introduction</a>
+</td>
+<td>
 <span class="listing-subtitle">ARC Collaborations Hour</span>
 </td>
 <td>
-<a href="./devops-an-introduction/index.html" class="title listing-title">DevOps: An Introduction</a>
+<span class="listing-author"><a href="https://paddyroddy.github.io">Patrick J. Roddy</a></span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1724171476081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="566" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1724943760246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="566" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023-11-14</span>
 </td>
 <td>
+<a href="./renovate-automating-dependency-management/index.html" class="title listing-title">Renovate: Automating Dependency Management</a>
+</td>
+<td>
 <span class="listing-subtitle">ARC Collaborations Hour</span>
 </td>
 <td>
-<a href="./renovate-automating-dependency-management/index.html" class="title listing-title">Renovate: Automating Dependency Management</a>
+<span class="listing-author"><a href="https://paddyroddy.github.io">Patrick J. Roddy</a></span>
 </td>
 </tr>
 </tbody>
