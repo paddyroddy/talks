@@ -12,6 +12,7 @@ listing:
     - date
     - subtitle
     - title
+    - author
   page-size: 10
   sort: date desc
   type: table
