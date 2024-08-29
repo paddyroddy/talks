@@ -11,7 +11,6 @@ format:
     history: false
     incremental: true
     link-external-icon: true
-    link-external-newwindow: true
     mermaid:
       theme: dark
     slide-number: true
@@ -25,8 +24,6 @@ website:
     tools:
       - icon: house
         href: https://paddyroddy.github.io
-        target: _blank
       - icon: github
         href: https://github.com/paddyroddy/talks
-        target: _blank
   title: ""
