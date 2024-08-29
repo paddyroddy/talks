@@ -1,5 +1,5 @@
 ---
-author: Patrick J. Roddy
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
 date: 2024-07-23
 format: revealjs
 subtitle: ARC Collaborations Hour
