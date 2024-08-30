@@ -2,7 +2,7 @@
 author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
 date: 2024-06-25
 format: revealjs
-subtitle: ARC Collaborations Hour
+subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "DevOps: An Introduction"
 ---
 
