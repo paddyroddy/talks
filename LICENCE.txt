@@ -22,7 +22,7 @@ following considerations are for informational purposes only, are not
 exhaustive, and do not form part of our licenses.
 
      Considerations for licensors: Our public licenses are
-     intended for use by those authorized to give the public
+     intended for use by those authorised to give the public
      permission to use material in ways otherwise restricted by
      copyright and certain other rights. Our licenses are
      irrevocable. Licensors should read and understand the terms
@@ -92,7 +92,7 @@ Section 1 -- Definitions.
      closely related to copyright including, without limitation,
      performance, broadcast, sound recording, and Sui Generis Database
      Rights, without regard to how the rights are labelled or
-     categorized. For purposes of this Public License, the rights
+     categorised. For purposes of this Public License, the rights
      specified in Section 2(b)(1)-(2) are not Copyright and Similar
      Rights.
 
@@ -163,7 +163,7 @@ Section 2 -- Scope.
           6(a).
 
        4. Media and formats; technical modifications allowed. The
-          Licensor authorizes You to exercise the Licensed Rights in
+          Licensor authorises You to exercise the Licensed Rights in
           all media and formats whether now known or hereafter created,
           and to make technical modifications necessary to do so. The
           Licensor waives and/or agrees not to assert any right or
@@ -171,7 +171,7 @@ Section 2 -- Scope.
           necessary to exercise the Licensed Rights, including
           technical modifications necessary to circumvent Effective
           Technological Measures. For purposes of this Public License,
-          simply making modifications authorized by this Section 2(a)
+          simply making modifications authorised by this Section 2(a)
           (4) never produces Adapted Material.
 
        5. Downstream recipients.
@@ -415,10 +415,10 @@ public licenses is dedicated to the public domain under the CC0 Public
 Domain Dedication. Except for the limited purpose of indicating that
 material is shared under a Creative Commons public license or as
 otherwise permitted by the Creative Commons policies published at
-creativecommons.org/policies, Creative Commons does not authorize the
+creativecommons.org/policies, Creative Commons does not authorise the
 use of the trademark "Creative Commons" or any other trademark or logo
 of Creative Commons without its prior written consent including,
-without limitation, in connection with any unauthorized modifications
+without limitation, in connection with any unauthorised modifications
 to any of its public licenses or any other arrangements,
 understandings, or agreements concerning use of licensed material. For
 the avoidance of doubt, this paragraph does not form part of the
