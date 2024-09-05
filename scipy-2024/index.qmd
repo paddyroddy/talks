@@ -54,7 +54,7 @@ Reasons you may have heard of it:
 
 ```{=html}
 <iframe
-    height="500"
+    height="550"
     src="https://ibis-project.org/tutorials/getting_started"
     title="Ibis Documentation"
     width="250"
@@ -64,7 +64,7 @@ Reasons you may have heard of it:
 
 ```{=html}
 <iframe
-    height="500"
+    height="550"
     src="https://docs.xarray.dev/en/stable/user-guide/data-structures.html"
     title="Xarray Documentation"
     width="250"
@@ -74,7 +74,7 @@ Reasons you may have heard of it:
 
 ```{=html}
 <iframe
-    height="500"
+    height="550"
     src="https://anywidget.dev/en/getting-started"
     title="anywidget Documentation"
     width="250"
@@ -84,7 +84,7 @@ Reasons you may have heard of it:
 
 ```{=html}
 <iframe
-    height="500"
+    height="550"
     src="https://hypothesis.readthedocs.io/en/latest/quickstart.html"
     title="Hypothesis Documentation"
     width="250"
