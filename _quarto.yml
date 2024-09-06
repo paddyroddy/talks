@@ -6,7 +6,7 @@ format:
   html:
     theme: darkly
   revealjs:
-    footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"
+    footer: "{{< meta title >}} - {{< var author.website.talks >}}"
     hash-type: number
     history: false
     incremental: true
@@ -23,7 +23,7 @@ website:
   navbar:
     tools:
       - icon: house
-        href: https://paddyroddy.github.io
+        href: "{{< var author.website.home >}}"
       - icon: github
-        href: https://github.com/paddyroddy/talks
+        href: "{{< var author.website.talks >}}"
   title: ""
