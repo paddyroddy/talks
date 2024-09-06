@@ -1,5 +1,5 @@
 local function slugify(s)
-	return s:gsub("%s+", "-"):gsub("[^%w-]+", ""):lower()
+	return s:gsub("[%s+/]+", "-"):gsub("[^%w-]+", ""):lower()
 end
 
 return {
