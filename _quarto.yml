@@ -6,6 +6,8 @@ format:
   html:
     theme: darkly
   revealjs:
+    filters:
+      - _filters/slugify.lua
     footer: "{{< meta title >}} - {{< var author.website.talks >}}"
     hash-type: number
     history: false
