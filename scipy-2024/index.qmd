@@ -6,6 +6,11 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: SciPy 2024
 ---
 
+# {data-menu-title="QR Code"}
+
+{{< qrcode "https://paddyroddy.github.io/talks/{{< meta slug >}}"
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
 # Conference
 
 ## Flight
