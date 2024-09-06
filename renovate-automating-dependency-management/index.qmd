@@ -6,6 +6,17 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Renovate: Automating Dependency Management"
 ---
 
+# {data-menu-title="QR Code"}
+
+:::{layout="[22,78]"}
+
+Scan to view the slides
+
+{{< qrcode "https://paddyroddy.github.io/talks/{{< meta slug >}}"
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
+
 # Introduction
 
 ## Dependencies Are Inevitable
