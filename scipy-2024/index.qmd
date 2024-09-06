@@ -1,5 +1,5 @@
 ---
-author: "{{< var author.name >}}"
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
 date: 2024-08-20
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
