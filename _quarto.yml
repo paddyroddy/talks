@@ -8,7 +8,7 @@ format:
   revealjs:
     filters:
       - _filters/slugify.lua
-    footer: "{{< meta title >}} - <https://paddyroddy.github.io>"
+    footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"
     hash-type: number
     history: false
     incremental: true
