@@ -2,6 +2,7 @@
 exclude: ^_extensions
 repos:
   - repo: https://github.com/paddyroddy/.github
-    rev: v0.219.0
+    rev: v0.224.0
     hooks:
       - id: general-hooks
+      - id: lua-hooks
