@@ -1,7 +1,19 @@
 ---
-author: DevOps Subgroup
+# TODO: update with actual subgroup link
+author: "[DevOps Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
 date: 2024-09-10
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "CI/CD: Faster, Easier Development"
 ---
+
+# {data-menu-title="QR Code"}
+
+:::{layout="[22,78]"}
+
+Scan to view the slides
+
+{{< qrcode "https://paddyroddy.github.io/talks/{{< meta slug >}}"
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
