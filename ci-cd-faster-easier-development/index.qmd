@@ -1,6 +1,8 @@
 ---
 # TODO: update with actual subgroup link
-author: "[DevOps Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
+author:
+  "[DevOps
+  Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
 date: 2024-09-10
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
