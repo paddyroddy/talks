@@ -10,3 +10,30 @@ title: "CI/CD: Faster, Easier Development"
 ---
 
 {{< include /_includes/qr-code.qmd >}}
+
+# GitHub Actions
+
+## GitHub Actions {data-menu-title="GitHub Actions (i)"}
+
+```{.yaml code-line-numbers="1|2|3|4|4-5|4,6|4,7-8|7,9|7,10|7,11-12|7,13|7,14|7,15-17|7,18"}
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+```
+
+Demo: <https://docs.github.com/en/actions/writing-workflows/quickstart>
