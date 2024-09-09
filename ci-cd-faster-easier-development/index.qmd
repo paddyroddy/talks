@@ -15,7 +15,7 @@ title: "CI/CD: Faster, Easier Development"
 
 ## GitHub Actions {data-menu-title="GitHub Actions (i)"}
 
-```{.yaml code-line-numbers="1|2|3|4|4-5|4,6|4,7-8|7,9|7,10|7,11-12|7,13|7,14|7,15-17|7,18"}
+```{.yaml code-line-numbers="1|2|3|4|4-5|4-6|4-8|4-7,9|4-7,10|4-7,11-12|4-7,13|4-7,14|4-7,15-17|4-7,18"}
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
