@@ -1,0 +1,202 @@
+---
+# TODO: update with actual subgroup link
+author:
+  - "[Patrick J. Roddy](https://paddyroddy.github.io)"
+  - "[DevOps
+    Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
+date: 2024-09-10
+format: revealjs
+subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
+title: "CI/CD: Faster, Easier Development"
+---
+
+{{< include /_includes/qr-code.qmd >}}
+
+# CI/CD vs DevOps
+
+## Continuous Integration (CI)
+
+- _Definition_: Practice of frequently merging code changes into a central
+  repository
+- _Goal_: Detect and address integration issues early
+- _Key practices_:
+  - Automated building and testing of code
+  - Frequent code commits
+  - Rapid feedback on code quality
+
+## Continuous Delivery/Deployment (CD)
+
+- _Continuous Delivery_:
+  - Automatically prepare code for release to production
+  - Manual decision for final deployment
+- _Continuous Deployment_:
+  - Automatically deploy code changes to production
+  - No manual intervention required
+- _Goal_: Reduce time between writing code and its use in production
+
+## DevOps {data-menu-title="DevOps (i)"}
+
+:::{layout-ncol=2}
+
+I previously gave talk on a general overview of DevOps
+<https://paddyroddy.github.io/talks/devops-an-introduction>
+
+{{< qrcode https://paddyroddy.github.io/talks/devops-an-introduction
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
+
+## DevOps {data-menu-title="DevOps (ii)"}
+
+- _Definition_: Cultural and professional movement that aims to unify software
+  development (Dev) and IT operations (Ops)
+- _Scope_: Broader, encompasses entire software delivery
+- _Key aspects_:
+  - _Cultural change_: Breaking down silos between teams
+  - _Automation_: Throughout the entire software lifecycle
+  - _Measurement_: Continuous monitoring and feedback
+  - _Sharing_: Increased collaboration and shared responsibility
+
+## Relationship Between CI/CD & DevOps
+
+- CI/CD are practices within the broader DevOps philosophy
+- DevOps often employs CI/CD as key tools, but also includes:
+  - Infrastructure as Code
+  - Configuration Management
+  - Monitoring and Logging
+  - Incident Response
+
+## Key Differences {data-menu-title="DevOps (i)"}
+
+- _Scope_:
+  - _CI/CD_: Focused on automating specific parts of the development pipeline
+  - _DevOps_: Holistic approach to the entire software delivery lifecycle
+- _Cultural Aspect_:
+  - _CI/CD_: Primarily technical practices
+  - _DevOps_: Emphasises cultural change and cross-functional collaboration
+
+## Key Differences {data-menu-title="DevOps (ii)"}
+
+- _Goals_:
+  - _CI/CD_: Faster, more reliable software releases
+  - _DevOps_: Improved overall organisational efficiency and product quality
+
+::: {.fragment .fade-left}
+
+While CI/CD are crucial components of DevOps, CI/CD alone isn't DevOps. True
+DevOps requires a broader cultural and operational shift.
+
+:::
+
+# GitHub Actions
+
+## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (i)"}
+
+GitHub Actions is a continuous integration and continuous delivery (CI/CD)
+platform that allows you to automate your build, test, and deployment pipeline.
+You can create workflows that build and test every pull request to your
+repository, or deploy merged pull requests to production.
+
+1. Workflows: Automated processes that you set up in your repository to build,
+   test, package, release, or deploy your project.
+2. Jobs: A set of steps that execute on the same runner. By default, a workflow
+   with multiple jobs will run those jobs in parallel.
+
+## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (ii)"}
+
+3. Steps: An individual task that can run commands or actions. Each step in a
+   job executes on the same runner, allowing the actions in that job to share
+   data with each other.
+4. Actions: Standalone commands that are combined into steps to create a job.
+   Actions are the smallest portable building block of a workflow.
+5. Runners: A server that runs your workflows when they're triggered. Each
+   runner can run a single job at a time.
+
+## Workflow Syntax
+
+Workflows are defined in YAML files in the `.github/workflows` directory of your
+repository. Here's a basic structure:
+
+```{.yaml code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|10-11"}
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
+```
+
+## Example Uses {data-menu-title="Example Uses (i)"}
+
+- _Continuous Integration_: Automatically build and test your code every time
+  you push to your repository or open a pull request.
+- _Continuous Deployment_: Automatically deploy your application to staging or
+  production environments when specific conditions are met.
+- _Automated Testing_: Run your test suite on multiple platforms and versions of
+  your programming language.
+
+## Example Uses {data-menu-title="Example Uses (ii)"}
+
+- _Code Linting and Formatting_: Enforce coding standards across your project.
+- _Issue and PR Management_: Automatically label, close, or comment on issues
+  and pull requests based on certain conditions.
+- _Scheduled Tasks_: Run tasks at specific times, like daily backups or weekly
+  report generation.
+
+## Benefits
+
+- _Integrated with GitHub_: No need for external CI/CD tools.
+- _Matrix Builds_: Easily test across multiple operating systems and runtime
+  versions.
+- _Community Actions_: Reuse and share actions from the GitHub community.
+- _Flexible_: Build custom workflows for any project or git repository.
+
+## Best Practices
+
+- Use secrets for sensitive information
+- Keep your actions versioned
+- Minimise workflow run time by using build matrices and caching
+- Use status badges in your README to show your workflow status
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (i)"}
+
+| Reusable workflows                                                                           | Composite actions                                                                                                            |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| A YAML file, very similar to any standard workflow file                                      | An action containing a bundle of workflow steps                                                                              |
+| Each reusable workflow is a single file in the `.github/workflows` directory of a repository | Each composite action is a separate repository, or a directory, containing an `action.yml` file and, optionally, other files |
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (ii)"}
+
+| Reusable workflows                            | Composite actions                                                              |
+| --------------------------------------------- | ------------------------------------------------------------------------------ |
+| Called by referencing a specific YAML file    | Called by referencing a repository or directory in which the action is defined |
+| Called directly within a job, not from a step | Run as a step within a job                                                     |
+| Can contain multiple jobs                     | Does not contain jobs                                                          |
+| Each step is logged in real-time              | Logged as one step even if it contains multiple steps                          |
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (iii)"}
+
+| Reusable workflows                                | Composite actions                                                |
+| ------------------------------------------------- | ---------------------------------------------------------------- |
+| Can connect a maximum of four levels of workflows | Can be nested to have up to 10 composite actions in one workflow |
+| Can use secrets                                   | Cannot use secrets                                               |
+
+- [Reusable workflow example](https://github.com/UCL/reusable-workflows/blob/a9ea1e4c95707a1a0b4210f613bce20060312478/.github/workflows/run-on-comment.yml#L1-L188)
+- [Composite Actions examples](https://github.com/UCL-MIRSG/.github/tree/main/actions)
+
+# Demos
+
+## {data-menu-title="Mentimeter"}
+
+:::{layout="[22,78]"}
+
+<https://www.menti.com>: `5135 9261`
+
+{{< qrcode https://www.menti.com/ale13innhy9n colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::

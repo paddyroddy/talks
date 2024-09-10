@@ -1,4 +1,5 @@
 _site
+*.quarto_ipynb
 /.quarto/
 index-listing.json
 site_libs
