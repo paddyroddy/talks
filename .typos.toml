@@ -3,5 +3,5 @@ extend-glob = [
     "*.qmd",
 ]
 extend-ignore-re = [
-    "color\\w?=",
+    "(center|color(?:\\w*)?)=",
 ]
