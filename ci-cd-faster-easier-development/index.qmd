@@ -188,3 +188,15 @@ jobs:
 
 - [Reusable workflow example](https://github.com/UCL/reusable-workflows/blob/a9ea1e4c95707a1a0b4210f613bce20060312478/.github/workflows/run-on-comment.yml#L1-L188)
 - [Composite Actions examples](https://github.com/UCL-MIRSG/.github/tree/main/actions)
+
+# Demos
+
+## {data-menu-title="Mentimeter"}
+
+:::{layout="[22,78]"}
+
+<https://www.menti.com>: `5135 9261`
+
+{{< qrcode https://www.menti.com/ale13innhy9n colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
