@@ -1,5 +1,4 @@
 ---
-# TODO: update with actual subgroup link
 author:
   - "[Patrick J. Roddy](https://paddyroddy.github.io)"
   - "[DevOps
