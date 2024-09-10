@@ -67,18 +67,18 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 ## Key Differences {data-menu-title="DevOps (i)"}
 
-1. Scope:
-   - CI/CD: Focused on automating specific parts of the development pipeline
-   - DevOps: Holistic approach to the entire software delivery lifecycle
-2. Cultural Aspect:
-   - CI/CD: Primarily technical practices
-   - DevOps: Emphasises cultural change and cross-functional collaboration
+- Scope:
+  - CI/CD: Focused on automating specific parts of the development pipeline
+  - DevOps: Holistic approach to the entire software delivery lifecycle
+- Cultural Aspect:
+  - CI/CD: Primarily technical practices
+  - DevOps: Emphasises cultural change and cross-functional collaboration
 
-## Key Differences {data-menu-title="DevOps (i)"}
+## Key Differences {data-menu-title="DevOps (ii)"}
 
-3. Goals:
-   - CI/CD: Faster, more reliable software releases
-   - DevOps: Improved overall organisational efficiency and product quality
+- Goals:
+  - CI/CD: Faster, more reliable software releases
+  - DevOps: Improved overall organisational efficiency and product quality
 
 ::: {.fragment .fade-left}
 
@@ -89,27 +89,75 @@ DevOps requires a broader cultural and operational shift.
 
 # GitHub Actions
 
-## GitHub Actions {data-menu-title="GitHub Actions (i)"}
+## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (i)"}
 
-```{.yaml code-line-numbers="1|2|3|4|4-5|4-6|4-8|4-7,9|4-7,10|4-7,11-12|4-7,13|4-7,14|4-7,15-17|4-7,18"}
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+GitHub Actions is a continuous integration and continuous delivery (CI/CD)
+platform that allows you to automate your build, test, and deployment pipeline.
+You can create workflows that build and test every pull request to your
+repository, or deploy merged pull requests to production.
+
+1. Workflows: Automated processes that you set up in your repository to build,
+   test, package, release, or deploy your project.
+2. Jobs: A set of steps that execute on the same runner. By default, a workflow
+   with multiple jobs will run those jobs in parallel.
+
+## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (ii)"}
+
+3. Steps: An individual task that can run commands or actions. Each step in a
+   job executes on the same runner, allowing the actions in that job to share
+   data with each other.
+4. Actions: Standalone commands that are combined into steps to create a job.
+   Actions are the smallest portable building block of a workflow.
+5. Runners: A server that runs your workflows when they're triggered. Each
+   runner can run a single job at a time.
+
+## Workflow Syntax
+
+Workflows are defined in YAML files in the `.github/workflows` directory of your
+repository. Here's a basic structure:
+
+```{.yaml code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|5-8,10-11"}
+name: CI
+
+on: [push, pull_request]
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
 ```
 
-Demo: <https://docs.github.com/en/actions/writing-workflows/quickstart>
+## Example Uses {data-menu-title="Example Uses (i)"}
+
+- Continuous Integration: Automatically build and test your code every time you
+  push to your repository or open a pull request.
+- Continuous Deployment: Automatically deploy your application to staging or
+  production environments when specific conditions are met.
+- Automated Testing: Run your test suite on multiple platforms and versions of
+  your programming language.
+
+## Example Uses {data-menu-title="Example Uses (ii)"}
+
+- Code Linting and Formatting: Enforce coding standards across your project.
+- Issue and PR Management: Automatically label, close, or comment on issues and
+  pull requests based on certain conditions.
+- Scheduled Tasks: Run tasks at specific times, like daily backups or weekly
+  report generation.
+
+## Benefits
+
+- Integrated with GitHub: No need for external CI/CD tools.
+- Matrix Builds: Easily test across multiple operating systems and runtime
+  versions.
+- Community Actions: Reuse and share actions from the GitHub community.
+- Flexible: Build custom workflows for any project or git repository.
+
+## Best Practices
+
+- Use secrets for sensitive information
+- Keep your actions versioned
+- Minimise workflow run time by using build matrices and caching
+- Use status badges in your README to show your workflow status
