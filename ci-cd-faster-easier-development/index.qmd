@@ -80,8 +80,12 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
    - CI/CD: Faster, more reliable software releases
    - DevOps: Improved overall organisational efficiency and product quality
 
-- While CI/CD are crucial components of DevOps, CI/CD alone isn't DevOps. True
-  DevOps requires a broader cultural and operational shift.
+::: {.fragment .fade-left}
+
+While CI/CD are crucial components of DevOps, CI/CD alone isn't DevOps. True
+DevOps requires a broader cultural and operational shift.
+
+:::
 
 # GitHub Actions
 
