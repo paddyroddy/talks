@@ -2,7 +2,8 @@
 # TODO: update with actual subgroup link
 author:
   - "[Patrick J. Roddy](https://paddyroddy.github.io)"
-  - "[DevOps Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
+  - "[DevOps
+    Subgroup](https://www.ucl.ac.uk/advanced-research-computing/our-people-0)"
 date: 2024-09-10
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
@@ -116,7 +117,7 @@ repository, or deploy merged pull requests to production.
 Workflows are defined in YAML files in the `.github/workflows` directory of your
 repository. Here's a basic structure:
 
-```{.yaml code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|5-8,10-11"}
+```{.yaml code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|10-11"}
 name: CI
 
 on: [push, pull_request]
@@ -132,8 +133,8 @@ jobs:
 
 ## Example Uses {data-menu-title="Example Uses (i)"}
 
-- _Continuous Integration_: Automatically build and test your code every time you
-  push to your repository or open a pull request.
+- _Continuous Integration_: Automatically build and test your code every time
+  you push to your repository or open a pull request.
 - _Continuous Deployment_: Automatically deploy your application to staging or
   production environments when specific conditions are met.
 - _Automated Testing_: Run your test suite on multiple platforms and versions of
@@ -142,8 +143,8 @@ jobs:
 ## Example Uses {data-menu-title="Example Uses (ii)"}
 
 - _Code Linting and Formatting_: Enforce coding standards across your project.
-- _Issue and PR Management_: Automatically label, close, or comment on issues and
-  pull requests based on certain conditions.
+- _Issue and PR Management_: Automatically label, close, or comment on issues
+  and pull requests based on certain conditions.
 - _Scheduled Tasks_: Run tasks at specific times, like daily backups or weekly
   report generation.
 
@@ -161,3 +162,29 @@ jobs:
 - Keep your actions versioned
 - Minimise workflow run time by using build matrices and caching
 - Use status badges in your README to show your workflow status
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (i)"}
+
+| Reusable workflows                                                                           | Composite actions                                                                                                            |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| A YAML file, very similar to any standard workflow file                                      | An action containing a bundle of workflow steps                                                                              |
+| Each reusable workflow is a single file in the `.github/workflows` directory of a repository | Each composite action is a separate repository, or a directory, containing an `action.yml` file and, optionally, other files |
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (ii)"}
+
+| Reusable workflows                            | Composite actions                                                              |
+| --------------------------------------------- | ------------------------------------------------------------------------------ |
+| Called by referencing a specific YAML file    | Called by referencing a repository or directory in which the action is defined |
+| Called directly within a job, not from a step | Run as a step within a job                                                     |
+| Can contain multiple jobs                     | Does not contain jobs                                                          |
+| Each step is logged in real-time              | Logged as one step even if it contains multiple steps                          |
+
+## Avoiding Duplication {data-menu-title="Avoiding Duplication (iii)"}
+
+| Reusable workflows                                | Composite actions                                                |
+| ------------------------------------------------- | ---------------------------------------------------------------- |
+| Can connect a maximum of four levels of workflows | Can be nested to have up to 10 composite actions in one workflow |
+| Can use secrets                                   | Cannot use secrets                                               |
+
+- [Reusable workflow example](https://github.com/UCL/reusable-workflows/blob/a9ea1e4c95707a1a0b4210f613bce20060312478/.github/workflows/run-on-comment.yml#L1-L188)
+- [Composite Actions examples](https://github.com/UCL-MIRSG/.github/tree/main/actions)
