@@ -15,23 +15,23 @@ title: "CI/CD: Faster, Easier Development"
 
 ## Continuous Integration (CI)
 
-- Definition: Practice of frequently merging code changes into a central
+- _Definition_: Practice of frequently merging code changes into a central
   repository
-- Goal: Detect and address integration issues early
-- Key practices:
+- _Goal_: Detect and address integration issues early
+- _Key practices_:
   - Automated building and testing of code
   - Frequent code commits
   - Rapid feedback on code quality
 
 ## Continuous Delivery/Deployment (CD)
 
-- Continuous Delivery:
+- _Continuous Delivery_:
   - Automatically prepare code for release to production
   - Manual decision for final deployment
-- Continuous Deployment:
+- _Continuous Deployment_:
   - Automatically deploy code changes to production
   - No manual intervention required
-- Goal: Reduce time between writing code and its use in production
+- _Goal_: Reduce time between writing code and its use in production
 
 ## DevOps {data-menu-title="DevOps (i)"}
 
@@ -47,18 +47,18 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 ## DevOps {data-menu-title="DevOps (ii)"}
 
-- Definition: Cultural and professional movement that aims to unify software
+- _Definition_: Cultural and professional movement that aims to unify software
   development (Dev) and IT operations (Ops)
-- Scope: Broader, encompasses entire software delivery
-- Key aspects:
-  - Cultural change: Breaking down silos between teams
-  - Automation: Throughout the entire software lifecycle
-  - Measurement: Continuous monitoring and feedback
-  - Sharing: Increased collaboration and shared responsibility
+- _Scope_: Broader, encompasses entire software delivery
+- _Key aspects_:
+  - _Cultural change_: Breaking down silos between teams
+  - _Automation_: Throughout the entire software lifecycle
+  - _Measurement_: Continuous monitoring and feedback
+  - _Sharing_: Increased collaboration and shared responsibility
 
 ## Relationship Between CI/CD & DevOps
 
-- CI/CD are _practices_ within the broader DevOps _philosophy_
+- CI/CD are practices within the broader DevOps philosophy
 - DevOps often employs CI/CD as key tools, but also includes:
   - Infrastructure as Code
   - Configuration Management
@@ -67,18 +67,18 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 ## Key Differences {data-menu-title="DevOps (i)"}
 
-- Scope:
-  - CI/CD: Focused on automating specific parts of the development pipeline
-  - DevOps: Holistic approach to the entire software delivery lifecycle
-- Cultural Aspect:
-  - CI/CD: Primarily technical practices
-  - DevOps: Emphasises cultural change and cross-functional collaboration
+- _Scope_:
+  - _CI/CD_: Focused on automating specific parts of the development pipeline
+  - _DevOps_: Holistic approach to the entire software delivery lifecycle
+- _Cultural Aspect_:
+  - _CI/CD_: Primarily technical practices
+  - _DevOps_: Emphasises cultural change and cross-functional collaboration
 
 ## Key Differences {data-menu-title="DevOps (ii)"}
 
-- Goals:
-  - CI/CD: Faster, more reliable software releases
-  - DevOps: Improved overall organisational efficiency and product quality
+- _Goals_:
+  - _CI/CD_: Faster, more reliable software releases
+  - _DevOps_: Improved overall organisational efficiency and product quality
 
 ::: {.fragment .fade-left}
 
@@ -132,28 +132,28 @@ jobs:
 
 ## Example Uses {data-menu-title="Example Uses (i)"}
 
-- Continuous Integration: Automatically build and test your code every time you
+- _Continuous Integration_: Automatically build and test your code every time you
   push to your repository or open a pull request.
-- Continuous Deployment: Automatically deploy your application to staging or
+- _Continuous Deployment_: Automatically deploy your application to staging or
   production environments when specific conditions are met.
-- Automated Testing: Run your test suite on multiple platforms and versions of
+- _Automated Testing_: Run your test suite on multiple platforms and versions of
   your programming language.
 
 ## Example Uses {data-menu-title="Example Uses (ii)"}
 
-- Code Linting and Formatting: Enforce coding standards across your project.
-- Issue and PR Management: Automatically label, close, or comment on issues and
+- _Code Linting and Formatting_: Enforce coding standards across your project.
+- _Issue and PR Management_: Automatically label, close, or comment on issues and
   pull requests based on certain conditions.
-- Scheduled Tasks: Run tasks at specific times, like daily backups or weekly
+- _Scheduled Tasks_: Run tasks at specific times, like daily backups or weekly
   report generation.
 
 ## Benefits
 
-- Integrated with GitHub: No need for external CI/CD tools.
-- Matrix Builds: Easily test across multiple operating systems and runtime
+- _Integrated with GitHub_: No need for external CI/CD tools.
+- _Matrix Builds_: Easily test across multiple operating systems and runtime
   versions.
-- Community Actions: Reuse and share actions from the GitHub community.
-- Flexible: Build custom workflows for any project or git repository.
+- _Community Actions_: Reuse and share actions from the GitHub community.
+- _Flexible_: Build custom workflows for any project or git repository.
 
 ## Best Practices
 
