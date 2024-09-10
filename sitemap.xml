@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2024-09-09T16:07:04.620Z</lastmod>
+    <lastmod>2024-09-10T12:47:29.717Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2024-09-09T16:07:04.612Z</lastmod>
+    <lastmod>2024-09-10T12:47:29.709Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2024-09-09T16:07:04.652Z</lastmod>
+    <lastmod>2024-09-10T12:47:29.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
+    <lastmod>2024-09-10T12:47:29.705Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2024-09-09T16:07:04.612Z</lastmod>
+    <lastmod>2024-09-10T12:47:29.709Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2024-09-09T16:07:04.624Z</lastmod>
+    <lastmod>2024-09-10T12:47:29.721Z</lastmod>
   </url>
 </urlset>

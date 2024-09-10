@@ -13,8 +13,9 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Patrick J. Roddy">
-  <meta name="dcterms.date" content="2023-11-14">
-  <title>Renovate: Automating Dependency Management</title>
+  <meta name="author" content="DevOps Subgroup">
+  <meta name="dcterms.date" content="2024-09-10">
+  <title>CI/CD: Faster, Easier Development</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -403,7 +404,7 @@
     <div class="slides">
 
 <section class="quarto-title-block center">
-  <h1 class="title">Renovate: Automating Dependency Management</h1>
+  <h1 class="title">CI/CD: Faster, Easier Development</h1>
   <p class="subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Collaborations Hour</a></p>
 
 <div class="quarto-title-authors">
@@ -412,9 +413,14 @@
 <a href="https://paddyroddy.github.io">Patrick J. Roddy</a> 
 </div>
 </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://www.ucl.ac.uk/advanced-research-computing/our-people-0">DevOps Subgroup</a> 
+</div>
+</div>
 </div>
 
-  <p class="date">2023-11-14</p>
+  <p class="date">2024-09-10</p>
 </section>
 <section class="title-slide slide level1 center" data-menu-title="QR Code">
 <h1></h1>
@@ -432,7 +438,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/renovate-automating-dependency-management","colorLight":"#000000","width":"550","height":"550","colorDark":"#ffffff"});
+  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/ci-cd-faster-easier-development","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
   script.remove();
 })();
 </script>
@@ -444,244 +450,308 @@
 
 <section>
 <section class="title-slide slide level1 center">
-<h1>Introduction</h1>
+<h1>CI/CD vs DevOps</h1>
 
 </section>
 <section class="slide level2">
-<h2>Dependencies Are Inevitable</h2>
-
-<img data-src="figures/dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
-<section class="slide level2">
-<h2>Automation Saves Time?</h2>
-
-<img data-src="figures/automation.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:1319</p></section>
-<section class="slide level2">
-<h2>We’ve All Done This At Some Point</h2>
-
-<img data-src="figures/bump.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2>What About Security Updates?</h2>
-
-<img data-src="figures/dependabot.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2>Why Should I Update?</h2>
-
-<img data-src="figures/updates.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2224</p></section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Renovate</h1>
-
-<img data-src="figures/renovate.jpg" class="r-stretch"></section>
-<section class="slide level2" data-menu-title="Why Use Renovate? (i)">
-<h2>Why Use Renovate?</h2>
+<h2>Continuous Integration (CI)</h2>
 <ul>
-<li class="fragment">Get automated Pull Requests to update your dependencies
+<li class="fragment"><em>Definition</em>: Practice of frequently merging code changes into a central repository</li>
+<li class="fragment"><em>Goal</em>: Detect and address integration issues early</li>
+<li class="fragment"><em>Key practices</em>:
 <ul>
-<li class="fragment">Reduce noise by running Renovate on a schedule, for example:
-<ul>
-<li class="fragment">on weekends</li>
-<li class="fragment">outside of working hours</li>
-<li class="fragment">each week</li>
-<li class="fragment">each month</li>
+<li class="fragment">Automated building and testing of code</li>
+<li class="fragment">Frequent code commits</li>
+<li class="fragment">Rapid feedback on code quality</li>
 </ul></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Continuous Delivery/Deployment (CD)</h2>
+<ul>
+<li class="fragment"><em>Continuous Delivery</em>:
+<ul>
+<li class="fragment">Automatically prepare code for release to production</li>
+<li class="fragment">Manual decision for final deployment</li>
 </ul></li>
-<li class="fragment">Relevant package files are discovered automatically</li>
-</ul>
-</section>
-<section class="slide level2" data-menu-title="Why Use Renovate? (ii)">
-<h2>Why Use Renovate?</h2>
+<li class="fragment"><em>Continuous Deployment</em>:
 <ul>
-<li class="fragment">Supports monorepo architectures with workspaces with no extra configuration</li>
-<li class="fragment">Bot behaviour is customisable via configuration files (config as code)</li>
-<li class="fragment">Use ESLint-like shared config presets for ease of use and simplifying configuration (JSON format only)</li>
-<li class="fragment">Lock files are supported and updated in the same commit, including immediately resolving conflicts whenever PRs are merged</li>
+<li class="fragment">Automatically deploy code changes to production</li>
+<li class="fragment">No manual intervention required</li>
+</ul></li>
+<li class="fragment"><em>Goal</em>: Reduce time between writing code and its use in production</li>
 </ul>
 </section>
-<section class="slide level2" data-menu-title="Why Use Renovate? (iii)">
-<h2>Why Use Renovate?</h2>
-<ul>
-<li class="fragment">Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with most managers, see <a href="https://github.com/renovatebot/renovate/issues/14149">issue 14149</a> for exceptions</li>
-<li class="fragment">Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or used via the Mend Renovate App</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Open Source Projects</h2>
-<ul>
-<li class="fragment"><a href="https://github.com/paddyroddy/talks" class="uri">https://github.com/paddyroddy/talks</a></li>
-<li class="fragment"><a href="https://github.com/renovatebot/renovate" class="uri">https://github.com/renovatebot/renovate</a></li>
-<li class="fragment"><a href="https://github.com/astro-informatics/sleplet" class="uri">https://github.com/astro-informatics/sleplet</a></li>
-<li class="fragment"><a href="https://github.com/microsoft/lage" class="uri">https://github.com/microsoft/lage</a></li>
-<li class="fragment"><a href="https://github.com/loopbackio/loopback-next" class="uri">https://github.com/loopbackio/loopback-next</a></li>
-<li class="fragment"><a href="https://github.com/ampproject/amphtml" class="uri">https://github.com/ampproject/amphtml</a></li>
-<li class="fragment">…</li>
-</ul>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>How to Setup</h1>
-
-</section>
-<section class="slide level2">
-<h2>Install the Application</h2>
-<p><a href="https://github.com/apps/renovate" class="uri">https://github.com/apps/renovate</a></p>
-
-<img data-src="figures/application.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2>Example Config</h2>
-<div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>{</span>
-<span id="cb1-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
-<span id="cb1-3"><a></a>  extends: [</span>
-<span id="cb1-4"><a></a>    "config:best-practices",</span>
-<span id="cb1-5"><a></a>    "schedule:weekdays",</span>
-<span id="cb1-6"><a></a>    ":assignAndReview(paddyroddy)",</span>
-<span id="cb1-7"><a></a>    ":automergeBranch",</span>
-<span id="cb1-8"><a></a>    ":automergeDigest",</span>
-<span id="cb1-9"><a></a>    ":automergeMinor",</span>
-<span id="cb1-10"><a></a>    ":automergePatch",</span>
-<span id="cb1-11"><a></a>    ":disableDependencyDashboard",</span>
-<span id="cb1-12"><a></a>    ":enablePreCommit",</span>
-<span id="cb1-13"><a></a>    ":label(renovate)",</span>
-<span id="cb1-14"><a></a>    ":maintainLockFilesMonthly",</span>
-<span id="cb1-15"><a></a>    ":noUnscheduledUpdates",</span>
-<span id="cb1-16"><a></a>  ],</span>
-<span id="cb1-17"><a></a>  commitMessageAction: "Renovate:",</span>
-<span id="cb1-18"><a></a>  "git-submodules": {</span>
-<span id="cb1-19"><a></a>    enabled: true,</span>
-<span id="cb1-20"><a></a>  },</span>
-<span id="cb1-21"><a></a>  packageRules: [</span>
-<span id="cb1-22"><a></a>    {</span>
-<span id="cb1-23"><a></a>      description: "Only allow major updates",</span>
-<span id="cb1-24"><a></a>      enabled: false,</span>
-<span id="cb1-25"><a></a>      matchDepNames: ["renovatebot/pre-commit-hooks"],</span>
-<span id="cb1-26"><a></a>      matchUpdateTypes: ["minor", "patch", "pin"],</span>
-<span id="cb1-27"><a></a>    },</span>
-<span id="cb1-28"><a></a>    {</span>
-<span id="cb1-29"><a></a>      description: "Combine updates together",</span>
-<span id="cb1-30"><a></a>      groupName: "paddyroddy/.github",</span>
-<span id="cb1-31"><a></a>      matchDepNames: ["paddyroddy/.github"],</span>
-<span id="cb1-32"><a></a>    },</span>
-<span id="cb1-33"><a></a>    {</span>
-<span id="cb1-34"><a></a>      description: "Shorten commit titles",</span>
-<span id="cb1-35"><a></a>      commitMessageTopic: "{{depName}}",</span>
-<span id="cb1-36"><a></a>      matchManagers: ["github-actions", "pre-commit"],</span>
-<span id="cb1-37"><a></a>    },</span>
-<span id="cb1-38"><a></a>  ],</span>
-<span id="cb1-39"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Config is Reusable!</h2>
-<div class="sourceCode" id="cb2" data-code-line-numbers="2|4|5|7-13"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>{</span>
-<span id="cb2-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
-<span id="cb2-3"><a></a>  extends: [</span>
-<span id="cb2-4"><a></a>    "github&gt;paddyroddy/.github//renovate/default-config.json5",</span>
-<span id="cb2-5"><a></a>    "schedule:monthly",</span>
-<span id="cb2-6"><a></a>  ],</span>
-<span id="cb2-7"><a></a>  "pre-commit": {</span>
-<span id="cb2-8"><a></a>    fileMatch: [</span>
-<span id="cb2-9"><a></a>      "precommit/general/general-hooks.yaml",</span>
-<span id="cb2-10"><a></a>      "precommit/latex/latex-hooks.yaml",</span>
-<span id="cb2-11"><a></a>      "precommit/python/python-hooks.yaml",</span>
-<span id="cb2-12"><a></a>    ],</span>
-<span id="cb2-13"><a></a>  },</span>
-<span id="cb2-14"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Automerging</h2>
-<p>The <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">GitHub automerge</a> setting is required</p>
-
-<img data-src="figures/automerge.png" class="r-stretch"><div class="fragment fade-left">
-<p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb3-2"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb3-3"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
-<span id="cb3-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
-<span id="cb3-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
-<span id="cb3-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Rulesets - Status Checks</h2>
+<section class="slide level2" data-menu-title="DevOps (i)">
+<h2>DevOps</h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/status_checks_1.png"></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>I previously gave talk on a general overview of DevOps <a href="https://paddyroddy.github.io/talks/devops-an-introduction" class="uri">https://paddyroddy.github.io/talks/devops-an-introduction</a></p>
 </div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/status_checks_2.png"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Rulesets - Pull Requests</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/pull_requests_1.png"></p>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/pull_requests_2.png"></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/devops-an-introduction","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
+  script.remove();
+})();
+</script>
+    
 </div>
 </div>
 </div>
 </section>
+<section class="slide level2" data-menu-title="DevOps (ii)">
+<h2>DevOps</h2>
+<ul>
+<li class="fragment"><em>Definition</em>: Cultural and professional movement that aims to unify software development (Dev) and IT operations (Ops)</li>
+<li class="fragment"><em>Scope</em>: Broader, encompasses entire software delivery</li>
+<li class="fragment"><em>Key aspects</em>:
+<ul>
+<li class="fragment"><em>Cultural change</em>: Breaking down silos between teams</li>
+<li class="fragment"><em>Automation</em>: Throughout the entire software lifecycle</li>
+<li class="fragment"><em>Measurement</em>: Continuous monitoring and feedback</li>
+<li class="fragment"><em>Sharing</em>: Increased collaboration and shared responsibility</li>
+</ul></li>
+</ul>
+</section>
 <section class="slide level2">
-<h2>Monitoring</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/logging_1.png"></p>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="figures/logging_2.png"></p>
-</div>
-</div>
-</div>
-<div class="footer">
-<p>See in action: <a href="https://developer.mend.io/github/paddyroddy/.github" class="uri">https://developer.mend.io/github/paddyroddy/.github</a></p>
+<h2>Relationship Between CI/CD &amp; DevOps</h2>
+<ul>
+<li class="fragment">CI/CD are practices within the broader DevOps philosophy</li>
+<li class="fragment">DevOps often employs CI/CD as key tools, but also includes:
+<ul>
+<li class="fragment">Infrastructure as Code</li>
+<li class="fragment">Configuration Management</li>
+<li class="fragment">Monitoring and Logging</li>
+<li class="fragment">Incident Response</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="DevOps (i)">
+<h2>Key Differences</h2>
+<ul>
+<li class="fragment"><em>Scope</em>:
+<ul>
+<li class="fragment"><em>CI/CD</em>: Focused on automating specific parts of the development pipeline</li>
+<li class="fragment"><em>DevOps</em>: Holistic approach to the entire software delivery lifecycle</li>
+</ul></li>
+<li class="fragment"><em>Cultural Aspect</em>:
+<ul>
+<li class="fragment"><em>CI/CD</em>: Primarily technical practices</li>
+<li class="fragment"><em>DevOps</em>: Emphasises cultural change and cross-functional collaboration</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="DevOps (ii)">
+<h2>Key Differences</h2>
+<ul>
+<li class="fragment"><em>Goals</em>:
+<ul>
+<li class="fragment"><em>CI/CD</em>: Faster, more reliable software releases</li>
+<li class="fragment"><em>DevOps</em>: Improved overall organisational efficiency and product quality</li>
+</ul></li>
+</ul>
+<div class="fragment fade-left">
+<p>While CI/CD are crucial components of DevOps, CI/CD alone isn’t DevOps. True DevOps requires a broader cultural and operational shift.</p>
 </div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>Conclusions</h1>
+<h1>GitHub Actions</h1>
 
 </section>
+<section class="slide level2" data-menu-title="What Are GitHub Actions? (i)">
+<h2>What Are GitHub Actions?</h2>
+<p>GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
+<ol type="1">
+<li class="fragment">Workflows: Automated processes that you set up in your repository to build, test, package, release, or deploy your project.</li>
+<li class="fragment">Jobs: A set of steps that execute on the same runner. By default, a workflow with multiple jobs will run those jobs in parallel.</li>
+</ol>
+</section>
+<section class="slide level2" data-menu-title="What Are GitHub Actions? (ii)">
+<h2>What Are GitHub Actions?</h2>
+<ol start="3" type="1">
+<li class="fragment">Steps: An individual task that can run commands or actions. Each step in a job executes on the same runner, allowing the actions in that job to share data with each other.</li>
+<li class="fragment">Actions: Standalone commands that are combined into steps to create a job. Actions are the smallest portable building block of a workflow.</li>
+<li class="fragment">Runners: A server that runs your workflows when they’re triggered. Each runner can run a single job at a time.</li>
+</ol>
+</section>
 <section class="slide level2">
-<h2>Summary</h2>
+<h2>Workflow Syntax</h2>
+<p>Workflows are defined in YAML files in the <code>.github/workflows</code> directory of your repository. Here’s a basic structure:</p>
+<div class="sourceCode" id="cb1" data-code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|10-11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> CI</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">]</span></span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-6"><a></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb1-7"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-8"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb1-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run a one-line script</span></span>
+<span id="cb1-11"><a></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo Hello, world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Example Uses (i)">
+<h2>Example Uses</h2>
 <ul>
-<li class="fragment">Renovate is massively flexible</li>
-<li class="fragment">Maintainers respond incredibly quickly</li>
-<li class="fragment">Renovate is widely used</li>
-<li class="fragment">If you think it can be automated, it probably can</li>
-<li class="fragment">Be careful with CI use in private projects (ask MIRSG 😉)</li>
-<li class="fragment">Embrace automerging (if you like inbox zero)</li>
-<li class="fragment">Renovate <code>renovates</code> itself very frequently</li>
-<li class="fragment">There’s always more to learn!</li>
+<li class="fragment"><em>Continuous Integration</em>: Automatically build and test your code every time you push to your repository or open a pull request.</li>
+<li class="fragment"><em>Continuous Deployment</em>: Automatically deploy your application to staging or production environments when specific conditions are met.</li>
+<li class="fragment"><em>Automated Testing</em>: Run your test suite on multiple platforms and versions of your programming language.</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Example Uses (ii)">
+<h2>Example Uses</h2>
+<ul>
+<li class="fragment"><em>Code Linting and Formatting</em>: Enforce coding standards across your project.</li>
+<li class="fragment"><em>Issue and PR Management</em>: Automatically label, close, or comment on issues and pull requests based on certain conditions.</li>
+<li class="fragment"><em>Scheduled Tasks</em>: Run tasks at specific times, like daily backups or weekly report generation.</li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>Demo Time</h2>
-<p><a href="https://developer.mend.io" class="uri">https://developer.mend.io</a></p>
+<h2>Benefits</h2>
+<ul>
+<li class="fragment"><em>Integrated with GitHub</em>: No need for external CI/CD tools.</li>
+<li class="fragment"><em>Matrix Builds</em>: Easily test across multiple operating systems and runtime versions.</li>
+<li class="fragment"><em>Community Actions</em>: Reuse and share actions from the GitHub community.</li>
+<li class="fragment"><em>Flexible</em>: Build custom workflows for any project or git repository.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Best Practices</h2>
+<ul>
+<li class="fragment">Use secrets for sensitive information</li>
+<li class="fragment">Keep your actions versioned</li>
+<li class="fragment">Minimise workflow run time by using build matrices and caching</li>
+<li class="fragment">Use status badges in your README to show your workflow status</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Avoiding Duplication (i)">
+<h2>Avoiding Duplication</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reusable workflows</th>
+<th>Composite actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A YAML file, very similar to any standard workflow file</td>
+<td>An action containing a bundle of workflow steps</td>
+</tr>
+<tr class="even">
+<td>Each reusable workflow is a single file in the <code>.github/workflows</code> directory of a repository</td>
+<td>Each composite action is a separate repository, or a directory, containing an <code>action.yml</code> file and, optionally, other files</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2" data-menu-title="Avoiding Duplication (ii)">
+<h2>Avoiding Duplication</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reusable workflows</th>
+<th>Composite actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Called by referencing a specific YAML file</td>
+<td>Called by referencing a repository or directory in which the action is defined</td>
+</tr>
+<tr class="even">
+<td>Called directly within a job, not from a step</td>
+<td>Run as a step within a job</td>
+</tr>
+<tr class="odd">
+<td>Can contain multiple jobs</td>
+<td>Does not contain jobs</td>
+</tr>
+<tr class="even">
+<td>Each step is logged in real-time</td>
+<td>Logged as one step even if it contains multiple steps</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2" data-menu-title="Avoiding Duplication (iii)">
+<h2>Avoiding Duplication</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reusable workflows</th>
+<th>Composite actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Can connect a maximum of four levels of workflows</td>
+<td>Can be nested to have up to 10 composite actions in one workflow</td>
+</tr>
+<tr class="even">
+<td>Can use secrets</td>
+<td>Cannot use secrets</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li class="fragment"><a href="https://github.com/UCL/reusable-workflows/blob/a9ea1e4c95707a1a0b4210f613bce20060312478/.github/workflows/run-on-comment.yml#L1-L188">Reusable workflow example</a></li>
+<li class="fragment"><a href="https://github.com/UCL-MIRSG/.github/tree/main/actions">Composite Actions examples</a></li>
+</ul>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Demos</h1>
 
+</section>
+<section class="slide level2" data-menu-title="Mentimeter">
+<h2></h2>
+<div>
 
-<img data-src="figures/demo.jpg" class="r-stretch"><div class="quarto-auto-generated-content">
+</div>
+<div class="quarto-layout-panel" data-layout="[22,78]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 22.0%;justify-content: flex-start;">
+<p><a href="https://www.menti.com" class="uri">https://www.menti.com</a>: <code>5135 9261</code></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 78.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"text":"https://www.menti.com/ale13innhy9n","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
+  script.remove();
+})();
+</script>
+    
+</div>
+</div>
+</div>
+
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Renovate: Automating Dependency Management - <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+<p>CI/CD: Faster, Easier Development - <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
 </div>
 </div>
 </section></section>

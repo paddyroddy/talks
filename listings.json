@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/ci-cd-faster-easier-development/index.html",
       "/scipy-2024/index.html",
       "/pyopensci-my-experience/index.html",
       "/devops-an-introduction/index.html",
