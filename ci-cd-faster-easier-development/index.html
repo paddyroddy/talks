@@ -438,7 +438,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/ci-cd-faster-easier-development","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","height":"550","colorLight":"#000000","text":"https://paddyroddy.github.io/talks/ci-cd-faster-easier-development","width":"550"});
   script.remove();
 })();
 </script>
@@ -498,7 +498,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/devops-an-introduction","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","height":"550","colorLight":"#000000","text":"https://paddyroddy.github.io/talks/devops-an-introduction","width":"550"});
   script.remove();
 })();
 </script>
@@ -683,10 +683,6 @@
 <td>Can contain multiple jobs</td>
 <td>Does not contain jobs</td>
 </tr>
-<tr class="even">
-<td>Each step is logged in real-time</td>
-<td>Logged as one step even if it contains multiple steps</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -705,10 +701,14 @@
 </thead>
 <tbody>
 <tr class="odd">
+<td>Each step is logged in real-time</td>
+<td>Logged as one step even if it contains multiple steps</td>
+</tr>
+<tr class="even">
 <td>Can connect a maximum of four levels of workflows</td>
 <td>Can be nested to have up to 10 composite actions in one workflow</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Can use secrets</td>
 <td>Cannot use secrets</td>
 </tr>
@@ -740,7 +740,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"text":"https://www.menti.com/ale13innhy9n","width":"550","colorLight":"#000000","height":"550","colorDark":"#ffffff"});
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","height":"550","colorLight":"#000000","text":"https://www.menti.com/ale13innhy9n","width":"550"});
   script.remove();
 })();
 </script>
