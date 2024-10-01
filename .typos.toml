@@ -1,7 +1,0 @@
-[type.qmd]
-extend-glob = [
-    "*.qmd",
-]
-extend-ignore-re = [
-    "(center|color(?:\\w*)?)=",
-]
