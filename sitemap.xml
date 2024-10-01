@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.644Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.680Z</lastmod>
-  </url>
-  <url>
     <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.636Z</lastmod>
+    <lastmod>2024-10-01T04:02:46.532Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.644Z</lastmod>
+    <lastmod>2024-10-01T04:02:46.538Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
+    <lastmod>2024-10-01T04:02:46.573Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/index.html</loc>
+    <lastmod>2024-10-01T04:02:46.538Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2024-09-10T16:49:55.656Z</lastmod>
+    <lastmod>2024-10-01T04:02:46.548Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
+    <lastmod>2024-10-01T04:02:46.543Z</lastmod>
   </url>
 </urlset>
