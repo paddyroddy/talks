@@ -371,7 +371,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"height":"550","width":"550","colorLight":"#000000","text":"https://paddyroddy.github.io/talks/devops-an-introduction","colorDark":"#ffffff"});
+  qrcode.qrcode = new QRCode(qrcode, {"text":"https://paddyroddy.github.io/talks/devops-an-introduction","colorLight":"#000000","colorDark":"#ffffff","width":"550","height":"550"});
   script.remove();
 })();
 </script>
