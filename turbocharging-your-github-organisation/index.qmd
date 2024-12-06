@@ -9,3 +9,18 @@ title: Turbocharging Your GitHub Organisation
 ---
 
 {{< include /_includes/qr-code.qmd >}}
+
+# Special Repositories
+
+## `.github-private`
+
+The `/profile/README.md` will appear on the GitHub organisation's member
+profile, visible only to organisation members.
+
+![](figures/private_readme.png)
+
+## `.github`
+
+The `/profile/README.md` will appear on the organisation's profile.
+
+![](figures/public_readme.png)
