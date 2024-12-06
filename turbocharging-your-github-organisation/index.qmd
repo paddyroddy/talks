@@ -14,7 +14,9 @@ title: Turbocharging Your GitHub Organisation
 
 ::: {.callout-note}
 
-Much of this talk holds true for personal GitHub accounts as well as GitHub organisations. However, it is not always the case. I will focus solely on organisational accounts here.
+Much of this talk holds true for personal GitHub accounts as well as GitHub
+organisations. However, it is not always the case. I will focus solely on
+organisational accounts here.
 
 :::
 
@@ -35,8 +37,22 @@ The `/profile/README.md` will appear on the organisation's profile.
 
 ## .github {data-menu-title=".github (ii)"}
 
-Can add issue templates in `.github/ISSUE_TEMPLATE` that will be seen in all
+Can add issue templates in `/.github/ISSUE_TEMPLATE` that will be seen in all
 organisation repositories, unless the repository itself specifies its own set of
 issue templates.
 
 ![](figures/issue_templates.png)
+
+## .github {data-menu-title=".github (iii)"}
+
+Configure `/.github/ISSUE_TEMPLATE/config.yml`.
+
+```yaml
+blank_issues_enabled: true
+contact_links:
+  - name: General MIRSG issue
+    url: https://github.com/UCL-MIRSG/MIRSG/issues/new/choose
+    about: If your issue is a general...
+```
+
+![](figures/config.png)
