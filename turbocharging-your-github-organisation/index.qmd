@@ -12,15 +12,23 @@ title: Turbocharging Your GitHub Organisation
 
 # Special Repositories
 
-## `.github-private`
+## .github-private
 
 The `/profile/README.md` will appear on the GitHub organisation's member
 profile, visible only to organisation members.
 
 ![](figures/private_readme.png)
 
-## `.github`
+## .github {data-menu-title=".github (i)"}
 
 The `/profile/README.md` will appear on the organisation's profile.
 
 ![](figures/public_readme.png)
+
+## .github {data-menu-title=".github (ii)"}
+
+One can add issue templates in `.github/ISSUE_TEMPLATE` that will be seen in all
+organisation repositories, unless the repository itself specifies its own set of
+issue templates.
+
+![](figures/issue_templates.png)
