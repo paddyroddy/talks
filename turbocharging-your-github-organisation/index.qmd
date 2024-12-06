@@ -10,6 +10,14 @@ title: Turbocharging Your GitHub Organisation
 
 {{< include /_includes/qr-code.qmd >}}
 
+# {data-menu-title="Note"}
+
+::: {.callout-note}
+
+Much of this talk holds true for personal GitHub accounts as well as GitHub organisations. However, it is not always the case. I will focus solely on organisational accounts here.
+
+:::
+
 # Special Repositories
 
 ## .github-private
@@ -27,7 +35,7 @@ The `/profile/README.md` will appear on the organisation's profile.
 
 ## .github {data-menu-title=".github (ii)"}
 
-One can add issue templates in `.github/ISSUE_TEMPLATE` that will be seen in all
+Can add issue templates in `.github/ISSUE_TEMPLATE` that will be seen in all
 organisation repositories, unless the repository itself specifies its own set of
 issue templates.
 
