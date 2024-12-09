@@ -56,3 +56,13 @@ contact_links:
 ```
 
 ![](figures/config.png)
+
+## .github {data-menu-title=".github (iv)"}
+
+:::{layout="[25,75]"}
+
+Add a default `/CONTRIBUTING.md`.
+
+![](figures/contributing.png)
+
+:::
