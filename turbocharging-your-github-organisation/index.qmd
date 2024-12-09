@@ -66,3 +66,13 @@ Add a default `/CONTRIBUTING.md`.
 ![](figures/contributing.png)
 
 :::
+
+## .github {data-menu-title=".github (v)"}
+
+:::{layout="[25,75]"}
+
+Add a default `/CODE_OF_CONDUCT.md`.
+
+![](figures/code_of_conduct.png)
+
+:::
