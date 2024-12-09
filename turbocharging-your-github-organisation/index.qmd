@@ -69,14 +69,33 @@ Add a default `/CODE_OF_CONDUCT.md`.
 
 ![](figures/code_of_conduct.png)
 
-## Other Things to Store in `.github`
+## Other Things to Store in `.github` {data-menu-title=".github (i)"}
 
-- [Renovate](https://docs.renovatebot.com) configuration,
-  `/renovate/default-config.json`. Can be referenced repositories as follows.
+Organisation-wide [Renovate](https://docs.renovatebot.com) configuration,
+`/renovate/default-config.json`. Can be referenced as follows.
 
-  ```json5
-  {
-    $schema: "https://docs.renovatebot.com/renovate-schema.json",
-    extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
-  }
-  ```
+```json5
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
+}
+```
+
+See this in action in
+[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate).
+
+## Other Things to Store in `.github` {data-menu-title=".github (i)"}
+
+Organisation-wide [pre-commit](https://pre-commit.com) configuration,
+`/precommit/mirsg-hooks.yaml`. Can be referenced as follows.
+
+```yaml
+repos:
+  - repo: https://github.com/UCL-MIRSG/.github
+    rev: v0.133.0
+    hooks:
+      - id: mirsg-hooks
+```
+
+See this in action in
+[UCL-MIRSG/.github](https://github.com/UCL-MIRSG/.github/tree/main/precommit).
