@@ -47,7 +47,7 @@ issue templates.
 
 Configure `/.github/ISSUE_TEMPLATE/config.yml`.
 
-```yaml
+```{.yaml}
 blank_issues_enabled: true
 contact_links:
   - name: General MIRSG issue
@@ -75,7 +75,7 @@ Add a default `/CODE_OF_CONDUCT.md`.
 
 :::{layout-ncol=2}
 
-I previously gave talk on Renovate
+I previously gave talk on [Renovate](https://docs.renovatebot.com)
 <https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
 
 {{< qrcode https://paddyroddy.github.io/talks/renovate-automating-dependency-management
@@ -85,10 +85,9 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 ## Renovate {data-menu-title="Renovate (ii)"}
 
-Organisation-wide [Renovate](https://docs.renovatebot.com) configuration, e.g.
-`/renovate/default-config.json`. The
-[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate) one
-currently:
+Organisation-wide `Renovate` configuration, e.g.
+`/renovate/default-config.json`.
+[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate):
 
 ```{.json code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"}
 {
@@ -154,7 +153,7 @@ currently:
 This can be then be used in organisation repositories as as follows, e.g.
 `/.renovaterc.json5`.
 
-```json5
+```{.json5}
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
@@ -167,12 +166,214 @@ This can then be debugged at <https://developer.mend.io>.
 
 ![](figures/renovate.png)
 
-## Other Things to Store in `.github` {data-menu-title=".github (i)"}
+## pre-commit {data-menu-title="pre-commit (i)"}
 
-Organisation-wide [pre-commit](https://pre-commit.com) configuration,
-`/precommit/mirsg-hooks.yaml`. Can be referenced as follows.
+Metahooks
+[pre-commit/pre-commit#731](https://github.com/pre-commit/pre-commit/issues/731)?
 
-```yaml
+> So, while I get your usecase -- and it sounds good in theory -- it tends not
+> to work in practice. In a lot of ways, pre-commit was designed as a reaction
+> to centralized managed hooks. That said, there's some features that enable
+> this to work currently.
+>
+> ...
+>
+> That said, here's how you can do this with the facilities provided today:
+
+## pre-commit {data-menu-title="pre-commit (ii)"}
+
+Organisation-wide `pre-commit` configuration, e.g.
+`/precommit/mirsg-hooks.yaml`.
+[UCL-MIRSG/.github](https://github.com/UCL-MIRSG/.github/blob/main/precommit/mirsg-hooks.yaml):
+
+```{.yaml code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"}
+exclude: .crt$
+repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args:
+          - >-
+            --config-data={
+              extends: default,
+              rules: {
+                anchors: enable,
+                braces: {
+                  forbid: non-empty
+                },
+                brackets: {
+                  forbid: non-empty
+                },
+                colons: enable,
+                commas: enable,
+                comments: {
+                  min-spaces-from-content: 1
+                },
+                comments-indentation: enable,
+                document-end: disable,
+                document-start: enable,
+                empty-lines: enable,
+                empty-values: disable,
+                float-values: enable,
+                hyphens: enable,
+                indentation: enable,
+                key-duplicates: enable,
+                key-ordering: disable,
+                line-length: {
+                  max: 160
+                },
+                new-line-at-end-of-file: enable,
+                new-lines: enable,
+                octal-values: enable,
+                quoted-strings: {
+                  quote-type: double,
+                  required: only-when-needed
+                },
+                trailing-spaces: enable,
+                truthy: {
+                  check-keys: false
+                }
+              }
+            }
+  - repo: https://github.com/AleksaC/hadolint-py
+    rev: v2.12.1b3
+    hooks:
+      - id: hadolint
+        args:
+          - --ignore=DL3008
+  - repo: https://github.com/ansible-community/ansible-lint.git
+    rev: v24.10.0
+    hooks:
+      - id: ansible-lint
+        args:
+          - --exclude=.github
+          - --exclude=docker-compose.yml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.1
+    hooks:
+      - id: ruff
+        args:
+          - --exit-non-zero-on-fix
+          - --fix
+      - id: ruff-format
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.28.1
+    hooks:
+      - id: typos
+        args:
+          - --force-exclude
+          - --hidden
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint-fix
+        args:
+          - --dot
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
+    hooks:
+      - id: forbid-tabs
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.24.2
+    hooks:
+      - id: toml-sort-fix
+        args:
+          - --all
+          - --in-place
+          - --spaces-indent-inline-array=4
+          - --trailing-comma-inline-array
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        args:
+          - --prose-wrap=always
+          - --quote-props=as-needed
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+        exclude: .j2$
+      - id: destroyed-symlinks
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: trailing-whitespace
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.30.0
+    hooks:
+      - id: check-github-workflows
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        args:
+          - --external-sources
+          - --shell=bash
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.4
+    hooks:
+      - id: actionlint
+```
+
+## pre-commit {data-menu-title="pre-commit (iii)"}
+
+To set this up a `/.pre-commit-hooks.yaml` must be defined.
+
+```{.yaml}
+- id: mirsg-hooks
+  name: MIRSG hooks
+  description: Default pre-commit hooks for MIRSG repos
+  entry: ./precommit/run-mirsg-hooks.py
+  language: script
+  require_serial: true
+  verbose: true
+```
+
+## pre-commit {data-menu-title="pre-commit (iv)"}
+
+Which, in turn, calls the script, e.g. `/precommit/run-mirsg-hooks.py`.
+
+```{.python code-line-numbers=1}
+#!/usr/bin/env python
+import pathlib
+import subprocess
+import sys
+
+HERE = pathlib.Path(__file__).resolve()
+
+
+def main() -> int:
+    cfg = HERE.parent / "mirsg-hooks.yaml"
+    result = subprocess.run(
+        [
+            "pre-commit",
+            "run",
+            "--config",
+            f"{cfg}",
+            "--files",
+        ]
+        + sys.argv[1:],
+        check=False,
+    )
+    return result.returncode
+
+
+if __name__ == "__main__":
+    exit(main())
+```
+
+##
+
+Can be referenced as follows.
+
+```{.yaml}
 repos:
   - repo: https://github.com/UCL-MIRSG/.github
     rev: v0.133.0
