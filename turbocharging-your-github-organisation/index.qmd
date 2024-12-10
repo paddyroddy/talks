@@ -69,10 +69,90 @@ Add a default `/CODE_OF_CONDUCT.md`.
 
 ![](figures/code_of_conduct.png)
 
-## Other Things to Store in `.github` {data-menu-title=".github (i)"}
+# Tools
 
-Organisation-wide [Renovate](https://docs.renovatebot.com) configuration,
-`/renovate/default-config.json`. Can be referenced as follows.
+## Renovate {data-menu-title="Renovate (i)"}
+
+:::{layout-ncol=2}
+
+I previously gave talk on Renovate
+<https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
+
+{{< qrcode https://paddyroddy.github.io/talks/renovate-automating-dependency-management
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
+
+## Renovate {data-menu-title="Renovate (ii)"}
+
+Organisation-wide [Renovate](https://docs.renovatebot.com) configuration, e.g.
+`/renovate/default-config.json`. The
+[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate) one
+currently:
+
+```{.json code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"}
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "schedule:automergeWeekdays",
+    "schedule:monthly",
+    ":automergeBranch",
+    ":disableDependencyDashboard",
+    ":enablePreCommit",
+    ":label(renovate)",
+    ":prHourlyLimitNone"
+  ],
+  "commitMessageAction": "Renovate:",
+  "packageRules": [
+    {
+      "description": "Automatically merge, minor and patch-level updates",
+      "automerge": true,
+      "matchManagers": [
+        "dockerfile",
+        "github-actions",
+        "pre-commit",
+        "terraform"
+      ],
+      "matchUpdateTypes": ["digest", "minor", "patch"]
+    },
+    {
+      "description": "Shorten commit titles",
+      "commitMessageTopic": "{{depName}}",
+      "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Combine action artefact updates together",
+      "groupName": "artefacts",
+      "matchDepNames": [
+        "actions/deploy-pages",
+        "actions/download-artifact",
+        "actions/upload-artifact",
+        "actions/upload-pages-artifact"
+      ]
+    },
+    {
+      "description": "Only allow major updates",
+      "enabled": false,
+      "matchDepNames": ["renovatebot/pre-commit-hooks"],
+      "matchUpdateTypes": ["minor", "patch", "pin"]
+    },
+    {
+      "description": "Support loose versioning",
+      "matchDepNames": [
+        "cmhughes/latexindent.pl",
+        "shellcheck-py/shellcheck-py"
+      ],
+      "versioning": "loose"
+    }
+  ]
+}
+```
+
+## Renovate {data-menu-title="Renovate (iii)"}
+
+This can be then be used in organisation repositories as as follows, e.g.
+`/.renovaterc.json5`.
 
 ```json5
 {
@@ -81,8 +161,11 @@ Organisation-wide [Renovate](https://docs.renovatebot.com) configuration,
 }
 ```
 
-See this in action in
-[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate).
+## Renovate {data-menu-title="Renovate (iv)"}
+
+This can then be debugged at <https://developer.mend.io>.
+
+![](figures/renovate.png)
 
 ## Other Things to Store in `.github` {data-menu-title=".github (i)"}
 
