@@ -66,6 +66,14 @@ Projects can be repository specific or organisation-wide.
 
 # Special Repositories
 
+## `ORGANISATION`.github.io
+
+Can have a [GitHub Pages](https://pages.github.com) per organisation and
+repository, e.g.
+[UCL-ARC/ucl-arc.github.io](https://github.com/UCL-ARC/ucl-arc.github.io).
+
+![](figures/github_pages.png)
+
 ## .github-private
 
 The `/profile/README.md` will appear on the GitHub organisation's member
