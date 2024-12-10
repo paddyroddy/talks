@@ -20,6 +20,14 @@ organisational accounts here.
 
 :::
 
+# Profile
+
+## Pinned Repositories
+
+Pin the repositories you want people to see.
+
+![](figures/pinned.png)
+
 # Special Repositories
 
 ## .github-private
