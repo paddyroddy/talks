@@ -511,13 +511,13 @@ e.g. `APP_ID`, `APP_PEM`.
 
 :::
 
-## GitHub Apps {data-menu-title="Composite Actions (i)"}
+## GitHub Apps {data-menu-title="GitHub Apps (i)"}
 
 All installed apps can be seen in the organisation's settings.
 
 ![](figures/apps_installed.png)
 
-## GitHub Apps {data-menu-title="Composite Actions (ii)"}
+## GitHub Apps {data-menu-title="GitHub Apps (ii)"}
 
 It is possible to also create your own apps accessible either publicly or just
 for the internal organisation. The `UCL-MIRSG/.github/actions/add-to-project`
