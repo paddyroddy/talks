@@ -510,3 +510,18 @@ e.g. `APP_ID`, `APP_PEM`.
 ![](figures/secrets.png)
 
 :::
+
+## GitHub Apps {data-menu-title="Composite Actions (i)"}
+
+All installed apps can be seen in the organisation's settings.
+
+![](figures/apps_installed.png)
+
+## GitHub Apps {data-menu-title="Composite Actions (ii)"}
+
+It is possible to also create your own apps accessible either publicly or just
+for the internal organisation. The `UCL-MIRSG/.github/actions/add-to-project`
+use the `MIRSG Project Automation Helper` app to avoid attributing project board
+movements to an individual user.
+
+![](figures/apps_custom.png)
