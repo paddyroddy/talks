@@ -28,6 +28,13 @@ Pin the repositories you want people to see.
 
 ![](figures/pinned.png)
 
+## Discussions
+
+Organisation-wide discussions, rather than project specific, e.g.
+<https://github.com/orgs/glass-dev/discussions>.
+
+![](figures/discussions.png)
+
 # Special Repositories
 
 ## .github-private
