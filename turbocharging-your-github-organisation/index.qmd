@@ -50,6 +50,13 @@ Projects can be repository specific or organisation-wide.
 
 ![](figures/projects.png)
 
+## Labels
+
+> Set the labels that will be included when a new repository is created in this
+> organization.
+
+![](figures/labels.png)
+
 # Special Repositories
 
 ## .github-private
