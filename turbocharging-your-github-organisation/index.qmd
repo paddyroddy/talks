@@ -57,6 +57,13 @@ Projects can be repository specific or organisation-wide.
 
 ![](figures/labels.png)
 
+## GitHub Runners
+
+> A self-hosted runner is a system that you deploy and manage to execute jobs
+> from GitHub Actions on GitHub.
+
+![](figures/runners.png)
+
 # Special Repositories
 
 ## .github-private
