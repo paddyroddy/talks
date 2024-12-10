@@ -525,3 +525,5 @@ use the `MIRSG Project Automation Helper` app to avoid attributing project board
 movements to an individual user.
 
 ![](figures/apps_custom.png)
+
+# [github/safe-settings](https://github.com/github/safe-settings)
