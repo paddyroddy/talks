@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="..//assets/images/favicon.ico" rel="icon">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.39">
+
+  <meta name="author" content="Patrick J. Roddy">
+  <meta name="dcterms.date" content="2024-12-12">
+  <title>Turbocharging Your GitHub Organisation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ebc9c3b134aafdb0c5e4a7ead0f63fbc.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SCSTN0WCDT"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SCSTN0WCDT', { 'anonymize_ip': true});
+  </script>
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section class="quarto-title-block center">
+  <h1 class="title">Turbocharging Your GitHub Organisation</h1>
+  <p class="subtitle"><a href="https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations">ARC DevOPS Hour</a></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://paddyroddy.github.io">Patrick J. Roddy</a> 
+</div>
+</div>
+</div>
+
+  <p class="date">2024-12-12</p>
+</section>
+<section class="title-slide slide level1 center" data-menu-title="QR Code">
+<h1></h1>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[22,78]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 22.0%;justify-content: flex-start;">
+<p>Scan to view the slides</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 78.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/turbocharging-your-github-organisation","width":"550"});
+  script.remove();
+})();
+</script>
+    
+</div>
+</div>
+</div>
+</section>
+
+<section class="title-slide slide level1 center" data-menu-title="Note">
+<h1></h1>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Much of this talk holds true for personal GitHub accounts as well as GitHub organisations. However, it is not always the case. I will focus solely on organisational accounts here.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1>Profile</h1>
+
+</section>
+<section class="slide level2">
+<h2>Pinned Repositories</h2>
+<p>Pin the repositories you want people to see.</p>
+
+<img data-src="figures/pinned.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>Discussions</h2>
+<p>Organisation-wide discussions, rather than project specific.</p>
+
+<img data-src="figures/discussions.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title="Projects (i)">
+<h2>Projects</h2>
+<blockquote>
+<p>A project is an adaptable spreadsheet, task-board, and road map that integrates with your issues and pull requests on GitHub to help you plan and track your work effectively. You can create and customize multiple views by filtering, sorting, grouping your issues and pull requests, visualize work with configurable charts, and add custom fields to track metadata specific to your team. Rather than enforcing a specific methodology, a project provides flexible features you can customize to your team’s needs and processes.</p>
+</blockquote>
+</section>
+<section class="slide level2" data-menu-title="Projects (ii)">
+<h2>Projects</h2>
+<p>Projects can be repository specific or organisation-wide.</p>
+
+<img data-src="figures/projects.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>Labels</h2>
+<blockquote>
+<p>Set the labels that will be included when a new repository is created in this organization.</p>
+</blockquote>
+
+<img data-src="figures/labels.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>GitHub Runners</h2>
+<blockquote>
+<p>A self-hosted runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.</p>
+</blockquote>
+
+<img data-src="figures/runners.png" class="r-stretch"></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Special Repositories</h1>
+
+</section>
+<section class="slide level2">
+<h2><code>ORGANISATION</code>.github.io</h2>
+<p>Can have a <a href="https://pages.github.com">GitHub Pages</a> per organisation and repository, e.g. <a href="https://github.com/UCL-ARC/ucl-arc.github.io">UCL-ARC/ucl-arc.github.io</a>.</p>
+
+<img data-src="figures/github_pages.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>.github-private</h2>
+<p>The <code>/profile/README.md</code> will appear on the GitHub organisation’s member profile, visible only to organisation members.</p>
+
+<img data-src="figures/private_readme.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title=".github (i)">
+<h2>.github</h2>
+<p>The <code>/profile/README.md</code> will appear on the organisation’s profile.</p>
+
+<img data-src="figures/public_readme.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title=".github (ii)">
+<h2>.github</h2>
+<p>Can add issue templates in <code>/.github/ISSUE_TEMPLATE</code> that will be seen in all organisation repositories, unless the repository itself specifies its own set of issue templates.</p>
+
+<img data-src="figures/issue_templates.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title=".github (iii)">
+<h2>.github</h2>
+<p>Configure <code>/.github/ISSUE_TEMPLATE/config.yml</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">blank_issues_enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-2"><a></a><span class="fu">contact_links</span><span class="kw">:</span></span>
+<span id="cb1-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> General MIRSG issue</span></span>
+<span id="cb1-4"><a></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/MIRSG/issues/new/choose</span></span>
+<span id="cb1-5"><a></a><span class="at">    </span><span class="fu">about</span><span class="kw">:</span><span class="at"> If your issue is a general...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="figures/config.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title=".github (iv)">
+<h2>.github</h2>
+<p>Add a default <code>/CONTRIBUTING.md</code>.</p>
+
+<img data-src="figures/contributing.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title=".github (v)">
+<h2>.github</h2>
+<p>Add a default <code>/CODE_OF_CONDUCT.md</code>.</p>
+
+<img data-src="figures/code_of_conduct.png" class="r-stretch"></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Tools</h1>
+
+</section>
+<section class="slide level2" data-menu-title="Renovate (i)">
+<h2>Renovate</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>I previously gave talk on <a href="https://docs.renovatebot.com">Renovate</a> <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management" class="uri">https://paddyroddy.github.io/talks/renovate-automating-dependency-management</a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/renovate-automating-dependency-management","width":"550"});
+  script.remove();
+})();
+</script>
+    
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2" data-menu-title="Renovate (ii)">
+<h2>Renovate</h2>
+<p>Organisation-wide <code>Renovate</code> configuration, e.g. <code>/renovate/default-config.json</code>. <a href="https://github.com/UCL-ARC/.github/tree/main/renovate">UCL-ARC/.github</a>:</p>
+<div class="sourceCode" id="cb2" data-code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a></a><span class="fu">{</span></span>
+<span id="cb2-2"><a></a>  <span class="dt">"$schema"</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a></a>  <span class="dt">"extends"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-4"><a></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
+<span id="cb2-5"><a></a>    <span class="st">"schedule:automergeWeekdays"</span><span class="ot">,</span></span>
+<span id="cb2-6"><a></a>    <span class="st">"schedule:monthly"</span><span class="ot">,</span></span>
+<span id="cb2-7"><a></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
+<span id="cb2-8"><a></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
+<span id="cb2-9"><a></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
+<span id="cb2-10"><a></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
+<span id="cb2-11"><a></a>    <span class="st">":prHourlyLimitNone"</span></span>
+<span id="cb2-12"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-13"><a></a>  <span class="dt">"commitMessageAction"</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
+<span id="cb2-14"><a></a>  <span class="dt">"packageRules"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-15"><a></a>    <span class="fu">{</span></span>
+<span id="cb2-16"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Automatically merge, minor and patch-level updates"</span><span class="fu">,</span></span>
+<span id="cb2-17"><a></a>      <span class="dt">"automerge"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-18"><a></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-19"><a></a>        <span class="st">"dockerfile"</span><span class="ot">,</span></span>
+<span id="cb2-20"><a></a>        <span class="st">"github-actions"</span><span class="ot">,</span></span>
+<span id="cb2-21"><a></a>        <span class="st">"pre-commit"</span><span class="ot">,</span></span>
+<span id="cb2-22"><a></a>        <span class="st">"terraform"</span></span>
+<span id="cb2-23"><a></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-24"><a></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"digest"</span><span class="ot">,</span> <span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">]</span></span>
+<span id="cb2-25"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-26"><a></a>    <span class="fu">{</span></span>
+<span id="cb2-27"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
+<span id="cb2-28"><a></a>      <span class="dt">"commitMessageTopic"</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
+<span id="cb2-29"><a></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span></span>
+<span id="cb2-30"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-31"><a></a>    <span class="fu">{</span></span>
+<span id="cb2-32"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Combine action artefact updates together"</span><span class="fu">,</span></span>
+<span id="cb2-33"><a></a>      <span class="dt">"groupName"</span><span class="fu">:</span> <span class="st">"artefacts"</span><span class="fu">,</span></span>
+<span id="cb2-34"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-35"><a></a>        <span class="st">"actions/deploy-pages"</span><span class="ot">,</span></span>
+<span id="cb2-36"><a></a>        <span class="st">"actions/download-artifact"</span><span class="ot">,</span></span>
+<span id="cb2-37"><a></a>        <span class="st">"actions/upload-artifact"</span><span class="ot">,</span></span>
+<span id="cb2-38"><a></a>        <span class="st">"actions/upload-pages-artifact"</span></span>
+<span id="cb2-39"><a></a>      <span class="ot">]</span></span>
+<span id="cb2-40"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-41"><a></a>    <span class="fu">{</span></span>
+<span id="cb2-42"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
+<span id="cb2-43"><a></a>      <span class="dt">"enabled"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-44"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-45"><a></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span></span>
+<span id="cb2-46"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-47"><a></a>    <span class="fu">{</span></span>
+<span id="cb2-48"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Support loose versioning"</span><span class="fu">,</span></span>
+<span id="cb2-49"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-50"><a></a>        <span class="st">"cmhughes/latexindent.pl"</span><span class="ot">,</span></span>
+<span id="cb2-51"><a></a>        <span class="st">"shellcheck-py/shellcheck-py"</span></span>
+<span id="cb2-52"><a></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-53"><a></a>      <span class="dt">"versioning"</span><span class="fu">:</span> <span class="st">"loose"</span></span>
+<span id="cb2-54"><a></a>    <span class="fu">}</span></span>
+<span id="cb2-55"><a></a>  <span class="ot">]</span></span>
+<span id="cb2-56"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Renovate (iii)">
+<h2>Renovate</h2>
+<p>This can be then be used in organisation repositories as as follows, e.g. <code>/.renovaterc.json5</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>{</span>
+<span id="cb3-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
+<span id="cb3-3"><a></a>  extends: ["github&gt;UCL-ARC/.github//renovate/default-config.json"],</span>
+<span id="cb3-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Renovate (iv)">
+<h2>Renovate</h2>
+<p>This can then be debugged at <a href="https://developer.mend.io" class="uri">https://developer.mend.io</a>.</p>
+
+<img data-src="figures/renovate.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title="pre-commit (i)">
+<h2>pre-commit</h2>
+<p>Metahooks <a href="https://github.com/pre-commit/pre-commit/issues/731">pre-commit/pre-commit#731</a>?</p>
+<blockquote>
+<p>So, while I get your usecase – and it sounds good in theory – it tends not to work in practice. In a lot of ways, pre-commit was designed as a reaction to centralized managed hooks. That said, there’s some features that enable this to work currently.</p>
+<p>…</p>
+<p>That said, here’s how you can do this with the facilities provided today:</p>
+</blockquote>
+</section>
+<section class="slide level2" data-menu-title="pre-commit (ii)">
+<h2>pre-commit</h2>
+<p>Organisation-wide <code>pre-commit</code> configuration, e.g. <code>/precommit/mirsg-hooks.yaml</code>. <a href="https://github.com/UCL-MIRSG/.github/blob/main/precommit/mirsg-hooks.yaml">UCL-MIRSG/.github</a>:</p>
+<div class="sourceCode" id="cb4" data-code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .crt$</span></span>
+<span id="cb4-2"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb4-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/adrienverge/yamllint</span></span>
+<span id="cb4-4"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.35.1</span></span>
+<span id="cb4-5"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-6"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> yamllint</span></span>
+<span id="cb4-7"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-8"><a></a><span class="kw">          - </span><span class="ch">&gt;-</span></span>
+<span id="cb4-9"><a></a>            --config-data={</span>
+<span id="cb4-10"><a></a>              extends: default,</span>
+<span id="cb4-11"><a></a>              rules: {</span>
+<span id="cb4-12"><a></a>                anchors: enable,</span>
+<span id="cb4-13"><a></a>                braces: {</span>
+<span id="cb4-14"><a></a>                  forbid: non-empty</span>
+<span id="cb4-15"><a></a>                },</span>
+<span id="cb4-16"><a></a>                brackets: {</span>
+<span id="cb4-17"><a></a>                  forbid: non-empty</span>
+<span id="cb4-18"><a></a>                },</span>
+<span id="cb4-19"><a></a>                colons: enable,</span>
+<span id="cb4-20"><a></a>                commas: enable,</span>
+<span id="cb4-21"><a></a>                comments: {</span>
+<span id="cb4-22"><a></a>                  min-spaces-from-content: 1</span>
+<span id="cb4-23"><a></a>                },</span>
+<span id="cb4-24"><a></a>                comments-indentation: enable,</span>
+<span id="cb4-25"><a></a>                document-end: disable,</span>
+<span id="cb4-26"><a></a>                document-start: enable,</span>
+<span id="cb4-27"><a></a>                empty-lines: enable,</span>
+<span id="cb4-28"><a></a>                empty-values: disable,</span>
+<span id="cb4-29"><a></a>                float-values: enable,</span>
+<span id="cb4-30"><a></a>                hyphens: enable,</span>
+<span id="cb4-31"><a></a>                indentation: enable,</span>
+<span id="cb4-32"><a></a>                key-duplicates: enable,</span>
+<span id="cb4-33"><a></a>                key-ordering: disable,</span>
+<span id="cb4-34"><a></a>                line-length: {</span>
+<span id="cb4-35"><a></a>                  max: 160</span>
+<span id="cb4-36"><a></a>                },</span>
+<span id="cb4-37"><a></a>                new-line-at-end-of-file: enable,</span>
+<span id="cb4-38"><a></a>                new-lines: enable,</span>
+<span id="cb4-39"><a></a>                octal-values: enable,</span>
+<span id="cb4-40"><a></a>                quoted-strings: {</span>
+<span id="cb4-41"><a></a>                  quote-type: double,</span>
+<span id="cb4-42"><a></a>                  required: only-when-needed</span>
+<span id="cb4-43"><a></a>                },</span>
+<span id="cb4-44"><a></a>                trailing-spaces: enable,</span>
+<span id="cb4-45"><a></a>                truthy: {</span>
+<span id="cb4-46"><a></a>                  check-keys: false</span>
+<span id="cb4-47"><a></a>                }</span>
+<span id="cb4-48"><a></a>              }</span>
+<span id="cb4-49"><a></a>            }</span>
+<span id="cb4-50"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/AleksaC/hadolint-py</span></span>
+<span id="cb4-51"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v2.12.1b3</span></span>
+<span id="cb4-52"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-53"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> hadolint</span></span>
+<span id="cb4-54"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-55"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --ignore=DL3008</span></span>
+<span id="cb4-56"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/ansible-community/ansible-lint.git</span></span>
+<span id="cb4-57"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v24.10.0</span></span>
+<span id="cb4-58"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-59"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ansible-lint</span></span>
+<span id="cb4-60"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-61"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=.github</span></span>
+<span id="cb4-62"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=docker-compose.yml</span></span>
+<span id="cb4-63"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/astral-sh/ruff-pre-commit</span></span>
+<span id="cb4-64"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.8.1</span></span>
+<span id="cb4-65"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-66"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff</span></span>
+<span id="cb4-67"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-68"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exit-non-zero-on-fix</span></span>
+<span id="cb4-69"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix</span></span>
+<span id="cb4-70"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff-format</span></span>
+<span id="cb4-71"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/crate-ci/typos</span></span>
+<span id="cb4-72"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.28.1</span></span>
+<span id="cb4-73"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-74"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> typos</span></span>
+<span id="cb4-75"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-76"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --force-exclude</span></span>
+<span id="cb4-77"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --hidden</span></span>
+<span id="cb4-78"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/igorshubovych/markdownlint-cli</span></span>
+<span id="cb4-79"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.43.0</span></span>
+<span id="cb4-80"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-81"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> markdownlint-fix</span></span>
+<span id="cb4-82"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-83"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --dot</span></span>
+<span id="cb4-84"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/Lucas-C/pre-commit-hooks</span></span>
+<span id="cb4-85"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.5.5</span></span>
+<span id="cb4-86"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-87"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> forbid-tabs</span></span>
+<span id="cb4-88"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pappasam/toml-sort</span></span>
+<span id="cb4-89"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.24.2</span></span>
+<span id="cb4-90"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-91"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> toml-sort-fix</span></span>
+<span id="cb4-92"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-93"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --all</span></span>
+<span id="cb4-94"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --in-place</span></span>
+<span id="cb4-95"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --spaces-indent-inline-array=4</span></span>
+<span id="cb4-96"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --trailing-comma-inline-array</span></span>
+<span id="cb4-97"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/mirrors-prettier</span></span>
+<span id="cb4-98"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v3.1.0</span></span>
+<span id="cb4-99"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-100"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> prettier</span></span>
+<span id="cb4-101"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-102"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --prose-wrap=always</span></span>
+<span id="cb4-103"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --quote-props=as-needed</span></span>
+<span id="cb4-104"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/pre-commit-hooks</span></span>
+<span id="cb4-105"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v5.0.0</span></span>
+<span id="cb4-106"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-107"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-added-large-files</span></span>
+<span id="cb4-108"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-case-conflict</span></span>
+<span id="cb4-109"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-executables-have-shebangs</span></span>
+<span id="cb4-110"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-merge-conflict</span></span>
+<span id="cb4-111"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-shebang-scripts-are-executable</span></span>
+<span id="cb4-112"><a></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .j2$</span></span>
+<span id="cb4-113"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> destroyed-symlinks</span></span>
+<span id="cb4-114"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> end-of-file-fixer</span></span>
+<span id="cb4-115"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mixed-line-ending</span></span>
+<span id="cb4-116"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-117"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix=lf</span></span>
+<span id="cb4-118"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> trailing-whitespace</span></span>
+<span id="cb4-119"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/python-jsonschema/check-jsonschema</span></span>
+<span id="cb4-120"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.30.0</span></span>
+<span id="cb4-121"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-122"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-github-workflows</span></span>
+<span id="cb4-123"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/shellcheck-py/shellcheck-py</span></span>
+<span id="cb4-124"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.10.0.1</span></span>
+<span id="cb4-125"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-126"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> shellcheck</span></span>
+<span id="cb4-127"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-128"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --external-sources</span></span>
+<span id="cb4-129"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --shell=bash</span></span>
+<span id="cb4-130"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/rhysd/actionlint</span></span>
+<span id="cb4-131"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.7.4</span></span>
+<span id="cb4-132"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-133"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> actionlint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="pre-commit (iii)">
+<h2>pre-commit</h2>
+<p>To set this up a <code>/.pre-commit-hooks.yaml</code> must be defined.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span>
+<span id="cb5-2"><a></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> MIRSG hooks</span></span>
+<span id="cb5-3"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Default pre-commit hooks for MIRSG repos</span></span>
+<span id="cb5-4"><a></a><span class="at">  </span><span class="fu">entry</span><span class="kw">:</span><span class="at"> ./precommit/run-mirsg-hooks.py</span></span>
+<span id="cb5-5"><a></a><span class="at">  </span><span class="fu">language</span><span class="kw">:</span><span class="at"> script</span></span>
+<span id="cb5-6"><a></a><span class="at">  </span><span class="fu">require_serial</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-7"><a></a><span class="at">  </span><span class="fu">verbose</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="pre-commit (iv)">
+<h2>pre-commit</h2>
+<p>Which, in turn, calls the script, e.g.&nbsp;<code>/precommit/run-mirsg-hooks.py</code>.</p>
+<div class="sourceCode" id="cb6" data-code-line-numbers="1|2-4|6|9-22|25-26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co">#!/usr/bin/env python</span></span>
+<span id="cb6-2"><a></a><span class="im">import</span> pathlib</span>
+<span id="cb6-3"><a></a><span class="im">import</span> subprocess</span>
+<span id="cb6-4"><a></a><span class="im">import</span> sys</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a>HERE <span class="op">=</span> pathlib.Path(<span class="va">__file__</span>).resolve()</span>
+<span id="cb6-7"><a></a></span>
+<span id="cb6-8"><a></a></span>
+<span id="cb6-9"><a></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb6-10"><a></a>    cfg <span class="op">=</span> HERE.parent <span class="op">/</span> <span class="st">"mirsg-hooks.yaml"</span></span>
+<span id="cb6-11"><a></a>    result <span class="op">=</span> subprocess.run(</span>
+<span id="cb6-12"><a></a>        [</span>
+<span id="cb6-13"><a></a>            <span class="st">"pre-commit"</span>,</span>
+<span id="cb6-14"><a></a>            <span class="st">"run"</span>,</span>
+<span id="cb6-15"><a></a>            <span class="st">"--config"</span>,</span>
+<span id="cb6-16"><a></a>            <span class="ss">f"</span><span class="sc">{</span>cfg<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb6-17"><a></a>            <span class="st">"--files"</span>,</span>
+<span id="cb6-18"><a></a>        ]</span>
+<span id="cb6-19"><a></a>        <span class="op">+</span> sys.argv[<span class="dv">1</span>:],</span>
+<span id="cb6-20"><a></a>        check<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb6-21"><a></a>    )</span>
+<span id="cb6-22"><a></a>    <span class="cf">return</span> result.returncode</span>
+<span id="cb6-23"><a></a></span>
+<span id="cb6-24"><a></a></span>
+<span id="cb6-25"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb6-26"><a></a>    exit(main())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="pre-commit (v)">
+<h2>pre-commit</h2>
+<p>This can be then be used in organisation repositories as as follows, e.g. <code>/.pre-commit-config.yaml</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb7-2"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/.github</span></span>
+<span id="cb7-3"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.133.0</span></span>
+<span id="cb7-4"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb7-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Composite Actions (i)">
+<h2>Composite Actions</h2>
+<blockquote>
+<p>Composite actions allow you to collect a series of workflow job steps into a single action which you can then run as a single job step in multiple workflows.</p>
+</blockquote>
+<p>They can be placed anywhere, but why not cut down on the number of repositories and place them in the <code>.github</code> repositories?</p>
+</section>
+<section class="slide level2" data-menu-title="Composite Actions (ii)">
+<h2>Composite Actions</h2>
+<p>Example add to project action used in <a href="https://github.com/UCL-MIRSG/.github">UCL-MIRSG/.github</a>, e.g. <code>/actions/add-to-project/action.yml</code>.</p>
+<div class="sourceCode" id="cb8" data-code-line-numbers="1-2|4|5-7|9-11|13-15|17|17-18|17-19|20-25|27-31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add Issues to Project</span></span>
+<span id="cb8-2"><a></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Add issues to the GitHub project board</span></span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="fu">inputs</span><span class="kw">:</span></span>
+<span id="cb8-5"><a></a><span class="at">  </span><span class="fu">app-id</span><span class="kw">:</span></span>
+<span id="cb8-6"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application ID</span></span>
+<span id="cb8-7"><a></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-8"><a></a></span>
+<span id="cb8-9"><a></a><span class="at">  </span><span class="fu">app-pem</span><span class="kw">:</span></span>
+<span id="cb8-10"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application private key</span></span>
+<span id="cb8-11"><a></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-12"><a></a></span>
+<span id="cb8-13"><a></a><span class="at">  </span><span class="fu">project-url</span><span class="kw">:</span></span>
+<span id="cb8-14"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> URL of the project board to add issues to</span></span>
+<span id="cb8-15"><a></a><span class="at">    </span><span class="fu">default</span><span class="kw">:</span><span class="at"> https://github.com/orgs/UCL-MIRSG/projects/3</span></span>
+<span id="cb8-16"><a></a></span>
+<span id="cb8-17"><a></a><span class="fu">runs</span><span class="kw">:</span></span>
+<span id="cb8-18"><a></a><span class="at">  </span><span class="fu">using</span><span class="kw">:</span><span class="at"> composite</span></span>
+<span id="cb8-19"><a></a><span class="at">  </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-20"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Generate token</span></span>
+<span id="cb8-21"><a></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> generate-token</span></span>
+<span id="cb8-22"><a></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/create-github-app-token@v1</span></span>
+<span id="cb8-23"><a></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-24"><a></a><span class="at">        </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ inputs.app-id }}</span></span>
+<span id="cb8-25"><a></a><span class="at">        </span><span class="fu">private-key</span><span class="kw">:</span><span class="at"> ${{ inputs.app-pem }}</span></span>
+<span id="cb8-26"><a></a></span>
+<span id="cb8-27"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Get project data</span></span>
+<span id="cb8-28"><a></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/add-to-project@v1.0.2</span></span>
+<span id="cb8-29"><a></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-30"><a></a><span class="at">        </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> ${{ inputs.project-url }}</span></span>
+<span id="cb8-31"><a></a><span class="at">        </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ steps.generate-token.outputs.token }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Composite Actions (iii)">
+<h2>Composite Actions</h2>
+<p>This can be then be used in organisation repositories as as follows, e.g. <code>/.github/workflows/manage-projects</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-2"><a></a><span class="at">  </span><span class="fu">add-issue-to-project</span><span class="kw">:</span></span>
+<span id="cb9-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb9-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> UCL-MIRSG/.github/actions/add-to-project@v0</span></span>
+<span id="cb9-6"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb9-7"><a></a><span class="at">          </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_ID }}</span></span>
+<span id="cb9-8"><a></a><span class="at">          </span><span class="fu">app-pem</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_PEM }}</span></span>
+<span id="cb9-9"><a></a><span class="at">          </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> project_board_url</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-menu-title="Composite Actions (iv)">
+<h2>Composite Actions</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Actions can use a single set of generated secrets to be used in all actions, e.g.&nbsp;<code>APP_ID</code>, <code>APP_PEM</code>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/secrets.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2" data-menu-title="GitHub Apps (i)">
+<h2>GitHub Apps</h2>
+<p>All installed apps can be seen in the organisation’s settings.</p>
+
+<img data-src="figures/apps_installed.png" class="r-stretch"></section>
+<section class="slide level2" data-menu-title="GitHub Apps (ii)">
+<h2>GitHub Apps</h2>
+<p>It is possible to also create your own apps accessible either publicly or just for the internal organisation. The <code>UCL-MIRSG/.github/actions/add-to-project</code> use the <code>MIRSG Project Automation Helper</code> app to avoid attributing project board movements to an individual user.</p>
+
+<img data-src="figures/apps_custom.png" class="r-stretch"></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><a href="https://github.com/github/safe-settings">github/safe-settings</a></h1>
+
+</section>
+<section class="slide level2">
+<h2>What it Does</h2>
+<blockquote>
+<p><code>Safe-settings</code> – an app to manage policy-as-code and apply repository settings across an organization.</p>
+</blockquote>
+<blockquote>
+<p><code>Safe-settings</code> is designed to run as a service listening for webhook events or as a scheduled job running on some regular cadence. It can also be triggered through GitHub Actions.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+<h2>How to Enable?</h2>
+<ul>
+<li class="fragment">Install the <a href="https://github.com/apps/safe-settings-app">safe-settings-app</a>.</li>
+<li class="fragment">Create an <code>admin</code> repository, e.g. <a href="https://github.com/UCL-MIRSG/admin">UCL-MIRSG/admin</a>.</li>
+<li class="fragment">Configure the desired settings, e.g.&nbsp;<code>/.github/settings.yml</code>.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Webhook Events</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment"><strong>push</strong></li>
+<li class="fragment"><strong>repository.created</strong></li>
+<li class="fragment"><strong>branch_protection_rule</strong></li>
+<li class="fragment"><strong>repository.edited</strong></li>
+<li class="fragment"><strong>repository.renamed</strong></li>
+<li class="fragment"><strong>pull_request.opened</strong>, <strong>pull_request.reopened</strong>, <strong>check_suite.requested</strong></li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment"><strong>repository_ruleset</strong></li>
+<li class="fragment"><strong>member_change_events</strong></li>
+<li class="fragment"><strong>member</strong>’, <strong>team.added_to_repository</strong>, <strong>team.removed_from_repository</strong>, <strong>team.edited</strong></li>
+<li class="fragment"><strong>custom_property_values</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Settings File</h2>
+<p>The settings files can be used to set the policies at the <code>org</code>, <code>suborg</code> or <code>repo</code> level.</p>
+<p>The following can be configured:</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment">Repository settings</li>
+<li class="fragment">Default branch</li>
+<li class="fragment">Topics</li>
+<li class="fragment">Custom properties</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment">Teams and permissions</li>
+<li class="fragment">Collaborators and permissions</li>
+<li class="fragment">Issue labels</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment">Milestones</li>
+<li class="fragment">Branch protections</li>
+<li class="fragment">Autolinks</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment">Repository name validation</li>
+<li class="fragment">Rulesets</li>
+<li class="fragment">Environments</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Example Configuration</h2>
+<div class="sourceCode" id="cb10" data-code-line-numbers="1-10|12-14|16-28|30-51"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a></a><span class="fu">repository</span><span class="kw">:</span></span>
+<span id="cb10-2"><a></a><span class="at">  </span><span class="fu">allow_auto_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-3"><a></a><span class="at">  </span><span class="fu">allow_merge_commit</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-4"><a></a><span class="at">  </span><span class="fu">allow_rebase_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-5"><a></a><span class="at">  </span><span class="fu">delete_branch_on_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-6"><a></a><span class="at">  </span><span class="fu">has_discussions</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-7"><a></a><span class="at">  </span><span class="fu">has_downloads</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-8"><a></a><span class="at">  </span><span class="fu">has_wiki</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-9"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_message</span><span class="kw">:</span><span class="at"> PR_BODY</span></span>
+<span id="cb10-10"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_title</span><span class="kw">:</span><span class="at"> PR_TITLE</span></span>
+<span id="cb10-11"><a></a></span>
+<span id="cb10-12"><a></a><span class="fu">teams</span><span class="kw">:</span></span>
+<span id="cb10-13"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mirsg</span></span>
+<span id="cb10-14"><a></a><span class="at">    </span><span class="fu">permission</span><span class="kw">:</span><span class="at"> admin</span></span>
+<span id="cb10-15"><a></a></span>
+<span id="cb10-16"><a></a><span class="fu">rulesets</span><span class="kw">:</span></span>
+<span id="cb10-17"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Default</span></span>
+<span id="cb10-18"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb10-19"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb10-20"><a></a></span>
+<span id="cb10-21"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb10-22"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb10-23"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb10-24"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb10-25"><a></a></span>
+<span id="cb10-26"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb10-27"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> deletion</span></span>
+<span id="cb10-28"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> non_fast_forward</span><span class="co"> # prevents force pushes</span></span>
+<span id="cb10-29"><a></a></span>
+<span id="cb10-30"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Pull Requests</span></span>
+<span id="cb10-31"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb10-32"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb10-33"><a></a></span>
+<span id="cb10-34"><a></a><span class="at">    </span><span class="fu">bypass_actors</span><span class="kw">:</span></span>
+<span id="cb10-35"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">actor_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">2740</span><span class="co"> # Renovate Bot</span></span>
+<span id="cb10-36"><a></a><span class="at">        </span><span class="fu">actor_type</span><span class="kw">:</span><span class="at"> Integration</span></span>
+<span id="cb10-37"><a></a><span class="at">        </span><span class="fu">bypass_mode</span><span class="kw">:</span><span class="at"> always</span></span>
+<span id="cb10-38"><a></a></span>
+<span id="cb10-39"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb10-40"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb10-41"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb10-42"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb10-43"><a></a></span>
+<span id="cb10-44"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb10-45"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> pull_request</span></span>
+<span id="cb10-46"><a></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb10-47"><a></a><span class="at">          </span><span class="fu">dismiss_stale_reviews_on_push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-48"><a></a><span class="at">          </span><span class="fu">require_code_owner_review</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-49"><a></a><span class="at">          </span><span class="fu">require_last_push_approval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-50"><a></a><span class="at">          </span><span class="fu">required_approving_review_count</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb10-51"><a></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section class="title-slide slide level1 center">
+<h1>Other Ideas?</h1>
+
+
+
+<img data-src="figures/penguin.webp" class="r-stretch"></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Turbocharging Your GitHub Organisation - <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/paddyroddy\.github\.io\/talks\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // default icon
+              link.classList.add("external");
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
