@@ -544,62 +544,6 @@ movements to an individual user.
   [UCL-MIRSG/admin](https://github.com/UCL-MIRSG/admin).
 - Configure the desired settings, e.g. `/.github/settings.yml`.
 
-## Example Configuration
-
-```{.yaml code-line-numbers="1-10|12-14|16-28|30-51"}
-repository:
-  allow_auto_merge: true
-  allow_merge_commit: false
-  allow_rebase_merge: false
-  delete_branch_on_merge: true
-  has_discussions: false
-  has_downloads: false
-  has_wiki: false
-  squash_merge_commit_message: PR_BODY
-  squash_merge_commit_title: PR_TITLE
-
-teams:
-  - name: mirsg
-    permission: admin
-
-rulesets:
-  - name: Default
-    target: branch
-    enforcement: active
-
-    conditions:
-      ref_name:
-        include:
-          - ~DEFAULT_BRANCH
-
-    rules:
-      - type: deletion
-      - type: non_fast_forward # prevents force pushes
-
-  - name: Pull Requests
-    target: branch
-    enforcement: active
-
-    bypass_actors:
-      - actor_id: 2740 # Renovate Bot
-        actor_type: Integration
-        bypass_mode: always
-
-    conditions:
-      ref_name:
-        include:
-          - ~DEFAULT_BRANCH
-
-    rules:
-      - type: pull_request
-        parameters:
-          dismiss_stale_reviews_on_push: true
-          require_code_owner_review: false
-          require_last_push_approval: false
-          required_approving_review_count: 1
-          required_review_thread_resolution: false
-```
-
 ## Webhook Events
 
 :::{layout-ncol=2}
@@ -663,4 +607,62 @@ The following can be configured:
 
 :::
 
+## Example Configuration
+
+```{.yaml code-line-numbers="1-10|12-14|16-28|30-51"}
+repository:
+  allow_auto_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  has_discussions: false
+  has_downloads: false
+  has_wiki: false
+  squash_merge_commit_message: PR_BODY
+  squash_merge_commit_title: PR_TITLE
+
+teams:
+  - name: mirsg
+    permission: admin
+
+rulesets:
+  - name: Default
+    target: branch
+    enforcement: active
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: deletion
+      - type: non_fast_forward # prevents force pushes
+
+  - name: Pull Requests
+    target: branch
+    enforcement: active
+
+    bypass_actors:
+      - actor_id: 2740 # Renovate Bot
+        actor_type: Integration
+        bypass_mode: always
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: pull_request
+        parameters:
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_approving_review_count: 1
+          required_review_thread_resolution: false
+```
+
 # Other Ideas?
+
+![](figures/penguin.webp)
