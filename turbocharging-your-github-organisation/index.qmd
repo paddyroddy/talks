@@ -527,3 +527,12 @@ movements to an individual user.
 ![](figures/apps_custom.png)
 
 # [github/safe-settings](https://github.com/github/safe-settings)
+
+## What it Does
+
+> `Safe-settings` – an app to manage policy-as-code and apply repository
+> settings across an organization.
+
+> `Safe-settings` is designed to run as a service listening for webhook events
+> or as a scheduled job running on some regular cadence. It can also be
+> triggered through GitHub Actions.
