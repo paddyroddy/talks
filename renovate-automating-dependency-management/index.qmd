@@ -170,7 +170,7 @@ setting is required
 It is **highly recommended** to ensure you have tests that will operate on the
 Renovate branches.
 
-```yaml
+```{.yaml}
 on:
   push:
     branches:

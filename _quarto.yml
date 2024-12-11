@@ -6,6 +6,7 @@ format:
   html:
     theme: darkly
   revealjs:
+    callout-appearance: simple
     filters:
       - _filters/slugify.lua
     footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"

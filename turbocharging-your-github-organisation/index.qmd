@@ -1,0 +1,668 @@
+---
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+date: 2024-12-12
+format: revealjs
+subtitle:
+  "[ARC DevOPS
+  Hour](https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations)"
+title: Turbocharging Your GitHub Organisation
+---
+
+{{< include /_includes/qr-code.qmd >}}
+
+# {data-menu-title="Note"}
+
+::: {.callout-note}
+
+Much of this talk holds true for personal GitHub accounts as well as GitHub
+organisations. However, it is not always the case. I will focus solely on
+organisational accounts here.
+
+:::
+
+# Profile
+
+## Pinned Repositories
+
+Pin the repositories you want people to see.
+
+![](figures/pinned.png)
+
+## Discussions
+
+Organisation-wide discussions, rather than project specific.
+
+![](figures/discussions.png)
+
+## Projects {data-menu-title="Projects (i)"}
+
+> A project is an adaptable spreadsheet, task-board, and road map that
+> integrates with your issues and pull requests on GitHub to help you plan and
+> track your work effectively. You can create and customize multiple views by
+> filtering, sorting, grouping your issues and pull requests, visualize work
+> with configurable charts, and add custom fields to track metadata specific to
+> your team. Rather than enforcing a specific methodology, a project provides
+> flexible features you can customize to your team’s needs and processes.
+
+## Projects {data-menu-title="Projects (ii)"}
+
+Projects can be repository specific or organisation-wide.
+
+![](figures/projects.png)
+
+## Labels
+
+> Set the labels that will be included when a new repository is created in this
+> organization.
+
+![](figures/labels.png)
+
+## GitHub Runners
+
+> A self-hosted runner is a system that you deploy and manage to execute jobs
+> from GitHub Actions on GitHub.
+
+![](figures/runners.png)
+
+# Special Repositories
+
+## `ORGANISATION`.github.io
+
+Can have a [GitHub Pages](https://pages.github.com) per organisation and
+repository, e.g.
+[UCL-ARC/ucl-arc.github.io](https://github.com/UCL-ARC/ucl-arc.github.io).
+
+![](figures/github_pages.png)
+
+## .github-private
+
+The `/profile/README.md` will appear on the GitHub organisation's member
+profile, visible only to organisation members.
+
+![](figures/private_readme.png)
+
+## .github {data-menu-title=".github (i)"}
+
+The `/profile/README.md` will appear on the organisation's profile.
+
+![](figures/public_readme.png)
+
+## .github {data-menu-title=".github (ii)"}
+
+Can add issue templates in `/.github/ISSUE_TEMPLATE` that will be seen in all
+organisation repositories, unless the repository itself specifies its own set of
+issue templates.
+
+![](figures/issue_templates.png)
+
+## .github {data-menu-title=".github (iii)"}
+
+Configure `/.github/ISSUE_TEMPLATE/config.yml`.
+
+```{.yaml}
+blank_issues_enabled: true
+contact_links:
+  - name: General MIRSG issue
+    url: https://github.com/UCL-MIRSG/MIRSG/issues/new/choose
+    about: If your issue is a general...
+```
+
+![](figures/config.png)
+
+## .github {data-menu-title=".github (iv)"}
+
+Add a default `/CONTRIBUTING.md`.
+
+![](figures/contributing.png)
+
+## .github {data-menu-title=".github (v)"}
+
+Add a default `/CODE_OF_CONDUCT.md`.
+
+![](figures/code_of_conduct.png)
+
+# Tools
+
+## Renovate {data-menu-title="Renovate (i)"}
+
+:::{layout-ncol=2}
+
+I previously gave talk on [Renovate](https://docs.renovatebot.com)
+<https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
+
+{{< qrcode https://paddyroddy.github.io/talks/renovate-automating-dependency-management
+colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
+
+:::
+
+## Renovate {data-menu-title="Renovate (ii)"}
+
+Organisation-wide `Renovate` configuration, e.g.
+`/renovate/default-config.json`.
+[UCL-ARC/.github](https://github.com/UCL-ARC/.github/tree/main/renovate):
+
+```{.json code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"}
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "schedule:automergeWeekdays",
+    "schedule:monthly",
+    ":automergeBranch",
+    ":disableDependencyDashboard",
+    ":enablePreCommit",
+    ":label(renovate)",
+    ":prHourlyLimitNone"
+  ],
+  "commitMessageAction": "Renovate:",
+  "packageRules": [
+    {
+      "description": "Automatically merge, minor and patch-level updates",
+      "automerge": true,
+      "matchManagers": [
+        "dockerfile",
+        "github-actions",
+        "pre-commit",
+        "terraform"
+      ],
+      "matchUpdateTypes": ["digest", "minor", "patch"]
+    },
+    {
+      "description": "Shorten commit titles",
+      "commitMessageTopic": "{{depName}}",
+      "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "description": "Combine action artefact updates together",
+      "groupName": "artefacts",
+      "matchDepNames": [
+        "actions/deploy-pages",
+        "actions/download-artifact",
+        "actions/upload-artifact",
+        "actions/upload-pages-artifact"
+      ]
+    },
+    {
+      "description": "Only allow major updates",
+      "enabled": false,
+      "matchDepNames": ["renovatebot/pre-commit-hooks"],
+      "matchUpdateTypes": ["minor", "patch", "pin"]
+    },
+    {
+      "description": "Support loose versioning",
+      "matchDepNames": [
+        "cmhughes/latexindent.pl",
+        "shellcheck-py/shellcheck-py"
+      ],
+      "versioning": "loose"
+    }
+  ]
+}
+```
+
+## Renovate {data-menu-title="Renovate (iii)"}
+
+This can be then be used in organisation repositories as as follows, e.g.
+`/.renovaterc.json5`.
+
+```{.json5}
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
+}
+```
+
+## Renovate {data-menu-title="Renovate (iv)"}
+
+This can then be debugged at <https://developer.mend.io>.
+
+![](figures/renovate.png)
+
+## pre-commit {data-menu-title="pre-commit (i)"}
+
+Metahooks
+[pre-commit/pre-commit#731](https://github.com/pre-commit/pre-commit/issues/731)?
+
+> So, while I get your usecase -- and it sounds good in theory -- it tends not
+> to work in practice. In a lot of ways, pre-commit was designed as a reaction
+> to centralized managed hooks. That said, there's some features that enable
+> this to work currently.
+>
+> ...
+>
+> That said, here's how you can do this with the facilities provided today:
+
+## pre-commit {data-menu-title="pre-commit (ii)"}
+
+Organisation-wide `pre-commit` configuration, e.g.
+`/precommit/mirsg-hooks.yaml`.
+[UCL-MIRSG/.github](https://github.com/UCL-MIRSG/.github/blob/main/precommit/mirsg-hooks.yaml):
+
+```{.yaml code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"}
+exclude: .crt$
+repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args:
+          - >-
+            --config-data={
+              extends: default,
+              rules: {
+                anchors: enable,
+                braces: {
+                  forbid: non-empty
+                },
+                brackets: {
+                  forbid: non-empty
+                },
+                colons: enable,
+                commas: enable,
+                comments: {
+                  min-spaces-from-content: 1
+                },
+                comments-indentation: enable,
+                document-end: disable,
+                document-start: enable,
+                empty-lines: enable,
+                empty-values: disable,
+                float-values: enable,
+                hyphens: enable,
+                indentation: enable,
+                key-duplicates: enable,
+                key-ordering: disable,
+                line-length: {
+                  max: 160
+                },
+                new-line-at-end-of-file: enable,
+                new-lines: enable,
+                octal-values: enable,
+                quoted-strings: {
+                  quote-type: double,
+                  required: only-when-needed
+                },
+                trailing-spaces: enable,
+                truthy: {
+                  check-keys: false
+                }
+              }
+            }
+  - repo: https://github.com/AleksaC/hadolint-py
+    rev: v2.12.1b3
+    hooks:
+      - id: hadolint
+        args:
+          - --ignore=DL3008
+  - repo: https://github.com/ansible-community/ansible-lint.git
+    rev: v24.10.0
+    hooks:
+      - id: ansible-lint
+        args:
+          - --exclude=.github
+          - --exclude=docker-compose.yml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.1
+    hooks:
+      - id: ruff
+        args:
+          - --exit-non-zero-on-fix
+          - --fix
+      - id: ruff-format
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.28.1
+    hooks:
+      - id: typos
+        args:
+          - --force-exclude
+          - --hidden
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint-fix
+        args:
+          - --dot
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
+    hooks:
+      - id: forbid-tabs
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.24.2
+    hooks:
+      - id: toml-sort-fix
+        args:
+          - --all
+          - --in-place
+          - --spaces-indent-inline-array=4
+          - --trailing-comma-inline-array
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        args:
+          - --prose-wrap=always
+          - --quote-props=as-needed
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+        exclude: .j2$
+      - id: destroyed-symlinks
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: trailing-whitespace
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.30.0
+    hooks:
+      - id: check-github-workflows
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        args:
+          - --external-sources
+          - --shell=bash
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.4
+    hooks:
+      - id: actionlint
+```
+
+## pre-commit {data-menu-title="pre-commit (iii)"}
+
+To set this up a `/.pre-commit-hooks.yaml` must be defined.
+
+```{.yaml}
+- id: mirsg-hooks
+  name: MIRSG hooks
+  description: Default pre-commit hooks for MIRSG repos
+  entry: ./precommit/run-mirsg-hooks.py
+  language: script
+  require_serial: true
+  verbose: true
+```
+
+## pre-commit {data-menu-title="pre-commit (iv)"}
+
+Which, in turn, calls the script, e.g. `/precommit/run-mirsg-hooks.py`.
+
+```{.python code-line-numbers="1|2-4|6|9-22|25-26"}
+#!/usr/bin/env python
+import pathlib
+import subprocess
+import sys
+
+HERE = pathlib.Path(__file__).resolve()
+
+
+def main() -> int:
+    cfg = HERE.parent / "mirsg-hooks.yaml"
+    result = subprocess.run(
+        [
+            "pre-commit",
+            "run",
+            "--config",
+            f"{cfg}",
+            "--files",
+        ]
+        + sys.argv[1:],
+        check=False,
+    )
+    return result.returncode
+
+
+if __name__ == "__main__":
+    exit(main())
+```
+
+## pre-commit {data-menu-title="pre-commit (v)"}
+
+This can be then be used in organisation repositories as as follows, e.g.
+`/.pre-commit-config.yaml`.
+
+```{.yaml}
+repos:
+  - repo: https://github.com/UCL-MIRSG/.github
+    rev: v0.133.0
+    hooks:
+      - id: mirsg-hooks
+```
+
+## Composite Actions {data-menu-title="Composite Actions (i)"}
+
+> Composite actions allow you to collect a series of workflow job steps into a
+> single action which you can then run as a single job step in multiple
+> workflows.
+
+They can be placed anywhere, but why not cut down on the number of repositories
+and place them in the `.github` repositories?
+
+## Composite Actions {data-menu-title="Composite Actions (ii)"}
+
+Example add to project action used in
+[UCL-MIRSG/.github](https://github.com/UCL-MIRSG/.github), e.g.
+`/actions/add-to-project/action.yml`.
+
+```{.yaml code-line-numbers="1-2|4|5-7|9-11|13-15|17|17-18|17-19|20-25|27-31"}
+name: Add Issues to Project
+description: Add issues to the GitHub project board
+
+inputs:
+  app-id:
+    description: Application ID
+    required: true
+
+  app-pem:
+    description: Application private key
+    required: true
+
+  project-url:
+    description: URL of the project board to add issues to
+    default: https://github.com/orgs/UCL-MIRSG/projects/3
+
+runs:
+  using: composite
+  steps:
+    - name: Generate token
+      id: generate-token
+      uses: actions/create-github-app-token@v1
+      with:
+        app-id: ${{ inputs.app-id }}
+        private-key: ${{ inputs.app-pem }}
+
+    - name: Get project data
+      uses: actions/add-to-project@v1.0.2
+      with:
+        project-url: ${{ inputs.project-url }}
+        github-token: ${{ steps.generate-token.outputs.token }}
+```
+
+## Composite Actions {data-menu-title="Composite Actions (iii)"}
+
+This can be then be used in organisation repositories as as follows, e.g.
+`/.github/workflows/manage-projects`.
+
+```{.yaml}
+jobs:
+  add-issue-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: UCL-MIRSG/.github/actions/add-to-project@v0
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          app-pem: ${{ secrets.APP_PEM }}
+          project-url: project_board_url
+```
+
+## Composite Actions {data-menu-title="Composite Actions (iv)"}
+
+:::{layout-ncol=2}
+
+Actions can use a single set of generated secrets to be used in all actions,
+e.g. `APP_ID`, `APP_PEM`.
+
+![](figures/secrets.png)
+
+:::
+
+## GitHub Apps {data-menu-title="GitHub Apps (i)"}
+
+All installed apps can be seen in the organisation's settings.
+
+![](figures/apps_installed.png)
+
+## GitHub Apps {data-menu-title="GitHub Apps (ii)"}
+
+It is possible to also create your own apps accessible either publicly or just
+for the internal organisation. The `UCL-MIRSG/.github/actions/add-to-project`
+use the `MIRSG Project Automation Helper` app to avoid attributing project board
+movements to an individual user.
+
+![](figures/apps_custom.png)
+
+# [github/safe-settings](https://github.com/github/safe-settings)
+
+## What it Does
+
+> `Safe-settings` – an app to manage policy-as-code and apply repository
+> settings across an organization.
+
+> `Safe-settings` is designed to run as a service listening for webhook events
+> or as a scheduled job running on some regular cadence. It can also be
+> triggered through GitHub Actions.
+
+## How to Enable?
+
+- Install the [safe-settings-app](https://github.com/apps/safe-settings-app).
+- Create an `admin` repository, e.g.
+  [UCL-MIRSG/admin](https://github.com/UCL-MIRSG/admin).
+- Configure the desired settings, e.g. `/.github/settings.yml`.
+
+## Webhook Events
+
+:::{layout-ncol=2}
+
+- **push**
+- **repository.created**
+- **branch_protection_rule**
+- **repository.edited**
+- **repository.renamed**
+- **pull_request.opened**, **pull_request.reopened**, **check_suite.requested**
+
+:::{}
+
+- **repository_ruleset**
+- **member_change_events**
+- **member**', **team.added_to_repository**, **team.removed_from_repository**,
+  **team.edited**
+- **custom_property_values**
+
+:::
+
+:::
+
+## Settings File
+
+The settings files can be used to set the policies at the `org`, `suborg` or
+`repo` level.
+
+The following can be configured:
+
+:::{layout-ncol=4}
+
+- Repository settings
+- Default branch
+- Topics
+- Custom properties
+
+:::{}
+
+- Teams and permissions
+- Collaborators and permissions
+- Issue labels
+
+:::
+
+:::{}
+
+- Milestones
+- Branch protections
+- Autolinks
+
+:::
+
+:::{}
+
+- Repository name validation
+- Rulesets
+- Environments
+
+:::
+
+:::
+
+## Example Configuration
+
+```{.yaml code-line-numbers="1-10|12-14|16-28|30-51"}
+repository:
+  allow_auto_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  has_discussions: false
+  has_downloads: false
+  has_wiki: false
+  squash_merge_commit_message: PR_BODY
+  squash_merge_commit_title: PR_TITLE
+
+teams:
+  - name: mirsg
+    permission: admin
+
+rulesets:
+  - name: Default
+    target: branch
+    enforcement: active
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: deletion
+      - type: non_fast_forward # prevents force pushes
+
+  - name: Pull Requests
+    target: branch
+    enforcement: active
+
+    bypass_actors:
+      - actor_id: 2740 # Renovate Bot
+        actor_type: Integration
+        bypass_mode: always
+
+    conditions:
+      ref_name:
+        include:
+          - ~DEFAULT_BRANCH
+
+    rules:
+      - type: pull_request
+        parameters:
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_approving_review_count: 1
+          required_review_thread_resolution: false
+```
+
+# Other Ideas?
+
+![](figures/penguin.webp)
