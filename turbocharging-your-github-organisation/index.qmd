@@ -622,3 +622,43 @@ rulesets:
 :::
 
 :::
+
+## Settings File
+
+The settings files can be used to set the policies at the `org`, `suborg` or
+`repo` level.
+
+The following can be configured:
+
+:::{layout-ncol=4}
+
+- Repository settings
+- Default branch
+- Topics
+- Custom properties
+
+:::{}
+
+- Teams and permissions
+- Collaborators and permissions
+- Issue labels
+
+:::
+
+:::{}
+
+- Milestones
+- Branch protections
+- Autolinks
+
+:::
+
+:::{}
+
+- Repository name validation
+- Rulesets
+- Environments
+
+:::
+
+:::
