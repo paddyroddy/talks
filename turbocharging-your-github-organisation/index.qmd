@@ -536,3 +536,10 @@ movements to an individual user.
 > `Safe-settings` is designed to run as a service listening for webhook events
 > or as a scheduled job running on some regular cadence. It can also be
 > triggered through GitHub Actions.
+
+## How to Enable?
+
+- Install the [safe-settings-app](https://github.com/apps/safe-settings-app).
+- Create an `admin` repository, e.g.
+  [UCL-MIRSG/admin](https://github.com/UCL-MIRSG/admin).
+- Configure the desired settings, e.g. `/.github/settings.yml`.
