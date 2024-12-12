@@ -486,7 +486,7 @@ runs:
 ## Composite Actions {data-menu-title="Composite Actions (iii)"}
 
 This can be then be used in organisation repositories as as follows, e.g.
-`/.github/workflows/manage-projects`.
+`/.github/workflows/manage-projects.yaml`.
 
 ```{.yaml}
 jobs:
