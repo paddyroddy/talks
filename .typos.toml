@@ -1,0 +1,5 @@
+[type.qmd]
+extend-glob = [
+    "*.qmd",
+]
+extend-words.promis = "promis"
