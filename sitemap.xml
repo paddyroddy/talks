@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.415Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.403Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.451Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.395Z</lastmod>
-  </url>
-  <url>
     <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.407Z</lastmod>
+    <lastmod>2025-01-07T16:41:19.011Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2024-12-12T15:00:32.403Z</lastmod>
+    <lastmod>2025-01-07T16:41:19.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
+    <lastmod>2025-01-07T16:41:19.039Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/index.html</loc>
+    <lastmod>2025-01-07T16:41:19.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
+    <lastmod>2025-01-07T16:41:19.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
+    <lastmod>2025-01-07T16:41:19.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
+    <lastmod>2025-01-07T16:41:19.000Z</lastmod>
   </url>
 </urlset>
