@@ -71,6 +71,7 @@ None
   - `vars.SAFE_SETTINGS_APP_ID`
   - `vars.SAFE_SETTINGS_GH_ORG`
   - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
+- Install the app organisation wide
 
 ##
 
