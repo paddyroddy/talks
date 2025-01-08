@@ -37,6 +37,22 @@ title: "GitHub Safe-Settings: Policy as Code"
 | Administration | Custom properties |
 | Members        |                   |
 
+## Next Steps {data-menu-title="Next Septs (i)"}
+
+- `Where can this GitHub App be installed?` Only on this account
+- Create GitHub app
+- Generate a new client secret
+- Generate a private key
+
+## Next Steps {data-menu-title="Next Septs (ii)"}
+
+- Create the following environment variables:
+  - `${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}`
+  - `${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}`
+  - `${{ vars.SAFE_SETTINGS_APP_ID }}`
+  - `${{ vars.SAFE_SETTINGS_GH_ORG }}`
+  - `${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}`
+
 ##
 
 [./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml)
