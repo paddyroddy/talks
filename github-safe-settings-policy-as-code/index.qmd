@@ -115,11 +115,11 @@ url: https://github.com/github/safe-settings
 public: false
 ```
 
-##
+# Configuration
 
-[./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml)
+## [./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml) {data-menu-title="Deployment Settings"}
 
-```{.yaml code-line-numbers="1|1-4|1-5|5-69"}
+```{.yaml code-line-numbers="1|1-4|5-69"}
 restrictedRepos:
   # these repos are all archived and will cause the GHA to fail
   # https://github.com/github/safe-settings/issues/443
@@ -191,9 +191,7 @@ restrictedRepos:
     - ^XnatInstaller$
 ```
 
-##
-
-[./safe-settings/organisation.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/organisation.yaml)
+## [./safe-settings/organisation.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/organisation.yaml) {data-menu-title="Organisation Settings"}
 
 ```{.yaml code-line-numbers="1-4|6-15|17-19"}
 autolinks:
@@ -217,9 +215,7 @@ teams:
     permission: admin
 ```
 
-##
-
-[./safe-settings/suborgs/rulesets.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/suborgs/rulesets.yaml)
+## [./safe-settings/suborgs/rulesets.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/suborgs/rulesets.yaml) {data-menu-title="Suborgs Settings"}
 
 ```{.yaml code-line-numbers="1-2|4|4-17|19-43|45-64"}
 suborgrepos:
@@ -288,9 +284,7 @@ rulesets:
           strict_required_status_checks_policy: false
 ```
 
-##
-
-[./.github/workflows/safe-settings.yaml](https://github.com/UCL-MIRSG/.github/blob/main/.github/workflows/safe-settings.yaml)
+## [GitHub Action](https://github.com/UCL-MIRSG/.github/blob/main/.github/workflows/safe-settings.yaml) {data-menu-title="GitHub Action"}
 
 ```{.yaml code-line-numbers="1|2|2-5|2,6-9|2,10-11|2,12|14-17|19-21|19,22-24|19,25|25-27|29-34|36-42|44-46|48-51|51-52,54-58,63,65|53,59-62,64"}
 name: Safe Settings Sync
