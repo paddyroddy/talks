@@ -8,7 +8,7 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 {{< include /_includes/qr-code.qmd >}}
 
-# GitHub Application
+# GitHub App
 
 ## Creation
 
