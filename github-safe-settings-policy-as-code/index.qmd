@@ -8,6 +8,25 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 {{< include /_includes/qr-code.qmd >}}
 
+# How to Set Up
+
+## Repository Permissions
+
+| Read-only | Read and write    |               |
+| --------- | ----------------- | ------------- |
+| Actions   | Administration    | Environments  |
+| Metadata  | Checks            | Issues        |
+|           | Commit statuses   | Pull requests |
+|           | Contents          | Variables     |
+|           | Custom properties |               |
+
+## Organisation Permissions
+
+| Read and write | Admin             |
+| -------------- | ----------------- |
+| Administration | Custom properties |
+| Members        |                   |
+
 ##
 
 [./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml)
