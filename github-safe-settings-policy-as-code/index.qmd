@@ -66,11 +66,11 @@ None
 ## Next Steps {data-menu-title="Next Septs (ii)"}
 
 - Create the following environment variables:
-  - `${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}`
-  - `${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}`
-  - `${{ vars.SAFE_SETTINGS_APP_ID }}`
-  - `${{ vars.SAFE_SETTINGS_GH_ORG }}`
-  - `${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}`
+  - `secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET`
+  - `secrets.SAFE_SETTINGS_PRIVATE_KEY`
+  - `vars.SAFE_SETTINGS_APP_ID`
+  - `vars.SAFE_SETTINGS_GH_ORG`
+  - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
 
 ##
 
