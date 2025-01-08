@@ -8,7 +8,17 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 {{< include /_includes/qr-code.qmd >}}
 
-# How to Set Up
+# GitHub Application
+
+## Creation
+
+- [Register new GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
+- Give the app a unique name
+- Give the app a description
+- Give the app a homepage URL, e.g. <https://github.com/github/safe-settings>
+- Optionally disable `Expire user authorization tokens`
+- Disable webhook (assuming using GHA workflow)
+- Give the following permissions:
 
 ## Repository Permissions
 
