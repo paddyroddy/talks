@@ -353,3 +353,26 @@ jobs:
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
           SETTINGS_FILE_PATH: organisation.yaml
 ```
+
+## [Renovate Configuration](https://github.com/UCL-MIRSG/.github/blob/main/.renovaterc.json5)
+
+See
+<https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
+for my previous talk on Renovate.
+
+```{.json5 code-line-numbers="2|3|4-13"}
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>UCL-MIRSG/.github//renovate/default-config.json5"],
+  customManagers: [
+    {
+      customType: "regex",
+      description: "Update GitHub Safe-Settings version",
+      fileMatch: [".github/workflows/safe-settings.yaml$"],
+      matchStrings: ["SAFE_SETTINGS_VERSION:\\s(?<currentValue>.*)"],
+      depNameTemplate: "github/safe-settings",
+      datasourceTemplate: "github-releases",
+    },
+  ],
+}
+```
