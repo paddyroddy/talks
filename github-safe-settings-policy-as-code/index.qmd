@@ -20,7 +20,9 @@ title: "GitHub Safe-Settings: Policy as Code"
 - Disable webhook (assuming using GHA workflow)
 - Give the following permissions:
 
-## Repository Permissions
+## Permissions {data-menu-title="Permissions (i)"}
+
+### Repository
 
 | Read-only | Read and write    |               |
 | --------- | ----------------- | ------------- |
@@ -30,12 +32,18 @@ title: "GitHub Safe-Settings: Policy as Code"
 |           | Contents          | Variables     |
 |           | Custom properties |               |
 
-## Organisation Permissions
+## Permissions {data-menu-title="Permissions (i)"}
+
+### Organisation
 
 | Read and write | Admin             |
 | -------------- | ----------------- |
 | Administration | Custom properties |
 | Members        |                   |
+
+### Account
+
+None
 
 ## Next Steps {data-menu-title="Next Septs (i)"}
 
