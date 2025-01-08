@@ -73,6 +73,48 @@ None
   - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
 - Install the app organisation wide
 
+## Alternative Set Up
+
+Follow the steps to
+[register a GitHub App from a manifest](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest).
+
+```{.yaml code-line-numbers="1-13|14-28|30|32|34"}
+default_events:
+  - branch_protection_rule
+  - check_run
+  - check_suite
+  - create
+  - custom_property_values
+  - member
+  - pull_request
+  - push
+  - repository
+  - repository_ruleset
+  - team
+
+default_permissions:
+    actions: read
+    administration: write
+    checks: write
+    contents: write
+    environments: write
+    issues: write
+    members: write
+    metadata: read
+    organization_administration: write
+    organization_custom_properties: admin
+    pull_requests: write
+    repository_custom_properties: write
+    statuses: write
+    variables: write
+
+name: Safe Settings
+
+url: https://github.com/github/safe-settings
+
+public: false
+```
+
 ##
 
 [./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml)
