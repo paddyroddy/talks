@@ -47,10 +47,21 @@ None
 
 ## Next Steps {data-menu-title="Next Septs (i)"}
 
+:::{layout-ncol=2}
+
 - `Where can this GitHub App be installed?` Only on this account
 - Create GitHub app
 - Generate a new client secret
 - Generate a private key
+- Optionally create a logo
+
+::: {.fragment .fade-left}
+
+![](figures/logo.png)
+
+:::
+
+:::
 
 ## Next Steps {data-menu-title="Next Septs (ii)"}
 
