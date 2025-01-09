@@ -8,6 +8,25 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 {{< include /_includes/qr-code.qmd >}}
 
+# Policy as Code
+
+## GitHub Settings
+
+:::{layout-ncol=2}
+
+- Repository settings can easily be changed in the UI.
+- Depending on collaborators permissions, they can change them too.
+- Might turn something on/off and lose record.
+- How to enforce for all repositories?
+
+::: {}
+
+![](figures/settings.png)
+
+:::
+
+:::
+
 # Overview
 
 An app to manage policy-as-code and apply repository settings across an
