@@ -8,6 +8,53 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 {{< include /_includes/qr-code.qmd >}}
 
+# Overview
+
+## {data-menu-title="Overview (i)"}
+
+An app to manage policy-as-code and apply repository settings across an
+organisation.
+
+1. In `safe-settings`, all the settings are stored centrally in an `admin` repo
+   within the organisation. Unlike the
+   [GitHub Repository Settings App](https://github.com/repository-settings/app),
+   the settings files cannot be in individual repositories.
+
+2. The **settings** in the **default** branch are applied. If the settings are
+   changed on a non-default branch and a PR is created to merge the changes, the
+   app runs in a `dry-run` mode to evaluate and validate the changes. Checks
+   pass or fail based on the `dry-run` results.
+
+## {data-menu-title="Overview (ii)"}
+
+3. In `safe-settings` the settings can have 2 types of targets:
+   1. `org` - These settings are applied to the organisation. `Org`-targeted
+      settings are defined in `.github/settings.yml`. Currently, only `rulesets`
+      are supported as `org`-targeted settings.
+   2. `repo` - These settings are applied to repositories.
+
+## {data-menu-title="Overview (iii)"}
+
+4. For the `repo`-targeted settings, there can be 3 levels at which the settings
+   are managed:
+
+   1. `Org`-level settings are defined in `.github/settings.yml`
+
+   2. `Suborg` level settings. A `suborg` is an arbitrary collection of repos
+      belonging to projects, business units, or teams. The `suborg` settings
+      reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
+
+   3. `Repo` level settings. They reside in a repo specific yaml in
+      `.github/repos` folder
+
+## {data-menu-title="Overview (iv)"}
+
+5. It is recommended to break the settings into `org`-level, `suborg`-level, and
+   `repo`-level units. This will allow different teams to define and manage
+   policies for their specific projects or business units. With `CODEOWNERS`,
+   this will allow different people to be responsible for approving changes in
+   different projects.
+
 # GitHub App
 
 ## Creation
