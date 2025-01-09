@@ -10,10 +10,10 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 # Overview
 
-## {data-menu-title="Overview (i)"}
-
 An app to manage policy-as-code and apply repository settings across an
 organisation.
+
+## {data-menu-title="Overview (i)"}
 
 1. In `safe-settings`, all the settings are stored centrally in an `admin` repo
    within the organisation. Unlike the
