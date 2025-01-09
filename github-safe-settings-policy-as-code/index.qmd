@@ -27,10 +27,18 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 :::
 
-# Overview
+## [GitHub Safe-Settings](https://github.com/github/safe-settings)
 
 An app to manage policy-as-code and apply repository settings across an
 organisation.
+
+1. Create an `admin` repo (or an alternative of your choosing) within your
+   organisation.
+2. Add the settings for the `org`, `suborgs`, and `repos` in YAML files.
+3. Deploy and install the app. Alternatively, the `safe-settings` can be run
+   with GitHub Actions.
+
+# App Overview
 
 ## {data-menu-title="Overview (i)"}
 
@@ -70,7 +78,7 @@ organisation.
   this will allow different people to be responsible for approving changes in
   different projects.
 
-# How it Works
+## How it Works
 
 `Safe-settings` is designed to run as a service listening for webhook events or
 as a scheduled job running on some regular cadence. It can also be triggered
