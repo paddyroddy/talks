@@ -57,7 +57,9 @@ organisation.
 
 # How it Works
 
-`Safe-settings` is designed to run as a service listening for webhook events or as a scheduled job running on some regular cadence. It can also be triggered through GitHub Actions.
+`Safe-settings` is designed to run as a service listening for webhook events or
+as a scheduled job running on some regular cadence. It can also be triggered
+through GitHub Actions.
 
 ## Events
 
@@ -105,7 +107,7 @@ overridevalidators:
   - plugin: branches
     error: |-
       `Branch protection required_approving_review_count
-      cannot be overidden to a lower value`
+      cannot be overridden to a lower value`
     script: |-
       console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
       console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)
@@ -473,6 +475,35 @@ jobs:
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
           SETTINGS_FILE_PATH: organisation.yaml
 ```
+
+## Performance {data-menu-title="Performance (i)"}
+
+When there are 1000s of repos to be managed -- and there is a global settings
+change -- safe-settings will have to work efficiently and only make the
+necessary API calls.
+
+The app also has to complete the work within an hour: the lifetime of the GitHub
+app token.
+
+To address these constraints the following design decisions have been
+implemented:
+
+## Performance {data-menu-title="Performance (ii)"}
+
+1. `Probot` automatically handles `rate` and `abuse` limits.
+2. Instead of loading all the repo contents from `.github/repos/*`, it will
+   selectively load the specific repo file based on which `repo` settings has
+   changed, or a subset of the repo files associated with `suborg` settings that
+   has changed. The only time all the repo files will be loaded is if there is a
+   `global` settings file change.
+
+## Performance {data-menu-title="Performance (iii)"}
+
+3. The PR check will only provide a summary of errors and changes. (Providing
+   the details of changes for 1000s of repos will error out.)
+4. To ensure it handles updates to GitHub intelligently, it will compare the
+   changes with the settings in GitHub, and will call the API only if there are
+   `real` changes.
 
 ## [Renovate Configuration](https://github.com/UCL-MIRSG/.github/blob/main/.renovaterc.json5)
 
