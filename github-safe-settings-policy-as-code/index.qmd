@@ -148,7 +148,7 @@ implemented:
 
 ## Performance {data-menu-title="Performance (iii)"}
 
-- The PR check will only provide a summary of errors and changes. (Providing the
+- The PR check will only provide a summary of errors and changes (providing the
   details of changes for 1000s of repos will error out.)
 - To ensure it handles updates to GitHub intelligently, it will compare the
   changes with the settings in GitHub, and will call the API only if there are
@@ -574,3 +574,20 @@ url: https://github.com/github/safe-settings
 
 public: false
 ```
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- The ability to manage repository settings through version control
+- Can create and/or restrict what repositories are made
+- Can relax in the knowledge that new repositories will have settings that you
+  expect
+- Very quick even with many settings applied
+- Actively developed
+- Hosted on <https://github.com/github>
+- Can deploy in many different ways
+
+## Demo
+
+[![](figures/demo.png)](https://github.com/UCL-MIRSG/.github/actions)
