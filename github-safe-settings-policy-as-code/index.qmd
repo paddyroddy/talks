@@ -158,6 +158,57 @@ implemented:
    changes with the settings in GitHub, and will call the API only if there are
    `real` changes.
 
+## The Settings Files
+
+The settings files can be used to set the policies at the `org`, `suborg` or
+`repo` level.
+
+The following can be configured:
+
+:::{layout-ncol=4}
+
+- Repository settings
+- Default branch
+- Topics
+- Custom properties
+
+:::{}
+
+- Teams and permissions
+- Collaborators and permissions
+- Issue labels
+
+:::
+
+:::{}
+
+- Milestones
+- Branch protections
+- Autolinks
+
+:::
+
+:::{}
+
+- Repository name validation
+- Rulesets
+- Environments
+
+:::
+
+:::
+
+## Things to Note
+
+- Label colour can also start with `#`, e.g. `color: '#F341B2'`. Make sure to
+  wrap it with quotes!
+- Each top-level element under branch protection must be filled (eg:
+  `required_pull_request_reviews`, `required_status_checks`, `enforce_admins`
+  and `restrictions`). If you don't want to use one of them you must set it to
+  `null` (see comments in the example above). Otherwise, none of the settings
+  will be applied.
+- The precedence order is repository > suborg > org.
+
 # GitHub App
 
 ## Creation
