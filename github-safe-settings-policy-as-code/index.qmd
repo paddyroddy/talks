@@ -15,45 +15,41 @@ organisation.
 
 ## {data-menu-title="Overview (i)"}
 
-1. In `safe-settings`, all the settings are stored centrally in an `admin` repo
-   within the organisation. Unlike the
-   [GitHub Repository Settings App](https://github.com/repository-settings/app),
-   the settings files cannot be in individual repositories.
-
-2. The **settings** in the **default** branch are applied. If the settings are
-   changed on a non-default branch and a PR is created to merge the changes, the
-   app runs in a `dry-run` mode to evaluate and validate the changes. Checks
-   pass or fail based on the `dry-run` results.
+- In `safe-settings`, all the settings are stored centrally in an `admin` repo
+  within the organisation. Unlike the
+  [GitHub Repository Settings App](https://github.com/repository-settings/app),
+  the settings files cannot be in individual repositories.
+- The **settings** in the **default** branch are applied. If the settings are
+  changed on a non-default branch and a PR is created to merge the changes, the
+  app runs in a `dry-run` mode to evaluate and validate the changes. Checks pass
+  or fail based on the `dry-run` results.
 
 ## {data-menu-title="Overview (ii)"}
 
-3. In `safe-settings` the settings can have 2 types of targets:
-   1. `org` - These settings are applied to the organisation. `Org`-targeted
-      settings are defined in `.github/settings.yml`. Currently, only `rulesets`
-      are supported as `org`-targeted settings.
-   2. `repo` - These settings are applied to repositories.
+- In `safe-settings` the settings can have 2 types of targets:
+  - `org` - These settings are applied to the organisation. `Org`-targeted
+    settings are defined in `.github/settings.yml`. Currently, only `rulesets`
+    are supported as `org`-targeted settings.
+  - `repo` - These settings are applied to repositories.
 
 ## {data-menu-title="Overview (iii)"}
 
-4. For the `repo`-targeted settings, there can be 3 levels at which the settings
-   are managed:
-
-   1. `Org`-level settings are defined in `.github/settings.yml`
-
-   2. `Suborg` level settings. A `suborg` is an arbitrary collection of repos
-      belonging to projects, business units, or teams. The `suborg` settings
-      reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
-
-   3. `Repo` level settings. They reside in a repo specific yaml in
-      `.github/repos` folder
+- For the `repo`-targeted settings, there can be 3 levels at which the settings
+  are managed:
+  - `Org`-level settings are defined in `.github/settings.yml`
+  - `Suborg` level settings. A `suborg` is an arbitrary collection of repos
+    belonging to projects, business units, or teams. The `suborg` settings
+    reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
+  - `Repo` level settings. They reside in a repo specific yaml in
+    `.github/repos` folder
 
 ## {data-menu-title="Overview (iv)"}
 
-5. It is recommended to break the settings into `org`-level, `suborg`-level, and
-   `repo`-level units. This will allow different teams to define and manage
-   policies for their specific projects or business units. With `CODEOWNERS`,
-   this will allow different people to be responsible for approving changes in
-   different projects.
+- It is recommended to break the settings into `org`-level, `suborg`-level, and
+  `repo`-level units. This will allow different teams to define and manage
+  policies for their specific projects or business units. With `CODEOWNERS`,
+  this will allow different people to be responsible for approving changes in
+  different projects.
 
 # How it Works
 
@@ -143,20 +139,20 @@ implemented:
 
 ## Performance {data-menu-title="Performance (ii)"}
 
-1. `Probot` automatically handles `rate` and `abuse` limits.
-2. Instead of loading all the repo contents from `.github/repos/*`, it will
-   selectively load the specific repo file based on which `repo` settings has
-   changed, or a subset of the repo files associated with `suborg` settings that
-   has changed. The only time all the repo files will be loaded is if there is a
-   `global` settings file change.
+- `Probot` automatically handles `rate` and `abuse` limits.
+- Instead of loading all the repo contents from `.github/repos/*`, it will
+  selectively load the specific repo file based on which `repo` settings has
+  changed, or a subset of the repo files associated with `suborg` settings that
+  has changed. The only time all the repo files will be loaded is if there is a
+  `global` settings file change.
 
 ## Performance {data-menu-title="Performance (iii)"}
 
-3. The PR check will only provide a summary of errors and changes. (Providing
-   the details of changes for 1000s of repos will error out.)
-4. To ensure it handles updates to GitHub intelligently, it will compare the
-   changes with the settings in GitHub, and will call the API only if there are
-   `real` changes.
+- The PR check will only provide a summary of errors and changes. (Providing the
+  details of changes for 1000s of repos will error out.)
+- To ensure it handles updates to GitHub intelligently, it will compare the
+  changes with the settings in GitHub, and will call the API only if there are
+  `real` changes.
 
 ## The Settings Files
 
