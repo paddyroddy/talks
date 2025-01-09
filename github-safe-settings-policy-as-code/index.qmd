@@ -55,6 +55,78 @@ organisation.
    this will allow different people to be responsible for approving changes in
    different projects.
 
+# How it Works
+
+`Safe-settings` is designed to run as a service listening for webhook events or as a scheduled job running on some regular cadence. It can also be triggered through GitHub Actions.
+
+## Events
+
+The App listens to the following webhook events:
+
+:::{layout-ncol=2}
+
+- **push**
+- **repository.created**
+- **branch_protection_rule**
+- **repository.edited**
+- **repository.renamed**
+- **pull_request.opened**, **pull_request.reopened**, **check_suite.requested**
+
+:::{}
+
+- **repository_ruleset**
+- **member_change_events**
+- **member**', **team.added_to_repository**, **team.removed_from_repository**,
+  **team.edited**
+- **custom_property_values**
+
+:::
+
+:::
+
+## [Deployment Settings](https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml)
+
+```{.yaml code-line-numbers="1|1-5|1,6-7|8|8-14|15|16-33|34-38"}
+restrictedRepos:
+  # You can exclude certain repos from safe-settings processing
+  # If no file is specified, then the following repositories -
+  # 'admin', '.github', 'safe-settings' are exempted by default
+  exclude: ['^admin$', '^\.github$', '^safe-settings$', '.*-test']
+  # Alternatively you can only include certain repos
+  include: ['^test$']
+configvalidators:
+  - plugin: collaborators
+    error: |
+      `Admin cannot be assigned to collaborators`
+    script: |-
+      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
+      return baseconfig.permission != 'admin'
+overridevalidators:
+  - plugin: branches
+    error: |-
+      `Branch protection required_approving_review_count
+      cannot be overidden to a lower value`
+    script: |-
+      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
+      console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)
+      if (
+        baseconfig.protection.required_pull_request_reviews.required_approving_review_count
+        &&
+        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count
+      ) {
+        return
+        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count
+        >=
+        baseconfig.protection.required_pull_request_reviews.required_approving_review_count
+      }
+      return true
+  - plugin: labels
+    error: |
+      Some error
+    script: |
+      return true
+```
+
 # GitHub App
 
 ## Creation
