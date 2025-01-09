@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/github-safe-settings-policy-as-code/index.html",
       "/turbocharging-your-github-organisation/index.html",
       "/ci-cd-faster-easier-development/index.html",
       "/scipy-2024/index.html",

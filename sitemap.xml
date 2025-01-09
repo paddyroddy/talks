@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.011Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.497Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.006Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.490Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.039Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.525Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.006Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.492Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
+    <lastmod>2025-01-09T18:44:22.492Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.015Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.502Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.050Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.536Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2025-01-07T16:41:19.000Z</lastmod>
+    <lastmod>2025-01-09T18:44:22.484Z</lastmod>
   </url>
 </urlset>
