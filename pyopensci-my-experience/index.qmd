@@ -12,7 +12,7 @@ title: "pyOpenSci: My Experience"
 
 ## JOSS
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 [![](figures/joss_logo.png)](https://joss.theoj.org)
 
@@ -62,7 +62,7 @@ title: "pyOpenSci: My Experience"
 
 ## pyOpenSci
 
-:::{layout="[75,25]"}
+::: {layout="[75,25]"}
 
 ::: {#first-column}
 
@@ -189,7 +189,7 @@ Functionality:
 
 ## Package Acceptance
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 [![](figures/pyopensci_packages.png)](https://www.pyopensci.org/python-packages.html)
 

@@ -33,7 +33,7 @@ m
 
 ## Tacoma
 
-:::{layout="[60,40]"}
+::: {layout="[60,40]"}
 
 ::: {#first-column}
 

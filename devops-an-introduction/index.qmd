@@ -92,7 +92,7 @@ flowchart TB;
 
 ## Discover
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -116,7 +116,7 @@ flowchart TB;
 
 ## Plan
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -140,7 +140,7 @@ flowchart TB;
 
 ## Build
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -165,7 +165,7 @@ flowchart TB;
 
 ## Test
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -191,7 +191,7 @@ flowchart TB;
 
 ## Deploy
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -217,7 +217,7 @@ flowchart TB;
 
 ## Operate
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -240,7 +240,7 @@ flowchart TB;
 
 ## Observe
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 
@@ -264,7 +264,7 @@ flowchart TB;
 
 ## Continuous Feedback
 
-:::{layout="[70,30]"}
+::: {layout="[70,30]"}
 
 ::: {#first-column}
 

@@ -1,6 +1,6 @@
 # {data-menu-title="QR Code"}
 
-:::{layout="[22,78]"}
+::: {layout="[22,78]"}
 
 Scan to view the slides
 

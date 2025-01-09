@@ -125,7 +125,7 @@ Add a default `/CODE_OF_CONDUCT.md`.
 
 ## Renovate {data-menu-title="Renovate (i)"}
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 I previously gave talk on [Renovate](https://docs.renovatebot.com)
 <https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
@@ -502,7 +502,7 @@ jobs:
 
 ## Composite Actions {data-menu-title="Composite Actions (iv)"}
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 Actions can use a single set of generated secrets to be used in all actions,
 e.g. `APP_ID`, `APP_PEM`.
@@ -546,7 +546,7 @@ movements to an individual user.
 
 ## Webhook Events
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 - **push**
 - **repository.created**
@@ -555,7 +555,7 @@ movements to an individual user.
 - **repository.renamed**
 - **pull_request.opened**, **pull_request.reopened**, **check_suite.requested**
 
-:::{}
+::: {}
 
 - **repository_ruleset**
 - **member_change_events**
@@ -574,14 +574,14 @@ The settings files can be used to set the policies at the `org`, `suborg` or
 
 The following can be configured:
 
-:::{layout-ncol=4}
+::: {layout-ncol=4}
 
 - Repository settings
 - Default branch
 - Topics
 - Custom properties
 
-:::{}
+::: {}
 
 - Teams and permissions
 - Collaborators and permissions
@@ -589,7 +589,7 @@ The following can be configured:
 
 :::
 
-:::{}
+::: {}
 
 - Milestones
 - Branch protections
@@ -597,7 +597,7 @@ The following can be configured:
 
 :::
 
-:::{}
+::: {}
 
 - Repository name validation
 - Rulesets
