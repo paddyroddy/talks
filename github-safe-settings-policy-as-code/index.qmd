@@ -63,12 +63,12 @@ organisation.
 
 - For the `repo`-targeted settings, there can be 3 levels at which the settings
   are managed:
-  - `Org`-level settings are defined in `.github/settings.yaml`
+  - `Org`-level settings are defined in `.github/settings.yaml`.
   - `Suborg` level settings. A `suborg` is an arbitrary collection of repos
     belonging to projects, business units, or teams. The `suborg` settings
     reside in a YAML file for each `suborg` in the `.github/suborgs` folder.
   - `Repo` level settings. They reside in a repo specific YAML in
-    `.github/repos` folder
+    `.github/repos` folder.
 
 ## {data-menu-title="Overview (iv)"}
 
@@ -176,7 +176,7 @@ implemented:
 ## Performance {data-menu-title="Performance (iii)"}
 
 - The PR check will only provide a summary of errors and changes (providing the
-  details of changes for 1000s of repos will error out.)
+  details of changes for 1000s of repos will error out).
 - To ensure it handles updates to GitHub intelligently, it will compare the
   changes with the settings in GitHub, and will call the API only if there are
   `real` changes.
@@ -499,12 +499,12 @@ for my previous talk on Renovate.
 
 ## Creation
 
-- [Register new GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
-- Give the app a unique name
-- Give the app a description
-- Give the app a homepage URL, e.g. <https://github.com/github/safe-settings>
-- Optionally disable `Expire user authorization tokens`
-- Disable webhook (assuming using GHA workflow)
+- [Register new GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app).
+- Give the app a unique name.
+- Give the app a description.
+- Give the app a homepage URL, e.g. <https://github.com/github/safe-settings>.
+- Optionally disable `Expire user authorization tokens`.
+- Disable webhook (assuming using GHA workflow).
 - Give the following permissions:
 
 ## Permissions {data-menu-title="Permissions (i)"}
@@ -536,11 +536,11 @@ None
 
 :::{layout-ncol=2}
 
-- `Where can this GitHub App be installed?` Only on this account
-- Create GitHub app
-- Generate a new client secret
-- Generate a private key
-- Optionally create a logo
+- `Where can this GitHub App be installed?` Only on this account.
+- Create GitHub app.
+- Generate a new client secret.
+- Generate a private key.
+- Optionally create a logo.
 
 ::: {.fragment .fade-left}
 
@@ -558,7 +558,7 @@ None
   - `vars.SAFE_SETTINGS_APP_ID`
   - `vars.SAFE_SETTINGS_GH_ORG`
   - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
-- Install the app organisation wide
+- Install the app organisation wide.
 
 ## Alternative Set Up
 
@@ -606,14 +606,14 @@ public: false
 
 ## {data-menu-title="Summary"}
 
-- The ability to manage repository settings through version control
-- Can create and/or restrict what repositories are made
+- The ability to manage repository settings through version control.
+- Can create and/or restrict what repositories are made.
 - Can relax in the knowledge that new repositories will have settings that you
-  expect
-- Very quick even with many settings applied
-- Actively developed
-- Hosted on <https://github.com/github>
-- Can deploy in many different ways
+  expect.
+- Very quick even with many settings applied.
+- Actively developed.
+- Hosted on <https://github.com/github>.
+- Can deploy in many different ways.
 
 ## Demo
 
