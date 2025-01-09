@@ -66,8 +66,8 @@ organisation.
   - `Org`-level settings are defined in `.github/settings.yaml`
   - `Suborg` level settings. A `suborg` is an arbitrary collection of repos
     belonging to projects, business units, or teams. The `suborg` settings
-    reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
-  - `Repo` level settings. They reside in a repo specific yaml in
+    reside in a YAML file for each `suborg` in the `.github/suborgs` folder.
+  - `Repo` level settings. They reside in a repo specific YAML in
     `.github/repos` folder
 
 ## {data-menu-title="Overview (iv)"}
