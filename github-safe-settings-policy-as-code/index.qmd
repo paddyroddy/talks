@@ -333,7 +333,7 @@ rulesets:
 
 ## [GitHub Action](https://github.com/UCL-MIRSG/.github/blob/main/.github/workflows/safe-settings.yaml) {data-menu-title="GitHub Action"}
 
-```{.yaml code-line-numbers="1|2|2-5|2,6-9|2,10-11|2,12|14-17|19-21|19,22-24|19,25|25-27|29-34|36-42|44-46|48-51|51-52,54-58,63,65|53,59-62,64"}
+```{.yaml code-line-numbers="1|2|2-5|2,6-9|2,10-11|2,12|14-18|20-22|20,23-25|20,26|26-28|30-35|37-43|45-47|49-52|52-53,55-59,64,66|54,60-63,65"}
 name: Safe Settings Sync
 on:
   push:
@@ -350,7 +350,8 @@ on:
 concurrency:
   cancel-in-progress: true
   group: >-
-    ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    ${{ github.workflow }}-${{
+    github.event.pull_request.number || github.ref }}
 
 jobs:
   safe-settings-sync:
