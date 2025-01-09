@@ -28,7 +28,7 @@ organisation.
 
 - In `safe-settings` the settings can have 2 types of targets:
   - `org` - These settings are applied to the organisation. `Org`-targeted
-    settings are defined in `.github/settings.yml`. Currently, only `rulesets`
+    settings are defined in `.github/settings.yaml`. Currently, only `rulesets`
     are supported as `org`-targeted settings.
   - `repo` - These settings are applied to repositories.
 
@@ -36,7 +36,7 @@ organisation.
 
 - For the `repo`-targeted settings, there can be 3 levels at which the settings
   are managed:
-  - `Org`-level settings are defined in `.github/settings.yml`
+  - `Org`-level settings are defined in `.github/settings.yaml`
   - `Suborg` level settings. A `suborg` is an arbitrary collection of repos
     belonging to projects, business units, or teams. The `suborg` settings
     reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
@@ -205,114 +205,7 @@ The following can be configured:
   will be applied.
 - The precedence order is repository > suborg > org.
 
-# GitHub App
-
-## Creation
-
-- [Register new GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
-- Give the app a unique name
-- Give the app a description
-- Give the app a homepage URL, e.g. <https://github.com/github/safe-settings>
-- Optionally disable `Expire user authorization tokens`
-- Disable webhook (assuming using GHA workflow)
-- Give the following permissions:
-
-## Permissions {data-menu-title="Permissions (i)"}
-
-### Repository
-
-| Read-only | Read and write    |               |
-| --------- | ----------------- | ------------- |
-| Actions   | Administration    | Environments  |
-| Metadata  | Checks            | Issues        |
-|           | Commit statuses   | Pull requests |
-|           | Contents          | Variables     |
-|           | Custom properties |               |
-
-## Permissions {data-menu-title="Permissions (i)"}
-
-### Organisation
-
-| Read and write | Admin             |
-| -------------- | ----------------- |
-| Administration | Custom properties |
-| Members        |                   |
-
-### Account
-
-None
-
-## Next Steps {data-menu-title="Next Septs (i)"}
-
-:::{layout-ncol=2}
-
-- `Where can this GitHub App be installed?` Only on this account
-- Create GitHub app
-- Generate a new client secret
-- Generate a private key
-- Optionally create a logo
-
-::: {.fragment .fade-left}
-
-![](figures/logo.png)
-
-:::
-
-:::
-
-## Next Steps {data-menu-title="Next Septs (ii)"}
-
-- Create the following environment variables:
-  - `secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET`
-  - `secrets.SAFE_SETTINGS_PRIVATE_KEY`
-  - `vars.SAFE_SETTINGS_APP_ID`
-  - `vars.SAFE_SETTINGS_GH_ORG`
-  - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
-- Install the app organisation wide
-
-## Alternative Set Up
-
-Follow the steps to
-[register a GitHub App from a manifest](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest).
-
-```{.yaml code-line-numbers="1-13|14-28|30|32|34"}
-default_events:
-  - branch_protection_rule
-  - check_run
-  - check_suite
-  - create
-  - custom_property_values
-  - member
-  - pull_request
-  - push
-  - repository
-  - repository_ruleset
-  - team
-
-default_permissions:
-    actions: read
-    administration: write
-    checks: write
-    contents: write
-    environments: write
-    issues: write
-    members: write
-    metadata: read
-    organization_administration: write
-    organization_custom_properties: admin
-    pull_requests: write
-    repository_custom_properties: write
-    statuses: write
-    variables: write
-
-name: Safe Settings
-
-url: https://github.com/github/safe-settings
-
-public: false
-```
-
-# Configuration
+# [Example Configuration](https://github.com/UCL-MIRSG/.github)
 
 ## [./safe-settings/deployment.yaml](https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml) {data-menu-title="Deployment Settings"}
 
@@ -573,4 +466,111 @@ for my previous talk on Renovate.
     },
   ],
 }
+```
+
+# GitHub App
+
+## Creation
+
+- [Register new GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
+- Give the app a unique name
+- Give the app a description
+- Give the app a homepage URL, e.g. <https://github.com/github/safe-settings>
+- Optionally disable `Expire user authorization tokens`
+- Disable webhook (assuming using GHA workflow)
+- Give the following permissions:
+
+## Permissions {data-menu-title="Permissions (i)"}
+
+### Repository
+
+| Read-only | Read and write    |               |
+| --------- | ----------------- | ------------- |
+| Actions   | Administration    | Environments  |
+| Metadata  | Checks            | Issues        |
+|           | Commit statuses   | Pull requests |
+|           | Contents          | Variables     |
+|           | Custom properties |               |
+
+## Permissions {data-menu-title="Permissions (i)"}
+
+### Organisation
+
+| Read and write | Admin             |
+| -------------- | ----------------- |
+| Administration | Custom properties |
+| Members        |                   |
+
+### Account
+
+None
+
+## Next Steps {data-menu-title="Next Septs (i)"}
+
+:::{layout-ncol=2}
+
+- `Where can this GitHub App be installed?` Only on this account
+- Create GitHub app
+- Generate a new client secret
+- Generate a private key
+- Optionally create a logo
+
+::: {.fragment .fade-left}
+
+![](figures/logo.png)
+
+:::
+
+:::
+
+## Next Steps {data-menu-title="Next Septs (ii)"}
+
+- Create the following environment variables:
+  - `secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET`
+  - `secrets.SAFE_SETTINGS_PRIVATE_KEY`
+  - `vars.SAFE_SETTINGS_APP_ID`
+  - `vars.SAFE_SETTINGS_GH_ORG`
+  - `vars.SAFE_SETTINGS_GITHUB_CLIENT_ID`
+- Install the app organisation wide
+
+## Alternative Set Up
+
+Follow the steps to
+[register a GitHub App from a manifest](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest).
+
+```{.yaml code-line-numbers="1-13|14-28|30|32|34"}
+default_events:
+  - branch_protection_rule
+  - check_run
+  - check_suite
+  - create
+  - custom_property_values
+  - member
+  - pull_request
+  - push
+  - repository
+  - repository_ruleset
+  - team
+
+default_permissions:
+    actions: read
+    administration: write
+    checks: write
+    contents: write
+    environments: write
+    issues: write
+    members: write
+    metadata: read
+    organization_administration: write
+    organization_custom_properties: admin
+    pull_requests: write
+    repository_custom_properties: write
+    statuses: write
+    variables: write
+
+name: Safe Settings
+
+url: https://github.com/github/safe-settings
+
+public: false
 ```
