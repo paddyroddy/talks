@@ -35,7 +35,7 @@ title: "CI/CD: Faster, Easier Development"
 
 ## DevOps {data-menu-title="DevOps (i)"}
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 I previously gave talk on a general overview of DevOps
 <https://paddyroddy.github.io/talks/devops-an-introduction>
@@ -192,7 +192,7 @@ jobs:
 
 ## {data-menu-title="Mentimeter"}
 
-:::{layout="[22,78]"}
+::: {layout="[22,78]"}
 
 <https://www.menti.com>: `5135 9261`
 

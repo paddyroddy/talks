@@ -183,7 +183,7 @@ on:
 
 ## Rulesets - Status Checks
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 ![](figures/status_checks_1.png)
 
@@ -197,7 +197,7 @@ on:
 
 ## Rulesets - Pull Requests
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 ![](figures/pull_requests_1.png)
 
@@ -211,7 +211,7 @@ on:
 
 ## Monitoring
 
-:::{layout-ncol=2}
+::: {layout-ncol=2}
 
 ![](figures/logging_1.png)
 
