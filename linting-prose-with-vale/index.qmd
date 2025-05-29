@@ -7,3 +7,34 @@ title: "Linting Prose with Vale"
 ---
 
 {{< include /_includes/qr-code.qmd >}}
+
+# Introduction
+
+## What is Vale? {data-menu-title="What is Vale? (i)"}
+
+Vale is a command-line tool that brings code-like linting to prose. Vale is
+cross-platform, written in Go, and
+[available on GitHub](https://github.com/errata-ai/vale).
+
+Vale is not a general-purpose writing aid. It doesn’t teach you how to write;
+it’s a tool for writers.
+
+Vale focuses (primarily) on the style of writing rather than its grammatical
+correctness—making it fundamentally different from, for example,
+[Grammarly](https://www.grammarly.com).
+
+## What is Vale? {data-menu-title="What is Vale? (ii)"}
+
+::: {layout="[40,60]"}
+
+::: {#first-column}
+
+Vale focuses on ensuring consistency across multiple authors (according to
+customizable guidelines) rather than the general “correctness” of a single
+author’s work.
+
+:::
+
+![vale.sh](figures/consistency.png)
+
+:::
