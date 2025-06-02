@@ -17,8 +17,6 @@ jobs:
         with:
           pre-commit-config: ./.pre-commit-config.yaml
 
-    runs-on: ubuntu-latest
-    steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/vale@232a2f3869501abb249d50e311179f98830c6481 # v0
         with:
