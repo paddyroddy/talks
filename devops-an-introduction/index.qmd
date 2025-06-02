@@ -51,7 +51,7 @@ flowchart TB;
 - What skills are there currently in the group?
 - Monthly HPC Hour-like meeting?
 - `Area: DevOps` label in `research-software-opportunities`
-- Resume (again) at TI (I won't be there 😞)
+- Resume (again) at TI (I will not be there 😞)
 - What training/skills do we want as a group?
 - What overlap does DevOps have with the other subgroups?
 - How can we collaborate with ISD to share training opportunities?
@@ -225,7 +225,7 @@ flowchart TB;
 
 > Manage the end-to-end delivery of IT services to customers. This includes the
 > practices involved in design, implementation, configuration, deployment, and
-> maintenance of all IT infrastructure that supports an organisation’s services.
+> maintenance of all IT infrastructure that supports an organisation's services.
 
 :::
 

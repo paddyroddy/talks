@@ -31,16 +31,16 @@ title: "pyOpenSci: My Experience"
 > quality of the software submitted. Upon acceptance into JOSS, a Crossref DOI
 > is minted and we list your paper on the JOSS website.
 
-## Don't We Have Enough Journals Already?
+## Do We Not Have Enough Journals Already?
 
-> Perhaps, and in a perfect world we'd rather papers about software weren't
+> Perhaps, and in a perfect world we'd rather papers about software were not
 > necessary but we recognise that for most researchers, papers and not software
 > are the currency of academic research and that citations are required for a
 > good career.
 
-> We built this journal because we believe that after you've done the hard work
-> of writing great software, it shouldn't take weeks and months to write a paper
-> about your work.
+> We built this journal because we believe that after you have done the hard
+> work of writing great software, it should not take weeks and months to write a
+> paper about your work.
 
 ## You Said Developer Friendly, What Do You Mean?
 
@@ -80,7 +80,7 @@ title: "pyOpenSci: My Experience"
 
 :::
 
-## Pre-Submission Inquiry
+## Pre-Submission Enquiry
 
 [![](figures/pyopensci_presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
 

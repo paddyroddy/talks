@@ -18,7 +18,7 @@ title: "Renovate: Automating Dependency Management"
 
 ![xkcd:1319](figures/automation.png)
 
-## We've All Done This At Some Point
+## We Have All Done This At Some Point
 
 ![](figures/bump.png)
 

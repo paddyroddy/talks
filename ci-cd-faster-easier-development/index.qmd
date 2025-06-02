@@ -82,7 +82,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 ::: {.fragment .fade-left}
 
-While CI/CD are crucial components of DevOps, CI/CD alone isn't DevOps. True
+While CI/CD are crucial components of DevOps, CI/CD alone is not DevOps. True
 DevOps requires a broader cultural and operational shift.
 
 :::
@@ -108,7 +108,7 @@ repository, or deploy merged pull requests to production.
    data with each other.
 4. Actions: Standalone commands that are combined into steps to create a job.
    Actions are the smallest portable building block of a workflow.
-5. Runners: A server that runs your workflows when they're triggered. Each
+5. Runners: A server that runs your workflows when they are triggered. Each
    runner can run a single job at a time.
 
 ## Workflow Syntax

@@ -1,5 +1,4 @@
 *.quarto_ipynb
-/.github/styles
 /.quarto/
 _site
 index-listing.json
