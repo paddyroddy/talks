@@ -111,7 +111,7 @@ Reasons you may have heard of it:
 - Maintainers from various NumFOCUS libraries
 - Worked on NumPy
 - Many people left by then
-- Didn't get as much out of it as I hoped
+- Did not get as much out of it as I hoped
 - Euros + Copa America finals
 - Fatigue
 
@@ -523,7 +523,7 @@ m
 - Conference was well organised (timings of talks etc.)
 - Made some Connections {{< fa brands strava >}} > {{< fa brands linkedin >}}
 - Share your post conference plans with fellow attendees, they might join you!
-- Jet lag isn't fun
+- Jet lag is not fun
 - Holidays are great
 - Would highly recommend Washington state
 
