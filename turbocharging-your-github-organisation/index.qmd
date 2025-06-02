@@ -202,7 +202,7 @@ Organisation-wide `Renovate` configuration, e.g.
 
 ## Renovate {data-menu-title="Renovate (iii)"}
 
-This can be then be used in organisation repositories as as follows, e.g.
+This can be then be used in organisation repositories as follows, e.g.
 `/.renovaterc.json5`.
 
 ```{.json5}
@@ -423,7 +423,7 @@ if __name__ == "__main__":
 
 ## pre-commit {data-menu-title="pre-commit (v)"}
 
-This can be then be used in organisation repositories as as follows, e.g.
+This can be then be used in organisation repositories as follows, e.g.
 `/.pre-commit-config.yaml`.
 
 ```{.yaml}
@@ -485,7 +485,7 @@ runs:
 
 ## Composite Actions {data-menu-title="Composite Actions (iii)"}
 
-This can be then be used in organisation repositories as as follows, e.g.
+This can be then be used in organisation repositories as follows, e.g.
 `/.github/workflows/manage-projects.yaml`.
 
 ```{.yaml}

@@ -353,7 +353,9 @@ m.add_layer(Marker(location=seattle_coords))
 m
 ```
 
+<!-- vale Vale.Repetition = NO -->
 ## Poo Poo Point
+<!-- vale Vale.Repetition = YES -->
 
 ::: {.r-hstack}
 
