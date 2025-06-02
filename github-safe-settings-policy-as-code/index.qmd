@@ -610,7 +610,7 @@ public: false
 - Can create and/or restrict what repositories are made.
 - Can relax in the knowledge that new repositories will have settings that you
   expect.
-- Very quick even with many settings applied.
+- Quick even with many settings applied.
 - Actively developed.
 - Hosted on <https://github.com/github>.
 - Can deploy in many different ways.
