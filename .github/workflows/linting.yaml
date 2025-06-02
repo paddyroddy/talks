@@ -9,7 +9,7 @@ on:
   pull_request:
 
 jobs:
-  code:
+  linting:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
