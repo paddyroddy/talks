@@ -42,7 +42,7 @@ Organisation-wide discussions, rather than project specific.
 > filtering, sorting, grouping your issues and pull requests, visualize work
 > with configurable charts, and add custom fields to track metadata specific to
 > your team. Rather than enforcing a specific methodology, a project provides
-> flexible features you can customize to your team’s needs and processes.
+> flexible features you can customize to your team's needs and processes.
 
 ## Projects {data-menu-title="Projects (ii)"}
 
@@ -530,7 +530,7 @@ movements to an individual user.
 
 ## What it Does
 
-> `Safe-settings` – an app to manage policy-as-code and apply repository
+> `Safe-settings` — an app to manage policy-as-code and apply repository
 > settings across an organization.
 
 > `Safe-settings` is designed to run as a service listening for webhook events

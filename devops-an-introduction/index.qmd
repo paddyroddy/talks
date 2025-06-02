@@ -225,7 +225,7 @@ flowchart TB;
 
 > Manage the end-to-end delivery of IT services to customers. This includes the
 > practices involved in design, implementation, configuration, deployment, and
-> maintenance of all IT infrastructure that supports an organisation’s services.
+> maintenance of all IT infrastructure that supports an organisation's services.
 
 :::
 
