@@ -51,7 +51,7 @@ flowchart TB;
 - What skills are there currently in the group?
 - Monthly HPC Hour-like meeting?
 - `Area: DevOps` label in `research-software-opportunities`
-- Get the ball rolling (again) at TI (I won't be there 😞)
+- Resume (again) at TI (I won't be there 😞)
 - What training/skills do we want as a group?
 - What overlap does DevOps have with the other subgroups?
 - How can we collaborate with ISD to share training opportunities?
@@ -78,12 +78,12 @@ flowchart TB;
 
 [Wikipedia](https://en.wikipedia.org/wiki/DevOps):
 
-> ... academics and practitioners have not developed a universal definition for
+> … academics and practitioners have not developed a universal definition for
 > the term "DevOps". Most often, DevOps is characterised by key principles:
-> `shared ownership`, `workflow automation`, and `rapid feedback`. ... "a set of
+> `shared ownership`, `workflow automation`, and `rapid feedback`. … "a set of
 > practices intended to reduce the time between committing a change to a system
 > and the change being placed into normal production, while ensuring high
-> quality". ... At its most successful, DevOps is a combination of specific
+> quality". … At its most successful, DevOps is a combination of specific
 > practices, culture change, and tools.
 
 ## DevOps Lifecycle

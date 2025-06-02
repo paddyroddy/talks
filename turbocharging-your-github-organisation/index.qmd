@@ -104,7 +104,7 @@ blank_issues_enabled: true
 contact_links:
   - name: General MIRSG issue
     url: https://github.com/UCL-MIRSG/MIRSG/issues/new/choose
-    about: If your issue is a general...
+    about: If your issue is a general…
 ```
 
 ![](figures/config.png)
@@ -228,7 +228,7 @@ Metahooks
 > to centralized managed hooks. That said, there's some features that enable
 > this to work currently.
 >
-> ...
+> …
 >
 > That said, here's how you can do this with the facilities provided today:
 

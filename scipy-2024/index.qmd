@@ -354,7 +354,9 @@ m
 ```
 
 <!-- vale Vale.Repetition = NO -->
+
 ## Poo Poo Point
+
 <!-- vale Vale.Repetition = YES -->
 
 ::: {.r-hstack}
@@ -517,8 +519,8 @@ m
 
 - Thanks for the opportunity
 - Solo conferencing forces you to talk to people
-- SciPy community are very friendly
-- Conference was very well organised (timings of talks etc.)
+- SciPy community are friendly
+- Conference was well organised (timings of talks etc.)
 - Made some Connections {{< fa brands strava >}} > {{< fa brands linkedin >}}
 - Share your post conference plans with fellow attendees, they might join you!
 - Jet lag isn't fun

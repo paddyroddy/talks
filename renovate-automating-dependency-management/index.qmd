@@ -70,7 +70,7 @@ title: "Renovate: Automating Dependency Management"
 - <https://github.com/microsoft/lage>
 - <https://github.com/loopbackio/loopback-next>
 - <https://github.com/ampproject/amphtml>
-- ...
+- …
 
 # How to Setup
 
@@ -239,7 +239,7 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 - If you think it can be automated, it probably can
 - Be careful with CI use in private projects (ask MIRSG 😉)
 - Embrace automerging (if you like inbox zero)
-- Renovate `renovates` itself very frequently
+- Renovate `renovates` itself frequently
 - There's always more to learn!
 
 ## Demo Time
