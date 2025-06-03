@@ -272,3 +272,27 @@ The following packages can be retrieved with `vale sync`:
 ```
 
 More rules can be found at: <https://hyperlint.com/vale/rules>.
+
+## GitHub Action
+
+One might be happy to accept warnings and therefore it doesn't make sense to run
+as a pre-commit hook.
+
+```{.yaml code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-16"}
+jobs:
+  lint-prose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Run Vale
+        uses: errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          fail_on_error: true
+          filter_mode: nofilter
+          reporter: github-check
+          vale_flags: --glob='!.github/styles/*'
+```
