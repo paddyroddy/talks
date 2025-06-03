@@ -66,16 +66,16 @@ swap:
   meters: metres
   theaters: theatres
   # -ise vs. -ize
-  '(\w+)ization\b': "$1isation"
-  '(\w+)ize\b': "$1ise"
-  '(\w+)ized\b': "$1ised"
-  '(\w+)izing\b': "$1ising"
+  '(\w+)ization\b': $1isation
+  '(\w+)ize\b': $1ise
+  '(\w+)ized\b': $1ised
+  '(\w+)izing\b': $1ising
   # add other common forms:
-  '(\w+)izable\b': "$1isable"
+  '(\w+)izable\b': $1isable
   # -yse vs. -yze
-  '(\w+)yze\b': "$1yse"
-  '(\w+)yzed\b': "$1ysed"
-  '(\w+)yzing\b': "$1ysing"
+  '(\w+)yze\b': $1yse"
+  '(\w+)yzed\b': $1ysed
+  '(\w+)yzing\b': $1ysing
   # double L vs. Single L
   distill: distil
   enroll: enrol
