@@ -146,7 +146,7 @@ parts:
 
 ## `.vale.ini` {data-menu-title=".vale.ini (i)"}
 
-```{.yaml code-line-numbers="1-2|4-7|9-12"}
+```{.yaml code-line-numbers="1-2|4-7|8-12"}
 # Core settings appear at the top
 # (the "global" section).
 
@@ -199,8 +199,8 @@ One can write their own rules in `/.github/styles/custom`.
 
 ## Built-In Packages {data-menu-title="Built-In Packages (i)"}
 
-Vale comes with a single built-in style named Vale that implements a few rules:
-`Spelling`, `Terms`, `Avoid` and `Repetition`.
+Vale comes with a single built-in style named `Vale` that implements a few
+rules: `Spelling`, `Terms`, `Avoid` and `Repetition`.
 
 The following packages can be retrieved with `vale sync`:
 
