@@ -547,7 +547,15 @@
 <span id="cb3-12"><a></a><span class="dt">                Vale</span></span>
 <span id="cb3-13"><a></a></span>
 <span id="cb3-14"><a></a><span class="co"># Disable</span></span>
-<span id="cb3-15"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-15"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb3-18"><a></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb3-19"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span>
+<span id="cb3-20"><a></a></span>
+<span id="cb3-21"><a></a><span class="co"># exclude Python virtual environments</span></span>
+<span id="cb3-22"><a></a><span class="kw">[.venv/**]</span></span>
+<span id="cb3-23"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
