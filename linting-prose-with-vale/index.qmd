@@ -38,3 +38,45 @@ author's work.
 ![vale.sh](figures/consistency.png)
 
 :::
+
+## What is Vale? {data-menu-title="What is Vale? (iii)"}
+
+::: {layout="[40,60]"}
+
+::: {#first-column}
+
+One of Vale’s most important features is its ability to support external styles
+through its extension system, which only requires some familiarity with the YAML
+file format (and, optionally, regular expressions).
+
+:::
+
+![vale.sh](figures/customisable.png)
+
+:::
+
+## What is Vale? {data-menu-title="What is Vale? (iii)"}
+
+```{.yaml code-line-numbers="1-4|5-6|7-9|10-21"}
+# `extends` specifies the extension point you're using. Here, we're
+# using `substitution` to ensure correct usage of some technical and
+# brand-specific terminology.
+extends: substitution
+# `message` allows you to customize the output shown to your users.
+message: Use '%s' instead of '%s'.
+# We're setting this rule's severity to `error`, which will cause
+# CI builds to fail.
+level: error
+# We're using case-insensitive patterns.
+ignorecase: true
+swap:
+  "(?:LetsEncrypt|Let's Encrypt)": Let's Encrypt
+  'node[.]?js': Node.js
+  'Post?gr?e(?:SQL)': PostgreSQL
+  'java[ -]?scripts?': JavaScript
+  linode cli: Linode CLI
+  linode manager: Linode Manager
+  linode: Linode
+  longview: Longview
+  nodebalancer: NodeBalancer
+```
