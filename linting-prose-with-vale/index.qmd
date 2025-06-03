@@ -121,3 +121,37 @@ parts:
 | ----------- | :--- | -----------------------------------------------------------------------------------------------------------: |
 | packages    | YAML |                               A collection of pre-packaged, Vale-compatible style guides and configurations. |
 | vale-native | Go   | A native messaging host for the Vale CLI: Use your local configurations in Chrome, Firefox, Opera, and Edge. |
+
+# Setting Up
+
+## `.vale.ini` {data-menu-title="`.vale.ini` (i)"}
+
+```{.yaml code-line-numbers="1-2|4-7|9-12"}
+# Core settings appear at the top
+# (the "global" section).
+
+[formats]
+# Format associations appear under
+# the optional "formats" section.
+
+[*]
+# Format-specific settings appear
+# under a user-provided "glob"
+# pattern.
+```
+
+Core settings:
+
+| Name       | Type   |                         Description |
+| ---------- | :----- | ----------------------------------: |
+| StylesPath | string | Path to all Vale-related resources. |
+
+## `.vale.ini` {data-menu-title="`.vale.ini` (ii)"}
+
+| Name          | Type     |                               Description |
+| ------------- | :------- | ----------------------------------------: |
+| Packages      | string[] | List of packages to download and install. |
+| Vocab         | string[] |             List of vocabularies to load. |
+| MinAlertLevel | enum     |           Minimum alert level to display. |
+| IgnoredScopes | enum     | List of inline-level HTML tags to ignore. |
+| SkippedScopes | enum     |  List of block-level HTML tags to ignore. |
