@@ -104,7 +104,7 @@ Documentation:
 - [ ] **Community guidelines** including contribution guidelines in the README
       or CONTRIBUTING.
 - [ ] **Metadata** including author(s), author e-mail(s), a url, and any other
-      relevant metadata e.g., in a `pyproject.toml` file or elsewhere.
+      relevant metadata e.g. in a `pyproject.toml` file or elsewhere.
 
 ## Review Process {data-menu-title="Review Process (iii)"}
 
