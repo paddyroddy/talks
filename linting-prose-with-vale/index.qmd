@@ -155,3 +155,11 @@ Core settings:
 | MinAlertLevel | enum     |           Minimum alert level to display. |
 | IgnoredScopes | enum     | List of inline-level HTML tags to ignore. |
 | SkippedScopes | enum     |  List of block-level HTML tags to ignore. |
+
+## `.vale.ini` {data-menu-title="`.vale.ini` (iii)"}
+
+The `.vale.ini` file used in this repository:
+
+```{.ini}
+{{< include ../.vale.ini >}}
+```
