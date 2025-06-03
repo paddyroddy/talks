@@ -649,16 +649,16 @@
 <span id="cb5-66"><a></a><span class="at">  </span><span class="fu">meters</span><span class="kw">:</span><span class="at"> metres</span></span>
 <span id="cb5-67"><a></a><span class="at">  </span><span class="fu">theaters</span><span class="kw">:</span><span class="at"> theatres</span></span>
 <span id="cb5-68"><a></a><span class="co">  # -ise vs. -ize</span></span>
-<span id="cb5-69"><a></a><span class="at">  </span><span class="fu">'(\w+)ization\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1isation"</span></span>
-<span id="cb5-70"><a></a><span class="at">  </span><span class="fu">'(\w+)ize\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1ise"</span></span>
-<span id="cb5-71"><a></a><span class="at">  </span><span class="fu">'(\w+)ized\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1ised"</span></span>
-<span id="cb5-72"><a></a><span class="at">  </span><span class="fu">'(\w+)izing\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1ising"</span></span>
+<span id="cb5-69"><a></a><span class="at">  </span><span class="fu">'(\w+)ization\b'</span><span class="kw">:</span><span class="at"> $1isation</span></span>
+<span id="cb5-70"><a></a><span class="at">  </span><span class="fu">'(\w+)ize\b'</span><span class="kw">:</span><span class="at"> $1ise</span></span>
+<span id="cb5-71"><a></a><span class="at">  </span><span class="fu">'(\w+)ized\b'</span><span class="kw">:</span><span class="at"> $1ised</span></span>
+<span id="cb5-72"><a></a><span class="at">  </span><span class="fu">'(\w+)izing\b'</span><span class="kw">:</span><span class="at"> $1ising</span></span>
 <span id="cb5-73"><a></a><span class="co">  # add other common forms:</span></span>
-<span id="cb5-74"><a></a><span class="at">  </span><span class="fu">'(\w+)izable\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1isable"</span></span>
+<span id="cb5-74"><a></a><span class="at">  </span><span class="fu">'(\w+)izable\b'</span><span class="kw">:</span><span class="at"> $1isable</span></span>
 <span id="cb5-75"><a></a><span class="co">  # -yse vs. -yze</span></span>
-<span id="cb5-76"><a></a><span class="at">  </span><span class="fu">'(\w+)yze\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1yse"</span></span>
-<span id="cb5-77"><a></a><span class="at">  </span><span class="fu">'(\w+)yzed\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1ysed"</span></span>
-<span id="cb5-78"><a></a><span class="at">  </span><span class="fu">'(\w+)yzing\b'</span><span class="kw">:</span><span class="at"> </span><span class="st">"$1ysing"</span></span>
+<span id="cb5-76"><a></a><span class="at">  </span><span class="fu">'(\w+)yze\b'</span><span class="kw">:</span><span class="at"> $1yse"</span></span>
+<span id="cb5-77"><a></a><span class="at">  </span><span class="fu">'(\w+)yzed\b'</span><span class="kw">:</span><span class="at"> $1ysed</span></span>
+<span id="cb5-78"><a></a><span class="at">  </span><span class="fu">'(\w+)yzing\b'</span><span class="kw">:</span><span class="at"> $1ysing</span></span>
 <span id="cb5-79"><a></a><span class="co">  # double L vs. Single L</span></span>
 <span id="cb5-80"><a></a><span class="at">  </span><span class="fu">distill</span><span class="kw">:</span><span class="at"> distil</span></span>
 <span id="cb5-81"><a></a><span class="at">  </span><span class="fu">enroll</span><span class="kw">:</span><span class="at"> enrol</span></span>
@@ -747,7 +747,7 @@
 <span id="cb6-9"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> remove</span></span>
 <span id="cb6-10"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">" "</span></span>
 <span id="cb6-11"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb6-12"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'\s[—–]\s'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-12"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> \s[—–]\s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="Custom Rules (iii)">
 <h2>Custom Rules</h2>
@@ -764,9 +764,9 @@
 <span id="cb7-10"><a></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
 <span id="cb7-11"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> replace</span></span>
 <span id="cb7-12"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"-"</span></span>
-<span id="cb7-13"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"—"</span></span>
+<span id="cb7-13"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> —</span></span>
 <span id="cb7-14"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb7-15"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"–"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-15"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> –</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="Custom Rules (iv)">
 <h2>Custom Rules</h2>
@@ -822,7 +822,7 @@
 <span id="cb9-4"><a></a><span class="fu">scope</span><span class="kw">:</span><span class="at"> sentence</span></span>
 <span id="cb9-5"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> suggestion</span></span>
 <span id="cb9-6"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb9-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'(?:[^,]+,){1,}\s\w+\s(?:and|or)'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> (?:[^,]+,){1,}\s\w+\s(?:and|or)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>/.github/styles/custom/spaces.yml</code></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a></a><span class="pp">---</span></span>
 <span id="cb10-2"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
@@ -830,7 +830,7 @@
 <span id="cb10-4"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
 <span id="cb10-5"><a></a><span class="fu">nonword</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb10-6"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb10-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'[\w.?!,\(\)\-":] {2,}[\w.?!,\(\)\-":]'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"[</span><span class="sc">\\</span><span class="st">w.?!,()</span><span class="sc">\\</span><span class="st">-</span><span class="sc">\"</span><span class="st">:] {2,}[</span><span class="sc">\\</span><span class="st">w.?!,()</span><span class="sc">\\</span><span class="st">-</span><span class="sc">\"</span><span class="st">:]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="Custom Rules (vi)">
 <h2>Custom Rules</h2>
