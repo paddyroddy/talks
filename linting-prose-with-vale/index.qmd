@@ -334,4 +334,4 @@ jobs:
 - Extensive set of community written rules (some taken from big company style
   guides).
 - Can easily write your own rules through regex or a mapping.
-- Can turn off rules (i.e. `Vale.Spelling = NO`) in `.vale.ini` or inline.
+- Can turn off off rules (i.e. `Vale.Spelling = NO`) in `.vale.ini` or inline.

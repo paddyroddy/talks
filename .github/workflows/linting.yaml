@@ -21,3 +21,4 @@ jobs:
       - uses: paddyroddy/.github/actions/vale@232a2f3869501abb249d50e311179f98830c6481 # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          vale-flags: --glob='!.github/styles/**/*'
