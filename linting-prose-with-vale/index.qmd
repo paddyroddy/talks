@@ -275,8 +275,8 @@ More rules can be found at: <https://hyperlint.com/vale/rules>.
 
 ## GitHub Action
 
-One might be happy to accept warnings and therefore it doesn't make sense to run
-as a pre-commit hook.
+One might be happy to accept warnings and therefore it does not make sense to
+run as a pre-commit hook.
 
 ```{.yaml code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-16"}
 jobs:
