@@ -45,7 +45,7 @@ author's work.
 
 ::: {#first-column}
 
-One of Vale’s most important features is its ability to support external styles
+One of Vale's most important features is its ability to support external styles
 through its extension system, which only requires some familiarity with the YAML
 file format (and, optionally, regular expressions).
 
@@ -55,7 +55,7 @@ file format (and, optionally, regular expressions).
 
 :::
 
-## What is Vale? {data-menu-title="What is Vale? (iii)"}
+## Example Rule
 
 ```{.yaml code-line-numbers="1-4|5-6|7-9|10-21"}
 # `extends` specifies the extension point you're using. Here, we're
@@ -80,3 +80,20 @@ swap:
   longview: Longview
   nodebalancer: NodeBalancer
 ```
+
+## Contextual Support
+
+::: {layout-ncol=2}
+
+::: {#first-column}
+
+This level of understanding gives you fine-grained control over the linting
+process, including the ability to limit rules to certain sections (e.g., only
+headings) or ignore sections entirely (block and inline code are ignored by
+default).
+
+:::
+
+![vale.sh](figures/markdown.png)
+
+:::
