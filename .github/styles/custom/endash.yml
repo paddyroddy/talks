@@ -10,6 +10,6 @@ action:
   params:
     - replace
     - "-"
-    - "—"
+    - —
 tokens:
-  - "–"
+  - –
