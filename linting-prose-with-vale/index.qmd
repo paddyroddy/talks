@@ -10,6 +10,26 @@ title: "Linting Prose with Vale"
 
 # Introduction
 
+## Motivation
+
+::: {layout="[30,70]"}
+
+::: {#first-column}
+
+![ukrse.slack.com](figures/slack.png)
+
+:::
+
+[![Datadog](figures/blog.png){width=80%}](https://www.datadoghq.com/blog/engineering/how-we-use-vale-to-improve-our-documentation-editing-process)
+
+:::
+
+## PhD Thesis
+
+[![GitHub](figures/phd.png){width=60%}](https://github.com/paddyroddy/phd-thesis)
+
+# Vale
+
 ## What is Vale? {data-menu-title="What is Vale? (i)"}
 
 Vale is a command-line tool that brings code-like linting to prose. Vale is
@@ -231,14 +251,6 @@ The following packages can be retrieved with `vale sync`:
 
 ## Custom Rules {data-menu-title="Custom Rules (v)"}
 
-`/.github/styles/custom/quotes.yml`
-
-```{.yaml}
-{{< include ../.github/styles/custom/quotes.yml >}}
-```
-
-## Custom Rules {data-menu-title="Custom Rules (vi)"}
-
 `/.github/styles/custom/oxford-comma.yml`
 
 ```{.yaml}
@@ -250,3 +262,13 @@ The following packages can be retrieved with `vale sync`:
 ```{.yaml}
 {{< include ../.github/styles/custom/spaces.yml >}}
 ```
+
+## Custom Rules {data-menu-title="Custom Rules (vi)"}
+
+`/.github/styles/custom/quotes.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/quotes.yml >}}
+```
+
+More rules can be found at: <https://hyperlint.com/vale/rules>.
