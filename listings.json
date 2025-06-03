@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/linting-prose-with-vale/index.html",
       "/github-safe-settings-policy-as-code/index.html",
       "/turbocharging-your-github-organisation/index.html",
       "/ci-cd-faster-easier-development/index.html",
