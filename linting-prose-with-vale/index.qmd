@@ -124,7 +124,7 @@ parts:
 
 # Setting Up
 
-## `.vale.ini` {data-menu-title="`.vale.ini` (i)"}
+## `.vale.ini` {data-menu-title=".vale.ini (i)"}
 
 ```{.yaml code-line-numbers="1-2|4-7|9-12"}
 # Core settings appear at the top
@@ -146,7 +146,7 @@ Core settings:
 | ---------- | :----- | ----------------------------------: |
 | StylesPath | string | Path to all Vale-related resources. |
 
-## `.vale.ini` {data-menu-title="`.vale.ini` (ii)"}
+## `.vale.ini` {data-menu-title=".vale.ini (ii)"}
 
 | Name          | Type     |                               Description |
 | ------------- | :------- | ----------------------------------------: |
@@ -156,12 +156,97 @@ Core settings:
 | IgnoredScopes | enum     | List of inline-level HTML tags to ignore. |
 | SkippedScopes | enum     |  List of block-level HTML tags to ignore. |
 
-## This Repository {data-menu-title="`This Repository` (i)"}
+## This Repository {data-menu-title="This Repository (i)"}
 
-The `.vale.ini` file used in this repository:
+The `/.vale.ini` file:
 
 ```{.ini}
 {{< include ../.vale.ini >}}
 ```
 
-## This Repository {data-menu-title="`This Repository` (ii)"}
+## This Repository {data-menu-title="This Repository (ii)"}
+
+The `/.github/styles/.gitignore` file:
+
+```{text}
+{{< include ../.github/styles/.gitignore >}}
+```
+
+Styles specified in `Packages` can be retrieved by running `vale sync`, hence
+the `.gitignore` file.
+
+One can write their own rules in `/.github/styles/custom`.
+
+## Built-In Packages {data-menu-title="Built-In Packages (i)"}
+
+Vale comes with a single built-in style named Vale that implements a few rules:
+`Spelling`, `Terms`, `Avoid` and `Repetition`.
+
+The following packages can be retrieved with `vale sync`:
+
+- `alex`: An implementation of the guidelines enforced by the alex linter.
+- `Google`: An implementation of the Google Developer Documentation Style Guide.
+- `Joblint`: An implementation of the guidelines enforced by the Joblint linter.
+
+## Built-In Packages {data-menu-title="Built-In Packages (ii)"}
+
+- `Microsoft`: An implementation of the Microsoft Writing Style Guide.
+- `proselint`: An implementation of the guidelines enforced by the proselint
+  linter.
+- `Readability`: An implementations of many popular "readability" metrics.
+- `write-good`: An implementation of the guidelines enforced by the write-good
+  linter.
+
+## Custom Rules {data-menu-title="Custom Rules (i)"}
+
+`/.github/styles/custom/british-spellings.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/british-spellings.yml >}}
+```
+
+## Custom Rules {data-menu-title="Custom Rules (ii)"}
+
+`/.github/styles/custom/dashes.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/dashes.yml >}}
+```
+
+## Custom Rules {data-menu-title="Custom Rules (iii)"}
+
+`/.github/styles/custom/endash.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/endash.yml >}}
+```
+
+## Custom Rules {data-menu-title="Custom Rules (iv)"}
+
+`/.github/styles/custom/no-contractions.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/no-contractions.yml >}}
+```
+
+## Custom Rules {data-menu-title="Custom Rules (v)"}
+
+`/.github/styles/custom/quotes.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/quotes.yml >}}
+```
+
+## Custom Rules {data-menu-title="Custom Rules (vi)"}
+
+`/.github/styles/custom/oxford-comma.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/oxford-comma.yml >}}
+```
+
+`/.github/styles/custom/spaces.yml`
+
+```{.yaml}
+{{< include ../.github/styles/custom/spaces.yml >}}
+```
