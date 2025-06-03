@@ -322,3 +322,16 @@ jobs:
 [UCL-ARC/python-tooling#541](https://github.com/UCL-ARC/python-tooling/pull/541)
 
 ![GitHub](figures/demo4.png)
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Vale is a tool I found during my PhD to enforce consistent writing styles.
+- I had used it for LaTeX (which has fewer built in tools), but in reality it is
+  designed for Markdown etc.
+- Brings code-like linting to prose.
+- Extensive set of community written rules (some taken from big company style
+  guides).
+- Can easily write your own rules through regex or a mapping.
+- Can turn off rules (i.e. `Vale.Spelling = NO`) in `.vale.ini` or inline.
