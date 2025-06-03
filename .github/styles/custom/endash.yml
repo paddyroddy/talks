@@ -1,3 +1,4 @@
+---
 extends: existence
 message: >-
   Avoid en dashes ('–'). For hyphenated words, use a hyphen ('-').\nFor

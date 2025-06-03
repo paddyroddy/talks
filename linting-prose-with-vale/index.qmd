@@ -10,7 +10,7 @@ title: "Linting Prose with Vale"
 
 # Introduction
 
-## Motivation
+## Talk Motivation
 
 ::: {layout="[30,70]"}
 

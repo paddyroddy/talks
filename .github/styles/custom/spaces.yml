@@ -1,3 +1,4 @@
+---
 extends: existence
 message: Use only one space between words and sentences (not two).
 level: error
