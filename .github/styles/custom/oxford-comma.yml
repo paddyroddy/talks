@@ -4,4 +4,4 @@ message: Use the Oxford comma in '%s'.
 scope: sentence
 level: suggestion
 tokens:
-  - '(?:[^,]+,){1,}\s\w+\s(?:and|or)'
+  - (?:[^,]+,){1,}\s\w+\s(?:and|or)
