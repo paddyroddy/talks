@@ -3,3 +3,6 @@ extend-glob = [
     "*.qmd",
 ]
 extend-words.promis = "promis"
+
+[type.yaml]
+extend-words.yse = "yse"

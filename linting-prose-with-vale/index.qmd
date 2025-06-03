@@ -30,7 +30,7 @@ correctness—making it fundamentally different from, for example,
 ::: {#first-column}
 
 Vale focuses on ensuring consistency across multiple authors (according to
-customizable guidelines) rather than the general "correctness" of a single
+customisable guidelines) rather than the general "correctness" of a single
 author's work.
 
 :::
