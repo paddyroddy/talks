@@ -98,7 +98,7 @@ Reasons you might have heard of it:
 
 ## Talks
 
-- Each day started with a keynote followed by updates from various NumFOCUS
+- Each day started with a keynote followed by updates from many NumFOCUS
   libraries, and ended with lightning talks
 - A mixture of talks and birds of a feather sessions
 - Everything well timed, with enough breaks
@@ -110,7 +110,7 @@ Reasons you might have heard of it:
 ## Sprints
 
 - Weekend
-- Maintainers from various NumFOCUS libraries
+- Maintainers from many NumFOCUS libraries
 - Worked on NumPy
 - Many people left by then
 - Did not get as much out of it as hoped
@@ -357,11 +357,13 @@ m
 
 <!-- vale RedHat.RepeatedWords = NO -->
 <!-- vale Vale.Repetition = NO -->
+<!-- vale write-good.Illusions = NO -->
 
 ## Poo Poo Point
 
 <!-- vale RedHat.RepeatedWords = YES -->
 <!-- vale Vale.Repetition = YES -->
+<!-- vale write-good.Illusions = YES -->
 
 ::: {.r-hstack}
 
