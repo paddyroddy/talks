@@ -37,11 +37,13 @@ m
 
 ::: {#first-column}
 
-Reasons you may have heard of it:
+Reasons you might have heard of it:
 
 - Tacoma Narrows Bridge Collapse
 - Toyota Tacoma
+<!-- vale RedHat.TermsWarnings = NO -->
 - 10 Things I Hate About You
+<!-- vale RedHat.TermsWarnings = YES -->
 - Sea-Tac Airport
 - Mount Rainier
 - Dale Chihuly
@@ -99,10 +101,10 @@ Reasons you may have heard of it:
 - Each day started with a keynote followed by updates from various NumFOCUS
   libraries, and ended with lightning talks
 - A mixture of talks and birds of a feather sessions
-- Everything well timed, with sufficient breaks
+- Everything well timed, with enough breaks
 - Talks were a mix of a library demonstration or someone's experience with a
   particular tool
-- Free stash (I got 5 T-shirts, 2 pairs of socks)
+- Free stash
 - Sponsor standards in the lobby throughout the day
 
 ## Sprints
@@ -111,7 +113,7 @@ Reasons you may have heard of it:
 - Maintainers from various NumFOCUS libraries
 - Worked on NumPy
 - Many people left by then
-- Did not get as much out of it as I hoped
+- Did not get as much out of it as hoped
 - Euros + Copa America finals
 - Fatigue
 
@@ -353,10 +355,12 @@ m.add_layer(Marker(location=seattle_coords))
 m
 ```
 
+<!-- vale RedHat.RepeatedWords = NO -->
 <!-- vale Vale.Repetition = NO -->
 
 ## Poo Poo Point
 
+<!-- vale RedHat.RepeatedWords = YES -->
 <!-- vale Vale.Repetition = YES -->
 
 ::: {.r-hstack}
@@ -520,9 +524,9 @@ m
 - Thanks for the opportunity
 - Solo conferencing forces you to talk to people
 - SciPy community are friendly
-- Conference was well organised (timings of talks etc.)
+- Conference was well organised (timings of talks and so on)
 - Made some Connections {{< fa brands strava >}} > {{< fa brands linkedin >}}
-- Share your post conference plans with fellow attendees, they might join you!
+- Share your post conference plans with fellow attendees, they might join you
 - Jet lag is not fun
 - Holidays are great
 - Would highly recommend Washington state

@@ -11,12 +11,11 @@ title: "CI/CD: Faster, Easier Development"
 
 {{< include /_includes/qr-code.qmd >}}
 
-# CI/CD vs DevOps
+# CI/CD Compared to DevOps
 
 ## Continuous Integration (CI)
 
-- _Definition_: Practice of frequently merging code changes into a central
-  repository
+- _Definition_: Practice of merging code often changes into a central repository
 - _Goal_: Detect and address integration issues early
 - _Key practices_:
   - Automated building and testing of code
@@ -33,11 +32,15 @@ title: "CI/CD: Faster, Easier Development"
   - No manual intervention required
 - _Goal_: Reduce time between writing code and its use in production
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## DevOps {data-menu-title="DevOps (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ::: {layout-ncol=2}
 
-I previously gave talk on a general overview of DevOps
+My talk on a general overview of DevOps
 <https://paddyroddy.github.io/talks/devops-an-introduction>
 
 {{< qrcode https://paddyroddy.github.io/talks/devops-an-introduction
@@ -56,7 +59,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
   - _Measurement_: Continuous monitoring and feedback
   - _Sharing_: Increased collaboration and shared responsibility
 
-## Relationship Between CI/CD & DevOps
+## Relationship Between CI/CD and DevOps
 
 - CI/CD are practices within the broader DevOps philosophy
 - DevOps often employs CI/CD as key tools, but also includes:
@@ -65,7 +68,11 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
   - Monitoring and Logging
   - Incident Response
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Key Differences {data-menu-title="DevOps (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - _Scope_:
   - _CI/CD_: Focused on automating specific parts of the development pipeline
@@ -89,17 +96,21 @@ DevOps requires a broader cultural and operational shift.
 
 # GitHub Actions
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (i)"}
 
+<!-- vale RedHat.TermsWarnings = YES -->
+
 GitHub Actions is a continuous integration and continuous delivery (CI/CD)
-platform that allows you to automate your build, test, and deployment pipeline.
+platform that allows one to automate your build, test, and deployment pipeline.
 You can create workflows that build and test every pull request to your
 repository, or deploy merged pull requests to production.
 
 1. Workflows: Automated processes that you set up in your repository to build,
    test, package, release, or deploy your project.
-2. Jobs: A set of steps that execute on the same runner. By default, a workflow
-   with multiple jobs will run those jobs in parallel.
+2. Jobs: A set of steps that run on the same runner. By default, a workflow with
+   many jobs will run those jobs in parallel.
 
 ## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (ii)"}
 
@@ -114,7 +125,7 @@ repository, or deploy merged pull requests to production.
 ## Workflow Syntax
 
 Workflows are defined in YAML files in the `.github/workflows` directory of your
-repository. Here's a basic structure:
+repository. Here is a basic structure:
 
 ```{.yaml code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|10-11"}
 name: CI
@@ -130,13 +141,17 @@ jobs:
         run: echo Hello, world!
 ```
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Example Uses {data-menu-title="Example Uses (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - _Continuous Integration_: Automatically build and test your code every time
   you push to your repository or open a pull request.
 - _Continuous Deployment_: Automatically deploy your application to staging or
   production environments when specific conditions are met.
-- _Automated Testing_: Run your test suite on multiple platforms and versions of
+- _Automated Testing_: Run your test suite on many platforms and versions of
   your programming language.
 
 ## Example Uses {data-menu-title="Example Uses (ii)"}
@@ -144,13 +159,13 @@ jobs:
 - _Code Linting and Formatting_: Enforce coding standards across your project.
 - _Issue and PR Management_: Automatically label, close, or comment on issues
   and pull requests based on certain conditions.
-- _Scheduled Tasks_: Run tasks at specific times, like daily backups or weekly
-  report generation.
+- _Scheduled Tasks_: Run tasks at specific times, such as daily backups or
+  weekly report generation.
 
 ## Benefits
 
 - _Integrated with GitHub_: No need for external CI/CD tools.
-- _Matrix Builds_: Easily test across multiple operating systems and runtime
+- _Matrix Builds_: Easily test across many operating systems and runtime
   versions.
 - _Community Actions_: Reuse and share actions from the GitHub community.
 - _Flexible_: Build custom workflows for any project or git repository.
@@ -162,7 +177,11 @@ jobs:
 - Minimise workflow run time by using build matrices and caching
 - Use status badges in your README to show your workflow status
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Avoiding Duplication {data-menu-title="Avoiding Duplication (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 | Reusable workflows                                                                           | Composite actions                                                                                                            |
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -175,13 +194,13 @@ jobs:
 | --------------------------------------------- | ------------------------------------------------------------------------------ |
 | Called by referencing a specific YAML file    | Called by referencing a repository or directory in which the action is defined |
 | Called directly within a job, not from a step | Run as a step within a job                                                     |
-| Can contain multiple jobs                     | Does not contain jobs                                                          |
+| Can contain many jobs                         | Does not contain jobs                                                          |
 
 ## Avoiding Duplication {data-menu-title="Avoiding Duplication (iii)"}
 
 | Reusable workflows                                | Composite actions                                                |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
-| Each step is logged in real-time                  | Logged as one step even if it contains multiple steps            |
+| Each step is logged in real-time                  | Logged as one step even if it has many steps                     |
 | Can connect a maximum of four levels of workflows | Can be nested to have up to 10 composite actions in one workflow |
 | Can use secrets                                   | Cannot use secrets                                               |
 

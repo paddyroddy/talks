@@ -14,7 +14,7 @@ title: "Renovate: Automating Dependency Management"
 
 ![xkcd:2347](figures/dependency.png)
 
-## Automation Saves Time?
+## Automation Saves Time
 
 ![xkcd:1319](figures/automation.png)
 
@@ -22,11 +22,11 @@ title: "Renovate: Automating Dependency Management"
 
 ![](figures/bump.png)
 
-## What About Security Updates?
+## What About Security Updates
 
 ![](figures/dependabot.png)
 
-## Why Should I Update?
+## Why Update
 
 ![xkcd:2224](figures/updates.png)
 
@@ -34,7 +34,11 @@ title: "Renovate: Automating Dependency Management"
 
 ![](figures/renovate.jpg)
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Why Use Renovate? {data-menu-title="Why Use Renovate? (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Get automated Pull Requests to update your dependencies
   - Reduce noise by running Renovate on a schedule, for example:
@@ -131,7 +135,7 @@ See in action:
 
 :::
 
-## Config is Reusable!
+## Config is Reusable
 
 ```{.json5 code-line-numbers="2|4|5|7-13"}
 {
@@ -238,9 +242,9 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 - Renovate is widely used
 - If you think it can be automated, it probably can
 - Be careful with CI use in private projects (ask MIRSG 😉)
-- Embrace automerging (if you like inbox zero)
-- Renovate `renovates` itself frequently
-- There's always more to learn!
+- Embrace automerging
+- Renovate `renovates` itself often
+- There's always more to learn
 
 ## Demo Time
 
