@@ -249,7 +249,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Much of this talk holds true for personal GitHub accounts as well as GitHub organisations. However, it is not always the case. I will focus solely on organisational accounts here.</p>
+<p>Much of this talk holds true for personal GitHub accounts and GitHub organisations. However, it is not always the case. The focus here is solely on organisational accounts.</p>
 </div>
 </div>
 </div>
@@ -269,11 +269,13 @@
 <h2>Discussions</h2>
 <p>Organisation-wide discussions, rather than project specific.</p>
 
+<!-- vale RedHat.TermsWarnings = NO -->
 <img data-src="figures/discussions.png" class="r-stretch"></section>
 <section class="slide level2" data-menu-title="Projects (i)">
 <h2>Projects</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <blockquote>
-<p>A project is an adaptable spreadsheet, task-board, and road map that integrates with your issues and pull requests on GitHub to help you plan and track your work effectively. You can create and customise multiple views by filtering, sorting, grouping your issues and pull requests, visualise work with configurable charts, and add custom fields to track metadata specific to your team. Rather than enforcing a specific methodology, a project provides flexible features you can customise to your team’s needs and processes.</p>
+<p>A project is an adaptable spreadsheet, task-board, and road map that integrates with your issues and pull requests on GitHub to help you plan and track your work effectively. You can create and customise many views by filtering, sorting, grouping your issues and pull requests, visualise work with configurable charts, and add custom fields to track metadata specific to your team. Rather than enforcing a specific method, a project provides flexible features you can customise to your team’s needs and processes.</p>
 </blockquote>
 </section>
 <section class="slide level2" data-menu-title="Projects (ii)">
@@ -291,7 +293,7 @@
 <section class="slide level2">
 <h2>GitHub Runners</h2>
 <blockquote>
-<p>A self-hosted runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.</p>
+<p>A self-hosted runner is a system that you deploy and manage to start jobs from GitHub Actions on GitHub.</p>
 </blockquote>
 
 <img data-src="figures/runners.png" class="r-stretch"></section></section>
@@ -309,9 +311,11 @@
 <h2>.github-private</h2>
 <p>The <code>/profile/README.md</code> will appear on the GitHub organisation’s member profile, visible only to organisation members.</p>
 
+<!-- vale RedHat.TermsWarnings = NO -->
 <img data-src="figures/private_readme.png" class="r-stretch"></section>
 <section class="slide level2" data-menu-title=".github (i)">
 <h2>.github</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>The <code>/profile/README.md</code> will appear on the organisation’s profile.</p>
 
 <img data-src="figures/public_readme.png" class="r-stretch"></section>
@@ -343,14 +347,15 @@
 <section>
 <section class="title-slide slide level1 center">
 <h1>Tools</h1>
-
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Renovate (i)">
 <h2>Renovate</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>I previously gave talk on <a href="https://docs.renovatebot.com">Renovate</a> <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management" class="uri">https://paddyroddy.github.io/talks/renovate-automating-dependency-management</a></p>
+<p>My <a href="https://docs.renovatebot.com">Renovate</a> talk <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management" class="uri">https://paddyroddy.github.io/talks/renovate-automating-dependency-management</a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="" class="qrcode"></div>
@@ -439,14 +444,16 @@
 <h2>Renovate</h2>
 <p>This can then be debugged at <a href="https://developer.mend.io" class="uri">https://developer.mend.io</a>.</p>
 
+<!-- vale RedHat.TermsWarnings = NO -->
 <img data-src="figures/renovate.png" class="r-stretch"></section>
 <section class="slide level2" data-menu-title="pre-commit (i)">
 <h2>pre-commit</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>Metahooks <a href="https://github.com/pre-commit/pre-commit/issues/731">pre-commit/pre-commit#731</a>?</p>
 <blockquote>
-<p>So, while I get your usecase – and it sounds good in theory – it tends not to work in practice. In a lot of ways, pre-commit was designed as a reaction to centralised managed hooks. That said, there’s some features that enable this to work currently.</p>
+<p>Your usecase tends not to work in practice. In many ways, pre-commit was designed as a reaction to centralised managed hooks. That said, there are some features that enable this to work currently.</p>
 <p>…</p>
-<p>That said, here’s how you can do this with the facilities provided today:</p>
+<p>That said, here is how you can do this with the facilities provided today:</p>
 </blockquote>
 </section>
 <section class="slide level2" data-menu-title="pre-commit (ii)">
@@ -635,11 +642,13 @@
 <span id="cb7-3"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.133.0</span></span>
 <span id="cb7-4"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
 <span id="cb7-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Composite Actions (i)">
 <h2>Composite Actions</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <blockquote>
-<p>Composite actions allow you to collect a series of workflow job steps into a single action which you can then run as a single job step in multiple workflows.</p>
+<p>Composite actions allows one to collect a series of workflow job steps into a single action which you can then run as a single job step in many workflows.</p>
 </blockquote>
 <p>They can be placed anywhere, but why not cut down on the number of repositories and place them in the <code>.github</code> repositories?</p>
 </section>
@@ -703,9 +712,11 @@
 </div>
 </div>
 </div>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="GitHub Apps (i)">
 <h2>GitHub Apps</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>All installed apps can be seen in the organisation’s settings.</p>
 
 <img data-src="figures/apps_installed.png" class="r-stretch"></section>
@@ -722,18 +733,18 @@
 <section class="slide level2">
 <h2>What it Does</h2>
 <blockquote>
-<p><code>Safe-settings</code>—an app to manage policy-as-code and apply repository settings across an organisation.</p>
+<p><code>Safe-settings</code>: an app to manage policy-as-code and apply repository settings across an organisation.</p>
 </blockquote>
 <blockquote>
 <p><code>Safe-settings</code> is designed to run as a service listening for webhook events or as a scheduled job running on some regular cadence. It can also be triggered through GitHub Actions.</p>
 </blockquote>
 </section>
 <section class="slide level2">
-<h2>How to Enable?</h2>
+<h2>How to Enable</h2>
 <ul>
 <li class="fragment">Install the <a href="https://github.com/apps/safe-settings-app">safe-settings-app</a>.</li>
 <li class="fragment">Create an <code>admin</code> repository, e.g. <a href="https://github.com/UCL-MIRSG/admin">UCL-MIRSG/admin</a>.</li>
-<li class="fragment">Configure the desired settings, e.g.&nbsp;<code>/.github/settings.yml</code>.</li>
+<li class="fragment">Configure the required settings, e.g.&nbsp;<code>/.github/settings.yml</code>.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -854,7 +865,7 @@
 <span id="cb10-51"><a></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section class="title-slide slide level1 center">
-<h1>Other Ideas?</h1>
+<h1>Other Ideas</h1>
 
 
 

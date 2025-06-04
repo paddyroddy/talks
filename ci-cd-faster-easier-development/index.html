@@ -249,13 +249,13 @@
 
 <section>
 <section class="title-slide slide level1 center">
-<h1>CI/CD vs DevOps</h1>
+<h1>CI/CD Compared to DevOps</h1>
 
 </section>
 <section class="slide level2">
 <h2>Continuous Integration (CI)</h2>
 <ul>
-<li class="fragment"><em>Definition</em>: Practice of frequently merging code changes into a central repository</li>
+<li class="fragment"><em>Definition</em>: Practice of merging code often changes into a central repository</li>
 <li class="fragment"><em>Goal</em>: Detect and address integration issues early</li>
 <li class="fragment"><em>Key practices</em>:
 <ul>
@@ -280,13 +280,15 @@
 </ul></li>
 <li class="fragment"><em>Goal</em>: Reduce time between writing code and its use in production</li>
 </ul>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="DevOps (i)">
 <h2>DevOps</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>I previously gave talk on a general overview of DevOps <a href="https://paddyroddy.github.io/talks/devops-an-introduction" class="uri">https://paddyroddy.github.io/talks/devops-an-introduction</a></p>
+<p>My talk on a general overview of DevOps <a href="https://paddyroddy.github.io/talks/devops-an-introduction" class="uri">https://paddyroddy.github.io/talks/devops-an-introduction</a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="" class="qrcode"></div>
@@ -318,7 +320,7 @@
 </ul>
 </section>
 <section class="slide level2">
-<h2>Relationship Between CI/CD &amp; DevOps</h2>
+<h2>Relationship Between CI/CD and DevOps</h2>
 <ul>
 <li class="fragment">CI/CD are practices within the broader DevOps philosophy</li>
 <li class="fragment">DevOps often employs CI/CD as key tools, but also includes:
@@ -329,9 +331,11 @@
 <li class="fragment">Incident Response</li>
 </ul></li>
 </ul>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="DevOps (i)">
 <h2>Key Differences</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment"><em>Scope</em>:
 <ul>
@@ -361,14 +365,15 @@
 <section>
 <section class="title-slide slide level1 center">
 <h1>GitHub Actions</h1>
-
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="What Are GitHub Actions? (i)">
 <h2>What Are GitHub Actions?</h2>
-<p>GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
+<!-- vale RedHat.TermsWarnings = YES -->
+<p>GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows one to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
 <ol type="1">
 <li class="fragment">Workflows: Automated processes that you set up in your repository to build, test, package, release, or deploy your project.</li>
-<li class="fragment">Jobs: A set of steps that execute on the same runner. By default, a workflow with multiple jobs will run those jobs in parallel.</li>
+<li class="fragment">Jobs: A set of steps that run on the same runner. By default, a workflow with many jobs will run those jobs in parallel.</li>
 </ol>
 </section>
 <section class="slide level2" data-menu-title="What Are GitHub Actions? (ii)">
@@ -381,7 +386,7 @@
 </section>
 <section class="slide level2">
 <h2>Workflow Syntax</h2>
-<p>Workflows are defined in YAML files in the <code>.github/workflows</code> directory of your repository. Here’s a basic structure:</p>
+<p>Workflows are defined in YAML files in the <code>.github/workflows</code> directory of your repository. Here is a basic structure:</p>
 <div class="sourceCode" id="cb1" data-code-line-numbers="1|3|5|5-6|5-7|5-8|5-8,9|10-11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> CI</span></span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">]</span></span>
@@ -393,13 +398,15 @@
 <span id="cb1-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
 <span id="cb1-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run a one-line script</span></span>
 <span id="cb1-11"><a></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo Hello, world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Example Uses (i)">
 <h2>Example Uses</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment"><em>Continuous Integration</em>: Automatically build and test your code every time you push to your repository or open a pull request.</li>
 <li class="fragment"><em>Continuous Deployment</em>: Automatically deploy your application to staging or production environments when specific conditions are met.</li>
-<li class="fragment"><em>Automated Testing</em>: Run your test suite on multiple platforms and versions of your programming language.</li>
+<li class="fragment"><em>Automated Testing</em>: Run your test suite on many platforms and versions of your programming language.</li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Example Uses (ii)">
@@ -407,14 +414,14 @@
 <ul>
 <li class="fragment"><em>Code Linting and Formatting</em>: Enforce coding standards across your project.</li>
 <li class="fragment"><em>Issue and PR Management</em>: Automatically label, close, or comment on issues and pull requests based on certain conditions.</li>
-<li class="fragment"><em>Scheduled Tasks</em>: Run tasks at specific times, like daily backups or weekly report generation.</li>
+<li class="fragment"><em>Scheduled Tasks</em>: Run tasks at specific times, such as daily backups or weekly report generation.</li>
 </ul>
 </section>
 <section class="slide level2">
 <h2>Benefits</h2>
 <ul>
 <li class="fragment"><em>Integrated with GitHub</em>: No need for external CI/CD tools.</li>
-<li class="fragment"><em>Matrix Builds</em>: Easily test across multiple operating systems and runtime versions.</li>
+<li class="fragment"><em>Matrix Builds</em>: Easily test across many operating systems and runtime versions.</li>
 <li class="fragment"><em>Community Actions</em>: Reuse and share actions from the GitHub community.</li>
 <li class="fragment"><em>Flexible</em>: Build custom workflows for any project or git repository.</li>
 </ul>
@@ -427,9 +434,11 @@
 <li class="fragment">Minimise workflow run time by using build matrices and caching</li>
 <li class="fragment">Use status badges in your README to show your workflow status</li>
 </ul>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Avoiding Duplication (i)">
 <h2>Avoiding Duplication</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <table class="caption-top">
 <colgroup>
 <col style="width: 42%">
@@ -476,7 +485,7 @@
 <td>Run as a step within a job</td>
 </tr>
 <tr class="odd">
-<td>Can contain multiple jobs</td>
+<td>Can contain many jobs</td>
 <td>Does not contain jobs</td>
 </tr>
 </tbody>
@@ -498,7 +507,7 @@
 <tbody>
 <tr class="odd">
 <td>Each step is logged in real-time</td>
-<td>Logged as one step even if it contains multiple steps</td>
+<td>Logged as one step even if it has many steps</td>
 </tr>
 <tr class="even">
 <td>Can connect a maximum of four levels of workflows</td>

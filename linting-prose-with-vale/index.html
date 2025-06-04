@@ -281,20 +281,21 @@
 <section>
 <section class="title-slide slide level1 center">
 <h1>Vale</h1>
-
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="What is Vale? (i)">
 <h2>What is Vale?</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>Vale is a command-line tool that brings code-like linting to prose. Vale is cross-platform, written in Go, and <a href="https://github.com/errata-ai/vale">available on GitHub</a>.</p>
 <p>Vale is not a general-purpose writing aid. It does not teach you how to write; it is a tool for writers.</p>
-<p>Vale focuses (primarily) on the style of writing rather than its grammatical correctness—making it fundamentally different from, for example, <a href="https://www.grammarly.com">Grammarly</a>.</p>
+<p>Vale focuses (primarily) on the style of writing rather than its grammatical correctness: making it fundamentally different from, for example, <a href="https://www.grammarly.com">Grammarly</a>.</p>
 </section>
 <section class="slide level2" data-menu-title="What is Vale? (ii)">
 <h2>What is Vale?</h2>
 <div class="quarto-layout-panel" data-layout="[40,60]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
-<p>Vale focuses on ensuring consistency across multiple authors (according to customisable guidelines) rather than the general “correctness” of a single author’s work.</p>
+<p>Vale focuses on ensuring consistency across many authors (according to customisable guidelines) rather than the general “correctness” of a single author’s work.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -354,7 +355,7 @@
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>This level of understanding gives you fine-grained control over the linting process, including the ability to limit rules to certain sections (e.g.&nbsp;only headings) or ignore sections entirely (block and inline code are ignored by default).</p>
+<p>This level of understanding gives you fine-grained control over the linting process. This includes the ability to limit rules to certain sections (e.g.&nbsp;only headings) or ignore sections entirely (block and inline code are ignored by default).</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -366,10 +367,12 @@
 </div>
 </div>
 </div>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Tech Stack? (i)">
 <h2>Tech Stack</h2>
-<p>Vale is a 100% open-source, MIT-licensed project that consists of multiple parts:</p>
+<!-- vale RedHat.TermsWarnings = YES -->
+<p>Vale is a 100% open source, MIT-licensed project that consists of many parts:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 7%">
@@ -458,10 +461,11 @@
 <section>
 <section class="title-slide slide level1 center">
 <h1>Setting Up</h1>
-
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title=".vale.ini (i)">
 <h2><code>.vale.ini</code></h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <div class="sourceCode" id="cb2" data-code-line-numbers="1-2|4-7|8-12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="co"># Core settings appear at the top</span></span>
 <span id="cb2-2"><a></a><span class="co"># (the "global" section).</span></span>
 <span id="cb2-3"><a></a></span>
@@ -529,42 +533,55 @@
 </tr>
 </tbody>
 </table>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="This Repository (i)">
 <h2>This Repository</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>The <code>/.vale.ini</code> file:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb3-1"><a></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a><span class="co"># https://github.com/errata-ai/packages</span></span>
-<span id="cb3-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint</span></span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a><span class="kw">[formats]</span></span>
-<span id="cb3-7"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
-<span id="cb3-8"><a></a></span>
-<span id="cb3-9"><a></a><span class="kw">[*.{md,qmd}]</span></span>
-<span id="cb3-10"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> custom,\</span></span>
-<span id="cb3-11"><a></a><span class="dt">                proselint,\</span></span>
-<span id="cb3-12"><a></a><span class="dt">                Vale</span></span>
-<span id="cb3-13"><a></a></span>
-<span id="cb3-14"><a></a><span class="co"># Disable</span></span>
-<span id="cb3-15"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-16"><a></a></span>
-<span id="cb3-17"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
-<span id="cb3-18"><a></a><span class="kw">[.github/styles/**]</span></span>
-<span id="cb3-19"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb3-5"><a></a><span class="dt">           RedHat</span></span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a><span class="kw">[formats]</span></span>
+<span id="cb3-8"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
+<span id="cb3-9"><a></a></span>
+<span id="cb3-10"><a></a><span class="kw">[*.{md,qmd}]</span></span>
+<span id="cb3-11"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb3-12"><a></a><span class="dt">                RedHat,\</span></span>
+<span id="cb3-13"><a></a><span class="dt">                Vale</span></span>
+<span id="cb3-14"><a></a></span>
+<span id="cb3-15"><a></a><span class="co"># Disable</span></span>
+<span id="cb3-16"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-17"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-18"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-19"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-20"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-21"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-22"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-23"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-24"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-25"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-26"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-27"><a></a></span>
+<span id="cb3-28"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb3-29"><a></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb3-30"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
 <p>The <code>/.github/styles/.gitignore</code> file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {text} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a># only track the custom Vale rules</span>
-<span id="cb4-2"><a></a>/*</span>
-<span id="cb4-3"><a></a>!.gitignore</span>
-<span id="cb4-4"><a></a>!custom/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {text} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>/*</span>
+<span id="cb4-2"><a></a>!.gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Styles specified in <code>Packages</code> can be retrieved by running <code>vale sync</code>, hence the <code>.gitignore</code> file.</p>
 <p>One can write their own rules in <code>/.github/styles/custom</code>.</p>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Built-In Packages (i)">
 <h2>Built-In Packages</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p>Vale comes with a single built-in style named <code>Vale</code> that implements a few rules: <code>Spelling</code>, <code>Terms</code>, <code>Avoid</code> and <code>Repetition</code>.</p>
 <p>The following packages can be retrieved with <code>vale sync</code>:</p>
 <ul>
@@ -581,296 +598,84 @@
 <li class="fragment"><code>Readability</code>: An implementations of many popular “readability” metrics.</li>
 <li class="fragment"><code>write-good</code>: An implementation of the guidelines enforced by the write-good linter.</li>
 </ul>
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Custom Rules (i)">
 <h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/british-spellings.yml</code></p>
+<!-- vale RedHat.TermsWarnings = YES -->
+<p><code>/.github/styles/custom/no-contractions.yml</code></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
-<span id="cb5-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use the British spelling '%s' instead of the US '%s'.</span></span>
+<span id="cb5-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s.'</span></span>
 <span id="cb5-3"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
 <span id="cb5-4"><a></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb5-5"><a></a><span class="fu">swap</span><span class="kw">:</span></span>
-<span id="cb5-6"><a></a><span class="co">  # -our vs. -or</span></span>
-<span id="cb5-7"><a></a><span class="at">  </span><span class="fu">ardor</span><span class="kw">:</span><span class="at"> ardour</span></span>
-<span id="cb5-8"><a></a><span class="at">  </span><span class="fu">candor</span><span class="kw">:</span><span class="at"> candour</span></span>
-<span id="cb5-9"><a></a><span class="at">  </span><span class="fu">color</span><span class="kw">:</span><span class="at"> colour</span></span>
-<span id="cb5-10"><a></a><span class="at">  </span><span class="fu">demeanor</span><span class="kw">:</span><span class="at"> demeanour</span></span>
-<span id="cb5-11"><a></a><span class="at">  </span><span class="fu">endeavor</span><span class="kw">:</span><span class="at"> endeavour</span></span>
-<span id="cb5-12"><a></a><span class="at">  </span><span class="fu">favour</span><span class="kw">:</span><span class="at"> favour</span></span>
-<span id="cb5-13"><a></a><span class="at">  </span><span class="fu">fervor</span><span class="kw">:</span><span class="at"> fervour</span></span>
-<span id="cb5-14"><a></a><span class="at">  </span><span class="fu">flavor</span><span class="kw">:</span><span class="at"> flavour</span></span>
-<span id="cb5-15"><a></a><span class="at">  </span><span class="fu">harbor</span><span class="kw">:</span><span class="at"> harbour</span></span>
-<span id="cb5-16"><a></a><span class="at">  </span><span class="fu">honor</span><span class="kw">:</span><span class="at"> honour</span></span>
-<span id="cb5-17"><a></a><span class="at">  </span><span class="fu">humor</span><span class="kw">:</span><span class="at"> humour</span></span>
-<span id="cb5-18"><a></a><span class="at">  </span><span class="fu">labor</span><span class="kw">:</span><span class="at"> labour</span></span>
-<span id="cb5-19"><a></a><span class="at">  </span><span class="fu">neighbor</span><span class="kw">:</span><span class="at"> neighbour</span></span>
-<span id="cb5-20"><a></a><span class="at">  </span><span class="fu">odor</span><span class="kw">:</span><span class="at"> odour</span></span>
-<span id="cb5-21"><a></a><span class="at">  </span><span class="fu">pavor</span><span class="kw">:</span><span class="at"> pavour</span></span>
-<span id="cb5-22"><a></a><span class="at">  </span><span class="fu">rancor</span><span class="kw">:</span><span class="at"> rancour</span></span>
-<span id="cb5-23"><a></a><span class="at">  </span><span class="fu">rigor</span><span class="kw">:</span><span class="at"> rigour</span></span>
-<span id="cb5-24"><a></a><span class="at">  </span><span class="fu">rumor</span><span class="kw">:</span><span class="at"> rumour</span></span>
-<span id="cb5-25"><a></a><span class="at">  </span><span class="fu">savor</span><span class="kw">:</span><span class="at"> savour</span></span>
-<span id="cb5-26"><a></a><span class="at">  </span><span class="fu">splendor</span><span class="kw">:</span><span class="at"> splendour</span></span>
-<span id="cb5-27"><a></a><span class="at">  </span><span class="fu">succor</span><span class="kw">:</span><span class="at"> succour</span></span>
-<span id="cb5-28"><a></a><span class="at">  </span><span class="fu">valour</span><span class="kw">:</span><span class="at"> valour</span></span>
-<span id="cb5-29"><a></a><span class="at">  </span><span class="fu">vapor</span><span class="kw">:</span><span class="at"> vapour</span></span>
-<span id="cb5-30"><a></a><span class="at">  </span><span class="fu">vigor</span><span class="kw">:</span><span class="at"> vigour</span></span>
-<span id="cb5-31"><a></a><span class="co">  # and their derivatives</span></span>
-<span id="cb5-32"><a></a><span class="at">  </span><span class="fu">colored</span><span class="kw">:</span><span class="at"> coloured</span></span>
-<span id="cb5-33"><a></a><span class="at">  </span><span class="fu">coloring</span><span class="kw">:</span><span class="at"> colouring</span></span>
-<span id="cb5-34"><a></a><span class="at">  </span><span class="fu">colors</span><span class="kw">:</span><span class="at"> colours</span></span>
-<span id="cb5-35"><a></a><span class="at">  </span><span class="fu">endeavored</span><span class="kw">:</span><span class="at"> endeavoured</span></span>
-<span id="cb5-36"><a></a><span class="at">  </span><span class="fu">endeavoring</span><span class="kw">:</span><span class="at"> endeavouring</span></span>
-<span id="cb5-37"><a></a><span class="at">  </span><span class="fu">flavored</span><span class="kw">:</span><span class="at"> flavoured</span></span>
-<span id="cb5-38"><a></a><span class="at">  </span><span class="fu">flavoring</span><span class="kw">:</span><span class="at"> flavouring</span></span>
-<span id="cb5-39"><a></a><span class="at">  </span><span class="fu">honored</span><span class="kw">:</span><span class="at"> honoured</span></span>
-<span id="cb5-40"><a></a><span class="at">  </span><span class="fu">honoring</span><span class="kw">:</span><span class="at"> honouring</span></span>
-<span id="cb5-41"><a></a><span class="at">  </span><span class="fu">honors</span><span class="kw">:</span><span class="at"> honours</span></span>
-<span id="cb5-42"><a></a><span class="at">  </span><span class="fu">humors</span><span class="kw">:</span><span class="at"> humours</span></span>
-<span id="cb5-43"><a></a><span class="at">  </span><span class="fu">labored</span><span class="kw">:</span><span class="at"> laboured</span></span>
-<span id="cb5-44"><a></a><span class="at">  </span><span class="fu">laboring</span><span class="kw">:</span><span class="at"> labouring</span></span>
-<span id="cb5-45"><a></a><span class="at">  </span><span class="fu">labors</span><span class="kw">:</span><span class="at"> labours</span></span>
-<span id="cb5-46"><a></a><span class="at">  </span><span class="fu">neighbors</span><span class="kw">:</span><span class="at"> neighbours</span></span>
-<span id="cb5-47"><a></a><span class="at">  </span><span class="fu">rumors</span><span class="kw">:</span><span class="at"> rumours</span></span>
-<span id="cb5-48"><a></a><span class="at">  </span><span class="fu">splendors</span><span class="kw">:</span><span class="at"> splendours</span></span>
-<span id="cb5-49"><a></a><span class="co">  # -re vs. -er</span></span>
-<span id="cb5-50"><a></a><span class="at">  </span><span class="fu">caliber</span><span class="kw">:</span><span class="at"> calibre</span></span>
-<span id="cb5-51"><a></a><span class="at">  </span><span class="fu">center</span><span class="kw">:</span><span class="at"> centre</span></span>
-<span id="cb5-52"><a></a><span class="at">  </span><span class="fu">fiber</span><span class="kw">:</span><span class="at"> fibre</span></span>
-<span id="cb5-53"><a></a><span class="at">  </span><span class="fu">luster</span><span class="kw">:</span><span class="at"> lustre</span></span>
-<span id="cb5-54"><a></a><span class="at">  </span><span class="fu">meager</span><span class="kw">:</span><span class="at"> meagre</span></span>
-<span id="cb5-55"><a></a><span class="at">  </span><span class="fu">meter</span><span class="kw">:</span><span class="at"> metre</span></span>
-<span id="cb5-56"><a></a><span class="at">  </span><span class="fu">saber</span><span class="kw">:</span><span class="at"> sabre</span></span>
-<span id="cb5-57"><a></a><span class="at">  </span><span class="fu">saltpeter</span><span class="kw">:</span><span class="at"> saltpetre</span></span>
-<span id="cb5-58"><a></a><span class="at">  </span><span class="fu">sepulcher</span><span class="kw">:</span><span class="at"> sepulchre</span></span>
-<span id="cb5-59"><a></a><span class="at">  </span><span class="fu">theater</span><span class="kw">:</span><span class="at"> theatre</span></span>
-<span id="cb5-60"><a></a><span class="co">  # and their derivatives</span></span>
-<span id="cb5-61"><a></a><span class="at">  </span><span class="fu">calibers</span><span class="kw">:</span><span class="at"> calibres</span></span>
-<span id="cb5-62"><a></a><span class="at">  </span><span class="fu">centers</span><span class="kw">:</span><span class="at"> centres</span></span>
-<span id="cb5-63"><a></a><span class="at">  </span><span class="fu">fibers</span><span class="kw">:</span><span class="at"> fibres</span></span>
-<span id="cb5-64"><a></a><span class="at">  </span><span class="fu">lusters</span><span class="kw">:</span><span class="at"> lustres</span></span>
-<span id="cb5-65"><a></a><span class="at">  </span><span class="fu">meters</span><span class="kw">:</span><span class="at"> metres</span></span>
-<span id="cb5-66"><a></a><span class="at">  </span><span class="fu">theaters</span><span class="kw">:</span><span class="at"> theatres</span></span>
-<span id="cb5-67"><a></a><span class="co">  # -ise vs. -ize</span></span>
-<span id="cb5-68"><a></a><span class="at">  </span><span class="fu">'(\w+)ization\b'</span><span class="kw">:</span><span class="at"> $1isation</span></span>
-<span id="cb5-69"><a></a><span class="at">  </span><span class="fu">'(\w+)ize\b'</span><span class="kw">:</span><span class="at"> $1ise</span></span>
-<span id="cb5-70"><a></a><span class="at">  </span><span class="fu">'(\w+)ized\b'</span><span class="kw">:</span><span class="at"> $1ised</span></span>
-<span id="cb5-71"><a></a><span class="at">  </span><span class="fu">'(\w+)izing\b'</span><span class="kw">:</span><span class="at"> $1ising</span></span>
-<span id="cb5-72"><a></a><span class="co">  # add other common forms:</span></span>
-<span id="cb5-73"><a></a><span class="at">  </span><span class="fu">'(\w+)izable\b'</span><span class="kw">:</span><span class="at"> $1isable</span></span>
-<span id="cb5-74"><a></a><span class="co">  # -yse vs. -yze</span></span>
-<span id="cb5-75"><a></a><span class="at">  </span><span class="fu">'(\w+)yze\b'</span><span class="kw">:</span><span class="at"> $1yse"</span></span>
-<span id="cb5-76"><a></a><span class="at">  </span><span class="fu">'(\w+)yzed\b'</span><span class="kw">:</span><span class="at"> $1ysed</span></span>
-<span id="cb5-77"><a></a><span class="at">  </span><span class="fu">'(\w+)yzing\b'</span><span class="kw">:</span><span class="at"> $1ysing</span></span>
-<span id="cb5-78"><a></a><span class="co">  # double L vs. Single L</span></span>
-<span id="cb5-79"><a></a><span class="at">  </span><span class="fu">distill</span><span class="kw">:</span><span class="at"> distil</span></span>
-<span id="cb5-80"><a></a><span class="at">  </span><span class="fu">enroll</span><span class="kw">:</span><span class="at"> enrol</span></span>
-<span id="cb5-81"><a></a><span class="at">  </span><span class="fu">enrollment</span><span class="kw">:</span><span class="at"> enrolment</span></span>
-<span id="cb5-82"><a></a><span class="at">  </span><span class="fu">enthrall</span><span class="kw">:</span><span class="at"> enthral</span></span>
-<span id="cb5-83"><a></a><span class="at">  </span><span class="fu">fulfill</span><span class="kw">:</span><span class="at"> fulfil</span></span>
-<span id="cb5-84"><a></a><span class="at">  </span><span class="fu">initialed</span><span class="kw">:</span><span class="at"> initialled</span></span>
-<span id="cb5-85"><a></a><span class="at">  </span><span class="fu">initialing</span><span class="kw">:</span><span class="at"> initialling</span></span>
-<span id="cb5-86"><a></a><span class="at">  </span><span class="fu">instill</span><span class="kw">:</span><span class="at"> instil</span></span>
-<span id="cb5-87"><a></a><span class="at">  </span><span class="fu">labeled</span><span class="kw">:</span><span class="at"> labelled</span></span>
-<span id="cb5-88"><a></a><span class="at">  </span><span class="fu">labeling</span><span class="kw">:</span><span class="at"> labelling</span></span>
-<span id="cb5-89"><a></a><span class="at">  </span><span class="fu">libelous</span><span class="kw">:</span><span class="at"> libellous</span></span>
-<span id="cb5-90"><a></a><span class="at">  </span><span class="fu">modeling</span><span class="kw">:</span><span class="at"> modelling</span></span>
-<span id="cb5-91"><a></a><span class="at">  </span><span class="fu">signaling</span><span class="kw">:</span><span class="at"> signalling</span></span>
-<span id="cb5-92"><a></a><span class="at">  </span><span class="fu">traveler</span><span class="kw">:</span><span class="at"> traveller</span></span>
-<span id="cb5-93"><a></a><span class="at">  </span><span class="fu">traveling</span><span class="kw">:</span><span class="at"> travelling</span></span>
-<span id="cb5-94"><a></a><span class="at">  </span><span class="fu">traveled</span><span class="kw">:</span><span class="at"> travelled</span></span>
-<span id="cb5-95"><a></a><span class="co">  # -ogue vs. -og</span></span>
-<span id="cb5-96"><a></a><span class="at">  </span><span class="fu">analog</span><span class="kw">:</span><span class="at"> analogue</span></span>
-<span id="cb5-97"><a></a><span class="at">  </span><span class="fu">catalog</span><span class="kw">:</span><span class="at"> catalogue</span></span>
-<span id="cb5-98"><a></a><span class="at">  </span><span class="fu">demagog</span><span class="kw">:</span><span class="at"> demagogue</span></span>
-<span id="cb5-99"><a></a><span class="at">  </span><span class="fu">dialog</span><span class="kw">:</span><span class="at"> dialogue</span></span>
-<span id="cb5-100"><a></a><span class="at">  </span><span class="fu">monolog</span><span class="kw">:</span><span class="at"> monologue</span></span>
-<span id="cb5-101"><a></a><span class="at">  </span><span class="fu">pedagog</span><span class="kw">:</span><span class="at"> pedagogue</span></span>
-<span id="cb5-102"><a></a><span class="at">  </span><span class="fu">prolog</span><span class="kw">:</span><span class="at"> prologue</span></span>
-<span id="cb5-103"><a></a><span class="co">  # ae/oe vs. e</span></span>
-<span id="cb5-104"><a></a><span class="at">  </span><span class="fu">airplane</span><span class="kw">:</span><span class="at"> aeroplane</span></span>
-<span id="cb5-105"><a></a><span class="at">  </span><span class="fu">anemia</span><span class="kw">:</span><span class="at"> anaemia</span></span>
-<span id="cb5-106"><a></a><span class="at">  </span><span class="fu">anesthesia</span><span class="kw">:</span><span class="at"> anaesthesia</span></span>
-<span id="cb5-107"><a></a><span class="at">  </span><span class="fu">encyclopedia</span><span class="kw">:</span><span class="at"> encyclopaedia</span></span>
-<span id="cb5-108"><a></a><span class="at">  </span><span class="fu">eon</span><span class="kw">:</span><span class="at"> aeon</span></span>
-<span id="cb5-109"><a></a><span class="at">  </span><span class="fu">fetus</span><span class="kw">:</span><span class="at"> foetus</span></span>
-<span id="cb5-110"><a></a><span class="at">  </span><span class="fu">pediatric</span><span class="kw">:</span><span class="at"> paediatric</span></span>
-<span id="cb5-111"><a></a><span class="co">  # -ce vs. -se</span></span>
-<span id="cb5-112"><a></a><span class="at">  </span><span class="fu">defense</span><span class="kw">:</span><span class="at"> defence</span></span>
-<span id="cb5-113"><a></a><span class="at">  </span><span class="fu">license</span><span class="kw">:</span><span class="at"> licence</span></span>
-<span id="cb5-114"><a></a><span class="at">  </span><span class="fu">offense</span><span class="kw">:</span><span class="at"> offence</span></span>
-<span id="cb5-115"><a></a><span class="at">  </span><span class="fu">pretense</span><span class="kw">:</span><span class="at"> pretence</span></span>
-<span id="cb5-116"><a></a><span class="co">  # miscellaneous specific words</span></span>
-<span id="cb5-117"><a></a><span class="at">  </span><span class="fu">aging</span><span class="kw">:</span><span class="at"> ageing</span></span>
-<span id="cb5-118"><a></a><span class="at">  </span><span class="fu">aluminum</span><span class="kw">:</span><span class="at"> aluminium</span></span>
-<span id="cb5-119"><a></a><span class="at">  </span><span class="fu">authorizer</span><span class="kw">:</span><span class="at"> authoriser</span></span>
-<span id="cb5-120"><a></a><span class="at">  </span><span class="fu">buses</span><span class="kw">:</span><span class="at"> busses</span></span>
-<span id="cb5-121"><a></a><span class="at">  </span><span class="fu">cipher</span><span class="kw">:</span><span class="at"> cypher</span></span>
-<span id="cb5-122"><a></a><span class="at">  </span><span class="fu">cozy</span><span class="kw">:</span><span class="at"> cosy</span></span>
-<span id="cb5-123"><a></a><span class="at">  </span><span class="fu">dependent</span><span class="kw">:</span><span class="at"> dependant</span></span>
-<span id="cb5-124"><a></a><span class="at">  </span><span class="fu">draft</span><span class="kw">:</span><span class="at"> draught</span></span>
-<span id="cb5-125"><a></a><span class="at">  </span><span class="fu">furor</span><span class="kw">:</span><span class="at"> furore</span></span>
-<span id="cb5-126"><a></a><span class="at">  </span><span class="fu">gray</span><span class="kw">:</span><span class="at"> grey</span></span>
-<span id="cb5-127"><a></a><span class="at">  </span><span class="fu">inquiry</span><span class="kw">:</span><span class="at"> enquiry</span></span>
-<span id="cb5-128"><a></a><span class="at">  </span><span class="fu">jail</span><span class="kw">:</span><span class="at"> gaol</span></span>
-<span id="cb5-129"><a></a><span class="at">  </span><span class="fu">jewelry</span><span class="kw">:</span><span class="at"> jewellery</span></span>
-<span id="cb5-130"><a></a><span class="at">  </span><span class="fu">likable</span><span class="kw">:</span><span class="at"> likeable</span></span>
-<span id="cb5-131"><a></a><span class="at">  </span><span class="fu">livable</span><span class="kw">:</span><span class="at"> liveable</span></span>
-<span id="cb5-132"><a></a><span class="at">  </span><span class="fu">maneuver</span><span class="kw">:</span><span class="at"> manoeuvre</span></span>
-<span id="cb5-133"><a></a><span class="at">  </span><span class="fu">marvelous</span><span class="kw">:</span><span class="at"> marvellous</span></span>
-<span id="cb5-134"><a></a><span class="at">  </span><span class="fu">matte</span><span class="kw">:</span><span class="at"> matt</span></span>
-<span id="cb5-135"><a></a><span class="at">  </span><span class="fu">mustache</span><span class="kw">:</span><span class="at"> moustache</span></span>
-<span id="cb5-136"><a></a><span class="at">  </span><span class="fu">pajamas</span><span class="kw">:</span><span class="at"> pyjamas</span></span>
-<span id="cb5-137"><a></a><span class="at">  </span><span class="fu">plow</span><span class="kw">:</span><span class="at"> plough</span></span>
-<span id="cb5-138"><a></a><span class="at">  </span><span class="fu">programme</span><span class="kw">:</span><span class="at"> program</span></span>
-<span id="cb5-139"><a></a><span class="at">  </span><span class="fu">ratable</span><span class="kw">:</span><span class="at"> rateable</span></span>
-<span id="cb5-140"><a></a><span class="at">  </span><span class="fu">reconnoiter</span><span class="kw">:</span><span class="at"> reconnoitre</span></span>
-<span id="cb5-141"><a></a><span class="at">  </span><span class="fu">sizable</span><span class="kw">:</span><span class="at"> sizeable</span></span>
-<span id="cb5-142"><a></a><span class="at">  </span><span class="fu">skillful</span><span class="kw">:</span><span class="at"> skilful</span></span>
-<span id="cb5-143"><a></a><span class="at">  </span><span class="fu">smolder</span><span class="kw">:</span><span class="at"> smoulder</span></span>
-<span id="cb5-144"><a></a><span class="at">  </span><span class="fu">somber</span><span class="kw">:</span><span class="at"> sombre</span></span>
-<span id="cb5-145"><a></a><span class="at">  </span><span class="fu">specialty</span><span class="kw">:</span><span class="at"> speciality</span></span>
-<span id="cb5-146"><a></a><span class="at">  </span><span class="fu">specter</span><span class="kw">:</span><span class="at"> spectre</span></span>
-<span id="cb5-147"><a></a><span class="at">  </span><span class="fu">sulfur</span><span class="kw">:</span><span class="at"> sulphur</span></span>
-<span id="cb5-148"><a></a><span class="at">  </span><span class="fu">unshakable</span><span class="kw">:</span><span class="at"> unshakeable</span></span>
-<span id="cb5-149"><a></a><span class="at">  </span><span class="fu">willful</span><span class="kw">:</span><span class="at"> wilful</span></span>
-<span id="cb5-150"><a></a><span class="at">  </span><span class="fu">yogurt</span><span class="kw">:</span><span class="at"> yoghurt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a></a><span class="at">  </span><span class="fu">aren't</span><span class="kw">:</span><span class="at"> are not</span></span>
+<span id="cb5-7"><a></a><span class="at">  </span><span class="fu">can't</span><span class="kw">:</span><span class="at"> cannot</span></span>
+<span id="cb5-8"><a></a><span class="at">  </span><span class="fu">couldn't</span><span class="kw">:</span><span class="at"> could not</span></span>
+<span id="cb5-9"><a></a><span class="at">  </span><span class="fu">didn't</span><span class="kw">:</span><span class="at"> did not</span></span>
+<span id="cb5-10"><a></a><span class="at">  </span><span class="fu">doesn't</span><span class="kw">:</span><span class="at"> does not</span></span>
+<span id="cb5-11"><a></a><span class="at">  </span><span class="fu">don't</span><span class="kw">:</span><span class="at"> do not</span></span>
+<span id="cb5-12"><a></a><span class="at">  </span><span class="fu">hasn't</span><span class="kw">:</span><span class="at"> has not</span></span>
+<span id="cb5-13"><a></a><span class="at">  </span><span class="fu">haven't</span><span class="kw">:</span><span class="at"> have not</span></span>
+<span id="cb5-14"><a></a><span class="at">  </span><span class="fu">how'll</span><span class="kw">:</span><span class="at"> how will</span></span>
+<span id="cb5-15"><a></a><span class="at">  </span><span class="fu">how's</span><span class="kw">:</span><span class="at"> how is</span></span>
+<span id="cb5-16"><a></a><span class="at">  </span><span class="fu">isn't</span><span class="kw">:</span><span class="at"> is not</span></span>
+<span id="cb5-17"><a></a><span class="at">  </span><span class="fu">it'll</span><span class="kw">:</span><span class="at"> it will</span></span>
+<span id="cb5-18"><a></a><span class="at">  </span><span class="fu">it's</span><span class="kw">:</span><span class="at"> it is</span></span>
+<span id="cb5-19"><a></a><span class="at">  </span><span class="fu">shouldn't</span><span class="kw">:</span><span class="at"> should not</span></span>
+<span id="cb5-20"><a></a><span class="at">  </span><span class="fu">that'll</span><span class="kw">:</span><span class="at"> that will</span></span>
+<span id="cb5-21"><a></a><span class="at">  </span><span class="fu">that's</span><span class="kw">:</span><span class="at"> that is</span></span>
+<span id="cb5-22"><a></a><span class="at">  </span><span class="fu">they'll</span><span class="kw">:</span><span class="at"> they will</span></span>
+<span id="cb5-23"><a></a><span class="at">  </span><span class="fu">they're</span><span class="kw">:</span><span class="at"> they are</span></span>
+<span id="cb5-24"><a></a><span class="at">  </span><span class="fu">wasn't</span><span class="kw">:</span><span class="at"> was not</span></span>
+<span id="cb5-25"><a></a><span class="at">  </span><span class="fu">we'll</span><span class="kw">:</span><span class="at"> we will</span></span>
+<span id="cb5-26"><a></a><span class="at">  </span><span class="fu">we're</span><span class="kw">:</span><span class="at"> we are</span></span>
+<span id="cb5-27"><a></a><span class="at">  </span><span class="fu">we've</span><span class="kw">:</span><span class="at"> we have</span></span>
+<span id="cb5-28"><a></a><span class="at">  </span><span class="fu">weren't</span><span class="kw">:</span><span class="at"> were not</span></span>
+<span id="cb5-29"><a></a><span class="at">  </span><span class="fu">what'll</span><span class="kw">:</span><span class="at"> what will</span></span>
+<span id="cb5-30"><a></a><span class="at">  </span><span class="fu">what's</span><span class="kw">:</span><span class="at"> what is</span></span>
+<span id="cb5-31"><a></a><span class="at">  </span><span class="fu">when'll</span><span class="kw">:</span><span class="at"> when will</span></span>
+<span id="cb5-32"><a></a><span class="at">  </span><span class="fu">when's</span><span class="kw">:</span><span class="at"> when is</span></span>
+<span id="cb5-33"><a></a><span class="at">  </span><span class="fu">where'll</span><span class="kw">:</span><span class="at"> where will</span></span>
+<span id="cb5-34"><a></a><span class="at">  </span><span class="fu">where's</span><span class="kw">:</span><span class="at"> where is</span></span>
+<span id="cb5-35"><a></a><span class="at">  </span><span class="fu">who'll</span><span class="kw">:</span><span class="at"> who will</span></span>
+<span id="cb5-36"><a></a><span class="at">  </span><span class="fu">who's</span><span class="kw">:</span><span class="at"> who is</span></span>
+<span id="cb5-37"><a></a><span class="at">  </span><span class="fu">why'll</span><span class="kw">:</span><span class="at"> why will</span></span>
+<span id="cb5-38"><a></a><span class="at">  </span><span class="fu">why's</span><span class="kw">:</span><span class="at"> why is</span></span>
+<span id="cb5-39"><a></a><span class="at">  </span><span class="fu">won't</span><span class="kw">:</span><span class="at"> will not</span></span>
+<span id="cb5-40"><a></a><span class="at">  </span><span class="fu">you're</span><span class="kw">:</span><span class="at"> you are</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="Custom Rules (ii)">
 <h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/dashes.yml</code></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
-<span id="cb6-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Don't put a space before or after a dash.</span></span>
-<span id="cb6-3"><a></a><span class="fu">nonword</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb6-4"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> warning</span></span>
-<span id="cb6-5"><a></a><span class="fu">action</span><span class="kw">:</span></span>
-<span id="cb6-6"><a></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> edit</span></span>
-<span id="cb6-7"><a></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb6-8"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> remove</span></span>
-<span id="cb6-9"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">" "</span></span>
-<span id="cb6-10"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb6-11"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> \s[—–]\s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="slide level2" data-menu-title="Custom Rules (iii)">
-<h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/endash.yml</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
-<span id="cb7-2"><a></a><span class="fu">message</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb7-3"><a></a>  Avoid en dashes ('–'). For hyphenated words, use a hyphen ('-').\nFor</span>
-<span id="cb7-4"><a></a>  parenthesis, use an em dash ('—').</span>
-<span id="cb7-5"><a></a><span class="fu">nonword</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb7-6"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb7-7"><a></a><span class="fu">action</span><span class="kw">:</span></span>
-<span id="cb7-8"><a></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> edit</span></span>
-<span id="cb7-9"><a></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb7-10"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> replace</span></span>
-<span id="cb7-11"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"-"</span></span>
-<span id="cb7-12"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> —</span></span>
-<span id="cb7-13"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb7-14"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> –</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="slide level2" data-menu-title="Custom Rules (iv)">
-<h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/no-contractions.yml</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
-<span id="cb8-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s.'</span></span>
-<span id="cb8-3"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb8-4"><a></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb8-5"><a></a><span class="fu">swap</span><span class="kw">:</span></span>
-<span id="cb8-6"><a></a><span class="at">  </span><span class="fu">aren't</span><span class="kw">:</span><span class="at"> are not</span></span>
-<span id="cb8-7"><a></a><span class="at">  </span><span class="fu">can't</span><span class="kw">:</span><span class="at"> cannot</span></span>
-<span id="cb8-8"><a></a><span class="at">  </span><span class="fu">couldn't</span><span class="kw">:</span><span class="at"> could not</span></span>
-<span id="cb8-9"><a></a><span class="at">  </span><span class="fu">didn't</span><span class="kw">:</span><span class="at"> did not</span></span>
-<span id="cb8-10"><a></a><span class="at">  </span><span class="fu">doesn't</span><span class="kw">:</span><span class="at"> does not</span></span>
-<span id="cb8-11"><a></a><span class="at">  </span><span class="fu">don't</span><span class="kw">:</span><span class="at"> do not</span></span>
-<span id="cb8-12"><a></a><span class="at">  </span><span class="fu">hasn't</span><span class="kw">:</span><span class="at"> has not</span></span>
-<span id="cb8-13"><a></a><span class="at">  </span><span class="fu">haven't</span><span class="kw">:</span><span class="at"> have not</span></span>
-<span id="cb8-14"><a></a><span class="at">  </span><span class="fu">how'll</span><span class="kw">:</span><span class="at"> how will</span></span>
-<span id="cb8-15"><a></a><span class="at">  </span><span class="fu">how's</span><span class="kw">:</span><span class="at"> how is</span></span>
-<span id="cb8-16"><a></a><span class="at">  </span><span class="fu">isn't</span><span class="kw">:</span><span class="at"> is not</span></span>
-<span id="cb8-17"><a></a><span class="at">  </span><span class="fu">it'll</span><span class="kw">:</span><span class="at"> it will</span></span>
-<span id="cb8-18"><a></a><span class="at">  </span><span class="fu">it's</span><span class="kw">:</span><span class="at"> it is</span></span>
-<span id="cb8-19"><a></a><span class="at">  </span><span class="fu">shouldn't</span><span class="kw">:</span><span class="at"> should not</span></span>
-<span id="cb8-20"><a></a><span class="at">  </span><span class="fu">that'll</span><span class="kw">:</span><span class="at"> that will</span></span>
-<span id="cb8-21"><a></a><span class="at">  </span><span class="fu">that's</span><span class="kw">:</span><span class="at"> that is</span></span>
-<span id="cb8-22"><a></a><span class="at">  </span><span class="fu">they'll</span><span class="kw">:</span><span class="at"> they will</span></span>
-<span id="cb8-23"><a></a><span class="at">  </span><span class="fu">they're</span><span class="kw">:</span><span class="at"> they are</span></span>
-<span id="cb8-24"><a></a><span class="at">  </span><span class="fu">wasn't</span><span class="kw">:</span><span class="at"> was not</span></span>
-<span id="cb8-25"><a></a><span class="at">  </span><span class="fu">we'll</span><span class="kw">:</span><span class="at"> we will</span></span>
-<span id="cb8-26"><a></a><span class="at">  </span><span class="fu">we're</span><span class="kw">:</span><span class="at"> we are</span></span>
-<span id="cb8-27"><a></a><span class="at">  </span><span class="fu">we've</span><span class="kw">:</span><span class="at"> we have</span></span>
-<span id="cb8-28"><a></a><span class="at">  </span><span class="fu">weren't</span><span class="kw">:</span><span class="at"> were not</span></span>
-<span id="cb8-29"><a></a><span class="at">  </span><span class="fu">what'll</span><span class="kw">:</span><span class="at"> what will</span></span>
-<span id="cb8-30"><a></a><span class="at">  </span><span class="fu">what's</span><span class="kw">:</span><span class="at"> what is</span></span>
-<span id="cb8-31"><a></a><span class="at">  </span><span class="fu">when'll</span><span class="kw">:</span><span class="at"> when will</span></span>
-<span id="cb8-32"><a></a><span class="at">  </span><span class="fu">when's</span><span class="kw">:</span><span class="at"> when is</span></span>
-<span id="cb8-33"><a></a><span class="at">  </span><span class="fu">where'll</span><span class="kw">:</span><span class="at"> where will</span></span>
-<span id="cb8-34"><a></a><span class="at">  </span><span class="fu">where's</span><span class="kw">:</span><span class="at"> where is</span></span>
-<span id="cb8-35"><a></a><span class="at">  </span><span class="fu">who'll</span><span class="kw">:</span><span class="at"> who will</span></span>
-<span id="cb8-36"><a></a><span class="at">  </span><span class="fu">who's</span><span class="kw">:</span><span class="at"> who is</span></span>
-<span id="cb8-37"><a></a><span class="at">  </span><span class="fu">why'll</span><span class="kw">:</span><span class="at"> why will</span></span>
-<span id="cb8-38"><a></a><span class="at">  </span><span class="fu">why's</span><span class="kw">:</span><span class="at"> why is</span></span>
-<span id="cb8-39"><a></a><span class="at">  </span><span class="fu">won't</span><span class="kw">:</span><span class="at"> will not</span></span>
-<span id="cb8-40"><a></a><span class="at">  </span><span class="fu">you're</span><span class="kw">:</span><span class="at"> you are</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="slide level2" data-menu-title="Custom Rules (v)">
-<h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/oxford-comma.yml</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
-<span id="cb9-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use the Oxford comma in '%s'.</span></span>
-<span id="cb9-3"><a></a><span class="fu">scope</span><span class="kw">:</span><span class="at"> sentence</span></span>
-<span id="cb9-4"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> suggestion</span></span>
-<span id="cb9-5"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb9-6"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> (?:[^,]+,){1,}\s\w+\s(?:and|or)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>/.github/styles/custom/spaces.yml</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
-<span id="cb10-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use only one space between words and sentences (not two).</span></span>
-<span id="cb10-3"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb10-4"><a></a><span class="fu">nonword</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-5"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb10-6"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"[</span><span class="sc">\\</span><span class="st">w.?!,()</span><span class="sc">\\</span><span class="st">-</span><span class="sc">\"</span><span class="st">:] {2,}[</span><span class="sc">\\</span><span class="st">w.?!,()</span><span class="sc">\\</span><span class="st">-</span><span class="sc">\"</span><span class="st">:]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="slide level2" data-menu-title="Custom Rules (vi)">
-<h2>Custom Rules</h2>
-<p><code>/.github/styles/custom/quotes.yml</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> existence</span></span>
-<span id="cb11-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use straight quotes instead of smart quotes.</span></span>
-<span id="cb11-3"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb11-4"><a></a><span class="fu">nonword</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb11-5"><a></a><span class="fu">action</span><span class="kw">:</span></span>
-<span id="cb11-6"><a></a><span class="fu">tokens</span><span class="kw">:</span></span>
-<span id="cb11-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> “</span></span>
-<span id="cb11-8"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> ”</span></span>
-<span id="cb11-9"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> ‘</span></span>
-<span id="cb11-10"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> ’</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>More rules can be found at: <a href="https://hyperlint.com/vale/rules" class="uri">https://hyperlint.com/vale/rules</a>.</p>
 </section>
 <section class="slide level2">
 <h2>GitHub Action</h2>
 <p>One might be happy to accept warnings and therefore it does not make sense to run as a pre-commit hook.</p>
-<div class="sourceCode" id="cb12" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb12-2"><a></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
-<span id="cb12-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb12-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb12-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
-<span id="cb12-6"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
-<span id="cb12-7"><a></a></span>
-<span id="cb12-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Vale</span></span>
-<span id="cb12-9"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c</span><span class="co"> # v2</span></span>
-<span id="cb12-10"><a></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
-<span id="cb12-11"><a></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb12-12"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb12-13"><a></a><span class="at">          </span><span class="fu">fail_on_error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb12-14"><a></a><span class="at">          </span><span class="fu">filter_mode</span><span class="kw">:</span><span class="at"> nofilter</span></span>
-<span id="cb12-15"><a></a><span class="at">          </span><span class="fu">reporter</span><span class="kw">:</span><span class="at"> github-pr-review</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
+<span id="cb6-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
+<span id="cb6-6"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
+<span id="cb6-7"><a></a></span>
+<span id="cb6-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Vale</span></span>
+<span id="cb6-9"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c</span><span class="co"> # v2</span></span>
+<span id="cb6-10"><a></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb6-11"><a></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb6-12"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb6-13"><a></a><span class="at">          </span><span class="fu">fail_on_error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-14"><a></a><span class="at">          </span><span class="fu">filter_mode</span><span class="kw">:</span><span class="at"> nofilter</span></span>
+<span id="cb6-15"><a></a><span class="at">          </span><span class="fu">reporter</span><span class="kw">:</span><span class="at"> github-pr-review</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Demo</h1>
-
+<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="This Repo (i)">
 <h2>This Repo</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
 <p><a href="https://github.com/paddyroddy/talks/pull/80/files">paddyroddy/talks#80</a></p>
 
 <img data-src="figures/demo1.png" class="r-stretch quarto-figure-center"><p class="caption">GitHub</p></section>
@@ -885,8 +690,10 @@
 
 <img data-src="figures/demo3.png" class="r-stretch quarto-figure-center"><p class="caption">GitHub</p></section>
 <section class="slide level2">
-<h2>Python Tooling</h2>
+<h2>ARC Example</h2>
+<!-- vale RedHat.TermsWarnings = NO -->
 <p><a href="https://github.com/UCL-ARC/python-tooling/pull/541">UCL-ARC/python-tooling#541</a></p>
+<!-- vale RedHat.TermsWarnings = YES -->
 
 <img data-src="figures/demo4.png" class="r-stretch quarto-figure-center"><p class="caption">GitHub</p></section></section>
 <section>
@@ -897,12 +704,12 @@
 <section class="slide level2" data-menu-title="Summary">
 <h2></h2>
 <ul>
-<li class="fragment">Vale is a tool I found during my PhD to enforce consistent writing styles.</li>
-<li class="fragment">I had used it for LaTeX (which has fewer built in tools), but in reality it is designed for Markdown etc.</li>
+<li class="fragment">Vale is a tool used during my PhD to enforce consistent writing styles.</li>
+<li class="fragment">Had used it for LaTeX (which has fewer built in tools), but in reality it is designed for Markdown and so on.</li>
 <li class="fragment">Brings code-like linting to prose.</li>
 <li class="fragment">Extensive set of community written rules (some taken from big company style guides).</li>
 <li class="fragment">Can easily write your own rules through regex or a mapping.</li>
-<li class="fragment">Can turn off rules (i.e.&nbsp;<code>Vale.Spelling = NO</code>) in <code>.vale.ini</code> or inline.</li>
+<li class="fragment">Can turn off rules (<code>Vale.Spelling = NO</code>) in <code>.vale.ini</code> or inline.</li>
 </ul>
 
 
