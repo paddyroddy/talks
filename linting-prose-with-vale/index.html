@@ -466,7 +466,7 @@
 <section class="slide level2" data-menu-title=".vale.ini (i)">
 <h2><code>.vale.ini</code></h2>
 <!-- vale RedHat.TermsWarnings = YES -->
-<div class="sourceCode" id="cb2" data-code-line-numbers="1-2|4-7|8-12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="co"># Core settings appear at the top</span></span>
+<div class="sourceCode" id="cb2" data-code-line-numbers="1-2|4-7|8-11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="co"># Core settings appear at the top</span></span>
 <span id="cb2-2"><a></a><span class="co"># (the "global" section).</span></span>
 <span id="cb2-3"><a></a></span>
 <span id="cb2-4"><a></a><span class="kw">[</span><span class="at">formats</span><span class="kw">]</span></span>
@@ -577,11 +577,19 @@
 </section>
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
-<p>The <code>/.github/styles/.gitignore</code> file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {text} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>/*</span>
-<span id="cb4-2"><a></a>!.gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>/.gitignore</code> file:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {text} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a># We want to ignore our StylesPath *except* for our local</span>
+<span id="cb4-2"><a></a># `vocabularies/Base` directory.</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>.github/styles/*</span>
+<span id="cb4-5"><a></a>!.github/styles/config/</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>.github/styles/config/*</span>
+<span id="cb4-8"><a></a>!.github/styles/config/vocabularies/</span>
+<span id="cb4-9"><a></a></span>
+<span id="cb4-10"><a></a>.github/styles/config/vocabularies/*</span>
+<span id="cb4-11"><a></a>!.github/styles/config/vocabularies/Base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Styles specified in <code>Packages</code> can be retrieved by running <code>vale sync</code>, hence the <code>.gitignore</code> file.</p>
-<p>One can write their own rules in <code>/.github/styles/custom</code>.</p>
 <!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Built-In Packages (i)">
@@ -603,11 +611,10 @@
 <li class="fragment"><code>Readability</code>: An implementations of many popular “readability” metrics.</li>
 <li class="fragment"><code>write-good</code>: An implementation of the guidelines enforced by the write-good linter.</li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
-<section class="slide level2" data-menu-title="Custom Rules (i)">
+<section class="slide level2">
 <h2>Custom Rules</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
+<p>More rules can be found at: <a href="https://hyperlint.com/vale/rules" class="uri">https://hyperlint.com/vale/rules</a>.</p>
 <p><code>/.github/styles/custom/no-contractions.yml</code></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
 <span id="cb5-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s.'</span></span>
@@ -650,14 +657,10 @@
 <span id="cb5-39"><a></a><span class="at">  </span><span class="fu">won't</span><span class="kw">:</span><span class="at"> will not</span></span>
 <span id="cb5-40"><a></a><span class="at">  </span><span class="fu">you're</span><span class="kw">:</span><span class="at"> you are</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section class="slide level2" data-menu-title="Custom Rules (ii)">
-<h2>Custom Rules</h2>
-<p>More rules can be found at: <a href="https://hyperlint.com/vale/rules" class="uri">https://hyperlint.com/vale/rules</a>.</p>
-</section>
 <section class="slide level2">
 <h2>GitHub Action</h2>
 <p>One might be happy to accept warnings and therefore it does not make sense to run as a pre-commit hook.</p>
-<div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
 <span id="cb6-2"><a></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
 <span id="cb6-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
 <span id="cb6-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
