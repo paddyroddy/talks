@@ -543,32 +543,37 @@
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a><span class="co"># https://github.com/errata-ai/packages</span></span>
 <span id="cb3-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
-<span id="cb3-5"><a></a><span class="dt">           RedHat</span></span>
-<span id="cb3-6"><a></a></span>
-<span id="cb3-7"><a></a><span class="kw">[formats]</span></span>
-<span id="cb3-8"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
-<span id="cb3-9"><a></a></span>
-<span id="cb3-10"><a></a><span class="kw">[*.{md,qmd}]</span></span>
-<span id="cb3-11"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
-<span id="cb3-12"><a></a><span class="dt">                RedHat,\</span></span>
-<span id="cb3-13"><a></a><span class="dt">                Vale</span></span>
-<span id="cb3-14"><a></a></span>
-<span id="cb3-15"><a></a><span class="co"># Disable</span></span>
-<span id="cb3-16"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-17"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-18"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-19"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-20"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-21"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-22"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-23"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-24"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-25"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-26"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-27"><a></a></span>
-<span id="cb3-28"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
-<span id="cb3-29"><a></a><span class="kw">[.github/styles/**]</span></span>
-<span id="cb3-30"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a></a><span class="dt">           RedHat,\</span></span>
+<span id="cb3-6"><a></a><span class="dt">           write-good</span></span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="kw">[formats]</span></span>
+<span id="cb3-9"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="kw">[*.{md,qmd}]</span></span>
+<span id="cb3-12"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb3-13"><a></a><span class="dt">                RedHat,\</span></span>
+<span id="cb3-14"><a></a><span class="dt">                Vale,\</span></span>
+<span id="cb3-15"><a></a><span class="dt">                write-good</span></span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a><span class="co"># Disable</span></span>
+<span id="cb3-18"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-19"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-20"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-21"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-22"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-23"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-24"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-25"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-26"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-27"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-28"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-29"><a></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-30"><a></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-31"><a></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-32"><a></a></span>
+<span id="cb3-33"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb3-34"><a></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb3-35"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
