@@ -35,12 +35,16 @@ organisation.
 1. Create an `admin` repo (or an alternative of your choosing) within your
    organisation.
 2. Add the settings for the `org`, `suborgs`, and `repos` in YAML files.
-3. Deploy and install the app. Alternatively, the `safe-settings` can be run
-   with GitHub Actions.
+3. Deploy and install the app. The `safe-settings` can also be run with GitHub
+   Actions.
 
 # App Overview
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## {data-menu-title="Overview (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - In `safe-settings`, all the settings are stored centrally in an `admin` repo
   within the organisation. Unlike the
@@ -152,7 +156,11 @@ overridevalidators:
       return true
 ```
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Performance {data-menu-title="Performance (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 When there are 1000s of repos to be managed -- and there is a global settings
 change -- safe-settings will have to work efficiently and only make the
@@ -175,7 +183,7 @@ implemented:
 
 ## Performance {data-menu-title="Performance (iii)"}
 
-- The PR check will only provide a summary of errors and changes (providing the
+- The PR check will only give a summary of errors and changes (providing the
   details of changes for 1000s of repos will error out).
 - To ensure it handles updates to GitHub intelligently, it will compare the
   changes with the settings in GitHub, and will call the API only if there are
@@ -224,8 +232,8 @@ The following can be configured:
 ## Things to Note
 
 - Label colour can also start with `#`, e.g. `color: '#F341B2'`. Make sure to
-  wrap it with quotes!
-- Each top-level element under branch protection must be filled (eg:
+  wrap it with quotes.
+- Each top-level element under branch protection must be filled (for example:
   `required_pull_request_reviews`, `required_status_checks`, `enforce_admins`
   and `restrictions`). If you do not want to use one of them you must set it to
   `null` (see comments in the example above). Otherwise, none of the settings
@@ -476,7 +484,7 @@ jobs:
 
 See
 <https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
-for my previous talk on Renovate.
+for my earlier talk on Renovate.
 
 ```{.json5 code-line-numbers="2|3|4-13"}
 {
@@ -507,7 +515,11 @@ for my previous talk on Renovate.
 - Disable webhook (assuming using GHA workflow).
 - Give the following permissions:
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Permissions {data-menu-title="Permissions (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ### Repository
 
@@ -519,7 +531,11 @@ for my previous talk on Renovate.
 |           | Contents          | Variables     |
 |           | Custom properties |               |
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Permissions {data-menu-title="Permissions (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ### Organisation
 
@@ -532,7 +548,11 @@ for my previous talk on Renovate.
 
 None
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Next Steps {data-menu-title="Next Septs (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ::: {layout-ncol=2}
 
@@ -607,7 +627,7 @@ public: false
 ## {data-menu-title="Summary"}
 
 - The ability to manage repository settings through version control.
-- Can create and/or restrict what repositories are made.
+- Can create and restrict what repositories are made.
 - Can relax in the knowledge that new repositories will have settings that you
   expect.
 - Quick even with many settings applied.

@@ -30,7 +30,11 @@ title: "Linting Prose with Vale"
 
 # Vale
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## What is Vale? {data-menu-title="What is Vale? (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 Vale is a command-line tool that brings code-like linting to prose. Vale is
 cross-platform, written in Go, and
@@ -40,7 +44,7 @@ Vale is not a general-purpose writing aid. It does not teach you how to write;
 it is a tool for writers.
 
 Vale focuses (primarily) on the style of writing rather than its grammatical
-correctness—making it fundamentally different from, for example,
+correctness: making it fundamentally different from, for example,
 [Grammarly](https://www.grammarly.com).
 
 ## What is Vale? {data-menu-title="What is Vale? (ii)"}
@@ -49,7 +53,7 @@ correctness—making it fundamentally different from, for example,
 
 ::: {#first-column}
 
-Vale focuses on ensuring consistency across multiple authors (according to
+Vale focuses on ensuring consistency across many authors (according to
 customisable guidelines) rather than the general "correctness" of a single
 author's work.
 
@@ -108,7 +112,7 @@ swap:
 ::: {#first-column}
 
 This level of understanding gives you fine-grained control over the linting
-process, including the ability to limit rules to certain sections (e.g. only
+process. This includes the ability to limit rules to certain sections (e.g. only
 headings) or ignore sections entirely (block and inline code are ignored by
 default).
 
@@ -118,10 +122,13 @@ default).
 
 :::
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Tech Stack {data-menu-title="Tech Stack? (i)"}
 
-Vale is a 100% open-source, MIT-licensed project that consists of multiple
-parts:
+<!-- vale RedHat.TermsWarnings = YES -->
+
+Vale is a 100% open source, MIT-licensed project that consists of many parts:
 
 | Name    | Tech |                                                                                    Info |
 | ------- | :--- | --------------------------------------------------------------------------------------: |
@@ -144,7 +151,11 @@ parts:
 
 # Setting Up
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## `.vale.ini` {data-menu-title=".vale.ini (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ```{.yaml code-line-numbers="1-2|4-7|8-12"}
 # Core settings appear at the top
@@ -176,7 +187,11 @@ Core settings:
 | IgnoredScopes | enum     | List of inline-level HTML tags to ignore. |
 | SkippedScopes | enum     |  List of block-level HTML tags to ignore. |
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## This Repository {data-menu-title="This Repository (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 The `/.vale.ini` file:
 
@@ -197,7 +212,11 @@ the `.gitignore` file.
 
 One can write their own rules in `/.github/styles/custom`.
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Built-In Packages {data-menu-title="Built-In Packages (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 Vale comes with a single built-in style named `Vale` that implements a few
 rules: `Spelling`, `Terms`, `Avoid` and `Repetition`.
@@ -217,203 +236,11 @@ The following packages can be retrieved with `vale sync`:
 - `write-good`: An implementation of the guidelines enforced by the write-good
   linter.
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Custom Rules {data-menu-title="Custom Rules (i)"}
 
-`/.github/styles/custom/british-spellings.yml`
-
-```{.yaml}
-extends: substitution
-message: Use the British spelling '%s' instead of the US '%s'.
-level: error
-ignorecase: true
-swap:
-  # -our vs. -or
-  ardor: ardour
-  candor: candour
-  color: colour
-  demeanor: demeanour
-  endeavor: endeavour
-  favour: favour
-  fervor: fervour
-  flavor: flavour
-  harbor: harbour
-  honor: honour
-  humor: humour
-  labor: labour
-  neighbor: neighbour
-  odor: odour
-  pavor: pavour
-  rancor: rancour
-  rigor: rigour
-  rumor: rumour
-  savor: savour
-  splendor: splendour
-  succor: succour
-  valour: valour
-  vapor: vapour
-  vigor: vigour
-  # and their derivatives
-  colored: coloured
-  coloring: colouring
-  colors: colours
-  endeavored: endeavoured
-  endeavoring: endeavouring
-  flavored: flavoured
-  flavoring: flavouring
-  honored: honoured
-  honoring: honouring
-  honors: honours
-  humors: humours
-  labored: laboured
-  laboring: labouring
-  labors: labours
-  neighbors: neighbours
-  rumors: rumours
-  splendors: splendours
-  # -re vs. -er
-  caliber: calibre
-  center: centre
-  fiber: fibre
-  luster: lustre
-  meager: meagre
-  meter: metre
-  saber: sabre
-  saltpeter: saltpetre
-  sepulcher: sepulchre
-  theater: theatre
-  # and their derivatives
-  calibers: calibres
-  centers: centres
-  fibers: fibres
-  lusters: lustres
-  meters: metres
-  theaters: theatres
-  # -ise vs. -ize
-  '(\w+)ization\b': $1isation
-  '(\w+)ize\b': $1ise
-  '(\w+)ized\b': $1ised
-  '(\w+)izing\b': $1ising
-  # add other common forms:
-  '(\w+)izable\b': $1isable
-  # -yse vs. -yze
-  '(\w+)yze\b': $1yse"
-  '(\w+)yzed\b': $1ysed
-  '(\w+)yzing\b': $1ysing
-  # double L vs. Single L
-  distill: distil
-  enroll: enrol
-  enrollment: enrolment
-  enthrall: enthral
-  fulfill: fulfil
-  initialed: initialled
-  initialing: initialling
-  instill: instil
-  labeled: labelled
-  labeling: labelling
-  libelous: libellous
-  modeling: modelling
-  signaling: signalling
-  traveler: traveller
-  traveling: travelling
-  traveled: travelled
-  # -ogue vs. -og
-  analog: analogue
-  catalog: catalogue
-  demagog: demagogue
-  dialog: dialogue
-  monolog: monologue
-  pedagog: pedagogue
-  prolog: prologue
-  # ae/oe vs. e
-  airplane: aeroplane
-  anemia: anaemia
-  anesthesia: anaesthesia
-  encyclopedia: encyclopaedia
-  eon: aeon
-  fetus: foetus
-  pediatric: paediatric
-  # -ce vs. -se
-  defense: defence
-  license: licence
-  offense: offence
-  pretense: pretence
-  # miscellaneous specific words
-  aging: ageing
-  aluminum: aluminium
-  authorizer: authoriser
-  buses: busses
-  cipher: cypher
-  cozy: cosy
-  dependent: dependant
-  draft: draught
-  furor: furore
-  gray: grey
-  inquiry: enquiry
-  jail: gaol
-  jewelry: jewellery
-  likable: likeable
-  livable: liveable
-  maneuver: manoeuvre
-  marvelous: marvellous
-  matte: matt
-  mustache: moustache
-  pajamas: pyjamas
-  plow: plough
-  programme: program
-  ratable: rateable
-  reconnoiter: reconnoitre
-  sizable: sizeable
-  skillful: skilful
-  smolder: smoulder
-  somber: sombre
-  specialty: speciality
-  specter: spectre
-  sulfur: sulphur
-  unshakable: unshakeable
-  willful: wilful
-  yogurt: yoghurt
-```
-
-## Custom Rules {data-menu-title="Custom Rules (ii)"}
-
-`/.github/styles/custom/dashes.yml`
-
-```{.yaml}
-extends: existence
-message: Don't put a space before or after a dash.
-nonword: true
-level: warning
-action:
-  name: edit
-  params:
-    - remove
-    - " "
-tokens:
-  - \s[—–]\s
-```
-
-## Custom Rules {data-menu-title="Custom Rules (iii)"}
-
-`/.github/styles/custom/endash.yml`
-
-```{.yaml}
-extends: existence
-message: >-
-  Avoid en dashes ('–'). For hyphenated words, use a hyphen ('-').\nFor
-  parenthesis, use an em dash ('—').
-nonword: true
-level: error
-action:
-  name: edit
-  params:
-    - replace
-    - "-"
-    - —
-tokens:
-  - –
-```
-
-## Custom Rules {data-menu-title="Custom Rules (iv)"}
+<!-- vale RedHat.TermsWarnings = YES -->
 
 `/.github/styles/custom/no-contractions.yml`
 
@@ -460,46 +287,7 @@ swap:
   you're: you are
 ```
 
-## Custom Rules {data-menu-title="Custom Rules (v)"}
-
-`/.github/styles/custom/oxford-comma.yml`
-
-```{.yaml}
-extends: existence
-message: Use the Oxford comma in '%s'.
-scope: sentence
-level: suggestion
-tokens:
-  - (?:[^,]+,){1,}\s\w+\s(?:and|or)
-```
-
-`/.github/styles/custom/spaces.yml`
-
-```{.yaml}
-extends: existence
-message: Use only one space between words and sentences (not two).
-level: error
-nonword: true
-tokens:
-  - "[\\w.?!,()\\-\":] {2,}[\\w.?!,()\\-\":]"
-```
-
-## Custom Rules {data-menu-title="Custom Rules (vi)"}
-
-`/.github/styles/custom/quotes.yml`
-
-```{.yaml}
-extends: existence
-message: Use straight quotes instead of smart quotes.
-level: error
-nonword: true
-action:
-tokens:
-  - “
-  - ”
-  - ‘
-  - ’
-```
+## Custom Rules {data-menu-title="Custom Rules (ii)"}
 
 More rules can be found at: <https://hyperlint.com/vale/rules>.
 
@@ -528,7 +316,11 @@ jobs:
 
 # Demo
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## This Repo {data-menu-title="This Repo (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 [paddyroddy/talks#80](https://github.com/paddyroddy/talks/pull/80/files)
 
@@ -546,9 +338,13 @@ jobs:
 
 ![GitHub](figures/demo3.png)
 
-## Python Tooling
+## ARC Example
+
+<!-- vale RedHat.TermsWarnings = NO -->
 
 [UCL-ARC/python-tooling#541](https://github.com/UCL-ARC/python-tooling/pull/541)
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ![GitHub](figures/demo4.png)
 
@@ -556,11 +352,11 @@ jobs:
 
 ## {data-menu-title="Summary"}
 
-- Vale is a tool I found during my PhD to enforce consistent writing styles.
-- I had used it for LaTeX (which has fewer built in tools), but in reality it is
-  designed for Markdown etc.
+- Vale is a tool used during my PhD to enforce consistent writing styles.
+- Had used it for LaTeX (which has fewer built in tools), but in reality it is
+  designed for Markdown and so on.
 - Brings code-like linting to prose.
 - Extensive set of community written rules (some taken from big company style
   guides).
 - Can easily write your own rules through regex or a mapping.
-- Can turn off rules (i.e. `Vale.Spelling = NO`) in `.vale.ini` or inline.
+- Can turn off rules (`Vale.Spelling = NO`) in `.vale.ini` or inline.

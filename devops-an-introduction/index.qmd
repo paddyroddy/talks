@@ -46,15 +46,15 @@ flowchart TB;
                 "];
 ```
 
-## A New Subgroup?
+## A New Subgroup
 
 - What skills are there currently in the group?
 - Monthly HPC Hour-like meeting?
 - `Area: DevOps` label in `research-software-opportunities`
-- Resume (again) at TI (I will not be there 😞)
+- Resume (again) at TI
 - What training/skills do we want as a group?
 - What overlap does DevOps have with the other subgroups?
-- How can we collaborate with ISD to share training opportunities?
+- How can we work together with ISD to share training opportunities?
 
 ## ISD Training
 
@@ -62,14 +62,18 @@ flowchart TB;
 
 # DevOps
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## What is DevOps? {data-menu-title="What is DevOps? (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 [Wikipedia](https://en.wikipedia.org/wiki/DevOps):
 
-> DevOps is a methodology in the software development and IT industry. Used as a
-> set of practices and tools, DevOps integrates and automates the work of
-> software development (Dev) and IT operations (Ops) as a means for improving
-> and shortening the systems development life cycle. DevOps is complementary to
+> DevOps is a method in the software development and IT industry. Used as a set
+> of practices and tools, DevOps integrates and automates the work of software
+> development (Dev) and IT operations (Ops) as a means for improving and
+> shortening the systems development life cycle. DevOps is complementary to
 > agile software development; several DevOps aspects came from the agile way of
 > working. Automation is an important part of DevOps. Software programmers and
 > architects should use "fitness functions" to keep their software in check.
@@ -171,11 +175,11 @@ flowchart TB;
 
 [Atlassian](https://www.atlassian.com/devops):
 
-> Continuous integration (CI) allows multiple developers to contribute to a
-> single shared repository. When code changes are merged, automated tests are
-> run to ensure correctness before integration. Merging and testing code often
-> help development teams gain reassurance in the quality and predictability of
-> code once deployed.
+> Continuous integration (CI) allows many developers to contribute to a single
+> shared repository. When code changes are merged, automated tests are run to
+> ensure correctness before integration. Merging and testing code often help
+> development teams gain reassurance in the quality and predictability of code
+> once deployed.
 
 :::
 
@@ -197,7 +201,7 @@ flowchart TB;
 
 [Atlassian](https://www.atlassian.com/devops):
 
-> Continuous deployment (CD) allows teams to release features frequently into
+> Continuous deployment (CD) allows teams to release features often into
 > production in an automated fashion. Teams also have the option to deploy with
 > feature flags, delivering new code to users steadily and methodically rather
 > than all at once. This approach improves velocity, productivity, and
@@ -247,7 +251,7 @@ flowchart TB;
 [Atlassian](https://www.atlassian.com/devops):
 
 > Quickly identify and resolve issues that impact product uptime, speed, and
-> functionality. Automatically notify your team of changes, high-risk actions,
+> functionality. Automatically inform your team of changes, high-risk actions,
 > or failures, so you can keep services on.
 
 :::
@@ -297,7 +301,7 @@ flowchart TB;
 - Training opportunities out there
 - Need to identify skill gaps/requirements
 - Join the `#subgroup-devops` Slack channel
-- Talk at TI!
+- Talk at TI
 
 ## {data-menu-title="Fin"}
 
