@@ -313,7 +313,7 @@ jobs:
         with:
           fail_on_error: true
           filter_mode: nofilter
-          reporter: github-check
+          reporter: github-pr-review
 ```
 
 # Demo
