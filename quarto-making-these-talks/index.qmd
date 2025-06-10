@@ -10,7 +10,7 @@ title: "Quarto: Making These Talks"
 
 # Repository Contents
 
-In no particular order.
+In the order the repository files appear in GitHub.
 
 ## `/.github/workflows/add-to-project.yaml`
 
