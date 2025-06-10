@@ -486,7 +486,7 @@ See
 <https://paddyroddy.github.io/talks/renovate-automating-dependency-management>
 for my earlier talk on Renovate.
 
-```{.json5 code-line-numbers="2|3|4-13"}
+```{.json code-line-numbers="2|3|4-13"}
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>UCL-MIRSG/.github//renovate/default-config.json5"],

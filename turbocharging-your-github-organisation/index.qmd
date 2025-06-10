@@ -217,7 +217,7 @@ Organisation-wide `Renovate` configuration, e.g.
 This can be then be used in organisation repositories as follows, e.g.
 `/.renovaterc.json5`.
 
-```{.json5}
+```{.json}
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
