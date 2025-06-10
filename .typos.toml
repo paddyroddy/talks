@@ -3,4 +3,3 @@ extend-glob = [
     "*.qmd",
 ]
 extend-words.promis = "promis"
-extend-words.yse = "yse"
