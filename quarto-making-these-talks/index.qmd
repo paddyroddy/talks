@@ -14,17 +14,24 @@ In the order the repository files appear in GitHub.
 
 ## `/.github/workflows/add-to-project.yaml`
 
+GitHub Action to add issues to project board.
+
 ```{.yaml}
 {{< include ../.github/workflows/add-to-project.yaml >}}
 ```
 
 ## `/.github/workflows/links.yaml`
 
+GitHub Action to perform link checking with [lychee](https://lychee.cli.rs).
+
 ```{.yaml}
 {{< include ../.github/workflows/links.yaml >}}
 ```
 
 ## `/.github/workflows/linting.yaml`
+
+GitHub Action to perform linting with [pre-commit](https://pre-commit.com) and
+[Vale](https://vale.sh).
 
 ```{.yaml}
 {{< include ../.github/workflows/linting.yaml >}}
