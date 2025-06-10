@@ -203,7 +203,7 @@ The `/.vale.ini` file:
 
 The `/.gitignore` file:
 
-```{.text}
+```{.bash}
 # We want to ignore our StylesPath *except* for our local
 # `vocabularies/Base` directory.
 
