@@ -3,7 +3,7 @@ author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
 date: 2025-xx-xx
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
-title: "Quarto: Making These Talks"
+title: "Quarto: Making Talks"
 ---
 
 {{< include /_includes/qr-code.qmd >}}
