@@ -1,0 +1,6 @@
+::: footer
+
+See in action:
+<https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
+
+:::

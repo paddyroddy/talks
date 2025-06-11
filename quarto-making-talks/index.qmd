@@ -297,13 +297,17 @@ title: "Quarto: Making Talks"
 ---
 ```
 
+Sections are then made with `#` and slides are made with `##`.
+
 ## Figures
 
 Figures are included using the standard Markdown pattern.
 
-```{.markdown}
+<!-- prettier-ignore-start -->
+````{.markdown}
 {{< include _slides/figures.qmd >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ##
 
@@ -314,13 +318,75 @@ Figures are included using the standard Markdown pattern.
 Lists are included using the standard Markdown pattern. The `incremental: true`
 settings means they show one-by-one.
 
-```{.markdown}
+<!-- prettier-ignore-start -->
+````{.markdown}
 {{< include _slides/lists.qmd >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ##
 
 {{< include _slides/lists.qmd >}}
+
+## Code Blocks {footer=false}
+
+Code blocks can have fenced code blocks syntax highlighted in the usual way. The
+`code-line-numbers` option allows for control of what numbers you want your
+audience to follow.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/code.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+##
+
+{{< include _slides/code.qmd >}}
+
+## Footers
+
+You can control the footer for a single slide as follows.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/footers.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+##
+
+{{< include _slides/footers.qmd >}}
+
+## Animations {footer=false}
+
+Fragments are used to highlight or incrementally reveal individual elements on a
+slide.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/animations.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+##
+
+{{< include _slides/animations.qmd >}}
+
+## Columns
+
+Columns can be made using `layout-ncol` or the `layout` we saw earlier in the QR
+code slide.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/columns.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+##
+
+{{< include _slides/columns.qmd >}}
 
 # Conclusions
 
