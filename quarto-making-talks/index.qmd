@@ -275,3 +275,15 @@ These are the dependencies for some Python code.
 ```{.text}
 {{< include ../requirements.txt >}}
 ```
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Quarto combines Pandoc and Markdown syntax.
+- Can present slides in the browser or export them as PDF and so on.
+- Can extend functionality with extensions or write your own custom filters.
+- Can display code line-by-line and even run code in presentations.
+- Can re-use slides within a presentation.
+- Easy to start, takes a little time to perfect.
+- More fun.
