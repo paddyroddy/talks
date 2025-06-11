@@ -309,6 +309,19 @@ Figures are included using the standard Markdown pattern.
 
 {{< include _slides/figures.qmd >}}
 
+## Lists
+
+Lists are included using the standard Markdown pattern. The `incremental: true`
+settings means they show one-by-one.
+
+```{.markdown}
+{{< include _slides/lists.qmd >}}
+```
+
+##
+
+{{< include _slides/lists.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}

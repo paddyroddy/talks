@@ -1,0 +1,7 @@
+- Get automated Pull Requests to update your dependencies
+  - Reduce noise by running Renovate on a schedule, for example:
+    - on weekends
+    - outside of working hours
+    - each week
+    - each month
+- Relevant package files are discovered automatically
