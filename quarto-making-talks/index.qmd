@@ -313,7 +313,7 @@ Figures are included using the standard Markdown pattern.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/figures.qmd >}}
 
@@ -328,7 +328,7 @@ settings means they show one-by-one.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/lists.qmd >}}
 
@@ -344,7 +344,7 @@ audience to follow.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/code.qmd >}}
 
@@ -358,7 +358,7 @@ You can control the footer for a single slide as follows.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/footers.qmd >}}
 
@@ -373,7 +373,7 @@ slide.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/animations.qmd >}}
 
@@ -388,7 +388,7 @@ code slide.
 ````
 <!-- prettier-ignore-end -->
 
-##
+## {visibility="uncounted"}
 
 {{< include _slides/columns.qmd >}}
 
