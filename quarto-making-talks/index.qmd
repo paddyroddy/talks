@@ -276,6 +276,10 @@ These are the dependencies for some Python code.
 {{< include ../requirements.txt >}}
 ```
 
+# Demo
+
+Will show some Quarto code and then display it on the next slide.
+
 # Conclusions
 
 ## {data-menu-title="Summary"}
