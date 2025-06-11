@@ -193,9 +193,11 @@ My Vale configuration to lint prose. See my earlier
 A [HTTP 404](https://en.wikipedia.org/wiki/HTTP_404) page for the Quarto
 website.
 
-```{.markdown}
+<!-- prettier-ignore-start -->
+````{.markdown}
 {{< include ../404.qmd >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/LICENCE.txt` {footer=false}
 
@@ -265,9 +267,11 @@ website:
 generate the contents of a page from a list of Quarto documents or other custom
 data.
 
-```{.markdown}
+<!-- prettier-ignore-start -->
+````{.markdown}
 {{< include ../index.qmd >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/requirements.txt`
 
