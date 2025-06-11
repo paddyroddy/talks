@@ -147,7 +147,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 :::
 
-## Renovate {data-menu-title="Renovate (ii)"}
+## Renovate {data-menu-title="Renovate (ii)" footer=false}
 
 Organisation-wide `Renovate` configuration, e.g.
 `/renovate/default-config.json`.
@@ -217,7 +217,7 @@ Organisation-wide `Renovate` configuration, e.g.
 This can be then be used in organisation repositories as follows, e.g.
 `/.renovaterc.json5`.
 
-```{.json5}
+```{.json}
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>UCL-ARC/.github//renovate/default-config.json"],
@@ -247,7 +247,7 @@ Metahooks
 >
 > That said, here is how you can do this with the facilities provided today:
 
-## pre-commit {data-menu-title="pre-commit (ii)"}
+## pre-commit {data-menu-title="pre-commit (ii)" footer=false}
 
 Organisation-wide `pre-commit` configuration, e.g.
 `/precommit/mirsg-hooks.yaml`.
@@ -403,7 +403,7 @@ To set this up a `/.pre-commit-hooks.yaml` must be defined.
   verbose: true
 ```
 
-## pre-commit {data-menu-title="pre-commit (iv)"}
+## pre-commit {data-menu-title="pre-commit (iv)" footer=false}
 
 Which, in turn, calls the script, e.g. `/precommit/run-mirsg-hooks.py`.
 
@@ -461,7 +461,7 @@ repos:
 They can be placed anywhere, but why not cut down on the number of repositories
 and place them in the `.github` repositories?
 
-## Composite Actions {data-menu-title="Composite Actions (ii)"}
+## Composite Actions {data-menu-title="Composite Actions (ii)" footer=false}
 
 Example add to project action used in
 [UCL-MIRSG/.github](https://github.com/UCL-MIRSG/.github), e.g.
