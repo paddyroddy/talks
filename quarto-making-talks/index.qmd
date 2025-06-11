@@ -39,14 +39,23 @@ GitHub Action to perform linting with [pre-commit](https://pre-commit.com) and
 
 ## `/.github/workflows/publish.yaml`
 
+GitHub Action to publish the Quarto website to GitHub Pages.
+
 ```{.yaml}
 {{< include ../.github/workflows/publish.yaml >}}
 ```
 
 ## `/_extensions/`
 
-- [jmbuhr/qrcode](https://github.com/jmbuhr/quarto-qrcode)
-- [quarto-ext/fontawesome](https://github.com/quarto-ext/fontawesome)
+Extensions are a powerful way to change and extend the behaviour of Quarto. Can
+be installed with `quarto add <extension>`, which must be committed to the
+repository.
+
+- [jmbuhr/qrcode](https://github.com/jmbuhr/quarto-qrcode): provides shortcodes
+  for [qrcodejs](https://davidshimjs.github.io/qrcodejs) in Quarto.
+- [quarto-ext/fontawesome](https://github.com/quarto-ext/fontawesome): provides
+  support including free icons provided by
+  [Font Awesome](https://fontawesome.com).
 
 ## `/_filters/slugify.lua`
 
