@@ -578,17 +578,17 @@
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
 <p>The <code>/.gitignore</code> file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {text} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a># We want to ignore our StylesPath *except* for our local</span>
-<span id="cb4-2"><a></a># `vocabularies/Base` directory.</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># We want to ignore our StylesPath *except* for our local</span></span>
+<span id="cb4-2"><a></a><span class="co"># `vocabularies/Base` directory.</span></span>
 <span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>.github/styles/*</span>
-<span id="cb4-5"><a></a>!.github/styles/config/</span>
+<span id="cb4-4"><a></a><span class="ex">.github/styles/*</span></span>
+<span id="cb4-5"><a></a><span class="ex">!.github/styles/config/</span></span>
 <span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>.github/styles/config/*</span>
-<span id="cb4-8"><a></a>!.github/styles/config/vocabularies/</span>
+<span id="cb4-7"><a></a><span class="ex">.github/styles/config/*</span></span>
+<span id="cb4-8"><a></a><span class="ex">!.github/styles/config/vocabularies/</span></span>
 <span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a>.github/styles/config/vocabularies/*</span>
-<span id="cb4-11"><a></a>!.github/styles/config/vocabularies/Base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-10"><a></a><span class="ex">.github/styles/config/vocabularies/*</span></span>
+<span id="cb4-11"><a></a><span class="ex">!.github/styles/config/vocabularies/Base</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Styles specified in <code>Packages</code> can be retrieved by running <code>vale sync</code>, hence the <code>.gitignore</code> file.</p>
 <!-- vale RedHat.TermsWarnings = NO -->
 </section>
@@ -612,7 +612,7 @@
 <li class="fragment"><code>write-good</code>: An implementation of the guidelines enforced by the write-good linter.</li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level2" data-footer="false">
 <h2>Custom Rules</h2>
 <p>More rules can be found at: <a href="https://hyperlint.com/vale/rules" class="uri">https://hyperlint.com/vale/rules</a>.</p>
 <p><code>/.github/styles/custom/no-contractions.yml</code></p>

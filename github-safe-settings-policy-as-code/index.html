@@ -690,20 +690,20 @@
 <section class="slide level2">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/.renovaterc.json5">Renovate Configuration</a></h2>
 <p>See <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management" class="uri">https://paddyroddy.github.io/talks/renovate-automating-dependency-management</a> for my earlier talk on Renovate.</p>
-<div class="sourceCode" id="cb6" data-code-line-numbers="2|3|4-13"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>{</span>
-<span id="cb6-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
-<span id="cb6-3"><a></a>  extends: ["github&gt;UCL-MIRSG/.github//renovate/default-config.json5"],</span>
-<span id="cb6-4"><a></a>  customManagers: [</span>
-<span id="cb6-5"><a></a>    {</span>
-<span id="cb6-6"><a></a>      customType: "regex",</span>
-<span id="cb6-7"><a></a>      description: "Update GitHub Safe-Settings version",</span>
-<span id="cb6-8"><a></a>      fileMatch: [".github/workflows/safe-settings.yaml$"],</span>
-<span id="cb6-9"><a></a>      matchStrings: ["SAFE_SETTINGS_VERSION:\\s(?&lt;currentValue&gt;.*)"],</span>
-<span id="cb6-10"><a></a>      depNameTemplate: "github/safe-settings",</span>
-<span id="cb6-11"><a></a>      datasourceTemplate: "github-releases",</span>
-<span id="cb6-12"><a></a>    },</span>
-<span id="cb6-13"><a></a>  ],</span>
-<span id="cb6-14"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-code-line-numbers="2|3|4-13"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a></a><span class="fu">{</span></span>
+<span id="cb6-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb6-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-MIRSG/.github//renovate/default-config.json5"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-4"><a></a>  <span class="er">customManagers</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-5"><a></a>    <span class="fu">{</span></span>
+<span id="cb6-6"><a></a>      <span class="er">customType</span><span class="fu">:</span> <span class="st">"regex"</span><span class="fu">,</span></span>
+<span id="cb6-7"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Update GitHub Safe-Settings version"</span><span class="fu">,</span></span>
+<span id="cb6-8"><a></a>      <span class="er">fileMatch</span><span class="fu">:</span> <span class="ot">[</span><span class="st">".github/workflows/safe-settings.yaml$"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-9"><a></a>      <span class="er">matchStrings</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"SAFE_SETTINGS_VERSION:</span><span class="ch">\\</span><span class="st">s(?&lt;currentValue&gt;.*)"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-10"><a></a>      <span class="er">depNameTemplate</span><span class="fu">:</span> <span class="st">"github/safe-settings"</span><span class="fu">,</span></span>
+<span id="cb6-11"><a></a>      <span class="er">datasourceTemplate</span><span class="fu">:</span> <span class="st">"github-releases"</span><span class="fu">,</span></span>
+<span id="cb6-12"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-13"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-14"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -880,7 +880,7 @@
 <li class="fragment">Can deploy in many different ways.</li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level2" data-footer="false">
 <h2>Demo</h2>
 <p><a href="https://github.com/UCL-MIRSG/.github/actions"><img data-src="figures/demo.png"></a></p>
 

@@ -372,7 +372,7 @@
 </div>
 </div>
 </section>
-<section class="slide level2" data-menu-title="Renovate (ii)">
+<section class="slide level2" data-menu-title="Renovate (ii)" data-footer="false">
 <h2>Renovate</h2>
 <p>Organisation-wide <code>Renovate</code> configuration, e.g. <code>/renovate/default-config.json</code>. <a href="https://github.com/UCL-ARC/.github/tree/main/renovate">UCL-ARC/.github</a>:</p>
 <div class="sourceCode" id="cb2" data-code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a></a><span class="fu">{</span></span>
@@ -435,10 +435,10 @@
 <section class="slide level2" data-menu-title="Renovate (iii)">
 <h2>Renovate</h2>
 <p>This can be then be used in organisation repositories as follows, e.g. <code>/.renovaterc.json5</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json5 number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>{</span>
-<span id="cb3-2"><a></a>  $schema: "https://docs.renovatebot.com/renovate-schema.json",</span>
-<span id="cb3-3"><a></a>  extends: ["github&gt;UCL-ARC/.github//renovate/default-config.json"],</span>
-<span id="cb3-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a></a><span class="fu">{</span></span>
+<span id="cb3-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-ARC/.github//renovate/default-config.json"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-4"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2" data-menu-title="Renovate (iv)">
 <h2>Renovate</h2>
@@ -456,7 +456,7 @@
 <p>That said, here is how you can do this with the facilities provided today:</p>
 </blockquote>
 </section>
-<section class="slide level2" data-menu-title="pre-commit (ii)">
+<section class="slide level2" data-menu-title="pre-commit (ii)" data-footer="false">
 <h2>pre-commit</h2>
 <p>Organisation-wide <code>pre-commit</code> configuration, e.g. <code>/precommit/mirsg-hooks.yaml</code>. <a href="https://github.com/UCL-MIRSG/.github/blob/main/precommit/mirsg-hooks.yaml">UCL-MIRSG/.github</a>:</p>
 <div class="sourceCode" id="cb4" data-code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .crt$</span></span>
@@ -604,7 +604,7 @@
 <span id="cb5-6"><a></a><span class="at">  </span><span class="fu">require_serial</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb5-7"><a></a><span class="at">  </span><span class="fu">verbose</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section class="slide level2" data-menu-title="pre-commit (iv)">
+<section class="slide level2" data-menu-title="pre-commit (iv)" data-footer="false">
 <h2>pre-commit</h2>
 <p>Which, in turn, calls the script, e.g.&nbsp;<code>/precommit/run-mirsg-hooks.py</code>.</p>
 <div class="sourceCode" id="cb6" data-code-line-numbers="1|2-4|6|9-22|25-26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co">#!/usr/bin/env python</span></span>
@@ -652,7 +652,7 @@
 </blockquote>
 <p>They can be placed anywhere, but why not cut down on the number of repositories and place them in the <code>.github</code> repositories?</p>
 </section>
-<section class="slide level2" data-menu-title="Composite Actions (ii)">
+<section class="slide level2" data-menu-title="Composite Actions (ii)" data-footer="false">
 <h2>Composite Actions</h2>
 <p>Example add to project action used in <a href="https://github.com/UCL-MIRSG/.github">UCL-MIRSG/.github</a>, e.g. <code>/actions/add-to-project/action.yml</code>.</p>
 <div class="sourceCode" id="cb8" data-code-line-numbers="1-2|4|5-7|9-11|13-15|17|17-18|17-19|20-25|27-31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add Issues to Project</span></span>
