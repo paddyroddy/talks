@@ -8,9 +8,45 @@ title: "Quarto: Making Talks"
 
 {{< include /_includes/qr-code.qmd >}}
 
+# Quarto
+
+## Motivation
+
+- Always found making presentations tedious.
+- Prefer non-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editors since
+  discovering LaTeX.
+- [LaTeX Beamer](https://www.overleaf.com/learn/latex/Beamer) presentations are
+  heavy duty and look rubbish.
+- Wanted to be able to version control my slides.
+- Was never sure where to store my slides.
+- No real record of my talks, so little motivation to give them.
+- Quarto allows me to make lightweight, distributable slides that look great.
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## What is Quarto {data-menu-title="What is Quarto (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+An open source scientific and technical publishing system
+
+- Author using `Jupyter` notebooks or with plain text markdown in your favourite
+  editor.
+- Create dynamic content with `Python`, `R`, `Julia`, and `Observable`.
+- Publish reproducible, production quality articles, presentations, dashboards,
+  websites, blogs, and books in `HTML`, `PDF`, `Microsoft Word`, `ePub`, and
+  more.
+
+## What is Quarto {data-menu-title="What is Quarto (ii)"}
+
+- Share knowledge and insights organisation-wide by publishing to
+  `Posit Connect`, `Confluence`, or other publishing systems.
+- Write using `Pandoc` markdown, including equations, citations, crossrefs,
+  figure panels, callouts, advanced layout, and more.
+
 # Repository Contents
 
-In the order the repository files appear on GitHub.
+My setup. In the order the repository files appear on GitHub.
 
 ## `/.github/workflows/add-to-project.yaml` {footer=false}
 
@@ -222,9 +258,9 @@ website:
 
 ## `/index.qmd` {footer=false}
 
-[Listings](https://quarto.org/docs/websites/website-listings.html) enable one to
-automatically generate the contents of a page from a list of Quarto documents or
-other custom data.
+[Listings](https://quarto.org/docs/websites/website-listings.html) automatically
+generate the contents of a page from a list of Quarto documents or other custom
+data.
 
 ```{.markdown}
 {{< include ../index.qmd >}}
@@ -232,9 +268,9 @@ other custom data.
 
 ## `/requirements.txt`
 
-Some talks include executable
-[code chunks](https://quarto.org/docs/visual-editor/technical.html#code-chunks)
-so these dependencies are for that Python code.
+Some talks include
+[executable programs](https://quarto.org/docs/visual-editor/technical.html#code-chunks).
+These are the dependencies for some Python code.
 
 ```{.text}
 {{< include ../requirements.txt >}}
