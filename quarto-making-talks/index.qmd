@@ -299,6 +299,8 @@ title: "Quarto: Making Talks"
 
 ## Figures
 
+Figures are included using the standard Markdown pattern.
+
 ```{.markdown}
 {{< include _slides/figures.qmd >}}
 ```

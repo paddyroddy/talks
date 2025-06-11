@@ -16,17 +16,17 @@ title: Linting Prose with Vale
 
 ::: {#first-column}
 
-![ukrse.slack.com](figures/slack.png)
+![ukrse.slack.com](_figures/slack.png)
 
 :::
 
-[![Datadog](figures/blog.png){width=80%}](https://www.datadoghq.com/blog/engineering/how-we-use-vale-to-improve-our-documentation-editing-process)
+[![Datadog](_figures/blog.png){width=80%}](https://www.datadoghq.com/blog/engineering/how-we-use-vale-to-improve-our-documentation-editing-process)
 
 :::
 
 ## PhD Thesis
 
-[![GitHub](figures/phd.png){width=60%}](https://github.com/paddyroddy/phd-thesis)
+[![GitHub](_figures/phd.png){width=60%}](https://github.com/paddyroddy/phd-thesis)
 
 # Vale
 
@@ -59,7 +59,7 @@ author's work.
 
 :::
 
-![vale.sh](figures/consistency.png)
+![vale.sh](_figures/consistency.png)
 
 :::
 
@@ -75,7 +75,7 @@ file format (and, optionally, regular expressions).
 
 :::
 
-![vale.sh](figures/customisable.png)
+![vale.sh](_figures/customisable.png)
 
 :::
 
@@ -118,7 +118,7 @@ default).
 
 :::
 
-![vale.sh](figures/markdown.png)
+![vale.sh](_figures/markdown.png)
 
 :::
 
@@ -326,19 +326,19 @@ jobs:
 
 [paddyroddy/talks#80](https://github.com/paddyroddy/talks/pull/80/files)
 
-![GitHub](figures/demo1.png)
+![GitHub](_figures/demo1.png)
 
 ## This Repo {data-menu-title="This Repo (ii)"}
 
 [paddyroddy/talks#82](https://github.com/paddyroddy/talks/pull/82/files)
 
-![GitHub](figures/demo2.png)
+![GitHub](_figures/demo2.png)
 
 ## This Repo {data-menu-title="This Repo (iii)"}
 
 [paddyroddy/talks#79](https://github.com/paddyroddy/talks/pull/79/files)
 
-![GitHub](figures/demo3.png)
+![GitHub](_figures/demo3.png)
 
 ## ARC Example
 
@@ -348,7 +348,7 @@ jobs:
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-![GitHub](figures/demo4.png)
+![GitHub](_figures/demo4.png)
 
 # Conclusions
 
