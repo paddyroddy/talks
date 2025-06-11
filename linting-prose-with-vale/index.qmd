@@ -244,7 +244,7 @@ The following packages can be retrieved with `vale sync`:
 - `write-good`: An implementation of the guidelines enforced by the write-good
   linter.
 
-## Custom Rules
+## Custom Rules {footer=false}
 
 More rules can be found at: <https://hyperlint.com/vale/rules>.
 

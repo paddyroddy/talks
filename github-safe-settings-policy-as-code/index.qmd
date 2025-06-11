@@ -635,6 +635,6 @@ public: false
 - Hosted on <https://github.com/github>.
 - Can deploy in many different ways.
 
-## Demo
+## Demo {footer=false}
 
 [![](figures/demo.png)](https://github.com/UCL-MIRSG/.github/actions)
