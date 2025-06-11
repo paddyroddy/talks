@@ -220,7 +220,7 @@ the metadata defined at the project level.
 
 <!-- Here explicitly to avoid processing of the shortcode commands -->
 
-```{.yaml code-line-numbers="2-3|5|5-6|5-7|5,8|8-9|10|11-12|13|14|15|16|17|18-19|20|21|22|24|24-25|26|27|27-28|27-30|28,31-32|33"}
+```{.yaml code-line-numbers="2-3|5|5-6|5-7|5,8|8-9|10|11-12|13|14|15|16|17|18-19|20-22|23|24|25|27|27-28|29|30|30-31|30-33|31,34-35|36"}
 ---
 project:
   type: website
@@ -240,6 +240,9 @@ format:
     link-external-icon: true
     mermaid:
       theme: dark
+    menu:
+      hideMissingTitles: true
+      useTextContentForMissingTitles: false
     slide-number: true
     theme: dark
     transition: fade
@@ -279,6 +282,30 @@ These are the dependencies for some Python code.
 # Demo
 
 Will show some Quarto code and then display it on the next slide.
+
+## Title Slide
+
+Each talk must start with some YAML front matter metadata.
+
+```{.yaml}
+---
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+date: 2025-xx-xx
+format: revealjs
+subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
+title: "Quarto: Making Talks"
+---
+```
+
+## Figures
+
+```{.markdown}
+{{< include slides/figures.qmd >}}
+```
+
+##
+
+{{< include slides/figures.qmd >}}
 
 # Conclusions
 

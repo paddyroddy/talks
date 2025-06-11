@@ -17,6 +17,9 @@ format:
     link-external-icon: true
     mermaid:
       theme: dark
+    menu:
+      hideMissingTitles: true
+      useTextContentForMissingTitles: false
     slide-number: true
     theme: dark
     transition: fade
