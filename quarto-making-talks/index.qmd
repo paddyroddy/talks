@@ -300,12 +300,12 @@ title: "Quarto: Making Talks"
 ## Figures
 
 ```{.markdown}
-{{< include slides/figures.qmd >}}
+{{< include _slides/figures.qmd >}}
 ```
 
 ##
 
-{{< include slides/figures.qmd >}}
+{{< include _slides/figures.qmd >}}
 
 # Conclusions
 
