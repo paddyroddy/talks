@@ -497,6 +497,18 @@ with open("_slides/embedded.qmd") as f:
 
 {{< include _slides/embedded.qmd >}}
 
+## Preview Websites
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/preview.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/preview.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}

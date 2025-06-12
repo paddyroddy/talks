@@ -39,15 +39,7 @@ Reasons you might have heard of it:
 
 ## Tutorials
 
-```{=html}
-<iframe
-    height="550"
-    src="https://ibis-project.org/tutorials/getting_started"
-    title="Ibis Documentation"
-    width="250"
->
-</iframe>
-```
+{{< include /quarto-making-talks/_slides/preview.qmd >}}
 
 ```{=html}
 <iframe
