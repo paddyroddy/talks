@@ -52,34 +52,42 @@ My setup. In the order the repository files appear on GitHub.
 
 GitHub Action to add issues to project board.
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.github/workflows/add-to-project.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.github/workflows/links.yaml`
 
 GitHub Action to perform link checking with [lychee](https://lychee.cli.rs).
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.github/workflows/links.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.github/workflows/linting.yaml` {footer=false}
 
 GitHub Action to perform linting with [pre-commit](https://pre-commit.com) and
 [Vale](https://vale.sh).
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.github/workflows/linting.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.github/workflows/publish.yaml`
 
 GitHub Action to publish the Quarto website to GitHub Pages.
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.github/workflows/publish.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/_extensions/`
 
@@ -99,9 +107,11 @@ If the base features of Pandoc and Quarto do not do exactly what you need, you
 can likely create a [Pandoc Filter](https://pandoc.org/filters.html) that
 bridges the gap. This filter slugifies the given title to be used within a URL.
 
-```{.lua}
+<!-- prettier-ignore-start -->
+````{.lua}
 {{< include ../_filters/slugify.lua >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/_includes/qr-code.qmd`
 
@@ -134,9 +144,11 @@ branding for your website.
 
 Ignore standard Quarto and Vale files.
 
-```{.bash}
+<!-- prettier-ignore-start -->
+````{.bash}
 {{< include ../.gitignore >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.pre-commit-config.yaml`
 
@@ -147,17 +159,21 @@ They include: `adrienverge/yamllint`, `crate-ci/typos`,
 `Lucas-C/pre-commit-hooks`, `pappasam/toml-sort`, `pre-commit/pre-commit-hooks`,
 `rbubley/mirrors-prettier`, `rhysd/actionlint`, `shellcheck-py/shellcheck-py`.
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.pre-commit-config.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.prettierrc.yaml`
 
 Configures [Prettier](https://prettier.io) to treat Quarto files as Markdown.
 
-```{.yaml}
+<!-- prettier-ignore-start -->
+````{.yaml}
 {{< include ../.prettierrc.yaml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.renovaterc.json5`
 
@@ -166,27 +182,33 @@ Inherits my
 See my earlier
 [talk on Renovate](https://paddyroddy.github.io/talks/renovate-automating-dependency-management).
 
-```{.json}
+<!-- prettier-ignore-start -->
+````{.json}
 {{< include ../.renovaterc.json5 >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.typos.toml`
 
 Configures known exemptions from the [typos](https://github.com/crate-ci/typos)
 spell checker.
 
-```{.toml}
+<!-- prettier-ignore-start -->
+````{.toml}
 {{< include ../.typos.toml >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/.vale.ini` {footer=false}
 
 My Vale configuration to lint prose. See my earlier
 [talk on Vale](https://paddyroddy.github.io/talks/linting-prose-with-vale).
 
-```{.ini}
+<!-- prettier-ignore-start -->
+````{.ini}
 {{< include ../.vale.ini >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/404.qmd`
 
@@ -203,17 +225,21 @@ website.
 
 `Creative Commons Attribution Share Alike 4.0 International` licence.
 
-```{.text}
+<!-- prettier-ignore-start -->
+````{.text}
 {{< include ../LICENCE.txt >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/README.md`
 
 The repository `README`, needs some work…
 
-```{.markdown}
+<!-- prettier-ignore-start -->
+````{.markdown}
 {{< include ../README.md >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 ## `/_quarto.yml` {footer=false}
 
@@ -279,9 +305,11 @@ Some talks include
 [executable programs](https://quarto.org/docs/visual-editor/technical.html#code-chunks).
 These are the dependencies for some Python code.
 
-```{.text}
+<!-- prettier-ignore-start -->
+````{.text}
 {{< include ../requirements.txt >}}
-```
+````
+<!-- prettier-ignore-end -->
 
 # Demo
 
