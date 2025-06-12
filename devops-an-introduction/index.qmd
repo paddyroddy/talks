@@ -26,7 +26,7 @@ title: "DevOps: An Introduction"
 
 ## ISD Training
 
-![](_figures/isd.png)
+![](figures/isd.png)
 
 # DevOps
 
@@ -52,7 +52,7 @@ title: "DevOps: An Introduction"
 
 ## DevOps Lifecycle
 
-![Atlassian](_figures/lifecycle.png)
+![Atlassian](figures/lifecycle.png)
 
 ## Discover
 
@@ -71,8 +71,8 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Jira](_figures/jira.png){width=35%} ![Trello](_figures/trello.png){width=100%}
-![Confluence](_figures/confluence.png){width=35%}
+![Jira](figures/jira.png){width=35%} ![Trello](figures/trello.png){width=100%}
+![Confluence](figures/confluence.png){width=35%}
 
 :::
 
@@ -94,9 +94,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Azure Boards](_figures/azure_boards.png){width=35%}
-![Asana](_figures/asana.png){width=100%}
-![Monday.com](_figures/monday.png){width=100%}
+![Azure Boards](figures/azure_boards.png){width=35%}
+![Asana](figures/asana.png){width=100%}
+![Monday.com](figures/monday.png){width=100%}
 
 :::
 
@@ -118,9 +118,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Jenkins](_figures/jenkins.png){width=35%}
-![GitLab CI](_figures/gitlab_ci.png){width=35%}
-![GitHub Actions](_figures/github_actions.png){width=35%}
+![Jenkins](figures/jenkins.png){width=35%}
+![GitLab CI](figures/gitlab_ci.png){width=35%}
+![GitHub Actions](figures/github_actions.png){width=35%}
 
 :::
 
@@ -144,9 +144,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Selenium](_figures/selenium.png){width=35%}
-![JUnit](_figures/junit.png){width=35%}
-![Postman](_figures/postman.png){width=35%}
+![Selenium](figures/selenium.png){width=35%}
+![JUnit](figures/junit.png){width=35%}
+![Postman](figures/postman.png){width=35%}
 
 :::
 
@@ -170,9 +170,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Ansible](_figures/ansible.png){width=35%}
-![Terraform](_figures/terraform.png){width=35%}
-![Kubernetes](_figures/kubernetes.png){width=35%}
+![Ansible](figures/ansible.png){width=35%}
+![Terraform](figures/terraform.png){width=35%}
+![Kubernetes](figures/kubernetes.png){width=35%}
 
 :::
 
@@ -194,8 +194,8 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Docker](_figures/docker.png){width=35%}
-![Puppet](_figures/puppet.png){width=35%} ![Chef](_figures/chef.png){width=35%}
+![Docker](figures/docker.png){width=35%}
+![Puppet](figures/puppet.png){width=35%} ![Chef](figures/chef.png){width=35%}
 
 :::
 
@@ -217,9 +217,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Prometheus](_figures/prometheus.png){width=35%}
-![Grafana](_figures/grafana.png){width=35%}
-![New Relic](_figures/new_relic.png){width=35%}
+![Prometheus](figures/prometheus.png){width=35%}
+![Grafana](figures/grafana.png){width=35%}
+![New Relic](figures/new_relic.png){width=35%}
 
 :::
 
@@ -241,9 +241,9 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Slack](_figures/slack.png){width=35%}
-![Microsoft Teams](_figures/microsoft_teams.png){width=35%}
-![PagerDuty](_figures/pager_duty.png){width=35%}
+![Slack](figures/slack.png){width=35%}
+![Microsoft Teams](figures/microsoft_teams.png){width=35%}
+![PagerDuty](figures/pager_duty.png){width=35%}
 
 :::
 
@@ -264,4 +264,4 @@ title: "DevOps: An Introduction"
 
 ## {data-menu-title="Fin"}
 
-![](_figures/meme.jpg)
+![](figures/meme.jpg)

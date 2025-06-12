@@ -16,23 +16,23 @@ title: "Renovate: Automating Dependency Management"
 
 ## Automation Saves Time
 
-![xkcd:1319](_figures/automation.png)
+![xkcd:1319](figures/automation.png)
 
 ## We Have All Done This At Some Point
 
-![](_figures/bump.png)
+![](figures/bump.png)
 
 ## What About Security Updates
 
-![](_figures/dependabot.png)
+![](figures/dependabot.png)
 
 ## Why Update
 
-![xkcd:2224](_figures/updates.png)
+![xkcd:2224](figures/updates.png)
 
 # Renovate
 
-![](_figures/renovate.jpg)
+![](figures/renovate.jpg)
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -76,7 +76,7 @@ title: "Renovate: Automating Dependency Management"
 
 <https://github.com/apps/renovate>
 
-![](_figures/application.png)
+![](figures/application.png)
 
 ## Example Config
 
@@ -122,11 +122,11 @@ See in action:
 
 ::: {layout-ncol=2}
 
-![](_figures/pull_requests_1.png)
+![](figures/pull_requests_1.png)
 
 ::: {.fragment .fade-left}
 
-![](_figures/pull_requests_2.png)
+![](figures/pull_requests_2.png)
 
 :::
 
@@ -136,11 +136,11 @@ See in action:
 
 ::: {layout-ncol=2}
 
-![](_figures/logging_1.png)
+![](figures/logging_1.png)
 
 ::: {.fragment .fade-left}
 
-![](_figures/logging_2.png)
+![](figures/logging_2.png)
 
 :::
 
@@ -169,4 +169,4 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 
 <https://developer.mend.io>
 
-![](_figures/demo.jpg)
+![](figures/demo.jpg)

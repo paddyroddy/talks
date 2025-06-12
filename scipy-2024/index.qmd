@@ -33,7 +33,7 @@ Reasons you might have heard of it:
 
 :::
 
-![](_figures/bridge.gif)
+![](figures/bridge.gif)
 
 :::
 
@@ -123,21 +123,21 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/national-forest/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/national-forest/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/2.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/national-forest/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/3.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/national-forest/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/4.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/national-forest/5.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/5.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/national-forest/6.jpg){.fragment height=550}
+![](figures/olympic-national-park/national-forest/6.jpg){.fragment height=550}
 
 :::
 
@@ -149,25 +149,25 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/hurricane-ridge/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/2.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/3.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/hurricane-ridge/5.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/5.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/6.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/6.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/7.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/7.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hurricane-ridge/8.jpg){.fragment height=550}
+![](figures/olympic-national-park/hurricane-ridge/8.jpg){.fragment height=550}
 
 :::
 
@@ -179,17 +179,17 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/port-angeles/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/port-angeles/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/port-angeles/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/port-angeles/2.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/port-angeles/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/port-angeles/3.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/port-angeles/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/port-angeles/4.jpg){.fragment height=550}
 
 :::
 
@@ -201,17 +201,17 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/waterfalls/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/waterfalls/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/waterfalls/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/waterfalls/2.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/waterfalls/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/waterfalls/3.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/waterfalls/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/waterfalls/4.jpg){.fragment height=550}
 
 :::
 
@@ -223,25 +223,25 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/beaches/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/2.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/3.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/beaches/5.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/5.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/6.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/6.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/7.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/7.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/beaches/8.jpg){.fragment height=550}
+![](figures/olympic-national-park/beaches/8.jpg){.fragment height=550}
 
 :::
 
@@ -251,9 +251,9 @@ m
 
 ::: {.r-hstack}
 
-![](_figures/olympic-national-park/forks/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/forks/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/forks/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/forks/2.jpg){.fragment height=550}
 
 :::
 
@@ -263,21 +263,21 @@ m
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/hoh-rainforest/1.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/1.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hoh-rainforest/2.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/2.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hoh-rainforest/3.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/3.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/olympic-national-park/hoh-rainforest/4.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/4.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hoh-rainforest/5.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/5.jpg){.fragment height=550}
 
-![](_figures/olympic-national-park/hoh-rainforest/6.jpg){.fragment height=550}
+![](figures/olympic-national-park/hoh-rainforest/6.jpg){.fragment height=550}
 
 :::
 
@@ -317,17 +317,17 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/poo-poo-point/1.jpg){.fragment height=550}
+![](figures/seattle/poo-poo-point/1.jpg){.fragment height=550}
 
-![](_figures/seattle/poo-poo-point/2.jpg){.fragment height=550}
+![](figures/seattle/poo-poo-point/2.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/poo-poo-point/3.jpg){.fragment height=550}
+![](figures/seattle/poo-poo-point/3.jpg){.fragment height=550}
 
-![](_figures/seattle/poo-poo-point/4.jpg){.fragment height=550}
+![](figures/seattle/poo-poo-point/4.jpg){.fragment height=550}
 
 :::
 
@@ -339,25 +339,25 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/museum-of-flight/1.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/1.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/2.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/2.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/3.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/3.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/4.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/museum-of-flight/5.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/5.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/6.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/6.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/7.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/7.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-flight/8.jpg){.fragment height=550}
+![](figures/seattle/museum-of-flight/8.jpg){.fragment height=550}
 
 :::
 
@@ -369,17 +369,17 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/baseball/1.jpg){.fragment height=550}
+![](figures/seattle/baseball/1.jpg){.fragment height=550}
 
-![](_figures/seattle/baseball/2.jpg){.fragment height=550}
+![](figures/seattle/baseball/2.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/baseball/3.jpg){.fragment height=550}
+![](figures/seattle/baseball/3.jpg){.fragment height=550}
 
-![](_figures/seattle/baseball/4.jpg){.fragment height=550}
+![](figures/seattle/baseball/4.jpg){.fragment height=550}
 
 :::
 
@@ -391,25 +391,25 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/tall-buildings/1.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/1.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/2.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/2.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/3.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/3.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/4.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/tall-buildings/5.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/5.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/6.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/6.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/7.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/7.jpg){.fragment height=550}
 
-![](_figures/seattle/tall-buildings/8.jpg){.fragment height=550}
+![](figures/seattle/tall-buildings/8.jpg){.fragment height=550}
 
 :::
 
@@ -421,25 +421,25 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/museum-of-glass/1.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/1.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/2.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/2.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/3.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/3.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/4.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/4.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/museum-of-glass/5.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/5.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/6.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/6.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/7.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/7.jpg){.fragment height=550}
 
-![](_figures/seattle/museum-of-glass/8.jpg){.fragment height=550}
+![](figures/seattle/museum-of-glass/8.jpg){.fragment height=550}
 
 :::
 
@@ -451,17 +451,17 @@ m
 
 ::: {.r-stack}
 
-![](_figures/seattle/pike-place-market/1.jpg){.fragment height=550}
+![](figures/seattle/pike-place-market/1.jpg){.fragment height=550}
 
-![](_figures/seattle/pike-place-market/2.jpg){.fragment height=550}
+![](figures/seattle/pike-place-market/2.jpg){.fragment height=550}
 
 :::
 
 ::: {.r-stack}
 
-![](_figures/seattle/pike-place-market/3.jpg){.fragment height=550}
+![](figures/seattle/pike-place-market/3.jpg){.fragment height=550}
 
-![](_figures/seattle/pike-place-market/4.jpg){.fragment height=550}
+![](figures/seattle/pike-place-market/4.jpg){.fragment height=550}
 
 :::
 
@@ -483,4 +483,4 @@ m
 
 ## {data-menu-title="Fin"}
 
-![](_figures/airport.jpg)
+![](figures/airport.jpg)
