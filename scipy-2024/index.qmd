@@ -12,24 +12,7 @@ title: SciPy 2024
 
 ## Flight
 
-```{python}
-from ipyleaflet import Map, Marker, basemaps, basemap_to_tiles
-heathrow_coords = (51.4680, 0.4551)
-seatac_coords = (47.4436, -122.2961)
-m = Map(
-    basemap=basemap_to_tiles(
-        basemaps.Esri.WorldImagery, "2017-04-08"
-    ),
-    center=(
-        (heathrow_coords[0] + seatac_coords[0]) / 2,
-        (heathrow_coords[1] + seatac_coords[1]) / 2
-    ),
-    zoom=3
-)
-m.add_layer(Marker(location=heathrow_coords))
-m.add_layer(Marker(location=seatac_coords))
-m
-```
+{{< include /quarto-make-talks/_slides/embedded.qmd >}}
 
 ## Tacoma
 
@@ -336,7 +319,24 @@ m
 
 # Holiday: Seattle
 
-{{< include /quarto-making-talks/_slides/embedded.qmd >}}
+```{python}
+from ipyleaflet import Map, Marker, basemaps, basemap_to_tiles
+tacoma_coords = (47.2529, -122.4443)
+seattle_coords = (47.6061, -122.3328)
+m = Map(
+    basemap=basemap_to_tiles(
+        basemaps.Esri.WorldImagery, "2017-04-08"
+    ),
+    center=(
+        (tacoma_coords[0] + seattle_coords[0]) / 2,
+        (tacoma_coords[1] + seattle_coords[1]) / 2
+    ),
+    zoom=9
+)
+m.add_layer(Marker(location=tacoma_coords))
+m.add_layer(Marker(location=seattle_coords))
+m
+```
 
 <!-- vale RedHat.RepeatedWords = NO -->
 <!-- vale Vale.Repetition = NO -->
