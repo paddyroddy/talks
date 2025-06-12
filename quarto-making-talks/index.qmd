@@ -72,7 +72,7 @@ GitHub Action to add issues to project board.
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.github/workflows/add-to-project.yaml >}}
+{{< include /.github/workflows/add-to-project.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -82,7 +82,7 @@ GitHub Action to perform link checking with [lychee](https://lychee.cli.rs).
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.github/workflows/links.yaml >}}
+{{< include /.github/workflows/links.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -93,7 +93,7 @@ GitHub Action to perform linting with [pre-commit](https://pre-commit.com) and
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.github/workflows/linting.yaml >}}
+{{< include /.github/workflows/linting.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -103,7 +103,7 @@ GitHub Action to publish the Quarto website to GitHub Pages.
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.github/workflows/publish.yaml >}}
+{{< include /.github/workflows/publish.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -127,7 +127,7 @@ bridges the gap. This filter slugifies the given title to be used within a URL.
 
 <!-- prettier-ignore-start -->
 ````{.lua}
-{{< include ../_filters/slugify.lua >}}
+{{< include /_filters/slugify.lua >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -156,7 +156,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}}
 Specified in the Quarto configuration, a favicon is a small icon that serves as
 branding for your website.
 
-![<https://paddyroddy.github.io>](../assets/images/favicon.ico)
+![<https://paddyroddy.github.io>](/assets/images/favicon.ico)
 
 ## `/.gitignore`
 
@@ -164,7 +164,7 @@ Ignore standard Quarto and Vale files.
 
 <!-- prettier-ignore-start -->
 ````{.bash}
-{{< include ../.gitignore >}}
+{{< include /.gitignore >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -179,7 +179,7 @@ They include: `adrienverge/yamllint`, `crate-ci/typos`,
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.pre-commit-config.yaml >}}
+{{< include /.pre-commit-config.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -189,7 +189,7 @@ Configures [Prettier](https://prettier.io) to treat Quarto files as Markdown.
 
 <!-- prettier-ignore-start -->
 ````{.yaml}
-{{< include ../.prettierrc.yaml >}}
+{{< include /.prettierrc.yaml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -202,7 +202,7 @@ See my earlier
 
 <!-- prettier-ignore-start -->
 ````{.json}
-{{< include ../.renovaterc.json5 >}}
+{{< include /.renovaterc.json5 >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -213,7 +213,7 @@ spell checker.
 
 <!-- prettier-ignore-start -->
 ````{.toml}
-{{< include ../.typos.toml >}}
+{{< include /.typos.toml >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -224,7 +224,7 @@ My Vale configuration to lint prose. See my earlier
 
 <!-- prettier-ignore-start -->
 ````{.ini}
-{{< include ../.vale.ini >}}
+{{< include /.vale.ini >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -235,7 +235,7 @@ website.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include ../404.qmd >}}
+{{< include /404.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -245,7 +245,7 @@ website.
 
 <!-- prettier-ignore-start -->
 ````{.text}
-{{< include ../LICENCE.txt >}}
+{{< include /LICENCE.txt >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -255,7 +255,7 @@ The repository `README`, needs some work…
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include ../README.md >}}
+{{< include /README.md >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -313,7 +313,7 @@ data.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include ../index.qmd >}}
+{{< include /index.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
@@ -325,7 +325,7 @@ These are the dependencies for some Python code.
 
 <!-- prettier-ignore-start -->
 ````{.text}
-{{< include ../requirements.txt >}}
+{{< include /requirements.txt >}}
 ````
 <!-- prettier-ignore-end -->
 

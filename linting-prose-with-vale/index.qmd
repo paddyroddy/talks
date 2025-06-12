@@ -197,7 +197,7 @@ The `/.vale.ini` file:
 
 <!-- prettier-ignore-start -->
 ````{.ini}
-{{< include ../.vale.ini >}}
+{{< include /.vale.ini >}}
 ````
 <!-- prettier-ignore-end -->
 
