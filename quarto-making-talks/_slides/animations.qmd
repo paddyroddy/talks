@@ -2,7 +2,7 @@ The
 [GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
 setting is required
 
-![](/renovate-automating-dependency-management/_figures/automerge.png)
+![](/renovate-automating-dependency-management/figures/automerge.png)
 
 ::: {.fragment .fade-left}
 
