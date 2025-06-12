@@ -448,6 +448,20 @@ Standard Markdown quoting.
 
 {{< include _slides/quotes.qmd >}}
 
+## Checkboxes
+
+Standard Markdown checkboxes.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/checkboxes.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/checkboxes.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}

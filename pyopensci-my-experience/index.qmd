@@ -90,14 +90,7 @@ title: "pyOpenSci: My Experience"
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-Documentation:
-
-- [ ] **A statement of need** stating problems the software is designed to solve
-      and its target audience in README.
-- [ ] **Installation instructions:** for the development version of the package
-      and any non-standard dependencies in README.
-- [ ] **Vignette(s)** demonstrating major functionality that runs successfully
-      locally.
+{{< include /quarto-making-talks/_slides/checkboxes.qmd >}}
 
 ## Review Process {data-menu-title="Review Process (ii)"}
 
