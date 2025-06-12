@@ -525,6 +525,20 @@ This example shows how to stack figures on top of each other.
 
 {{< include _slides/stacking.qmd >}}
 
+## Tables
+
+Standard markdown tables.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/tables.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/tables.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}
