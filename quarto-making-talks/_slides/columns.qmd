@@ -1,0 +1,11 @@
+::: {layout-ncol=2}
+
+![](/renovate-automating-dependency-management/figures/status_checks_1.png)
+
+::: {.fragment .fade-left}
+
+![](/renovate-automating-dependency-management/figures/status_checks_2.png)
+
+:::
+
+:::

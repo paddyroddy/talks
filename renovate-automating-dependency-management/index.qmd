@@ -12,7 +12,7 @@ title: "Renovate: Automating Dependency Management"
 
 ## Dependencies Are Inevitable
 
-![xkcd:2347](figures/dependency.png)
+{{< include /quarto-making-talks/_slides/figures.qmd >}}
 
 ## Automation Saves Time
 
@@ -40,13 +40,7 @@ title: "Renovate: Automating Dependency Management"
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Get automated Pull Requests to update your dependencies
-  - Reduce noise by running Renovate on a schedule, for example:
-    - on weekends
-    - outside of working hours
-    - each week
-    - each month
-- Relevant package files are discovered automatically
+{{< include /quarto-making-talks/_slides/lists.qmd >}}
 
 ## Why Use Renovate? {data-menu-title="Why Use Renovate? (ii)"}
 
@@ -86,54 +80,9 @@ title: "Renovate: Automating Dependency Management"
 
 ## Example Config
 
-```{.json code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"}
-{
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: [
-    "config:best-practices",
-    "schedule:weekdays",
-    ":assignAndReview(paddyroddy)",
-    ":automergeBranch",
-    ":automergeDigest",
-    ":automergeMinor",
-    ":automergePatch",
-    ":disableDependencyDashboard",
-    ":enablePreCommit",
-    ":label(renovate)",
-    ":maintainLockFilesMonthly",
-    ":noUnscheduledUpdates",
-  ],
-  commitMessageAction: "Renovate:",
-  "git-submodules": {
-    enabled: true,
-  },
-  packageRules: [
-    {
-      description: "Only allow major updates",
-      enabled: false,
-      matchDepNames: ["renovatebot/pre-commit-hooks"],
-      matchUpdateTypes: ["minor", "patch", "pin"],
-    },
-    {
-      description: "Combine updates together",
-      groupName: "paddyroddy/.github",
-      matchDepNames: ["paddyroddy/.github"],
-    },
-    {
-      description: "Shorten commit titles",
-      commitMessageTopic: "{{depName}}",
-      matchManagers: ["github-actions", "pre-commit"],
-    },
-  ],
-}
-```
+{{< include /quarto-making-talks/_slides/code.qmd >}}
 
-::: footer
-
-See in action:
-<https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5>
-
-:::
+{{< include /quarto-making-talks/_slides/footers.qmd >}}
 
 ## Config is Reusable
 
@@ -163,41 +112,11 @@ See in action:
 
 ## Automerging
 
-The
-[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
-setting is required
-
-![](figures/automerge.png)
-
-::: {.fragment .fade-left}
-
-It is **highly recommended** to ensure you have tests that will operate on the
-Renovate branches.
-
-```{.yaml}
-on:
-  push:
-    branches:
-      - main
-      - "renovate/**"
-  pull_request:
-```
-
-:::
+{{< include /quarto-making-talks/_slides/animations.qmd >}}
 
 ## Rulesets - Status Checks
 
-::: {layout-ncol=2}
-
-![](figures/status_checks_1.png)
-
-::: {.fragment .fade-left}
-
-![](figures/status_checks_2.png)
-
-:::
-
-:::
+{{< include /quarto-making-talks/_slides/columns.qmd >}}
 
 ## Rulesets - Pull Requests
 

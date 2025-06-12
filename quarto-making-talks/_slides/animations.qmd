@@ -1,0 +1,21 @@
+The
+[GitHub automerge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)
+setting is required
+
+![](/renovate-automating-dependency-management/figures/automerge.png)
+
+::: {.fragment .fade-left}
+
+It is **highly recommended** to ensure you have tests that will operate on the
+Renovate branches.
+
+```{.yaml}
+on:
+  push:
+    branches:
+      - main
+      - "renovate/**"
+  pull_request:
+```
+
+:::

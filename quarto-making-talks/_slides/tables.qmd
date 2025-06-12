@@ -1,0 +1,4 @@
+| Reusable workflows                                                                           | Composite actions                                                                                                            |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| A YAML file, similar to any standard workflow file                                           | An action containing a bundle of workflow steps                                                                              |
+| Each reusable workflow is a single file in the `.github/workflows` directory of a repository | Each composite action is a separate repository, or a directory, containing an `action.yml` file and, optionally, other files |
