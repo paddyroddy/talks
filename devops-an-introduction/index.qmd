@@ -12,39 +12,7 @@ title: "DevOps: An Introduction"
 
 ## Current Subgroups
 
-```{mermaid}
-flowchart TB;
-    Collaborations --> _["Data Science"] & DevOps & Healthcare & HPC & MIRSG & WebDev;
-    _["Data Science"] -.-> data_science_responsibilities["
-                             AI
-                             Machine learning
-                             Signal processing
-                             Statistics
-                           "];
-    DevOps -.-> ?;
-    Healthcare -.-> healthcare_responsibilities["
-                      EMAP
-                      Hospital projects
-                    "];
-    HPC -.-> hpc_responsibilities["
-               C++
-               FPGAs
-               Fortran
-               GPUs
-               MPI
-               OpenMP
-             "];
-    MIRSG -.-> mirsg_responsibilities["
-                 Medical imaging
-                 OMERO
-                 XNAT
-               "];
-    WebDev -.-> webdev_responsibilities["
-                  CSS
-                  HTML
-                  JavaScript
-                "];
-```
+{{< include _slides/flowcharts.qmd >}}
 
 ## A New Subgroup
 

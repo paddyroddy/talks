@@ -420,6 +420,20 @@ code slide.
 
 {{< include _slides/columns.qmd >}}
 
+## Flowcharts
+
+Flowcharts can be made with [Mermaid](https://mermaid.js.org).
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/flowcharts.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/flowcharts.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}
