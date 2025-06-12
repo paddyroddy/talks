@@ -12,7 +12,7 @@ title: SciPy 2024
 
 ## Flight
 
-{{< include /quarto-make-talks/_slides/embedded.qmd >}}
+{{< include /quarto-making-talks/_slides/embedded.qmd >}}
 
 ## Tacoma
 
