@@ -1,6 +1,6 @@
 ---
 author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
-date: 2025-xx-xx
+date: 2025-09-02
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Quarto: Making Talks"
