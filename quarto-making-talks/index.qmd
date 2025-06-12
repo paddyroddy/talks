@@ -488,7 +488,7 @@ interactive map by using the Python package
 
 `````{python}
 #| output: asis
-with open('_slides/embedded.qmd') as f:
+with open("_slides/embedded.qmd") as f:
     code_content = f.read()
     print(f"````{{.markdown}}\n{code_content}\n````")
 `````
