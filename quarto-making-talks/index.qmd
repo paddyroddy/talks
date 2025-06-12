@@ -539,6 +539,20 @@ Standard markdown tables.
 
 {{< include _slides/tables.qmd >}}
 
+## Callouts
+
+Can include GitHub Markdown-like callouts.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/callouts.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/callouts.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}

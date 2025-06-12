@@ -1,0 +1,7 @@
+::: {.callout-note}
+
+Much of this talk holds true for personal GitHub accounts and GitHub
+organisations. However, it is not always the case. The focus here is solely on
+organisational accounts.
+
+:::
