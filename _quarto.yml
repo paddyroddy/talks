@@ -7,6 +7,7 @@ format:
     theme: darkly
   revealjs:
     callout-appearance: simple
+    code-copy: true
     filters:
       - _filters/slugify.lua
     footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"
@@ -16,6 +17,9 @@ format:
     link-external-icon: true
     mermaid:
       theme: dark
+    menu:
+      hideMissingTitles: true
+      useTextContentForMissingTitles: false
     slide-number: true
     theme: dark
     transition: fade
