@@ -10,7 +10,11 @@ title: "Quarto: Making Talks"
 
 # Quarto
 
-## Motivation
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Motivation {data-menu-title="Motivation (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Always found making presentations tedious.
 - Prefer non-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editors since
@@ -21,6 +25,20 @@ title: "Quarto: Making Talks"
 - Was never sure where to store my slides.
 - No real record of my talks, so little motivation to give them.
 - Quarto allows me to make lightweight, distributable slides that look great.
+
+## Motivation {data-menu-title="Motivation (ii)" footer=false}
+
+Promised this talk before.
+
+```{=html}
+<iframe
+    height="550"
+    src="https://paddyroddy.github.io/talks/pyopensci-my-experience/#/5"
+    title="Earlier Talk"
+    width="1000"
+>
+</iframe>
+```
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
