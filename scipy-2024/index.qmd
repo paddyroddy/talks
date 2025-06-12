@@ -94,33 +94,7 @@ Reasons you might have heard of it:
 
 ## Photos
 
-::: {.r-hstack}
-
-::: {.r-stack}
-
-![](_figures/conference/1.jpg){.fragment height=550}
-
-![](_figures/conference/2.jpg){.fragment height=550}
-
-![](_figures/conference/3.jpg){.fragment height=550}
-
-![](_figures/conference/4.jpg){.fragment height=550}
-
-:::
-
-::: {.r-stack}
-
-![](_figures/conference/5.jpg){.fragment height=550}
-
-![](_figures/conference/6.jpg){.fragment height=550}
-
-![](_figures/conference/7.jpg){.fragment height=550}
-
-![](_figures/conference/8.jpg){.fragment height=550}
-
-:::
-
-:::
+{{< include /quarto-making-talks/_slides/stacking.qmd >}}
 
 # Holiday: Olympic National Park
 

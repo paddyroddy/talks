@@ -497,7 +497,9 @@ with open("_slides/embedded.qmd") as f:
 
 {{< include _slides/embedded.qmd >}}
 
-## Preview Websites
+## Website Previews
+
+Websites can be previewed as follows.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
@@ -508,6 +510,20 @@ with open("_slides/embedded.qmd") as f:
 ## {visibility="uncounted"}
 
 {{< include _slides/preview.qmd >}}
+
+## Stacking
+
+This example shows how to stack figures on top of each other.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/stacking.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/stacking.qmd >}}
 
 # Conclusions
 
