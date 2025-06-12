@@ -434,6 +434,20 @@ Flowcharts can be made with [Mermaid](https://mermaid.js.org).
 
 {{< include _slides/flowcharts.qmd >}}
 
+## Quotes
+
+Standard Markdown quoting.
+
+<!-- prettier-ignore-start -->
+````{.markdown}
+{{< include _slides/quotes.qmd >}}
+````
+<!-- prettier-ignore-end -->
+
+## {visibility="uncounted"}
+
+{{< include _slides/quotes.qmd >}}
+
 # Conclusions
 
 ## {data-menu-title="Summary"}

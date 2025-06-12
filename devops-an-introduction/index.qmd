@@ -12,7 +12,7 @@ title: "DevOps: An Introduction"
 
 ## Current Subgroups
 
-{{< include _slides/flowcharts.qmd >}}
+{{< include /quarto-making-talks/_slides/flowcharts.qmd >}}
 
 ## A New Subgroup
 
@@ -36,15 +36,7 @@ title: "DevOps: An Introduction"
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-[Wikipedia](https://en.wikipedia.org/wiki/DevOps):
-
-> DevOps is a method in the software development and IT industry. Used as a set
-> of practices and tools, DevOps integrates and automates the work of software
-> development (Dev) and IT operations (Ops) as a means for improving and
-> shortening the systems development life cycle. DevOps is complementary to
-> agile software development; many DevOps aspects came from the agile way of
-> working. Automation is an important part of DevOps. Software programmers and
-> architects should use "fitness functions" to keep their software in check.
+{{< include /quarto-making-talks/_slides/quotes.qmd >}}
 
 ## What is DevOps? {data-menu-title="What is DevOps? (ii)"}
 
