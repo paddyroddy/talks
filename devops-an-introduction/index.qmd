@@ -12,39 +12,7 @@ title: "DevOps: An Introduction"
 
 ## Current Subgroups
 
-```{mermaid}
-flowchart TB;
-    Collaborations --> _["Data Science"] & DevOps & Healthcare & HPC & MIRSG & WebDev;
-    _["Data Science"] -.-> data_science_responsibilities["
-                             AI
-                             Machine learning
-                             Signal processing
-                             Statistics
-                           "];
-    DevOps -.-> ?;
-    Healthcare -.-> healthcare_responsibilities["
-                      EMAP
-                      Hospital projects
-                    "];
-    HPC -.-> hpc_responsibilities["
-               C++
-               FPGAs
-               Fortran
-               GPUs
-               MPI
-               OpenMP
-             "];
-    MIRSG -.-> mirsg_responsibilities["
-                 Medical imaging
-                 OMERO
-                 XNAT
-               "];
-    WebDev -.-> webdev_responsibilities["
-                  CSS
-                  HTML
-                  JavaScript
-                "];
-```
+{{< include /quarto-making-talks/_slides/flowcharts.qmd >}}
 
 ## A New Subgroup
 
@@ -58,7 +26,7 @@ flowchart TB;
 
 ## ISD Training
 
-![](figures/isd.png)
+![](_figures/isd.png)
 
 # DevOps
 
@@ -68,15 +36,7 @@ flowchart TB;
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-[Wikipedia](https://en.wikipedia.org/wiki/DevOps):
-
-> DevOps is a method in the software development and IT industry. Used as a set
-> of practices and tools, DevOps integrates and automates the work of software
-> development (Dev) and IT operations (Ops) as a means for improving and
-> shortening the systems development life cycle. DevOps is complementary to
-> agile software development; many DevOps aspects came from the agile way of
-> working. Automation is an important part of DevOps. Software programmers and
-> architects should use "fitness functions" to keep their software in check.
+{{< include /quarto-making-talks/_slides/quotes.qmd >}}
 
 ## What is DevOps? {data-menu-title="What is DevOps? (ii)"}
 
@@ -92,7 +52,7 @@ flowchart TB;
 
 ## DevOps Lifecycle
 
-![Atlassian](figures/lifecycle.png)
+![Atlassian](_figures/lifecycle.png)
 
 ## Discover
 
@@ -111,8 +71,8 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Jira](figures/jira.png){width=35%} ![Trello](figures/trello.png){width=100%}
-![Confluence](figures/confluence.png){width=35%}
+![Jira](_figures/jira.png){width=35%} ![Trello](_figures/trello.png){width=100%}
+![Confluence](_figures/confluence.png){width=35%}
 
 :::
 
@@ -134,9 +94,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Azure Boards](figures/azure_boards.png){width=35%}
-![Asana](figures/asana.png){width=100%}
-![Monday.com](figures/monday.png){width=100%}
+![Azure Boards](_figures/azure_boards.png){width=35%}
+![Asana](_figures/asana.png){width=100%}
+![Monday.com](_figures/monday.png){width=100%}
 
 :::
 
@@ -158,9 +118,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Jenkins](figures/jenkins.png){width=35%}
-![GitLab CI](figures/gitlab_ci.png){width=35%}
-![GitHub Actions](figures/github_actions.png){width=35%}
+![Jenkins](_figures/jenkins.png){width=35%}
+![GitLab CI](_figures/gitlab_ci.png){width=35%}
+![GitHub Actions](_figures/github_actions.png){width=35%}
 
 :::
 
@@ -184,9 +144,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Selenium](figures/selenium.png){width=35%}
-![JUnit](figures/junit.png){width=35%}
-![Postman](figures/postman.png){width=35%}
+![Selenium](_figures/selenium.png){width=35%}
+![JUnit](_figures/junit.png){width=35%}
+![Postman](_figures/postman.png){width=35%}
 
 :::
 
@@ -210,9 +170,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Ansible](figures/ansible.png){width=35%}
-![Terraform](figures/terraform.png){width=35%}
-![Kubernetes](figures/kubernetes.png){width=35%}
+![Ansible](_figures/ansible.png){width=35%}
+![Terraform](_figures/terraform.png){width=35%}
+![Kubernetes](_figures/kubernetes.png){width=35%}
 
 :::
 
@@ -234,8 +194,8 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Docker](figures/docker.png){width=35%}
-![Puppet](figures/puppet.png){width=35%} ![Chef](figures/chef.png){width=35%}
+![Docker](_figures/docker.png){width=35%}
+![Puppet](_figures/puppet.png){width=35%} ![Chef](_figures/chef.png){width=35%}
 
 :::
 
@@ -257,9 +217,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Prometheus](figures/prometheus.png){width=35%}
-![Grafana](figures/grafana.png){width=35%}
-![New Relic](figures/new_relic.png){width=35%}
+![Prometheus](_figures/prometheus.png){width=35%}
+![Grafana](_figures/grafana.png){width=35%}
+![New Relic](_figures/new_relic.png){width=35%}
 
 :::
 
@@ -281,9 +241,9 @@ flowchart TB;
 
 ::: {.fragment .fade-left}
 
-![Slack](figures/slack.png){width=35%}
-![Microsoft Teams](figures/microsoft_teams.png){width=35%}
-![PagerDuty](figures/pager_duty.png){width=35%}
+![Slack](_figures/slack.png){width=35%}
+![Microsoft Teams](_figures/microsoft_teams.png){width=35%}
+![PagerDuty](_figures/pager_duty.png){width=35%}
 
 :::
 
@@ -304,4 +264,4 @@ flowchart TB;
 
 ## {data-menu-title="Fin"}
 
-![](figures/meme.jpg)
+![](_figures/meme.jpg)

@@ -12,13 +12,7 @@ title: Turbocharging Your GitHub Organisation
 
 # {data-menu-title="Note"}
 
-::: {.callout-note}
-
-Much of this talk holds true for personal GitHub accounts and GitHub
-organisations. However, it is not always the case. The focus here is solely on
-organisational accounts.
-
-:::
+{{< include /quarto-making-talks/_slides/callouts.qmd >}}
 
 # Profile
 
@@ -26,13 +20,13 @@ organisational accounts.
 
 Pin the repositories you want people to see.
 
-![](figures/pinned.png)
+![](_figures/pinned.png)
 
 ## Discussions
 
 Organisation-wide discussions, rather than project specific.
 
-![](figures/discussions.png)
+![](_figures/discussions.png)
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -52,21 +46,21 @@ Organisation-wide discussions, rather than project specific.
 
 Projects can be repository specific or organisation-wide.
 
-![](figures/projects.png)
+![](_figures/projects.png)
 
 ## Labels
 
 > Set the labels that will be included when a new repository is created in this
 > organisation.
 
-![](figures/labels.png)
+![](_figures/labels.png)
 
 ## GitHub Runners
 
 > A self-hosted runner is a system that you deploy and manage to start jobs from
 > GitHub Actions on GitHub.
 
-![](figures/runners.png)
+![](_figures/runners.png)
 
 # Special Repositories
 
@@ -76,14 +70,14 @@ Can have a [GitHub Pages](https://pages.github.com) per organisation and
 repository, e.g.
 [UCL-ARC/ucl-arc.github.io](https://github.com/UCL-ARC/ucl-arc.github.io).
 
-![](figures/github_pages.png)
+![](_figures/github_pages.png)
 
 ## .github-private
 
 The `/profile/README.md` will appear on the GitHub organisation's member
 profile, visible only to organisation members.
 
-![](figures/private_readme.png)
+![](_figures/private_readme.png)
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -93,7 +87,7 @@ profile, visible only to organisation members.
 
 The `/profile/README.md` will appear on the organisation's profile.
 
-![](figures/public_readme.png)
+![](_figures/public_readme.png)
 
 ## .github {data-menu-title=".github (ii)"}
 
@@ -101,7 +95,7 @@ Can add issue templates in `/.github/ISSUE_TEMPLATE` that will be seen in all
 organisation repositories, unless the repository itself specifies its own set of
 issue templates.
 
-![](figures/issue_templates.png)
+![](_figures/issue_templates.png)
 
 ## .github {data-menu-title=".github (iii)"}
 
@@ -115,19 +109,19 @@ contact_links:
     about: If your issue is a general…
 ```
 
-![](figures/config.png)
+![](_figures/config.png)
 
 ## .github {data-menu-title=".github (iv)"}
 
 Add a default `/CONTRIBUTING.md`.
 
-![](figures/contributing.png)
+![](_figures/contributing.png)
 
 ## .github {data-menu-title=".github (v)"}
 
 Add a default `/CODE_OF_CONDUCT.md`.
 
-![](figures/code_of_conduct.png)
+![](_figures/code_of_conduct.png)
 
 # Tools
 
@@ -228,7 +222,7 @@ This can be then be used in organisation repositories as follows, e.g.
 
 This can then be debugged at <https://developer.mend.io>.
 
-![](figures/renovate.png)
+![](_figures/renovate.png)
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -525,7 +519,7 @@ jobs:
 Actions can use a single set of generated secrets to be used in all actions,
 e.g. `APP_ID`, `APP_PEM`.
 
-![](figures/secrets.png)
+![](_figures/secrets.png)
 
 :::
 
@@ -537,7 +531,7 @@ e.g. `APP_ID`, `APP_PEM`.
 
 All installed apps can be seen in the organisation's settings.
 
-![](figures/apps_installed.png)
+![](_figures/apps_installed.png)
 
 ## GitHub Apps {data-menu-title="GitHub Apps (ii)"}
 
@@ -546,7 +540,7 @@ for the internal organisation. The `UCL-MIRSG/.github/actions/add-to-project`
 use the `MIRSG Project Automation Helper` app to avoid attributing project board
 movements to an individual user.
 
-![](figures/apps_custom.png)
+![](_figures/apps_custom.png)
 
 # [github/safe-settings](https://github.com/github/safe-settings)
 
@@ -687,4 +681,4 @@ rulesets:
 
 # Other Ideas
 
-![](figures/penguin.webp)
+![](_figures/penguin.webp)

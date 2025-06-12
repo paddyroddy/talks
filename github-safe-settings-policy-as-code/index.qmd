@@ -21,7 +21,7 @@ title: "GitHub Safe-Settings: Policy as Code"
 
 ::: {}
 
-![](figures/settings.png)
+![](_figures/settings.png)
 
 :::
 
@@ -564,7 +564,7 @@ None
 
 ::: {.fragment .fade-left}
 
-![](figures/logo.png)
+![](_figures/logo.png)
 
 :::
 
@@ -637,4 +637,4 @@ public: false
 
 ## Demo {footer=false}
 
-[![](figures/demo.png)](https://github.com/UCL-MIRSG/.github/actions)
+[![](_figures/demo.png)](https://github.com/UCL-MIRSG/.github/actions)
