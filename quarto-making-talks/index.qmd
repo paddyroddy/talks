@@ -480,7 +480,7 @@ Standard Markdown checkboxes.
 
 {{< include _slides/checkboxes.qmd >}}
 
-## Embedded Code
+## Embedded Code {footer=false}
 
 Can embed and run code to do all kinds of things. This example generates an
 interactive map by using the Python package
@@ -490,7 +490,7 @@ interactive map by using the Python package
 #| output: asis
 with open('_slides/embedded.qmd') as f:
     code_content = f.read()
-    print(f"````markdown\n{code_content}\n````")
+    print(f"````{{.markdown}}\n{code_content}\n````")
 `````
 
 ## {visibility="uncounted"}
