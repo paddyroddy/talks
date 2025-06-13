@@ -267,11 +267,9 @@ the metadata defined at the project level.
 #| output: asis
 """Used Python to escape the shortcode command to avoid processing."""
 
-import re
-
 with open("../_quarto.yml") as f:
     contents = f.read()
-    escaped = re.sub(r"\{\{< meta(.*?)>\}\}", r"{{{< meta\1>}}}", contents)
+    escaped = contents.replace("{{< meta title >}}", "{{{< meta title >}}}")
     print(f"````{{.yaml}}\n{escaped}\n````")
 `````
 
