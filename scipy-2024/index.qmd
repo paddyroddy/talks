@@ -12,7 +12,7 @@ title: SciPy 2024
 
 ## Flight
 
-{{< include /quarto-making-talks/_slides/embedded.qmd >}}
+{{< include /quarto-making-talks/_slides/running-code.qmd >}}
 
 ## Tacoma
 
@@ -39,7 +39,7 @@ Reasons you might have heard of it:
 
 ## Tutorials
 
-{{< include /quarto-making-talks/_slides/preview.qmd >}}
+{{< include /quarto-making-talks/_slides/website-previews.qmd >}}
 
 ```{=html}
 <iframe
@@ -94,7 +94,7 @@ Reasons you might have heard of it:
 
 ## Photos
 
-{{< include /quarto-making-talks/_slides/stacking.qmd >}}
+{{< include /quarto-making-talks/_slides/stack-layout.qmd >}}
 
 # Holiday: Olympic National Park
 
