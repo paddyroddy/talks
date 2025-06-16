@@ -354,13 +354,13 @@ audience to follow.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include _slides/code.qmd >}}
+{{< include _slides/code-blocks.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
 ## {visibility="uncounted"}
 
-{{< include _slides/code.qmd >}}
+{{< include _slides/code-blocks.qmd >}}
 
 ## Footers
 
@@ -376,20 +376,20 @@ You can control the footer for a single slide as follows.
 
 {{< include _slides/footers.qmd >}}
 
-## Animations {footer=false}
+## Fragments {footer=false}
 
 Fragments are used to highlight or incrementally reveal individual elements on a
 slide.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include _slides/animations.qmd >}}
+{{< include _slides/fragments.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
 ## {visibility="uncounted"}
 
-{{< include _slides/animations.qmd >}}
+{{< include _slides/fragments.qmd >}}
 
 ## Columns
 
@@ -448,7 +448,7 @@ Standard Markdown checkboxes.
 
 {{< include _slides/checkboxes.qmd >}}
 
-## Embedded Code {footer=false}
+## Running Code {footer=false}
 
 Can embed and run code to do all kinds of things. This example generates an
 interactive map by using the Python package
@@ -458,14 +458,14 @@ interactive map by using the Python package
 #| output: asis
 """Used Python to avoid the code being executed before being displayed."""
 
-with open("_slides/embedded.qmd") as f:
+with open("_slides/running-code.qmd") as f:
     contents = f.read()
     print(f"````{{.markdown}}\n{contents}\n````")
 `````
 
 ## {visibility="uncounted"}
 
-{{< include _slides/embedded.qmd >}}
+{{< include _slides/running-code.qmd >}}
 
 ## Website Previews
 
@@ -473,27 +473,27 @@ Websites can be previewed as follows.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include _slides/preview.qmd >}}
+{{< include _slides/website-previews.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
 ## {visibility="uncounted"}
 
-{{< include _slides/preview.qmd >}}
+{{< include _slides/website-previews.qmd >}}
 
-## Stacking
+## Stack Layout
 
 This example shows how to stack figures on top of each other.
 
 <!-- prettier-ignore-start -->
 ````{.markdown}
-{{< include _slides/stacking.qmd >}}
+{{< include _slides/stack-layout.qmd >}}
 ````
 <!-- prettier-ignore-end -->
 
 ## {visibility="uncounted"}
 
-{{< include _slides/stacking.qmd >}}
+{{< include _slides/stack-layout.qmd >}}
 
 ## Tables
 
