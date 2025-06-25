@@ -3,7 +3,7 @@ author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
 date: 2024-12-12
 format: revealjs
 subtitle:
-  "[ARC DevOPS
+  "[ARC DevOps
   Hour](https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations)"
 title: Turbocharging Your GitHub Organisation
 ---
