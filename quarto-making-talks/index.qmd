@@ -256,7 +256,7 @@ The repository `README`, needs some work…
 ````
 <!-- prettier-ignore-end -->
 
-## `/_quarto.yml` {footer=false}
+## `/_quarto.yaml` {footer=false}
 
 Any document rendered within the project directory will automatically inherit
 the metadata defined at the project level.
@@ -267,7 +267,7 @@ the metadata defined at the project level.
 #| output: asis
 """Used Python to escape the shortcode command to avoid processing."""
 
-with open("../_quarto.yml") as f:
+with open("../_quarto.yaml") as f:
     contents = f.read()
     escaped = contents.replace("{{< meta title >}}", "{{{< meta title >}}}")
     print(f"````{{.yaml}}\n{escaped}\n````")
