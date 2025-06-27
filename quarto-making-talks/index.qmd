@@ -635,6 +635,32 @@ Can include GitHub Markdown-like callouts.
 
 {{< include _slides/callouts.qmd >}}
 
+# More Examples
+
+## Official Quarto Example Presentation
+
+```{=html}
+<iframe
+    height="550"
+    src="https://quarto.org/docs/presentations/revealjs/demo"
+    title="Official Quarto Example"
+    width="1000"
+>
+</iframe>
+```
+
+## Further Examples
+
+```{=html}
+<iframe
+    height="550"
+    src="https://quarto.org/docs/gallery/#presentations"
+    title="Quarto Presentation Gallery"
+    width="1000"
+>
+</iframe>
+```
+
 # Conclusions
 
 ## {data-menu-title="Summary"}
