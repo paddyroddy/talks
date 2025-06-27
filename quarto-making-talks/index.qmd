@@ -172,7 +172,8 @@ Presenter
 
 # Repository Contents
 
-My setup. In the order the repository files appear on GitHub.
+My setup. In the order the repository files appear on GitHub. Most of these are
+optional unless you are a fellow pedant.
 
 ## `/.github/workflows/add-to-project.yaml` {footer=false}
 
@@ -407,11 +408,14 @@ These are the dependencies for some Python code.
 
 # Demo
 
-Will show some Quarto code and then display it on the next slide.
+Will show some Quarto code and then display it on the neighbouring slide. These
+have not been crafted specifically for this talk, they were seen in my other
+talks.
 
 ## Title Slide
 
-Each talk must start with some YAML front matter metadata.
+Each talk must start with some YAML front matter metadata. Note that the listing
+specified in `/index.qmd` mapped `subtitle` to `Events`.
 
 ```{.yaml}
 ---
