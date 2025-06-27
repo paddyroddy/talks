@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="..//assets/images/favicon.ico" rel="icon">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Patrick J. Roddy">
+  <meta name="dcterms.date" content="2025-09-02">
+  <title>Quarto: Making Talks</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7ec8b10c34a65a6e036933a789be2259.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SCSTN0WCDT"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SCSTN0WCDT', { 'anonymize_ip': true});
+  </script>
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <meta name="mermaid-theme" content="dark">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section class="quarto-title-block center">
+  <h1 class="title">Quarto: Making Talks</h1>
+  <p class="subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Collaborations Hour</a></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://paddyroddy.github.io">Patrick J. Roddy</a> 
+</div>
+</div>
+</div>
+
+  <p class="date">2025-09-02</p>
+</section>
+<section class="title-slide slide level1 center" data-menu-title="QR Code">
+<h1></h1>
+<div class="quarto-layout-panel" data-layout="[22,78]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 22.0%;justify-content: flex-start;">
+<p>Scan to view the slides</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 78.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/quarto-making-talks","width":"550"});
+  script.remove();
+})();
+</script>
+    
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1>Talk Motivation</h1>
+<!-- vale RedHat.TermsWarnings = NO -->
+</section>
+<section class="slide level2" data-menu-title="Talk Motivation (i)">
+<h2></h2>
+<!-- vale RedHat.TermsWarnings = YES -->
+<ul>
+<li class="fragment">Always found making presentations tedious.</li>
+<li class="fragment">Prefer non-<a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> editors since discovering LaTeX.</li>
+<li class="fragment"><a href="https://www.overleaf.com/learn/latex/Beamer">LaTeX Beamer</a> presentations are heavy duty and look rubbish.</li>
+<li class="fragment">Wanted to be able to version control my slides.</li>
+<li class="fragment">Was never sure where to store my slides.</li>
+<li class="fragment">No real record of my talks, so little motivation to give them.</li>
+<li class="fragment">Quarto allows me to make lightweight, distributable slides that look great.</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Talk Motivation (ii)" data-footer="false">
+<h2></h2>
+<p>Promised this talk before.</p>
+<iframe height="550" src="https://paddyroddy.github.io/talks/pyopensci-my-experience/#/5" title="Earlier Talk" width="1000">
+</iframe>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Quarto</h1>
+<!-- vale RedHat.TermsWarnings = NO -->
+</section>
+<section class="slide level2" data-menu-title="What is Quarto (i)">
+<h2>What is Quarto</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
+<p>An open source scientific and technical publishing system</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://quarto.org"><img data-src="figures/quarto.jpg"></a></p>
+<figcaption>Quarto</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2" data-menu-title="What is Quarto (ii)">
+<h2>What is Quarto</h2>
+<ul>
+<li class="fragment">Author using <code>Jupyter</code> notebooks or with plain text markdown in your favourite editor.</li>
+<li class="fragment">Create dynamic content with <code>Python</code>, <code>R</code>, <code>Julia</code>, and <code>Observable</code>.</li>
+<li class="fragment">Publish reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in <code>HTML</code>, <code>PDF</code>, <code>Microsoft Word</code>, <code>ePub</code>, and more.</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="What is Quarto (iii)">
+<h2>What is Quarto</h2>
+<ul>
+<li class="fragment">Share knowledge and insights organisation-wide by publishing to <code>Posit Connect</code>, <code>Confluence</code>, or other publishing systems.</li>
+<li class="fragment">Write using <code>Pandoc</code> markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more.</li>
+</ul>
+<!-- vale RedHat.TermsWarnings = NO -->
+</section>
+<section class="slide level2" data-menu-title="Why Quarto for Presentations (i)">
+<h2>Why Quarto for Presentations</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
+<ul>
+<li class="fragment"><em>Markdown Simplicity</em>: Write slides using intuitive Markdown syntax.</li>
+<li class="fragment"><em>Code Integration</em>: Seamlessly embed and run code (R, Python, and so on) directly in your slides, displaying both code and output.</li>
+<li class="fragment"><em>Reproducibility</em>: Your entire presentation, including analyses and visualisations, is reproducible from its source.</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Why Quarto for Presentations (ii)">
+<h2>Why Quarto for Presentations</h2>
+<ul>
+<li class="fragment"><em>Dynamic Content</em>: Easily include plots, tables, and even interactive elements generated by your code.</li>
+<li class="fragment"><em>Customisation</em>: Extensive options for styling, themes, and layouts.</li>
+<li class="fragment"><em>Open Source</em>: Free to use and backed by a vibrant community.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Traditional Presentation Tools</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>PowerPoint/Google Slides</p>
+<ul>
+<li class="fragment">Manual copy-pasting of figures/tables.</li>
+<li class="fragment">Updates requires manual changes in many places.</li>
+<li class="fragment">Limited version control.</li>
+<li class="fragment">Limited integration with code execution.</li>
+<li class="fragment">Proprietary formats.</li>
+</ul>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Quarto <code>reveal.js</code></p>
+<ul>
+<li class="fragment">Automated generation of figures/tables.</li>
+<li class="fragment">One source file for content and code.</li>
+<li class="fragment">Git-friendly plain text files..</li>
+<li class="fragment">Live code execution.</li>
+<li class="fragment">Open standard for universal access.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2><code>reveal.js</code></h2>
+<div class="quarto-layout-panel" data-layout="[20,80]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><a href="https://revealjs.com"><img data-src="figures/revealjs.svg"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<ul>
+<li class="fragment">Quarto leverages <code>reveal.js</code>, a powerful HTML presentation framework.</li>
+<li class="fragment">Provides smooth transitions, animations, and interactive features by default.</li>
+<li class="fragment">Browser-based: easy to share and view on any device with a web browser.</li>
+<li class="fragment">Supports many navigation modes (linear, vertical stacks).</li>
+<li class="fragment">Plugins and extensibility for advanced functionalities.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Core Quarto Concepts</h2>
+<ul>
+<li class="fragment"><em><code>.qmd</code> file</em>: The source file (Quarto Markdown Document).</li>
+<li class="fragment"><em>YAML Header</em>: Configuration settings (title, and so on).</li>
+<li class="fragment"><em>Markdown</em>: For text, headings, lists, images, links.</li>
+<li class="fragment"><em>Code Chunks</em>: For example <code>{python}</code> for executable code.</li>
+<li class="fragment"><em>Rendering</em>: Converting the <code>.qmd</code> file to the output format (<code>quarto render my-slides.qmd</code>).</li>
+<li class="fragment"><em>Themes</em>: Predefined visual styles for your presentation.</li>
+<li class="fragment"><em>Fragments</em>: Revealing content incrementally on a slide.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Benefits: Audience and Presenter</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Audience</p>
+<ul>
+<li class="fragment">Engaging and dynamic presentations.</li>
+<li class="fragment">Clear and consistent visuals.</li>
+<li class="fragment">Reproducible results if shared (for example, accompanying code).</li>
+<li class="fragment">Accessible (can be viewed in any browser).</li>
+</ul>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Presenter</p>
+<ul>
+<li class="fragment">Streamlined workflow for data-driven talks.</li>
+<li class="fragment">Reduced manual effort and errors.</li>
+<li class="fragment">Easy version control and collaboration.</li>
+<li class="fragment">Flexibility to output to other formats from the same source.</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Repository Contents</h1>
+<p>My setup. In the order the repository files appear on GitHub. Most of these are optional unless you are a fellow pedant.</p>
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/.github/workflows/add-to-project.yaml</code></h2>
+<p>GitHub Action to add issues to project board.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="pp">---</span></span>
+<span id="cb1-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add issues to project board</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb1-5"><a></a><span class="at">  </span><span class="fu">issues</span><span class="kw">:</span></span>
+<span id="cb1-6"><a></a><span class="at">    </span><span class="fu">types</span><span class="kw">:</span></span>
+<span id="cb1-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> opened</span></span>
+<span id="cb1-8"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-9"><a></a><span class="at">    </span><span class="fu">types</span><span class="kw">:</span></span>
+<span id="cb1-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> opened</span></span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-13"><a></a><span class="at">  </span><span class="fu">add-issue-to-project</span><span class="kw">:</span></span>
+<span id="cb1-14"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb1-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@51b992959f67661c3433840aec883cc9ddbe2945</span><span class="co"> # v0</span></span>
+<span id="cb1-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-19"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.github/workflows/links.yaml</code></h2>
+<p>GitHub Action to perform link checking with <a href="https://lychee.cli.rs">lychee</a>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="pp">---</span></span>
+<span id="cb2-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Links</span></span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb2-5"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb2-6"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb2-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb2-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> renovate/**</span></span>
+<span id="cb2-9"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb2-10"><a></a></span>
+<span id="cb2-11"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb2-12"><a></a><span class="at">  </span><span class="fu">links</span><span class="kw">:</span></span>
+<span id="cb2-13"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb2-14"><a></a><span class="at">    </span><span class="fu">timeout-minutes</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb2-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb2-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb2-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/links@51b992959f67661c3433840aec883cc9ddbe2945</span><span class="co"> # v0</span></span>
+<span id="cb2-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-19"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/.github/workflows/linting.yaml</code></h2>
+<p>GitHub Action to perform linting with <a href="https://pre-commit.com">pre-commit</a> and <a href="https://vale.sh">Vale</a>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
+<span id="cb3-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Linting</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb3-5"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb3-6"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb3-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb3-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> renovate/**</span></span>
+<span id="cb3-9"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb3-12"><a></a><span class="at">  </span><span class="fu">linting</span><span class="kw">:</span></span>
+<span id="cb3-13"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb3-14"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-15"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb3-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/linting@51b992959f67661c3433840aec883cc9ddbe2945</span><span class="co"> # v0</span></span>
+<span id="cb3-17"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-18"><a></a><span class="at">          </span><span class="fu">pre-commit-config</span><span class="kw">:</span><span class="at"> ./.pre-commit-config.yaml</span></span>
+<span id="cb3-19"><a></a></span>
+<span id="cb3-20"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb3-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/vale@d5aea086eaabccae4bcf39786ad5138b629755a6</span><span class="co"> # v0</span></span>
+<span id="cb3-22"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-23"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.github/workflows/publish.yaml</code></h2>
+<p>GitHub Action to publish the Quarto website to GitHub Pages.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="pp">---</span></span>
+<span id="cb4-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Quarto Publish</span></span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb4-5"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb4-6"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb4-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb4-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> renovate/**</span></span>
+<span id="cb4-9"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb4-12"><a></a><span class="at">  </span><span class="fu">build-and-deploy</span><span class="kw">:</span></span>
+<span id="cb4-13"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb4-14"><a></a><span class="at">    </span><span class="fu">permissions</span><span class="kw">:</span></span>
+<span id="cb4-15"><a></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb4-16"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb4-17"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb4-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/github-pages/quarto@51b992959f67661c3433840aec883cc9ddbe2945</span><span class="co"> # v0</span></span>
+<span id="cb4-19"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb4-20"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb4-21"><a></a><span class="at">          </span><span class="fu">requirements-txt</span><span class="kw">:</span><span class="at"> ${{ github.workspace }}/requirements.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/_extensions/</code></h2>
+<p>Extensions are a powerful way to change and extend the behaviour of Quarto. Can be installed with <code>quarto add &lt;extension&gt;</code>, which must be committed to the repository. Extensions can be updated through <code>quarto update &lt;extension&gt;</code>.</p>
+<ul>
+<li class="fragment"><a href="https://github.com/jmbuhr/quarto-qrcode">jmbuhr/qrcode</a>: provides shortcodes for <a href="https://davidshimjs.github.io/qrcodejs">qrcodejs</a> in Quarto.</li>
+<li class="fragment"><a href="https://github.com/quarto-ext/fontawesome">quarto-ext/fontawesome</a>: provides support including free icons provided by <a href="https://fontawesome.com">Font Awesome</a>.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2><code>/_filters/slugify.lua</code></h2>
+<p>If the base features of Pandoc and Quarto do not do exactly what you need, you can likely create a <a href="https://pandoc.org/filters.html">Pandoc Filter</a> that bridges the gap. This filter slugifies the given title to be used within a URL.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a></a><span class="co">-- Slugify titles for use in URLs or identifiers.</span></span>
+<span id="cb5-2"><a></a><span class="kw">local</span> <span class="kw">function</span> slugify<span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
+<span id="cb5-3"><a></a>    <span class="cf">return</span> <span class="va">s</span><span class="op">:</span><span class="fu">gsub</span><span class="op">(</span><span class="st">"[%s+/]+"</span><span class="op">,</span> <span class="st">"-"</span><span class="op">):</span><span class="fu">gsub</span><span class="op">(</span><span class="st">"[^%w-]+"</span><span class="op">,</span> <span class="st">""</span><span class="op">):</span><span class="fu">lower</span><span class="op">()</span></span>
+<span id="cb5-4"><a></a><span class="kw">end</span></span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="cf">return</span> <span class="op">{</span></span>
+<span id="cb5-7"><a></a>    <span class="va">Meta</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">m</span><span class="op">)</span></span>
+<span id="cb5-8"><a></a>        <span class="va">m</span><span class="op">.</span><span class="va">slug</span> <span class="op">=</span> <span class="va">m</span><span class="op">.</span><span class="va">title</span> <span class="kw">and</span> slugify<span class="op">(</span><span class="va">pandoc</span><span class="op">.</span><span class="va">utils</span><span class="op">.</span>stringify<span class="op">(</span><span class="va">m</span><span class="op">.</span><span class="va">title</span><span class="op">))</span></span>
+<span id="cb5-9"><a></a>        <span class="cf">return</span> <span class="va">m</span></span>
+<span id="cb5-10"><a></a>    <span class="kw">end</span><span class="op">,</span></span>
+<span id="cb5-11"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/_includes/qr-code.qmd</code></h2>
+<p>This snippet is included at the start of every presentation with <code>{{&lt; /_includes/qr-code.qmd &gt;}}</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu"># {data-menu-title="QR Code"}</span></span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>::: {layout="<span class="co">[</span><span class="ot">22,78</span><span class="co">]</span>"}</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a>Scan to view the slides</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a>{{&lt; qrcode "https://paddyroddy.github.io/talks/{{&lt; meta slug &gt;}}"</span>
+<span id="cb6-8"><a></a>colorDark="#ffffff" colorLight="#000000" height=550 width=550 &gt;}}</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+<h2><code>/assets/images/favicon.ico</code></h2>
+<p>Specified in the Quarto configuration, a favicon is a small icon that serves as branding for your website.</p>
+
+<img data-src="../assets/images/favicon.ico" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://paddyroddy.github.io" class="uri">https://paddyroddy.github.io</a></p></section>
+<section class="slide level2">
+<h2><code>/.gitignore</code></h2>
+<p>Ignore standard Quarto and Vale files.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">!.github/styles/config/</span></span>
+<span id="cb7-2"><a></a><span class="ex">!.github/styles/config/vocabularies/</span></span>
+<span id="cb7-3"><a></a><span class="ex">!.github/styles/config/vocabularies/Base</span></span>
+<span id="cb7-4"><a></a><span class="ex">*.quarto_ipynb</span></span>
+<span id="cb7-5"><a></a><span class="ex">.github/styles/*</span></span>
+<span id="cb7-6"><a></a><span class="ex">.github/styles/config/*</span></span>
+<span id="cb7-7"><a></a><span class="ex">.github/styles/config/vocabularies/*</span></span>
+<span id="cb7-8"><a></a><span class="ex">/.quarto/</span></span>
+<span id="cb7-9"><a></a><span class="ex">_site</span></span>
+<span id="cb7-10"><a></a><span class="ex">index-listing.json</span></span>
+<span id="cb7-11"><a></a><span class="ex">site_libs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.pre-commit-config.yaml</code></h2>
+<p>My <a href="https://github.com/paddyroddy/.github/blob/main/precommit/general/general-hooks.yaml">custom pre-commit hooks</a>. They include: <code>adrienverge/yamllint</code>, <code>crate-ci/typos</code>, <code>igorshubovych/markdownlint-cli</code>, <code>JohnnyMorganz/StyLua</code>, <code>Lucas-C/pre-commit-hooks</code>, <code>pappasam/toml-sort</code>, <code>pre-commit/pre-commit-hooks</code>, <code>rbubley/mirrors-prettier</code>, <code>rhysd/actionlint</code>, <code>shellcheck-py/shellcheck-py</code>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="pp">---</span></span>
+<span id="cb8-2"><a></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> ^_extensions</span></span>
+<span id="cb8-3"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb8-4"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/paddyroddy/.github</span></span>
+<span id="cb8-5"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.311.0</span></span>
+<span id="cb8-6"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> general-hooks</span></span>
+<span id="cb8-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lua-hooks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.prettierrc.yaml</code></h2>
+<p>Configures <a href="https://prettier.io">Prettier</a> to treat Quarto files as Markdown.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="pp">---</span></span>
+<span id="cb9-2"><a></a><span class="fu">overrides</span><span class="kw">:</span></span>
+<span id="cb9-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">files</span><span class="kw">:</span><span class="at"> </span><span class="st">"**.qmd"</span></span>
+<span id="cb9-4"><a></a><span class="at">    </span><span class="fu">options</span><span class="kw">:</span></span>
+<span id="cb9-5"><a></a><span class="at">      </span><span class="fu">parser</span><span class="kw">:</span><span class="at"> markdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.renovaterc.json5</code></h2>
+<p>Inherits my <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5">custom Renovate configuration</a>. See my earlier <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management">talk on Renovate</a>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a></a><span class="fu">{</span></span>
+<span id="cb10-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb10-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;paddyroddy/.github//renovate/default-config.json5"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb10-4"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/.typos.toml</code></h2>
+<p>Configures known exemptions from the <a href="https://github.com/crate-ci/typos">typos</a> spell checker.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a></a><span class="kw">[type.qmd]</span></span>
+<span id="cb11-2"><a></a><span class="dt">extend-glob</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb11-3"><a></a>    <span class="st">"*.qmd"</span><span class="op">,</span></span>
+<span id="cb11-4"><a></a><span class="op">]</span></span>
+<span id="cb11-5"><a></a><span class="dt">extend-words.promis</span> <span class="op">=</span> <span class="st">"promis"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/.vale.ini</code></h2>
+<p>My Vale configuration to lint prose. See my earlier <a href="https://paddyroddy.github.io/talks/linting-prose-with-vale">talk on Vale</a>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb12-1"><a></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
+<span id="cb12-2"><a></a></span>
+<span id="cb12-3"><a></a><span class="co"># https://github.com/errata-ai/packages</span></span>
+<span id="cb12-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb12-5"><a></a><span class="dt">           RedHat,\</span></span>
+<span id="cb12-6"><a></a><span class="dt">           write-good</span></span>
+<span id="cb12-7"><a></a></span>
+<span id="cb12-8"><a></a><span class="kw">[formats]</span></span>
+<span id="cb12-9"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
+<span id="cb12-10"><a></a></span>
+<span id="cb12-11"><a></a><span class="kw">[*.{md,qmd}]</span></span>
+<span id="cb12-12"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb12-13"><a></a><span class="dt">                RedHat,\</span></span>
+<span id="cb12-14"><a></a><span class="dt">                Vale,\</span></span>
+<span id="cb12-15"><a></a><span class="dt">                write-good</span></span>
+<span id="cb12-16"><a></a></span>
+<span id="cb12-17"><a></a><span class="co"># Disable</span></span>
+<span id="cb12-18"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-19"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-20"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-21"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-22"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-23"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-24"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-25"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-26"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-27"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-28"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-29"><a></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-30"><a></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-31"><a></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-32"><a></a></span>
+<span id="cb12-33"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb12-34"><a></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb12-35"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/404.qmd</code></h2>
+<p>A <a href="https://en.wikipedia.org/wiki/HTTP_404">HTTP 404</a> page for the Quarto website.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a></a><span class="co">---</span></span>
+<span id="cb13-2"><a></a><span class="an">title:</span><span class="co"> Page Not Found</span></span>
+<span id="cb13-3"><a></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb13-4"><a></a><span class="co">---</span></span>
+<span id="cb13-5"><a></a></span>
+<span id="cb13-6"><a></a>The page you requested cannot be found (perhaps it was moved or renamed).</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a>You might want to try searching to find the page's new location.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/LICENCE.txt</code></h2>
+<p><code>Creative Commons Attribution Share Alike 4.0 International</code> licence.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>Attribution-ShareAlike 4.0 International</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>=======================================================================</span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a>Creative Commons Corporation ("Creative Commons") is not a law firm and</span>
+<span id="cb14-6"><a></a>does not provide legal services or legal advice. Distribution of</span>
+<span id="cb14-7"><a></a>Creative Commons public licenses does not create a lawyer-client or</span>
+<span id="cb14-8"><a></a>other relationship. Creative Commons makes its licenses and related</span>
+<span id="cb14-9"><a></a>information available on an "as-is" basis. Creative Commons gives no</span>
+<span id="cb14-10"><a></a>warranties regarding its licenses, any material licensed under their</span>
+<span id="cb14-11"><a></a>terms and conditions, or any related information. Creative Commons</span>
+<span id="cb14-12"><a></a>disclaims all liability for damages resulting from their use to the</span>
+<span id="cb14-13"><a></a>fullest extent possible.</span>
+<span id="cb14-14"><a></a></span>
+<span id="cb14-15"><a></a>Using Creative Commons Public Licenses</span>
+<span id="cb14-16"><a></a></span>
+<span id="cb14-17"><a></a>Creative Commons public licenses provide a standard set of terms and</span>
+<span id="cb14-18"><a></a>conditions that creators and other rights holders may use to share</span>
+<span id="cb14-19"><a></a>original works of authorship and other material subject to copyright</span>
+<span id="cb14-20"><a></a>and certain other rights specified in the public license below. The</span>
+<span id="cb14-21"><a></a>following considerations are for informational purposes only, are not</span>
+<span id="cb14-22"><a></a>exhaustive, and do not form part of our licenses.</span>
+<span id="cb14-23"><a></a></span>
+<span id="cb14-24"><a></a>     Considerations for licensors: Our public licenses are</span>
+<span id="cb14-25"><a></a>     intended for use by those authorised to give the public</span>
+<span id="cb14-26"><a></a>     permission to use material in ways otherwise restricted by</span>
+<span id="cb14-27"><a></a>     copyright and certain other rights. Our licenses are</span>
+<span id="cb14-28"><a></a>     irrevocable. Licensors should read and understand the terms</span>
+<span id="cb14-29"><a></a>     and conditions of the license they choose before applying it.</span>
+<span id="cb14-30"><a></a>     Licensors should also secure all rights necessary before</span>
+<span id="cb14-31"><a></a>     applying our licenses so that the public can reuse the</span>
+<span id="cb14-32"><a></a>     material as expected. Licensors should clearly mark any</span>
+<span id="cb14-33"><a></a>     material not subject to the license. This includes other CC-</span>
+<span id="cb14-34"><a></a>     licensed material, or material used under an exception or</span>
+<span id="cb14-35"><a></a>     limitation to copyright. More considerations for licensors:</span>
+<span id="cb14-36"><a></a>    wiki.creativecommons.org/Considerations_for_licensors</span>
+<span id="cb14-37"><a></a></span>
+<span id="cb14-38"><a></a>     Considerations for the public: By using one of our public</span>
+<span id="cb14-39"><a></a>     licenses, a licensor grants the public permission to use the</span>
+<span id="cb14-40"><a></a>     licensed material under specified terms and conditions. If</span>
+<span id="cb14-41"><a></a>     the licensor's permission is not necessary for any reason--for</span>
+<span id="cb14-42"><a></a>     example, because of any applicable exception or limitation to</span>
+<span id="cb14-43"><a></a>     copyright--then that use is not regulated by the license. Our</span>
+<span id="cb14-44"><a></a>     licenses grant only permissions under copyright and certain</span>
+<span id="cb14-45"><a></a>     other rights that a licensor has authority to grant. Use of</span>
+<span id="cb14-46"><a></a>     the licensed material may still be restricted for other</span>
+<span id="cb14-47"><a></a>     reasons, including because others have copyright or other</span>
+<span id="cb14-48"><a></a>     rights in the material. A licensor may make special requests,</span>
+<span id="cb14-49"><a></a>     such as asking that all changes be marked or described.</span>
+<span id="cb14-50"><a></a>     Although not required by our licenses, you are encouraged to</span>
+<span id="cb14-51"><a></a>     respect those requests where reasonable. More considerations</span>
+<span id="cb14-52"><a></a>     for the public:</span>
+<span id="cb14-53"><a></a>    wiki.creativecommons.org/Considerations_for_licensees</span>
+<span id="cb14-54"><a></a></span>
+<span id="cb14-55"><a></a>=======================================================================</span>
+<span id="cb14-56"><a></a></span>
+<span id="cb14-57"><a></a>Creative Commons Attribution-ShareAlike 4.0 International Public</span>
+<span id="cb14-58"><a></a>License</span>
+<span id="cb14-59"><a></a></span>
+<span id="cb14-60"><a></a>By exercising the Licensed Rights (defined below), You accept and agree</span>
+<span id="cb14-61"><a></a>to be bound by the terms and conditions of this Creative Commons</span>
+<span id="cb14-62"><a></a>Attribution-ShareAlike 4.0 International Public License ("Public</span>
+<span id="cb14-63"><a></a>License"). To the extent this Public License may be interpreted as a</span>
+<span id="cb14-64"><a></a>contract, You are granted the Licensed Rights in consideration of Your</span>
+<span id="cb14-65"><a></a>acceptance of these terms and conditions, and the Licensor grants You</span>
+<span id="cb14-66"><a></a>such rights in consideration of benefits the Licensor receives from</span>
+<span id="cb14-67"><a></a>making the Licensed Material available under these terms and</span>
+<span id="cb14-68"><a></a>conditions.</span>
+<span id="cb14-69"><a></a></span>
+<span id="cb14-70"><a></a></span>
+<span id="cb14-71"><a></a>Section 1 -- Definitions.</span>
+<span id="cb14-72"><a></a></span>
+<span id="cb14-73"><a></a>  a. Adapted Material means material subject to Copyright and Similar</span>
+<span id="cb14-74"><a></a>     Rights that is derived from or based upon the Licensed Material</span>
+<span id="cb14-75"><a></a>     and in which the Licensed Material is translated, altered,</span>
+<span id="cb14-76"><a></a>     arranged, transformed, or otherwise modified in a manner requiring</span>
+<span id="cb14-77"><a></a>     permission under the Copyright and Similar Rights held by the</span>
+<span id="cb14-78"><a></a>     Licensor. For purposes of this Public License, where the Licensed</span>
+<span id="cb14-79"><a></a>     Material is a musical work, performance, or sound recording,</span>
+<span id="cb14-80"><a></a>     Adapted Material is always produced where the Licensed Material is</span>
+<span id="cb14-81"><a></a>     synched in timed relation with a moving image.</span>
+<span id="cb14-82"><a></a></span>
+<span id="cb14-83"><a></a>  b. Adapter's License means the license You apply to Your Copyright</span>
+<span id="cb14-84"><a></a>     and Similar Rights in Your contributions to Adapted Material in</span>
+<span id="cb14-85"><a></a>     accordance with the terms and conditions of this Public License.</span>
+<span id="cb14-86"><a></a></span>
+<span id="cb14-87"><a></a>  c. BY-SA Compatible License means a license listed at</span>
+<span id="cb14-88"><a></a>     creativecommons.org/compatiblelicenses, approved by Creative</span>
+<span id="cb14-89"><a></a>     Commons as essentially the equivalent of this Public License.</span>
+<span id="cb14-90"><a></a></span>
+<span id="cb14-91"><a></a>  d. Copyright and Similar Rights means copyright and/or similar rights</span>
+<span id="cb14-92"><a></a>     closely related to copyright including, without limitation,</span>
+<span id="cb14-93"><a></a>     performance, broadcast, sound recording, and Sui Generis Database</span>
+<span id="cb14-94"><a></a>     Rights, without regard to how the rights are labelled or</span>
+<span id="cb14-95"><a></a>     categorised. For purposes of this Public License, the rights</span>
+<span id="cb14-96"><a></a>     specified in Section 2(b)(1)-(2) are not Copyright and Similar</span>
+<span id="cb14-97"><a></a>     Rights.</span>
+<span id="cb14-98"><a></a></span>
+<span id="cb14-99"><a></a>  e. Effective Technological Measures means those measures that, in the</span>
+<span id="cb14-100"><a></a>     absence of proper authority, may not be circumvented under laws</span>
+<span id="cb14-101"><a></a>     fulfilling obligations under Article 11 of the WIPO Copyright</span>
+<span id="cb14-102"><a></a>     Treaty adopted on December 20, 1996, and/or similar international</span>
+<span id="cb14-103"><a></a>     agreements.</span>
+<span id="cb14-104"><a></a></span>
+<span id="cb14-105"><a></a>  f. Exceptions and Limitations means fair use, fair dealing, and/or</span>
+<span id="cb14-106"><a></a>     any other exception or limitation to Copyright and Similar Rights</span>
+<span id="cb14-107"><a></a>     that applies to Your use of the Licensed Material.</span>
+<span id="cb14-108"><a></a></span>
+<span id="cb14-109"><a></a>  g. License Elements means the license attributes listed in the name</span>
+<span id="cb14-110"><a></a>     of a Creative Commons Public License. The License Elements of this</span>
+<span id="cb14-111"><a></a>     Public License are Attribution and ShareAlike.</span>
+<span id="cb14-112"><a></a></span>
+<span id="cb14-113"><a></a>  h. Licensed Material means the artistic or literary work, database,</span>
+<span id="cb14-114"><a></a>     or other material to which the Licensor applied this Public</span>
+<span id="cb14-115"><a></a>     License.</span>
+<span id="cb14-116"><a></a></span>
+<span id="cb14-117"><a></a>  i. Licensed Rights means the rights granted to You subject to the</span>
+<span id="cb14-118"><a></a>     terms and conditions of this Public License, which are limited to</span>
+<span id="cb14-119"><a></a>     all Copyright and Similar Rights that apply to Your use of the</span>
+<span id="cb14-120"><a></a>     Licensed Material and that the Licensor has authority to license.</span>
+<span id="cb14-121"><a></a></span>
+<span id="cb14-122"><a></a>  j. Licensor means the individual(s) or entity(ies) granting rights</span>
+<span id="cb14-123"><a></a>     under this Public License.</span>
+<span id="cb14-124"><a></a></span>
+<span id="cb14-125"><a></a>  k. Share means to provide material to the public by any means or</span>
+<span id="cb14-126"><a></a>     process that requires permission under the Licensed Rights, such</span>
+<span id="cb14-127"><a></a>     as reproduction, public display, public performance, distribution,</span>
+<span id="cb14-128"><a></a>     dissemination, communication, or importation, and to make material</span>
+<span id="cb14-129"><a></a>     available to the public including in ways that members of the</span>
+<span id="cb14-130"><a></a>     public may access the material from a place and at a time</span>
+<span id="cb14-131"><a></a>     individually chosen by them.</span>
+<span id="cb14-132"><a></a></span>
+<span id="cb14-133"><a></a>  l. Sui Generis Database Rights means rights other than copyright</span>
+<span id="cb14-134"><a></a>     resulting from Directive 96/9/EC of the European Parliament and of</span>
+<span id="cb14-135"><a></a>     the Council of 11 March 1996 on the legal protection of databases,</span>
+<span id="cb14-136"><a></a>     as amended and/or succeeded, as well as other essentially</span>
+<span id="cb14-137"><a></a>     equivalent rights anywhere in the world.</span>
+<span id="cb14-138"><a></a></span>
+<span id="cb14-139"><a></a>  m. You means the individual or entity exercising the Licensed Rights</span>
+<span id="cb14-140"><a></a>     under this Public License. Your has a corresponding meaning.</span>
+<span id="cb14-141"><a></a></span>
+<span id="cb14-142"><a></a></span>
+<span id="cb14-143"><a></a>Section 2 -- Scope.</span>
+<span id="cb14-144"><a></a></span>
+<span id="cb14-145"><a></a>  a. License grant.</span>
+<span id="cb14-146"><a></a></span>
+<span id="cb14-147"><a></a>       1. Subject to the terms and conditions of this Public License,</span>
+<span id="cb14-148"><a></a>          the Licensor hereby grants You a worldwide, royalty-free,</span>
+<span id="cb14-149"><a></a>          non-sublicensable, non-exclusive, irrevocable license to</span>
+<span id="cb14-150"><a></a>          exercise the Licensed Rights in the Licensed Material to:</span>
+<span id="cb14-151"><a></a></span>
+<span id="cb14-152"><a></a>            a. reproduce and Share the Licensed Material, in whole or</span>
+<span id="cb14-153"><a></a>               in part; and</span>
+<span id="cb14-154"><a></a></span>
+<span id="cb14-155"><a></a>            b. produce, reproduce, and Share Adapted Material.</span>
+<span id="cb14-156"><a></a></span>
+<span id="cb14-157"><a></a>       2. Exceptions and Limitations. For the avoidance of doubt, where</span>
+<span id="cb14-158"><a></a>          Exceptions and Limitations apply to Your use, this Public</span>
+<span id="cb14-159"><a></a>          License does not apply, and You do not need to comply with</span>
+<span id="cb14-160"><a></a>          its terms and conditions.</span>
+<span id="cb14-161"><a></a></span>
+<span id="cb14-162"><a></a>       3. Term. The term of this Public License is specified in Section</span>
+<span id="cb14-163"><a></a>          6(a).</span>
+<span id="cb14-164"><a></a></span>
+<span id="cb14-165"><a></a>       4. Media and formats; technical modifications allowed. The</span>
+<span id="cb14-166"><a></a>          Licensor authorises You to exercise the Licensed Rights in</span>
+<span id="cb14-167"><a></a>          all media and formats whether now known or hereafter created,</span>
+<span id="cb14-168"><a></a>          and to make technical modifications necessary to do so. The</span>
+<span id="cb14-169"><a></a>          Licensor waives and/or agrees not to assert any right or</span>
+<span id="cb14-170"><a></a>          authority to forbid You from making technical modifications</span>
+<span id="cb14-171"><a></a>          necessary to exercise the Licensed Rights, including</span>
+<span id="cb14-172"><a></a>          technical modifications necessary to circumvent Effective</span>
+<span id="cb14-173"><a></a>          Technological Measures. For purposes of this Public License,</span>
+<span id="cb14-174"><a></a>          simply making modifications authorised by this Section 2(a)</span>
+<span id="cb14-175"><a></a>          (4) never produces Adapted Material.</span>
+<span id="cb14-176"><a></a></span>
+<span id="cb14-177"><a></a>       5. Downstream recipients.</span>
+<span id="cb14-178"><a></a></span>
+<span id="cb14-179"><a></a>            a. Offer from the Licensor -- Licensed Material. Every</span>
+<span id="cb14-180"><a></a>               recipient of the Licensed Material automatically</span>
+<span id="cb14-181"><a></a>               receives an offer from the Licensor to exercise the</span>
+<span id="cb14-182"><a></a>               Licensed Rights under the terms and conditions of this</span>
+<span id="cb14-183"><a></a>               Public License.</span>
+<span id="cb14-184"><a></a></span>
+<span id="cb14-185"><a></a>            b. Additional offer from the Licensor -- Adapted Material.</span>
+<span id="cb14-186"><a></a>               Every recipient of Adapted Material from You</span>
+<span id="cb14-187"><a></a>               automatically receives an offer from the Licensor to</span>
+<span id="cb14-188"><a></a>               exercise the Licensed Rights in the Adapted Material</span>
+<span id="cb14-189"><a></a>               under the conditions of the Adapter's License You apply.</span>
+<span id="cb14-190"><a></a></span>
+<span id="cb14-191"><a></a>            c. No downstream restrictions. You may not offer or impose</span>
+<span id="cb14-192"><a></a>               any additional or different terms or conditions on, or</span>
+<span id="cb14-193"><a></a>               apply any Effective Technological Measures to, the</span>
+<span id="cb14-194"><a></a>               Licensed Material if doing so restricts exercise of the</span>
+<span id="cb14-195"><a></a>               Licensed Rights by any recipient of the Licensed</span>
+<span id="cb14-196"><a></a>               Material.</span>
+<span id="cb14-197"><a></a></span>
+<span id="cb14-198"><a></a>       6. No endorsement. Nothing in this Public License constitutes or</span>
+<span id="cb14-199"><a></a>          may be construed as permission to assert or imply that You</span>
+<span id="cb14-200"><a></a>          are, or that Your use of the Licensed Material is, connected</span>
+<span id="cb14-201"><a></a>          with, or sponsored, endorsed, or granted official status by,</span>
+<span id="cb14-202"><a></a>          the Licensor or others designated to receive attribution as</span>
+<span id="cb14-203"><a></a>          provided in Section 3(a)(1)(A)(i).</span>
+<span id="cb14-204"><a></a></span>
+<span id="cb14-205"><a></a>  b. Other rights.</span>
+<span id="cb14-206"><a></a></span>
+<span id="cb14-207"><a></a>       1. Moral rights, such as the right of integrity, are not</span>
+<span id="cb14-208"><a></a>          licensed under this Public License, nor are publicity,</span>
+<span id="cb14-209"><a></a>          privacy, and/or other similar personality rights; however, to</span>
+<span id="cb14-210"><a></a>          the extent possible, the Licensor waives and/or agrees not to</span>
+<span id="cb14-211"><a></a>          assert any such rights held by the Licensor to the limited</span>
+<span id="cb14-212"><a></a>          extent necessary to allow You to exercise the Licensed</span>
+<span id="cb14-213"><a></a>          Rights, but not otherwise.</span>
+<span id="cb14-214"><a></a></span>
+<span id="cb14-215"><a></a>       2. Patent and trademark rights are not licensed under this</span>
+<span id="cb14-216"><a></a>          Public License.</span>
+<span id="cb14-217"><a></a></span>
+<span id="cb14-218"><a></a>       3. To the extent possible, the Licensor waives any right to</span>
+<span id="cb14-219"><a></a>          collect royalties from You for the exercise of the Licensed</span>
+<span id="cb14-220"><a></a>          Rights, whether directly or through a collecting society</span>
+<span id="cb14-221"><a></a>          under any voluntary or waivable statutory or compulsory</span>
+<span id="cb14-222"><a></a>          licensing scheme. In all other cases the Licensor expressly</span>
+<span id="cb14-223"><a></a>          reserves any right to collect such royalties.</span>
+<span id="cb14-224"><a></a></span>
+<span id="cb14-225"><a></a></span>
+<span id="cb14-226"><a></a>Section 3 -- License Conditions.</span>
+<span id="cb14-227"><a></a></span>
+<span id="cb14-228"><a></a>Your exercise of the Licensed Rights is expressly made subject to the</span>
+<span id="cb14-229"><a></a>following conditions.</span>
+<span id="cb14-230"><a></a></span>
+<span id="cb14-231"><a></a>  a. Attribution.</span>
+<span id="cb14-232"><a></a></span>
+<span id="cb14-233"><a></a>       1. If You Share the Licensed Material (including in modified</span>
+<span id="cb14-234"><a></a>          form), You must:</span>
+<span id="cb14-235"><a></a></span>
+<span id="cb14-236"><a></a>            a. retain the following if it is supplied by the Licensor</span>
+<span id="cb14-237"><a></a>               with the Licensed Material:</span>
+<span id="cb14-238"><a></a></span>
+<span id="cb14-239"><a></a>                 i. identification of the creator(s) of the Licensed</span>
+<span id="cb14-240"><a></a>                    Material and any others designated to receive</span>
+<span id="cb14-241"><a></a>                    attribution, in any reasonable manner requested by</span>
+<span id="cb14-242"><a></a>                    the Licensor (including by pseudonym if</span>
+<span id="cb14-243"><a></a>                    designated);</span>
+<span id="cb14-244"><a></a></span>
+<span id="cb14-245"><a></a>                ii. a copyright notice;</span>
+<span id="cb14-246"><a></a></span>
+<span id="cb14-247"><a></a>               iii. a notice that refers to this Public License;</span>
+<span id="cb14-248"><a></a></span>
+<span id="cb14-249"><a></a>                iv. a notice that refers to the disclaimer of</span>
+<span id="cb14-250"><a></a>                    warranties;</span>
+<span id="cb14-251"><a></a></span>
+<span id="cb14-252"><a></a>                 v. a URI or hyperlink to the Licensed Material to the</span>
+<span id="cb14-253"><a></a>                    extent reasonably practicable;</span>
+<span id="cb14-254"><a></a></span>
+<span id="cb14-255"><a></a>            b. indicate if You modified the Licensed Material and</span>
+<span id="cb14-256"><a></a>               retain an indication of any previous modifications; and</span>
+<span id="cb14-257"><a></a></span>
+<span id="cb14-258"><a></a>            c. indicate the Licensed Material is licensed under this</span>
+<span id="cb14-259"><a></a>               Public License, and include the text of, or the URI or</span>
+<span id="cb14-260"><a></a>               hyperlink to, this Public License.</span>
+<span id="cb14-261"><a></a></span>
+<span id="cb14-262"><a></a>       2. You may satisfy the conditions in Section 3(a)(1) in any</span>
+<span id="cb14-263"><a></a>          reasonable manner based on the medium, means, and context in</span>
+<span id="cb14-264"><a></a>          which You Share the Licensed Material. For example, it may be</span>
+<span id="cb14-265"><a></a>          reasonable to satisfy the conditions by providing a URI or</span>
+<span id="cb14-266"><a></a>          hyperlink to a resource that includes the required</span>
+<span id="cb14-267"><a></a>          information.</span>
+<span id="cb14-268"><a></a></span>
+<span id="cb14-269"><a></a>       3. If requested by the Licensor, You must remove any of the</span>
+<span id="cb14-270"><a></a>          information required by Section 3(a)(1)(A) to the extent</span>
+<span id="cb14-271"><a></a>          reasonably practicable.</span>
+<span id="cb14-272"><a></a></span>
+<span id="cb14-273"><a></a>  b. ShareAlike.</span>
+<span id="cb14-274"><a></a></span>
+<span id="cb14-275"><a></a>     In addition to the conditions in Section 3(a), if You Share</span>
+<span id="cb14-276"><a></a>     Adapted Material You produce, the following conditions also apply.</span>
+<span id="cb14-277"><a></a></span>
+<span id="cb14-278"><a></a>       1. The Adapter's License You apply must be a Creative Commons</span>
+<span id="cb14-279"><a></a>          license with the same License Elements, this version or</span>
+<span id="cb14-280"><a></a>          later, or a BY-SA Compatible License.</span>
+<span id="cb14-281"><a></a></span>
+<span id="cb14-282"><a></a>       2. You must include the text of, or the URI or hyperlink to, the</span>
+<span id="cb14-283"><a></a>          Adapter's License You apply. You may satisfy this condition</span>
+<span id="cb14-284"><a></a>          in any reasonable manner based on the medium, means, and</span>
+<span id="cb14-285"><a></a>          context in which You Share Adapted Material.</span>
+<span id="cb14-286"><a></a></span>
+<span id="cb14-287"><a></a>       3. You may not offer or impose any additional or different terms</span>
+<span id="cb14-288"><a></a>          or conditions on, or apply any Effective Technological</span>
+<span id="cb14-289"><a></a>          Measures to, Adapted Material that restrict exercise of the</span>
+<span id="cb14-290"><a></a>          rights granted under the Adapter's License You apply.</span>
+<span id="cb14-291"><a></a></span>
+<span id="cb14-292"><a></a></span>
+<span id="cb14-293"><a></a>Section 4 -- Sui Generis Database Rights.</span>
+<span id="cb14-294"><a></a></span>
+<span id="cb14-295"><a></a>Where the Licensed Rights include Sui Generis Database Rights that</span>
+<span id="cb14-296"><a></a>apply to Your use of the Licensed Material:</span>
+<span id="cb14-297"><a></a></span>
+<span id="cb14-298"><a></a>  a. for the avoidance of doubt, Section 2(a)(1) grants You the right</span>
+<span id="cb14-299"><a></a>     to extract, reuse, reproduce, and Share all or a substantial</span>
+<span id="cb14-300"><a></a>     portion of the contents of the database;</span>
+<span id="cb14-301"><a></a></span>
+<span id="cb14-302"><a></a>  b. if You include all or a substantial portion of the database</span>
+<span id="cb14-303"><a></a>     contents in a database in which You have Sui Generis Database</span>
+<span id="cb14-304"><a></a>     Rights, then the database in which You have Sui Generis Database</span>
+<span id="cb14-305"><a></a>     Rights (but not its individual contents) is Adapted Material,</span>
+<span id="cb14-306"><a></a>     including for purposes of Section 3(b); and</span>
+<span id="cb14-307"><a></a></span>
+<span id="cb14-308"><a></a>  c. You must comply with the conditions in Section 3(a) if You Share</span>
+<span id="cb14-309"><a></a>     all or a substantial portion of the contents of the database.</span>
+<span id="cb14-310"><a></a></span>
+<span id="cb14-311"><a></a>For the avoidance of doubt, this Section 4 supplements and does not</span>
+<span id="cb14-312"><a></a>replace Your obligations under this Public License where the Licensed</span>
+<span id="cb14-313"><a></a>Rights include other Copyright and Similar Rights.</span>
+<span id="cb14-314"><a></a></span>
+<span id="cb14-315"><a></a></span>
+<span id="cb14-316"><a></a>Section 5 -- Disclaimer of Warranties and Limitation of Liability.</span>
+<span id="cb14-317"><a></a></span>
+<span id="cb14-318"><a></a>  a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE</span>
+<span id="cb14-319"><a></a>     EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS</span>
+<span id="cb14-320"><a></a>     AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF</span>
+<span id="cb14-321"><a></a>     ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS,</span>
+<span id="cb14-322"><a></a>     IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION,</span>
+<span id="cb14-323"><a></a>     WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR</span>
+<span id="cb14-324"><a></a>     PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS,</span>
+<span id="cb14-325"><a></a>     ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT</span>
+<span id="cb14-326"><a></a>     KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT</span>
+<span id="cb14-327"><a></a>     ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.</span>
+<span id="cb14-328"><a></a></span>
+<span id="cb14-329"><a></a>  b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE</span>
+<span id="cb14-330"><a></a>     TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION,</span>
+<span id="cb14-331"><a></a>     NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT,</span>
+<span id="cb14-332"><a></a>     INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES,</span>
+<span id="cb14-333"><a></a>     COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR</span>
+<span id="cb14-334"><a></a>     USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN</span>
+<span id="cb14-335"><a></a>     ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR</span>
+<span id="cb14-336"><a></a>     DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR</span>
+<span id="cb14-337"><a></a>     IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.</span>
+<span id="cb14-338"><a></a></span>
+<span id="cb14-339"><a></a>  c. The disclaimer of warranties and limitation of liability provided</span>
+<span id="cb14-340"><a></a>     above shall be interpreted in a manner that, to the extent</span>
+<span id="cb14-341"><a></a>     possible, most closely approximates an absolute disclaimer and</span>
+<span id="cb14-342"><a></a>     waiver of all liability.</span>
+<span id="cb14-343"><a></a></span>
+<span id="cb14-344"><a></a></span>
+<span id="cb14-345"><a></a>Section 6 -- Term and Termination.</span>
+<span id="cb14-346"><a></a></span>
+<span id="cb14-347"><a></a>  a. This Public License applies for the term of the Copyright and</span>
+<span id="cb14-348"><a></a>     Similar Rights licensed here. However, if You fail to comply with</span>
+<span id="cb14-349"><a></a>     this Public License, then Your rights under this Public License</span>
+<span id="cb14-350"><a></a>     terminate automatically.</span>
+<span id="cb14-351"><a></a></span>
+<span id="cb14-352"><a></a>  b. Where Your right to use the Licensed Material has terminated under</span>
+<span id="cb14-353"><a></a>     Section 6(a), it reinstates:</span>
+<span id="cb14-354"><a></a></span>
+<span id="cb14-355"><a></a>       1. automatically as of the date the violation is cured, provided</span>
+<span id="cb14-356"><a></a>          it is cured within 30 days of Your discovery of the</span>
+<span id="cb14-357"><a></a>          violation; or</span>
+<span id="cb14-358"><a></a></span>
+<span id="cb14-359"><a></a>       2. upon express reinstatement by the Licensor.</span>
+<span id="cb14-360"><a></a></span>
+<span id="cb14-361"><a></a>     For the avoidance of doubt, this Section 6(b) does not affect any</span>
+<span id="cb14-362"><a></a>     right the Licensor may have to seek remedies for Your violations</span>
+<span id="cb14-363"><a></a>     of this Public License.</span>
+<span id="cb14-364"><a></a></span>
+<span id="cb14-365"><a></a>  c. For the avoidance of doubt, the Licensor may also offer the</span>
+<span id="cb14-366"><a></a>     Licensed Material under separate terms or conditions or stop</span>
+<span id="cb14-367"><a></a>     distributing the Licensed Material at any time; however, doing so</span>
+<span id="cb14-368"><a></a>     will not terminate this Public License.</span>
+<span id="cb14-369"><a></a></span>
+<span id="cb14-370"><a></a>  d. Sections 1, 5, 6, 7, and 8 survive termination of this Public</span>
+<span id="cb14-371"><a></a>     License.</span>
+<span id="cb14-372"><a></a></span>
+<span id="cb14-373"><a></a></span>
+<span id="cb14-374"><a></a>Section 7 -- Other Terms and Conditions.</span>
+<span id="cb14-375"><a></a></span>
+<span id="cb14-376"><a></a>  a. The Licensor shall not be bound by any additional or different</span>
+<span id="cb14-377"><a></a>     terms or conditions communicated by You unless expressly agreed.</span>
+<span id="cb14-378"><a></a></span>
+<span id="cb14-379"><a></a>  b. Any arrangements, understandings, or agreements regarding the</span>
+<span id="cb14-380"><a></a>     Licensed Material not stated herein are separate from and</span>
+<span id="cb14-381"><a></a>     independent of the terms and conditions of this Public License.</span>
+<span id="cb14-382"><a></a></span>
+<span id="cb14-383"><a></a></span>
+<span id="cb14-384"><a></a>Section 8 -- Interpretation.</span>
+<span id="cb14-385"><a></a></span>
+<span id="cb14-386"><a></a>  a. For the avoidance of doubt, this Public License does not, and</span>
+<span id="cb14-387"><a></a>     shall not be interpreted to, reduce, limit, restrict, or impose</span>
+<span id="cb14-388"><a></a>     conditions on any use of the Licensed Material that could lawfully</span>
+<span id="cb14-389"><a></a>     be made without permission under this Public License.</span>
+<span id="cb14-390"><a></a></span>
+<span id="cb14-391"><a></a>  b. To the extent possible, if any provision of this Public License is</span>
+<span id="cb14-392"><a></a>     deemed unenforceable, it shall be automatically reformed to the</span>
+<span id="cb14-393"><a></a>     minimum extent necessary to make it enforceable. If the provision</span>
+<span id="cb14-394"><a></a>     cannot be reformed, it shall be severed from this Public License</span>
+<span id="cb14-395"><a></a>     without affecting the enforceability of the remaining terms and</span>
+<span id="cb14-396"><a></a>     conditions.</span>
+<span id="cb14-397"><a></a></span>
+<span id="cb14-398"><a></a>  c. No term or condition of this Public License will be waived and no</span>
+<span id="cb14-399"><a></a>     failure to comply consented to unless expressly agreed to by the</span>
+<span id="cb14-400"><a></a>     Licensor.</span>
+<span id="cb14-401"><a></a></span>
+<span id="cb14-402"><a></a>  d. Nothing in this Public License constitutes or may be interpreted</span>
+<span id="cb14-403"><a></a>     as a limitation upon, or waiver of, any privileges and immunities</span>
+<span id="cb14-404"><a></a>     that apply to the Licensor or You, including from the legal</span>
+<span id="cb14-405"><a></a>     processes of any jurisdiction or authority.</span>
+<span id="cb14-406"><a></a></span>
+<span id="cb14-407"><a></a></span>
+<span id="cb14-408"><a></a>=======================================================================</span>
+<span id="cb14-409"><a></a></span>
+<span id="cb14-410"><a></a>Creative Commons is not a party to its public</span>
+<span id="cb14-411"><a></a>licenses. Notwithstanding, Creative Commons may elect to apply one of</span>
+<span id="cb14-412"><a></a>its public licenses to material it publishes and in those instances</span>
+<span id="cb14-413"><a></a>will be considered the “Licensor.” The text of the Creative Commons</span>
+<span id="cb14-414"><a></a>public licenses is dedicated to the public domain under the CC0 Public</span>
+<span id="cb14-415"><a></a>Domain Dedication. Except for the limited purpose of indicating that</span>
+<span id="cb14-416"><a></a>material is shared under a Creative Commons public license or as</span>
+<span id="cb14-417"><a></a>otherwise permitted by the Creative Commons policies published at</span>
+<span id="cb14-418"><a></a>creativecommons.org/policies, Creative Commons does not authorise the</span>
+<span id="cb14-419"><a></a>use of the trademark "Creative Commons" or any other trademark or logo</span>
+<span id="cb14-420"><a></a>of Creative Commons without its prior written consent including,</span>
+<span id="cb14-421"><a></a>without limitation, in connection with any unauthorised modifications</span>
+<span id="cb14-422"><a></a>to any of its public licenses or any other arrangements,</span>
+<span id="cb14-423"><a></a>understandings, or agreements concerning use of licensed material. For</span>
+<span id="cb14-424"><a></a>the avoidance of doubt, this paragraph does not form part of the</span>
+<span id="cb14-425"><a></a>public licenses.</span>
+<span id="cb14-426"><a></a></span>
+<span id="cb14-427"><a></a>Creative Commons may be contacted at creativecommons.org.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/README.md</code></h2>
+<p>The repository <code>README</code>, needs some work…</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a></a><span class="fu"># Talks</span></span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="co">[</span><span class="al">![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)</span><span class="co">](https://github.com/pre-commit/pre-commit)</span></span>
+<span id="cb15-4"><a></a><span class="co">[</span><span class="al">![Renovate](https://img.shields.io/badge/renovate-enabled-orange?logo=renovatebot)</span><span class="co">](https://docs.renovatebot.com)</span></span>
+<span id="cb15-5"><a></a></span>
+<span id="cb15-6"><a></a>A series of talks.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/_quarto.yaml</code></h2>
+<p>Any document rendered within the project directory will automatically inherit the metadata defined at the project level.</p>
+<!-- Here explicitly to avoid processing of the shortcode commands -->
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a></a><span class="pp">---</span></span>
+<span id="cb16-2"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb16-3"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb16-4"><a></a></span>
+<span id="cb16-5"><a></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb16-6"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb16-7"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> darkly</span></span>
+<span id="cb16-8"><a></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb16-9"><a></a><span class="at">    </span><span class="fu">callout-appearance</span><span class="kw">:</span><span class="at"> simple</span></span>
+<span id="cb16-10"><a></a><span class="at">    </span><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-11"><a></a><span class="at">    </span><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb16-12"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> _filters/slugify.lua</span></span>
+<span id="cb16-13"><a></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"{{&lt; meta title &gt;}} - &lt;https://paddyroddy.github.io/talks&gt;"</span></span>
+<span id="cb16-14"><a></a><span class="at">    </span><span class="fu">hash-type</span><span class="kw">:</span><span class="at"> number</span></span>
+<span id="cb16-15"><a></a><span class="at">    </span><span class="fu">history</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb16-16"><a></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-17"><a></a><span class="at">    </span><span class="fu">link-external-icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-18"><a></a><span class="at">    </span><span class="fu">mermaid</span><span class="kw">:</span></span>
+<span id="cb16-19"><a></a><span class="at">      </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> dark</span></span>
+<span id="cb16-20"><a></a><span class="at">    </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb16-21"><a></a><span class="at">      </span><span class="fu">hideMissingTitles</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-22"><a></a><span class="at">      </span><span class="fu">useTextContentForMissingTitles</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb16-23"><a></a><span class="at">    </span><span class="fu">preview-links</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-24"><a></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb16-25"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> dark</span></span>
+<span id="cb16-26"><a></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb16-27"><a></a></span>
+<span id="cb16-28"><a></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb16-29"><a></a><span class="at">  </span><span class="fu">google-analytics</span><span class="kw">:</span><span class="at"> G-SCSTN0WCDT</span></span>
+<span id="cb16-30"><a></a><span class="at">  </span><span class="fu">favicon</span><span class="kw">:</span><span class="at"> /assets/images/favicon.ico</span></span>
+<span id="cb16-31"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb16-32"><a></a><span class="at">    </span><span class="fu">tools</span><span class="kw">:</span></span>
+<span id="cb16-33"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> house</span></span>
+<span id="cb16-34"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://paddyroddy.github.io</span></span>
+<span id="cb16-35"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb16-36"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://github.com/paddyroddy/talks</span></span>
+<span id="cb16-37"><a></a><span class="at">  </span><span class="fu">site-url</span><span class="kw">:</span><span class="at"> https://paddyroddy.github.io/talks</span></span>
+<span id="cb16-38"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-footer="false">
+<h2><code>/index.qmd</code></h2>
+<p><a href="https://quarto.org/docs/websites/website-listings.html">Listings</a> automatically generate the contents of a page from a list of Quarto documents or other custom data.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a></a><span class="co">---</span></span>
+<span id="cb17-2"><a></a><span class="an">title:</span><span class="co"> Talks</span></span>
+<span id="cb17-3"><a></a><span class="an">format:</span></span>
+<span id="cb17-4"><a></a><span class="co">  html:</span></span>
+<span id="cb17-5"><a></a><span class="co">    page-layout: full</span></span>
+<span id="cb17-6"><a></a><span class="an">listing:</span></span>
+<span id="cb17-7"><a></a><span class="co">  contents: .</span></span>
+<span id="cb17-8"><a></a><span class="co">  date-format: iso</span></span>
+<span id="cb17-9"><a></a><span class="co">  exclude:</span></span>
+<span id="cb17-10"><a></a><span class="co">    title: Page Not Found</span></span>
+<span id="cb17-11"><a></a><span class="co">  field-display-names:</span></span>
+<span id="cb17-12"><a></a><span class="co">    subtitle: Event</span></span>
+<span id="cb17-13"><a></a><span class="co">  fields:</span></span>
+<span id="cb17-14"><a></a><span class="co">    - date</span></span>
+<span id="cb17-15"><a></a><span class="co">    - title</span></span>
+<span id="cb17-16"><a></a><span class="co">    - subtitle</span></span>
+<span id="cb17-17"><a></a><span class="co">    - author</span></span>
+<span id="cb17-18"><a></a><span class="co">  page-size: 10</span></span>
+<span id="cb17-19"><a></a><span class="co">  sort: date desc</span></span>
+<span id="cb17-20"><a></a><span class="co">  type: table</span></span>
+<span id="cb17-21"><a></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2">
+<h2><code>/requirements.txt</code></h2>
+<p>Some talks include <a href="https://quarto.org/docs/visual-editor/technical.html#code-chunks">executable programs</a>. These are the dependencies for some Python code.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>ipyleaflet~=0.0</span>
+<span id="cb18-2"><a></a>jupyter~=1.0</span>
+<span id="cb18-3"><a></a>xyzservices~=2025.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Demo</h1>
+<p>Will show some Quarto code and then display it on the neighbouring slide. These have not been crafted specifically for this talk, they were seen in my other talks.</p>
+</section>
+<section class="slide level2">
+<h2>Title Slide</h2>
+<p>Each talk must start with some YAML front matter metadata. Note that the listing specified in <code>/index.qmd</code> mapped <code>subtitle</code> to <code>Events</code>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a></a><span class="pp">---</span></span>
+<span id="cb19-2"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"[Patrick J. Roddy](https://paddyroddy.github.io)"</span></span>
+<span id="cb19-3"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2025-09-02</span></span>
+<span id="cb19-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
+<span id="cb19-5"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"</span></span>
+<span id="cb19-6"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto: Making Talks"</span></span>
+<span id="cb19-7"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sections are then made with <code>#</code> and slides are made with <code>##</code>.</p>
+</section>
+<section class="slide level2">
+<h2>Figures</h2>
+<p>Figures are included using the standard Markdown pattern.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a></a><span class="al">![xkcd:2347](/renovate-automating-dependency-management/figures/dependency.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+
+<img data-src="../renovate-automating-dependency-management/figures/dependency.png" class="r-stretch quarto-figure-center"><p class="caption">xkcd:2347</p></section>
+<section class="slide level2">
+<h2>Lists</h2>
+<p>Lists are included using the standard Markdown pattern. The <code>incremental: true</code> settings means they show one-by-one.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a></a><span class="ss">- </span>Get automated Pull Requests to update your dependencies</span>
+<span id="cb21-2"><a></a><span class="ss">  - </span>Reduce noise by running Renovate on a schedule, for example:</span>
+<span id="cb21-3"><a></a><span class="ss">    - </span>on weekends</span>
+<span id="cb21-4"><a></a><span class="ss">    - </span>outside of working hours</span>
+<span id="cb21-5"><a></a><span class="ss">    - </span>each week</span>
+<span id="cb21-6"><a></a><span class="ss">    - </span>each month</span>
+<span id="cb21-7"><a></a><span class="ss">- </span>Relevant package files are discovered automatically</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<ul>
+<li class="fragment">Get automated Pull Requests to update your dependencies
+<ul>
+<li class="fragment">Reduce noise by running Renovate on a schedule, for example:
+<ul>
+<li class="fragment">on weekends</li>
+<li class="fragment">outside of working hours</li>
+<li class="fragment">each week</li>
+<li class="fragment">each month</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Relevant package files are discovered automatically</li>
+</ul>
+</section>
+<section class="slide level2" data-footer="false">
+<h2>Code Blocks</h2>
+<p>Code blocks can have fenced code blocks syntax highlighted in the usual way. The <code>code-line-numbers</code> option allows for control of what numbers you want your audience to follow.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a></a><span class="in">```{.json code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"}</span></span>
+<span id="cb22-2"><a></a>{</span>
+<span id="cb22-3"><a></a>  <span class="dt">$schema</span><span class="op">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="op">,</span></span>
+<span id="cb22-4"><a></a>  <span class="dt">extends</span><span class="op">:</span> [</span>
+<span id="cb22-5"><a></a>    <span class="st">"config:best-practices"</span><span class="op">,</span></span>
+<span id="cb22-6"><a></a>    <span class="st">"schedule:weekdays"</span><span class="op">,</span></span>
+<span id="cb22-7"><a></a>    <span class="st">":assignAndReview(paddyroddy)"</span><span class="op">,</span></span>
+<span id="cb22-8"><a></a>    <span class="st">":automergeBranch"</span><span class="op">,</span></span>
+<span id="cb22-9"><a></a>    <span class="st">":automergeDigest"</span><span class="op">,</span></span>
+<span id="cb22-10"><a></a>    <span class="st">":automergeMinor"</span><span class="op">,</span></span>
+<span id="cb22-11"><a></a>    <span class="st">":automergePatch"</span><span class="op">,</span></span>
+<span id="cb22-12"><a></a>    <span class="st">":disableDependencyDashboard"</span><span class="op">,</span></span>
+<span id="cb22-13"><a></a>    <span class="st">":enablePreCommit"</span><span class="op">,</span></span>
+<span id="cb22-14"><a></a>    <span class="st">":label(renovate)"</span><span class="op">,</span></span>
+<span id="cb22-15"><a></a>    <span class="st">":maintainLockFilesMonthly"</span><span class="op">,</span></span>
+<span id="cb22-16"><a></a>    <span class="st">":noUnscheduledUpdates"</span><span class="op">,</span></span>
+<span id="cb22-17"><a></a>  ]<span class="op">,</span></span>
+<span id="cb22-18"><a></a>  <span class="dt">commitMessageAction</span><span class="op">:</span> <span class="st">"Renovate:"</span><span class="op">,</span></span>
+<span id="cb22-19"><a></a>  <span class="st">"git-submodules"</span><span class="op">:</span> {</span>
+<span id="cb22-20"><a></a>    <span class="dt">enabled</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb22-21"><a></a>  }<span class="op">,</span></span>
+<span id="cb22-22"><a></a>  <span class="dt">packageRules</span><span class="op">:</span> [</span>
+<span id="cb22-23"><a></a>    {</span>
+<span id="cb22-24"><a></a>      <span class="dt">description</span><span class="op">:</span> <span class="st">"Only allow major updates"</span><span class="op">,</span></span>
+<span id="cb22-25"><a></a>      <span class="dt">enabled</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb22-26"><a></a>      <span class="dt">matchDepNames</span><span class="op">:</span> [<span class="st">"renovatebot/pre-commit-hooks"</span>]<span class="op">,</span></span>
+<span id="cb22-27"><a></a>      <span class="dt">matchUpdateTypes</span><span class="op">:</span> [<span class="st">"minor"</span><span class="op">,</span> <span class="st">"patch"</span><span class="op">,</span> <span class="st">"pin"</span>]<span class="op">,</span></span>
+<span id="cb22-28"><a></a>    }<span class="op">,</span></span>
+<span id="cb22-29"><a></a>    {</span>
+<span id="cb22-30"><a></a>      <span class="dt">description</span><span class="op">:</span> <span class="st">"Combine updates together"</span><span class="op">,</span></span>
+<span id="cb22-31"><a></a>      <span class="dt">groupName</span><span class="op">:</span> <span class="st">"paddyroddy/.github"</span><span class="op">,</span></span>
+<span id="cb22-32"><a></a>      <span class="dt">matchDepNames</span><span class="op">:</span> [<span class="st">"paddyroddy/.github"</span>]<span class="op">,</span></span>
+<span id="cb22-33"><a></a>    }<span class="op">,</span></span>
+<span id="cb22-34"><a></a>    {</span>
+<span id="cb22-35"><a></a>      <span class="dt">description</span><span class="op">:</span> <span class="st">"Shorten commit titles"</span><span class="op">,</span></span>
+<span id="cb22-36"><a></a>      <span class="dt">commitMessageTopic</span><span class="op">:</span> <span class="st">"{{depName}}"</span><span class="op">,</span></span>
+<span id="cb22-37"><a></a>      <span class="dt">matchManagers</span><span class="op">:</span> [<span class="st">"github-actions"</span><span class="op">,</span> <span class="st">"pre-commit"</span>]<span class="op">,</span></span>
+<span id="cb22-38"><a></a>    }<span class="op">,</span></span>
+<span id="cb22-39"><a></a>  ]<span class="op">,</span></span>
+<span id="cb22-40"><a></a>}</span>
+<span id="cb22-41"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="sourceCode" id="cb23" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb23-1"><a></a><span class="fu">{</span></span>
+<span id="cb23-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb23-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb23-4"><a></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
+<span id="cb23-5"><a></a>    <span class="st">"schedule:weekdays"</span><span class="ot">,</span></span>
+<span id="cb23-6"><a></a>    <span class="st">":assignAndReview(paddyroddy)"</span><span class="ot">,</span></span>
+<span id="cb23-7"><a></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
+<span id="cb23-8"><a></a>    <span class="st">":automergeDigest"</span><span class="ot">,</span></span>
+<span id="cb23-9"><a></a>    <span class="st">":automergeMinor"</span><span class="ot">,</span></span>
+<span id="cb23-10"><a></a>    <span class="st">":automergePatch"</span><span class="ot">,</span></span>
+<span id="cb23-11"><a></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
+<span id="cb23-12"><a></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
+<span id="cb23-13"><a></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
+<span id="cb23-14"><a></a>    <span class="st">":maintainLockFilesMonthly"</span><span class="ot">,</span></span>
+<span id="cb23-15"><a></a>    <span class="st">":noUnscheduledUpdates"</span><span class="ot">,</span></span>
+<span id="cb23-16"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-17"><a></a>  <span class="er">commitMessageAction</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
+<span id="cb23-18"><a></a>  <span class="dt">"git-submodules"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb23-19"><a></a>    <span class="er">enabled</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb23-20"><a></a>  <span class="fu">},</span></span>
+<span id="cb23-21"><a></a>  <span class="er">packageRules</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb23-22"><a></a>    <span class="fu">{</span></span>
+<span id="cb23-23"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
+<span id="cb23-24"><a></a>      <span class="er">enabled</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb23-25"><a></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-26"><a></a>      <span class="er">matchUpdateTypes</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-27"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb23-28"><a></a>    <span class="fu">{</span></span>
+<span id="cb23-29"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Combine updates together"</span><span class="fu">,</span></span>
+<span id="cb23-30"><a></a>      <span class="er">groupName</span><span class="fu">:</span> <span class="st">"paddyroddy/.github"</span><span class="fu">,</span></span>
+<span id="cb23-31"><a></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"paddyroddy/.github"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-32"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb23-33"><a></a>    <span class="fu">{</span></span>
+<span id="cb23-34"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
+<span id="cb23-35"><a></a>      <span class="er">commitMessageTopic</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
+<span id="cb23-36"><a></a>      <span class="er">matchManagers</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-37"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb23-38"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-39"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+<h2>Footers</h2>
+<p>You can control the footer for a single slide as follows.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a></a>::: footer</span>
+<span id="cb24-2"><a></a></span>
+<span id="cb24-3"><a></a>See in action:</span>
+<span id="cb24-4"><a></a><span class="ot">&lt;https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5&gt;</span></span>
+<span id="cb24-5"><a></a></span>
+<span id="cb24-6"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="footer">
+<p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5</a></p>
+</div>
+</section>
+<section class="slide level2" data-footer="false">
+<h2>Fragments</h2>
+<p>Fragments are used to highlight or incrementally reveal individual elements on a slide.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a></a>The</span>
+<span id="cb25-2"><a></a><span class="co">[</span><span class="ot">GitHub automerge</span><span class="co">](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)</span></span>
+<span id="cb25-3"><a></a>setting is required</span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a><span class="al">![](/renovate-automating-dependency-management/figures/automerge.png)</span></span>
+<span id="cb25-6"><a></a></span>
+<span id="cb25-7"><a></a>::: {.fragment .fade-left}</span>
+<span id="cb25-8"><a></a></span>
+<span id="cb25-9"><a></a>It is **highly recommended** to ensure you have tests that will operate on the</span>
+<span id="cb25-10"><a></a>Renovate branches.</span>
+<span id="cb25-11"><a></a></span>
+<span id="cb25-12"><a></a><span class="in">```{.yaml}</span></span>
+<span id="cb25-13"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb25-14"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb25-15"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb25-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>main</span>
+<span id="cb25-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
+<span id="cb25-18"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb25-19"><a></a><span class="in">```</span></span>
+<span id="cb25-20"><a></a></span>
+<span id="cb25-21"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<p>The <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request">GitHub automerge</a> setting is required</p>
+
+<img data-src="../renovate-automating-dependency-management/figures/automerge.png" class="r-stretch"><div class="fragment fade-left">
+<p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb26-2"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb26-3"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb26-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb26-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
+<span id="cb26-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Columns</h2>
+<p>Columns can be made using <code>layout-ncol</code> or the <code>layout</code> we saw earlier in the QR code slide.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a></a>::: {layout-ncol=2}</span>
+<span id="cb27-2"><a></a></span>
+<span id="cb27-3"><a></a><span class="al">![](/renovate-automating-dependency-management/figures/status_checks_1.png)</span></span>
+<span id="cb27-4"><a></a></span>
+<span id="cb27-5"><a></a>::: {.fragment .fade-left}</span>
+<span id="cb27-6"><a></a></span>
+<span id="cb27-7"><a></a><span class="al">![](/renovate-automating-dependency-management/figures/status_checks_2.png)</span></span>
+<span id="cb27-8"><a></a></span>
+<span id="cb27-9"><a></a>:::</span>
+<span id="cb27-10"><a></a></span>
+<span id="cb27-11"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="../renovate-automating-dependency-management/figures/status_checks_1.png"></p>
+</div>
+<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="../renovate-automating-dependency-management/figures/status_checks_2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Flowcharts</h2>
+<p>Flowcharts can be made with <a href="https://mermaid.js.org">Mermaid</a>.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a></a><span class="in">```{mermaid}</span></span>
+<span id="cb28-2"><a></a>flowchart TB;</span>
+<span id="cb28-3"><a></a>    Collaborations --&gt; _[<span class="ot">"</span><span class="st">Data Science</span><span class="ot">"</span>] &amp; DevOps &amp; Healthcare &amp; HPC &amp; MIRSG &amp; WebDev;</span>
+<span id="cb28-4"><a></a>    _[<span class="ot">"</span><span class="st">Data Science</span><span class="ot">"</span>] -.-&gt; data_science_responsibilities[<span class="ot">"</span></span>
+<span id="cb28-5"><a></a><span class="st">                             AI</span></span>
+<span id="cb28-6"><a></a><span class="st">                             Machine learning</span></span>
+<span id="cb28-7"><a></a><span class="st">                             Signal processing</span></span>
+<span id="cb28-8"><a></a><span class="st">                             Statistics</span></span>
+<span id="cb28-9"><a></a><span class="st">                           </span><span class="ot">"</span>];</span>
+<span id="cb28-10"><a></a>    DevOps -.-&gt; ?;</span>
+<span id="cb28-11"><a></a>    Healthcare -.-&gt; healthcare_responsibilities[<span class="ot">"</span></span>
+<span id="cb28-12"><a></a><span class="st">                      EMAP</span></span>
+<span id="cb28-13"><a></a><span class="st">                      Hospital projects</span></span>
+<span id="cb28-14"><a></a><span class="st">                    </span><span class="ot">"</span>];</span>
+<span id="cb28-15"><a></a>    HPC -.-&gt; hpc_responsibilities[<span class="ot">"</span></span>
+<span id="cb28-16"><a></a><span class="st">               C++</span></span>
+<span id="cb28-17"><a></a><span class="st">               FPGAs</span></span>
+<span id="cb28-18"><a></a><span class="st">               Fortran</span></span>
+<span id="cb28-19"><a></a><span class="st">               GPUs</span></span>
+<span id="cb28-20"><a></a><span class="st">               MPI</span></span>
+<span id="cb28-21"><a></a><span class="st">               OpenMP</span></span>
+<span id="cb28-22"><a></a><span class="st">             </span><span class="ot">"</span>];</span>
+<span id="cb28-23"><a></a>    MIRSG -.-&gt; mirsg_responsibilities[<span class="ot">"</span></span>
+<span id="cb28-24"><a></a><span class="st">                 Medical imaging</span></span>
+<span id="cb28-25"><a></a><span class="st">                 OMERO</span></span>
+<span id="cb28-26"><a></a><span class="st">                 XNAT</span></span>
+<span id="cb28-27"><a></a><span class="st">               </span><span class="ot">"</span>];</span>
+<span id="cb28-28"><a></a>    WebDev -.-&gt; webdev_responsibilities[<span class="ot">"</span></span>
+<span id="cb28-29"><a></a><span class="st">                  CSS</span></span>
+<span id="cb28-30"><a></a><span class="st">                  HTML</span></span>
+<span id="cb28-31"><a></a><span class="st">                  JavaScript</span></span>
+<span id="cb28-32"><a></a><span class="st">                </span><span class="ot">"</span>];</span>
+<span id="cb28-33"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB;
+    Collaborations --&gt; _["Data Science"] &amp; DevOps &amp; Healthcare &amp; HPC &amp; MIRSG &amp; WebDev;
+    _["Data Science"] -.-&gt; data_science_responsibilities["
+                             AI
+                             Machine learning
+                             Signal processing
+                             Statistics
+                           "];
+    DevOps -.-&gt; ?;
+    Healthcare -.-&gt; healthcare_responsibilities["
+                      EMAP
+                      Hospital projects
+                    "];
+    HPC -.-&gt; hpc_responsibilities["
+               C++
+               FPGAs
+               Fortran
+               GPUs
+               MPI
+               OpenMP
+             "];
+    MIRSG -.-&gt; mirsg_responsibilities["
+                 Medical imaging
+                 OMERO
+                 XNAT
+               "];
+    WebDev -.-&gt; webdev_responsibilities["
+                  CSS
+                  HTML
+                  JavaScript
+                "];
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quotes</h2>
+<p>Standard Markdown quoting.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a></a><span class="co">[</span><span class="ot">Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/DevOps)</span>:</span>
+<span id="cb29-2"><a></a></span>
+<span id="cb29-3"><a></a><span class="at">&gt; DevOps is a method in the software development and IT industry. Used as a set</span></span>
+<span id="cb29-4"><a></a><span class="at">&gt; of practices and tools, DevOps integrates and automates the work of software</span></span>
+<span id="cb29-5"><a></a><span class="at">&gt; development (Dev) and IT operations (Ops) as a means for improving and</span></span>
+<span id="cb29-6"><a></a><span class="at">&gt; shortening the systems development life cycle. DevOps is complementary to</span></span>
+<span id="cb29-7"><a></a><span class="at">&gt; agile software development; many DevOps aspects came from the agile way of</span></span>
+<span id="cb29-8"><a></a><span class="at">&gt; working. Automation is an important part of DevOps. Software programmers and</span></span>
+<span id="cb29-9"><a></a><span class="at">&gt; architects should use "fitness functions" to keep their software in check.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<p><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia</a>:</p>
+<blockquote>
+<p>DevOps is a method in the software development and IT industry. Used as a set of practices and tools, DevOps integrates and automates the work of software development (Dev) and IT operations (Ops) as a means for improving and shortening the systems development life cycle. DevOps is complementary to agile software development; many DevOps aspects came from the agile way of working. Automation is an important part of DevOps. Software programmers and architects should use “fitness functions” to keep their software in check.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+<h2>Checkboxes</h2>
+<p>Standard Markdown checkboxes.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a></a><span class="an">Documentation:</span></span>
+<span id="cb30-2"><a></a></span>
+<span id="cb30-3"><a></a><span class="ss">- </span><span class="va">[ ]</span> **A statement of need** stating problems the software is designed to solve</span>
+<span id="cb30-4"><a></a>      and its target audience in README.</span>
+<span id="cb30-5"><a></a><span class="ss">- </span><span class="va">[ ]</span> **Installation instructions:** for the development version of the package</span>
+<span id="cb30-6"><a></a>      and any non-standard dependencies in README.</span>
+<span id="cb30-7"><a></a><span class="ss">- </span><span class="va">[ ]</span> **Vignette(s)** demonstrating major functionality that runs successfully</span>
+<span id="cb30-8"><a></a>      locally.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<p>Documentation:</p>
+<ul class="task-list">
+<li class="fragment"><label><input type="checkbox"><strong>A statement of need</strong> stating problems the software is designed to solve and its target audience in README.</label></li>
+<li class="fragment"><label><input type="checkbox"><strong>Installation instructions:</strong> for the development version of the package and any non-standard dependencies in README.</label></li>
+<li class="fragment"><label><input type="checkbox"><strong>Vignette(s)</strong> demonstrating major functionality that runs successfully locally.</label></li>
+</ul>
+</section>
+<section class="slide level2" data-footer="false">
+<h2>Running Code</h2>
+<p>Can embed and run code to do all kinds of things. This example generates an interactive map by using the Python package <a href="https://ipyleaflet.readthedocs.io">ipyleaflet</a>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a></a><span class="in">```{python}</span></span>
+<span id="cb31-2"><a></a><span class="im">from</span> ipyleaflet <span class="im">import</span> Map, Marker, basemap_to_tiles, basemaps</span>
+<span id="cb31-3"><a></a></span>
+<span id="cb31-4"><a></a>heathrow_coords <span class="op">=</span> (<span class="fl">51.4680</span>, <span class="fl">0.4551</span>)</span>
+<span id="cb31-5"><a></a>seatac_coords <span class="op">=</span> (<span class="fl">47.4436</span>, <span class="op">-</span><span class="fl">122.2961</span>)</span>
+<span id="cb31-6"><a></a>m <span class="op">=</span> Map(</span>
+<span id="cb31-7"><a></a>    basemap<span class="op">=</span>basemap_to_tiles(basemaps.Esri.WorldImagery, <span class="st">"2017-04-08"</span>),</span>
+<span id="cb31-8"><a></a>    center<span class="op">=</span>(</span>
+<span id="cb31-9"><a></a>        (heathrow_coords[<span class="dv">0</span>] <span class="op">+</span> seatac_coords[<span class="dv">0</span>]) <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb31-10"><a></a>        (heathrow_coords[<span class="dv">1</span>] <span class="op">+</span> seatac_coords[<span class="dv">1</span>]) <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb31-11"><a></a>    ),</span>
+<span id="cb31-12"><a></a>    zoom<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb31-13"><a></a>)</span>
+<span id="cb31-14"><a></a>m.add_layer(Marker(location<span class="op">=</span>heathrow_coords))</span>
+<span id="cb31-15"><a></a>m.add_layer(Marker(location<span class="op">=</span>seatac_coords))</span>
+<span id="cb31-16"><a></a>m</span>
+<span id="cb31-17"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div id="95215e57" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0ac922f4fb5c4af59b6d7c47a3f9e65b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Website Previews</h2>
+<p>Websites can be previewed as follows.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a></a><span class="in">```{=html}</span></span>
+<span id="cb32-2"><a></a><span class="in">&lt;iframe</span></span>
+<span id="cb32-3"><a></a><span class="in">    height="550"</span></span>
+<span id="cb32-4"><a></a><span class="in">    src="https://ibis-project.org/tutorials/getting_started"</span></span>
+<span id="cb32-5"><a></a><span class="in">    title="Ibis Documentation"</span></span>
+<span id="cb32-6"><a></a><span class="in">    width="250"</span></span>
+<span id="cb32-7"><a></a><span class="in">&gt;</span></span>
+<span id="cb32-8"><a></a><span class="in">&lt;/iframe&gt;</span></span>
+<span id="cb32-9"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<iframe height="550" src="https://ibis-project.org/tutorials/getting_started" title="Ibis Documentation" width="250">
+</iframe>
+</section>
+<section class="slide level2">
+<h2>Stack Layout</h2>
+<p>This example shows how to stack figures on top of each other.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a></a>::: {.r-hstack}</span>
+<span id="cb33-2"><a></a></span>
+<span id="cb33-3"><a></a>::: {.r-stack}</span>
+<span id="cb33-4"><a></a></span>
+<span id="cb33-5"><a></a><span class="al">![](/scipy-2024/figures/conference/1.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-6"><a></a></span>
+<span id="cb33-7"><a></a><span class="al">![](/scipy-2024/figures/conference/2.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-8"><a></a></span>
+<span id="cb33-9"><a></a><span class="al">![](/scipy-2024/figures/conference/3.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-10"><a></a></span>
+<span id="cb33-11"><a></a><span class="al">![](/scipy-2024/figures/conference/4.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-12"><a></a></span>
+<span id="cb33-13"><a></a>:::</span>
+<span id="cb33-14"><a></a></span>
+<span id="cb33-15"><a></a>::: {.r-stack}</span>
+<span id="cb33-16"><a></a></span>
+<span id="cb33-17"><a></a><span class="al">![](/scipy-2024/figures/conference/5.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-18"><a></a></span>
+<span id="cb33-19"><a></a><span class="al">![](/scipy-2024/figures/conference/6.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-20"><a></a></span>
+<span id="cb33-21"><a></a><span class="al">![](/scipy-2024/figures/conference/7.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-22"><a></a></span>
+<span id="cb33-23"><a></a><span class="al">![](/scipy-2024/figures/conference/8.jpg)</span>{.fragment height=550}</span>
+<span id="cb33-24"><a></a></span>
+<span id="cb33-25"><a></a>:::</span>
+<span id="cb33-26"><a></a></span>
+<span id="cb33-27"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="r-hstack">
+<div class="r-stack">
+<p><img data-src="../scipy-2024/figures/conference/1.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/2.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/3.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/4.jpg" class="fragment" height="550"></p>
+</div>
+<div class="r-stack">
+<p><img data-src="../scipy-2024/figures/conference/5.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/6.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/7.jpg" class="fragment" height="550"></p>
+<p><img data-src="../scipy-2024/figures/conference/8.jpg" class="fragment" height="550"></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Tables</h2>
+<p>Standard markdown tables.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a></a><span class="pp">|</span> Reusable workflows                                                                           <span class="pp">|</span> Composite actions                                                                                                            <span class="pp">|</span></span>
+<span id="cb34-2"><a></a><span class="pp">| --------------------------------------------------------------------------------------------</span> <span class="pp">| ----------------------------------------------------------------------------------------------------------------------------</span> <span class="pp">|</span></span>
+<span id="cb34-3"><a></a><span class="pp">|</span> A YAML file, similar to any standard workflow file                                           <span class="pp">|</span> An action containing a bundle of workflow steps                                                                              <span class="pp">|</span></span>
+<span id="cb34-4"><a></a><span class="pp">|</span> Each reusable workflow is a single file in the <span class="in">`.github/workflows`</span> directory of a repository <span class="pp">|</span> Each composite action is a separate repository, or a directory, containing an <span class="in">`action.yml`</span> file and, optionally, other files <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reusable workflows</th>
+<th>Composite actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A YAML file, similar to any standard workflow file</td>
+<td>An action containing a bundle of workflow steps</td>
+</tr>
+<tr class="even">
+<td>Each reusable workflow is a single file in the <code>.github/workflows</code> directory of a repository</td>
+<td>Each composite action is a separate repository, or a directory, containing an <code>action.yml</code> file and, optionally, other files</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+<h2>Callouts</h2>
+<p>Can include GitHub Markdown-like callouts.</p>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a></a>::: {.callout-note}</span>
+<span id="cb35-2"><a></a></span>
+<span id="cb35-3"><a></a>Much of this talk holds true for personal GitHub accounts and GitHub</span>
+<span id="cb35-4"><a></a>organisations. However, it is not always the case. The focus here is solely on</span>
+<span id="cb35-5"><a></a>organisational accounts.</span>
+<span id="cb35-6"><a></a></span>
+<span id="cb35-7"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
+</section>
+<section class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Much of this talk holds true for personal GitHub accounts and GitHub organisations. However, it is not always the case. The focus here is solely on organisational accounts.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>More Examples</h1>
+
+</section>
+<section class="slide level2">
+<h2>Official Quarto Example Presentation</h2>
+<iframe height="550" src="https://quarto.org/docs/presentations/revealjs/demo" title="Official Quarto Example" width="1000">
+</iframe>
+</section>
+<section class="slide level2">
+<h2>Further Examples</h2>
+<iframe height="550" src="https://quarto.org/docs/gallery/#presentations" title="Quarto Presentation Gallery" width="1000">
+</iframe>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Conclusions</h1>
+
+</section>
+<section class="slide level2" data-menu-title="Summary">
+<h2></h2>
+<ul>
+<li class="fragment">Quarto combines Pandoc and Markdown syntax.</li>
+<li class="fragment">Can present slides in the browser or export them as PDF and so on.</li>
+<li class="fragment">Can extend functionality with extensions or write your own custom filters.</li>
+<li class="fragment">Can display code line-by-line and even run code in presentations.</li>
+<li class="fragment">Can re-use slides within a presentation.</li>
+<li class="fragment">Easy to start, takes a little time to perfect.</li>
+<li class="fragment">More fun.</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Quarto: Making Talks - <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":false,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"hideMissingTitles":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="application/vnd.jupyter.widget-state+json">
+    {"state":{"030ad59c3ddb4a91827ef6c3aa0ff61a":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"0ac922f4fb5c4af59b6d7c47a3f9e65b":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[49.4558,-60.9205],"close_popup_on_click":true,"controls":["IPY_MODEL_030ad59c3ddb4a91827ef6c3aa0ff61a","IPY_MODEL_53b757da47ce4716b1eb46097c2d7f96"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_d55155e26562406094cb12fea2660c57","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_49cdf586edf043f383491edbe5ec1316","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_fad220dda59d4edeaabcd05c10dc7649","IPY_MODEL_ee783982a0c84a33a4c5ff999a11f530","IPY_MODEL_72f0ffc2c2d84427b86cc55e2611d93b"],"layout":"IPY_MODEL_a17002f06d774a76906d620b3d95dc76","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2025-06-26","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_0c0e572d7413406aa1924fd87d8cc5c5","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":3,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"0c0e572d7413406aa1924fd87d8cc5c5":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"49cdf586edf043f383491edbe5ec1316":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"53b757da47ce4716b1eb46097c2d7f96":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"72f0ffc2c2d84427b86cc55e2611d93b":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[47.4436,-122.2961],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"a17002f06d774a76906d620b3d95dc76":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d55155e26562406094cb12fea2660c57":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"ee783982a0c84a33a4c5ff999a11f530":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.468,0.4551],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"fad220dda59d4edeaabcd05c10dc7649":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":18,"min_native_zoom":null,"min_zoom":1,"name":"Esri.WorldImagery","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}","visible":true,"zoom_offset":0}}},"version_major":2,"version_minor":0}
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/paddyroddy\.github\.io\/talks");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+                // default icon
+                link.classList.add("external");
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

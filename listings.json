@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/quarto-making-talks/index.html",
       "/linting-prose-with-vale/index.html",
       "/github-safe-settings-policy-as-code/index.html",
       "/turbocharging-your-github-organisation/index.html",

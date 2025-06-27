@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/linting-prose-with-vale/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.992Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.986Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.986Z</lastmod>
-  </url>
-  <url>
     <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
-    <lastmod>2025-06-25T10:02:32.036Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.984Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2025-06-25T10:02:32.002Z</lastmod>
+    <lastmod>2025-06-27T14:33:30.571Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.978Z</lastmod>
+    <lastmod>2025-06-27T14:33:30.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.520Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/quarto-making-talks/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.532Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2025-06-25T10:02:31.997Z</lastmod>
+    <lastmod>2025-06-27T14:33:30.531Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/linting-prose-with-vale/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.520Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2025-06-25T10:02:32.025Z</lastmod>
+    <lastmod>2025-06-27T14:33:30.560Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.536Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
+    <lastmod>2025-06-27T14:33:30.518Z</lastmod>
   </url>
 </urlset>
