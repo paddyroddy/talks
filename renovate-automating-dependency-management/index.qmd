@@ -80,7 +80,7 @@ title: "Renovate: Automating Dependency Management"
 
 ## Example Config
 
-{{< include /quarto-making-talks/_slides/code.qmd >}}
+{{< include /quarto-making-talks/_slides/code-blocks.qmd >}}
 
 {{< include /quarto-making-talks/_slides/footers.qmd >}}
 
@@ -112,7 +112,7 @@ See in action:
 
 ## Automerging
 
-{{< include /quarto-making-talks/_slides/animations.qmd >}}
+{{< include /quarto-making-talks/_slides/fragments.qmd >}}
 
 ## Rulesets - Status Checks
 
