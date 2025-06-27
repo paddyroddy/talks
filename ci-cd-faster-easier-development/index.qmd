@@ -117,7 +117,7 @@ repository, or deploy merged pull requests to production.
 3. Steps: An individual task that can run commands or actions. Each step in a
    job executes on the same runner, allowing the actions in that job to share
    data with each other.
-4. Actions: Standalone commands that are combined into steps to create a job.
+4. Actions: Stand-alone commands that are combined into steps to create a job.
    Actions are the smallest portable building block of a workflow.
 5. Runners: A server that runs your workflows when they are triggered. Each
    runner can run a single job at a time.
