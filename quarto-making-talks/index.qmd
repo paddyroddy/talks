@@ -164,8 +164,7 @@ Presenter
 - Streamlined workflow for data-driven talks.
 - Reduced manual effort and errors.
 - Easy version control and collaboration.
-- Flexibility to output to other formats from the same
-  source.
+- Flexibility to output to other formats from the same source.
 
 :::
 
@@ -220,7 +219,7 @@ GitHub Action to publish the Quarto website to GitHub Pages.
 
 Extensions are a powerful way to change and extend the behaviour of Quarto. Can
 be installed with `quarto add <extension>`, which must be committed to the
-repository.
+repository. Extensions can be updated through `quarto update <extension>`.
 
 - [jmbuhr/qrcode](https://github.com/jmbuhr/quarto-qrcode): provides shortcodes
   for [qrcodejs](https://davidshimjs.github.io/qrcodejs) in Quarto.
