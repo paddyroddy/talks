@@ -20,6 +20,7 @@ format:
     menu:
       hideMissingTitles: true
       useTextContentForMissingTitles: false
+    preview-links: true
     slide-number: true
     theme: dark
     transition: fade
