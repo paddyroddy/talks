@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/linting@51b992959f67661c3433840aec883cc9ddbe2945 # v0
+      - uses: paddyroddy/.github/actions/linting@61f147d3eb8b0e4f7c91c701a1950e7900f3ac77 # v0
         with:
           pre-commit-config: ./.pre-commit-config.yaml
 
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/vale@d5aea086eaabccae4bcf39786ad5138b629755a6 # v0
+      - uses: paddyroddy/.github/actions/vale@61f147d3eb8b0e4f7c91c701a1950e7900f3ac77 # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
