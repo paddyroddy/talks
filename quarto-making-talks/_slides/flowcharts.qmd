@@ -1,4 +1,5 @@
 ```{mermaid}
+%%| fig-align: center
 flowchart TB;
     Collaborations --> _["Data Science"] & DevOps & Healthcare & HPC & MIRSG & WebDev;
     _["Data Science"] -.-> data_science_responsibilities["
