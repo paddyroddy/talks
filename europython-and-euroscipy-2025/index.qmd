@@ -1,0 +1,9 @@
+---
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+date: 2025-xx-xx
+format: revealjs
+subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
+title: EuroPython & EuroSciPy 2025
+---
+
+{{< include /_includes/qr-code.qmd >}}
