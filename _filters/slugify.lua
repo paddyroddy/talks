@@ -1,6 +1,6 @@
 -- Slugify titles for use in URLs or identifiers.
 local function slugify(s)
-    return s:gsub("&", "and"):gsub("[%s+/]+", "-"):gsub("[^%w-]+", ""):lower()
+    return s:gsub("[%s+/]+", "-"):gsub("[^%w-]+", ""):lower()
 end
 
 return {
