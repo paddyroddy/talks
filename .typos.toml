@@ -1,5 +1,7 @@
-[type.qmd]
-extend-glob = [
-    "*.qmd",
+[default]
+extend-ignore-re = [
+    # Custom ignore regex patterns:
+    # https://github.com/crate-ci/typos/blob/master/docs/reference.md#example-configurations
+    ".*(?:#|--|//|/*).*(?:typos):\\s?ignore[^\\n]*\\n",
+    ".*(?:typos):\\s?ignore-next-line[^\\n]*\\n[^\\n]*",
 ]
-extend-words.promis = "promis"
