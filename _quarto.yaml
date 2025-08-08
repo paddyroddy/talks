@@ -28,7 +28,7 @@ format:
 
 website:
   google-analytics: G-SCSTN0WCDT
-  favicon: /assets/images/favicon.ico
+  favicon: favicon.ico
   navbar:
     tools:
       - icon: house
