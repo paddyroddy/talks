@@ -23,6 +23,22 @@ m.add_layer(Marker(location=paris))
 m
 ```
 
+## Early Years
+
+::: {layout-ncol=2}
+
+- Mum (English) met Dad (Irish) in Paris
+- Left at age 3 and Andrew was 1
+- Failed to learn French (or English) in that time 😔
+
+::: {.fragment .fade-left}
+
+![Andrew, Jonathan, Mum, Dad, Me](figures/family.jpg)
+
+:::
+
+:::
+
 ## France → UK
 
 ```{python}
