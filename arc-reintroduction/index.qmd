@@ -1,0 +1,148 @@
+---
+author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+date: 2025-09-02
+format: revealjs
+subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
+title: "ARC: (Re)introduction"
+---
+
+{{< include /_includes/qr-code.qmd >}}
+
+# Paris
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+paris = (48.89084843379842, 2.2811505653731032)
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "1994-09-20"),
+    center=paris,
+    zoom=11.5,
+)
+m.add_layer(Marker(location=paris))
+m
+```
+
+## France → UK
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+paris = (48.89084843379842, 2.2811505653731032)
+kenilworth = (52.33904807070224, -1.587793512840982)
+places = {kenilworth, paris}
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "1998-07-31"),
+    center=(
+        sum(coord[0] for coord in places) / len(places),
+        sum(coord[1] for coord in places) / len(places),
+    ),
+    zoom=6,
+)
+for place in places:
+    m.add_layer(Marker(location=place))
+m
+```
+
+# Kenilworth
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+kenilworth = (52.33904807070224, -1.587793512840982)
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "1998-07-31"),
+    center=kenilworth,
+    zoom=11,
+)
+m.add_layer(Marker(location=kenilworth))
+m
+```
+
+## Kenilworth → Cambridge
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+kenilworth = (52.33904807070224, -1.587793512840982)
+cambridge = (52.20456623926403, 0.10545284672945925)
+places = {cambridge, kenilworth}
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2013-10-05"),
+    center=(
+        sum(coord[0] for coord in places) / len(places),
+        sum(coord[1] for coord in places) / len(places),
+    ),
+    zoom=9,
+)
+for place in places:
+    m.add_layer(Marker(location=place))
+m
+```
+
+# Cambridge
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+cambridge = (52.20456623926403, 0.10545284672945925)
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2013-10-05"),
+    center=cambridge,
+    zoom=13,
+)
+m.add_layer(Marker(location=cambridge))
+m
+```
+
+## Cambridge → London
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+cambridge = (52.20456623926403, 0.10545284672945925)
+london = (51.470747191216255, -0.10703870086632425)
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
+    center=(
+        sum(coord[0] for coord in places) / len(places),
+        sum(coord[1] for coord in places) / len(places),
+    ),
+    zoom=8,
+)
+for place in places:
+    m.add_layer(Marker(location=place))
+m
+```
+
+# London
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+brecknock = (51.549877294806386, -0.1300985995647918)
+greyhound = (51.48545806898129, -0.2173489439383915)
+lavender = (51.4635442166596, -0.1619354214828009)
+lilford = (51.470747191216255, -0.10703870086632425)
+rita = (51.48105874845458, -0.12063909006908995)
+york = (51.54870195873848, -0.12829521344656689)
+places = {
+    brecknock,
+    greyhound,
+    lavender,
+    lilford,
+    rita,
+    york
+}
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
+    center=(
+        sum(coord[0] for coord in places) / len(places),
+        sum(coord[1] for coord in places) / len(places),
+    ),
+    zoom=11,
+)
+for place in places:
+    m.add_layer(Marker(location=place))
+m
+```
