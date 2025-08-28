@@ -8,7 +8,7 @@ title: "ARC: (Re)introduction"
 
 {{< include /_includes/qr-code.qmd >}}
 
-# Paris
+# 1994: Paris
 
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
@@ -39,7 +39,7 @@ m
 
 :::
 
-## France → UK
+## 1998: France → UK
 
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
@@ -75,7 +75,7 @@ m.add_layer(Marker(location=kenilworth))
 m
 ```
 
-## Kenilworth → Cambridge
+## 2013: Kenilworth → Cambridge
 
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
@@ -111,7 +111,7 @@ m.add_layer(Marker(location=cambridge))
 m
 ```
 
-## Cambridge → London
+## 2017: Cambridge → London
 
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
