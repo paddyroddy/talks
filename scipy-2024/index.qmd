@@ -101,20 +101,20 @@ Reasons you might have heard of it:
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
-tacoma_coords = (47.2529, -122.4443)
-onp_coords = (47.8021, -123.6044)
+onp = (47.8021, -123.6044)
+tacoma = (47.2529, -122.4443)
+places = {onp, tacoma}
 m = Map(
     basemap=basemap_to_tiles(basemaps.Esri.WorldImagery, "2017-04-08"),
     center=(
-        (tacoma_coords[0] + onp_coords[0]) / 2,
-        (tacoma_coords[1] + onp_coords[1]) / 2,
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=8,
 )
-m.add_layer(Marker(location=tacoma_coords))
-m.add_layer(Marker(location=onp_coords))
+for place in places:
+    m.add_layer(Marker(location=place))
 m
-
 ```
 
 ## National Forest
@@ -288,18 +288,19 @@ m
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
-tacoma_coords = (47.2529, -122.4443)
-seattle_coords = (47.6061, -122.3328)
+seattle = (47.6061, -122.3328)
+tacoma = (47.2529, -122.4443)
+places = {seattle, tacoma}
 m = Map(
     basemap=basemap_to_tiles(basemaps.Esri.WorldImagery, "2017-04-08"),
     center=(
-        (tacoma_coords[0] + seattle_coords[0]) / 2,
-        (tacoma_coords[1] + seattle_coords[1]) / 2,
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=9,
 )
-m.add_layer(Marker(location=tacoma_coords))
-m.add_layer(Marker(location=seattle_coords))
+for place in places:
+    m.add_layer(Marker(location=place))
 m
 ```
 
