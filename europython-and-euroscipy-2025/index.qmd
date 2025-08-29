@@ -106,13 +106,20 @@ for place in places:
 m
 ```
 
-## Tutorials {{< fa brands github >}}
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Tutorials {{< fa brands github >}} {data-menu-title="Tutorials (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Guardians of Science: A Python Tutorial on a RAG-Powered Compliance Plug-In
   and Ethical AI tools
 - [Skrub: machine learning for dataframes](https://github.com/skrub-data/EuroSciPy2025)
 - [Use napari for easier interactive extraction of knowledge from images and other spatial data](https://github.com/brisvag/napari-tutorial-euroscipy2025)
 - [Compress, Compute, and Conquer: Python-Blosc2 for Efficient Data Analysis](https://github.com/Blosc/EuroSciPy2025-CCC-Tutorial)
+
+## Tutorials {{< fa brands github >}} {data-menu-title="Tutorials (ii)"}
+
 - [Annotating the dynamic: Type Annotation for DataFrames](https://github.com/MDPI-AG/euroscipy2025)
 - [Deploy your Machine Learning model with Fast API](https://github.com/Cheukting/ml_fastapi)
 - [How to become a software detective and perform security research](https://github.com/cheshie/code-analysis)
