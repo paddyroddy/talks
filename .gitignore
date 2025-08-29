@@ -9,4 +9,4 @@
 _site
 index-listing.json
 site_libs
-strava_tokens.json
+tokens.json

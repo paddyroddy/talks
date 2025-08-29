@@ -1,12 +1,15 @@
 import datetime
 import json
 import pathlib
+import os
 
 import polyline
 import stravalib.client
 from ipyleaflet import Map, Polyline, basemaps
 
-TOKEN_FILE = pathlib.Path(__file__).parents[1] / "strava_tokens.json"
+STRAVA_ACCESS_TOKEN = os.getenv("STRAVA_ACCESS_TOKEN")
+STRAVA_EXPIRES_AT = os.getenv("STRAVA_EXPIRES_AT")
+STRAVA_REFRESH_TOKEN = os.getenv("STRAVA_REFRESH_TOKEN")
 
 
 def generate_map(
@@ -34,18 +37,11 @@ def generate_map(
     -------
         An ipyleaflet map with the activity routes plotted.
     """
-    try:
-        with pathlib.Path.open(TOKEN_FILE) as f:
-            token_data = json.load(f)
-
-        client = stravalib.client.Client(
-            access_token=token_data["access_token"],
-            refresh_token=token_data["refresh_token"],
-            token_expires=token_data["expires_at"],
-        )
-    except FileNotFoundError:
-        print("Error: Strava tokens not found. Please run authentication.")
-        return Map(center=center, zoom=zoom)
+    client = stravalib.client.Client(
+        access_token=STRAVA_ACCESS_TOKEN,
+        refresh_token=STRAVA_REFRESH_TOKEN,
+        token_expires=STRAVA_EXPIRES_AT,
+    )
 
     m = Map(
         basemap=basemaps.OpenStreetMap.Mapnik,
