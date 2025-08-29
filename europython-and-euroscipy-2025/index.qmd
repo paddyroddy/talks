@@ -35,6 +35,27 @@ for place in places:
 m
 ```
 
+## Running
+
+```{python}
+import datetime
+import pathlib
+import sys
+
+sys.path.append(str(pathlib.Path.cwd().parent / "_strava"))
+
+from heatmap import generate_map
+
+strava_map = generate_map(
+    center=(50.075476439508904, 14.429899537376473),
+    zoom=12,
+    start_date=datetime.datetime(2025, 7, 14, tzinfo=datetime.UTC),
+    end_date=datetime.datetime(2025, 7, 21, tzinfo=datetime.UTC),
+)
+
+strava_map
+```
+
 # EuroSciPy
 
 ## Flight
@@ -79,7 +100,7 @@ for place in places:
 m
 ```
 
-## Runs
+## Running
 
 ```{python}
 import datetime
