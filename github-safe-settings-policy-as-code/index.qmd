@@ -299,7 +299,7 @@ restrictedRepos:
     - ^omero-ansible-sandpit$
     - ^OmeroInstaller$
     - ^OmeroInstallerConfig$
-    - ^promis-omero-import$
+    - ^promis-omero-import$ # typos: ignore
     - ^protocols$
     - ^reimagine-bulk-uploader$
     - ^SUMMITCOVIDGateway$

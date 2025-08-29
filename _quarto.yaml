@@ -6,6 +6,7 @@ format:
   html:
     theme: darkly
   revealjs:
+    auto-stretch: false
     callout-appearance: simple
     code-copy: true
     filters:
@@ -27,7 +28,7 @@ format:
 
 website:
   google-analytics: G-SCSTN0WCDT
-  favicon: /assets/images/favicon.ico
+  favicon: favicon.ico
   navbar:
     tools:
       - icon: house
@@ -35,4 +36,4 @@ website:
       - icon: github
         href: https://github.com/paddyroddy/talks
   site-url: https://paddyroddy.github.io/talks
-  title: ""
+  title: Patrick J. Roddy
