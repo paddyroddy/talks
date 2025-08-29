@@ -35,7 +35,13 @@ for place in places:
 m
 ```
 
-## Running
+## Tutorials {{< fa brands github >}}
+
+- GIL-free Python and the GPU: hands-on experience
+- The Mighty Dot - Customize Attribute Access with Descriptors
+- [Accelerating Scientific Python: JAX, Numba, and Ray in Action](https://github.com/coobas/europython-25)
+
+## Running {{< fa brands strava >}}
 
 ```{python}
 import datetime
@@ -100,7 +106,19 @@ for place in places:
 m
 ```
 
-## Running
+## Tutorials {{< fa brands github >}}
+
+- Guardians of Science: A Python Tutorial on a RAG-Powered Compliance Plug-In
+  and Ethical AI tools
+- [Skrub: machine learning for dataframes](https://github.com/skrub-data/EuroSciPy2025)
+- [Use napari for easier interactive extraction of knowledge from images and other spatial data](https://github.com/brisvag/napari-tutorial-euroscipy2025)
+- [Compress, Compute, and Conquer: Python-Blosc2 for Efficient Data Analysis](https://github.com/Blosc/EuroSciPy2025-CCC-Tutorial)
+- [Annotating the dynamic: Type Annotation for DataFrames](https://github.com/MDPI-AG/euroscipy2025)
+- [Deploy your Machine Learning model with Fast API](https://github.com/Cheukting/ml_fastapi)
+- [How to become a software detective and perform security research](https://github.com/cheshie/code-analysis)
+- [Managing Scientific Data and Workflows with DataLad](https://github.com/OleBialas/DataLad-EuroScipy25)
+
+## Running {{< fa brands strava >}}
 
 ```{python}
 import datetime
