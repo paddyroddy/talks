@@ -8,7 +8,7 @@ import stravalib.client
 from ipyleaflet import Map, Polyline, basemaps
 
 STRAVA_ACCESS_TOKEN = os.getenv("STRAVA_ACCESS_TOKEN")
-STRAVA_EXPIRES_AT = os.getenv("STRAVA_EXPIRES_AT")
+STRAVA_EXPIRES_AT = int(os.getenv("STRAVA_EXPIRES_AT"))
 STRAVA_REFRESH_TOKEN = os.getenv("STRAVA_REFRESH_TOKEN")
 
 

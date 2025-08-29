@@ -6,7 +6,7 @@ import pathlib
 
 import stravalib.client
 
-STRAVA_CLIENT_ID = os.getenv("STRAVA_CLIENT_ID")
+STRAVA_CLIENT_ID = int(os.getenv("STRAVA_CLIENT_ID"))
 STRAVA_CLIENT_SECRET = os.getenv("STRAVA_CLIENT_SECRET")
 TOKEN_FILE = pathlib.Path(__file__).parent / "tokens.json"
 
