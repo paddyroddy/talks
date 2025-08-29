@@ -6,7 +6,7 @@ import stravalib.client
 
 STRAVA_CLIENT_ID = os.getenv("STRAVA_CLIENT_ID")
 STRAVA_CLIENT_SECRET = os.getenv("STRAVA_CLIENT_SECRET")
-TOKEN_FILE = pathlib.Path(__file__).parent / "strava_tokens.json"
+TOKEN_FILE = pathlib.Path(__file__).parent / "tokens.json"
 
 
 def authenticate() -> None:
