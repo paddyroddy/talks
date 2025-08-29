@@ -153,6 +153,13 @@ m
 - [How to become a software detective and perform security research](https://github.com/cheshie/code-analysis)
 - [Managing Scientific Data and Workflows with DataLad](https://github.com/OleBialas/DataLad-EuroScipy25)
 
+## Talks – Highlights
+
+- A Hitchhiker's Guide to the Array API Standard Ecosystem
+- Array API and library dispatching discussion
+- EffVer: Versioning code by the effort required to upgrade
+- Standardised Quantity/Unit APIs discussion
+
 ## Running {{< fa brands strava >}}
 
 ```{python}
