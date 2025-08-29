@@ -41,6 +41,31 @@ m
 - The Mighty Dot - Customize Attribute Access with Descriptors
 - [Accelerating Scientific Python: JAX, Numba, and Ray in Action](https://github.com/coobas/europython-25)
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Talks – Highlights {data-menu-title="Talks – Highlights (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Myths and fairy tales around Python performance
+- Typing at scale: statically type-checking a large codebase
+- Why it took 4 years to get a lock files specification
+- Snapshot Testing: A New Era of Reliability
+- End to End with Testcontainers and Playwright
+
+## Talks – Highlights {data-menu-title="Talks – Highlights (ii)"}
+
+- What comes after Rust in the Python ecosystem?
+- What does = do?
+  <!-- vale RedHat.Symbols = NO -->
+  <!-- vale RedHat.TermsWarnings = NO -->
+- Python Config That Will Give You Chills (In a Good Way, I Promise!)
+  <!-- vale RedHat.TermsWarnings = YES -->
+  <!-- vale RedHat.CaseSensitiveTerms = NO -->
+- "Python: the Documentary" screening and Q&A
+  <!-- vale RedHat.CaseSensitiveTerms = YES -->
+  <!-- vale RedHat.Symbols = YES -->
+
 ## Running {{< fa brands strava >}}
 
 ```{python}
@@ -112,7 +137,10 @@ m
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
+<!-- vale RedHat.Hyphens = NO -->
+
 - Guardians of Science: A Python Tutorial on a RAG-Powered Compliance Plug-In
+  <!-- vale RedHat.Hyphens = YES -->
   and Ethical AI tools
 - [Skrub: machine learning for dataframes](https://github.com/skrub-data/EuroSciPy2025)
 - [Use napari for easier interactive extraction of knowledge from images and other spatial data](https://github.com/brisvag/napari-tutorial-euroscipy2025)
