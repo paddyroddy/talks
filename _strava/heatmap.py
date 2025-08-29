@@ -6,7 +6,7 @@ import polyline
 import stravalib.client
 from ipyleaflet import Map, Polyline, basemaps
 
-TOKEN_FILE = pathlib.Path(__file__).parent / "tokens.json"
+TOKEN_FILE = pathlib.Path(__file__).parents[1] / "strava_tokens.json"
 
 
 def generate_map(
