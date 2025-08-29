@@ -1,3 +1,5 @@
+"""Performs the authentication with Stava."""
+
 import json
 import os
 import pathlib

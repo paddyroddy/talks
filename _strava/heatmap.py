@@ -1,6 +1,6 @@
+"""Creates a Strava heatmap for a given date range and location."""
+
 import datetime
-import json
-import pathlib
 import os
 
 import polyline
