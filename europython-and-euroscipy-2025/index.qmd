@@ -55,16 +55,18 @@ m
 
 ## Talks – Highlights {data-menu-title="Talks – Highlights (ii)"}
 
+<!-- vale RedHat.CaseSensitiveTerms = NO -->
+<!-- vale RedHat.Symbols = NO -->
+<!-- vale RedHat.TermsWarnings = NO -->
+
 - What comes after Rust in the Python ecosystem?
 - What does = do?
-  <!-- vale RedHat.Symbols = NO -->
-  <!-- vale RedHat.TermsWarnings = NO -->
 - Python Config That Will Give You Chills (In a Good Way, I Promise!)
-  <!-- vale RedHat.TermsWarnings = YES -->
-  <!-- vale RedHat.CaseSensitiveTerms = NO -->
 - "Python: the Documentary" screening and Q&A
-  <!-- vale RedHat.CaseSensitiveTerms = YES -->
-  <!-- vale RedHat.Symbols = YES -->
+
+<!-- vale RedHat.CaseSensitiveTerms = YES -->
+<!-- vale RedHat.Symbols = YES -->
+<!-- vale RedHat.TermsWarnings = YES -->
 
 ## Running {{< fa brands strava >}}
 
