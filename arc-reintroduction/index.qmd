@@ -86,8 +86,8 @@ places = {cambridge, kenilworth}
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2013-10-05"),
     center=(
-        sum(coord[0] for coord in places) / len(places),
-        sum(coord[1] for coord in places) / len(places),
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=9,
 )
@@ -122,8 +122,8 @@ places = {cambridge, london}
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
     center=(
-        sum(coord[0] for coord in places) / len(places),
-        sum(coord[1] for coord in places) / len(places),
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=8,
 )
@@ -147,8 +147,8 @@ places = {brecknock, greyhound, lavender, lilford, rita, york}
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
     center=(
-        sum(coord[0] for coord in places) / len(places),
-        sum(coord[1] for coord in places) / len(places),
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=11,
 )
