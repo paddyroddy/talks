@@ -9,6 +9,13 @@ requires = [
 ]
 
 [project]
+dependencies = [
+    "ipyleaflet~=0.0",
+    "jupyter~=1.0",
+    "polyline~=2.0",
+    "stravalib~=2.0",
+    "xyzservices~=2025.1"
+]
 dynamic = [
     "version",
 ]

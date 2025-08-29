@@ -394,7 +394,7 @@ data.
 ````
 <!-- prettier-ignore-end -->
 
-## `/requirements.txt`
+## `/pyproject.toml`
 
 Some talks include
 [executable programs](https://quarto.org/docs/visual-editor/technical.html#code-chunks).
@@ -402,7 +402,7 @@ These are the dependencies for some Python code.
 
 <!-- prettier-ignore-start -->
 ````{.text}
-{{< include /requirements.txt >}}
+{{< include /pyproject.toml >}}
 ````
 <!-- prettier-ignore-end -->
 
