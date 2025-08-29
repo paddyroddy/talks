@@ -10,6 +10,9 @@ TOKEN_FILE = pathlib.Path(__file__).parent / "strava_tokens.json"
 
 
 def generate_map(
+    *,
+    center: tuple[float, float],
+    zoom: int,
     start_date: datetime.datetime,
     end_date: datetime.datetime,
 ) -> Map:
@@ -18,6 +21,10 @@ def generate_map(
 
     Parameters
     ----------
+    center
+        The geographical center of the map.
+    zoom
+        The initial zoom level of the map.
     start_date
         The start date for fetching activities.
     end_date
@@ -38,39 +45,26 @@ def generate_map(
         )
     except FileNotFoundError:
         print("Error: Strava tokens not found. Please run authentication.")
-        return Map(center=(51.5, -0.1), zoom=5)
+        return Map(center=center, zoom=zoom)
 
     m = Map(
         basemap=basemaps.OpenStreetMap.Mapnik,
-        center=(51.5, -0.1),
-        zoom=10,
+        center=center,
+        zoom=zoom,
     )
     all_points = []
 
-    try:
-        activities = client.get_activities(after=start_date, before=end_date)
-        for activity in activities:
-            if activity.map.summary_polyline:
-                points = polyline.decode(activity.map.summary_polyline)
-                all_points.extend(points)
-                line = Polyline(
-                    locations=points,
-                    color="purple",
-                    weight=4,
-                    fill=False,
-                )
-                m.add(line)
-
-        if all_points:
-            latitudes = [p[0] for p in all_points]
-            longitudes = [p[1] for p in all_points]
-            bounds = (
-                (min(latitudes), min(longitudes)),
-                (max(latitudes), max(longitudes)),
+    activities = client.get_activities(after=start_date, before=end_date)
+    for activity in activities:
+        if activity.map.summary_polyline:
+            points = polyline.decode(activity.map.summary_polyline)
+            all_points.extend(points)
+            line = Polyline(
+                locations=points,
+                color="purple",
+                weight=4,
+                fill=False,
             )
-            m.fit_bounds(bounds)
-
-    except Exception as e:
-        print(f"Error fetching or plotting activities: {e}")
+            m.add(line)
 
     return m

@@ -1,3 +1,20 @@
+# This file is present to make sure that the pre-commit setup
+# works, it is not intended to be an actual package
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+
+[project]
+dynamic = [
+    "version",
+]
+name = "pre_commit_placeholder_package"
+readme = "README.md"
+
 [tool.check-manifest]
 ignore = [
     "*",
