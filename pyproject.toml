@@ -1,0 +1,28 @@
+[tool.check-manifest]
+ignore = [
+    "*",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.ruff]
+fix = true
+force-exclude = true
+lint.ignore = [
+    "COM812",
+    "D203",
+    "D212",
+    "D407",
+    "D413",
+    "ISC001",
+    "T201",
+]
+lint.select = [
+    "ALL",
+]
+
+[tool.setuptools]
+packages.find = {}
+
+[tool.setuptools_scm]

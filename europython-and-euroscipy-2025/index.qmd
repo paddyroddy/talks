@@ -17,22 +17,23 @@ title: EuroPython and EuroSciPy 2025
 ## Flight
 
 ```{python}
-from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+#| fig-cap: My runs in Kraków.
 
-heathrow = (51.46815519646558, -0.45505559219641106)
-prague = (50.10175285896584, 14.26320251681309)
-places = {heathrow, prague}
-m = Map(
-    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2025-07-14"),
-    center=(
-        sum(place[0] for place in places) / len(places),
-        sum(place[1] for place in places) / len(places),
-    ),
-    zoom=6,
-)
-for place in places:
-    m.add_layer(Marker(location=place))
-m
+import sys
+import datetime
+from IPython.display import display
+from pathlib import Path
+
+sys.path.append(str(Path.cwd().parent / "_strava"))
+
+from heatmap import generate_map
+
+start_date = datetime.datetime(2025, 8, 17)
+end_date = datetime.datetime(2025, 8, 22)
+
+strava_map = generate_map(start_date, end_date)
+
+display(strava_map)
 ```
 
 # EuroSciPy
