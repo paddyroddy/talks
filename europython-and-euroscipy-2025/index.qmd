@@ -160,6 +160,35 @@ m
 - EffVer: Versioning code by the effort required to upgrade
 - Standardised Quantity/Unit APIs discussion
 
+## Sprints {footer=false}
+
+- [array-api-extra](https://github.com/data-apis/array-api-extra): Extra array
+  functions built on top of the array API standard.
+- Implemented the
+  [nan_to_num](https://data-apis.org/array-api-extra/generated/array_api_extra.nan_to_num.html)
+  function
+  ([data-apis/array-api-extra#398](https://github.com/data-apis/array-api-extra/pull/398)).
+
+:::{.fragment .fade-up}
+
+```{.python}
+>>> import array_api_extra as xpx
+>>> import array_api_strict as xp
+>>> x = xp.asarray([xp.inf, -xp.inf, xp.nan, -128, 128])
+>>> xpx.nan_to_num(x)
+array([ 1.79769313e+308, -1.79769313e+308,  0.00000000e+000,
+       -1.28000000e+002,  1.28000000e+002])
+>>> y = xp.asarray([complex(xp.inf, xp.nan), xp.nan, complex(xp.nan, xp.inf)])
+array([ 1.79769313e+308, -1.79769313e+308,  0.00000000e+000,
+       -1.28000000e+002,  1.28000000e+002])
+>>> xpx.nan_to_num(y)
+array([ 1.79769313e+308 + 0.00000000e+000j,
+        0.00000000e+000 + 0.00000000e+000j,
+        0.00000000e+000 + 1.79769313e+308j])
+```
+
+:::
+
 ## Running {{< fa brands strava >}}
 
 ```{python}
