@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+      STRAVA_EXPIRES_AT: ${{ secrets.STRAVA_EXPIRES_AT }}
+      STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
     steps:
       - name: Checkout source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -36,10 +40,6 @@ jobs:
         if: github.ref != 'refs/heads/main'
         # yamllint disable-line rule:line-length
         uses: quarto-dev/quarto-actions/render@9e48da27e184aa238fcb49f5db75469626d43adb # v2
-        env:
-          STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
-          STRAVA_EXPIRES_AT: ${{ secrets.STRAVA_EXPIRES_AT }}
-          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
 
       - name: Publish main branch
         if: github.ref == 'refs/heads/main'
