@@ -75,6 +75,27 @@ m.add_layer(Marker(location=kenilworth))
 m
 ```
 
+## The Area
+
+::: {layout="[60,40]"}
+
+- Recorded as [_Chinewrde_ in the Domesday Book](https://www.domesdaybook.co.uk/warwickshire2.html).
+- Longest siege in medieval English history.
+- Neighbours: Coventry, Warwick and Leamington Spa.
+- Annual rubber duck race.
+- Employers: National Grid, Jaguar Land Rover and University of Warwick.
+
+![Kenilworth Castle](figures/castle.jpg)
+![Boxing Day Duck Race](figures/ducks.jpg)
+
+:::
+
+## Growing Up
+
+- Dad worked at National Grid (retired in July).
+- Mum has done a variety voluntary work.
+- 
+
 ## 2013: Kenilworth → Cambridge
 
 ```{python}
