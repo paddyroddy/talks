@@ -27,7 +27,9 @@ format:
     transition: fade
 
 website:
-  google-analytics: G-SCSTN0WCDT
+  google-analytics:
+    tracking-id: G-SCSTN0WCDT
+    storage: none
   favicon: favicon.ico
   navbar:
     tools:
