@@ -27,11 +27,15 @@ m
 
 ::: {layout-ncol=2}
 
+::: {.cell}
+
 - Mum (English) met Dad (Irish) in Paris
 - Left at age 3 and Andrew was 1
 - Failed to learn French (or English) in that time 😔
 
-::: {.fragment .fade-left}
+:::
+
+::: {.cell}
 
 ![Andrew, Jonathan, Mum, Dad, Me](figures/family.jpg)
 
@@ -79,22 +83,41 @@ m
 
 ::: {layout="[60,40]"}
 
-- Recorded as [_Chinewrde_ in the Domesday Book](https://www.domesdaybook.co.uk/warwickshire2.html).
+::: {.cell}
+
+- Recorded as
+  [_Chinewrde_ in the Domesday Book](https://www.domesdaybook.co.uk/warwickshire2.html).
 - Longest siege in medieval English history.
 - Neighbours: Coventry, Warwick and Leamington Spa.
 - Annual rubber duck race.
 - Employers: National Grid, Jaguar Land Rover and University of Warwick.
 
+:::
+
+::: {.cell}
+
 ![Kenilworth Castle](figures/castle.jpg)
+
 ![Boxing Day Duck Race](figures/ducks.jpg)
+
+:::
 
 :::
 
 ## Growing Up
 
-- Dad worked at National Grid (retired in July).
-- Mum has done a variety voluntary work.
-- 
+::: {layout-ncol=2}
+
+- Scouts
+- Hiking
+- Guitar
+- Cycling
+- Skateboarding
+- Running…
+
+![Queen's Scout Award Parade](figures/scouts.jpg)
+
+:::
 
 ## 2013: Kenilworth → Cambridge
 
@@ -131,6 +154,21 @@ m = Map(
 m.add_layer(Marker(location=cambridge))
 m
 ```
+
+## Undergraduate
+
+::: {layout-ncol=2}
+
+- Robinson College.
+- Natural Sciences → Astrophysics.
+- Internships: [Ricardo](https://www.ricardo.com),
+  [MediaTek](https://www.mediatek.com), [MathWorks](https://uk.mathworks.com),
+  [SATAVIA](https://www.aerospacecarbonsolutions.com/contrail-management).
+- Sports: running, triathlon, rowing.
+
+![Graduation](figures/graduation.jpg)
+
+:::
 
 ## 2017: Cambridge → London
 
@@ -177,3 +215,40 @@ for place in places:
     m.add_layer(Marker(location=place))
 m
 ```
+
+## PhD (UCL)
+
+::: {layout-ncol=2}
+
+- CDT in Data Intensive Science.
+- Group project with [NCC Group](https://www.nccgroup.com).
+- Placement at [Vortexa](https://www.vortexa.com).
+- Running club.
+- Grew a beard.
+
+![2017 Christmas Present](figures/beard.jpg){width=70%}
+
+:::
+
+## Thesis
+
+::: {layout="[60,40]"}
+
+::: {.cell}
+
+- **Title**: Slepian Wavelets for the Analysis of Incomplete Data on Manifolds.
+- How to deal with data which is missing over a region of a manifold?
+- Started on the sphere but generalised.
+- Cosmology (CMB) was the motivation.
+
+:::
+
+::: {.cell}
+
+![2018 Planck Lensing Map](figures/planck.png){width=80%}
+
+![An Example Slepian Wavelet](figures/slepian_wavelets_south_america_3B_2jmin_2j_L128_res512_real.png)
+
+:::
+
+:::
