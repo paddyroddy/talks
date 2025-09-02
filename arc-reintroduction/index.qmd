@@ -252,3 +252,20 @@ m
 :::
 
 :::
+
+## 2021: ARC
+
+::: {layout-ncol=2}
+
+- MIRSG
+- DevOps
+- Napari
+- IoE
+- Neuroglancer
+- GLASS
+- SRR
+- AREPO
+
+![Whose Wore it Better?](figures/stirling.jpg)
+
+:::
