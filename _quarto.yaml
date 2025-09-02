@@ -28,8 +28,8 @@ format:
 
 website:
   google-analytics:
-    tracking-id: G-SCSTN0WCDT
     storage: none
+    tracking-id: G-SCSTN0WCDT
   favicon: favicon.ico
   navbar:
     tools:
