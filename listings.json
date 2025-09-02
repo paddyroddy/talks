@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/arc-reintroduction/index.html",
       "/quarto-making-talks/index.html",
       "/linting-prose-with-vale/index.html",
       "/github-safe-settings-policy-as-code/index.html",
