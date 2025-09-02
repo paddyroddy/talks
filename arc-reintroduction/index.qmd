@@ -165,6 +165,7 @@ m
   [MediaTek](https://www.mediatek.com), [MathWorks](https://uk.mathworks.com),
   [SATAVIA](https://www.aerospacecarbonsolutions.com/contrail-management).
 - Sports: running, triathlon, rowing.
+- Broke my back 🤕.
 
 ![Graduation](figures/graduation.jpg)
 
@@ -269,3 +270,23 @@ m
 ![Whose Wore it Better?](figures/stirling.jpg)
 
 :::
+
+# Running
+
+## {data-menu-title="Summary"}
+
+<!-- vale RedHat.Symbols = NO -->
+
+::: {layout-ncol=2}
+
+- 2011 Two Castles Run (Warwick → Kenilworth).
+- Met most friends through running.
+- Run to work (sorry for the smell).
+- Clubs: Kenilworth Runners, CUH&H, UCL RAX, TH&H, Cottage Relocated.
+- PBs: 14:38, 30:13, 1:06:24, 2:18:08.
+
+![2025 Lincoln 10km](figures/lincoln.jpg){width=70%}
+
+:::
+
+<!-- vale RedHat.Symbols = NO -->
