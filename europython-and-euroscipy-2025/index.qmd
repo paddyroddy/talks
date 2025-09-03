@@ -70,24 +70,7 @@ m
 
 ## Running {{< fa brands strava >}}
 
-```{python}
-import datetime
-import pathlib
-import sys
-
-sys.path.append(str(pathlib.Path.cwd().parent / "_strava"))
-
-from heatmap import generate_map
-
-strava_map = generate_map(
-    center=(50.075476439508904, 14.429899537376473),
-    zoom=12,
-    start_date=datetime.datetime(2025, 7, 14, tzinfo=datetime.UTC),
-    end_date=datetime.datetime(2025, 7, 21, tzinfo=datetime.UTC),
-)
-
-strava_map
-```
+![](figures/heatmap_prague.jpg){width=65%}
 
 # EuroSciPy
 
@@ -193,21 +176,4 @@ array([ 1.79769313e+308 + 0.00000000e+000j,
 
 ## Running {{< fa brands strava >}}
 
-```{python}
-import datetime
-import pathlib
-import sys
-
-sys.path.append(str(pathlib.Path.cwd().parent / "_strava"))
-
-from heatmap import generate_map
-
-strava_map = generate_map(
-    center=(50.06035940320276, 19.917856293282675),
-    zoom=13,
-    start_date=datetime.datetime(2025, 8, 17, tzinfo=datetime.UTC),
-    end_date=datetime.datetime(2025, 8, 22, tzinfo=datetime.UTC),
-)
-
-strava_map
-```
+![](figures/heatmap_krakow.jpg){width=80%}
