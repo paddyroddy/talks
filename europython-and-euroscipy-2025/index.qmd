@@ -10,13 +10,15 @@ title: EuroPython and EuroSciPy 2025
 
 # EuroPython
 
-## Weekend Before 😴
+## Weekend Before 😴 {footer=false}
 
-![UK Challenge](figures/ukchallenge.jpg)
+![](figures/ukchallenge.jpg){fig-alt="UCL Team 2 at UK Challenge 2025"}
 
 ## Flight
 
 ```{python}
+#| fig-alt: "A map of the flight from London to Prague"
+
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 heathrow = (51.46815519646558, -0.45505559219641106)
@@ -34,6 +36,36 @@ for place in places:
     m.add_layer(Marker(location=place))
 m
 ```
+
+## The Conference {footer=false}
+
+::: {layout="[70,30]"}
+
+::: {.cell}
+
+- 24th EuroPython
+- 7 days (2 tutorial, 3 talk, 2 sprint)
+- 1300+ attendees
+- 180+ speakers
+- Events:
+  - Retro gaming station
+  - Two socials
+  - Beginners day
+  - Summits: (WASM, C-API, Rust, Packaging)
+
+:::
+
+::: {.cell}
+
+![Retro Games](figures/gaming.jpg){fig-alt="A selection of retro game
+consoles."}
+
+![Conference View](figures/congress.jpg){fig-alt="The view from the conference
+centre."}
+
+:::
+
+:::
 
 ## Tutorials {{< fa brands github >}}
 
