@@ -267,7 +267,7 @@ m
 - SRR
 - AREPO
 
-![Whose Wore it Better?](figures/stirling.jpg)
+![Who Wore it Better?](figures/stirling.jpg)
 
 :::
 
