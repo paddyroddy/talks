@@ -195,11 +195,9 @@ Core settings:
 
 The `/.vale.ini` file:
 
-<!-- prettier-ignore-start -->
-````{.ini}
+```{.ini}
 {{< include /.vale.ini >}}
-````
-<!-- prettier-ignore-end -->
+```
 
 ## This Repository {data-menu-title="This Repository (ii)"}
 
