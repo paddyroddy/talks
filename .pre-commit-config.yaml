@@ -6,4 +6,3 @@ repos:
     hooks:
       - id: general-hooks
       - id: lua-hooks
-      - id: python-hooks
