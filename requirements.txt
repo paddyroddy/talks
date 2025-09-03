@@ -1,0 +1,4 @@
+ipyleaflet~=0.0
+jupyter~=1.0
+jupyter-cache~=1.0
+xyzservices~=2025.1
