@@ -56,9 +56,11 @@ m
 
 ::: {.cell}
 
-![Retro Games](figures/gaming.jpg){fig-alt="A selection of retro game consoles."}
+![Retro Games](figures/gaming.jpg){fig-alt="A selection of retro game
+consoles."}
 
-![Conference View](figures/congress.jpg){fig-alt="The view from the conference centre."}
+![Conference View](figures/congress.jpg){fig-alt="The view from the conference
+centre."}
 
 :::
 
