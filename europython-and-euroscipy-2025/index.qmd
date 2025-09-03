@@ -108,6 +108,8 @@ centre."}
 ## Flight
 
 ```{python}
+#| fig-alt: "A map of the flight from London to Warsaw"
+
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 heathrow = (51.46815519646558, -0.45505559219641106)
@@ -129,6 +131,8 @@ m
 ## Train
 
 ```{python}
+#| fig-alt: "A map of the train from Warsaw to Kraków"
+
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 krakow = (50.068408415434824, 19.947514258369935)
