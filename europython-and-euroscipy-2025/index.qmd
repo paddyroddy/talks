@@ -167,8 +167,8 @@ m
 ![](figures/warsaw01.jpg){.fragment fig-alt="Many tanks for Armed Forces Day."
 height=550}
 
-![](figures/warsaw02.jpg){.fragment fig-alt="The one street in Warsaw that
-was not bombed." height=550}
+![](figures/warsaw02.jpg){.fragment fig-alt="The one street in Warsaw that was
+not bombed." height=550}
 
 ![](figures/warsaw03.jpg){.fragment fig-alt="A model of a synagogue in the POLIN
 museum." height=550}
