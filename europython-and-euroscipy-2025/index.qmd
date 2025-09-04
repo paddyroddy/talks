@@ -103,6 +103,32 @@ centre."}
 
 ![](figures/heatmap_prague.jpg){width=65%}
 
+## Photos
+
+::: {.r-stack}
+
+![](figures/prague01.jpg){.fragment height=550}
+
+![](figures/prague02.jpg){.fragment height=550}
+
+![](figures/prague03.jpg){.fragment height=550}
+
+![](figures/prague04.jpg){.fragment height=550}
+
+![](figures/prague05.jpg){.fragment height=550}
+
+![](figures/prague06.jpg){.fragment height=550}
+
+![](figures/prague07.jpg){.fragment height=550}
+
+![](figures/prague08.jpg){.fragment height=550}
+
+![](figures/prague09.jpg){.fragment height=550}
+
+![](figures/prague10.jpg){.fragment height=550}
+
+:::
+
 # EuroSciPy
 
 ## Flight
