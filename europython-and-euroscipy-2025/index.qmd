@@ -12,12 +12,12 @@ title: EuroPython and EuroSciPy 2025
 
 ## Weekend Before 😴 {footer=false}
 
-![](figures/ukchallenge.jpg){fig-alt="UCL Team 2 at UK Challenge 2025"}
+![](figures/ukchallenge.jpg){fig-alt="UCL Team 2 at UK Challenge 2025."}
 
 ## Flight
 
 ```{python}
-#| fig-alt: "A map of the flight from London to Prague"
+#| fig-alt: "A map of the flight from London to Prague."
 
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
@@ -101,31 +101,37 @@ centre."}
 
 ## Running {{< fa brands strava >}}
 
-![](figures/heatmap_prague.jpg){width=65%}
+![](figures/heatmap_prague.jpg){fig-alt="A map of my runs in Prague." width=65%}
 
 ## Photos
 
 ::: {.r-stack}
 
-![](figures/prague01.jpg){.fragment height=550}
+![](figures/prague01.jpg){.fragment fig-alt="The walk to the conference centre."
+height=550}
 
-![](figures/prague02.jpg){.fragment height=550}
+![](figures/prague02.jpg){.fragment fig-alt="The Prague train restaurant."
+height=550}
 
-![](figures/prague03.jpg){.fragment height=550}
+![](figures/prague03.jpg){.fragment fig-alt="Kafka's rotating head." height=550}
 
-![](figures/prague04.jpg){.fragment height=550}
+![](figures/prague04.jpg){.fragment fig-alt="The Vltava River at night."
+height=550}
 
-![](figures/prague05.jpg){.fragment height=550}
+![](figures/prague05.jpg){.fragment fig-alt="The astronomical clock."
+height=550}
 
-![](figures/prague06.jpg){.fragment height=550}
+![](figures/prague06.jpg){.fragment fig-alt="The metronome in Letná Park."
+height=550}
 
-![](figures/prague07.jpg){.fragment height=550}
+![](figures/prague07.jpg){.fragment fig-alt="A fun tunnel." height=550}
 
-![](figures/prague08.jpg){.fragment height=550}
+![](figures/prague08.jpg){.fragment fig-alt="Unlimited dumplings." height=550}
 
-![](figures/prague09.jpg){.fragment height=550}
+![](figures/prague09.jpg){.fragment fig-alt="The view from Divoká Šárka."
+height=550}
 
-![](figures/prague10.jpg){.fragment height=550}
+![](figures/prague10.jpg){.fragment fig-alt="Tabor Gate." height=550}
 
 :::
 
@@ -158,21 +164,26 @@ m
 
 ::: {.r-stack}
 
-![](figures/warsaw01.jpg){.fragment height=550}
+![](figures/warsaw01.jpg){.fragment fig-alt="Many tanks for Armed Forces Day."
+height=550}
 
-![](figures/warsaw02.jpg){.fragment height=550}
+![](figures/warsaw02.jpg){.fragment fig-alt="The one street in Warsaw that
+wasn't bombed." height=550}
 
-![](figures/warsaw03.jpg){.fragment height=550}
+![](figures/warsaw03.jpg){.fragment fig-alt="A model of a synagogue in the POLIN
+museum." height=550}
 
-![](figures/warsaw04.jpg){.fragment height=550}
+![](figures/warsaw04.jpg){.fragment fig-alt="A yummy pizza." height=550}
 
-![](figures/warsaw05.jpg){.fragment height=550}
+![](figures/warsaw05.jpg){.fragment fig-alt="A fountain which moves to music."
+height=550}
 
-![](figures/warsaw06.jpg){.fragment height=550}
+![](figures/warsaw06.jpg){.fragment fig-alt="A cool mouse." height=550}
 
-![](figures/warsaw07.jpg){.fragment height=550}
+![](figures/warsaw07.jpg){.fragment fig-alt="The Palace of Culture and Science."
+height=550}
 
-![](figures/warsaw08.jpg){.fragment height=550}
+![](figures/warsaw08.jpg){.fragment fig-alt="A cool bridge." height=550}
 
 :::
 
@@ -262,27 +273,3 @@ array([ 1.79769313e+308 + 0.00000000e+000j,
 ![](figures/heatmap_krakow.jpg){width=80%}
 
 ## Photos
-
-::: {.r-stack}
-
-![](figures/prague01.jpg){.fragment height=550}
-
-![](figures/prague02.jpg){.fragment height=550}
-
-![](figures/prague03.jpg){.fragment height=550}
-
-![](figures/prague04.jpg){.fragment height=550}
-
-![](figures/prague05.jpg){.fragment height=550}
-
-![](figures/prague06.jpg){.fragment height=550}
-
-![](figures/prague07.jpg){.fragment height=550}
-
-![](figures/prague08.jpg){.fragment height=550}
-
-![](figures/prague09.jpg){.fragment height=550}
-
-![](figures/prague10.jpg){.fragment height=550}
-
-:::
