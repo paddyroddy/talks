@@ -19,6 +19,7 @@ format:
     history: false
     incremental: true
     link-external-icon: true
+    logo: favicon.ico
     mermaid:
       theme: dark
     menu:
