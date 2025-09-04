@@ -272,4 +272,27 @@ array([ 1.79769313e+308 + 0.00000000e+000j,
 
 ![](figures/heatmap_krakow.jpg){width=80%}
 
-## Photos
+## Photos – Kraków
+
+::: {.r-stack}
+
+![](figures/krakow01.jpg){.fragment fig-alt=""
+height=550}
+
+![](figures/krakow02.jpg){.fragment fig-alt="" height=550}
+
+![](figures/krakow03.jpg){.fragment fig-alt="" height=550}
+
+![](figures/krakow04.jpg){.fragment fig-alt="" height=550}
+
+![](figures/krakow05.jpg){.fragment fig-alt=""
+height=550}
+
+![](figures/krakow06.jpg){.fragment fig-alt="" height=550}
+
+![](figures/krakow07.jpg){.fragment fig-alt=""
+height=550}
+
+![](figures/krakow08.jpg){.fragment fig-alt="" height=550}
+
+:::
