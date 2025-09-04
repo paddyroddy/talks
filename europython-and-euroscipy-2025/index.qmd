@@ -168,14 +168,14 @@ m
 height=550}
 
 ![](figures/warsaw02.jpg){.fragment fig-alt="The one street in Warsaw that
-wasn't bombed." height=550}
+was not bombed." height=550}
 
 ![](figures/warsaw03.jpg){.fragment fig-alt="A model of a synagogue in the POLIN
 museum." height=550}
 
 ![](figures/warsaw04.jpg){.fragment fig-alt="A yummy pizza." height=550}
 
-![](figures/warsaw05.jpg){.fragment fig-alt="A fountain which moves to music."
+![](figures/warsaw05.jpg){.fragment fig-alt="A fountain that moves to music."
 height=550}
 
 ![](figures/warsaw06.jpg){.fragment fig-alt="A cool mouse." height=550}
