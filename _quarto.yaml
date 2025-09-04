@@ -24,10 +24,12 @@ format:
     menu:
       hideMissingTitles: true
       useTextContentForMissingTitles: false
+    mobile-view-distance: 10
     preview-links: true
     slide-number: true
     theme: dark
     transition: fade
+    view-distance: 10
 
 website:
   google-analytics:
