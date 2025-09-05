@@ -2,7 +2,8 @@
 exclude: |-
   (?x)^(
     .*\/boars\.mp4|
-    .*\/poster\.png
+    .*\/poster\.png|
+    _extensions\/.*
   )$
 repos:
   - repo: https://github.com/paddyroddy/.github
