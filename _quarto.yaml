@@ -19,15 +19,18 @@ format:
     history: false
     incremental: true
     link-external-icon: true
+    logo: favicon.ico
     mermaid:
       theme: dark
     menu:
       hideMissingTitles: true
       useTextContentForMissingTitles: false
+    mobile-view-distance: 10
     preview-links: true
-    slide-number: true
+    slide-number: c
     theme: dark
     transition: fade
+    view-distance: 10
 
 website:
   google-analytics:
