@@ -1,6 +1,6 @@
 ---
 author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
-date: 2025-xx-xx
+date: 2025-11-18
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: EuroPython and EuroSciPy 2025
@@ -8,7 +8,7 @@ title: EuroPython and EuroSciPy 2025
 
 {{< include /_includes/qr-code.qmd >}}
 
-# EuroPython
+# EuroPython – 14th-20th July
 
 ## Weekend Before 😴 {footer=false}
 
@@ -135,7 +135,7 @@ height=550}
 
 :::
 
-# EuroSciPy
+# EuroSciPy – 18th-22nd August
 
 ## Flight
 
