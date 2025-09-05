@@ -239,6 +239,11 @@ m
 - EffVer: Versioning code by the effort required to upgrade
 - Standardised Quantity/Unit APIs discussion
 
+## Poster
+
+![](figures/poster.png){fig-alt="My poster on the Array API in GLASS."
+height=550}
+
 ## Sprints {footer=false}
 
 - [array-api-extra](https://github.com/data-apis/array-api-extra): Extra array
@@ -276,23 +281,26 @@ array([ 1.79769313e+308 + 0.00000000e+000j,
 
 ::: {.r-stack}
 
-![](figures/krakow01.jpg){.fragment fig-alt=""
+![](figures/krakow01.jpg){.fragment fig-alt="A tiled train station." height=550}
+
+![](figures/krakow02.jpg){.fragment fig-alt="One of the salt mine caves."
 height=550}
 
-![](figures/krakow02.jpg){.fragment fig-alt="" height=550}
+![](figures/krakow03.jpg){.fragment fig-alt="The underground chapel made of
+salt." height=550}
 
-![](figures/krakow03.jpg){.fragment fig-alt="" height=550}
-
-![](figures/krakow04.jpg){.fragment fig-alt="" height=550}
-
-![](figures/krakow05.jpg){.fragment fig-alt=""
+![](figures/krakow04.jpg){.fragment fig-alt="Some gnomes made out of salt."
 height=550}
 
-![](figures/krakow06.jpg){.fragment fig-alt="" height=550}
+![](figures/krakow05.jpg){.fragment fig-alt="An artificial mound – Kościuszko
+Mound." height=550}
 
-![](figures/krakow07.jpg){.fragment fig-alt=""
-height=550}
+![](figures/krakow06.jpg){.fragment fig-alt="A sunset." height=550}
 
-![](figures/krakow08.jpg){.fragment fig-alt="" height=550}
+![](figures/krakow07.jpg){.fragment fig-alt="The dragon trail." height=550}
 
 :::
+
+## Wild Boars 🐗
+
+{{< video videos/boars.mp4 title="Some baby wild boars running." >}}
