@@ -9,6 +9,7 @@ format:
   html:
     theme: darkly
   revealjs:
+    auto-play-media: true
     auto-stretch: false
     callout-appearance: simple
     code-copy: true
