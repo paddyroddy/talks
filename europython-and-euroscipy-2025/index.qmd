@@ -8,7 +8,9 @@ title: EuroPython and EuroSciPy 2025
 
 {{< include /_includes/qr-code.qmd >}}
 
-# EuroPython – 14th-20th July
+# EuroPython
+
+14th-20th July
 
 ## Weekend Before 😴 {footer=false}
 
@@ -135,7 +137,9 @@ height=550}
 
 :::
 
-# EuroSciPy – 18th-22nd August
+# EuroSciPy
+
+18th-22nd August
 
 ## Flight
 
