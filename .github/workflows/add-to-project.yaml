@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/add-to-project@9d6e96a69f2f213846703cbc4bd7ad067366fcaf # v0
+      - uses: paddyroddy/.github/actions/add-to-project@dd42b32e779552c6f911ca469111449a410facff # v0
         with:
           project-token: ${{ secrets.PROJECT_PAT }}
