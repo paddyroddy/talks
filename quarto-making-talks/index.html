@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../favicon.ico" rel="icon">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Patrick J. Roddy">
   <meta name="dcterms.date" content="2025-09-02">
@@ -98,7 +98,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7ec8b10c34a65a6e036933a789be2259.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a7db5b97a638fa93c8e2858bea1b771a.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SCSTN0WCDT"></script>
 
   <script type="text/javascript">
@@ -208,10 +208,10 @@
   <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-  <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -419,7 +419,7 @@
 <h2><code>/.github/workflows/add-to-project.yaml</code></h2>
 <p>GitHub Action to add issues to project board.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="pp">---</span></span>
 <span id="cb1-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add issues to project board</span></span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
@@ -435,16 +435,16 @@
 <span id="cb1-14"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
 <span id="cb1-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb1-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb1-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@9d6e96a69f2f213846703cbc4bd7ad067366fcaf</span><span class="co"> # v0</span></span>
+<span id="cb1-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@dd42b32e779552c6f911ca469111449a410facff</span><span class="co"> # v0</span></span>
 <span id="cb1-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb1-19"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.github/workflows/links.yaml</code></h2>
 <p>GitHub Action to perform link checking with <a href="https://lychee.cli.rs">lychee</a>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="pp">---</span></span>
 <span id="cb2-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Links</span></span>
 <span id="cb2-3"><a></a></span>
 <span id="cb2-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
@@ -460,16 +460,16 @@
 <span id="cb2-14"><a></a><span class="at">    </span><span class="fu">timeout-minutes</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
 <span id="cb2-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb2-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb2-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/links@9d6e96a69f2f213846703cbc4bd7ad067366fcaf</span><span class="co"> # v0</span></span>
+<span id="cb2-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/links@dd42b32e779552c6f911ca469111449a410facff</span><span class="co"> # v0</span></span>
 <span id="cb2-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb2-19"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-19"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-footer="false">
 <h2><code>/.github/workflows/linting.yaml</code></h2>
 <p>GitHub Action to perform linting with <a href="https://pre-commit.com">pre-commit</a> and <a href="https://vale.sh">Vale</a>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
 <span id="cb3-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Linting</span></span>
 <span id="cb3-3"><a></a></span>
 <span id="cb3-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
@@ -484,21 +484,21 @@
 <span id="cb3-13"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
 <span id="cb3-14"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb3-15"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb3-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/linting@9d6e96a69f2f213846703cbc4bd7ad067366fcaf</span><span class="co"> # v0</span></span>
+<span id="cb3-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/linting@dd42b32e779552c6f911ca469111449a410facff</span><span class="co"> # v0</span></span>
 <span id="cb3-17"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb3-18"><a></a><span class="at">          </span><span class="fu">pre-commit-config</span><span class="kw">:</span><span class="at"> ./.pre-commit-config.yaml</span></span>
 <span id="cb3-19"><a></a></span>
 <span id="cb3-20"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb3-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/vale@9d6e96a69f2f213846703cbc4bd7ad067366fcaf</span><span class="co"> # v0</span></span>
+<span id="cb3-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/vale@dd42b32e779552c6f911ca469111449a410facff</span><span class="co"> # v0</span></span>
 <span id="cb3-22"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb3-23"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-23"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.github/workflows/publish.yaml</code></h2>
 <p>GitHub Action to publish the Quarto website to GitHub Pages.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="pp">---</span></span>
 <span id="cb4-2"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Quarto Publish</span></span>
 <span id="cb4-3"><a></a></span>
 <span id="cb4-4"><a></a><span class="fu">on</span><span class="kw">:</span></span>
@@ -518,7 +518,7 @@
 <span id="cb4-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/github-pages/quarto@dd42b32e779552c6f911ca469111449a410facff</span><span class="co"> # v0</span></span>
 <span id="cb4-19"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb4-20"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb4-21"><a></a><span class="at">          </span><span class="fu">requirements-txt</span><span class="kw">:</span><span class="at"> ${{ github.workspace }}/requirements.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-21"><a></a><span class="at">          </span><span class="fu">requirements-txt</span><span class="kw">:</span><span class="at"> ${{ github.workspace }}/requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
@@ -533,7 +533,7 @@
 <h2><code>/_filters/slugify.lua</code></h2>
 <p>If the base features of Pandoc and Quarto do not do exactly what you need, you can likely create a <a href="https://pandoc.org/filters.html">Pandoc Filter</a> that bridges the gap. This filter slugifies the given title to be used within a URL.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a></a><span class="co">-- Slugify titles for use in URLs or identifiers.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a></a><span class="co">-- Slugify titles for use in URLs or identifiers.</span></span>
 <span id="cb5-2"><a></a><span class="kw">local</span> <span class="kw">function</span> slugify<span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
 <span id="cb5-3"><a></a>    <span class="cf">return</span> <span class="va">s</span><span class="op">:</span><span class="fu">gsub</span><span class="op">(</span><span class="st">"[%s+/]+"</span><span class="op">,</span> <span class="st">"-"</span><span class="op">):</span><span class="fu">gsub</span><span class="op">(</span><span class="st">"[^%w-]+"</span><span class="op">,</span> <span class="st">""</span><span class="op">):</span><span class="fu">lower</span><span class="op">()</span></span>
 <span id="cb5-4"><a></a><span class="kw">end</span></span>
@@ -543,13 +543,13 @@
 <span id="cb5-8"><a></a>        <span class="va">m</span><span class="op">.</span><span class="va">slug</span> <span class="op">=</span> <span class="va">m</span><span class="op">.</span><span class="va">title</span> <span class="kw">and</span> slugify<span class="op">(</span><span class="va">pandoc</span><span class="op">.</span><span class="va">utils</span><span class="op">.</span>stringify<span class="op">(</span><span class="va">m</span><span class="op">.</span><span class="va">title</span><span class="op">))</span></span>
 <span id="cb5-9"><a></a>        <span class="cf">return</span> <span class="va">m</span></span>
 <span id="cb5-10"><a></a>    <span class="kw">end</span><span class="op">,</span></span>
-<span id="cb5-11"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/_includes/qr-code.qmd</code></h2>
 <p>This snippet is included at the start of every presentation with <code>{{&lt; /_includes/qr-code.qmd &gt;}}</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu"># {data-menu-title="QR Code"}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu"># {data-menu-title="QR Code"}</span></span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>::: {layout="<span class="co">[</span><span class="ot">22,78</span><span class="co">]</span>"}</span>
 <span id="cb6-4"><a></a></span>
@@ -558,7 +558,7 @@
 <span id="cb6-7"><a></a>{{&lt; qrcode "https://paddyroddy.github.io/talks/{{&lt; meta slug &gt;}}"</span>
 <span id="cb6-8"><a></a>colorDark="#ffffff" colorLight="#000000" height=550 width=550 &gt;}}</span>
 <span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2><code>/favicon.ico</code></h2>
@@ -574,7 +574,7 @@
 <h2><code>/.gitignore</code></h2>
 <p>Ignore standard Quarto and Vale files.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">!.github/styles/config/</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">!.github/styles/config/</span></span>
 <span id="cb7-2"><a></a><span class="ex">!.github/styles/config/vocabularies/</span></span>
 <span id="cb7-3"><a></a><span class="ex">!.github/styles/config/vocabularies/Base</span></span>
 <span id="cb7-4"><a></a><span class="ex">*.quarto_ipynb</span></span>
@@ -584,62 +584,62 @@
 <span id="cb7-8"><a></a><span class="ex">/.quarto/</span></span>
 <span id="cb7-9"><a></a><span class="ex">_site</span></span>
 <span id="cb7-10"><a></a><span class="ex">index-listing.json</span></span>
-<span id="cb7-11"><a></a><span class="ex">site_libs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a></a><span class="ex">site_libs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.pre-commit-config.yaml</code></h2>
 <p>My <a href="https://github.com/paddyroddy/.github/blob/main/precommit/general/general-hooks.yaml">custom pre-commit hooks</a>. They include: <code>adrienverge/yamllint</code>, <code>crate-ci/typos</code>, <code>igorshubovych/markdownlint-cli</code>, <code>JohnnyMorganz/StyLua</code>, <code>Lucas-C/pre-commit-hooks</code>, <code>pappasam/toml-sort</code>, <code>pre-commit/pre-commit-hooks</code>, <code>rbubley/mirrors-prettier</code>, <code>rhysd/actionlint</code>, <code>shellcheck-py/shellcheck-py</code>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="pp">---</span></span>
 <span id="cb8-2"><a></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> ^_extensions</span></span>
 <span id="cb8-3"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
 <span id="cb8-4"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/paddyroddy/.github</span></span>
-<span id="cb8-5"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.329.0</span></span>
+<span id="cb8-5"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.331.0</span></span>
 <span id="cb8-6"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
 <span id="cb8-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> general-hooks</span></span>
-<span id="cb8-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lua-hooks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lua-hooks</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.prettierrc.yaml</code></h2>
 <p>Configures <a href="https://prettier.io">Prettier</a> to treat Quarto files as Markdown.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="pp">---</span></span>
 <span id="cb9-2"><a></a><span class="fu">overrides</span><span class="kw">:</span></span>
 <span id="cb9-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">files</span><span class="kw">:</span><span class="at"> </span><span class="st">"**.qmd"</span></span>
 <span id="cb9-4"><a></a><span class="at">    </span><span class="fu">options</span><span class="kw">:</span></span>
-<span id="cb9-5"><a></a><span class="at">      </span><span class="fu">parser</span><span class="kw">:</span><span class="at"> markdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a></a><span class="at">      </span><span class="fu">parser</span><span class="kw">:</span><span class="at"> markdown</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.renovaterc.json5</code></h2>
 <p>Inherits my <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5">custom Renovate configuration</a>. See my earlier <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management">talk on Renovate</a>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a></a><span class="fu">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a></a><span class="fu">{</span></span>
 <span id="cb10-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
 <span id="cb10-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;paddyroddy/.github//renovate/default-config.json5"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb10-4"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/.typos.toml</code></h2>
 <p>Configures known exemptions from the <a href="https://github.com/crate-ci/typos">typos</a> spell checker.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a></a><span class="kw">[default]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a></a><span class="kw">[default]</span></span>
 <span id="cb11-2"><a></a><span class="dt">extend-ignore-re</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb11-3"><a></a>    <span class="co"># Custom ignore regex patterns:</span></span>
 <span id="cb11-4"><a></a>    <span class="co"># https://github.com/crate-ci/typos/blob/master/docs/reference.md#example-configurations</span></span>
 <span id="cb11-5"><a></a>    <span class="st">".*(?:#|--|//|/*).*(?:typos):</span><span class="sc">\\</span><span class="st">s?ignore[^</span><span class="sc">\\</span><span class="st">n]*</span><span class="sc">\\</span><span class="st">n"</span><span class="op">,</span></span>
 <span id="cb11-6"><a></a>    <span class="st">".*(?:typos):</span><span class="sc">\\</span><span class="st">s?ignore-next-line[^</span><span class="sc">\\</span><span class="st">n]*</span><span class="sc">\\</span><span class="st">n[^</span><span class="sc">\\</span><span class="st">n]*"</span><span class="op">,</span></span>
-<span id="cb11-7"><a></a><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-footer="false">
 <h2><code>/.vale.ini</code></h2>
 <p>My Vale configuration to lint prose. See my earlier <a href="https://paddyroddy.github.io/talks/linting-prose-with-vale">talk on Vale</a>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb12-1"><a></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb12-1"><a></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
 <span id="cb12-2"><a></a></span>
 <span id="cb12-3"><a></a><span class="co"># https://github.com/errata-ai/packages</span></span>
 <span id="cb12-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
@@ -673,28 +673,28 @@
 <span id="cb12-32"><a></a></span>
 <span id="cb12-33"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
 <span id="cb12-34"><a></a><span class="kw">[.github/styles/**]</span></span>
-<span id="cb12-35"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-35"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/404.qmd</code></h2>
 <p>A <a href="https://en.wikipedia.org/wiki/HTTP_404">HTTP 404</a> page for the Quarto website.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a></a><span class="co">---</span></span>
 <span id="cb13-2"><a></a><span class="an">title:</span><span class="co"> Page Not Found</span></span>
 <span id="cb13-3"><a></a><span class="an">format:</span><span class="co"> html</span></span>
 <span id="cb13-4"><a></a><span class="co">---</span></span>
 <span id="cb13-5"><a></a></span>
 <span id="cb13-6"><a></a>The page you requested cannot be found (perhaps it was moved or renamed).</span>
 <span id="cb13-7"><a></a></span>
-<span id="cb13-8"><a></a>You might want to try searching to find the page's new location.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-8"><a></a>You might want to try searching to find the page's new location.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-footer="false">
 <h2><code>/LICENCE.txt</code></h2>
 <p><code>Creative Commons Attribution Share Alike 4.0 International</code> licence.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>Attribution-ShareAlike 4.0 International</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>Attribution-ShareAlike 4.0 International</span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a>=======================================================================</span>
 <span id="cb14-4"><a></a></span>
@@ -1120,26 +1120,26 @@
 <span id="cb14-424"><a></a>the avoidance of doubt, this paragraph does not form part of the</span>
 <span id="cb14-425"><a></a>public licenses.</span>
 <span id="cb14-426"><a></a></span>
-<span id="cb14-427"><a></a>Creative Commons may be contacted at creativecommons.org.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-427"><a></a>Creative Commons may be contacted at creativecommons.org.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/README.md</code></h2>
 <p>The repository <code>README</code>, needs some work…</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a></a><span class="fu"># Talks</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a></a><span class="fu"># Talks</span></span>
 <span id="cb15-2"><a></a></span>
 <span id="cb15-3"><a></a>A series of talks. Feel free to use this structure for your own work.</span>
 <span id="cb15-4"><a></a></span>
 <span id="cb15-5"><a></a>See my talk on</span>
-<span id="cb15-6"><a></a><span class="co">[</span><span class="ot">making these talks</span><span class="co">](https://paddyroddy.github.io/talks/quarto-making-talks)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a></a><span class="co">[</span><span class="ot">making these talks</span><span class="co">](https://paddyroddy.github.io/talks/quarto-making-talks)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-footer="false">
 <h2><code>/_quarto.yaml</code></h2>
 <p>Any document rendered within the project directory will automatically inherit the metadata defined at the project level.</p>
 <!-- Here explicitly to avoid processing of the shortcode commands -->
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a></a><span class="pp">---</span></span>
 <span id="cb16-2"><a></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb16-3"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
 <span id="cb16-4"><a></a></span>
@@ -1185,13 +1185,13 @@
 <span id="cb16-44"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
 <span id="cb16-45"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://github.com/paddyroddy/talks</span></span>
 <span id="cb16-46"><a></a><span class="at">  </span><span class="fu">site-url</span><span class="kw">:</span><span class="at"> https://paddyroddy.github.io/talks</span></span>
-<span id="cb16-47"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Patrick J. Roddy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-47"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Patrick J. Roddy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-footer="false">
 <h2><code>/index.qmd</code></h2>
 <p><a href="https://quarto.org/docs/websites/website-listings.html">Listings</a> automatically generate the contents of a page from a list of Quarto documents or other custom data.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a></a><span class="co">---</span></span>
 <span id="cb17-2"><a></a><span class="an">title:</span><span class="co"> Talks</span></span>
 <span id="cb17-3"><a></a><span class="an">format:</span></span>
 <span id="cb17-4"><a></a><span class="co">  html:</span></span>
@@ -1211,17 +1211,17 @@
 <span id="cb17-18"><a></a><span class="co">  page-size: 10</span></span>
 <span id="cb17-19"><a></a><span class="co">  sort: date desc</span></span>
 <span id="cb17-20"><a></a><span class="co">  type: table</span></span>
-<span id="cb17-21"><a></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-21"><a></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
 <h2><code>/requirements.txt</code></h2>
 <p>Some talks include <a href="https://quarto.org/docs/visual-editor/technical.html#code-chunks">executable programs</a>. These are the dependencies for some Python code.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>ipyleaflet~=0.0</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>ipyleaflet~=0.0</span>
 <span id="cb18-2"><a></a>jupyter~=1.0</span>
 <span id="cb18-3"><a></a>jupyter-cache~=1.0</span>
-<span id="cb18-4"><a></a>xyzservices~=2025.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a></a>xyzservices~=2025.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section></section>
 <section>
@@ -1232,20 +1232,20 @@
 <section class="slide level2">
 <h2>Title Slide</h2>
 <p>Each talk must start with some YAML front matter metadata. Note that the listing specified in <code>/index.qmd</code> mapped <code>subtitle</code> to <code>Events</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a></a><span class="pp">---</span></span>
 <span id="cb19-2"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"[Patrick J. Roddy](https://paddyroddy.github.io)"</span></span>
 <span id="cb19-3"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2025-09-02</span></span>
 <span id="cb19-4"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
 <span id="cb19-5"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"</span></span>
 <span id="cb19-6"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto: Making Talks"</span></span>
-<span id="cb19-7"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-7"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sections are then made with <code>#</code> and slides are made with <code>##</code>.</p>
 </section>
 <section class="slide level2">
 <h2>Figures</h2>
 <p>Figures are included using the standard Markdown pattern.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a></a><span class="al">![xkcd:2347](/renovate-automating-dependency-management/figures/dependency.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a></a><span class="al">![xkcd:2347](/renovate-automating-dependency-management/figures/dependency.png)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1261,13 +1261,13 @@
 <h2>Lists</h2>
 <p>Lists are included using the standard Markdown pattern. The <code>incremental: true</code> settings means they show one-by-one.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a></a><span class="ss">- </span>Get automated Pull Requests to update your dependencies</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a></a><span class="ss">- </span>Get automated Pull Requests to update your dependencies</span>
 <span id="cb21-2"><a></a><span class="ss">  - </span>Reduce noise by running Renovate on a schedule, for example:</span>
 <span id="cb21-3"><a></a><span class="ss">    - </span>on weekends</span>
 <span id="cb21-4"><a></a><span class="ss">    - </span>outside of working hours</span>
 <span id="cb21-5"><a></a><span class="ss">    - </span>each week</span>
 <span id="cb21-6"><a></a><span class="ss">    - </span>each month</span>
-<span id="cb21-7"><a></a><span class="ss">- </span>Relevant package files are discovered automatically</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-7"><a></a><span class="ss">- </span>Relevant package files are discovered automatically</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1290,7 +1290,7 @@
 <h2>Code Blocks</h2>
 <p>Code blocks can have fenced code blocks syntax highlighted in the usual way. The <code>code-line-numbers</code> option allows for control of what numbers you want your audience to follow.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a></a><span class="in">```{.json code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a></a><span class="in">```{.json code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"}</span></span>
 <span id="cb22-2"><a></a>{</span>
 <span id="cb22-3"><a></a>  <span class="dt">$schema</span><span class="op">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="op">,</span></span>
 <span id="cb22-4"><a></a>  <span class="dt">extends</span><span class="op">:</span> [</span>
@@ -1330,12 +1330,12 @@
 <span id="cb22-38"><a></a>    }<span class="op">,</span></span>
 <span id="cb22-39"><a></a>  ]<span class="op">,</span></span>
 <span id="cb22-40"><a></a>}</span>
-<span id="cb22-41"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-41"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
 <h2></h2>
-<div class="sourceCode" id="cb23" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb23-1"><a></a><span class="fu">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb23-1"><a></a><span class="fu">{</span></span>
 <span id="cb23-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
 <span id="cb23-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb23-4"><a></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
@@ -1373,18 +1373,18 @@
 <span id="cb23-36"><a></a>      <span class="er">matchManagers</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb23-37"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb23-38"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb23-39"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-39"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>Footers</h2>
 <p>You can control the footer for a single slide as follows.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a></a>::: footer</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a></a>::: footer</span>
 <span id="cb24-2"><a></a></span>
 <span id="cb24-3"><a></a>See in action:</span>
 <span id="cb24-4"><a></a><span class="ot">&lt;https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5&gt;</span></span>
 <span id="cb24-5"><a></a></span>
-<span id="cb24-6"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-6"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1397,7 +1397,7 @@
 <h2>Fragments</h2>
 <p>Fragments are used to highlight or incrementally reveal individual elements on a slide.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a></a>The</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a></a>The</span>
 <span id="cb25-2"><a></a><span class="co">[</span><span class="ot">GitHub automerge</span><span class="co">](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)</span></span>
 <span id="cb25-3"><a></a>setting is required</span>
 <span id="cb25-4"><a></a></span>
@@ -1417,7 +1417,7 @@
 <span id="cb25-18"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
 <span id="cb25-19"><a></a><span class="in">```</span></span>
 <span id="cb25-20"><a></a></span>
-<span id="cb25-21"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-21"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1426,19 +1426,19 @@
 <p><img data-src="../renovate-automating-dependency-management/figures/automerge.png"></p>
 <div class="fragment fade-left">
 <p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a></a><span class="fu">on</span><span class="kw">:</span></span>
 <span id="cb26-2"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
 <span id="cb26-3"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
 <span id="cb26-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
 <span id="cb26-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
-<span id="cb26-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 <h2>Columns</h2>
 <p>Columns can be made using <code>layout-ncol</code> or the <code>layout</code> we saw earlier in the QR code slide.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a></a>::: {layout-ncol=2}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a></a>::: {layout-ncol=2}</span>
 <span id="cb27-2"><a></a></span>
 <span id="cb27-3"><a></a><span class="al">![](/renovate-automating-dependency-management/figures/status_checks_1.png)</span></span>
 <span id="cb27-4"><a></a></span>
@@ -1448,7 +1448,7 @@
 <span id="cb27-8"><a></a></span>
 <span id="cb27-9"><a></a>:::</span>
 <span id="cb27-10"><a></a></span>
-<span id="cb27-11"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-11"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1468,7 +1468,7 @@
 <h2>Flowcharts</h2>
 <p>Flowcharts can be made with <a href="https://mermaid.js.org">Mermaid</a>.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a></a><span class="in">```{mermaid}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a></a><span class="in">```{mermaid}</span></span>
 <span id="cb28-2"><a></a>%%| fig-align: center</span>
 <span id="cb28-3"><a></a>flowchart TB;</span>
 <span id="cb28-4"><a></a>    Collaborations --&gt; _[<span class="ot">"</span><span class="st">Data Science</span><span class="ot">"</span>] &amp; DevOps &amp; Healthcare &amp; HPC &amp; MIRSG &amp; WebDev;</span>
@@ -1501,7 +1501,7 @@
 <span id="cb28-31"><a></a><span class="st">                  HTML</span></span>
 <span id="cb28-32"><a></a><span class="st">                  JavaScript</span></span>
 <span id="cb28-33"><a></a><span class="st">                </span><span class="ot">"</span>];</span>
-<span id="cb28-34"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-34"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1553,7 +1553,7 @@
 <h2>Quotes</h2>
 <p>Standard Markdown quoting.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a></a><span class="co">[</span><span class="ot">Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/DevOps)</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a></a><span class="co">[</span><span class="ot">Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/DevOps)</span>:</span>
 <span id="cb29-2"><a></a></span>
 <span id="cb29-3"><a></a><span class="at">&gt; DevOps is a method in the software development and IT industry. Used as a set</span></span>
 <span id="cb29-4"><a></a><span class="at">&gt; of practices and tools, DevOps integrates and automates the work of software</span></span>
@@ -1561,7 +1561,7 @@
 <span id="cb29-6"><a></a><span class="at">&gt; shortening the systems development life cycle. DevOps is complementary to</span></span>
 <span id="cb29-7"><a></a><span class="at">&gt; agile software development; many DevOps aspects came from the agile way of</span></span>
 <span id="cb29-8"><a></a><span class="at">&gt; working. Automation is an important part of DevOps. Software programmers and</span></span>
-<span id="cb29-9"><a></a><span class="at">&gt; architects should use "fitness functions" to keep their software in check.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-9"><a></a><span class="at">&gt; architects should use "fitness functions" to keep their software in check.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1575,14 +1575,14 @@
 <h2>Checkboxes</h2>
 <p>Standard Markdown checkboxes.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a></a><span class="an">Documentation:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a></a><span class="an">Documentation:</span></span>
 <span id="cb30-2"><a></a></span>
 <span id="cb30-3"><a></a><span class="ss">- </span><span class="va">[ ]</span> **A statement of need** stating problems the software is designed to solve</span>
 <span id="cb30-4"><a></a>      and its target audience in README.</span>
 <span id="cb30-5"><a></a><span class="ss">- </span><span class="va">[ ]</span> **Installation instructions:** for the development version of the package</span>
 <span id="cb30-6"><a></a>      and any non-standard dependencies in README.</span>
 <span id="cb30-7"><a></a><span class="ss">- </span><span class="va">[ ]</span> **Vignette(s)** demonstrating major functionality that runs successfully</span>
-<span id="cb30-8"><a></a>      locally.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-8"><a></a>      locally.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1597,7 +1597,7 @@
 <section class="slide level2" data-footer="false">
 <h2>Running Code</h2>
 <p>Can embed and run code to do all kinds of things. This example generates an interactive map by using the Python package <a href="https://ipyleaflet.readthedocs.io">ipyleaflet</a>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a></a><span class="in">```{python}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a></a><span class="in">```{python}</span></span>
 <span id="cb31-2"><a></a><span class="im">from</span> ipyleaflet <span class="im">import</span> Map, Marker, basemap_to_tiles, basemaps</span>
 <span id="cb31-3"><a></a></span>
 <span id="cb31-4"><a></a>heathrow_coords <span class="op">=</span> (<span class="fl">51.4680</span>, <span class="fl">0.4551</span>)</span>
@@ -1613,14 +1613,14 @@
 <span id="cb31-14"><a></a>m.add_layer(Marker(location<span class="op">=</span>heathrow_coords))</span>
 <span id="cb31-15"><a></a>m.add_layer(Marker(location<span class="op">=</span>seatac_coords))</span>
 <span id="cb31-16"><a></a>m</span>
-<span id="cb31-17"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-17"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-visibility="uncounted">
 <h2></h2>
-<div id="c76b02da" class="cell" data-execution_count="4">
+<div id="4f3fad53" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"119f1b6315864a258435fc2cf4af0ec6","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"f0d25f29a80b4aada0bdfc6dfa01362e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1629,7 +1629,7 @@
 <h2>Website Previews</h2>
 <p>Websites can be previewed as follows.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a></a><span class="in">```{=html}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a></a><span class="in">```{=html}</span></span>
 <span id="cb32-2"><a></a><span class="in">&lt;iframe</span></span>
 <span id="cb32-3"><a></a><span class="in">    height="550"</span></span>
 <span id="cb32-4"><a></a><span class="in">    src="https://ibis-project.org/tutorials/getting_started"</span></span>
@@ -1637,7 +1637,7 @@
 <span id="cb32-6"><a></a><span class="in">    width="250"</span></span>
 <span id="cb32-7"><a></a><span class="in">&gt;</span></span>
 <span id="cb32-8"><a></a><span class="in">&lt;/iframe&gt;</span></span>
-<span id="cb32-9"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-9"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1649,7 +1649,7 @@
 <h2>Stack Layout</h2>
 <p>This example shows how to stack figures on top of each other.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a></a>::: {.r-hstack}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a></a>::: {.r-hstack}</span>
 <span id="cb33-2"><a></a></span>
 <span id="cb33-3"><a></a>::: {.r-stack}</span>
 <span id="cb33-4"><a></a></span>
@@ -1675,7 +1675,7 @@
 <span id="cb33-24"><a></a></span>
 <span id="cb33-25"><a></a>:::</span>
 <span id="cb33-26"><a></a></span>
-<span id="cb33-27"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-27"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1699,10 +1699,10 @@
 <h2>Tables</h2>
 <p>Standard markdown tables.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a></a><span class="pp">|</span> Reusable workflows                                                                           <span class="pp">|</span> Composite actions                                                                                                            <span class="pp">|</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a></a><span class="pp">|</span> Reusable workflows                                                                           <span class="pp">|</span> Composite actions                                                                                                            <span class="pp">|</span></span>
 <span id="cb34-2"><a></a><span class="pp">| --------------------------------------------------------------------------------------------</span> <span class="pp">| ----------------------------------------------------------------------------------------------------------------------------</span> <span class="pp">|</span></span>
 <span id="cb34-3"><a></a><span class="pp">|</span> A YAML file, similar to any standard workflow file                                           <span class="pp">|</span> An action containing a bundle of workflow steps                                                                              <span class="pp">|</span></span>
-<span id="cb34-4"><a></a><span class="pp">|</span> Each reusable workflow is a single file in the <span class="in">`.github/workflows`</span> directory of a repository <span class="pp">|</span> Each composite action is a separate repository, or a directory, containing an <span class="in">`action.yml`</span> file and, optionally, other files <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-4"><a></a><span class="pp">|</span> Each reusable workflow is a single file in the <span class="in">`.github/workflows`</span> directory of a repository <span class="pp">|</span> Each composite action is a separate repository, or a directory, containing an <span class="in">`action.yml`</span> file and, optionally, other files <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1734,13 +1734,13 @@
 <h2>Callouts</h2>
 <p>Can include GitHub Markdown-like callouts.</p>
 <!-- prettier-ignore-start -->
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a></a>::: {.callout-note}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a></a>::: {.callout-note}</span>
 <span id="cb35-2"><a></a></span>
 <span id="cb35-3"><a></a>Much of this talk holds true for personal GitHub accounts and GitHub</span>
 <span id="cb35-4"><a></a>organisations. However, it is not always the case. The focus here is solely on</span>
 <span id="cb35-5"><a></a>organisational accounts.</span>
 <span id="cb35-6"><a></a></span>
-<span id="cb35-7"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-7"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-visibility="uncounted">
@@ -1980,7 +1980,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2007,7 +2007,7 @@
       });
     </script>
     <script type="application/vnd.jupyter.widget-state+json">
-    {"state":{"119f1b6315864a258435fc2cf4af0ec6":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[49.4558,-60.9205],"close_popup_on_click":true,"controls":["IPY_MODEL_f2174cabcd2243c6b30db061fb24f7b5","IPY_MODEL_63b0737016804ccaa8d84e3943ec7e87"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_b4c6ab5f61dc4b49b8425eea3845c10e","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_ba25718546854b45bea643cfc26ff7df","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_cbb5f7c420f8455b92a4c48b402bcef0","IPY_MODEL_7eb8592f3ad342039a90532d7ce662dc","IPY_MODEL_c031501057d54e7786adf5460c518627"],"layout":"IPY_MODEL_8383229506a4484d960c3cf442131156","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2025-09-04","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_9c87b10ac7d24715a70f159f6f79f6bb","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":3,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"63b0737016804ccaa8d84e3943ec7e87":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"7eb8592f3ad342039a90532d7ce662dc":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.468,0.4551],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"8383229506a4484d960c3cf442131156":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9c87b10ac7d24715a70f159f6f79f6bb":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"b4c6ab5f61dc4b49b8425eea3845c10e":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"ba25718546854b45bea643cfc26ff7df":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"c031501057d54e7786adf5460c518627":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[47.4436,-122.2961],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"cbb5f7c420f8455b92a4c48b402bcef0":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":18,"min_native_zoom":null,"min_zoom":1,"name":"Esri.WorldImagery","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}","visible":true,"zoom_offset":0}},"f2174cabcd2243c6b30db061fb24f7b5":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}}},"version_major":2,"version_minor":0}
+    {"state":{"1e0cd04307224544ae3b7f7f4e24ad3a":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"2fadb7d6ef8740a7bdb7f839313c9412":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"39e98d7217dd48fdb62fd7ce8f7dd01a":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.468,0.4551],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"56bc06030cff408bbe0e43980f6a2d23":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"5a220b9d95174f6ebcfe96bd921ee039":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":18,"min_native_zoom":null,"min_zoom":1,"name":"Esri.WorldImagery","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}","visible":true,"zoom_offset":0}},"62adad83739747e98ead6b7d129440a8":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"b0ed8f6413bd418caef233470ecf022a":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"e19dd0726ccf4684b57025cf28dd4ab4":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"f0d25f29a80b4aada0bdfc6dfa01362e":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[49.4558,-60.9205],"close_popup_on_click":true,"controls":["IPY_MODEL_62adad83739747e98ead6b7d129440a8","IPY_MODEL_e19dd0726ccf4684b57025cf28dd4ab4"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_b0ed8f6413bd418caef233470ecf022a","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_2fadb7d6ef8740a7bdb7f839313c9412","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_5a220b9d95174f6ebcfe96bd921ee039","IPY_MODEL_39e98d7217dd48fdb62fd7ce8f7dd01a","IPY_MODEL_fe89d620414d4fc49d0950f25fbcf625"],"layout":"IPY_MODEL_56bc06030cff408bbe0e43980f6a2d23","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2025-09-30","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_1e0cd04307224544ae3b7f7f4e24ad3a","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":3,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"fe89d620414d4fc49d0950f25fbcf625":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[47.4436,-122.2961],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}}},"version_major":2,"version_minor":0}
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -2057,13 +2057,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
