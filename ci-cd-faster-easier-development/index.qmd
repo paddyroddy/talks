@@ -1,6 +1,6 @@
 ---
 author:
-  - "[Patrick J. Roddy](https://paddyroddy.github.io)"
+  - Patrick J. Roddy
   - "[DevOps
     Subgroup](https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations)"
 date: 2024-09-10

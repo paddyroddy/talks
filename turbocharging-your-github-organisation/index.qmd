@@ -1,5 +1,5 @@
 ---
-author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+author: Patrick J. Roddy
 date: 2024-12-12
 format: revealjs
 subtitle:
