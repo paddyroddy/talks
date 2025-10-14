@@ -26,7 +26,6 @@ format:
       hideMissingTitles: true
       useTextContentForMissingTitles: false
     mobile-view-distance: 10
-    preview-links: true
     slide-number: c
     theme: dark
     transition: fade
