@@ -18,6 +18,7 @@ format:
     hash-type: number
     history: false
     incremental: true
+    link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true
     logo: favicon.ico
     mermaid:
