@@ -137,6 +137,25 @@ height=550}
 
 :::
 
+## Summary - Prague
+
+- Beautiful, especially all the pastel houses.
+- Pretty good for running.
+- Meant to be warm in summer 🥶.
+- Plenty to do if not at a conference.
+- Nice to wonder around at night.
+- Good food scene (especially dumplings/beer).
+
+## Summary - EuroPython
+
+- Massive conference.
+- Many recurring attendees.
+- Many big cohorts in attendance - could be hard to meet people.
+- The community felt somewhat insular.
+- Talks in general of high quality.
+- Had to arrive early to attend some talks.
+- Sprints well attended.
+
 # EuroSciPy
 
 18th-22nd August
