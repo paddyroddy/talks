@@ -101,6 +101,8 @@ centre."}
 <!-- vale RedHat.Symbols = YES -->
 <!-- vale RedHat.TermsWarnings = YES -->
 
+## Sprints
+
 ## Running {{< fa brands strava >}}
 
 ![](figures/heatmap_prague.jpg){fig-alt="A map of my runs in Prague." width=65%}
@@ -354,3 +356,20 @@ Mound." height=550}
 ## Wild Boars 🐗
 
 {{< video videos/boars.mp4 title="Some baby wild boars running." >}}
+
+## Summary - Kraków
+
+- Wieliczka Salt Mine well worth a visit.
+- Nice old town.
+- Touristy.
+- Massive forest, Las Wolski, with endless trails.
+- Easy train to Warsaw.
+- Did not have time for Auschwitz.
+
+## Summary - EuroSciPy
+
+- Small conference, big mismatch between website and actual numbers.
+- The tutorials were too short or too specific.
+- Only two parallel streams and often one was beginner.
+- Nice community.
+- Appreciated the sprint being on a weekday.
