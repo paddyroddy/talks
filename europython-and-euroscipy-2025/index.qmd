@@ -10,7 +10,7 @@ title: EuroPython and EuroSciPy 2025
 
 # EuroPython
 
-14th-20th July
+14th-20th July 2025
 
 ## Weekend Before 😴 {footer=false}
 
@@ -180,7 +180,7 @@ height=550}
 
 # EuroSciPy
 
-18th-22nd August
+18th-22nd August 2025
 
 ## Flight
 
