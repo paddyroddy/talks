@@ -322,7 +322,7 @@ height=550}
 
 - Submitted based on current project.
 - Coincidence that Array API was a conference theme.
-- First time using [Inkscape](https://inkscape.en.softonic.com).
+- First time using [Inkscape](https://inkscape.org).
 - Stored on website as an SVG
   <https://paddyroddy.github.io/posters/euroscipy-2025/index.svg>.
 - Lots of discussion.
