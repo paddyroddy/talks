@@ -1,17 +1,18 @@
 ```{python}
 from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
-heathrow_coords = (51.4680, 0.4551)
-seatac_coords = (47.4436, -122.2961)
+heathrow = (51.46815519646558, -0.45505559219641106)
+seatac = (47.44855264951028, -122.30845217399344)
+places = (heathrow, seatac)
 m = Map(
     basemap=basemap_to_tiles(basemaps.Esri.WorldImagery, "2017-04-08"),
     center=(
-        (heathrow_coords[0] + seatac_coords[0]) / 2,
-        (heathrow_coords[1] + seatac_coords[1]) / 2,
+        sum(place[0] for place in places) / len(places),
+        sum(place[1] for place in places) / len(places),
     ),
     zoom=3,
 )
-m.add_layer(Marker(location=heathrow_coords))
-m.add_layer(Marker(location=seatac_coords))
+for place in places:
+    m.add_layer(Marker(location=place))
 m
 ```

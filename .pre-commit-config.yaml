@@ -1,5 +1,10 @@
 ---
-exclude: ^_extensions
+exclude: |-
+  (?x)^(
+    .*\/boars\.mp4|
+    .*\/poster\.png|
+    _extensions\/.*
+  )$
 repos:
   - repo: https://github.com/paddyroddy/.github
     rev: v0.338.0
