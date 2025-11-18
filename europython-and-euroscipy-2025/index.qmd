@@ -135,7 +135,7 @@ centre."}
 
 ::: {.cell}
 
-Tried and failed to script this up 😞...
+Tried and failed to script this up 😞…
 
 :::
 
