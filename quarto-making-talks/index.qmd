@@ -1,5 +1,5 @@
 ---
-author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+author: Patrick J. Roddy
 date: 2025-09-02
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
@@ -419,7 +419,7 @@ specified in `/index.qmd` mapped `subtitle` to `Events`.
 
 ```{.yaml}
 ---
-author: "[Patrick J. Roddy](https://paddyroddy.github.io)"
+author: Patrick J. Roddy
 date: 2025-09-02
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
