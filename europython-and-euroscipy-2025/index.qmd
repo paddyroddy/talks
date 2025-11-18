@@ -25,7 +25,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 heathrow = (51.46815519646558, -0.45505559219641106)
 prague = (50.10175285896584, 14.26320251681309)
-places = {heathrow, prague}
+places = (heathrow, prague)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2025-07-14"),
     center=(
@@ -206,7 +206,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 heathrow = (51.46815519646558, -0.45505559219641106)
 warsaw = (52.16484548195686, 20.969378870573134)
-places = {heathrow, warsaw}
+places = (heathrow, warsaw)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2025-08-14"),
     center=(
@@ -256,7 +256,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 krakow = (50.068408415434824, 19.947514258369935)
 warsaw = (52.228859657588366, 21.00330218765159)
-places = {krakow, warsaw}
+places = (krakow, warsaw)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2025-08-17"),
     center=(

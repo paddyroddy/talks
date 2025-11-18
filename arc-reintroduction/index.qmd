@@ -50,7 +50,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 paris = (48.89084843379842, 2.2811505653731032)
 kenilworth = (52.33904807070224, -1.587793512840982)
-places = {kenilworth, paris}
+places = (kenilworth, paris)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "1998-07-31"),
     center=(
@@ -126,7 +126,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 kenilworth = (52.33904807070224, -1.587793512840982)
 cambridge = (52.20456623926403, 0.10545284672945925)
-places = {cambridge, kenilworth}
+places = (cambridge, kenilworth)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2013-10-05"),
     center=(
@@ -178,7 +178,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 cambridge = (52.20456623926403, 0.10545284672945925)
 london = (51.470747191216255, -0.10703870086632425)
-places = {cambridge, london}
+places = (cambridge, london)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
     center=(
@@ -203,7 +203,7 @@ lavender = (51.4635442166596, -0.1619354214828009)
 lilford = (51.470747191216255, -0.10703870086632425)
 rita = (51.48105874845458, -0.12063909006908995)
 york = (51.54870195873848, -0.12829521344656689)
-places = {brecknock, greyhound, lavender, lilford, rita, york}
+places = (brecknock, greyhound, lavender, lilford, rita, york)
 m = Map(
     basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2017-09-17"),
     center=(

@@ -103,7 +103,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 onp = (47.80132440053639, -123.60236751439547)
 tacoma = (47.25097861544177, -122.43937031181135)
-places = {onp, tacoma}
+places = (onp, tacoma)
 m = Map(
     basemap=basemap_to_tiles(basemaps.Esri.WorldImagery, "2017-04-08"),
     center=(
@@ -290,7 +290,7 @@ from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
 
 seattle = (47.60552302638796, -122.33368981144281)
 tacoma = (47.25097861544177, -122.43937031181135)
-places = {seattle, tacoma}
+places = (seattle, tacoma)
 m = Map(
     basemap=basemap_to_tiles(basemaps.Esri.WorldImagery, "2017-04-08"),
     center=(
