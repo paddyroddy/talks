@@ -251,10 +251,29 @@ m
 - EffVer: Versioning code by the effort required to upgrade
 - Standardised Quantity/Unit APIs discussion
 
-## Poster
+## Poster {footer=false}
+
+::: {layout="[44,56]"}
+
+::: {.cell}
 
 ![](figures/poster.png){fig-alt="My poster on the Array API in GLASS."
 height=550}
+
+:::
+
+::: {.cell}
+
+- Submitted based on current project.
+- Coincidence that Array API was a conference theme.
+- First time using [Inkscape](https://inkscape.en.softonic.com).
+- Stored on website as an SVG
+  <https://paddyroddy.github.io/posters/euroscipy-2025/index.svg>.
+- Lots of discussion.
+
+:::
+
+:::
 
 ## Sprints {footer=false}
 
