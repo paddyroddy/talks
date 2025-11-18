@@ -101,7 +101,27 @@ centre."}
 <!-- vale RedHat.Symbols = YES -->
 <!-- vale RedHat.TermsWarnings = YES -->
 
-## Sprints
+## Sprints {footer=false}
+
+::: {layout="[45,55]"}
+
+::: {.cell}
+
+- In conjunction with a beginners day.
+- Wanted to contribute to a bigger project.
+- Worked on Apache Arrow on adding typing to the Python bindings.
+- Tried out [astral-sh/ty](https://github.com/astral-sh/ty).
+- Early prototype.
+
+:::
+
+::: {.cell}
+
+[![apache/arrow#47609](figures/apache_arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
+
+:::
+
+:::
 
 ## Running {{< fa brands strava >}}
 
