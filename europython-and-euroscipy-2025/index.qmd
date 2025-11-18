@@ -214,6 +214,14 @@ for place in places:
 m
 ```
 
+## The Conference
+
+- 17th EuroSciPy
+- 5 days (2 tutorial, 2 talk, 1 sprint)
+- 100+ attendees
+- 20+ speakers
+- One social
+
 <!-- vale RedHat.TermsWarnings = NO -->
 
 ## Tutorials {{< fa brands github >}} {data-menu-title="Tutorials (i)"}
