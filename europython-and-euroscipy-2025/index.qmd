@@ -357,9 +357,9 @@ array([ 1.79769313e+308 + 0.00000000e+000j, 0.00000000e+000 + 0.00000000e+000j,
 
 :::
 
-## Running {{< fa brands strava >}}
+## Running {{< fa brands strava >}} {footer=false}
 
-![](figures/heatmap_krakow.jpg){width=80%}
+![](figures/heatmap_krakow.jpg){width=90%}
 
 ## Photos – Kraków
 
