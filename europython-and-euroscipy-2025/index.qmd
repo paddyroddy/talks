@@ -56,7 +56,7 @@ m
 
 :::
 
-::: {.cell}
+:::{.fragment .fade-left}
 
 ![Retro Games](figures/gaming.jpg){fig-alt="A selection of retro game
 consoles."}
@@ -115,7 +115,7 @@ centre."}
 
 :::
 
-::: {.cell}
+:::{.fragment .fade-left}
 
 [![apache/arrow#47609](figures/apache_arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
 
@@ -123,9 +123,23 @@ centre."}
 
 :::
 
-## Running {{< fa brands strava >}}
+## Running {{< fa brands strava >}} {.smaller footer=false}
+
+::: {layout="[72,28]"}
+
+::: {.cell}
 
 ![](figures/heatmap_prague.jpg){fig-alt="A map of my runs in Prague." width=65%}
+
+:::
+
+::: {.cell}
+
+Tried and failed to script this up 😞...
+
+:::
+
+:::
 
 ## Photos
 
@@ -161,6 +175,7 @@ height=550}
 
 ## Summary - Prague
 
+- Been once before to watch Cyclo-cross World Championships.
 - Beautiful, especially all the pastel houses.
 - Pretty good for running.
 - Meant to be warm in summer 🥶.
@@ -383,7 +398,7 @@ Mound." height=550}
 - Nice old town.
 - Touristy.
 - Massive forest, Las Wolski, with endless trails.
-- Easy train to Warsaw.
+- Easy train to Warsaw (maybe spend more 💰 than we did).
 - Did not have time for Auschwitz.
 
 ## Summary - EuroSciPy
