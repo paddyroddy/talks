@@ -3,7 +3,7 @@ author: Patrick J. Roddy
 date: 2025-11-18
 format: revealjs
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
-title: EuroPython and EuroSciPy 2025
+title: EuroPython & EuroSciPy 2025
 ---
 
 {{< include /_includes/qr-code.qmd >}}
