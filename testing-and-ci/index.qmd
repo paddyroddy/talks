@@ -40,3 +40,14 @@ title: Testing & CI
 - Expensive to perform
 - Hard to maintain when automated
 - Only need a few
+
+## Acceptance Testing
+
+## Performance Testing
+
+## Smoke Testing
+
+## Miscellaneous
+
+- Mutation Testing
+- Mocking
