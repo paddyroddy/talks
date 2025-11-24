@@ -31,3 +31,12 @@ title: Testing & CI
 - Only verify the output of an action
 - In comparison to an integration test it would be a specific value from the
   database rather than just the connection
+
+## End-to-End Tests
+
+- Replicates user behaviour in a complete application environment
+- Verifies that user flows work as expected
+- Can be as simple loading a web page
+- Expensive to perform
+- Hard to maintain when automated
+- Only need a few
