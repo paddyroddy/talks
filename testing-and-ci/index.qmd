@@ -7,3 +7,13 @@ title: Testing & CI
 ---
 
 {{< include /_includes/qr-code.qmd >}}
+
+# Testing
+
+## Unit Tests
+
+- Low level
+- Close to the source of the application
+- Tests individual methods/functions
+- Cheap to automate
+- Run quickly
