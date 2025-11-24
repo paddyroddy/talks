@@ -17,3 +17,10 @@ title: Testing & CI
 - Tests individual methods/functions
 - Cheap to automate
 - Run quickly
+
+## Integration Tests
+
+- Verifies that different part of the application work well together
+- e.g. test interaction with database/make sure microservices work together
+- More expensive to run
+- Many parts of the application need to be up and running
