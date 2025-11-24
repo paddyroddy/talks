@@ -24,3 +24,10 @@ title: Testing & CI
 - e.g. test interaction with database/make sure microservices work together
 - More expensive to run
 - Many parts of the application need to be up and running
+
+## Functional Tests
+
+- Focus on business requirements of application
+- Only verify the output of an action
+- In comparison to an integration test it would be a specific value from the
+  database rather than just the connection
