@@ -1,0 +1,9 @@
+---
+author: Patrick J. Roddy
+date: 2025-12-03
+format: revealjs
+subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
+title: Testing & CI
+---
+
+{{< include /_includes/qr-code.qmd >}}
