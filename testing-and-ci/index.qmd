@@ -22,9 +22,10 @@ title: Testing and CI
 ## Benefits of Testing
 
 - Risk Mitigation: – identify defects and failures early.
-- Confidence – well–planned software test strategy provides confidence.
+- Confidence – well planned testing gives confidence that your results will be reproducible.
 - Compliance – ensure that software adheres to standards.
-- User Satisfaction – verify usability.
+- Code re-usability - other researchers can confirm that your code works before using it.
+- Works as minimal documentation - users can see how your code is meant to work.
 - Optimisation – provides vital feedback.
 - Cost Savings – reduces downstream costs.
 
