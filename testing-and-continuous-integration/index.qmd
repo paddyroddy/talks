@@ -784,6 +784,7 @@ def calculate_discount(price, is_member):
 - Always test your code.
 - Unit tests are easy to implement and cheap to run.
 - All examples in Python but can be easily ported.
-- Can experiment with TDD, although can be difficult in research software.
+- Can experiment with TDD, maybe this is difficult in research software -
+  discuss?
 - GitHub Actions free for open source software.
 - Testing ever more important in an AI slop world.
