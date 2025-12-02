@@ -8,7 +8,23 @@ title: Testing and CI
 
 {{< include /_includes/qr-code.qmd >}}
 
-# Why Test
+# Testing
+
+## Software Testing
+
+> Software testing is a crucial activity in the software development life cycle
+> that aims to evaluate and improve the quality of software products. Thorough
+> testing is essential to ensure software systems function correctly, are
+> secure, meet stakeholders' needs, and ultimately offer value to end users.
+
+## Benefits of Testing
+
+- Risk Mitigation: – identify defects and failures early.
+- Confidence – well–planned software test strategy provides confidence.
+- Compliance – ensure that software adheres to standards.
+- User Satisfaction – verify usability.
+- Optimisation – provides vital feedback.
+- Cost Savings – reduces downstream costs.
 
 ## Manual Testing
 
@@ -694,7 +710,8 @@ def test_email_service_retries_on_failure():
 > exact boundary condition in your tests, you might have 100% code coverage but
 > you would not survive mutation testing.
 
-Checkout {{< fa brands github >}} [boxed/mutmut](https://github.com/boxed/mutmut).
+Checkout {{< fa brands github >}}
+[boxed/mutmut](https://github.com/boxed/mutmut).
 
 ## Mutation Testing {data-menu-title="Mutation Testing (iii)"}
 
