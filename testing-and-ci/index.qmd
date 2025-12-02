@@ -515,10 +515,7 @@ def test_api_endpoints_respond():
 
 ## Smoke Testing {data-menu-title="Smoke Tests (iv)"}
 
-Run with `pytest -m smoke`.
-
 ```{.python}
-import pytest
 import requests
 
 BASE_URL = "http://localhost:8000"
@@ -533,6 +530,17 @@ def test_static_assets_load():
     for asset in assets:
         response = requests.get(f"{BASE_URL}{asset}")
         assert response.status_code == 200, f"Asset {asset} not found"
+```
+
+## Smoke Testing {data-menu-title="Smoke Tests (v)"}
+
+Run with `pytest -m smoke`.
+
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
 
 @pytest.mark.smoke
 def test_critical_user_flow():
