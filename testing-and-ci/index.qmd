@@ -75,6 +75,53 @@ def test_divide_various_inputs(a, b, expected):
 
 ## Example {data-menu-title="Integration Tests (ii)"}
 
+```{.python}
+import pytest
+from sqlalchemy import create_engine
+from myapp.repository import UserRepository
+
+@pytest.fixture
+def db_engine():
+    """Create in-memory database for testing"""
+    engine = create_engine("sqlite:///:memory:")
+    yield engine
+    engine.dispose()
+
+@pytest.fixture
+def user_repo(db_engine):
+    """Create repository with test database"""
+    repo = UserRepository(db_engine)
+    repo.create_tables()
+    return repo
+```
+
+## Example {data-menu-title="Integration Tests (iii)"}
+
+```{.python}
+from myapp.models import User
+
+def test_create_and_retrieve_user(user_repo):
+    # Test that we can save to database and retrieve
+    user = User(name="Alice", email="alice@example.com")
+    user_id = user_repo.save(user)
+
+    retrieved_user = user_repo.get_by_id(user_id)
+    assert retrieved_user.name == "Alice"
+    assert retrieved_user.email == "alice@example.com"
+
+
+def test_update_user_email(user_repo):
+    user = User(name="Bob", email="bob@example.com")
+    user_id = user_repo.save(user)
+
+    user_repo.update_email(user_id, "newemail@example.com")
+    updated_user = user_repo.get_by_id(user_id)
+
+    assert updated_user.email == "newemail@example.com"
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
 ## Functional Tests {data-menu-title="Functional Tests (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
