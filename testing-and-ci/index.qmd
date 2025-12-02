@@ -710,7 +710,7 @@ def test_email_service_retries_on_failure():
 > the full behaviour of your code. Not just touches all lines such as a coverage
 > report will tell you, but actually tests all behaviour, and all weird edge
 > cases. It does this by changing the code in one place at a time, as subtly as
-> possible, and running the test suite. If the test suite *succeeds *it counts
+> possible, and running the test suite. If the test suite *succeeds* it counts
 > as a failure, because it could change the code and your tests are blissfully
 > unaware that anything is amiss.
 
