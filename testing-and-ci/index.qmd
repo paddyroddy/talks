@@ -43,7 +43,7 @@ title: Testing and CI
 - Quality of automated tests depends on how well the scripts are written.
 - Key part of continuous integration and continuous delivery (CI/CD).
 
-## Test Driven Development
+## Test Driven Development (TDD)
 
 1. Write a test for the next bit of functionality you want to add.
 2. Write the functional code until the test passes.
@@ -766,3 +766,14 @@ def calculate_discount(price, is_member):
 
     return price * (1 - discount)
 ```
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Always test your code.
+- Unit tests are easy to implement and cheap to run.
+- All examples in Python but can be easily ported.
+- Can experiment with TDD, although can be difficult in research software.
+- GitHub Actions free for open source software.
+- Testing ever more important in an AI slop world.
