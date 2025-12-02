@@ -1,5 +1,7 @@
 ---
-author: Patrick J. Roddy
+author:
+  - Patrick J. Roddy
+  - [Stephen Thompson](https://profiles.ucl.ac.uk/23126-stephen-thompson)
 date: 2025-12-03
 format: revealjs
 subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
