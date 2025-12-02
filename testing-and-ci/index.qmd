@@ -380,9 +380,13 @@ def test_response_time_under_load():
     assert p95_time < 0.5, f"95th percentile response time: {p95_time:.3f}s"
 ```
 
+## Performance Testing {data-menu-title="Performance Tests (iii)"}
+
 ```{.python}
 import requests
 import time
+
+BASE_URL = "http://localhost:8000"
 
 def test_database_query_performance():
     """Test that database queries complete within acceptable time"""
@@ -405,11 +409,15 @@ def test_database_query_performance():
     assert max_time < 0.2, f"Max query time: {max_time:.3f}s"
 ```
 
+## Performance Testing {data-menu-title="Performance Tests (iv)"}
+
 ```{.python}
 import pytest
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
+
+BASE_URL = "http://localhost:8000"
 
 @pytest.mark.parametrize(
     "endpoint",
@@ -456,6 +464,83 @@ def test_endpoint_throughput(endpoint):
 - Or after a deployment to make sure application is running in the new environment
 
 ## Smoke Testing {data-menu-title="Smoke Tests (ii)"}
+
+```{.python}
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_application_is_running():
+    """Basic check that application responds"""
+    response = requests.get(f"{BASE_URL}/health")
+    assert response.status_code == 200
+
+def test_database_connection():
+    """Verify database is accessible"""
+    response = requests.get(f"{BASE_URL}/api/health/db")
+    assert response.status_code == 200
+    assert response.json()["database"] == "connected"
+```
+
+## Smoke Testing {data-menu-title="Smoke Tests (iii)"}
+
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_static_assets_load():
+    """Check that static resources are accessible"""
+    assets = [
+        "/static/css/main.css",
+        "/static/js/app.js",
+    ]
+
+    for asset in assets:
+        response = requests.get(f"{BASE_URL}{asset}")
+        assert response.status_code == 200, f"Asset {asset} not found"
+
+@pytest.mark.smoke
+def test_critical_user_flow():
+    """Quick test of most critical user action"""
+    # User can view products
+    response = requests.get(f"{BASE_URL}/api/products")
+    assert response.status_code == 200
+    products = response.json()
+    assert len(products) > 0, "No products available"
+```
+
+## Smoke Testing {data-menu-title="Smoke Tests (iv)"}
+
+Run with `pytest -m smoke`.
+
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_static_assets_load():
+    """Check that static resources are accessible"""
+    assets = [
+        "/static/css/main.css",
+        "/static/js/app.js",
+    ]
+
+    for asset in assets:
+        response = requests.get(f"{BASE_URL}{asset}")
+        assert response.status_code == 200, f"Asset {asset} not found"
+
+@pytest.mark.smoke
+def test_critical_user_flow():
+    """Quick test of most critical user action"""
+    # User can view products
+    response = requests.get(f"{BASE_URL}/api/products")
+    assert response.status_code == 200
+    products = response.json()
+    assert len(products) > 0, "No products available"
+```
 
 ## Miscellaneous
 
