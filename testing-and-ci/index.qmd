@@ -10,7 +10,11 @@ title: Testing and CI
 
 # Testing
 
-## Unit Tests
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Unit Tests {data-menu-title="Unit Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Low level
 - Close to the source of the application
@@ -18,34 +22,84 @@ title: Testing and CI
 - Cheap to automate
 - Run quickly
 
-## Integration Tests
+## Example {data-menu-title="Unit Tests (ii)"}
+
+## Integration Tests {data-menu-title="Integration Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Verifies that different part of the application work well together
 - e.g. test interaction with database/make sure microservices work together
 - More expensive to run
 - Many parts of the application need to be up and running
 
-## Functional Tests
+## Example {data-menu-title="Integration Tests (ii)"}
+
+## Functional Tests {data-menu-title="Functional Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Focus on business requirements of application
 - Only verify the output of an action
 - In comparison to an integration test it would be a specific value from the
   database rather than just the connection
 
-## End-to-End Tests
+## Example {data-menu-title="Functional Tests (ii)"}
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## End-to-End Tests {data-menu-title="End-to-End Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Replicates user behaviour in a complete application environment
 - Verifies that user flows work as expected
 - Can be as simple loading a web page
 - Expensive to perform
-- Hard to maintain when automated
+- Hard to support when automated
 - Only need a few
 
-## Acceptance Testing
+## Example {data-menu-title="End-to-End Tests (ii)"}
 
-## Performance Testing
+<!-- vale RedHat.TermsWarnings = NO -->
 
-## Smoke Testing
+## Acceptance Testing {data-menu-title="Acceptance Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Formal tests that verify if a system satisfies business requirements
+- Require entire application to be running while testing
+- Replicate user behaviours
+- Can also measure the performance, reject if certain goals not met
+
+## Example {data-menu-title="Acceptance Tests (ii)"}
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Performance Testing {data-menu-title="Performance Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Evaluate how a system performs under a particular workload
+- Help measure reliability, speed, scalability, responsiveness
+- e.g. observe response times when executing a high number of requests
+- Determines if an application meets performance requirements
+
+## Example {data-menu-title="Performance Tests (ii)"}
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Smoke Testing {data-menu-title="Smoke Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Basic tests that check the basic functionality of an application
+- Meant to be quick to run
+- Goal to give the assurance that major features are working as expected
+- Useful after a new build to decide whether to run more expensive tests
+- Or after a deployment to make sure application is running in the new environment
+
+## Example {data-menu-title="Smoke Tests (ii)"}
 
 ## Miscellaneous
 
