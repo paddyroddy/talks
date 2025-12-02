@@ -558,14 +558,14 @@ def test_critical_user_flow():
 
 ## Mocking {data-menu-title="Mocking (i)"}
 
+<!-- vale RedHat.TermsWarnings = YES -->
+
 > Fowler describes mocks as pre-programmed objects with expectations which form
 > a specification of the calls they are expected to receive. In other words,
 > mocks are a replacement object for the dependency that has certain
-> expectations that are placed on it; those expectations might be things like
+> expectations that are placed on it; those expectations might be things such as
 > validating a sub-method has been called a certain number of times or that
 > arguments are passed down in a certain way.
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ## Mocking {data-menu-title="Mocking (ii)"}
 
@@ -616,5 +616,78 @@ def test_email_service_retries_on_failure():
     assert mock_client.send.call_count == 2
 ```
 
-- Mutation Testing
-- Mocking
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Mutation Testing {data-menu-title="Mutation Testing (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+> Mutation testing is a way to be reasonably certain your code actually tests
+> the full behaviour of your code. Not just touches all lines such as a coverage
+> report will tell you, but actually tests all behaviour, and all weird edge
+> cases. It does this by changing the code in one place at a time, as subtly as
+> possible, and running the test suite. If the test suite *succeeds *it counts
+> as a failure, because it could change the code and your tests are blissfully
+> unaware that anything is amiss.
+
+## Mutation Testing {data-menu-title="Mutation Testing (ii)"}
+
+> Examples of mutations are changing "<" to "<=". If you have not checked the
+> exact boundary condition in your tests, you might have 100% code coverage but
+> you would not survive mutation testing.
+
+Checkout {{< fa brands github >}} [boxed/mutmut](https://github.com/boxed/mutmut).
+
+## Mutation Testing {data-menu-title="Mutation Testing (iii)"}
+
+Original code:
+
+```{.python}
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.1
+    else:
+        discount = 0.05
+
+    if is_member:
+        discount += 0.05
+
+    return price * (1 - discount)
+
+# Test suite
+def test_discount_for_large_order():
+    assert calculate_discount(150, False) == 135.0
+
+def test_discount_for_member():
+    assert calculate_discount(50, True) == 45.0
+```
+
+## Mutation Testing {data-menu-title="Mutation Testing (iv)"}
+
+Mutation examples:
+
+```{.python}
+# Mutant 1: Change > to >=
+def calculate_discount(price, is_member):
+    if price >= 100:  # Changed
+        discount = 0.1
+    # ... rest of code
+
+# Mutant 2: Change 0.1 to 0.2
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.2  # Changed
+    # ... rest of code
+
+# Mutant 3: Remove the member check
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.1
+    else:
+        discount = 0.05
+
+    # if is_member:  # Removed
+    #     discount += 0.05
+
+    return price * (1 - discount)
+```
