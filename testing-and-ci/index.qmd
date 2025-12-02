@@ -349,6 +349,100 @@ def test_registered_user_can_access_protected_resources(api_client):
 
 ## Performance Testing {data-menu-title="Performance Tests (ii)"}
 
+```{.python}
+import requests
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+BASE_URL = "http://localhost:8000"
+
+def test_response_time_under_load():
+    """Test that API responds within acceptable time under concurrent requests"""
+
+    def make_request():
+        start = time.time()
+        response = requests.get(f"{BASE_URL}/api/products")
+        elapsed = time.time() - start
+        return response.status_code, elapsed
+
+    # Simulate 100 concurrent requests
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        futures = [executor.submit(make_request) for _ in range(100)]
+        results = [future.result() for future in as_completed(futures)]
+
+    # All requests should succeed
+    status_codes = [r[0] for r in results]
+    assert all(code == 200 for code in status_codes)
+
+    # 95th percentile response time should be under 500ms
+    response_times = sorted([r[1] for r in results])
+    p95_time = response_times[int(len(response_times) * 0.95)]
+    assert p95_time < 0.5, f"95th percentile response time: {p95_time:.3f}s"
+```
+
+```{.python}
+import requests
+import time
+
+def test_database_query_performance():
+    """Test that database queries complete within acceptable time"""
+
+    response_times = []
+
+    for _ in range(50):
+        start = time.time()
+        response = requests.get(f"{BASE_URL}/api/users?limit=100")
+        elapsed = time.time() - start
+        response_times.append(elapsed)
+        assert response.status_code == 200
+
+    avg_time = sum(response_times) / len(response_times)
+    max_time = max(response_times)
+
+    # Average query time should be under 100ms
+    assert avg_time < 0.1, f"Average query time: {avg_time:.3f}s"
+    # No single query should take more than 200ms
+    assert max_time < 0.2, f"Max query time: {max_time:.3f}s"
+```
+
+```{.python}
+import pytest
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+
+@pytest.mark.parametrize(
+    "endpoint",
+    [
+        "/api/products",
+        "/api/categories",
+        "/api/search?q=test",
+    ],
+)
+def test_endpoint_throughput(endpoint):
+    """Test that endpoints can handle high throughput"""
+
+    def make_request():
+        return requests.get(f"{BASE_URL}{endpoint}").status_code
+
+    start_time = time.time()
+
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        futures = [executor.submit(make_request) for _ in range(100)]
+        results = [future.result() for future in as_completed(futures)]
+
+    elapsed = time.time() - start_time
+
+    # Should handle 100 requests in under 5 seconds
+    assert elapsed < 5.0
+    # All should succeed
+    assert all(status == 200 for status in results)
+
+    # Calculate requests per second
+    rps = len(results) / elapsed
+    assert rps > 20, f"Throughput: {rps:.2f} req/s"
+```
+
 <!-- vale RedHat.TermsWarnings = NO -->
 
 ## Smoke Testing {data-menu-title="Smoke Tests (i)"}
