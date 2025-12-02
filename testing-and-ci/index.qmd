@@ -552,6 +552,35 @@ def test_critical_user_flow():
     assert len(products) > 0, "No products available"
 ```
 
+# Continuous Integration
+
+## GitHub Actions
+
+```{.yaml}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Set up uv ${{ matrix.python-version }}
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      shell: bash
+      run: uv sync --all-groups
+
+    - name: Test with pytest
+      shell: bash
+      run: uv run pytest --cov --cov-report=lcov
+```
+
 # Miscellaneous
 
 <!-- vale RedHat.TermsWarnings = NO -->
