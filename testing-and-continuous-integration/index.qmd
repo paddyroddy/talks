@@ -21,12 +21,15 @@ title: Testing and Continuous Integration
 
 ## Benefits of Testing
 
-- Risk Mitigation: – identify defects and failures early.
-- Confidence – well–planned software test strategy provides confidence.
-- Compliance – ensure that software adheres to standards.
-- User Satisfaction – verify usability.
-- Optimisation – provides vital feedback.
-- Cost Savings – reduces downstream costs.
+- Risk mitigation: identify defects and failures early.
+- Confidence: well planned testing gives confidence that the results will be
+  reproducible.
+- Compliance: ensure that software adheres to standards.
+- Code re-usability: other researchers can confirm that the code works before
+  using it.
+- Works as minimal documentation: users can see how the code is meant to work.
+- Optimisation: provides vital feedback.
+- Cost savings: reduces downstream costs.
 
 ## Manual Testing
 
