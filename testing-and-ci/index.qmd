@@ -604,6 +604,14 @@ def test_critical_user_flow():
 ## GitHub Actions
 
 ```{.yaml}
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   test:
     runs-on: ubuntu-latest
