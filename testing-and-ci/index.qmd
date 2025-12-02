@@ -485,30 +485,32 @@ def test_database_connection():
 ## Smoke Testing {data-menu-title="Smoke Tests (iii)"}
 
 ```{.python}
-import pytest
 import requests
 
 BASE_URL = "http://localhost:8000"
 
-def test_static_assets_load():
-    """Check that static resources are accessible"""
-    assets = [
-        "/static/css/main.css",
-        "/static/js/app.js",
+def test_main_pages_load():
+    """Check that critical pages return successfully"""
+    pages = ["/", "/products", "/about", "/contact"]
+
+    for page in pages:
+        response = requests.get(f"{BASE_URL}{page}")
+        assert response.status_code == 200, f"Page {page} failed to load"
+
+
+def test_api_endpoints_respond():
+    """Verify main API endpoints are working"""
+    endpoints = [
+        "/api/products",
+        "/api/categories",
+        "/api/health",
     ]
 
-    for asset in assets:
-        response = requests.get(f"{BASE_URL}{asset}")
-        assert response.status_code == 200, f"Asset {asset} not found"
-
-@pytest.mark.smoke
-def test_critical_user_flow():
-    """Quick test of most critical user action"""
-    # User can view products
-    response = requests.get(f"{BASE_URL}/api/products")
-    assert response.status_code == 200
-    products = response.json()
-    assert len(products) > 0, "No products available"
+    for endpoint in endpoints:
+        response = requests.get(f"{BASE_URL}{endpoint}")
+        assert response.status_code in {200, 401}, (
+            f"Endpoint {endpoint} returned {response.status_code}"
+        )
 ```
 
 ## Smoke Testing {data-menu-title="Smoke Tests (iv)"}
