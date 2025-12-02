@@ -231,7 +231,7 @@ def test_out_of_stock_items_cannot_be_ordered(order_service):
 
 - Replicates user behaviour in a complete application environment.
 - Verifies that user flows work as expected.
-- Can be as simple loading a web page.
+- Can be as simple as loading a web page.
 - Expensive to perform.
 - Hard to support when automated.
 - Only need a few.
