@@ -263,6 +263,79 @@ def test_complete_purchase_flow(browser):
 
 ## Acceptance Testing {data-menu-title="Acceptance Tests (ii)"}
 
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+@pytest.fixture
+def api_client():
+    """Fixture to ensure API is ready"""
+    response = requests.get(f"{BASE_URL}/health")
+    assert response.status_code == 200
+    return requests.Session()
+```
+
+## Acceptance Testing {data-menu-title="Acceptance Tests (iii)"}
+
+```{.python}
+import time
+
+BASE_URL = "http://localhost:8000"
+
+def test_user_can_register_and_login(api_client):
+    # Acceptance criteria: User must be able to register and login within 3 seconds
+    start_time = time.time()
+
+    # User registers
+    registration_data = {
+        "username": "newuser",
+        "email": "newuser@example.com",
+        "password": "SecurePass123",
+    }
+    response = api_client.post(f"{BASE_URL}/api/register", json=registration_data)
+    assert response.status_code == 201
+
+    # User logs in
+    login_data = {"username": "newuser", "password": "SecurePass123"}
+    response = api_client.post(f"{BASE_URL}/api/login", json=login_data)
+    assert response.status_code == 200
+    assert "token" in response.json()
+
+    # Performance requirement: must complete within 3 seconds
+    elapsed_time = time.time() - start_time
+    assert elapsed_time < 3.0, f"Registration and login took {elapsed_time:.2f}s"
+```
+
+## Acceptance Testing {data-menu-title="Acceptance Tests (iv)"}
+
+```{.python}
+BASE_URL = "http://localhost:8000"
+
+def test_registered_user_can_access_protected_resources(api_client):
+    # Register and login
+    registration_data = {
+        "username": "protecteduser",
+        "email": "protected@example.com",
+        "password": "SecurePass123",
+    }
+    api_client.post(f"{BASE_URL}/api/register", json=registration_data)
+
+    login_response = api_client.post(
+        f"{BASE_URL}/api/login",
+        json={"username": "protecteduser", "password": "SecurePass123"},
+    )
+    token = login_response.json()["token"]
+
+    # Access protected resource
+    headers = {"Authorization": f"Bearer {token}"}
+    response = api_client.get(f"{BASE_URL}/api/profile", headers=headers)
+
+    assert response.status_code == 200
+    assert response.json()["username"] == "protecteduser"
+```
+
 <!-- vale RedHat.TermsWarnings = NO -->
 
 ## Performance Testing {data-menu-title="Performance Tests (i)"}
