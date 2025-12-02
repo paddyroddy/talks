@@ -320,7 +320,7 @@ BASE_URL = "http://localhost:8000"
 @pytest.fixture
 def api_client():
     """Fixture to ensure API is ready"""
-    # assuming health end point exists
+    # this simulates a basic readiness check on the running API service.
     response = requests.get(f"{BASE_URL}/health")
     assert response.status_code == 200
     return requests.Session()
@@ -609,31 +609,31 @@ def test_critical_user_flow():
 name: Test
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.11", "3.12", "3.13", "3.14"]
-    steps:
-    - name: Checkout source
-      uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
 
-    - name: Set up uv ${{ matrix.python-version }}
-      uses: astral-sh/setup-uv@v7
-      with:
-        python-version: ${{ matrix.python-version }}
+    - name: Set up uv ${{ matrix.python-version }}
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: uv sync --all-groups
+    - name: Install dependencies
+      run: uv sync --all-groups
 
-    - name: Test with pytest
-      run: uv run pytest --cov --cov-report=lcov
+    - name: Test with pytest
+      run: uv run pytest --cov --cov-report=lcov
 ```
 
 # Miscellaneous
