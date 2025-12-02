@@ -8,7 +8,36 @@ title: Testing and CI
 
 {{< include /_includes/qr-code.qmd >}}
 
-# Testing
+# Why Test
+
+## Manual Testing
+
+- Done in person by clicking through application.
+- Interacting with the software and APIs with the appropriate tool.
+- Expensive.
+- Prone to human error.
+
+## Automated Testing
+
+- Performed by a machine that runs a script written in advance.
+- Vary in complexity.
+- Much more reliable and robust.
+- Quality of automated tests depends on how well the scripts are written.
+- Key part of continuous integration and continuous delivery (CI/CD).
+
+## Test Driven Development
+
+1. Write a test for the next bit of functionality you want to add.
+2. Write the functional code until the test passes.
+3. Refactor both new and old code to make it well structured.
+
+:::{.fragment .fade-left}
+
+[![Martin Fowler](figures/tdd.png)](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+
+:::
+
+# Types of Tests
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
