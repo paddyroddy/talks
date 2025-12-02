@@ -1,6 +1,9 @@
 -- Slugify titles for use in URLs or identifiers.
 local function slugify(s)
-    return s:gsub("[%s+/]+", "-"):gsub("[^%w-]+", ""):lower()
+    -- Convert spaces/slashes to hyphens
+    s = s:gsub("[%s+/]+", "-")
+    -- Remove non-alphanumeric/non-hyphen characters and convert to lowercase
+    return s:gsub("[^%w-]+", ""):lower()
 end
 
 return {

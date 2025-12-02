@@ -1,0 +1,789 @@
+---
+author:
+  - Patrick J. Roddy
+  - "[Stephen Thompson](https://profiles.ucl.ac.uk/23126-stephen-thompson)"
+date: 2025-12-03
+format: revealjs
+subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
+title: Testing and CI
+---
+
+{{< include /_includes/qr-code.qmd >}}
+
+# Testing
+
+## Software Testing
+
+> Software testing is a crucial activity in the software development life cycle
+> that aims to evaluate and improve the quality of software products. Thorough
+> testing is essential to ensure software systems function correctly, are
+> secure, meet stakeholders' needs, and ultimately offer value to end users.
+
+## Benefits of Testing
+
+- Risk Mitigation: – identify defects and failures early.
+- Confidence – well–planned software test strategy provides confidence.
+- Compliance – ensure that software adheres to standards.
+- User Satisfaction – verify usability.
+- Optimisation – provides vital feedback.
+- Cost Savings – reduces downstream costs.
+
+## Manual Testing
+
+- Done in person by clicking through application.
+- Interacting with the software and APIs with the appropriate tool.
+- Expensive.
+- Prone to human error.
+
+## Automated Testing
+
+- Performed by a machine that runs a script written in advance.
+- Vary in complexity.
+- Much more reliable and robust.
+- Quality of automated tests depends on how well the scripts are written.
+- Key part of continuous integration and continuous delivery (CI/CD).
+
+## Test Driven Development (TDD)
+
+1. Write a test for the next bit of functionality you want to add.
+2. Write the functional code until the test passes.
+3. Refactor both new and old code to make it well structured.
+
+:::{.fragment .fade-left}
+
+[![Martin Fowler](figures/tdd.png)](https://martinfowler.com/bliki/TestDrivenDevelopment.html){fig-alt="A
+depiction of the test driven development cycle."}
+
+:::
+
+# Types of Tests
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Unit Tests {data-menu-title="Unit Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Low level.
+- Close to the source of the application.
+- Tests individual methods/functions.
+- Cheap to automate.
+- Run quickly.
+
+## Unit Tests {data-menu-title="Unit Tests (ii)"}
+
+```{.python}
+def add(a, b):
+    return a + b
+
+def test_add_positive_numbers():
+    assert add(2, 3) == 5
+
+def test_add_negative_numbers():
+    assert add(-1, -1) == -2
+```
+
+## Unit Tests {data-menu-title="Unit Tests (iii)"}
+
+```{.python}
+import pytest
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+def test_divide_by_zero_raises_error():
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
+        divide(10, 0)
+
+@pytest.mark.parametrize(
+    "a,b,expected",
+    [
+        (10, 2, 5),
+        (20, 4, 5),
+        (100, 10, 10),
+    ],
+)
+def test_divide_various_inputs(a, b, expected):
+    assert divide(a, b) == expected
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Integration Tests {data-menu-title="Integration Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Verifies that different part of the application work well together.
+- e.g. test interaction with database/make sure microservices work together.
+- More expensive to run.
+- Many parts of the application need to be up and running.
+
+## Integration Tests {data-menu-title="Integration Tests (ii)"}
+
+```{.python}
+import pytest
+from sqlalchemy import create_engine
+from myapp.repository import UserRepository
+
+@pytest.fixture
+def db_engine():
+    """Create in-memory database for testing"""
+    engine = create_engine("sqlite:///:memory:")
+    yield engine
+    engine.dispose()
+
+@pytest.fixture
+def user_repo(db_engine):
+    """Create repository with test database"""
+    repo = UserRepository(db_engine)
+    repo.create_tables()
+    return repo
+```
+
+## Integration Tests {data-menu-title="Integration Tests (iii)"}
+
+```{.python}
+from myapp.models import User
+
+def test_create_and_retrieve_user(user_repo):
+    # Test that we can save to database and retrieve
+    user = User(name="Alice", email="alice@example.com")
+    user_id = user_repo.save(user)
+
+    retrieved_user = user_repo.get_by_id(user_id)
+    assert retrieved_user.name == "Alice"
+    assert retrieved_user.email == "alice@example.com"
+
+def test_update_user_email(user_repo):
+    user = User(name="Bob", email="bob@example.com")
+    user_id = user_repo.save(user)
+
+    user_repo.update_email(user_id, "newemail@example.com")
+    updated_user = user_repo.get_by_id(user_id)
+
+    assert updated_user.email == "newemail@example.com"
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Functional Tests {data-menu-title="Functional Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Focus on business requirements of application.
+- Only verify the output of an action.
+- In comparison to an integration test it would be a specific value from the
+  database rather than just the connection.
+
+## Functional Tests {data-menu-title="Functional Tests (ii)"}
+
+```{.python}
+import pytest
+from myapp.services import OrderService
+from myapp.models import Order, Product
+
+@pytest.fixture
+def order_service():
+    return OrderService()
+
+def test_order_total_calculation(order_service):
+    # Test business requirement: order total is correctly calculated
+    order = Order()
+    order.add_item(Product(name="Widget", price=10.00), quantity=2)
+    order.add_item(Product(name="Gadget", price=15.50), quantity=1)
+
+    total = order_service.calculate_total(order)
+
+    # Verify specific business outcome
+    assert total == 35.50
+```
+
+## Functional Tests {data-menu-title="Functional Tests (iii)"}
+
+```{.python}
+import pytest
+from myapp.models import Order, Product
+
+def test_discount_applied_for_orders_over_50(order_service):
+    order = Order()
+    order.add_item(Product(name="Widget", price=60.00), quantity=1)
+
+    total = order_service.calculate_total(order)
+
+    # Business rule: 10% discount for orders over $50
+    assert total == 54.00
+
+def test_out_of_stock_items_cannot_be_ordered(order_service):
+    order = Order()
+    product = Product(name="Rare Item", price=100.00, stock=0)
+
+    with pytest.raises(ValueError, match="out of stock"):
+        order_service.process_order(order.add_item(product, quantity=1))
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## End-to-End Tests {data-menu-title="End-to-End Tests (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Replicates user behaviour in a complete application environment.
+- Verifies that user flows work as expected.
+- Can be as simple as loading a web page.
+- Expensive to perform.
+- Hard to support when automated.
+- Only need a few.
+
+## End-to-End Tests {data-menu-title="End-to-End Tests (ii)"}
+
+```{.python}
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()
+    driver.get("http://localhost:8000")
+    yield driver
+    driver.quit()
+
+def test_user_can_view_order_history(browser):
+    # Login
+    browser.find_element(By.ID, "login-link").click()
+    browser.find_element(By.ID, "username").send_keys("testuser")
+    browser.find_element(By.ID, "password").send_keys("password123")
+    browser.find_element(By.ID, "login-btn").click()
+
+    # Navigate to order history
+    browser.find_element(By.ID, "account-menu").click()
+    browser.find_element(By.ID, "order-history-link").click()
+
+    # Verify orders are displayed
+    orders = browser.find_elements(By.CLASS_NAME, "order-item")
+    assert len(orders) > 0
+```
+
+## End-to-End Tests {data-menu-title="End-to-End Tests (iii)"}
+
+```{.python}
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+def test_complete_purchase_flow(browser):
+    # Simulate complete user journey
+
+    # User browses products
+    browser.find_element(By.ID, "products-link").click()
+
+    # User adds item to cart
+    browser.find_element(By.CLASS_NAME, "add-to-cart-btn").click()
+
+    # User goes to checkout
+    browser.find_element(By.ID, "cart-icon").click()
+    browser.find_element(By.ID, "checkout-btn").click()
+
+    # User fills in shipping info
+    browser.find_element(By.ID, "name").send_keys("John Doe")
+    browser.find_element(By.ID, "address").send_keys("123 Main St")
+    browser.find_element(By.ID, "submit-order").click()
+
+    # Verify order confirmation appears
+    confirmation = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.ID, "order-confirmation"))
+    )
+    assert "Order placed successfully" in confirmation.text
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Acceptance Testing {data-menu-title="Acceptance Testing (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Formal tests that verify if a system satisfies business requirements.
+- Require entire application to be running while testing.
+- Replicate user behaviours.
+- Can also measure the performance, reject if certain goals not met.
+
+## Acceptance Testing {data-menu-title="Acceptance Testing (ii)"}
+
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+@pytest.fixture
+def api_client():
+    """Fixture to ensure API is ready"""
+    # this simulates a basic readiness check on the running API service.
+    response = requests.get(f"{BASE_URL}/health")
+    assert response.status_code == 200
+    return requests.Session()
+```
+
+## Acceptance Testing {data-menu-title="Acceptance Testing (iii)"}
+
+```{.python}
+import time
+
+BASE_URL = "http://localhost:8000"
+
+def test_user_can_register_and_login(api_client):
+    # Acceptance criteria: User must be able to register and login within 3 seconds
+    start_time = time.time()
+
+    # User registers
+    registration_data = {
+        "username": "newuser",
+        "email": "newuser@example.com",
+        "password": "SecurePass123",
+    }
+    response = api_client.post(f"{BASE_URL}/api/register", json=registration_data)
+    assert response.status_code == 201
+
+    # User logs in
+    login_data = {"username": "newuser", "password": "SecurePass123"}
+    response = api_client.post(f"{BASE_URL}/api/login", json=login_data)
+    assert response.status_code == 200
+    assert "token" in response.json()
+
+    # Performance requirement: must complete within 3 seconds
+    elapsed_time = time.time() - start_time
+    assert elapsed_time < 3.0, f"Registration and login took {elapsed_time:.2f}s"
+```
+
+## Acceptance Testing {data-menu-title="Acceptance Testing (iv)"}
+
+```{.python}
+BASE_URL = "http://localhost:8000"
+
+def test_registered_user_can_access_protected_resources(api_client):
+    # Register and login
+    registration_data = {
+        "username": "protecteduser",
+        "email": "protected@example.com",
+        "password": "SecurePass123",
+    }
+    api_client.post(f"{BASE_URL}/api/register", json=registration_data)
+
+    login_response = api_client.post(
+        f"{BASE_URL}/api/login",
+        json={"username": "protecteduser", "password": "SecurePass123"},
+    )
+    token = login_response.json()["token"]
+
+    # Access protected resource
+    headers = {"Authorization": f"Bearer {token}"}
+    response = api_client.get(f"{BASE_URL}/api/profile", headers=headers)
+
+    assert response.status_code == 200
+    assert response.json()["username"] == "protecteduser"
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Performance Testing {data-menu-title="Performance Testing (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Evaluate how a system performs under a particular workload.
+- Help measure reliability, speed, scalability, responsiveness.
+- e.g. observe response times when executing a high number of requests.
+- Determines if an application meets performance requirements.
+
+## Performance Testing {data-menu-title="Performance Testing (ii)"}
+
+```{.python}
+import requests
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+BASE_URL = "http://localhost:8000"
+
+def test_response_time_under_load():
+    """Test that API responds within acceptable time under concurrent requests"""
+
+    def make_request():
+        start = time.time()
+        response = requests.get(f"{BASE_URL}/api/products")
+        elapsed = time.time() - start
+        return response.status_code, elapsed
+
+    # Simulate 100 concurrent requests
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        futures = [executor.submit(make_request) for _ in range(100)]
+        results = [future.result() for future in as_completed(futures)]
+
+    # All requests should succeed
+    status_codes = [r[0] for r in results]
+    assert all(code == 200 for code in status_codes)
+
+    # 95th percentile response time should be under 500ms
+    response_times = sorted([r[1] for r in results])
+    p95_time = response_times[int(len(response_times) * 0.95)]
+    assert p95_time < 0.5, f"95th percentile response time: {p95_time:.3f}s"
+```
+
+## Performance Testing {data-menu-title="Performance Testing (iii)"}
+
+```{.python}
+import requests
+import time
+
+BASE_URL = "http://localhost:8000"
+
+def test_database_query_performance():
+    """Test that database queries complete within acceptable time"""
+
+    response_times = []
+
+    for _ in range(50):
+        start = time.time()
+        response = requests.get(f"{BASE_URL}/api/users?limit=100")
+        elapsed = time.time() - start
+        response_times.append(elapsed)
+        assert response.status_code == 200
+
+    avg_time = sum(response_times) / len(response_times)
+    max_time = max(response_times)
+
+    # Average query time should be under 100ms
+    assert avg_time < 0.1, f"Average query time: {avg_time:.3f}s"
+    # No single query should take more than 200ms
+    assert max_time < 0.2, f"Max query time: {max_time:.3f}s"
+```
+
+## Performance Testing {data-menu-title="Performance Testing (iv)"}
+
+```{.python}
+import pytest
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+
+BASE_URL = "http://localhost:8000"
+
+@pytest.mark.parametrize(
+    "endpoint",
+    [
+        "/api/products",
+        "/api/categories",
+        "/api/search?q=test",
+    ],
+)
+def test_endpoint_throughput(endpoint):
+    """Test that endpoints can handle high throughput"""
+
+    def make_request():
+        return requests.get(f"{BASE_URL}{endpoint}").status_code
+
+    start_time = time.time()
+
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        futures = [executor.submit(make_request) for _ in range(100)]
+        results = [future.result() for future in as_completed(futures)]
+
+    elapsed = time.time() - start_time
+
+    # Should handle 100 requests in under 5 seconds
+    assert elapsed < 5.0
+    # All should succeed
+    assert all(status == 200 for status in results)
+
+    # Calculate requests per second
+    rps = len(results) / elapsed
+    assert rps > 20, f"Throughput: {rps:.2f} req/s"
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Smoke Testing {data-menu-title="Smoke Testing (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Basic tests that check the basic functionality of an application.
+- Meant to be quick to run.
+- Goal to give the assurance that major features are working as expected.
+- Useful after a new build to decide whether to run more expensive tests.
+- Or after a deployment to make sure application is running in the new
+  environment.
+
+## Smoke Testing {data-menu-title="Smoke Testing (ii)"}
+
+```{.python}
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_application_is_running():
+    """Basic check that application responds"""
+    response = requests.get(f"{BASE_URL}/health")
+    assert response.status_code == 200
+
+def test_database_connection():
+    """Verify database is accessible"""
+    response = requests.get(f"{BASE_URL}/api/health/db")
+    assert response.status_code == 200
+    assert response.json()["database"] == "connected"
+```
+
+## Smoke Testing {data-menu-title="Smoke Testing (iii)"}
+
+```{.python}
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_main_pages_load():
+    """Check that critical pages return successfully"""
+    pages = ["/", "/products", "/about", "/contact"]
+
+    for page in pages:
+        response = requests.get(f"{BASE_URL}{page}")
+        assert response.status_code == 200, f"Page {page} failed to load"
+
+def test_api_endpoints_respond():
+    """Verify main API endpoints are working"""
+    endpoints = [
+        "/api/products",
+        "/api/categories",
+        "/api/health",
+    ]
+
+    for endpoint in endpoints:
+        response = requests.get(f"{BASE_URL}{endpoint}")
+        assert response.status_code in {200, 401}, (
+            f"Endpoint {endpoint} returned {response.status_code}"
+        )
+```
+
+## Smoke Testing {data-menu-title="Smoke Testing (iv)"}
+
+```{.python}
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def test_static_assets_load():
+    """Check that static resources are accessible"""
+    assets = [
+        "/static/css/main.css",
+        "/static/js/app.js",
+    ]
+
+    for asset in assets:
+        response = requests.get(f"{BASE_URL}{asset}")
+        assert response.status_code == 200, f"Asset {asset} not found"
+```
+
+## Smoke Testing {data-menu-title="Smoke Testing (v)"}
+
+Run with `pytest -m smoke`.
+
+```{.python}
+import pytest
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+@pytest.mark.smoke
+def test_critical_user_flow():
+    """Quick test of most critical user action"""
+    # User can view products
+    response = requests.get(f"{BASE_URL}/api/products")
+    assert response.status_code == 200
+    products = response.json()
+    assert len(products) > 0, "No products available"
+```
+
+# Continuous Integration
+
+## GitHub Actions
+
+```{.yaml}
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Set up uv ${{ matrix.python-version }}
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: uv sync --all-groups
+
+    - name: Test with pytest
+      run: uv run pytest --cov --cov-report=lcov
+```
+
+# Miscellaneous
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Mocking {data-menu-title="Mocking (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+> Fowler describes mocks as pre-programmed objects with expectations which form
+> a specification of the calls they are expected to receive. In other words,
+> mocks are a replacement object for the dependency that has certain
+> expectations that are placed on it; those expectations might be things such as
+> validating a sub-method has been called a certain number of times or that
+> arguments are passed down in a certain way.
+
+## Mocking {data-menu-title="Mocking (ii)"}
+
+```{.python}
+from unittest.mock import Mock
+from myapp.services import EmailService
+
+def test_send_welcome_email():
+    # Mock the email client to avoid actually sending emails
+    mock_email_client = Mock()
+    email_service = EmailService(email_client=mock_email_client)
+
+    email_service.send_welcome_email("user@example.com", "John")
+
+    # Verify the email client was called correctly
+    mock_email_client.send.assert_called_once_with(
+        to="user@example.com",
+        subject="Welcome!",
+        body="Hello John, welcome to our service!",
+    )
+```
+
+## Mocking {data-menu-title="Mocking (iii)"}
+
+```{.python}
+from unittest.mock import Mock, patch
+from myapp.services import EmailService, UserService
+
+@patch("myapp.services.EmailClient")
+def test_user_registration_sends_email(mock_email_client):
+    # Mock at the class level
+    user_service = UserService()
+
+    user_service.register_user("newuser@example.com", "password123")
+
+    # Verify email was sent during registration
+    mock_email_client.return_value.send.assert_called_once()
+
+def test_email_service_retries_on_failure():
+    # Mock that fails first, then succeeds
+    mock_client = Mock()
+    mock_client.send.side_effect = [ConnectionError(), None]
+
+    email_service = EmailService(email_client=mock_client, max_retries=2)
+    email_service.send_email("test@example.com", "Subject", "Body")
+
+    # Should have been called twice (one failure, one success)
+    assert mock_client.send.call_count == 2
+```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Mutation Testing {data-menu-title="Mutation Testing (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+> Mutation testing is a way to be reasonably certain your code actually tests
+> the full behaviour of your code. Not just touches all lines such as a coverage
+> report will tell you, but actually tests all behaviour, and all weird edge
+> cases. It does this by changing the code in one place at a time, as subtly as
+> possible, and running the test suite. If the test suite _succeeds_ it counts
+> as a failure, because it could change the code and your tests are blissfully
+> unaware that anything is amiss.
+
+## Mutation Testing {data-menu-title="Mutation Testing (ii)"}
+
+> Examples of mutations are changing "<" to "<=". If you have not checked the
+> exact boundary condition in your tests, you might have 100% code coverage but
+> you would not survive mutation testing.
+
+Checkout {{< fa brands github >}}
+[boxed/mutmut](https://github.com/boxed/mutmut).
+
+## Mutation Testing {data-menu-title="Mutation Testing (iii)"}
+
+Original code:
+
+```{.python}
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.1
+    else:
+        discount = 0.05
+
+    if is_member:
+        discount += 0.05
+
+    return price * (1 - discount)
+
+# Test suite
+def test_discount_for_large_order():
+    assert calculate_discount(150, False) == 135.0
+
+def test_discount_for_member():
+    assert calculate_discount(50, True) == 45.0
+```
+
+## Mutation Testing {data-menu-title="Mutation Testing (iv)"}
+
+Mutation examples:
+
+```{.python}
+# Mutant 1: Change > to >=
+def calculate_discount(price, is_member):
+    if price >= 100:  # Changed
+        discount = 0.1
+    # ... rest of code
+
+# Mutant 2: Change 0.1 to 0.2
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.2  # Changed
+    # ... rest of code
+
+# Mutant 3: Remove the member check
+def calculate_discount(price, is_member):
+    if price > 100:
+        discount = 0.1
+    else:
+        discount = 0.05
+
+    # if is_member:  # Removed
+    #     discount += 0.05
+
+    return price * (1 - discount)
+```
+
+# Conclusions
+
+## {data-menu-title="Summary"}
+
+- Always test your code.
+- Unit tests are easy to implement and cheap to run.
+- All examples in Python but can be easily ported.
+- Can experiment with TDD, although can be difficult in research software.
+- GitHub Actions free for open source software.
+- Testing ever more important in an AI slop world.
