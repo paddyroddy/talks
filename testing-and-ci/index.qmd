@@ -22,7 +22,7 @@ title: Testing and CI
 - Cheap to automate
 - Run quickly
 
-## Example {data-menu-title="Unit Tests (ii)"}
+## Unit Tests {data-menu-title="Unit Tests (ii)"}
 
 ```{.python}
 def add(a, b):
@@ -35,7 +35,7 @@ def test_add_negative_numbers():
     assert add(-1, -1) == -2
 ```
 
-## Example {data-menu-title="Unit Tests (iii)"}
+## Unit Tests {data-menu-title="Unit Tests (iii)"}
 
 ```{.python}
 import pytest
@@ -252,7 +252,7 @@ def test_complete_purchase_flow(browser):
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Acceptance Testing {data-menu-title="Acceptance Tests (i)"}
+## Acceptance Testing {data-menu-title="Acceptance Testing (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
@@ -261,7 +261,7 @@ def test_complete_purchase_flow(browser):
 - Replicate user behaviours
 - Can also measure the performance, reject if certain goals not met
 
-## Acceptance Testing {data-menu-title="Acceptance Tests (ii)"}
+## Acceptance Testing {data-menu-title="Acceptance Testing (ii)"}
 
 ```{.python}
 import pytest
@@ -277,7 +277,7 @@ def api_client():
     return requests.Session()
 ```
 
-## Acceptance Testing {data-menu-title="Acceptance Tests (iii)"}
+## Acceptance Testing {data-menu-title="Acceptance Testing (iii)"}
 
 ```{.python}
 import time
@@ -308,7 +308,7 @@ def test_user_can_register_and_login(api_client):
     assert elapsed_time < 3.0, f"Registration and login took {elapsed_time:.2f}s"
 ```
 
-## Acceptance Testing {data-menu-title="Acceptance Tests (iv)"}
+## Acceptance Testing {data-menu-title="Acceptance Testing (iv)"}
 
 ```{.python}
 BASE_URL = "http://localhost:8000"
@@ -338,7 +338,7 @@ def test_registered_user_can_access_protected_resources(api_client):
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Performance Testing {data-menu-title="Performance Tests (i)"}
+## Performance Testing {data-menu-title="Performance Testing (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
@@ -347,7 +347,7 @@ def test_registered_user_can_access_protected_resources(api_client):
 - e.g. observe response times when executing a high number of requests
 - Determines if an application meets performance requirements
 
-## Performance Testing {data-menu-title="Performance Tests (ii)"}
+## Performance Testing {data-menu-title="Performance Testing (ii)"}
 
 ```{.python}
 import requests
@@ -380,7 +380,7 @@ def test_response_time_under_load():
     assert p95_time < 0.5, f"95th percentile response time: {p95_time:.3f}s"
 ```
 
-## Performance Testing {data-menu-title="Performance Tests (iii)"}
+## Performance Testing {data-menu-title="Performance Testing (iii)"}
 
 ```{.python}
 import requests
@@ -409,7 +409,7 @@ def test_database_query_performance():
     assert max_time < 0.2, f"Max query time: {max_time:.3f}s"
 ```
 
-## Performance Testing {data-menu-title="Performance Tests (iv)"}
+## Performance Testing {data-menu-title="Performance Testing (iv)"}
 
 ```{.python}
 import pytest
@@ -453,7 +453,7 @@ def test_endpoint_throughput(endpoint):
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Smoke Testing {data-menu-title="Smoke Tests (i)"}
+## Smoke Testing {data-menu-title="Smoke Testing (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
@@ -461,9 +461,10 @@ def test_endpoint_throughput(endpoint):
 - Meant to be quick to run
 - Goal to give the assurance that major features are working as expected
 - Useful after a new build to decide whether to run more expensive tests
-- Or after a deployment to make sure application is running in the new environment
+- Or after a deployment to make sure application is running in the new
+  environment
 
-## Smoke Testing {data-menu-title="Smoke Tests (ii)"}
+## Smoke Testing {data-menu-title="Smoke Testing (ii)"}
 
 ```{.python}
 import requests
@@ -482,7 +483,7 @@ def test_database_connection():
     assert response.json()["database"] == "connected"
 ```
 
-## Smoke Testing {data-menu-title="Smoke Tests (iii)"}
+## Smoke Testing {data-menu-title="Smoke Testing (iii)"}
 
 ```{.python}
 import requests
@@ -496,7 +497,6 @@ def test_main_pages_load():
     for page in pages:
         response = requests.get(f"{BASE_URL}{page}")
         assert response.status_code == 200, f"Page {page} failed to load"
-
 
 def test_api_endpoints_respond():
     """Verify main API endpoints are working"""
@@ -513,7 +513,7 @@ def test_api_endpoints_respond():
         )
 ```
 
-## Smoke Testing {data-menu-title="Smoke Tests (iv)"}
+## Smoke Testing {data-menu-title="Smoke Testing (iv)"}
 
 ```{.python}
 import requests
@@ -532,7 +532,7 @@ def test_static_assets_load():
         assert response.status_code == 200, f"Asset {asset} not found"
 ```
 
-## Smoke Testing {data-menu-title="Smoke Tests (v)"}
+## Smoke Testing {data-menu-title="Smoke Testing (v)"}
 
 Run with `pytest -m smoke`.
 
