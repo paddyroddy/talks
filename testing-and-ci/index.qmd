@@ -552,7 +552,69 @@ def test_critical_user_flow():
     assert len(products) > 0, "No products available"
 ```
 
-## Miscellaneous
+# Miscellaneous
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Mocking {data-menu-title="Mocking (i)"}
+
+> Fowler describes mocks as pre-programmed objects with expectations which form
+> a specification of the calls they are expected to receive. In other words,
+> mocks are a replacement object for the dependency that has certain
+> expectations that are placed on it; those expectations might be things like
+> validating a sub-method has been called a certain number of times or that
+> arguments are passed down in a certain way.
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+## Mocking {data-menu-title="Mocking (ii)"}
+
+```{.python}
+from unittest.mock import Mock
+from myapp.services import EmailService
+
+def test_send_welcome_email():
+    # Mock the email client to avoid actually sending emails
+    mock_email_client = Mock()
+    email_service = EmailService(email_client=mock_email_client)
+
+    email_service.send_welcome_email("user@example.com", "John")
+
+    # Verify the email client was called correctly
+    mock_email_client.send.assert_called_once_with(
+        to="user@example.com",
+        subject="Welcome!",
+        body="Hello John, welcome to our service!",
+    )
+```
+
+## Mocking {data-menu-title="Mocking (iii)"}
+
+```{.python}
+from unittest.mock import Mock, patch
+from myapp.services import EmailService, UserService
+
+@patch("myapp.services.EmailClient")
+def test_user_registration_sends_email(mock_email_client):
+    # Mock at the class level
+    user_service = UserService()
+
+    user_service.register_user("newuser@example.com", "password123")
+
+    # Verify email was sent during registration
+    mock_email_client.return_value.send.assert_called_once()
+
+def test_email_service_retries_on_failure():
+    # Mock that fails first, then succeeds
+    mock_client = Mock()
+    mock_client.send.side_effect = [ConnectionError(), None]
+
+    email_service = EmailService(email_client=mock_client, max_retries=2)
+    email_service.send_email("test@example.com", "Subject", "Body")
+
+    # Should have been called twice (one failure, one success)
+    assert mock_client.send.call_count == 2
+```
 
 - Mutation Testing
 - Mocking
