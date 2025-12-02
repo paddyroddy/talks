@@ -129,7 +129,51 @@ def test_update_user_email(user_repo):
 - In comparison to an integration test it would be a specific value from the
   database rather than just the connection
 
-## Example {data-menu-title="Functional Tests (ii)"}
+## Functional Tests {data-menu-title="Functional Tests (ii)"}
+
+```{.python}
+import pytest
+from myapp.services import OrderService
+from myapp.models import Order, Product
+
+@pytest.fixture
+def order_service():
+    return OrderService()
+
+def test_order_total_calculation(order_service):
+    # Test business requirement: order total is correctly calculated
+    order = Order()
+    order.add_item(Product(name="Widget", price=10.00), quantity=2)
+    order.add_item(Product(name="Gadget", price=15.50), quantity=1)
+
+    total = order_service.calculate_total(order)
+
+    # Verify specific business outcome
+    assert total == 35.50
+```
+
+## Functional Tests {data-menu-title="Functional Tests (iii)"}
+
+```{.python}
+import pytest
+from myapp.models import Order, Product
+
+def test_discount_applied_for_orders_over_50(order_service):
+    order = Order()
+    order.add_item(Product(name="Widget", price=60.00), quantity=1)
+
+    total = order_service.calculate_total(order)
+
+    # Business rule: 10% discount for orders over $50
+    assert total == 54.00
+
+def test_out_of_stock_items_cannot_be_ordered(order_service):
+    order = Order()
+    product = Product(name="Rare Item", price=100.00, stock=0)
+
+    with pytest.raises(ValueError, match="out of stock"):
+        order_service.process_order(order.add_item(product, quantity=1))
+```
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
