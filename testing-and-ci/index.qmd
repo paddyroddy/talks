@@ -319,6 +319,7 @@ BASE_URL = "http://localhost:8000"
 @pytest.fixture
 def api_client():
     """Fixture to ensure API is ready"""
+    # assuming health end point exists
     response = requests.get(f"{BASE_URL}/health")
     assert response.status_code == 200
     return requests.Session()
