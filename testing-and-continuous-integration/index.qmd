@@ -5,7 +5,7 @@ author:
 date: 2025-12-03
 format: revealjs
 subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
-title: Testing and Continous Integration
+title: Testing and Continuous Integration
 ---
 
 {{< include /_includes/qr-code.qmd >}}
