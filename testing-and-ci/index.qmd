@@ -16,11 +16,11 @@ title: Testing and CI
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Low level
-- Close to the source of the application
-- Tests individual methods/functions
-- Cheap to automate
-- Run quickly
+- Low level.
+- Close to the source of the application.
+- Tests individual methods/functions.
+- Cheap to automate.
+- Run quickly.
 
 ## Unit Tests {data-menu-title="Unit Tests (ii)"}
 
@@ -67,10 +67,10 @@ def test_divide_various_inputs(a, b, expected):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Verifies that different part of the application work well together
-- e.g. test interaction with database/make sure microservices work together
-- More expensive to run
-- Many parts of the application need to be up and running
+- Verifies that different part of the application work well together.
+- e.g. test interaction with database/make sure microservices work together.
+- More expensive to run.
+- Many parts of the application need to be up and running.
 
 ## Integration Tests {data-menu-title="Integration Tests (ii)"}
 
@@ -124,10 +124,10 @@ def test_update_user_email(user_repo):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Focus on business requirements of application
-- Only verify the output of an action
+- Focus on business requirements of application.
+- Only verify the output of an action.
 - In comparison to an integration test it would be a specific value from the
-  database rather than just the connection
+  database rather than just the connection.
 
 ## Functional Tests {data-menu-title="Functional Tests (ii)"}
 
@@ -181,12 +181,12 @@ def test_out_of_stock_items_cannot_be_ordered(order_service):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Replicates user behaviour in a complete application environment
-- Verifies that user flows work as expected
-- Can be as simple loading a web page
-- Expensive to perform
-- Hard to support when automated
-- Only need a few
+- Replicates user behaviour in a complete application environment.
+- Verifies that user flows work as expected.
+- Can be as simple loading a web page.
+- Expensive to perform.
+- Hard to support when automated.
+- Only need a few.
 
 ## End-to-End Tests {data-menu-title="End-to-End Tests (ii)"}
 
@@ -256,10 +256,10 @@ def test_complete_purchase_flow(browser):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Formal tests that verify if a system satisfies business requirements
-- Require entire application to be running while testing
-- Replicate user behaviours
-- Can also measure the performance, reject if certain goals not met
+- Formal tests that verify if a system satisfies business requirements.
+- Require entire application to be running while testing.
+- Replicate user behaviours.
+- Can also measure the performance, reject if certain goals not met.
 
 ## Acceptance Testing {data-menu-title="Acceptance Testing (ii)"}
 
@@ -342,10 +342,10 @@ def test_registered_user_can_access_protected_resources(api_client):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Evaluate how a system performs under a particular workload
-- Help measure reliability, speed, scalability, responsiveness
-- e.g. observe response times when executing a high number of requests
-- Determines if an application meets performance requirements
+- Evaluate how a system performs under a particular workload.
+- Help measure reliability, speed, scalability, responsiveness.
+- e.g. observe response times when executing a high number of requests.
+- Determines if an application meets performance requirements.
 
 ## Performance Testing {data-menu-title="Performance Testing (ii)"}
 
@@ -457,12 +457,12 @@ def test_endpoint_throughput(endpoint):
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Basic tests that check the basic functionality of an application
-- Meant to be quick to run
-- Goal to give the assurance that major features are working as expected
-- Useful after a new build to decide whether to run more expensive tests
+- Basic tests that check the basic functionality of an application.
+- Meant to be quick to run.
+- Goal to give the assurance that major features are working as expected.
+- Useful after a new build to decide whether to run more expensive tests.
 - Or after a deployment to make sure application is running in the new
-  environment
+  environment.
 
 ## Smoke Testing {data-menu-title="Smoke Testing (ii)"}
 
