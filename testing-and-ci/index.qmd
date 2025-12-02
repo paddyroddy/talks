@@ -190,6 +190,66 @@ def test_out_of_stock_items_cannot_be_ordered(order_service):
 
 ## End-to-End Tests {data-menu-title="End-to-End Tests (ii)"}
 
+```{.python}
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()
+    driver.get("http://localhost:8000")
+    yield driver
+    driver.quit()
+
+def test_user_can_view_order_history(browser):
+    # Login
+    browser.find_element(By.ID, "login-link").click()
+    browser.find_element(By.ID, "username").send_keys("testuser")
+    browser.find_element(By.ID, "password").send_keys("password123")
+    browser.find_element(By.ID, "login-btn").click()
+
+    # Navigate to order history
+    browser.find_element(By.ID, "account-menu").click()
+    browser.find_element(By.ID, "order-history-link").click()
+
+    # Verify orders are displayed
+    orders = browser.find_elements(By.CLASS_NAME, "order-item")
+    assert len(orders) > 0
+```
+
+## End-to-End Tests {data-menu-title="End-to-End Tests (iii)"}
+
+```{.python}
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+def test_complete_purchase_flow(browser):
+    # Simulate complete user journey
+
+    # User browses products
+    browser.find_element(By.ID, "products-link").click()
+
+    # User adds item to cart
+    browser.find_element(By.CLASS_NAME, "add-to-cart-btn").click()
+
+    # User goes to checkout
+    browser.find_element(By.ID, "cart-icon").click()
+    browser.find_element(By.ID, "checkout-btn").click()
+
+    # User fills in shipping info
+    browser.find_element(By.ID, "name").send_keys("John Doe")
+    browser.find_element(By.ID, "address").send_keys("123 Main St")
+    browser.find_element(By.ID, "submit-order").click()
+
+    # Verify order confirmation appears
+    confirmation = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.ID, "order-confirmation"))
+    )
+    assert "Order placed successfully" in confirmation.text
+```
+
 <!-- vale RedHat.TermsWarnings = NO -->
 
 ## Acceptance Testing {data-menu-title="Acceptance Tests (i)"}
