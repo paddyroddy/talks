@@ -40,7 +40,6 @@ def test_add_negative_numbers():
 ```{.python}
 import pytest
 
-
 def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
@@ -73,7 +72,7 @@ def test_divide_various_inputs(a, b, expected):
 - More expensive to run
 - Many parts of the application need to be up and running
 
-## Example {data-menu-title="Integration Tests (ii)"}
+## Integration Tests {data-menu-title="Integration Tests (ii)"}
 
 ```{.python}
 import pytest
@@ -95,7 +94,7 @@ def user_repo(db_engine):
     return repo
 ```
 
-## Example {data-menu-title="Integration Tests (iii)"}
+## Integration Tests {data-menu-title="Integration Tests (iii)"}
 
 ```{.python}
 from myapp.models import User
@@ -108,7 +107,6 @@ def test_create_and_retrieve_user(user_repo):
     retrieved_user = user_repo.get_by_id(user_id)
     assert retrieved_user.name == "Alice"
     assert retrieved_user.email == "alice@example.com"
-
 
 def test_update_user_email(user_repo):
     user = User(name="Bob", email="bob@example.com")
@@ -146,7 +144,7 @@ def test_update_user_email(user_repo):
 - Hard to support when automated
 - Only need a few
 
-## Example {data-menu-title="End-to-End Tests (ii)"}
+## End-to-End Tests {data-menu-title="End-to-End Tests (ii)"}
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -159,7 +157,7 @@ def test_update_user_email(user_repo):
 - Replicate user behaviours
 - Can also measure the performance, reject if certain goals not met
 
-## Example {data-menu-title="Acceptance Tests (ii)"}
+## Acceptance Testing {data-menu-title="Acceptance Tests (ii)"}
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -172,7 +170,7 @@ def test_update_user_email(user_repo):
 - e.g. observe response times when executing a high number of requests
 - Determines if an application meets performance requirements
 
-## Example {data-menu-title="Performance Tests (ii)"}
+## Performance Testing {data-menu-title="Performance Tests (ii)"}
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
@@ -186,7 +184,7 @@ def test_update_user_email(user_repo):
 - Useful after a new build to decide whether to run more expensive tests
 - Or after a deployment to make sure application is running in the new environment
 
-## Example {data-menu-title="Smoke Tests (ii)"}
+## Smoke Testing {data-menu-title="Smoke Tests (ii)"}
 
 ## Miscellaneous
 
