@@ -51,7 +51,8 @@ title: Testing and CI
 
 :::{.fragment .fade-left}
 
-[![Martin Fowler](figures/tdd.png)](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+[![Martin Fowler](figures/tdd.png)](https://martinfowler.com/bliki/TestDrivenDevelopment.html){fig-alt="A
+depiction of the test driven development cycle."}
 
 :::
 
