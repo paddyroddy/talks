@@ -22,8 +22,7 @@ title: Testing and Continuous Integration
 ## Benefits of Testing
 
 - Risk mitigation: identify defects and failures early.
-- Confidence: well planned testing gives confidence that the results will be
-  reproducible.
+- Confidence: results reproducible with well planned tests.
 - Compliance: ensure that software adheres to standards.
 - Code re-usability: other researchers can confirm that the code works before
   using it.
@@ -58,6 +57,36 @@ title: Testing and Continuous Integration
 depiction of the test driven development cycle."}
 
 :::
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Coverage {data-menu-title="Coverage (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Shows how much of the application has been tested.
+- Helps evaluate testing completeness and identify gaps.
+- High percentage is not everything.
+- Providers:
+  - [Codecov](https://about.codecov.io).
+  - [Coveralls](https://coveralls.io).
+
+## Coverage {data-menu-title="Coverage (ii)" footer=false}
+
+Types of coverage:
+
+- Statement: checks if every line of code has run at least once.
+- Branch: ensures both the "true" and "false" outcomes have been tested.
+- Function: measures whether all functions or methods were executed during
+  testing.
+- Condition: verifies each condition in your code evaluates both to true and
+  false at least once.
+- Path: tries to cover every possible route through your application.
+
+## Coverage {data-menu-title="Coverage (iii)"}
+
+[![{{< fa brands github >}} glass-dev/glass Coveralls output](figures/coveralls.png){width=60%}](https://coveralls.io/builds/76772494){fig-alt="Example
+coverage output from Coveralls for the glass-dev/glass repository."}
 
 # Types of Tests
 
