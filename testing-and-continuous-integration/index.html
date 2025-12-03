@@ -269,7 +269,7 @@ Patrick J. Roddy
 <h2>Benefits of Testing</h2>
 <ul>
 <li class="fragment">Risk mitigation: identify defects and failures early.</li>
-<li class="fragment">Confidence: well planned testing gives confidence that the results will be reproducible.</li>
+<li class="fragment">Confidence: results reproducible with well planned tests.</li>
 <li class="fragment">Compliance: ensure that software adheres to standards.</li>
 <li class="fragment">Code re-usability: other researchers can confirm that the code works before using it.</li>
 <li class="fragment">Works as minimal documentation: users can see how the code is meant to work.</li>
@@ -310,6 +310,41 @@ Patrick J. Roddy
 <figcaption>Martin Fowler</figcaption>
 </figure>
 </div>
+</div>
+<!-- vale RedHat.TermsWarnings = NO -->
+</section>
+<section class="slide level2" data-menu-title="Coverage (i)">
+<h2>Coverage</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
+<ul>
+<li class="fragment">Shows how much of the application has been tested.</li>
+<li class="fragment">Helps evaluate testing completeness and identify gaps.</li>
+<li class="fragment">High percentage is not everything.</li>
+<li class="fragment">Providers:
+<ul>
+<li class="fragment"><a href="https://about.codecov.io">Codecov</a>.</li>
+<li class="fragment"><a href="https://coveralls.io">Coveralls</a>.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Coverage (ii)" data-footer="false">
+<h2>Coverage</h2>
+<p>Types of coverage:</p>
+<ul>
+<li class="fragment">Statement: checks if every line of code has run at least once.</li>
+<li class="fragment">Branch: ensures both the “true” and “false” outcomes have been tested.</li>
+<li class="fragment">Function: measures whether all functions or methods were executed during testing.</li>
+<li class="fragment">Condition: verifies each condition in your code evaluates both to true and false at least once.</li>
+<li class="fragment">Path: tries to cover every possible route through your application.</li>
+</ul>
+</section>
+<section class="slide level2" data-menu-title="Coverage (iii)">
+<h2>Coverage</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://coveralls.io/builds/76772494" data-fig-alt="Example coverage output from Coveralls for the glass-dev/glass repository."><img data-src="figures/coveralls.png" style="width:60.0%"></a></p>
+<figcaption><i class="fa-brands fa-github" aria-label="github"></i> glass-dev/glass Coveralls output</figcaption>
+</figure>
 </div>
 </section></section>
 <section>
