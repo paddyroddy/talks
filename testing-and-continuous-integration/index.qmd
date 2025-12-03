@@ -86,7 +86,7 @@ Types of coverage:
 ## Coverage {data-menu-title="Coverage (iii)"}
 
 [![{{< fa brands github >}} glass-dev/glass Coveralls output](figures/coveralls.png){width=60%}](https://coveralls.io/builds/76772494){fig-alt="Example
-coverage output from Coveralls for glass-dev/glass repository."}
+coverage output from Coveralls for the glass-dev/glass repository."}
 
 # Types of Tests
 
