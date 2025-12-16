@@ -34,9 +34,10 @@ format:
     view-distance: 10
 
 website:
-  google-analytics:
-    storage: none
-    tracking-id: G-SCSTN0WCDT
+  body-footer:
+    <script async
+    data-goatcounter="https://paddyroddy-talks.goatcounter.com/count"
+    src="//gc.zgo.at/count.js"></script>
   favicon: favicon.ico
   navbar:
     tools:
