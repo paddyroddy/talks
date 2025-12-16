@@ -7,6 +7,7 @@ execute:
 
 format:
   html:
+    include-in-header: goatcounter.html
     theme: darkly
   revealjs:
     auto-play-media: true
@@ -18,6 +19,7 @@ format:
     footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"
     hash-type: number
     history: false
+    include-in-header: goatcounter.html
     incremental: true
     link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true
@@ -34,10 +36,6 @@ format:
     view-distance: 10
 
 website:
-  body-footer:
-    <script async
-    data-goatcounter="https://paddyroddy-talks.goatcounter.com/count"
-    src="//gc.zgo.at/count.js"></script>
   favicon: favicon.ico
   navbar:
     tools:
