@@ -2,7 +2,9 @@
 author: Patrick J. Roddy
 date: 2026-02-26
 format: revealjs
-subtitle: "[UCL Hawkes Institute: Reproducible Analytical Pipelines](https://www.ucl.ac.uk/hawkes-institute)"
+subtitle:
+  "[UCL Hawkes Institute: Reproducible Analytical
+  Pipelines](https://www.ucl.ac.uk/hawkes-institute)"
 title: Python Packaging
 ---
 
