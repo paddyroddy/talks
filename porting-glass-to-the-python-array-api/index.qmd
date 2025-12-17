@@ -1,6 +1,6 @@
 ---
 author: Patrick J. Roddy
-date: 2026-02-26
+date: 2026-03-19
 format: revealjs
 subtitle:
   "[ARCHER2 Celebration of Science
