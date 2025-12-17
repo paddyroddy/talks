@@ -4,7 +4,7 @@ date: 2026-03-19
 format: revealjs
 subtitle:
   "[ARCHER2 Celebration of Science
-  2026](https://www.archer2.ac.uk/community/events/celebration-of-science-2026/)"
+  2026](https://www.archer2.ac.uk/community/events/celebration-of-science-2026)"
 title: Porting GLASS to the Python Array API
 ---
 
