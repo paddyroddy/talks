@@ -32,8 +32,8 @@ format:
     mobile-view-distance: 10
     slide-number: c
     theme:
-     - dark
-     - _assets/css/custom.scss
+      - dark
+      - _assets/css/custom.scss
     transition: fade
     view-distance: 10
 

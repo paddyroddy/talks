@@ -2,6 +2,7 @@
 exclude: |-
   (?x)^(
     .*\/boars\.mp4|
+    .*\/patrick_roddy\.jpg|
     .*\/poster\.png|
     _extensions\/.*
   )$
