@@ -7,7 +7,7 @@ execute:
 
 format:
   html:
-    include-in-header: goatcounter.html
+    include-in-header: _assets/html/goatcounter.html
     theme: darkly
   revealjs:
     auto-play-media: true
@@ -19,11 +19,11 @@ format:
     footer: "{{< meta title >}} - <https://paddyroddy.github.io/talks>"
     hash-type: number
     history: false
-    include-in-header: goatcounter.html
+    include-in-header: _assets/html/goatcounter.html
     incremental: true
     link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true
-    logo: favicon.ico
+    logo: _assets/images/favicon.ico
     mermaid:
       theme: dark
     menu:
@@ -31,12 +31,11 @@ format:
       useTextContentForMissingTitles: false
     mobile-view-distance: 10
     slide-number: c
-    theme: dark
     transition: fade
     view-distance: 10
 
 website:
-  favicon: favicon.ico
+  favicon: _assets/images/favicon.ico
   navbar:
     tools:
       - icon: house
