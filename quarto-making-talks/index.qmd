@@ -257,12 +257,12 @@ with open("../_includes/qr-code.qmd") as f:
     print(f"````{{.markdown}}\n{escaped}\n````")
 `````
 
-## `/favicon.ico`
+## `/_assets/images/favicon.ico`
 
 Specified in the Quarto configuration, a favicon is a small icon that serves as
 branding for your website.
 
-![<https://paddyroddy.github.io>](/favicon.ico)
+![<https://paddyroddy.github.io>](/_assets/images/favicon.ico)
 
 ## `/.gitignore`
 
