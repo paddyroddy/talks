@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "DevOps: An Introduction"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # ARC
 
 ## Current Subgroups
@@ -265,3 +263,5 @@ title: "DevOps: An Introduction"
 ## {data-menu-title="Fin"}
 
 ![](figures/meme.jpg)
+
+{{< include /_includes/qr-code.qmd >}}

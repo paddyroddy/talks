@@ -8,8 +8,6 @@ subtitle:
 title: Turbocharging Your GitHub Organisation
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # {data-menu-title="Note"}
 
 {{< include /quarto-making-talks/_slides/callouts.qmd >}}
@@ -682,3 +680,5 @@ rulesets:
 # Other Ideas
 
 ![](figures/penguin.webp)
+
+{{< include /_includes/qr-code.qmd >}}

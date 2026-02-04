@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Quarto: Making Talks"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Talk Motivation
 
 <!-- vale RedHat.TermsWarnings = NO -->
@@ -672,3 +670,5 @@ Can include GitHub Markdown-like callouts.
 - Can re-use slides within a presentation.
 - Easy to start, takes a little time to perfect.
 - More fun.
+
+{{< include /_includes/qr-code.qmd >}}
