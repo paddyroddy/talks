@@ -238,7 +238,7 @@ bridges the gap. This filter slugifies the given title to be used within a URL.
 ````
 <!-- prettier-ignore-end -->
 
-## `/_includes/qr-code.qmd`
+## `/_includes/qr-code.qmd` {footer=false}
 
 This snippet is included at the start of every presentation with
 `{{{< /_includes/qr-code.qmd >}}}`.
