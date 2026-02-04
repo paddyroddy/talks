@@ -218,29 +218,6 @@ Patrick J. Roddy
 
   <p class="date">2025-09-02</p>
 </section>
-<section class="title-slide slide level1 center" data-menu-title="QR Code">
-<h1></h1>
-<div class="quarto-layout-panel" data-layout="[22,78]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 22.0%;justify-content: flex-start;">
-<p>Scan to view the slides</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 78.0%;justify-content: flex-start;">
-<div id="" class="qrcode"></div>
-<script type="text/javascript">
-(function() {
-  var script = document.currentScript;
-  var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/quarto-making-talks","width":"550"});
-  script.remove();
-})();
-</script>
-    
-</div>
-</div>
-</div>
-</section>
-
 <section>
 <section class="title-slide slide level1 center">
 <h1>Talk Motivation</h1>
@@ -539,16 +516,26 @@ Patrick J. Roddy
 <section class="slide level2">
 <h2><code>/_includes/qr-code.qmd</code></h2>
 <p>This snippet is included at the start of every presentation with <code>{{&lt; /_includes/qr-code.qmd &gt;}}</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu"># {data-menu-title="QR Code"}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="fu"># {data-menu-title="QR Code" footer=false}</span></span>
 <span id="cb6-2"><a></a></span>
-<span id="cb6-3"><a></a>::: {layout="<span class="co">[</span><span class="ot">22,78</span><span class="co">]</span>"}</span>
+<span id="cb6-3"><a></a>::: {layout="<span class="co">[</span><span class="ot">55,45</span><span class="co">]</span>"}</span>
 <span id="cb6-4"><a></a></span>
-<span id="cb6-5"><a></a>Scan to view the slides</span>
+<span id="cb6-5"><a></a>::: {.cell}</span>
 <span id="cb6-6"><a></a></span>
 <span id="cb6-7"><a></a>{{&lt; qrcode "https://paddyroddy.github.io/talks/{{&lt; meta slug &gt;}}"</span>
 <span id="cb6-8"><a></a>colorDark="#ffffff" colorLight="#000000" height=550 width=550 &gt;}}</span>
 <span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-10"><a></a>:::</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a>::: {.cell}</span>
+<span id="cb6-13"><a></a></span>
+<span id="cb6-14"><a></a>Quarto: Making Talks</span>
+<span id="cb6-15"><a></a></span>
+<span id="cb6-16"><a></a><span class="ot">&lt;https://paddyroddy.github.io/talks&gt;</span></span>
+<span id="cb6-17"><a></a></span>
+<span id="cb6-18"><a></a>:::</span>
+<span id="cb6-19"><a></a></span>
+<span id="cb6-20"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2><code>/_assets/images/favicon.ico</code></h2>
@@ -1155,7 +1142,7 @@ Patrick J. Roddy
 <span id="cb16-16"><a></a><span class="at">    </span><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb16-17"><a></a><span class="at">    </span><span class="fu">filters</span><span class="kw">:</span></span>
 <span id="cb16-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> _filters/slugify.lua</span></span>
-<span id="cb16-19"><a></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"{{&lt; meta title &gt;}} - &lt;https://paddyroddy.github.io/talks&gt;"</span></span>
+<span id="cb16-19"><a></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"{{&lt; meta title &gt;}} — &lt;https://paddyroddy.github.io/talks&gt;"</span></span>
 <span id="cb16-20"><a></a><span class="at">    </span><span class="fu">hash-type</span><span class="kw">:</span><span class="at"> number</span></span>
 <span id="cb16-21"><a></a><span class="at">    </span><span class="fu">history</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb16-22"><a></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> _assets/html/goatcounter.html</span></span>
@@ -1618,10 +1605,10 @@ Patrick J. Roddy
 </section>
 <section class="slide level2" data-visibility="uncounted">
 <h2></h2>
-<div id="c65ded28" class="cell" data-execution_count="5">
+<div id="643aeab4" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"5d60496f78b84bfbb782e0891a84220d","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"36806cd578de40409f1e19bed14e47c6","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1788,14 +1775,37 @@ Patrick J. Roddy
 <li class="fragment">Easy to start, takes a little time to perfect.</li>
 <li class="fragment">More fun.</li>
 </ul>
-
-
 </section></section>
+<section class="title-slide slide level1 center" data-menu-title="QR Code" data-footer="false">
+<h1></h1>
+<div class="quarto-layout-panel" data-layout="[55,45]">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/quarto-making-talks","width":"550"});
+  script.remove();
+})();
+</script>
+    
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 45.0%;justify-content: flex-start;">
+<p>Quarto: Making Talks</p>
+<p><a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+</div>
+</div>
+</div>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../_assets/images/patrick_roddy.jpg" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Quarto: Making Talks - <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+<p>Quarto: Making Talks — <a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
 </div>
 </div></div>
 
@@ -2008,7 +2018,7 @@ Patrick J. Roddy
       });
     </script>
     <script type="application/vnd.jupyter.widget-state+json">
-    {"state":{"04be25f17aa84c0aad3d29b3bffa1e47":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"108f3ac2d67c47ba8a90e96601515ec8":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"1cc0ef24ff794752be0c81a924476ac7":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"5d60496f78b84bfbb782e0891a84220d":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[49.45835392298793,-61.38175388309493],"close_popup_on_click":true,"controls":["IPY_MODEL_04be25f17aa84c0aad3d29b3bffa1e47","IPY_MODEL_108f3ac2d67c47ba8a90e96601515ec8"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_75ce24ce52f44d51a6a177ba2c4124e0","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_e1f0153ba90f4b3cbb38cb264dc39761","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_e95f601040954ebb9e20321e8ba930bc","IPY_MODEL_938980d9441c49ed8491d5823f4ddcba","IPY_MODEL_5e331c1231e44fa3aac506528b3a314e"],"layout":"IPY_MODEL_1cc0ef24ff794752be0c81a924476ac7","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2026-01-30","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_d15c66fa36b44724af29bb526f06ca8f","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":3,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"5e331c1231e44fa3aac506528b3a314e":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[47.44855264951028,-122.30845217399344],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"75ce24ce52f44d51a6a177ba2c4124e0":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"938980d9441c49ed8491d5823f4ddcba":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.46815519646558,-0.45505559219641106],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"d15c66fa36b44724af29bb526f06ca8f":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"e1f0153ba90f4b3cbb38cb264dc39761":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"e95f601040954ebb9e20321e8ba930bc":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":18,"min_native_zoom":null,"min_zoom":1,"name":"Esri.WorldImagery","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}","visible":true,"zoom_offset":0}}},"version_major":2,"version_minor":0}
+    {"state":{"1b19ad2d60fe4a9990f3a9fa25b6bfcf":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"36806cd578de40409f1e19bed14e47c6":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[49.45835392298793,-61.38175388309493],"close_popup_on_click":true,"controls":["IPY_MODEL_3d6c414c54d64da5bab6f667624c4bff","IPY_MODEL_1b19ad2d60fe4a9990f3a9fa25b6bfcf"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_f873a4b220e64239bf5a2c9ac05d9b20","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_38bc4990c302424492046fea4ca9d515","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_f9963df2506a4f99b12db42fb6810d17","IPY_MODEL_c7f22d51266f4f43be4a671692ff5fcf","IPY_MODEL_46214b72c1144541bc525d4ba3be7a3a"],"layout":"IPY_MODEL_9f88302763934e6f8e4cb6db22e0be16","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2026-02-03","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_84ce6273c25f438c9de1ee9216f27831","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":3,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"38bc4990c302424492046fea4ca9d515":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"3d6c414c54d64da5bab6f667624c4bff":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"46214b72c1144541bc525d4ba3be7a3a":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[47.44855264951028,-122.30845217399344],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"84ce6273c25f438c9de1ee9216f27831":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"9f88302763934e6f8e4cb6db22e0be16":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"c7f22d51266f4f43be4a671692ff5fcf":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.46815519646558,-0.45505559219641106],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"f873a4b220e64239bf5a2c9ac05d9b20":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"f9963df2506a4f99b12db42fb6810d17":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":18,"min_native_zoom":null,"min_zoom":1,"name":"Esri.WorldImagery","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}","visible":true,"zoom_offset":0}}},"version_major":2,"version_minor":0}
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
