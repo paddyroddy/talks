@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "GitHub Safe-Settings: Policy as Code"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Policy as Code
 
 ## GitHub Settings
@@ -638,3 +636,5 @@ public: false
 ## Demo {footer=false}
 
 [![](figures/demo.png)](https://github.com/UCL-MIRSG/.github/actions)
+
+{{< include /_includes/qr-code.qmd >}}

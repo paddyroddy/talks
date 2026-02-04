@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: SciPy 2024
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Conference
 
 ## Flight
@@ -485,3 +483,5 @@ m
 ## {data-menu-title="Fin"}
 
 ![](figures/airport.jpg)
+
+{{< include /_includes/qr-code.qmd >}}
