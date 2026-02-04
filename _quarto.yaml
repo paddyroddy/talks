@@ -16,7 +16,7 @@ format:
     code-copy: true
     filters:
       - _filters/slugify.lua
-    footer: "{{< meta title >}} — <https://paddyroddy.github.io/talks>"
+    footer: "{{< meta title >}}"
     hash-type: number
     history: false
     include-in-header: _assets/html/goatcounter.html
