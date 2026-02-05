@@ -1,4 +1,4 @@
-# {data-menu-title="QR Code" footer=false}
+# {data-menu-title="QR Code"}
 
 ::: {layout="[55,45]"}
 
@@ -10,8 +10,6 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 :::
 
 ::: {.cell}
-
-{{< meta title >}}
 
 <https://paddyroddy.github.io/talks>
 

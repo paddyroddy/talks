@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  Reveal.addEventListener("ready", (event) => {
+    if (event.indexh === 0) {
+      document.querySelector("div.slide-menu-button").style.display = "none";
+      document.querySelector("div.footer.footer-default").style.display =
+        "none";
+      document.querySelector("img.slide-logo").style.display = "none";
+    } else {
+      document.querySelector("div.slide-menu-button").style.display = "block";
+      document.querySelector("div.footer.footer-default").style.display =
+        "block";
+      document.querySelector("img.slide-logo").style.display = "block";
+    }
+  });
+  Reveal.addEventListener("slidechanged", (event) => {
+    if (event.indexh === 0) {
+      document.querySelector("div.slide-menu-button").style.display = "none";
+      document.querySelector("div.footer.footer-default").style.display =
+        "none";
+      document.querySelector("img.slide-logo").style.display = "none";
+    } else {
+      document.querySelector("div.slide-menu-button").style.display = "block";
+      document.querySelector("div.footer.footer-default").style.display =
+        "block";
+      document.querySelector("img.slide-logo").style.display = "block";
+    }
+  });
+</script>
