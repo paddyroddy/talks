@@ -631,7 +631,7 @@ Patrick J. Roddy
 <p>One might be happy to accept warnings and therefore it does not make sense to run as a pre-commit hook.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
 <span id="cb6-2"><a></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
-<span id="cb6-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
 <span id="cb6-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
 <span id="cb6-6"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
