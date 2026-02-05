@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-435b0e6ca6dc4fcdb0b4e5250f7af963.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3d6aa65b37be2e1788c803a5f5036e9d.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -371,7 +371,7 @@ Patrick J. Roddy
 
 </section>
 
-<section class="title-slide slide level1 center" data-menu-title="QR Code" data-footer="false">
+<section class="title-slide slide level1 center" data-menu-title="QR Code">
 <h1></h1>
 <div class="quarto-layout-panel" data-layout="[55,45]">
 <div class="quarto-layout-row">
@@ -388,7 +388,6 @@ Patrick J. Roddy
     
 </div>
 <div class="cell quarto-layout-cell" style="flex-basis: 45.0%;justify-content: flex-start;">
-<p>pyOpenSci: My Experience</p>
 <p><a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
 </div>
 </div>
@@ -610,6 +609,24 @@ Patrick J. Roddy
           RevealSearch,
           RevealZoom
         ]
+      });
+    </script>
+    <script type="text/javascript">
+      function updateUiVisibility(isTitleSlide) {
+        var displayValue = isTitleSlide ? "none" : "block";
+        document.querySelector("div.footer.footer-default").style.display =
+          displayValue;
+        document.querySelector("div.slide-menu-button").style.display =
+          displayValue;
+        document.querySelector("img.slide-logo").style.display = displayValue;
+      }
+
+      Reveal.addEventListener("ready", (event) => {
+        updateUiVisibility(event.indexh === 0);
+      });
+
+      Reveal.addEventListener("slidechanged", (event) => {
+        updateUiVisibility(event.indexh === 0);
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
