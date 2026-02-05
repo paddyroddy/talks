@@ -24,7 +24,7 @@ format:
     incremental: true
     link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true
-    logo: _assets/images/patrick_roddy.jpg
+    logo: https://www.gravatar.com/avatar/b991f7f475c334cc277869a709445d42?s=200
     mermaid:
       theme: dark
     menu:
