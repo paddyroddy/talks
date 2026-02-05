@@ -9,8 +9,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "CI/CD: Faster, Easier Development"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # CI/CD Compared to DevOps
 
 ## Continuous Integration (CI)
@@ -215,3 +213,5 @@ jobs:
 {{< qrcode https://www.menti.com/ale13innhy9n colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 :::
+
+{{< include /_includes/qr-code.qmd >}}
