@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "pyOpenSci: My Experience"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # The Journal of Open Source Software (JOSS)
 
 ## JOSS
@@ -216,3 +214,5 @@ Functionality:
   [package reviewers](https://www.pyopensci.org/about-peer-review/index.html)
 
 # Talk on [quarto](https://quarto.org) next…
+
+{{< include /_includes/qr-code.qmd >}}

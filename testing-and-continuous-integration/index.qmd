@@ -8,8 +8,6 @@ subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
 title: Testing and Continuous Integration
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Testing
 
 ## Software Testing
@@ -820,3 +818,5 @@ def calculate_discount(price, is_member):
   discuss?
 - GitHub Actions free for open source software.
 - Testing ever more important in an AI slop world.
+
+{{< include /_includes/qr-code.qmd >}}

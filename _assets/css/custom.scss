@@ -1,0 +1,14 @@
+/*-- scss:rules --*/
+
+.reveal .slide-logo {
+  /* circular image */
+  border-radius: 50%;
+
+  /* resize image */
+  max-height: 10vh !important;
+}
+
+/* hide slide number on title slide */
+.reveal .slide-number > a[href="#/"] {
+  display: none;
+}

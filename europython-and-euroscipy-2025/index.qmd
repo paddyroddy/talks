@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: EuroPython and EuroSciPy 2025
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # EuroPython
 
 14th-20th July 2025
@@ -405,3 +403,5 @@ Mound." height=550}
 - Only two parallel streams and often one was beginner.
 - Nice community.
 - Appreciated the sprint being on a weekday.
+
+{{< include /_includes/qr-code.qmd >}}

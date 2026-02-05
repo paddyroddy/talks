@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: Linting Prose with Vale
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Introduction
 
 ## Talk Motivation
@@ -362,3 +360,5 @@ jobs:
   guides).
 - Can easily write your own rules through regex or a mapping.
 - Can turn off rules (`Vale.Spelling = NO`) in `.vale.ini` or inline.
+
+{{< include /_includes/qr-code.qmd >}}

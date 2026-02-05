@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "ARC: (Re)introduction"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # 1994: Paris
 
 ```{python}
@@ -290,3 +288,5 @@ m
 :::
 
 <!-- vale RedHat.Symbols = NO -->
+
+{{< include /_includes/qr-code.qmd >}}

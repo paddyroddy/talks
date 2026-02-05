@@ -6,8 +6,6 @@ subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Renovate: Automating Dependency Management"
 ---
 
-{{< include /_includes/qr-code.qmd >}}
-
 # Introduction
 
 ## Dependencies Are Inevitable
@@ -170,3 +168,5 @@ See in action: <https://developer.mend.io/github/paddyroddy/.github>
 <https://developer.mend.io>
 
 ![](figures/demo.jpg)
+
+{{< include /_includes/qr-code.qmd >}}
