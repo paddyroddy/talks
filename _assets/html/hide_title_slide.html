@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  function updateUiVisibility(isTitleSlide) {
+    var displayValue = isTitleSlide ? "none" : "block";
+    document.querySelector("div.footer.footer-default").style.display =
+      displayValue;
+    document.querySelector("div.slide-menu-button").style.display =
+      displayValue;
+    document.querySelector("img.slide-logo").style.display = displayValue;
+  }
+
+  Reveal.addEventListener("ready", (event) => {
+    updateUiVisibility(event.indexh === 0);
+  });
+
+  Reveal.addEventListener("slidechanged", (event) => {
+    updateUiVisibility(event.indexh === 0);
+  });
+</script>

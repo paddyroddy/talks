@@ -7,3 +7,8 @@
   /* resize image */
   max-height: 10vh !important;
 }
+
+/* hide slide number on title slide */
+.reveal .slide-number > a[href="#/"] {
+  display: none;
+}
