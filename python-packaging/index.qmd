@@ -180,21 +180,26 @@ to write your content.
 
 ## `pyproject.toml`
 
-`pyproject.toml` is a configuration file used by packaging tools, and other tools such as linters, type checkers, and so on. This file can contain three possible TOML tables.
+`pyproject.toml` is a configuration file used by packaging tools, and other
+tools such as linters, type checkers, and so on. This file can contain three
+possible TOML tables.
 
-- The `[build-system]` table is recommended. It allows one to declare which build backend is uses.
+- The `[build-system]` table is recommended. It allows one to declare which
+  build backend is uses.
 - The `[project]` table specifies the project metadata and dependencies.
-- The `[tool]` table has tool-specific subtables (e.g. `[tool.ruff]`). 
+- The `[tool]` table has tool-specific subtables (e.g. `[tool.ruff]`).
 
 ## Build Backend
 
-The `[build-system]` table has a `build-backend` key which specifies the build backend to be used. The `requires` key includes a list of dependencies required to build the project.
+The `[build-system]` table has a `build-backend` key which specifies the build
+backend to be used. The `requires` key includes a list of dependencies required
+to build the project.
 
 ::: {.panel-tabset}
 
 ## Hatchling
 
-```{.python}
+```{.toml}
 [build-system]
 build-backend = "hatchling.build"
 requires = [
@@ -204,7 +209,7 @@ requires = [
 
 ## setuptools
 
-```{.python}
+```{.toml}
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
@@ -214,7 +219,7 @@ requires = [
 
 ## Flit
 
-```{.python}
+```{.toml}
 [build-system]
 build-backend = "flit_core.buildapi"
 requires = [
@@ -224,7 +229,7 @@ requires = [
 
 ## PDM
 
-```{.python}
+```{.toml}
 [build-system]
 build-backend = "pdm.backend"
 requires = [
@@ -234,7 +239,7 @@ requires = [
 
 ## uv-build
 
-```{.python}
+```{.toml}
 [build-system]
 build-backend = "uv_build"
 requires = [
@@ -243,5 +248,79 @@ requires = [
 ```
 
 :::
+
+## Dynamic Metadata
+
+Most of the time static metadata can be written directly in the `[project]`
+table. For example, `requires-python = ">= 3.10"` or `version = "1.0"`.
+
+However, it is best when possible to sort this metadata dynamically. One can
+automate the `__version__` attribute by using the following.
+
+```{.toml}
+[project]
+dynamic = [
+    "version",
+]
+```
+
+## Basic Information
+
+- `name`: The name of the project on PyPI. Required field and cannot be made
+  dynamic.
+
+  ```{.toml}
+  [project]
+  name = "spam-eggs"
+  ```
+
+- `version`: The version of the project.
+
+  ::: {.panel-tabset}
+
+  ## Static
+
+  ```{.toml}
+  [project]
+  version = "2020.0.0"
+  ```
+
+  ## Dynamic
+
+  ```{.toml}
+  [project]
+  dynamic = [
+    "version",
+  ]
+  ```
+
+  :::
+
+## Dependencies and Requirements {footer=false}
+
+- Dependencies are specified as followed.
+
+  ```{.toml}
+  [project]
+  dependencies = [
+    "django>2.0; os_name == 'nt'",
+    "django>2.1; os_name != 'nt'",
+    "gidgethub[httpx]>4.0.0",
+    "httpx",
+  ]
+  ```
+
+- Optional dependencies are further specified as followed.
+
+  ```{.toml}
+  [project.optional-dependencies]
+  cli = [
+    "rich",
+    "click",
+  ]
+  gui = [
+    "PyQt5",
+  ]
+  ```
 
 {{< include /_includes/qr-code.qmd >}}
