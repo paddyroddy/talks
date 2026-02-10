@@ -20,7 +20,8 @@ title: Python Packaging
 
 ## Python Packages are Installable
 
-- Allows one to add functionality within the package's code to any Python environment.
+- Allows one to add functionality within the package's code to any Python
+  environment.
 - Packages can then simply be imported (`import numpy`).
 - Installing a package into an environment enables re-use across projects.
 - Structuring code as a package is the first step.
@@ -46,7 +47,8 @@ title: Python Packaging
 - Organise your code.
   - Packages can help organise large code projects.
   - Smaller, more manageable components.
-  - Structure can help both supporting the codebase and making it easier to understand.
+  - Structure can help both supporting the codebase and making it easier to
+    understand.
 
 ## What to Consider Before Creating a Package
 
