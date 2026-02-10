@@ -35,7 +35,7 @@ title: Python Packaging
 - Use your code across different projects:
   - Allows one to install code into any Python environment.
   - Can import functions and classes into any workflow.
-- Build community around your code.
+- Build community around your code:
   - Packages make it easier for others to work on it.
   - Version control (`git`) makes it easy to track changes and contribute.
   - Tools such as issues and pull requests aid outside users to contribute.
@@ -44,7 +44,7 @@ title: Python Packaging
 
 - Share your code:
   - Can be installed on any machine using a single command (`pip`/`conda`).
-- Organise your code.
+- Organise your code:
   - Packages can help organise large code projects.
   - Smaller, more manageable components.
   - Structure can help both supporting the codebase and making it easier to
@@ -57,5 +57,30 @@ title: Python Packaging
 - If relevant, what data will be used with your package?
 - Have you got documentation and tests?
 - How long will you be able to support it?
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## The Elements of a Python Package {data-menu-title="The Elements of a Python Package (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Code: functions and classes that provide functionality.
+- Documentation:
+  - Installation instructions.
+  - Tutorials.
+  - Examples.
+  - `CONTRIBUTING.md`.
+  - Development documentation.
+
+## The Elements of a Python Package {data-menu-title="The Elements of a Python Package (ii)"}
+
+- Tests: ensure code works as expected.
+- Open source licence:
+  - Allows others to use your package.
+  - Provides legal direction.
+- Infrastructure:
+  - Automate updates.
+  - Test suites.
+  - Publication workflow.
 
 {{< include /_includes/qr-code.qmd >}}
