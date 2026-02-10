@@ -431,7 +431,7 @@ concurrency:
 
 jobs:
   safe-settings-sync:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     env:
       SAFE_SETTINGS_VERSION: 2.1.14
       SAFE_SETTINGS_CODE_DIR: .safe-settings-code
