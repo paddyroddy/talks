@@ -85,7 +85,7 @@ title: Python Packaging
 
 # Structuring Projects
 
-## Flat vs Source Layout
+## Flat and Source Layouts
 
 ::: {layout-ncol="2"}
 
@@ -184,8 +184,8 @@ to write your content.
 tools such as linters, type checkers, and so on. This file can contain three
 possible TOML tables.
 
-- The `[build-system]` table is recommended. It allows one to declare which
-  build backend is uses.
+- The `[build-system]` table is recommended. It allows one to declare the build
+  backend to use.
 - The `[project]` table specifies the project metadata and dependencies.
 - The `[tool]` table has tool-specific subtables (e.g. `[tool.ruff]`).
 
@@ -296,7 +296,11 @@ dynamic = [
 
   :::
 
-## Dependencies and Requirements {footer=false}
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Dependencies and Requirements {footer=false data-menu-title="Dependencies and Requirements (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
 
 - Dependencies are specified as followed.
 
@@ -322,5 +326,189 @@ dynamic = [
     "PyQt5",
   ]
   ```
+
+## Dependencies and Requirements {footer=false data-menu-title="Dependencies and Requirements (ii)"}
+
+- Optional dependencies can be installed by specifying the name in square
+  brackets: `pip install example-project[gui]`.
+- A new feature exists
+  [dependency groups](https://packaging.python.org/en/latest/specifications/dependency-groups)
+  which is for optional dependencies that are only intended for development
+  (linters, testing, …).
+- The minimum Python version to support is specified as:
+
+  ```{.toml}
+  [project]
+  requires-python = ">= 3.10"
+  ```
+
+## Executable Scripts
+
+- A `spam-cli` command can be made using the following:
+
+  ```{.toml}
+  [project.scripts]
+  spam-cli = "spam:main_cli"
+  ```
+
+- On Windows, scripts sometimes require the following command instead:
+
+  ```{.toml}
+  [project.gui-scripts]
+  spam-gui = "spam:main_gui"
+  ```
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Project Metadata {data-menu-title="Project Metadata (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- `authors`/`maintainers`
+
+  ```{.toml}
+  [project]
+  authors = [
+    {name = "Pradyun Gedam", email = "pradyun@example.com"},
+    {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
+    {name = "Another person"},
+    {email = "different.person@example.com"},
+  ]
+  maintainers = [
+    {name = "Brett Cannon", email = "brett@example.com"},
+  ]
+  ```
+
+- `description`
+
+  ```{.toml}
+  [project]
+  description = "Lovely Spam! Wonderful Spam!"
+  ```
+
+## Project Metadata {data-menu-title="Project Metadata (ii)"}
+
+- `readme`
+
+  ```{.toml}
+  [project]
+  readme = "README.md"
+  ```
+
+- Licences should be declared using the following two fields.
+
+  ```{.toml}
+  [project]
+  license = "MIT"
+  license-files = [
+    "LICENSE",
+  ]
+  ```
+
+- `keywords`
+
+  ```{.toml}
+  [project]
+  keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
+  ```
+
+## Project Metadata {data-menu-title="Project Metadata (iii)"}
+
+- `classifiers`
+
+  ```{.toml}
+  [project]
+  classifiers = [
+    # How mature is this project? Common values are
+    #   3 - Alpha
+    #   4 - Beta
+    #   5 - Production/Stable
+    "Development Status :: 4 - Beta",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+
+    # Specify the Python versions you support here.
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+  ]
+  ```
+
+## Project Metadata {data-menu-title="Project Metadata (iv)"}
+
+- `urls`
+
+  ```{.toml}
+  [project.urls]
+  Homepage = "https://example.com"
+  Documentation = "https://readthedocs.org"
+  Repository = "https://github.com/me/spam.git"
+  Issues = "https://github.com/me/spam/issues"
+  Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+  ```
+
+## Full Example
+
+```{.toml}
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spam-eggs"
+version = "2020.0.0"
+dependencies = [
+  "httpx",
+  "gidgethub[httpx]>4.0.0",
+  "django>2.1; os_name != 'nt'",
+  "django>2.0; os_name == 'nt'",
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Pradyun Gedam", email = "pradyun@example.com"},
+  {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
+  {name = "Another person"},
+  {email = "different.person@example.com"},
+]
+maintainers = [
+  {name = "Brett Cannon", email = "brett@example.com"}
+]
+description = "Lovely Spam! Wonderful Spam!"
+readme = "README.rst"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+gui = ["PyQt5"]
+cli = [
+  "rich",
+  "click",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/me/spam.git"
+"Bug Tracker" = "https://github.com/me/spam/issues"
+Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+[project.scripts]
+spam-cli = "spam:main_cli"
+
+[project.gui-scripts]
+spam-gui = "spam:main_gui"
+
+[project.entry-points."spam.magical"]
+tomatoes = "spam:main_tomatoes"
+```
 
 {{< include /_includes/qr-code.qmd >}}
