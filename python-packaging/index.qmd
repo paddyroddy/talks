@@ -64,7 +64,7 @@ title: Python Packaging
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Code: functions and classes that provide functionality.
+- Code: functions and classes that contain the functionality.
 - Documentation:
   - Installation instructions.
   - Tutorials.
