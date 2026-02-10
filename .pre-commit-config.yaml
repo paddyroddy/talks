@@ -7,7 +7,7 @@ exclude: |-
   )$
 repos:
   - repo: https://github.com/paddyroddy/.github
-    rev: v0.355.0
+    rev: v0.363.0
     hooks:
       - id: general-hooks
       - id: lua-hooks

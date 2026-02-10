@@ -8,4 +8,52 @@ subtitle:
 title: Python Packaging
 ---
 
+# Introduction
+
+## What is a Python Package
+
+- A Python package is a toolbox that can be used to perform a variety of tasks.
+- A directory with a specific file structure.
+- The directory has modules (`.py` extension).
+- Modules allow one to group and structure Python code.
+- Modules contain functions and classes.
+
+## Python Packages are Installable
+
+- Allows one to add functionality within the package's code to any Python environment.
+- Packages can then simply be imported (`import numpy`).
+- Installing a package into an environment enables re-use across projects.
+- Structuring code as a package is the first step.
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Why Create a Python Package {data-menu-title="Why Create a Python Package (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Use your code across different projects:
+  - Allows one to install code into any Python environment.
+  - Can import functions and classes into any workflow.
+- Build community around your code.
+  - Packages make it easier for others to work on it.
+  - Version control (`git`) makes it easy to track changes and contribute.
+  - Tools such as issues and pull requests aid outside users to contribute.
+
+## Why Create a Python Package {data-menu-title="Why Create a Python Package (ii)"}
+
+- Share your code:
+  - Can be installed on any machine using a single command (`pip`/`conda`).
+- Organise your code.
+  - Packages can help organise large code projects.
+  - Smaller, more manageable components.
+  - Structure can help both supporting the codebase and making it easier to understand.
+
+## What to Consider Before Creating a Package
+
+- Who will use your package?
+- How people might use your project?
+- If relevant, what data will be used with your package?
+- Have you got documentation and tests?
+- How long will you be able to support it?
+
 {{< include /_includes/qr-code.qmd >}}
