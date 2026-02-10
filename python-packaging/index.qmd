@@ -83,4 +83,43 @@ title: Python Packaging
   - Test suites.
   - Publication workflow.
 
+# Structuring Projects
+
+## Flat vs Source Layout
+
+::: {layout-ncol="2"}
+
+::: {.cell}
+
+```{.text code-line-numbers="false"}
+packaging_tutorial/
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── example_package/
+│   ├── __init__.py
+│   └── example.py
+└── tests/
+```
+
+:::
+
+::: {.fragment .fade-left}
+
+```{.text code-line-numbers="false"}
+packaging_tutorial/
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── src/
+│   └── example_package/
+│       ├── __init__.py
+│       └── example.py
+└── tests/
+```
+
+:::
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
