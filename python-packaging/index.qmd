@@ -302,7 +302,7 @@ dynamic = [
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
-- Dependencies are specified as followed.
+- Dependencies are specified as follows.
 
   ```{.toml}
   [project]
@@ -314,7 +314,7 @@ dynamic = [
   ]
   ```
 
-- Optional dependencies are further specified as followed.
+- Optional dependencies are further specified as follows.
 
   ```{.toml}
   [project.optional-dependencies]
