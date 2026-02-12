@@ -254,7 +254,7 @@ requires = [
 Most of the time static metadata can be written directly in the `[project]`
 table. For example, `requires-python = ">= 3.10"` or `version = "1.0"`.
 
-However, it is best when possible to sort this metadata dynamically. One can
+However, it is best when possible to set this metadata dynamically. One can
 automate the `__version__` attribute by using the following.
 
 ```{.toml}
