@@ -303,7 +303,7 @@ restrictedRepos:
     - ^SUMMITCOVIDGateway$
     - ^test-gha-arc$
     - ^ucl-xsync$
-    - ^uclh-gae-clinical-gateway$
+    - ^uclh-gae-clinical-gateway$ # typos: ignore
     - ^xnat$
     - ^xnat-1946$
     - ^xnat-azure-template-terraform$

@@ -7,7 +7,7 @@ execute:
 
 format:
   html:
-    include-in-header: _assets/html/goat_counter.html
+    include-in-header: _assets/html/goat-counter.html
     theme: darkly
   revealjs:
     auto-play-media: true
@@ -19,8 +19,8 @@ format:
     footer: "{{< meta title >}}"
     hash-type: number
     history: false
-    include-after-body: _assets/html/hide_title_slide.html
-    include-in-header: _assets/html/goat_counter.html
+    include-after-body: _assets/html/hide-title-slide.html
+    include-in-header: _assets/html/goat-counter.html
     incremental: true
     link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true

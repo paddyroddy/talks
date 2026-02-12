@@ -1,0 +1,42 @@
+<script type="text/javascript">
+  // Cache DOM elements (initialized after Reveal.js is ready)
+  let footer = null;
+  let slideMenu = null;
+  let logo = null;
+
+  function updateUiVisibility(slide) {
+    const isTitleSlide = slide.indexh === 0;
+    const hasFooterFalse =
+      slide.currentSlide.hasAttribute("data-footer") &&
+      slide.currentSlide.getAttribute("data-footer") === "false";
+
+    const hideFooter = isTitleSlide || hasFooterFalse;
+
+    const footerDisplay = hideFooter ? "none" : "block";
+    const otherDisplay = isTitleSlide ? "none" : "block";
+
+    // Guard before setting style to prevent runtime errors
+    if (footer) {
+      footer.style.display = footerDisplay;
+    }
+    if (slideMenu) {
+      slideMenu.style.display = otherDisplay;
+    }
+    if (logo) {
+      logo.style.display = otherDisplay;
+    }
+  }
+
+  Reveal.addEventListener("ready", (event) => {
+    // Cache DOM elements once Reveal.js is ready
+    footer = document.querySelector("div.footer.footer-default");
+    slideMenu = document.querySelector("div.slide-menu-button");
+    logo = document.querySelector("img.slide-logo");
+
+    updateUiVisibility(event);
+  });
+
+  Reveal.addEventListener("slidechanged", (event) => {
+    updateUiVisibility(event);
+  });
+</script>
