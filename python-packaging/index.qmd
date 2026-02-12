@@ -643,10 +643,10 @@ overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
    ├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
    └── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
    ```
-  
-    The `tar.gz` file is a source distribution whereas the `.whl file` is a built
-    distribution. Newer `pip` will install the built distribution and only use the
-    source as a fallback.
+
+   The `tar.gz` file is a source distribution whereas the `.whl file` is a built
+   distribution. Newer `pip` will install the built distribution and only use
+   the source as a fallback.
 
 3. Create an account on [TestPyPI](https://test.pypi.org/account/register/).
 4. Set up API token and so on.
@@ -656,14 +656,14 @@ overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
 5. `python3 -m pip install --upgrade twine`
 6. `python3 -m twine upload --repository testpypi dist/*`
 
-    ```text
-    Uploading distributions to https://test.pypi.org/legacy/
-    Enter your API token:
-    Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
-    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?
-    Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
-    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?
-    ```
+   ```text
+   Uploading distributions to https://test.pypi.org/legacy/
+   Enter your API token:
+   Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+   100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?
+   Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+   100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?
+   ```
 
 7. `python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE`
 
@@ -677,8 +677,10 @@ A similar set of steps can be done to upload to PyPI. TestPyPI allows one to
 test out their package. It is still public but much less obvious for people to
 look. People will often do these steps through GitHub Actions.
 
-- [hynek/build-and-inspect-python-package](https://github.com/hynek/build-and-inspect-python-package) {{< fa brands github >}}
-- [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) {{< fa brands github >}}
+- [hynek/build-and-inspect-python-package](https://github.com/hynek/build-and-inspect-python-package)
+  {{< fa brands github >}}
+- [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish)
+  {{< fa brands github >}}
 
 ## PyPI {data-menu-title="PyPI (ii)" footer=false}
 
@@ -698,23 +700,26 @@ look. People will often do these steps through GitHub Actions.
 
 - Accessible guides: <https://www.pyopensci.org/python-package-guide>.
 - More technical guides: <https://packaging.python.org/en/latest/tutorials>.
-- Community recommended configuration: <https://scientific-python.github.io/repo-review>.
+- Community recommended configuration:
+  <https://scientific-python.github.io/repo-review>.
 
 ## Resources {data-menu-title="Resources (ii)"}
 
 - ARC Guide
     <!-- vale RedHat.TermsWarnings = NO -->
-    - [UCL-ARC/python-tooling](https://github.com/UCL-ARC/python-tooling) {{< fa brands github >}}
-    <!-- vale RedHat.TermsWarnings = YES -->
-    - Tool recommendations:  <https://github-pages.arc.ucl.ac.uk/python-tooling>.
-    - Tutorial: <https://github.com/UCL-ARC/python-tooling/blob/main/docs/pages/tutorial.md>.
+  - [UCL-ARC/python-tooling](https://github.com/UCL-ARC/python-tooling)
+  {{< fa brands github >}}
+  <!-- vale RedHat.TermsWarnings = YES -->
+  - Tool recommendations: <https://github-pages.arc.ucl.ac.uk/python-tooling>.
+  - Tutorial:
+    <https://github.com/UCL-ARC/python-tooling/blob/main/docs/pages/tutorial.md>.
 
 ## Summary
 
 - What a Python package is and when to make one.
 - How to structure your package.
-- How to make a `pyproject.toml` and the three different sections: `[build-system]`,
-  `[project]` and `[tool]`.
+- How to make a `pyproject.toml` and the three different sections:
+  `[build-system]`, `[project]` and `[tool]`.
 - How to upload your package to TestPyPI and PyPI.
 - Some resources including a tutorial to make your own package using the ARC
   cookiecutter.
