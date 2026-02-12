@@ -191,7 +191,7 @@ possible TOML tables.
 
 ## Build Backend
 
-The `[build-system]` table has a `build-backend` key which specifies the build
+The `[build-system]` table has a `build-backend` key that specifies the build
 backend to be used. The `requires` key includes a list of dependencies required
 to build the project.
 
@@ -298,7 +298,7 @@ dynamic = [
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Dependencies and Requirements {footer=false data-menu-title="Dependencies and Requirements (i)"}
+## Dependencies and Requirements {data-menu-title="Dependencies and Requirements (i)" footer=false}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
@@ -307,10 +307,10 @@ dynamic = [
   ```{.toml}
   [project]
   dependencies = [
-    "django>2.0; os_name == 'nt'",
-    "django>2.1; os_name != 'nt'",
-    "gidgethub[httpx]>4.0.0",
-    "httpx",
+      "django>2.0; os_name == 'nt'",
+      "django>2.1; os_name != 'nt'",
+      "gidgethub[httpx]>4.0.0",
+      "httpx",
   ]
   ```
 
@@ -319,15 +319,15 @@ dynamic = [
   ```{.toml}
   [project.optional-dependencies]
   cli = [
-    "rich",
-    "click",
+      "rich",
+      "click",
   ]
   gui = [
-    "PyQt5",
+      "PyQt5",
   ]
   ```
 
-## Dependencies and Requirements {footer=false data-menu-title="Dependencies and Requirements (ii)"}
+## Dependencies and Requirements {data-menu-title="Dependencies and Requirements (ii)"}
 
 - Optional dependencies can be installed by specifying the name in square
   brackets: `pip install example-project[gui]`.
@@ -369,13 +369,13 @@ dynamic = [
   ```{.toml}
   [project]
   authors = [
-    {name = "Pradyun Gedam", email = "pradyun@example.com"},
-    {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
-    {name = "Another person"},
-    {email = "different.person@example.com"},
+      {name = "Pradyun Gedam", email = "pradyun@example.com"},
+      {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
+      {name = "Another person"},
+      {email = "different.person@example.com"},
   ]
   maintainers = [
-    {name = "Brett Cannon", email = "brett@example.com"},
+      {name = "Brett Cannon", email = "brett@example.com"},
   ]
   ```
 
@@ -401,7 +401,7 @@ dynamic = [
   [project]
   license = "MIT"
   license-files = [
-    "LICENSE",
+      "LICENSE",
   ]
   ```
 
@@ -419,22 +419,22 @@ dynamic = [
   ```{.toml}
   [project]
   classifiers = [
-    # How mature is this project? Common values are
-    #   3 - Alpha
-    #   4 - Beta
-    #   5 - Production/Stable
-    "Development Status :: 4 - Beta",
+      # How mature is this project? Common values are
+      #   3 - Alpha
+      #   4 - Beta
+      #   5 - Production/Stable
+      "Development Status :: 4 - Beta",
 
-    # Indicate who your project is intended for
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Build Tools",
+      # Indicate who your project is intended for
+      "Intended Audience :: Developers",
+      "Topic :: Software Development :: Build Tools",
 
-    # Specify the Python versions you support here.
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+      # Specify the Python versions you support here.
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
   ]
   ```
 
@@ -626,5 +626,97 @@ write_to = "src/sleplet/_version.py"
 overrides."project.classifiers".inline_arrays = false
 overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
 ```
+
+# Sharing Your Package
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## TestPyPI {data-menu-title="TestPyPI (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+1. `python3 -m pip install --upgrade build`
+2. `python3 -m build`
+
+   ```text
+   dist/
+   ├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+   └── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+   ```
+  
+    The `tar.gz` file is a source distribution whereas the `.whl file` is a built
+    distribution. Newer `pip` will install the built distribution and only use the
+    source as a fallback.
+
+3. Create an account on [TestPyPI](https://test.pypi.org/account/register/).
+4. Set up API token and so on.
+
+## TestPyPI {data-menu-title="TestPyPI (ii)"}
+
+5. `python3 -m pip install --upgrade twine`
+6. `python3 -m twine upload --repository testpypi dist/*`
+
+    ```text
+    Uploading distributions to https://test.pypi.org/legacy/
+    Enter your API token:
+    Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?
+    Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?
+    ```
+
+7. `python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE`
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## PyPI {data-menu-title="PyPI (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+A similar set of steps can be done to upload to PyPI. TestPyPI allows one to
+test out their package. It is still public but much less obvious for people to
+look. People will often do these steps through GitHub Actions.
+
+- [hynek/build-and-inspect-python-package](https://github.com/hynek/build-and-inspect-python-package) {{< fa brands github >}}
+- [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) {{< fa brands github >}}
+
+## PyPI {data-menu-title="PyPI (ii)" footer=false}
+
+![](figures/sleplet-1.png){fig-alt="Top half of the SLEPLET PYPI page."}
+
+## PyPI {data-menu-title="PyPI (iii)" footer=false}
+
+![](figures/sleplet-2.png){fig-alt="Bottom half of the SLEPLET PYPI page."}
+
+# Conclusions
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## Resources {data-menu-title="Resources (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+- Accessible guides: <https://www.pyopensci.org/python-package-guide>.
+- More technical guides: <https://packaging.python.org/en/latest/tutorials>.
+- Community recommended configuration: <https://scientific-python.github.io/repo-review>.
+
+## Resources {data-menu-title="Resources (ii)"}
+
+- ARC Guide
+    <!-- vale RedHat.TermsWarnings = NO -->
+    - [UCL-ARC/python-tooling](https://github.com/UCL-ARC/python-tooling) {{< fa brands github >}}
+    <!-- vale RedHat.TermsWarnings = YES -->
+    - Tool recommendations:  <https://github-pages.arc.ucl.ac.uk/python-tooling>.
+    - Tutorial: <https://github.com/UCL-ARC/python-tooling/blob/main/docs/pages/tutorial.md>.
+
+## Summary
+
+- What a Python package is and when to make one.
+- How to structure your package.
+- How to make a `pyproject.toml` and the three different sections: `[build-system]`,
+  `[project]` and `[tool]`.
+- How to upload your package to TestPyPI and PyPI.
+- Some resources including a tutorial to make your own package using the ARC
+  cookiecutter.
 
 {{< include /_includes/qr-code.qmd >}}
