@@ -512,4 +512,119 @@ urls.Homepage = "https://example.com"
 urls.Repository = "https://github.com/me/spam.git"
 ```
 
+## Tools
+
+```{.toml code-line-numbers="1-8|10-14|16-31|33-50|52-102|104-106|108-110"}
+[tool.check-manifest]
+ignore = [
+    "*.cff",
+    "*.md",
+    "*.off",
+    "*.toml",
+    "src/sleplet/_version.py",
+]
+
+[tool.coverage]
+report = {skip_covered = true, sort = "cover"}
+run = {branch = true, parallel = true, source = [
+    "sleplet",
+]}
+
+[tool.mypy]
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+enable_error_code = [
+    "ignore-without-code",
+    "redundant-expr",
+    "truthy-bool",
+]
+explicit_package_bases = true
+ignore_missing_imports = true
+plugins = [
+    "pydantic.mypy",
+]
+strict = true
+warn_return_any = false
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "--color=yes",
+    "--import-mode=importlib",
+    "--strict-config",
+    "--strict-markers",
+    "--verbose",
+    "-ra",
+]
+filterwarnings = [
+    "error",
+]
+log_cli_level = "INFO"
+minversion = "6"
+testpaths = [
+    "tests",
+]
+xfail_strict = true
+
+[tool.ruff]
+fix = true
+force-exclude = true
+src = [
+    "src",
+]
+lint.ignore = [
+    "COM812",
+    "D105",
+    "D203",
+    "D205",
+    "D212",
+    "D407",
+    "D413",
+    "ISC001",
+    "N803",
+    "N806",
+]
+lint.isort = {known-first-party = [
+    "sleplet",
+], section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "astro-info",
+    "first-party",
+    "local-folder",
+], sections = {"astro-info" = [
+    "pys2let",
+    "pyssht",
+]}}
+lint.per-file-ignores = {"examples*" = [
+    "D100",
+    "INP001",
+    "T201",
+], "src*" = [
+    "SLF001",
+], "tests*" = [
+    "D100",
+    "INP001",
+    "S101",
+    "SLF001",
+]}
+lint.select = [
+    "ALL",
+]
+lint.mccabe.max-complexity = 18
+lint.pep8-naming.classmethod-decorators = [
+    "classmethod",
+    "pydantic.field_validator",
+]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+write_to = "src/sleplet/_version.py"
+
+[tool.tomlsort]
+overrides."project.classifiers".inline_arrays = false
+overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
+```
+
 {{< include /_includes/qr-code.qmd >}}
