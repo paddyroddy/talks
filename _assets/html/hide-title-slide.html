@@ -1,8 +1,8 @@
 <script type="text/javascript">
-  // Cache DOM elements
-  const footer = document.querySelector("div.footer.footer-default");
-  const slideMenu = document.querySelector("div.slide-menu-button");
-  const logo = document.querySelector("img.slide-logo");
+  // Cache DOM elements (initialized after Reveal.js is ready)
+  let footer = null;
+  let slideMenu = null;
+  let logo = null;
 
   function updateUiVisibility(slide) {
     const isTitleSlide = slide.indexh === 0;
@@ -28,6 +28,11 @@
   }
 
   Reveal.addEventListener("ready", (event) => {
+    // Cache DOM elements once Reveal.js is ready
+    footer = document.querySelector("div.footer.footer-default");
+    slideMenu = document.querySelector("div.slide-menu-button");
+    logo = document.querySelector("img.slide-logo");
+
     updateUiVisibility(event);
   });
 
