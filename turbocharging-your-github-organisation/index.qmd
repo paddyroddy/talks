@@ -501,7 +501,7 @@ This can be then be used in organisation repositories as follows, e.g.
 ```{.yaml}
 jobs:
   add-issue-to-project:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: UCL-MIRSG/.github/actions/add-to-project@v0
         with:
