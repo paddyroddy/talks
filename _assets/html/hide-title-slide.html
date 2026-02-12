@@ -1,14 +1,14 @@
 <script type="text/javascript">
   function updateUiVisibility(slide) {
-    var isTitleSlide = slide.indexh === 0;
-    var hasFooterFalse =
+    const isTitleSlide = slide.indexh === 0;
+    const hasFooterFalse =
       slide.currentSlide.hasAttribute("data-footer") &&
       slide.currentSlide.getAttribute("data-footer") === "false";
 
-    var hideFooter = isTitleSlide || hasFooterFalse;
+    const hideFooter = isTitleSlide || hasFooterFalse;
 
-    var footerDisplay = hideFooter ? "none" : "block";
-    var otherDisplay = isTitleSlide ? "none" : "block";
+    const footerDisplay = hideFooter ? "none" : "block";
+    const otherDisplay = isTitleSlide ? "none" : "block";
 
     document.querySelector("div.footer.footer-default").style.display =
       footerDisplay;
