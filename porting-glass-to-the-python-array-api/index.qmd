@@ -8,4 +8,28 @@ subtitle:
 title: Porting GLASS to the Python Array API
 ---
 
+# GLASS: Generator for Large Scale Structure
+
+## Overview
+
+::: {layout-nrow="2"}
+
+::: {.cell}
+
+GLASS, the generator for large scale structure, is a library for performing the
+kind of simulation that is useful in the field of cosmology.
+
+:::
+
+::: {.cell}
+
+![](figures/spheres.png){fig-alt="A three-part diagram of the GLASS code
+simulation process showing nested spherical shells of the universe, a full-sky
+projection of cosmic matter density, and a high-resolution zoomed-in view of
+density fluctuations."}
+
+:::
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
