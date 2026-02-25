@@ -43,19 +43,22 @@ high-resolution zoomed-in view of density fluctuations."}
 
 ::: {.fragment}
 
-![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas Tessore"}
+![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas
+Tessore"}
 
 :::
 
 ::: {.fragment}
 
-![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor Aird"}
+![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor
+Aird"}
 
 :::
 
 ::: {.fragment}
 
-![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh Chopra"}
+![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh
+Chopra"}
 
 :::
 
@@ -75,5 +78,15 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 - Jason McEwen (Co-Investigator)
 - Niall Jeffrey (Co-Investigator)
 - Rebecca Martin (Research Administration)
+
+# The Python Array API Standard
+
+## Arrays
+
+- N-dimensional, grid-like data structure.
+- `numpy.ndarray` is the most well known.
+- "Rectangular" shape data type.
+- Fast, easy to manipulate.
+- Ubiquitous.
 
 {{< include /_includes/qr-code.qmd >}}
