@@ -463,7 +463,7 @@ def regression_tests(session: nox.Session) -> None:
 
 ## JAX Support
 
-[./glass/glass/jax.py](https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/jax.py#L1-L136)
+[./glass/jax.py](https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/jax.py#L1-L136)
 
 ```{.python code-line-numbers="36-43|46-47|93-99"}
 """Wrapper for JAX RNG with a NumPy-like interface."""
@@ -602,6 +602,53 @@ class Generator:
     ) -> FloatArray:
         """Draw samples from a Uniform distribution."""
         return jax.random.uniform(self.__key, _size(size), dtype, low, high)
+```
+
+## Custom Typing
+
+[./glass/\_types.py](https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/_types.py#L1-L40)
+
+```{.python code-line-numbers="20-27"}
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+    from typing import ParamSpec, TypeAlias, TypeVar
+
+    import jaxtyping
+    import numpy as np
+
+    from array_api_strict._array_object import Array
+    from array_api_strict._dtypes import DType
+
+    import glass.jax
+    from glass import _rng
+
+    P = ParamSpec("P")
+    R = TypeVar("R")
+    T = TypeVar("T")
+
+    AnyArray: TypeAlias = np.typing.NDArray[Any] | jaxtyping.Array | Array # typos: ignore
+    ComplexArray: TypeAlias = np.typing.NDArray[np.complex128] | jaxtyping.Array | Array # typos: ignore
+    DTypeLike: TypeAlias = np.typing.DTypeLike | jaxtyping.DTypeLike | DType # typos: ignore
+    FloatArray: TypeAlias = np.typing.NDArray[np.float64] | jaxtyping.Array | Array # typos: ignore
+    IntArray: TypeAlias = np.typing.NDArray[np.int64] | jaxtyping.Array | Array # typos: ignore
+    UnifiedGenerator: TypeAlias = (
+        np.random.Generator | glass.jax.Generator | _rng.Generator
+    )
+
+    AngularPowerSpectra: TypeAlias = Sequence[AnyArray]
+else:
+    # Runtime fallbacks (for Sphinx / autodoc)
+    # https://github.com/sphinx-doc/sphinx/issues/11991
+    AnyArray = Any
+    ComplexArray = Any
+    DTypeLike = Any
+    FloatArray = Any
+    IntArray = Any
+    UnifiedGenerator = Any
+
+    AngularPowerSpectra = Any
 ```
 
 {{< include /_includes/qr-code.qmd >}}
