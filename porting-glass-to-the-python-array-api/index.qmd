@@ -8,6 +8,46 @@ subtitle:
 title: Porting GLASS to the Python Array API
 ---
 
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## The Team {data-menu-title="The Team (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+::: {layout-ncol="4"}
+
+![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas Tessore"}
+
+![Me (Co-Investigator + Technical Staff)](https://github.com/paddyroddy.png){fig-alt="Me"}
+
+![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor Aird"}
+
+![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh Chopra"}
+
+:::
+
+## The Team {data-menu-title="The Team (ii)"}
+
+::: {layout-nrow="2"}
+
+::: {.cell}
+
+- Alessio Spurio Mancini (Co-I)
+- Arthur Loureiro (Co-I)
+- Benjamin Joachimi (Co-I)
+
+:::
+
+::: {.cell}
+
+- Jason McEwen (Co-I)
+- Niall Jeffrey (Co-I)
+- Rebecca Martin (Administration)
+
+:::
+
+:::
+
 # GLASS: Generator for Large Scale Structure
 
 ## Overview
