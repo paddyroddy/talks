@@ -16,9 +16,10 @@ title: Porting GLASS to the Python Array API
 
 ::: {.cell}
 
-GLASS is a library for performing the kind of simulation that is useful in the
-field of cosmology. The code was originally designed to simulate cosmic matter,
-weak gravitational lensing, and galaxy positions.
+[GLASS](https://glass.readthedocs.io) is a code used in cosmology to generate
+simulations of the full observable universe. In its current form, the primary
+user base of the code are collaborations for large galaxy surveys, which are a
+cornerstone of modern cosmology.
 
 :::
 
@@ -79,7 +80,16 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 - Niall Jeffrey (Co-Investigator)
 - Rebecca Martin (Research Administration)
 
-## The Aim
+## The Aim {footer=false}
+
+1. Transform GLASS into a GPU-enabled code.
+2. Improve the performance of simulations with GPU acceleration.
+3. Implement and adapt parallel processing elements that utilise GPU
+   capabilities.
+4. Optimise GLASS for modern GPU architectures.
+5. Enable differentiable simulations using JAX (in part or in full).
+6. Embed GLASS within N-body simulations running on GPU infrastructure for
+   post-processing.
 
 # Python Array API Standard
 
