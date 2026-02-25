@@ -130,4 +130,29 @@ libraries."}
 - But without additional maintenance burden.
 - Library remains relevant when the community switches to a new array library.
 
+# Progress
+
+## Changelog {footer=false}
+
+::: {layout-ncol="2"}
+
+::: {.cell}
+
+![](figures/commits.png){fig-alt="A screenshot from GitHub of difference between
+the repository when we started and now."}
+
+![](figures/contributors.png){fig-alt="A screenshot from GitHub showing the
+different contributors since working on the project."}
+
+:::
+
+::: {.cell}
+
+![](figures/releases.png){fig-alt="A screenshot from GitHub of all tags made
+since working on the grant."}
+
+:::
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
