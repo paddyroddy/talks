@@ -43,21 +43,21 @@ high-resolution zoomed-in view of density fluctuations."}
 
 ::: {.fragment}
 
-![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas
+![[Nicolas Tessore](https://github.com/ntessore) (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas
 Tessore"}
 
 :::
 
 ::: {.fragment}
 
-![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor
+![[Connor Aird](https://github.com/connoraird) (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor
 Aird"}
 
 :::
 
 ::: {.fragment}
 
-![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh
+![[Saransh Chopra](https://github.com/saransh-cpp) (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh
 Chopra"}
 
 :::
@@ -79,14 +79,45 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 - Niall Jeffrey (Co-Investigator)
 - Rebecca Martin (Research Administration)
 
-# The Python Array API Standard
+## The Aim
 
-## Arrays
+# Python Array API Standard
+
+## What Are Arrays
 
 - N-dimensional, grid-like data structure.
 - `numpy.ndarray` is the most well known.
 - "Rectangular" shape data type.
 - Fast, easy to manipulate.
 - Ubiquitous.
+
+## The Array Ecosystem
+
+![[Aaron Meurer: Python Array API Standard, SciPy 2023](https://youtu.be/16rB-fosAWw)](figures/ecosystem.png){fig-alt="A
+graphic denoting popular array provider libraries and array consumer
+libraries."}
+
+## Motivation: End Users
+
+- Ability to switch array libraries without rewriting the whole code base.
+- Avoid repeated transfers between array libraries or devices.
+- Enable experimentation:
+  - Test new hardware.
+  - Use functionality specific to an array library.
+
+## Motivation: Array _Providing_ Libraries
+
+- Existing libraries:
+  - Interoperability with new consuming libraries.
+  - Collaborative API decisions with other array libraries
+- New libraries:
+  - Concrete API to implement.
+  - Guaranteed compatibility with consuming libraries.
+
+## Motivation: Array _Consuming_ Libraries
+
+- Offer users with hardware acceleration and interoperability.
+- But without additional maintenance burden.
+- Library remains relevant when the community switches to a new array library.
 
 {{< include /_includes/qr-code.qmd >}}
