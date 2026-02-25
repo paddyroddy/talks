@@ -8,46 +8,6 @@ subtitle:
 title: Porting GLASS to the Python Array API
 ---
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
-## The Team {data-menu-title="The Team (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
-
-::: {layout-ncol="4"}
-
-![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas Tessore"}
-
-![Me (Co-Investigator + Technical Staff)](https://github.com/paddyroddy.png){fig-alt="Me"}
-
-![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor Aird"}
-
-![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh Chopra"}
-
-:::
-
-## The Team {data-menu-title="The Team (ii)"}
-
-::: {layout-nrow="2"}
-
-::: {.cell}
-
-- Alessio Spurio Mancini (Co-I)
-- Arthur Loureiro (Co-I)
-- Benjamin Joachimi (Co-I)
-
-:::
-
-::: {.cell}
-
-- Jason McEwen (Co-I)
-- Niall Jeffrey (Co-I)
-- Rebecca Martin (Administration)
-
-:::
-
-:::
-
 # GLASS: Generator for Large Scale Structure
 
 ## Overview
@@ -56,20 +16,64 @@ title: Porting GLASS to the Python Array API
 
 ::: {.cell}
 
-GLASS, the generator for large scale structure, is a library for performing the
-kind of simulation that is useful in the field of cosmology.
+GLASS is a library for performing the kind of simulation that is useful in the
+field of cosmology. The code was originally designed to simulate cosmic matter,
+weak gravitational lensing, and galaxy positions.
 
 :::
 
 ::: {.cell}
 
 ![](figures/spheres.png){fig-alt="A three-part diagram of the GLASS code
-simulation process showing nested spherical shells of the universe, a full-sky
-projection of cosmic matter density, and a high-resolution zoomed-in view of
-density fluctuations."}
+simulation process. Left-to-right the diagram shows nested spherical shells of
+the universe, a full-sky projection of cosmic matter density, and a
+high-resolution zoomed-in view of density fluctuations."}
 
 :::
 
 :::
+
+<!-- vale RedHat.TermsWarnings = NO -->
+
+## The Team {data-menu-title="The Team (i)"}
+
+<!-- vale RedHat.TermsWarnings = YES -->
+
+::: {layout-ncol="4"}
+
+::: {.fragment}
+
+![Nicolas Tessore (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas Tessore"}
+
+:::
+
+::: {.fragment}
+
+![Connor Aird (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor Aird"}
+
+:::
+
+::: {.fragment}
+
+![Saransh Chopra (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh Chopra"}
+
+:::
+
+::: {.fragment}
+
+Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
+
+:::
+
+:::
+
+## The Team {data-menu-title="The Team (ii)"}
+
+- Alessio Spurio Mancini (Co-Investigator)
+- Arthur Loureiro (Co-Investigator)
+- Benjamin Joachimi (Co-Investigator)
+- Jason McEwen (Co-Investigator)
+- Niall Jeffrey (Co-Investigator)
+- Rebecca Martin (Research Administration)
 
 {{< include /_includes/qr-code.qmd >}}
