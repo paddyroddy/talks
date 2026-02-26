@@ -5,8 +5,10 @@ author:
 date: 2025-12-03
 format: revealjs
 institute:
-  "[UCL Centre for Advanced Research
-  Computing](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Centre for Advanced Research
+    Computing](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Centre for Advanced Research
+    Computing](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[CCMI CDT: Software Engineering Fundamentals](https://ccmi-cdt.org)"
 title: Testing and Continuous Integration
 ---
