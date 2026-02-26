@@ -81,9 +81,9 @@ title: Python Packaging
 - Infrastructure:
   - Automate updates.
   - Test suites.
-  - Publication workflow.
+  - Release workflow.
 
-# Structuring Projects
+# Structuring Packages
 
 ## Flat and Source Layouts
 
