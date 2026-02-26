@@ -1511,4 +1511,17 @@ class Generator:
         return jax.random.uniform(self.__key, _size(size), dtype, low, high)
 ```
 
+# Further Work
+
+## {data-menu-title="Summary"}
+
+- Test on CuPy following
+  [v14 release](https://github.com/cupy/cupy/releases/tag/v14.0.0).
+- Create scripts to benchmark on ARCHER2 using different array backends.
+- Contribute remaining required functions to
+  [array-api-extra](https://pypi.org/project/array-api-extra)
+  {{< fa brands python >}}.
+- Implement spherical harmonic transforms that are array API compatible.
+- Tech debt…
+
 {{< include /_includes/qr-code.qmd >}}
