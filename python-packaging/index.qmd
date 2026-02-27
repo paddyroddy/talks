@@ -681,10 +681,10 @@ look. People will often do these steps through GitHub Actions.
 ## Resources {data-menu-title="Resources (ii)"}
 
 - ARC Guide
-    <!-- vale RedHat.TermsWarnings = NO -->
+  <!-- vale RedHat.TermsWarnings = NO -->
   - [UCL-ARC/python-tooling](https://github.com/UCL-ARC/python-tooling)
-  {{< fa brands github >}}
-  <!-- vale RedHat.TermsWarnings = YES -->
+    {{< fa brands github >}}
+    <!-- vale RedHat.TermsWarnings = YES -->
   - Tool recommendations: <https://github-pages.arc.ucl.ac.uk/python-tooling>.
   - Tutorial:
     <https://github.com/UCL-ARC/python-tooling/blob/main/docs/pages/tutorial.md>.
