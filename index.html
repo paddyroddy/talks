@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-850caba00870367b659a77d4f63805af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0fdb8217c89e5fb664e15e3b47405f49.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,8 +81,8 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-subtitle','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      page: 10,
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-author','listing-institute',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 8,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -231,11 +231,34 @@ Event
 <a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
 </th>
 
+<th>
+institute
+</th>
+
 </tr>
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1772064000000" data-listing-file-modified-sort="1772116080574" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2354" data-listing-title-sort="Python Packaging" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-date-sort="1773878400000" data-listing-file-modified-sort="1772194946725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="52" data-listing-word-count-sort="10258" data-listing-title-sort="Porting GLASS to the Python Array API" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2026-03-19</span>
+</td>
+<td>
+<a href="./porting-glass-to-the-python-array-api/index.html" class="title listing-title">Porting GLASS to the Python Array API</a>
+</td>
+<td>
+<span class="listing-subtitle"><a href="https://www.archer2.ac.uk/community/events/celebration-of-science-2026">ARCHER2 Celebration of Science 2026</a></span>
+</td>
+<td>
+<span class="listing-author">Patrick J. Roddy</span>
+</td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-date-sort="1772064000000" data-listing-file-modified-sort="1772194946732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2354" data-listing-title-sort="Python Packaging" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2026-02-26</span>
 </td>
@@ -248,10 +271,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="1" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1772116080608" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3368" data-listing-title-sort="Testing and Continuous Integration" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1772194946766" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3368" data-listing-title-sort="Testing and Continuous Integration" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025-12-03</span>
 </td>
@@ -264,10 +290,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy, <a href="https://profiles.ucl.ac.uk/23126-stephen-thompson">Stephen Thompson</a></span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a>, <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="2" data-listing-date-sort="1763424000000" data-listing-file-modified-sort="1772116080544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1120" data-listing-title-sort="EuroPython and EuroSciPy 2025" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-listing-date-sort="1763424000000" data-listing-file-modified-sort="1772194946707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1120" data-listing-title-sort="EuroPython and EuroSciPy 2025" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025-11-18</span>
 </td>
@@ -280,26 +309,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1756771200000" data-listing-file-modified-sort="1772116080488" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="626" data-listing-title-sort="ARC: (Re)introduction" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-date">2025-09-02</span>
-</td>
-<td>
-<a href="./arc-reintroduction/index.html" class="title listing-title">ARC: (Re)introduction</a>
-</td>
-<td>
-<span class="listing-subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Collaborations Hour</a></span>
-</td>
-<td>
-<span class="listing-author">Patrick J. Roddy</span>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
 </td>
 
 </tr>
 
-<tr data-index="4" data-listing-date-sort="1756771200000" data-listing-file-modified-sort="1772116080576" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1530" data-listing-title-sort="Quarto: Making Talks" data-listing-filename-sort="index.qmd">
+<tr data-index="4" data-listing-date-sort="1756771200000" data-listing-file-modified-sort="1772194946733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1537" data-listing-title-sort="Quarto: Making Talks" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025-09-02</span>
 </td>
@@ -312,10 +328,32 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="5" data-listing-date-sort="1748908800000" data-listing-file-modified-sort="1772116080562" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1662" data-listing-title-sort="Linting Prose with Vale" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-listing-date-sort="1756771200000" data-listing-file-modified-sort="1772194946660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="626" data-listing-title-sort="ARC: (Re)introduction" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2025-09-02</span>
+</td>
+<td>
+<a href="./arc-reintroduction/index.html" class="title listing-title">ARC: (Re)introduction</a>
+</td>
+<td>
+<span class="listing-subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Collaborations Hour</a></span>
+</td>
+<td>
+<span class="listing-author">Patrick J. Roddy</span>
+</td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-date-sort="1748908800000" data-listing-file-modified-sort="1772194946719" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1662" data-listing-title-sort="Linting Prose with Vale" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025-06-03</span>
 </td>
@@ -328,10 +366,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="6" data-listing-date-sort="1739232000000" data-listing-file-modified-sort="1772116080550" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2946" data-listing-title-sort="GitHub Safe-Settings: Policy as Code" data-listing-filename-sort="index.qmd">
+<tr data-index="7" data-listing-date-sort="1739232000000" data-listing-file-modified-sort="1772194946713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2946" data-listing-title-sort="GitHub Safe-Settings: Policy as Code" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025-02-11</span>
 </td>
@@ -344,10 +385,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="7" data-listing-date-sort="1733961600000" data-listing-file-modified-sort="1772116080620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3055" data-listing-title-sort="Turbocharging Your GitHub Organisation" data-listing-filename-sort="index.qmd">
+<tr data-index="8" data-listing-date-sort="1733961600000" data-listing-file-modified-sort="1772194946777" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3055" data-listing-title-sort="Turbocharging Your GitHub Organisation" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-12-12</span>
 </td>
@@ -360,10 +404,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="8" data-listing-date-sort="1725926400000" data-listing-file-modified-sort="1772116080488" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1362" data-listing-title-sort="CI/CD: Faster, Easier Development" data-listing-filename-sort="index.qmd">
+<tr data-index="9" data-listing-date-sort="1725926400000" data-listing-file-modified-sort="1772194946660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1362" data-listing-title-sort="CI/CD: Faster, Easier Development" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-09-10</span>
 </td>
@@ -376,10 +423,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy, <a href="https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations">DevOps Subgroup</a></span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a>, <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="9" data-listing-date-sort="1724112000000" data-listing-file-modified-sort="1772116080605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="576" data-listing-title-sort="SciPy 2024" data-listing-filename-sort="index.qmd">
+<tr data-index="10" data-listing-date-sort="1724112000000" data-listing-file-modified-sort="1772194946763" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="576" data-listing-title-sort="SciPy 2024" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-08-20</span>
 </td>
@@ -392,10 +442,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="10" data-listing-date-sort="1721692800000" data-listing-file-modified-sort="1772116080571" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="915" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
+<tr data-index="11" data-listing-date-sort="1721692800000" data-listing-file-modified-sort="1772194946730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="915" data-listing-title-sort="pyOpenSci: My Experience" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-07-23</span>
 </td>
@@ -408,10 +461,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="11" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1772116080494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="550" data-listing-title-sort="DevOps: An Introduction" data-listing-filename-sort="index.qmd">
+<tr data-index="12" data-listing-date-sort="1719273600000" data-listing-file-modified-sort="1772194946666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="550" data-listing-title-sort="DevOps: An Introduction" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024-06-25</span>
 </td>
@@ -424,10 +480,13 @@ Event
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
 </td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
+</td>
 
 </tr>
 
-<tr data-index="12" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1772116080582" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
+<tr data-index="13" data-listing-date-sort="1699920000000" data-listing-file-modified-sort="1772194946737" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315" data-listing-title-sort="Renovate: Automating Dependency Management" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023-11-14</span>
 </td>
@@ -439,6 +498,9 @@ Event
 </td>
 <td>
 <span class="listing-author">Patrick J. Roddy</span>
+</td>
+<td>
+<span class="listing-institute"><a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a></span>
 </td>
 
 </tr>

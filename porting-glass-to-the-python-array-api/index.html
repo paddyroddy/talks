@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../_assets/images/favicon.ico" rel="icon">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <meta name="author" content="Patrick J. Roddy">
+  <meta name="dcterms.date" content="2026-03-19">
+  <title>Patrick J. Roddy – Porting GLASS to the Python Array API</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3d6aa65b37be2e1788c803a5f5036e9d.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script async="" data-goatcounter="https://paddyroddy-talks.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section class="quarto-title-block center">
+  <h1 class="title">Porting GLASS to the Python Array API</h1>
+  <p class="subtitle"><a href="https://www.archer2.ac.uk/community/events/celebration-of-science-2026">ARCHER2 Celebration of Science 2026</a></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Patrick J. Roddy 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL Advanced Research Computing (ARC)</a>
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-03-19</p>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>GLASS: Generator for Large Scale Structure</h1>
+
+</section>
+<section class="slide level2">
+<h2>Overview</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><a href="https://glass.readthedocs.io">GLASS</a> is a code used in cosmology to generate simulations of the full observable universe. In its current form, the primary user base of the code are collaborations for large galaxy surveys, which are a cornerstone of modern cosmology.</p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="figures/spheres.png" alt="A three-part diagram of the GLASS code simulation process. Left-to-right the diagram shows nested spherical shells of the universe, a full-sky projection of cosmic matter density, and a high-resolution zoomed-in view of density fluctuations."></p>
+</div>
+</div>
+</div>
+<!-- vale RedHat.TermsWarnings = NO -->
+</section>
+<section class="slide level2" data-menu-title="The Team (i)">
+<h2>The Team</h2>
+<!-- vale RedHat.TermsWarnings = YES -->
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/ntessore.png" alt="Nicolas Tessore"></p>
+<figcaption><a href="https://github.com/ntessore">Nicolas Tessore</a> (Principal Investigator + Technical Staff)</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/connoraird.png" alt="Connor Aird"></p>
+<figcaption><a href="https://github.com/connoraird">Connor Aird</a> (Technical Staff)</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/saransh-cpp.png" alt="Saransh Chopra"></p>
+<figcaption><a href="https://github.com/saransh-cpp">Saransh Chopra</a> (Technical Staff)</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<p>Me (Co-Investigator + Technical Staff) <i class="fa-solid fa-arrow-turn-down" aria-label="arrow-turn-down"></i></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2" data-menu-title="The Team (ii)">
+<h2>The Team</h2>
+<ul>
+<li class="fragment">Alessio Spurio Mancini (Co-Investigator)</li>
+<li class="fragment">Arthur Loureiro (Co-Investigator)</li>
+<li class="fragment">Benjamin Joachimi (Co-Investigator)</li>
+<li class="fragment">Jason McEwen (Co-Investigator)</li>
+<li class="fragment">Niall Jeffrey (Co-Investigator)</li>
+<li class="fragment">Rebecca Martin (Research Administration)</li>
+</ul>
+</section>
+<section class="slide level2" data-footer="false">
+<h2>The Aim</h2>
+<ol type="1">
+<li class="fragment">Transform GLASS into a GPU-enabled code.</li>
+<li class="fragment">Improve the performance of simulations with GPU acceleration.</li>
+<li class="fragment">Implement and adapt parallel processing elements that utilise GPU capabilities.</li>
+<li class="fragment">Optimise GLASS for modern GPU architectures.</li>
+<li class="fragment">Enable differentiable simulations using JAX (in part or in full).</li>
+<li class="fragment">Embed GLASS within N-body simulations running on GPU infrastructure for post-processing.</li>
+</ol>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Python Array API Standard</h1>
+
+</section>
+<section class="slide level2">
+<h2>What Are Arrays</h2>
+<ul>
+<li class="fragment">N-dimensional, grid-like data structure.</li>
+<li class="fragment"><code>numpy.ndarray</code> is the most well known.</li>
+<li class="fragment">“Rectangular” shape data type.</li>
+<li class="fragment">Fast, easy to manipulate.</li>
+<li class="fragment">Ubiquitous.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>The Array Ecosystem</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/ecosystem.png" alt="A graphic denoting popular array provider libraries and array consumer libraries."></p>
+<figcaption><a href="https://youtu.be/16rB-fosAWw">Aaron Meurer: Python Array API Standard, SciPy 2023</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+<h2>Motivation: End Users</h2>
+<ul>
+<li class="fragment">Ability to switch array libraries without rewriting the whole code base.</li>
+<li class="fragment">Avoid repeated transfers between array libraries or devices.</li>
+<li class="fragment">Enable experimentation:
+<ul>
+<li class="fragment">Test new hardware.</li>
+<li class="fragment">Use functionality specific to an array library.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Motivation: Array <em>Providing</em> Libraries</h2>
+<ul>
+<li class="fragment">Existing libraries:
+<ul>
+<li class="fragment">Interoperability with new consuming libraries.</li>
+<li class="fragment">Collaborative API decisions with other array libraries</li>
+</ul></li>
+<li class="fragment">New libraries:
+<ul>
+<li class="fragment">Concrete API to implement.</li>
+<li class="fragment">Guaranteed compatibility with consuming libraries.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Motivation: Array <em>Consuming</em> Libraries</h2>
+<ul>
+<li class="fragment">Offer users with hardware acceleration and interoperability.</li>
+<li class="fragment">But without additional maintenance burden.</li>
+<li class="fragment">Library remains relevant when the community switches to a new array library.</li>
+</ul>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Progress</h1>
+
+</section>
+<section class="slide level2" data-footer="false">
+<h2>Changelog</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/commits.png" alt="A screenshot from GitHub of difference between the repository when we started and now."></p>
+<p><img data-src="figures/contributors.png" alt="A screenshot from GitHub showing the different contributors since working on the project."></p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/releases.png" alt="A screenshot from GitHub of all tags made since working on the grant."></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Testing on Different Array Backends</h2>
+<p><a href="https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/noxfile.py#L1-L299">./noxfile.py</a> run as <code>uv run nox -s tests-3.14</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="84-92|95-102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co">"""Nox config."""</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="im">import</span> os</span>
+<span id="cb1-4"><a></a><span class="im">import</span> pathlib</span>
+<span id="cb1-5"><a></a><span class="im">import</span> shutil</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="im">import</span> nox</span>
+<span id="cb1-8"><a></a><span class="im">import</span> nox_uv</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># Options to modify nox behaviour</span></span>
+<span id="cb1-11"><a></a>nox.options.default_venv_backend <span class="op">=</span> <span class="st">"uv"</span></span>
+<span id="cb1-12"><a></a>nox.options.reuse_existing_virtualenvs <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-13"><a></a>nox.options.sessions <span class="op">=</span> [</span>
+<span id="cb1-14"><a></a>    <span class="st">"lint"</span>,</span>
+<span id="cb1-15"><a></a>    <span class="st">"tests"</span>,</span>
+<span id="cb1-16"><a></a>]</span>
+<span id="cb1-17"><a></a></span>
+<span id="cb1-18"><a></a>ALL_PYTHON <span class="op">=</span> [</span>
+<span id="cb1-19"><a></a>    <span class="st">"3.10"</span>,</span>
+<span id="cb1-20"><a></a>    <span class="st">"3.11"</span>,</span>
+<span id="cb1-21"><a></a>    <span class="st">"3.12"</span>,</span>
+<span id="cb1-22"><a></a>    <span class="st">"3.13"</span>,</span>
+<span id="cb1-23"><a></a>    <span class="st">"3.14"</span>,</span>
+<span id="cb1-24"><a></a>]</span>
+<span id="cb1-25"><a></a>ARRAY_BACKENDS <span class="op">=</span> {</span>
+<span id="cb1-26"><a></a>    <span class="st">"array_api_strict"</span>: <span class="st">"array-api-strict&gt;=2"</span>,</span>
+<span id="cb1-27"><a></a>    <span class="st">"jax"</span>: <span class="st">"jax&gt;=0.4.32"</span>,</span>
+<span id="cb1-28"><a></a>}</span>
+<span id="cb1-29"><a></a>BENCH_TESTS_LOC <span class="op">=</span> pathlib.Path(<span class="st">"tests/benchmarks"</span>)</span>
+<span id="cb1-30"><a></a>GLASS_REPO_URL <span class="op">=</span> <span class="st">"https://github.com/glass-dev/glass"</span></span>
+<span id="cb1-31"><a></a>SHARED_BENCHMARK_FLAGS <span class="op">=</span> [</span>
+<span id="cb1-32"><a></a>    <span class="st">"--benchmark-calibration-precision=1000"</span>,</span>
+<span id="cb1-33"><a></a>    <span class="st">"--benchmark-columns=mean,stddev,rounds"</span>,</span>
+<span id="cb1-34"><a></a>    <span class="st">"--benchmark-max-time=5.0"</span>,</span>
+<span id="cb1-35"><a></a>    <span class="st">"--benchmark-sort=name"</span>,</span>
+<span id="cb1-36"><a></a>    <span class="st">"--benchmark-timer=time.process_time"</span>,</span>
+<span id="cb1-37"><a></a>]</span>
+<span id="cb1-38"><a></a></span>
+<span id="cb1-39"><a></a></span>
+<span id="cb1-40"><a></a><span class="kw">def</span> _check_revision_count(</span>
+<span id="cb1-41"><a></a>    session_posargs: <span class="bu">list</span>[<span class="bu">str</span>],</span>
+<span id="cb1-42"><a></a>    <span class="op">*</span>,</span>
+<span id="cb1-43"><a></a>    expected_count: <span class="bu">int</span>,</span>
+<span id="cb1-44"><a></a>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-45"><a></a>    <span class="co">"""</span></span>
+<span id="cb1-46"><a></a><span class="co">    Check that the correct number of revisions have been provided.</span></span>
+<span id="cb1-47"><a></a></span>
+<span id="cb1-48"><a></a><span class="co">    Parameters</span></span>
+<span id="cb1-49"><a></a><span class="co">    ----------</span></span>
+<span id="cb1-50"><a></a><span class="co">    session_posargs</span></span>
+<span id="cb1-51"><a></a><span class="co">        The positional arguments passed to the session.</span></span>
+<span id="cb1-52"><a></a><span class="co">    expected_count</span></span>
+<span id="cb1-53"><a></a><span class="co">        The expected number of revisions.</span></span>
+<span id="cb1-54"><a></a></span>
+<span id="cb1-55"><a></a><span class="co">    Raises</span></span>
+<span id="cb1-56"><a></a><span class="co">    ------</span></span>
+<span id="cb1-57"><a></a><span class="co">    ValueError</span></span>
+<span id="cb1-58"><a></a><span class="co">        If no revisions are provided.</span></span>
+<span id="cb1-59"><a></a><span class="co">    ValueError</span></span>
+<span id="cb1-60"><a></a><span class="co">        If the number of provided revisions does not match the expected count.</span></span>
+<span id="cb1-61"><a></a></span>
+<span id="cb1-62"><a></a><span class="co">    """</span></span>
+<span id="cb1-63"><a></a>    <span class="cf">if</span> <span class="kw">not</span> session_posargs:</span>
+<span id="cb1-64"><a></a>        msg <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>expected_count<span class="sc">}</span><span class="ss"> revision(s) not provided"</span></span>
+<span id="cb1-65"><a></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(msg)</span>
+<span id="cb1-66"><a></a></span>
+<span id="cb1-67"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(session_posargs) <span class="op">!=</span> expected_count:</span>
+<span id="cb1-68"><a></a>        msg <span class="op">=</span> (</span>
+<span id="cb1-69"><a></a>            <span class="ss">f"Incorrect number of revisions provided (</span><span class="sc">{</span><span class="bu">len</span>(session_posargs)<span class="sc">}</span><span class="ss">), "</span></span>
+<span id="cb1-70"><a></a>            <span class="ss">f"expected </span><span class="sc">{</span>expected_count<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-71"><a></a>        )</span>
+<span id="cb1-72"><a></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(msg)</span>
+<span id="cb1-73"><a></a></span>
+<span id="cb1-74"><a></a></span>
+<span id="cb1-75"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-76"><a></a>    uv_no_install_project<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-77"><a></a>    uv_only_groups<span class="op">=</span>[<span class="st">"lint"</span>],</span>
+<span id="cb1-78"><a></a>)</span>
+<span id="cb1-79"><a></a><span class="kw">def</span> lint(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-80"><a></a>    <span class="co">"""Run the linter."""</span></span>
+<span id="cb1-81"><a></a>    session.run(<span class="st">"pre-commit"</span>, <span class="st">"run"</span>, <span class="st">"--all-files"</span>, <span class="op">*</span>session.posargs)</span>
+<span id="cb1-82"><a></a></span>
+<span id="cb1-83"><a></a></span>
+<span id="cb1-84"><a></a><span class="kw">def</span> _setup_array_backend(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-85"><a></a>    <span class="co">"""Installs the requested array_backend."""</span></span>
+<span id="cb1-86"><a></a>    array_backend <span class="op">=</span> os.environ.get(<span class="st">"ARRAY_BACKEND"</span>)</span>
+<span id="cb1-87"><a></a>    <span class="cf">if</span> array_backend <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb1-88"><a></a>        session.install(ARRAY_BACKENDS[<span class="st">"array_api_strict"</span>])</span>
+<span id="cb1-89"><a></a>    <span class="cf">elif</span> array_backend <span class="op">==</span> <span class="st">"jax"</span>:</span>
+<span id="cb1-90"><a></a>        session.install(ARRAY_BACKENDS[<span class="st">"jax"</span>])</span>
+<span id="cb1-91"><a></a>    <span class="cf">elif</span> array_backend <span class="op">==</span> <span class="st">"all"</span>:</span>
+<span id="cb1-92"><a></a>        session.install(<span class="op">*</span>ARRAY_BACKENDS.values())</span>
+<span id="cb1-93"><a></a></span>
+<span id="cb1-94"><a></a></span>
+<span id="cb1-95"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-96"><a></a>    python<span class="op">=</span>ALL_PYTHON,</span>
+<span id="cb1-97"><a></a>    uv_groups<span class="op">=</span>[<span class="st">"test"</span>],</span>
+<span id="cb1-98"><a></a>)</span>
+<span id="cb1-99"><a></a><span class="kw">def</span> tests(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-100"><a></a>    <span class="co">"""Run the unit tests."""</span></span>
+<span id="cb1-101"><a></a>    _setup_array_backend(session)</span>
+<span id="cb1-102"><a></a>    session.run(<span class="st">"pytest"</span>, <span class="op">*</span>session.posargs)</span>
+<span id="cb1-103"><a></a></span>
+<span id="cb1-104"><a></a></span>
+<span id="cb1-105"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-106"><a></a>    python<span class="op">=</span>ALL_PYTHON,</span>
+<span id="cb1-107"><a></a>    uv_groups<span class="op">=</span>[<span class="st">"test"</span>],</span>
+<span id="cb1-108"><a></a>)</span>
+<span id="cb1-109"><a></a><span class="kw">def</span> coverage(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-110"><a></a>    <span class="co">"""Run tests and compute coverage for the core tests."""</span></span>
+<span id="cb1-111"><a></a>    _setup_array_backend(session)</span>
+<span id="cb1-112"><a></a>    session.run(</span>
+<span id="cb1-113"><a></a>        <span class="st">"pytest"</span>,</span>
+<span id="cb1-114"><a></a>        <span class="st">"--cov"</span>,</span>
+<span id="cb1-115"><a></a>        <span class="op">*</span>session.posargs,</span>
+<span id="cb1-116"><a></a>        env<span class="op">=</span>os.environ,</span>
+<span id="cb1-117"><a></a>    )</span>
+<span id="cb1-118"><a></a></span>
+<span id="cb1-119"><a></a></span>
+<span id="cb1-120"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-121"><a></a>    uv_groups<span class="op">=</span>[<span class="st">"test"</span>],</span>
+<span id="cb1-122"><a></a>)</span>
+<span id="cb1-123"><a></a><span class="kw">def</span> coverage_benchmarks(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-124"><a></a>    <span class="co">"""Run tests and compute coverage for the benchmark tests."""</span></span>
+<span id="cb1-125"><a></a>    _setup_array_backend(session)</span>
+<span id="cb1-126"><a></a>    session.run(</span>
+<span id="cb1-127"><a></a>        <span class="st">"pytest"</span>,</span>
+<span id="cb1-128"><a></a>        BENCH_TESTS_LOC,</span>
+<span id="cb1-129"><a></a>        <span class="st">"--cov"</span>,</span>
+<span id="cb1-130"><a></a>        <span class="op">*</span>SHARED_BENCHMARK_FLAGS,</span>
+<span id="cb1-131"><a></a>        <span class="op">*</span>session.posargs,</span>
+<span id="cb1-132"><a></a>        env<span class="op">=</span>os.environ,</span>
+<span id="cb1-133"><a></a>    )</span>
+<span id="cb1-134"><a></a></span>
+<span id="cb1-135"><a></a></span>
+<span id="cb1-136"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-137"><a></a>    python<span class="op">=</span>ALL_PYTHON,</span>
+<span id="cb1-138"><a></a>    uv_groups<span class="op">=</span>[<span class="st">"doctest"</span>],</span>
+<span id="cb1-139"><a></a>    uv_no_install_project<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-140"><a></a>)</span>
+<span id="cb1-141"><a></a><span class="kw">def</span> doctests(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-142"><a></a>    <span class="co">"""Run the doctests."""</span></span>
+<span id="cb1-143"><a></a>    session.posargs.extend(</span>
+<span id="cb1-144"><a></a>        [</span>
+<span id="cb1-145"><a></a>            <span class="st">"--doctest-plus"</span>,</span>
+<span id="cb1-146"><a></a>            <span class="st">"--doctest-plus-generate-diff=overwrite"</span>,</span>
+<span id="cb1-147"><a></a>            <span class="st">"glass"</span>,</span>
+<span id="cb1-148"><a></a>        ],</span>
+<span id="cb1-149"><a></a>    )</span>
+<span id="cb1-150"><a></a>    session.run(<span class="st">"pytest"</span>, <span class="op">*</span>session.posargs)</span>
+<span id="cb1-151"><a></a></span>
+<span id="cb1-152"><a></a></span>
+<span id="cb1-153"><a></a><span class="at">@nox_uv.session</span>(uv_extras<span class="op">=</span>[<span class="st">"examples"</span>])</span>
+<span id="cb1-154"><a></a><span class="kw">def</span> examples(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-155"><a></a>    <span class="co">"""Run the example notebooks. Pass "html" to build html."""</span></span>
+<span id="cb1-156"><a></a>    <span class="cf">if</span> session.posargs:</span>
+<span id="cb1-157"><a></a>        <span class="cf">if</span> <span class="st">"html"</span> <span class="kw">in</span> session.posargs:</span>
+<span id="cb1-158"><a></a>            session.log(<span class="st">"Generating HTML for the example notebooks"</span>)</span>
+<span id="cb1-159"><a></a>            session.run(</span>
+<span id="cb1-160"><a></a>                <span class="st">"jupyter"</span>,</span>
+<span id="cb1-161"><a></a>                <span class="st">"nbconvert"</span>,</span>
+<span id="cb1-162"><a></a>                <span class="st">"--to"</span>,</span>
+<span id="cb1-163"><a></a>                <span class="st">"html"</span>,</span>
+<span id="cb1-164"><a></a>                <span class="st">"--embed-images"</span>,</span>
+<span id="cb1-165"><a></a>                <span class="st">"examples/**/*.ipynb"</span>,</span>
+<span id="cb1-166"><a></a>            )</span>
+<span id="cb1-167"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb1-168"><a></a>            session.log(<span class="st">"Unsupported argument to examples"</span>)</span>
+<span id="cb1-169"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb1-170"><a></a>        session.run(</span>
+<span id="cb1-171"><a></a>            <span class="st">"jupyter"</span>,</span>
+<span id="cb1-172"><a></a>            <span class="st">"execute"</span>,</span>
+<span id="cb1-173"><a></a>            <span class="st">"--inplace"</span>,</span>
+<span id="cb1-174"><a></a>            <span class="op">*</span>pathlib.Path().glob(<span class="st">"examples/**/*.ipynb"</span>),</span>
+<span id="cb1-175"><a></a>            <span class="op">*</span>session.posargs,</span>
+<span id="cb1-176"><a></a>        )</span>
+<span id="cb1-177"><a></a></span>
+<span id="cb1-178"><a></a></span>
+<span id="cb1-179"><a></a><span class="at">@nox_uv.session</span>(uv_groups<span class="op">=</span>[<span class="st">"docs"</span>])</span>
+<span id="cb1-180"><a></a><span class="kw">def</span> docs(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-181"><a></a>    <span class="co">"""Build the docs. Pass "serve" to serve."""</span></span>
+<span id="cb1-182"><a></a>    session.chdir(<span class="st">"docs"</span>)</span>
+<span id="cb1-183"><a></a>    session.run(</span>
+<span id="cb1-184"><a></a>        <span class="st">"sphinx-build"</span>,</span>
+<span id="cb1-185"><a></a>        <span class="st">"-M"</span>,</span>
+<span id="cb1-186"><a></a>        <span class="st">"html"</span>,</span>
+<span id="cb1-187"><a></a>        <span class="st">"."</span>,</span>
+<span id="cb1-188"><a></a>        <span class="st">"_build"</span>,</span>
+<span id="cb1-189"><a></a>        <span class="st">"--fail-on-warning"</span>,</span>
+<span id="cb1-190"><a></a>    )</span>
+<span id="cb1-191"><a></a></span>
+<span id="cb1-192"><a></a>    <span class="cf">if</span> session.posargs:</span>
+<span id="cb1-193"><a></a>        <span class="cf">if</span> <span class="st">"serve"</span> <span class="kw">in</span> session.posargs:</span>
+<span id="cb1-194"><a></a>            port <span class="op">=</span> <span class="dv">8001</span></span>
+<span id="cb1-195"><a></a></span>
+<span id="cb1-196"><a></a>            session.log(</span>
+<span id="cb1-197"><a></a>                <span class="ss">f"Launching docs at http://localhost:</span><span class="sc">{</span>port<span class="sc">}</span><span class="ss">/ - use Ctrl-C to quit"</span>,</span>
+<span id="cb1-198"><a></a>            )</span>
+<span id="cb1-199"><a></a>            session.run(<span class="st">"python"</span>, <span class="st">"-m"</span>, <span class="st">"http.server"</span>, <span class="ss">f"</span><span class="sc">{</span>port<span class="sc">}</span><span class="ss">"</span>, <span class="st">"-d"</span>, <span class="st">"_build/html"</span>)</span>
+<span id="cb1-200"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb1-201"><a></a>            session.log(<span class="st">"Unsupported argument to docs"</span>)</span>
+<span id="cb1-202"><a></a></span>
+<span id="cb1-203"><a></a></span>
+<span id="cb1-204"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-205"><a></a>    uv_no_install_project<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-206"><a></a>    uv_only_groups<span class="op">=</span>[<span class="st">"build"</span>],</span>
+<span id="cb1-207"><a></a>)</span>
+<span id="cb1-208"><a></a><span class="kw">def</span> build(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-209"><a></a>    <span class="co">"""Build an SDist and wheel."""</span></span>
+<span id="cb1-210"><a></a>    session.run(<span class="st">"python"</span>, <span class="st">"-m"</span>, <span class="st">"build"</span>)</span>
+<span id="cb1-211"><a></a></span>
+<span id="cb1-212"><a></a></span>
+<span id="cb1-213"><a></a><span class="at">@nox_uv.session</span></span>
+<span id="cb1-214"><a></a><span class="kw">def</span> version(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-215"><a></a>    <span class="co">"""</span></span>
+<span id="cb1-216"><a></a><span class="co">    Check the current version of the package.</span></span>
+<span id="cb1-217"><a></a></span>
+<span id="cb1-218"><a></a><span class="co">    The intent of this check is to ensure that the package</span></span>
+<span id="cb1-219"><a></a><span class="co">    is installed without any additional dependencies</span></span>
+<span id="cb1-220"><a></a><span class="co">    through optional dependencies nor dependency groups.</span></span>
+<span id="cb1-221"><a></a></span>
+<span id="cb1-222"><a></a><span class="co">    """</span></span>
+<span id="cb1-223"><a></a>    session.run(<span class="st">"python"</span>, <span class="st">"-c"</span>, <span class="st">"import glass; print(glass.__version__)"</span>)</span>
+<span id="cb1-224"><a></a></span>
+<span id="cb1-225"><a></a></span>
+<span id="cb1-226"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-227"><a></a>    uv_no_install_project<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-228"><a></a>    uv_only_groups<span class="op">=</span>[<span class="st">"test"</span>],</span>
+<span id="cb1-229"><a></a>)</span>
+<span id="cb1-230"><a></a><span class="kw">def</span> benchmarks(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-231"><a></a>    <span class="co">"""</span></span>
+<span id="cb1-232"><a></a><span class="co">    Run the benchmark test for a specific revision.</span></span>
+<span id="cb1-233"><a></a></span>
+<span id="cb1-234"><a></a><span class="co">    Note it is not possible to pass extra options to pytest.</span></span>
+<span id="cb1-235"><a></a></span>
+<span id="cb1-236"><a></a><span class="co">    """</span></span>
+<span id="cb1-237"><a></a>    _check_revision_count(session.posargs, expected_count<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-238"><a></a>    revision <span class="op">=</span> session.posargs[<span class="dv">0</span>]</span>
+<span id="cb1-239"><a></a></span>
+<span id="cb1-240"><a></a>    <span class="co"># overwrite current package with specified revision</span></span>
+<span id="cb1-241"><a></a>    session.install(<span class="ss">f"git+</span><span class="sc">{</span>GLASS_REPO_URL<span class="sc">}</span><span class="ss">@</span><span class="sc">{</span>revision<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-242"><a></a>    session.run(<span class="st">"pytest"</span>, BENCH_TESTS_LOC)</span>
+<span id="cb1-243"><a></a></span>
+<span id="cb1-244"><a></a></span>
+<span id="cb1-245"><a></a><span class="at">@nox_uv.session</span>(</span>
+<span id="cb1-246"><a></a>    uv_no_install_project<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-247"><a></a>    uv_only_groups<span class="op">=</span>[<span class="st">"test"</span>],</span>
+<span id="cb1-248"><a></a>)</span>
+<span id="cb1-249"><a></a><span class="kw">def</span> regression_tests(session: nox.Session) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-250"><a></a>    <span class="co">"""</span></span>
+<span id="cb1-251"><a></a><span class="co">    Run regression benchmark tests between two revisions.</span></span>
+<span id="cb1-252"><a></a></span>
+<span id="cb1-253"><a></a><span class="co">    Note it is not possible to pass extra options to pytest.</span></span>
+<span id="cb1-254"><a></a></span>
+<span id="cb1-255"><a></a><span class="co">    """</span></span>
+<span id="cb1-256"><a></a>    _check_revision_count(session.posargs, expected_count<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb1-257"><a></a>    before_revision, after_revision <span class="op">=</span> session.posargs</span>
+<span id="cb1-258"><a></a></span>
+<span id="cb1-259"><a></a>    _setup_array_backend(session)</span>
+<span id="cb1-260"><a></a></span>
+<span id="cb1-261"><a></a>    <span class="co"># make sure benchmark directory is clean</span></span>
+<span id="cb1-262"><a></a>    benchmark_dir <span class="op">=</span> pathlib.Path(<span class="st">".benchmarks"</span>)</span>
+<span id="cb1-263"><a></a>    <span class="cf">if</span> benchmark_dir.exists():</span>
+<span id="cb1-264"><a></a>        session.log(<span class="ss">f"Deleting previous benchmark directory: </span><span class="sc">{</span>benchmark_dir<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-265"><a></a>        shutil.rmtree(benchmark_dir)</span>
+<span id="cb1-266"><a></a></span>
+<span id="cb1-267"><a></a>    session.log(<span class="ss">f"Generating prior benchmark from revision </span><span class="sc">{</span>before_revision<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-268"><a></a>    session.install(<span class="ss">f"git+</span><span class="sc">{</span>GLASS_REPO_URL<span class="sc">}</span><span class="ss">@</span><span class="sc">{</span>before_revision<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-269"><a></a>    session.run(</span>
+<span id="cb1-270"><a></a>        <span class="st">"pytest"</span>,</span>
+<span id="cb1-271"><a></a>        BENCH_TESTS_LOC,</span>
+<span id="cb1-272"><a></a>        <span class="st">"--benchmark-autosave"</span>,</span>
+<span id="cb1-273"><a></a>        <span class="op">*</span>SHARED_BENCHMARK_FLAGS,</span>
+<span id="cb1-274"><a></a>    )</span>
+<span id="cb1-275"><a></a></span>
+<span id="cb1-276"><a></a>    session.log(<span class="ss">f"Comparing </span><span class="sc">{</span>before_revision<span class="sc">}</span><span class="ss"> benchmark to revision </span><span class="sc">{</span>after_revision<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-277"><a></a>    session.install(<span class="ss">f"git+</span><span class="sc">{</span>GLASS_REPO_URL<span class="sc">}</span><span class="ss">@</span><span class="sc">{</span>after_revision<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-278"><a></a>    session.log(<span class="st">"Running stable regression tests"</span>)</span>
+<span id="cb1-279"><a></a>    session.run(</span>
+<span id="cb1-280"><a></a>        <span class="st">"pytest"</span>,</span>
+<span id="cb1-281"><a></a>        BENCH_TESTS_LOC,</span>
+<span id="cb1-282"><a></a>        <span class="st">"-m"</span>,</span>
+<span id="cb1-283"><a></a>        <span class="st">"stable"</span>,</span>
+<span id="cb1-284"><a></a>        <span class="st">"--benchmark-compare=0001"</span>,</span>
+<span id="cb1-285"><a></a>        <span class="st">"--benchmark-compare-fail=mean:5%"</span>,</span>
+<span id="cb1-286"><a></a>        <span class="op">*</span>SHARED_BENCHMARK_FLAGS,</span>
+<span id="cb1-287"><a></a>    )</span>
+<span id="cb1-288"><a></a></span>
+<span id="cb1-289"><a></a>    session.log(<span class="st">"Running unstable regression tests"</span>)</span>
+<span id="cb1-290"><a></a>    session.run(</span>
+<span id="cb1-291"><a></a>        <span class="st">"pytest"</span>,</span>
+<span id="cb1-292"><a></a>        BENCH_TESTS_LOC,</span>
+<span id="cb1-293"><a></a>        <span class="st">"-m"</span>,</span>
+<span id="cb1-294"><a></a>        <span class="st">"unstable"</span>,</span>
+<span id="cb1-295"><a></a>        <span class="st">"--benchmark-compare=0001"</span>,</span>
+<span id="cb1-296"><a></a>        <span class="co"># Absolute time comparison in seconds</span></span>
+<span id="cb1-297"><a></a>        <span class="st">"--benchmark-compare-fail=mean:0.0005"</span>,</span>
+<span id="cb1-298"><a></a>        <span class="op">*</span>SHARED_BENCHMARK_FLAGS,</span>
+<span id="cb1-299"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+<h2>Custom Typing</h2>
+<p><a href="https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/_types.py#L1-L40">./glass/_types.py</a> pending <a href="https://github.com/data-apis/array-api-typing">array-api-typing</a> <i class="fa-brands fa-python" aria-label="python"></i>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="20-27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">from</span> typing <span class="im">import</span> TYPE_CHECKING, Any</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="cf">if</span> TYPE_CHECKING:</span>
+<span id="cb2-4"><a></a>    <span class="im">from</span> collections.abc <span class="im">import</span> Sequence</span>
+<span id="cb2-5"><a></a>    <span class="im">from</span> typing <span class="im">import</span> ParamSpec, TypeAlias, TypeVar</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a>    <span class="im">import</span> jaxtyping</span>
+<span id="cb2-8"><a></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a>    <span class="im">from</span> array_api_strict._array_object <span class="im">import</span> Array</span>
+<span id="cb2-11"><a></a>    <span class="im">from</span> array_api_strict._dtypes <span class="im">import</span> DType</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a>    <span class="im">import</span> glass.jax</span>
+<span id="cb2-14"><a></a>    <span class="im">from</span> glass <span class="im">import</span> _rng</span>
+<span id="cb2-15"><a></a></span>
+<span id="cb2-16"><a></a>    P <span class="op">=</span> ParamSpec(<span class="st">"P"</span>)</span>
+<span id="cb2-17"><a></a>    R <span class="op">=</span> TypeVar(<span class="st">"R"</span>)</span>
+<span id="cb2-18"><a></a>    T <span class="op">=</span> TypeVar(<span class="st">"T"</span>)</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a>    AnyArray: TypeAlias <span class="op">=</span> np.typing.NDArray[Any] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
+<span id="cb2-21"><a></a>    ComplexArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.complex128] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
+<span id="cb2-22"><a></a>    DTypeLike: TypeAlias <span class="op">=</span> np.typing.DTypeLike <span class="op">|</span> jaxtyping.DTypeLike <span class="op">|</span> DType <span class="co"># typos: ignore</span></span>
+<span id="cb2-23"><a></a>    FloatArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.float64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
+<span id="cb2-24"><a></a>    IntArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.int64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
+<span id="cb2-25"><a></a>    UnifiedGenerator: TypeAlias <span class="op">=</span> (</span>
+<span id="cb2-26"><a></a>        np.random.Generator <span class="op">|</span> glass.jax.Generator <span class="op">|</span> _rng.Generator</span>
+<span id="cb2-27"><a></a>    )</span>
+<span id="cb2-28"><a></a></span>
+<span id="cb2-29"><a></a>    AngularPowerSpectra: TypeAlias <span class="op">=</span> Sequence[AnyArray]</span>
+<span id="cb2-30"><a></a><span class="cf">else</span>:</span>
+<span id="cb2-31"><a></a>    <span class="co"># Runtime fallbacks (for Sphinx / autodoc)</span></span>
+<span id="cb2-32"><a></a>    <span class="co"># https://github.com/sphinx-doc/sphinx/issues/11991</span></span>
+<span id="cb2-33"><a></a>    AnyArray <span class="op">=</span> Any</span>
+<span id="cb2-34"><a></a>    ComplexArray <span class="op">=</span> Any</span>
+<span id="cb2-35"><a></a>    DTypeLike <span class="op">=</span> Any</span>
+<span id="cb2-36"><a></a>    FloatArray <span class="op">=</span> Any</span>
+<span id="cb2-37"><a></a>    IntArray <span class="op">=</span> Any</span>
+<span id="cb2-38"><a></a>    UnifiedGenerator <span class="op">=</span> Any</span>
+<span id="cb2-39"><a></a></span>
+<span id="cb2-40"><a></a>    AngularPowerSpectra <span class="op">=</span> Any</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+<h2>Benchmarking</h2>
+<p>Perform regression tests by using <a href="https://pypi.org/project/pytest-benchmark">pytest-benchmark</a> <i class="fa-brands fa-python" aria-label="python"></i>.</p>
+<p><img data-src="figures/regression.png" alt="A screenshot from GitHub Actions showing the output of an example failing regression test workflow."></p>
+<p>JAX does not allow array mutation, so need to be careful not to regress NumPy as a result of enabling JAX.</p>
+</section>
+<section class="slide level2">
+<h2>Additional Array API Utilities</h2>
+<p><a href="https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/_array_api_utils.py#L1-L617">glass/_array_api_utils.py</a> for functions not in the <a href="https://data-apis.org/array-api">specification</a> nor in <a href="https://pypi.org/project/array-api-extra">array-api-extra</a> <i class="fa-brands fa-python" aria-label="python"></i>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="88-99|517-547"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co">"""</span></span>
+<span id="cb3-2"><a></a><span class="co">Array API Utilities for glass.</span></span>
+<span id="cb3-3"><a></a><span class="co">==============================</span></span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="co">This module provides utility functions and classes for working with multiple array</span></span>
+<span id="cb3-6"><a></a><span class="co">backends in the glass project, including NumPy, JAX, and array-api-strict. It includes</span></span>
+<span id="cb3-7"><a></a><span class="co">functions for importing backends, determining array namespaces, dispatching random</span></span>
+<span id="cb3-8"><a></a><span class="co">number generators, and providing missing functionality for array-api-strict through the</span></span>
+<span id="cb3-9"><a></a><span class="co">xp_additions class.</span></span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="co">Classes and functions in this module help ensure consistent behavior and compatibility</span></span>
+<span id="cb3-12"><a></a><span class="co">across different array libraries, and provide wrappers for common operations such as</span></span>
+<span id="cb3-13"><a></a><span class="co">integration, interpolation, and linear algebra.</span></span>
+<span id="cb3-14"><a></a></span>
+<span id="cb3-15"><a></a><span class="co">"""</span></span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb3-18"><a></a></span>
+<span id="cb3-19"><a></a><span class="im">import</span> functools</span>
+<span id="cb3-20"><a></a><span class="im">from</span> typing <span class="im">import</span> TYPE_CHECKING, Any</span>
+<span id="cb3-21"><a></a></span>
+<span id="cb3-22"><a></a><span class="im">import</span> array_api_compat</span>
+<span id="cb3-23"><a></a></span>
+<span id="cb3-24"><a></a><span class="cf">if</span> TYPE_CHECKING:</span>
+<span id="cb3-25"><a></a>    <span class="im">from</span> collections.abc <span class="im">import</span> Callable, Sequence</span>
+<span id="cb3-26"><a></a>    <span class="im">from</span> types <span class="im">import</span> ModuleType</span>
+<span id="cb3-27"><a></a></span>
+<span id="cb3-28"><a></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-29"><a></a></span>
+<span id="cb3-30"><a></a>    <span class="im">from</span> glass._types <span class="im">import</span> AnyArray, DTypeLike, IntArray</span>
+<span id="cb3-31"><a></a></span>
+<span id="cb3-32"><a></a></span>
+<span id="cb3-33"><a></a><span class="kw">class</span> CompatibleBackendNotFoundError(<span class="pp">Exception</span>):</span>
+<span id="cb3-34"><a></a>    <span class="co">"""</span></span>
+<span id="cb3-35"><a></a><span class="co">    Exception raised when an array library backend that</span></span>
+<span id="cb3-36"><a></a><span class="co">    implements a requested function, is not found.</span></span>
+<span id="cb3-37"><a></a></span>
+<span id="cb3-38"><a></a><span class="co">    """</span></span>
+<span id="cb3-39"><a></a></span>
+<span id="cb3-40"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, missing_backend: <span class="bu">str</span>, users_backend: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-41"><a></a>        <span class="va">self</span>.message <span class="op">=</span> (</span>
+<span id="cb3-42"><a></a>            <span class="ss">f"</span><span class="sc">{</span>missing_backend<span class="sc">}</span><span class="ss"> is required here as "</span></span>
+<span id="cb3-43"><a></a>            <span class="st">"no alternative has been provided by the user."</span></span>
+<span id="cb3-44"><a></a>            <span class="cf">if</span> users_backend <span class="kw">is</span> <span class="va">None</span></span>
+<span id="cb3-45"><a></a>            <span class="cf">else</span> <span class="ss">f"GLASS depends on functions not supported by </span><span class="sc">{</span>users_backend<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-46"><a></a>        )</span>
+<span id="cb3-47"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(<span class="va">self</span>.message)</span>
+<span id="cb3-48"><a></a></span>
+<span id="cb3-49"><a></a></span>
+<span id="cb3-50"><a></a><span class="kw">def</span> import_numpy(backend: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> ModuleType:</span>
+<span id="cb3-51"><a></a>    <span class="co">"""</span></span>
+<span id="cb3-52"><a></a><span class="co">    Import the NumPy module, raising a helpful error if NumPy is not installed.</span></span>
+<span id="cb3-53"><a></a></span>
+<span id="cb3-54"><a></a><span class="co">    Parameters</span></span>
+<span id="cb3-55"><a></a><span class="co">    ----------</span></span>
+<span id="cb3-56"><a></a><span class="co">    backend</span></span>
+<span id="cb3-57"><a></a><span class="co">        The name of the backend requested by the user.</span></span>
+<span id="cb3-58"><a></a></span>
+<span id="cb3-59"><a></a><span class="co">    Returns</span></span>
+<span id="cb3-60"><a></a><span class="co">    -------</span></span>
+<span id="cb3-61"><a></a><span class="co">        The NumPy module.</span></span>
+<span id="cb3-62"><a></a></span>
+<span id="cb3-63"><a></a><span class="co">    Raises</span></span>
+<span id="cb3-64"><a></a><span class="co">    ------</span></span>
+<span id="cb3-65"><a></a><span class="co">    ModuleNotFoundError</span></span>
+<span id="cb3-66"><a></a><span class="co">        If NumPy is not found in the user's environment.</span></span>
+<span id="cb3-67"><a></a></span>
+<span id="cb3-68"><a></a><span class="co">    Notes</span></span>
+<span id="cb3-69"><a></a><span class="co">    -----</span></span>
+<span id="cb3-70"><a></a><span class="co">    This is useful for explaining to the user why NumPy is required when their chosen</span></span>
+<span id="cb3-71"><a></a><span class="co">    backend does not implement a needed function.</span></span>
+<span id="cb3-72"><a></a></span>
+<span id="cb3-73"><a></a><span class="co">    """</span></span>
+<span id="cb3-74"><a></a>    <span class="cf">try</span>:</span>
+<span id="cb3-75"><a></a>        <span class="im">import</span> numpy  <span class="co"># noqa: ICN001, PLC0415</span></span>
+<span id="cb3-76"><a></a></span>
+<span id="cb3-77"><a></a>    <span class="cf">except</span> <span class="pp">ModuleNotFoundError</span> <span class="im">as</span> err:</span>
+<span id="cb3-78"><a></a>        <span class="cf">raise</span> CompatibleBackendNotFoundError(<span class="st">"numpy"</span>, backend) <span class="im">from</span> err</span>
+<span id="cb3-79"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb3-80"><a></a>        <span class="cf">return</span> numpy</span>
+<span id="cb3-81"><a></a></span>
+<span id="cb3-82"><a></a></span>
+<span id="cb3-83"><a></a><span class="kw">def</span> default_xp() <span class="op">-&gt;</span> ModuleType:</span>
+<span id="cb3-84"><a></a>    <span class="co">"""Returns the library backend we default to if none is specified by the user."""</span></span>
+<span id="cb3-85"><a></a>    <span class="cf">return</span> import_numpy()</span>
+<span id="cb3-86"><a></a></span>
+<span id="cb3-87"><a></a></span>
+<span id="cb3-88"><a></a><span class="kw">class</span> xp_additions:  <span class="co"># noqa: N801</span></span>
+<span id="cb3-89"><a></a>    <span class="co">"""</span></span>
+<span id="cb3-90"><a></a><span class="co">    Additional functions missing from both array-api-strict and array-api-extra.</span></span>
+<span id="cb3-91"><a></a></span>
+<span id="cb3-92"><a></a><span class="co">    This class provides wrappers for common array operations such as integration,</span></span>
+<span id="cb3-93"><a></a><span class="co">    interpolation, and linear algebra, ensuring compatibility across NumPy, JAX,</span></span>
+<span id="cb3-94"><a></a><span class="co">    and array-api-strict backends.</span></span>
+<span id="cb3-95"><a></a></span>
+<span id="cb3-96"><a></a><span class="co">    This is intended as a temporary solution. See</span></span>
+<span id="cb3-97"><a></a><span class="co">    https://github.com/glass-dev/glass/issues/645 for details.</span></span>
+<span id="cb3-98"><a></a></span>
+<span id="cb3-99"><a></a><span class="co">    """</span></span>
+<span id="cb3-100"><a></a></span>
+<span id="cb3-101"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-102"><a></a>    <span class="kw">def</span> trapezoid(</span>
+<span id="cb3-103"><a></a>        y: AnyArray,</span>
+<span id="cb3-104"><a></a>        x: AnyArray <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-105"><a></a>        dx: <span class="bu">float</span> <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb3-106"><a></a>        axis: <span class="bu">int</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>,</span>
+<span id="cb3-107"><a></a>    ) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-108"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-109"><a></a><span class="co">        Integrate along the given axis using the composite trapezoidal rule.</span></span>
+<span id="cb3-110"><a></a></span>
+<span id="cb3-111"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-112"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-113"><a></a><span class="co">        y</span></span>
+<span id="cb3-114"><a></a><span class="co">            Input array to integrate.</span></span>
+<span id="cb3-115"><a></a><span class="co">        x</span></span>
+<span id="cb3-116"><a></a><span class="co">            Sample points corresponding to y.</span></span>
+<span id="cb3-117"><a></a><span class="co">        dx</span></span>
+<span id="cb3-118"><a></a><span class="co">            Spacing between sample points.</span></span>
+<span id="cb3-119"><a></a><span class="co">        axis</span></span>
+<span id="cb3-120"><a></a><span class="co">            Axis along which to integrate.</span></span>
+<span id="cb3-121"><a></a></span>
+<span id="cb3-122"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-123"><a></a><span class="co">        -------</span></span>
+<span id="cb3-124"><a></a><span class="co">            Integrated result.</span></span>
+<span id="cb3-125"><a></a></span>
+<span id="cb3-126"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-127"><a></a><span class="co">        ------</span></span>
+<span id="cb3-128"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-129"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-130"><a></a></span>
+<span id="cb3-131"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-132"><a></a><span class="co">        -----</span></span>
+<span id="cb3-133"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/646</span></span>
+<span id="cb3-134"><a></a></span>
+<span id="cb3-135"><a></a><span class="co">        """</span></span>
+<span id="cb3-136"><a></a>        xp <span class="op">=</span> array_api_compat.array_namespace(y, x, use_compat<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-137"><a></a></span>
+<span id="cb3-138"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"jax.numpy"</span>:</span>
+<span id="cb3-139"><a></a>            <span class="im">import</span> glass.jax  <span class="co"># noqa: PLC0415</span></span>
+<span id="cb3-140"><a></a></span>
+<span id="cb3-141"><a></a>            <span class="cf">return</span> glass.jax.trapezoid(y, x<span class="op">=</span>x, dx<span class="op">=</span>dx, axis<span class="op">=</span>axis)</span>
+<span id="cb3-142"><a></a></span>
+<span id="cb3-143"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"numpy"</span>:</span>
+<span id="cb3-144"><a></a>            <span class="cf">return</span> xp.trapezoid(y, x<span class="op">=</span>x, dx<span class="op">=</span>dx, axis<span class="op">=</span>axis)</span>
+<span id="cb3-145"><a></a></span>
+<span id="cb3-146"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-147"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-148"><a></a></span>
+<span id="cb3-149"><a></a>            <span class="co"># Using design principle of scipy (i.e. copy, use np, copy back)</span></span>
+<span id="cb3-150"><a></a>            y_np <span class="op">=</span> np.asarray(y, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-151"><a></a>            x_np <span class="op">=</span> np.asarray(x, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-152"><a></a>            result_np <span class="op">=</span> np.trapezoid(y_np, x_np, dx<span class="op">=</span>dx, axis<span class="op">=</span>axis)</span>
+<span id="cb3-153"><a></a>            <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-154"><a></a></span>
+<span id="cb3-155"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-156"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-157"><a></a></span>
+<span id="cb3-158"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-159"><a></a>    <span class="kw">def</span> interp(  <span class="co"># noqa: PLR0913</span></span>
+<span id="cb3-160"><a></a>        x: AnyArray,</span>
+<span id="cb3-161"><a></a>        x_points: AnyArray,</span>
+<span id="cb3-162"><a></a>        y_points: AnyArray,</span>
+<span id="cb3-163"><a></a>        left: <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-164"><a></a>        right: <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-165"><a></a>        period: <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-166"><a></a>    ) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-167"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-168"><a></a><span class="co">        One-dimensional linear interpolation for monotonically increasing sample points.</span></span>
+<span id="cb3-169"><a></a></span>
+<span id="cb3-170"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-171"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-172"><a></a><span class="co">        x</span></span>
+<span id="cb3-173"><a></a><span class="co">            The x-coordinates at which to evaluate the interpolated values.</span></span>
+<span id="cb3-174"><a></a><span class="co">        x_points</span></span>
+<span id="cb3-175"><a></a><span class="co">            The x-coordinates of the data points.</span></span>
+<span id="cb3-176"><a></a><span class="co">        y_points</span></span>
+<span id="cb3-177"><a></a><span class="co">            The y-coordinates of the data points.</span></span>
+<span id="cb3-178"><a></a><span class="co">        left</span></span>
+<span id="cb3-179"><a></a><span class="co">            Value to return for x &lt; x_points[0].</span></span>
+<span id="cb3-180"><a></a><span class="co">        right</span></span>
+<span id="cb3-181"><a></a><span class="co">            Value to return for x &gt; x_points[-1].</span></span>
+<span id="cb3-182"><a></a><span class="co">        period</span></span>
+<span id="cb3-183"><a></a><span class="co">            Period for periodic interpolation.</span></span>
+<span id="cb3-184"><a></a></span>
+<span id="cb3-185"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-186"><a></a><span class="co">        -------</span></span>
+<span id="cb3-187"><a></a><span class="co">            Interpolated values.</span></span>
+<span id="cb3-188"><a></a></span>
+<span id="cb3-189"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-190"><a></a><span class="co">        ------</span></span>
+<span id="cb3-191"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-192"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-193"><a></a></span>
+<span id="cb3-194"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-195"><a></a><span class="co">        -----</span></span>
+<span id="cb3-196"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/650</span></span>
+<span id="cb3-197"><a></a></span>
+<span id="cb3-198"><a></a><span class="co">        """</span></span>
+<span id="cb3-199"><a></a>        xp <span class="op">=</span> array_api_compat.array_namespace(x, x_points, y_points, use_compat<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-200"><a></a></span>
+<span id="cb3-201"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-202"><a></a>            <span class="cf">return</span> xp.interp(</span>
+<span id="cb3-203"><a></a>                x,</span>
+<span id="cb3-204"><a></a>                x_points,</span>
+<span id="cb3-205"><a></a>                y_points,</span>
+<span id="cb3-206"><a></a>                left<span class="op">=</span>left,</span>
+<span id="cb3-207"><a></a>                right<span class="op">=</span>right,</span>
+<span id="cb3-208"><a></a>                period<span class="op">=</span>period,</span>
+<span id="cb3-209"><a></a>            )</span>
+<span id="cb3-210"><a></a></span>
+<span id="cb3-211"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-212"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-213"><a></a></span>
+<span id="cb3-214"><a></a>            <span class="co"># Using design principle of scipy (i.e. copy, use np, copy back)</span></span>
+<span id="cb3-215"><a></a>            x_np <span class="op">=</span> np.asarray(x, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-216"><a></a>            x_points_np <span class="op">=</span> np.asarray(x_points, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-217"><a></a>            y_points_np <span class="op">=</span> np.asarray(y_points, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-218"><a></a>            result_np <span class="op">=</span> np.interp(</span>
+<span id="cb3-219"><a></a>                x_np,</span>
+<span id="cb3-220"><a></a>                x_points_np,</span>
+<span id="cb3-221"><a></a>                y_points_np,</span>
+<span id="cb3-222"><a></a>                left<span class="op">=</span>left,</span>
+<span id="cb3-223"><a></a>                right<span class="op">=</span>right,</span>
+<span id="cb3-224"><a></a>                period<span class="op">=</span>period,</span>
+<span id="cb3-225"><a></a>            )</span>
+<span id="cb3-226"><a></a>            <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-227"><a></a></span>
+<span id="cb3-228"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-229"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-230"><a></a></span>
+<span id="cb3-231"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-232"><a></a>    <span class="kw">def</span> gradient(f: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-233"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-234"><a></a><span class="co">        Return the gradient of an N-dimensional array.</span></span>
+<span id="cb3-235"><a></a></span>
+<span id="cb3-236"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-237"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-238"><a></a><span class="co">        f</span></span>
+<span id="cb3-239"><a></a><span class="co">            Input array.</span></span>
+<span id="cb3-240"><a></a></span>
+<span id="cb3-241"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-242"><a></a><span class="co">        -------</span></span>
+<span id="cb3-243"><a></a><span class="co">            Gradient of the input array.</span></span>
+<span id="cb3-244"><a></a></span>
+<span id="cb3-245"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-246"><a></a><span class="co">        ------</span></span>
+<span id="cb3-247"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-248"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-249"><a></a></span>
+<span id="cb3-250"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-251"><a></a><span class="co">        -----</span></span>
+<span id="cb3-252"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/648</span></span>
+<span id="cb3-253"><a></a></span>
+<span id="cb3-254"><a></a><span class="co">        """</span></span>
+<span id="cb3-255"><a></a>        xp <span class="op">=</span> f.__array_namespace__()</span>
+<span id="cb3-256"><a></a></span>
+<span id="cb3-257"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-258"><a></a>            <span class="cf">return</span> xp.gradient(f)</span>
+<span id="cb3-259"><a></a></span>
+<span id="cb3-260"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-261"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-262"><a></a>            <span class="co"># Using design principle of scipy (i.e. copy, use np, copy back)</span></span>
+<span id="cb3-263"><a></a>            f_np <span class="op">=</span> np.asarray(f, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-264"><a></a>            result_np <span class="op">=</span> np.gradient(f_np)</span>
+<span id="cb3-265"><a></a>            <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-266"><a></a></span>
+<span id="cb3-267"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-268"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-269"><a></a></span>
+<span id="cb3-270"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-271"><a></a>    <span class="kw">def</span> linalg_lstsq(</span>
+<span id="cb3-272"><a></a>        a: AnyArray,</span>
+<span id="cb3-273"><a></a>        b: AnyArray,</span>
+<span id="cb3-274"><a></a>        rcond: <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-275"><a></a>    ) <span class="op">-&gt;</span> <span class="bu">tuple</span>[AnyArray, AnyArray, <span class="bu">int</span>, AnyArray]:</span>
+<span id="cb3-276"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-277"><a></a><span class="co">        Solve a linear least squares problem.</span></span>
+<span id="cb3-278"><a></a></span>
+<span id="cb3-279"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-280"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-281"><a></a><span class="co">        a</span></span>
+<span id="cb3-282"><a></a><span class="co">            Coefficient matrix.</span></span>
+<span id="cb3-283"><a></a><span class="co">        b</span></span>
+<span id="cb3-284"><a></a><span class="co">            Ordinate or "dependent variable" values.</span></span>
+<span id="cb3-285"><a></a><span class="co">        rcond</span></span>
+<span id="cb3-286"><a></a><span class="co">            Cut-off ratio for small singular values.</span></span>
+<span id="cb3-287"><a></a></span>
+<span id="cb3-288"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-289"><a></a><span class="co">        -------</span></span>
+<span id="cb3-290"><a></a><span class="co">        x</span></span>
+<span id="cb3-291"><a></a><span class="co">            Least-squares solution. If b is two-dimensional, the solutions are in the K</span></span>
+<span id="cb3-292"><a></a><span class="co">            columns of x.</span></span>
+<span id="cb3-293"><a></a></span>
+<span id="cb3-294"><a></a><span class="co">        residuals</span></span>
+<span id="cb3-295"><a></a><span class="co">            Sums of squared residuals: Squared Euclidean 2-norm for each column in b - a</span></span>
+<span id="cb3-296"><a></a><span class="co">            @ x. If the rank of a is &lt; N or M &lt;= N, this is an empty array. If b is</span></span>
+<span id="cb3-297"><a></a><span class="co">            1-dimensional, this is a (1,) shape array. Otherwise the shape is (K,).</span></span>
+<span id="cb3-298"><a></a></span>
+<span id="cb3-299"><a></a><span class="co">        rank</span></span>
+<span id="cb3-300"><a></a><span class="co">            Rank of matrix a.</span></span>
+<span id="cb3-301"><a></a></span>
+<span id="cb3-302"><a></a><span class="co">        s</span></span>
+<span id="cb3-303"><a></a><span class="co">            Singular values of a.</span></span>
+<span id="cb3-304"><a></a></span>
+<span id="cb3-305"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-306"><a></a><span class="co">        ------</span></span>
+<span id="cb3-307"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-308"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-309"><a></a></span>
+<span id="cb3-310"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-311"><a></a><span class="co">        -----</span></span>
+<span id="cb3-312"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/649</span></span>
+<span id="cb3-313"><a></a></span>
+<span id="cb3-314"><a></a><span class="co">        """</span></span>
+<span id="cb3-315"><a></a>        xp <span class="op">=</span> array_api_compat.array_namespace(a, b, use_compat<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-316"><a></a></span>
+<span id="cb3-317"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-318"><a></a>            <span class="cf">return</span> xp.linalg.lstsq(a, b, rcond<span class="op">=</span>rcond)</span>
+<span id="cb3-319"><a></a></span>
+<span id="cb3-320"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-321"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-322"><a></a></span>
+<span id="cb3-323"><a></a>            <span class="co"># Using design principle of scipy (i.e. copy, use np, copy back)</span></span>
+<span id="cb3-324"><a></a>            a_np <span class="op">=</span> np.asarray(a, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-325"><a></a>            b_np <span class="op">=</span> np.asarray(b, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-326"><a></a>            result_np <span class="op">=</span> np.linalg.lstsq(a_np, b_np, rcond<span class="op">=</span>rcond)</span>
+<span id="cb3-327"><a></a>            <span class="cf">return</span> <span class="bu">tuple</span>(xp.asarray(res, copy<span class="op">=</span><span class="va">True</span>) <span class="cf">for</span> res <span class="kw">in</span> result_np)</span>
+<span id="cb3-328"><a></a></span>
+<span id="cb3-329"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-330"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-331"><a></a></span>
+<span id="cb3-332"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-333"><a></a>    <span class="kw">def</span> einsum(subscripts: <span class="bu">str</span>, <span class="op">*</span>operands: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-334"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-335"><a></a><span class="co">        Evaluate the Einstein summation convention on the operands.</span></span>
+<span id="cb3-336"><a></a></span>
+<span id="cb3-337"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-338"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-339"><a></a><span class="co">        subscripts</span></span>
+<span id="cb3-340"><a></a><span class="co">            Specifies the subscripts for summation.</span></span>
+<span id="cb3-341"><a></a><span class="co">        *operands</span></span>
+<span id="cb3-342"><a></a><span class="co">            Arrays to be summed.</span></span>
+<span id="cb3-343"><a></a></span>
+<span id="cb3-344"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-345"><a></a><span class="co">        -------</span></span>
+<span id="cb3-346"><a></a><span class="co">            Result of the Einstein summation.</span></span>
+<span id="cb3-347"><a></a></span>
+<span id="cb3-348"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-349"><a></a><span class="co">        ------</span></span>
+<span id="cb3-350"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-351"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-352"><a></a></span>
+<span id="cb3-353"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-354"><a></a><span class="co">        -----</span></span>
+<span id="cb3-355"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/657</span></span>
+<span id="cb3-356"><a></a></span>
+<span id="cb3-357"><a></a><span class="co">        """</span></span>
+<span id="cb3-358"><a></a>        xp <span class="op">=</span> array_api_compat.array_namespace(<span class="op">*</span>operands, use_compat<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-359"><a></a></span>
+<span id="cb3-360"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-361"><a></a>            <span class="cf">return</span> xp.einsum(subscripts, <span class="op">*</span>operands)</span>
+<span id="cb3-362"><a></a></span>
+<span id="cb3-363"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-364"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-365"><a></a></span>
+<span id="cb3-366"><a></a>            <span class="co"># Using design principle of scipy (i.e. copy, use np, copy back)</span></span>
+<span id="cb3-367"><a></a>            operands_np <span class="op">=</span> (np.asarray(op, copy<span class="op">=</span><span class="va">True</span>) <span class="cf">for</span> op <span class="kw">in</span> operands)</span>
+<span id="cb3-368"><a></a>            result_np <span class="op">=</span> np.einsum(subscripts, <span class="op">*</span>operands_np)</span>
+<span id="cb3-369"><a></a>            <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-370"><a></a></span>
+<span id="cb3-371"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-372"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-373"><a></a></span>
+<span id="cb3-374"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-375"><a></a>    <span class="kw">def</span> apply_along_axis(</span>
+<span id="cb3-376"><a></a>        func: Callable[..., Any],</span>
+<span id="cb3-377"><a></a>        func_inputs: <span class="bu">tuple</span>[Any, ...],</span>
+<span id="cb3-378"><a></a>        axis: <span class="bu">int</span>,</span>
+<span id="cb3-379"><a></a>        arr: AnyArray,</span>
+<span id="cb3-380"><a></a>        <span class="op">*</span>args: <span class="bu">object</span>,</span>
+<span id="cb3-381"><a></a>        <span class="op">**</span>kwargs: <span class="bu">object</span>,</span>
+<span id="cb3-382"><a></a>    ) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-383"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-384"><a></a><span class="co">        Apply a function to 1-D slices along the given axis.</span></span>
+<span id="cb3-385"><a></a></span>
+<span id="cb3-386"><a></a><span class="co">        Rather than accepting a partial function as usual, the function and</span></span>
+<span id="cb3-387"><a></a><span class="co">        its inputs are passed in separately for better compatibility.</span></span>
+<span id="cb3-388"><a></a></span>
+<span id="cb3-389"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-390"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-391"><a></a><span class="co">        func</span></span>
+<span id="cb3-392"><a></a><span class="co">            Function to apply to 1-D slices.</span></span>
+<span id="cb3-393"><a></a><span class="co">        func_inputs</span></span>
+<span id="cb3-394"><a></a><span class="co">            All inputs to the func besides arr.</span></span>
+<span id="cb3-395"><a></a><span class="co">        axis</span></span>
+<span id="cb3-396"><a></a><span class="co">            Axis along which to apply the function.</span></span>
+<span id="cb3-397"><a></a><span class="co">        arr</span></span>
+<span id="cb3-398"><a></a><span class="co">            Input array.</span></span>
+<span id="cb3-399"><a></a><span class="co">        *args</span></span>
+<span id="cb3-400"><a></a><span class="co">            Additional positional arguments to pass to func1d.</span></span>
+<span id="cb3-401"><a></a><span class="co">        **kwargs</span></span>
+<span id="cb3-402"><a></a><span class="co">            Additional keyword arguments to pass to func1d.</span></span>
+<span id="cb3-403"><a></a></span>
+<span id="cb3-404"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-405"><a></a><span class="co">        -------</span></span>
+<span id="cb3-406"><a></a><span class="co">            Result of applying the function along the axis.</span></span>
+<span id="cb3-407"><a></a></span>
+<span id="cb3-408"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-409"><a></a><span class="co">        ------</span></span>
+<span id="cb3-410"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-411"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-412"><a></a></span>
+<span id="cb3-413"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-414"><a></a><span class="co">        -----</span></span>
+<span id="cb3-415"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/651</span></span>
+<span id="cb3-416"><a></a></span>
+<span id="cb3-417"><a></a><span class="co">        """</span></span>
+<span id="cb3-418"><a></a>        xp <span class="op">=</span> array_api_compat.array_namespace(arr, <span class="op">*</span>func_inputs, use_compat<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-419"><a></a></span>
+<span id="cb3-420"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-421"><a></a>            func1d <span class="op">=</span> functools.partial(func, <span class="op">*</span>func_inputs)</span>
+<span id="cb3-422"><a></a>            <span class="cf">return</span> xp.apply_along_axis(func1d, axis, arr, <span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb3-423"><a></a></span>
+<span id="cb3-424"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-425"><a></a>            <span class="co"># Import here to prevent users relying on numpy unless in this instance</span></span>
+<span id="cb3-426"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-427"><a></a></span>
+<span id="cb3-428"><a></a>            <span class="co"># Everything must be NumPy to avoid mismatches between array types</span></span>
+<span id="cb3-429"><a></a>            inputs_np <span class="op">=</span> (np.asarray(inp) <span class="cf">for</span> inp <span class="kw">in</span> func_inputs)</span>
+<span id="cb3-430"><a></a>            func1d <span class="op">=</span> functools.partial(func, <span class="op">*</span>inputs_np)</span>
+<span id="cb3-431"><a></a></span>
+<span id="cb3-432"><a></a>            <span class="cf">return</span> xp.asarray(</span>
+<span id="cb3-433"><a></a>                np.apply_along_axis(func1d, axis, arr, <span class="op">*</span>args, <span class="op">**</span>kwargs),</span>
+<span id="cb3-434"><a></a>                copy<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-435"><a></a>            )</span>
+<span id="cb3-436"><a></a></span>
+<span id="cb3-437"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-438"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-439"><a></a></span>
+<span id="cb3-440"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-441"><a></a>    <span class="kw">def</span> vectorize(</span>
+<span id="cb3-442"><a></a>        pyfunc: Callable[..., Any],</span>
+<span id="cb3-443"><a></a>        otypes: <span class="bu">str</span> <span class="op">|</span> Sequence[DTypeLike],</span>
+<span id="cb3-444"><a></a>        <span class="op">*</span>,</span>
+<span id="cb3-445"><a></a>        xp: ModuleType,</span>
+<span id="cb3-446"><a></a>    ) <span class="op">-&gt;</span> Callable[..., Any]:</span>
+<span id="cb3-447"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-448"><a></a><span class="co">        Returns an object that acts like pyfunc, but takes arrays as input.</span></span>
+<span id="cb3-449"><a></a></span>
+<span id="cb3-450"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-451"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-452"><a></a><span class="co">        pyfunc</span></span>
+<span id="cb3-453"><a></a><span class="co">            Python function to vectorize.</span></span>
+<span id="cb3-454"><a></a><span class="co">        otypes</span></span>
+<span id="cb3-455"><a></a><span class="co">            Output types.</span></span>
+<span id="cb3-456"><a></a><span class="co">        xp</span></span>
+<span id="cb3-457"><a></a><span class="co">            The array library backend to use for array operations.</span></span>
+<span id="cb3-458"><a></a></span>
+<span id="cb3-459"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-460"><a></a><span class="co">        -------</span></span>
+<span id="cb3-461"><a></a><span class="co">            Vectorized function.</span></span>
+<span id="cb3-462"><a></a></span>
+<span id="cb3-463"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-464"><a></a><span class="co">        ------</span></span>
+<span id="cb3-465"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-466"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-467"><a></a></span>
+<span id="cb3-468"><a></a><span class="co">        Notes</span></span>
+<span id="cb3-469"><a></a><span class="co">        -----</span></span>
+<span id="cb3-470"><a></a><span class="co">        See https://github.com/glass-dev/glass/issues/671</span></span>
+<span id="cb3-471"><a></a></span>
+<span id="cb3-472"><a></a><span class="co">        """</span></span>
+<span id="cb3-473"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"numpy"</span>:</span>
+<span id="cb3-474"><a></a>            <span class="cf">return</span> xp.vectorize(pyfunc, otypes<span class="op">=</span>otypes)</span>
+<span id="cb3-475"><a></a></span>
+<span id="cb3-476"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"array_api_strict"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-477"><a></a>            <span class="co"># Import here to prevent users relying on numpy unless in this instance</span></span>
+<span id="cb3-478"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-479"><a></a></span>
+<span id="cb3-480"><a></a>            <span class="cf">return</span> np.vectorize(pyfunc, otypes<span class="op">=</span>otypes)</span>
+<span id="cb3-481"><a></a></span>
+<span id="cb3-482"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-483"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-484"><a></a></span>
+<span id="cb3-485"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-486"><a></a>    <span class="kw">def</span> radians(deg_arr: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-487"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-488"><a></a><span class="co">        Convert angles from degrees to radians.</span></span>
+<span id="cb3-489"><a></a></span>
+<span id="cb3-490"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-491"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-492"><a></a><span class="co">        deg_arr</span></span>
+<span id="cb3-493"><a></a><span class="co">            Array of angles in degrees.</span></span>
+<span id="cb3-494"><a></a></span>
+<span id="cb3-495"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-496"><a></a><span class="co">        -------</span></span>
+<span id="cb3-497"><a></a><span class="co">            Array of angles in radians.</span></span>
+<span id="cb3-498"><a></a></span>
+<span id="cb3-499"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-500"><a></a><span class="co">        ------</span></span>
+<span id="cb3-501"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-502"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-503"><a></a></span>
+<span id="cb3-504"><a></a><span class="co">        """</span></span>
+<span id="cb3-505"><a></a>        xp <span class="op">=</span> deg_arr.__array_namespace__()</span>
+<span id="cb3-506"><a></a></span>
+<span id="cb3-507"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-508"><a></a>            <span class="cf">return</span> xp.radians(deg_arr)</span>
+<span id="cb3-509"><a></a></span>
+<span id="cb3-510"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-511"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-512"><a></a>            <span class="cf">return</span> xp.asarray(np.radians(deg_arr))</span>
+<span id="cb3-513"><a></a></span>
+<span id="cb3-514"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-515"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-516"><a></a></span>
+<span id="cb3-517"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-518"><a></a>    <span class="kw">def</span> degrees(rad_arr: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb3-519"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-520"><a></a><span class="co">        Convert angles from radians to degrees.</span></span>
+<span id="cb3-521"><a></a></span>
+<span id="cb3-522"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-523"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-524"><a></a><span class="co">        rad_arr</span></span>
+<span id="cb3-525"><a></a><span class="co">            Array of angles in radians.</span></span>
+<span id="cb3-526"><a></a></span>
+<span id="cb3-527"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-528"><a></a><span class="co">        -------</span></span>
+<span id="cb3-529"><a></a><span class="co">            Array of angles in degrees.</span></span>
+<span id="cb3-530"><a></a></span>
+<span id="cb3-531"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-532"><a></a><span class="co">        ------</span></span>
+<span id="cb3-533"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-534"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-535"><a></a></span>
+<span id="cb3-536"><a></a><span class="co">        """</span></span>
+<span id="cb3-537"><a></a>        xp <span class="op">=</span> rad_arr.__array_namespace__()</span>
+<span id="cb3-538"><a></a></span>
+<span id="cb3-539"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-540"><a></a>            <span class="cf">return</span> xp.degrees(rad_arr)</span>
+<span id="cb3-541"><a></a></span>
+<span id="cb3-542"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-543"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-544"><a></a>            <span class="cf">return</span> xp.asarray(np.degrees(rad_arr))</span>
+<span id="cb3-545"><a></a></span>
+<span id="cb3-546"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-547"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-548"><a></a></span>
+<span id="cb3-549"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-550"><a></a>    <span class="kw">def</span> ndindex(shape: <span class="bu">tuple</span>[<span class="bu">int</span>, ...], <span class="op">*</span>, xp: ModuleType) <span class="op">-&gt;</span> np.ndindex:</span>
+<span id="cb3-551"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-552"><a></a><span class="co">        Wrapper for numpy.ndindex.</span></span>
+<span id="cb3-553"><a></a></span>
+<span id="cb3-554"><a></a><span class="co">        See relevant docs for details:</span></span>
+<span id="cb3-555"><a></a><span class="co">        - NumPy, https://numpy.org/doc/2.2/reference/generated/numpy.ndindex.html</span></span>
+<span id="cb3-556"><a></a></span>
+<span id="cb3-557"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-558"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-559"><a></a><span class="co">        shape</span></span>
+<span id="cb3-560"><a></a><span class="co">            Shape of the array to index.</span></span>
+<span id="cb3-561"><a></a><span class="co">        xp</span></span>
+<span id="cb3-562"><a></a><span class="co">            The array library backend to use for array operations.</span></span>
+<span id="cb3-563"><a></a></span>
+<span id="cb3-564"><a></a><span class="co">        Raises</span></span>
+<span id="cb3-565"><a></a><span class="co">        ------</span></span>
+<span id="cb3-566"><a></a><span class="co">        NotImplementedError</span></span>
+<span id="cb3-567"><a></a><span class="co">            If the array backend is not supported.</span></span>
+<span id="cb3-568"><a></a></span>
+<span id="cb3-569"><a></a><span class="co">        """</span></span>
+<span id="cb3-570"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"numpy"</span>:</span>
+<span id="cb3-571"><a></a>            <span class="cf">return</span> xp.ndindex(shape)</span>
+<span id="cb3-572"><a></a></span>
+<span id="cb3-573"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"array_api_strict"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-574"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-575"><a></a>            <span class="cf">return</span> np.ndindex(shape)</span>
+<span id="cb3-576"><a></a></span>
+<span id="cb3-577"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-578"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb3-579"><a></a></span>
+<span id="cb3-580"><a></a>    <span class="at">@staticmethod</span></span>
+<span id="cb3-581"><a></a>    <span class="kw">def</span> tril_indices(</span>
+<span id="cb3-582"><a></a>        n: <span class="bu">int</span>,</span>
+<span id="cb3-583"><a></a>        <span class="op">*</span>,</span>
+<span id="cb3-584"><a></a>        k: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span>,</span>
+<span id="cb3-585"><a></a>        m: <span class="bu">int</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb3-586"><a></a>        xp: ModuleType,</span>
+<span id="cb3-587"><a></a>    ) <span class="op">-&gt;</span> <span class="bu">tuple</span>[IntArray, ...]:</span>
+<span id="cb3-588"><a></a>        <span class="co">"""</span></span>
+<span id="cb3-589"><a></a><span class="co">        Return the indices for the lower-triangle of an (n, m) array.</span></span>
+<span id="cb3-590"><a></a></span>
+<span id="cb3-591"><a></a><span class="co">        Parameters</span></span>
+<span id="cb3-592"><a></a><span class="co">        ----------</span></span>
+<span id="cb3-593"><a></a><span class="co">        n</span></span>
+<span id="cb3-594"><a></a><span class="co">            The row dimension of the arrays for which the returned indices will be</span></span>
+<span id="cb3-595"><a></a><span class="co">            valid.</span></span>
+<span id="cb3-596"><a></a><span class="co">        k</span></span>
+<span id="cb3-597"><a></a><span class="co">            Diagonal offset.</span></span>
+<span id="cb3-598"><a></a><span class="co">        m</span></span>
+<span id="cb3-599"><a></a><span class="co">            The column dimension of the arrays for which the returned arrays will be</span></span>
+<span id="cb3-600"><a></a><span class="co">            valid. By default m is taken equal to n.</span></span>
+<span id="cb3-601"><a></a></span>
+<span id="cb3-602"><a></a><span class="co">        Returns</span></span>
+<span id="cb3-603"><a></a><span class="co">        -------</span></span>
+<span id="cb3-604"><a></a><span class="co">            The row and column indices, respectively. The row indices are sorted in</span></span>
+<span id="cb3-605"><a></a><span class="co">            non-decreasing order, and the corresponding column indices are strictly</span></span>
+<span id="cb3-606"><a></a><span class="co">            increasing for each row.</span></span>
+<span id="cb3-607"><a></a></span>
+<span id="cb3-608"><a></a><span class="co">        """</span></span>
+<span id="cb3-609"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb3-610"><a></a>            <span class="cf">return</span> xp.tril_indices(n, k<span class="op">=</span>k, m<span class="op">=</span>m)</span>
+<span id="cb3-611"><a></a></span>
+<span id="cb3-612"><a></a>        <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb3-613"><a></a>            np <span class="op">=</span> import_numpy(xp.<span class="va">__name__</span>)</span>
+<span id="cb3-614"><a></a>            <span class="cf">return</span> <span class="bu">tuple</span>(xp.asarray(arr) <span class="cf">for</span> arr <span class="kw">in</span> np.tril_indices(n, k<span class="op">=</span>k, m<span class="op">=</span>m))</span>
+<span id="cb3-615"><a></a></span>
+<span id="cb3-616"><a></a>        msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb3-617"><a></a>        <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+<h2>Random Number Generator</h2>
+<p><a href="https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/_rng.py#L1-L212">glass/_rng.py</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="24-55|58-65|141-161"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co">"""</span></span>
+<span id="cb4-2"><a></a><span class="co">Random Number Generation Utilities for glass.</span></span>
+<span id="cb4-3"><a></a><span class="co">=============================================</span></span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="co">This module includes functions for dispatching random number generators using consistent</span></span>
+<span id="cb4-6"><a></a><span class="co">seeds. The chhoice of rng generator is determined based on the array library chosen by</span></span>
+<span id="cb4-7"><a></a><span class="co">the user.</span></span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a><span class="co">"""</span></span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a><span class="im">from</span> typing <span class="im">import</span> TYPE_CHECKING</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a><span class="cf">if</span> TYPE_CHECKING:</span>
+<span id="cb4-16"><a></a>    <span class="im">from</span> types <span class="im">import</span> ModuleType</span>
+<span id="cb4-17"><a></a></span>
+<span id="cb4-18"><a></a>    <span class="im">from</span> glass._types <span class="im">import</span> DTypeLike, FloatArray, IntArray, UnifiedGenerator</span>
+<span id="cb4-19"><a></a></span>
+<span id="cb4-20"><a></a></span>
+<span id="cb4-21"><a></a>SEED <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb4-22"><a></a></span>
+<span id="cb4-23"><a></a></span>
+<span id="cb4-24"><a></a><span class="kw">def</span> rng_dispatcher(<span class="op">*</span>, xp: ModuleType) <span class="op">-&gt;</span> UnifiedGenerator:</span>
+<span id="cb4-25"><a></a>    <span class="co">"""</span></span>
+<span id="cb4-26"><a></a><span class="co">    Dispatch a random number generator based on the provided array's backend.</span></span>
+<span id="cb4-27"><a></a></span>
+<span id="cb4-28"><a></a><span class="co">    Parameters</span></span>
+<span id="cb4-29"><a></a><span class="co">    ----------</span></span>
+<span id="cb4-30"><a></a><span class="co">    xp</span></span>
+<span id="cb4-31"><a></a><span class="co">        The array library backend to use for array operations.</span></span>
+<span id="cb4-32"><a></a></span>
+<span id="cb4-33"><a></a><span class="co">    Returns</span></span>
+<span id="cb4-34"><a></a><span class="co">    -------</span></span>
+<span id="cb4-35"><a></a><span class="co">        The appropriate random number generator for the array's backend.</span></span>
+<span id="cb4-36"><a></a></span>
+<span id="cb4-37"><a></a><span class="co">    Raises</span></span>
+<span id="cb4-38"><a></a><span class="co">    ------</span></span>
+<span id="cb4-39"><a></a><span class="co">    NotImplementedError</span></span>
+<span id="cb4-40"><a></a><span class="co">        If the array backend is not supported.</span></span>
+<span id="cb4-41"><a></a></span>
+<span id="cb4-42"><a></a><span class="co">    """</span></span>
+<span id="cb4-43"><a></a>    <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"jax.numpy"</span>:</span>
+<span id="cb4-44"><a></a>        <span class="im">import</span> glass.jax  <span class="co"># noqa: PLC0415</span></span>
+<span id="cb4-45"><a></a></span>
+<span id="cb4-46"><a></a>        <span class="cf">return</span> glass.jax.Generator(seed<span class="op">=</span>SEED)</span>
+<span id="cb4-47"><a></a></span>
+<span id="cb4-48"><a></a>    <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"numpy"</span>:</span>
+<span id="cb4-49"><a></a>        <span class="cf">return</span> xp.random.default_rng(seed<span class="op">=</span>SEED)</span>
+<span id="cb4-50"><a></a></span>
+<span id="cb4-51"><a></a>    <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="op">==</span> <span class="st">"array_api_strict"</span>:</span>
+<span id="cb4-52"><a></a>        <span class="cf">return</span> Generator(seed<span class="op">=</span>SEED)</span>
+<span id="cb4-53"><a></a></span>
+<span id="cb4-54"><a></a>    msg <span class="op">=</span> <span class="st">"the array backend in not supported"</span></span>
+<span id="cb4-55"><a></a>    <span class="cf">raise</span> <span class="pp">NotImplementedError</span>(msg)</span>
+<span id="cb4-56"><a></a></span>
+<span id="cb4-57"><a></a></span>
+<span id="cb4-58"><a></a><span class="kw">class</span> Generator:</span>
+<span id="cb4-59"><a></a>    <span class="co">"""</span></span>
+<span id="cb4-60"><a></a><span class="co">    NumPy random number generator returning array_api_strict Array.</span></span>
+<span id="cb4-61"><a></a></span>
+<span id="cb4-62"><a></a><span class="co">    This class wraps NumPy's random number generator and returns arrays compatible</span></span>
+<span id="cb4-63"><a></a><span class="co">    with array_api_strict.</span></span>
+<span id="cb4-64"><a></a></span>
+<span id="cb4-65"><a></a><span class="co">    """</span></span>
+<span id="cb4-66"><a></a></span>
+<span id="cb4-67"><a></a>    <span class="va">__slots__</span> <span class="op">=</span> (<span class="st">"ap"</span>, <span class="st">"np"</span>, <span class="st">"rng"</span>)</span>
+<span id="cb4-68"><a></a></span>
+<span id="cb4-69"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(</span>
+<span id="cb4-70"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-71"><a></a>        seed: <span class="bu">int</span> <span class="op">|</span> <span class="bu">bool</span> <span class="op">|</span> IntArray <span class="op">=</span> SEED,  <span class="co"># noqa: FBT001</span></span>
+<span id="cb4-72"><a></a>    ) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb4-73"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-74"><a></a><span class="co">        Initialize the Generator.</span></span>
+<span id="cb4-75"><a></a></span>
+<span id="cb4-76"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-77"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-78"><a></a><span class="co">        seed</span></span>
+<span id="cb4-79"><a></a><span class="co">            Seed for the random number generator.</span></span>
+<span id="cb4-80"><a></a></span>
+<span id="cb4-81"><a></a><span class="co">        """</span></span>
+<span id="cb4-82"><a></a>        <span class="im">import</span> numpy  <span class="co"># noqa: ICN001, PLC0415</span></span>
+<span id="cb4-83"><a></a></span>
+<span id="cb4-84"><a></a>        <span class="im">import</span> array_api_strict  <span class="co"># noqa: PLC0415</span></span>
+<span id="cb4-85"><a></a></span>
+<span id="cb4-86"><a></a>        <span class="va">self</span>.ap <span class="op">=</span> array_api_strict</span>
+<span id="cb4-87"><a></a>        <span class="va">self</span>.np <span class="op">=</span> numpy</span>
+<span id="cb4-88"><a></a>        <span class="va">self</span>.rng <span class="op">=</span> <span class="va">self</span>.np.random.default_rng(seed<span class="op">=</span>seed)</span>
+<span id="cb4-89"><a></a></span>
+<span id="cb4-90"><a></a>    <span class="kw">def</span> random(</span>
+<span id="cb4-91"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-92"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-93"><a></a>        dtype: DTypeLike <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-94"><a></a>        out: FloatArray <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-95"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb4-96"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-97"><a></a><span class="co">        Return random floats in the half-open interval [0.0, 1.0).</span></span>
+<span id="cb4-98"><a></a></span>
+<span id="cb4-99"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-100"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-101"><a></a><span class="co">        size</span></span>
+<span id="cb4-102"><a></a><span class="co">            Output shape.</span></span>
+<span id="cb4-103"><a></a><span class="co">        dtype</span></span>
+<span id="cb4-104"><a></a><span class="co">            Desired data type.</span></span>
+<span id="cb4-105"><a></a><span class="co">        out</span></span>
+<span id="cb4-106"><a></a><span class="co">            Optional output array.</span></span>
+<span id="cb4-107"><a></a></span>
+<span id="cb4-108"><a></a><span class="co">        Returns</span></span>
+<span id="cb4-109"><a></a><span class="co">        -------</span></span>
+<span id="cb4-110"><a></a><span class="co">            Array of random floats.</span></span>
+<span id="cb4-111"><a></a></span>
+<span id="cb4-112"><a></a><span class="co">        """</span></span>
+<span id="cb4-113"><a></a>        dtype <span class="op">=</span> dtype <span class="cf">if</span> dtype <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">self</span>.np.float64</span>
+<span id="cb4-114"><a></a>        <span class="cf">return</span> <span class="va">self</span>.ap.asarray(<span class="va">self</span>.rng.random(size, dtype, out))  <span class="co"># ty: ignore[no-matching-overload]</span></span>
+<span id="cb4-115"><a></a></span>
+<span id="cb4-116"><a></a>    <span class="kw">def</span> normal(</span>
+<span id="cb4-117"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-118"><a></a>        loc: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb4-119"><a></a>        scale: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb4-120"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-121"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb4-122"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-123"><a></a><span class="co">        Draw samples from a Normal distribution (mean=loc, stdev=scale).</span></span>
+<span id="cb4-124"><a></a></span>
+<span id="cb4-125"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-126"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-127"><a></a><span class="co">        loc</span></span>
+<span id="cb4-128"><a></a><span class="co">            Mean of the distribution.</span></span>
+<span id="cb4-129"><a></a><span class="co">        scale</span></span>
+<span id="cb4-130"><a></a><span class="co">            Standard deviation of the distribution.</span></span>
+<span id="cb4-131"><a></a><span class="co">        size</span></span>
+<span id="cb4-132"><a></a><span class="co">            Output shape.</span></span>
+<span id="cb4-133"><a></a></span>
+<span id="cb4-134"><a></a><span class="co">        Returns</span></span>
+<span id="cb4-135"><a></a><span class="co">        -------</span></span>
+<span id="cb4-136"><a></a><span class="co">            Array of samples from the normal distribution.</span></span>
+<span id="cb4-137"><a></a></span>
+<span id="cb4-138"><a></a><span class="co">        """</span></span>
+<span id="cb4-139"><a></a>        <span class="cf">return</span> <span class="va">self</span>.ap.asarray(<span class="va">self</span>.rng.normal(loc, scale, size))</span>
+<span id="cb4-140"><a></a></span>
+<span id="cb4-141"><a></a>    <span class="kw">def</span> poisson(</span>
+<span id="cb4-142"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-143"><a></a>        lam: <span class="bu">float</span> <span class="op">|</span> FloatArray,</span>
+<span id="cb4-144"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-145"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb4-146"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-147"><a></a><span class="co">        Draw samples from a Poisson distribution.</span></span>
+<span id="cb4-148"><a></a></span>
+<span id="cb4-149"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-150"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-151"><a></a><span class="co">        lam</span></span>
+<span id="cb4-152"><a></a><span class="co">            Expected number of events.</span></span>
+<span id="cb4-153"><a></a><span class="co">        size</span></span>
+<span id="cb4-154"><a></a><span class="co">            Output shape.</span></span>
+<span id="cb4-155"><a></a></span>
+<span id="cb4-156"><a></a><span class="co">        Returns</span></span>
+<span id="cb4-157"><a></a><span class="co">        -------</span></span>
+<span id="cb4-158"><a></a><span class="co">            Array of samples from the Poisson distribution.</span></span>
+<span id="cb4-159"><a></a></span>
+<span id="cb4-160"><a></a><span class="co">        """</span></span>
+<span id="cb4-161"><a></a>        <span class="cf">return</span> <span class="va">self</span>.ap.asarray(<span class="va">self</span>.rng.poisson(lam, size))</span>
+<span id="cb4-162"><a></a></span>
+<span id="cb4-163"><a></a>    <span class="kw">def</span> standard_normal(</span>
+<span id="cb4-164"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-165"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-166"><a></a>        dtype: DTypeLike <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-167"><a></a>        out: FloatArray <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-168"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb4-169"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-170"><a></a><span class="co">        Draw samples from a standard Normal distribution (mean=0, stdev=1).</span></span>
+<span id="cb4-171"><a></a></span>
+<span id="cb4-172"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-173"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-174"><a></a><span class="co">        size</span></span>
+<span id="cb4-175"><a></a><span class="co">            Output shape.</span></span>
+<span id="cb4-176"><a></a><span class="co">        dtype</span></span>
+<span id="cb4-177"><a></a><span class="co">            Desired data type.</span></span>
+<span id="cb4-178"><a></a><span class="co">        out</span></span>
+<span id="cb4-179"><a></a><span class="co">            Optional output array.</span></span>
+<span id="cb4-180"><a></a></span>
+<span id="cb4-181"><a></a><span class="co">        Returns</span></span>
+<span id="cb4-182"><a></a><span class="co">        -------</span></span>
+<span id="cb4-183"><a></a><span class="co">            Array of samples from the standard normal distribution.</span></span>
+<span id="cb4-184"><a></a></span>
+<span id="cb4-185"><a></a><span class="co">        """</span></span>
+<span id="cb4-186"><a></a>        dtype <span class="op">=</span> dtype <span class="cf">if</span> dtype <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">self</span>.np.float64</span>
+<span id="cb4-187"><a></a>        <span class="cf">return</span> <span class="va">self</span>.ap.asarray(<span class="va">self</span>.rng.standard_normal(size, dtype, out))  <span class="co"># ty: ignore[no-matching-overload]</span></span>
+<span id="cb4-188"><a></a></span>
+<span id="cb4-189"><a></a>    <span class="kw">def</span> uniform(</span>
+<span id="cb4-190"><a></a>        <span class="va">self</span>,</span>
+<span id="cb4-191"><a></a>        low: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb4-192"><a></a>        high: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb4-193"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb4-194"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb4-195"><a></a>        <span class="co">"""</span></span>
+<span id="cb4-196"><a></a><span class="co">        Draw samples from a Uniform distribution.</span></span>
+<span id="cb4-197"><a></a></span>
+<span id="cb4-198"><a></a><span class="co">        Parameters</span></span>
+<span id="cb4-199"><a></a><span class="co">        ----------</span></span>
+<span id="cb4-200"><a></a><span class="co">        low</span></span>
+<span id="cb4-201"><a></a><span class="co">            Lower bound of the distribution.</span></span>
+<span id="cb4-202"><a></a><span class="co">        high</span></span>
+<span id="cb4-203"><a></a><span class="co">            Upper bound of the distribution.</span></span>
+<span id="cb4-204"><a></a><span class="co">        size</span></span>
+<span id="cb4-205"><a></a><span class="co">            Output shape.</span></span>
+<span id="cb4-206"><a></a></span>
+<span id="cb4-207"><a></a><span class="co">        Returns</span></span>
+<span id="cb4-208"><a></a><span class="co">        -------</span></span>
+<span id="cb4-209"><a></a><span class="co">            Array of samples from the uniform distribution.</span></span>
+<span id="cb4-210"><a></a></span>
+<span id="cb4-211"><a></a><span class="co">        """</span></span>
+<span id="cb4-212"><a></a>        <span class="cf">return</span> <span class="va">self</span>.ap.asarray(<span class="va">self</span>.rng.uniform(low, high, size))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+<h2>JAX Support</h2>
+<p><a href="https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/glass/jax.py#L1-L136">./glass/jax.py</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="36-43|46-47|93-99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co">"""Wrapper for JAX RNG with a NumPy-like interface."""</span></span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a><span class="im">import</span> math</span>
+<span id="cb5-6"><a></a><span class="im">import</span> threading</span>
+<span id="cb5-7"><a></a><span class="im">from</span> typing <span class="im">import</span> TYPE_CHECKING</span>
+<span id="cb5-8"><a></a></span>
+<span id="cb5-9"><a></a><span class="im">import</span> jax.dtypes</span>
+<span id="cb5-10"><a></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb5-11"><a></a><span class="im">import</span> jax.random</span>
+<span id="cb5-12"><a></a><span class="im">import</span> jax.scipy</span>
+<span id="cb5-13"><a></a><span class="im">import</span> jax.typing</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a><span class="cf">if</span> TYPE_CHECKING:</span>
+<span id="cb5-16"><a></a>    <span class="im">from</span> jaxtyping <span class="im">import</span> PRNGKeyArray</span>
+<span id="cb5-17"><a></a>    <span class="im">from</span> typing_extensions <span class="im">import</span> Self</span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a>    <span class="im">from</span> glass._types <span class="im">import</span> AnyArray, DTypeLike, FloatArray</span>
+<span id="cb5-20"><a></a></span>
+<span id="cb5-21"><a></a></span>
+<span id="cb5-22"><a></a><span class="kw">def</span> _size(</span>
+<span id="cb5-23"><a></a>    size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span>,</span>
+<span id="cb5-24"><a></a>    <span class="op">*</span>bcast: AnyArray,</span>
+<span id="cb5-25"><a></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...]:</span>
+<span id="cb5-26"><a></a>    <span class="co">"""</span></span>
+<span id="cb5-27"><a></a><span class="co">    Return a size, which can be a single int or None, as a shape, which</span></span>
+<span id="cb5-28"><a></a><span class="co">    is a tuple of int.</span></span>
+<span id="cb5-29"><a></a></span>
+<span id="cb5-30"><a></a><span class="co">    """</span></span>
+<span id="cb5-31"><a></a>    <span class="cf">if</span> size <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb5-32"><a></a>        <span class="cf">return</span> jnp.broadcast_shapes(<span class="op">*</span><span class="bu">map</span>(jnp.shape, bcast)) <span class="cf">if</span> bcast <span class="cf">else</span> ()</span>
+<span id="cb5-33"><a></a>    <span class="cf">return</span> (size,) <span class="cf">if</span> <span class="bu">isinstance</span>(size, <span class="bu">int</span>) <span class="cf">else</span> size</span>
+<span id="cb5-34"><a></a></span>
+<span id="cb5-35"><a></a></span>
+<span id="cb5-36"><a></a><span class="kw">def</span> trapezoid(</span>
+<span id="cb5-37"><a></a>    y: AnyArray,</span>
+<span id="cb5-38"><a></a>    x: AnyArray <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-39"><a></a>    dx: <span class="bu">float</span> <span class="op">|</span> AnyArray <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb5-40"><a></a>    axis: <span class="bu">int</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>,</span>
+<span id="cb5-41"><a></a>) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-42"><a></a>    <span class="co">"""Wrapper for jax.scipy.integrate.trapezoid."""</span></span>
+<span id="cb5-43"><a></a>    <span class="cf">return</span> jax.scipy.integrate.trapezoid(y, x<span class="op">=</span>x, dx<span class="op">=</span>dx, axis<span class="op">=</span>axis)</span>
+<span id="cb5-44"><a></a></span>
+<span id="cb5-45"><a></a></span>
+<span id="cb5-46"><a></a><span class="kw">class</span> Generator:</span>
+<span id="cb5-47"><a></a>    <span class="co">"""JAX random number generation as a NumPy generator."""</span></span>
+<span id="cb5-48"><a></a></span>
+<span id="cb5-49"><a></a>    <span class="va">__slots__</span> <span class="op">=</span> (<span class="st">"key"</span>, <span class="st">"lock"</span>)</span>
+<span id="cb5-50"><a></a>    key: PRNGKeyArray</span>
+<span id="cb5-51"><a></a>    lock: threading.Lock</span>
+<span id="cb5-52"><a></a></span>
+<span id="cb5-53"><a></a>    <span class="at">@classmethod</span></span>
+<span id="cb5-54"><a></a>    <span class="kw">def</span> from_key(cls, key: PRNGKeyArray) <span class="op">-&gt;</span> Self:</span>
+<span id="cb5-55"><a></a>        <span class="co">"""Wrap a JAX random key."""</span></span>
+<span id="cb5-56"><a></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(key, jax.typing.ArrayLike) <span class="kw">or</span> <span class="kw">not</span> jax.dtypes.issubdtype(</span>
+<span id="cb5-57"><a></a>            key.dtype,</span>
+<span id="cb5-58"><a></a>            jax.dtypes.prng_key,</span>
+<span id="cb5-59"><a></a>        ):</span>
+<span id="cb5-60"><a></a>            msg <span class="op">=</span> <span class="st">"not a random key"</span></span>
+<span id="cb5-61"><a></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(msg)</span>
+<span id="cb5-62"><a></a>        rng <span class="op">=</span> <span class="bu">object</span>.<span class="fu">__new__</span>(cls)</span>
+<span id="cb5-63"><a></a>        rng.key <span class="op">=</span> key</span>
+<span id="cb5-64"><a></a>        rng.lock <span class="op">=</span> threading.Lock()</span>
+<span id="cb5-65"><a></a>        <span class="cf">return</span> rng</span>
+<span id="cb5-66"><a></a></span>
+<span id="cb5-67"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, seed: <span class="bu">int</span> <span class="op">|</span> AnyArray, <span class="op">*</span>, impl: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-68"><a></a>        <span class="co">"""Create a wrapper instance with a new key."""</span></span>
+<span id="cb5-69"><a></a>        <span class="va">self</span>.key <span class="op">=</span> jax.random.key(seed, impl<span class="op">=</span>impl)</span>
+<span id="cb5-70"><a></a>        <span class="va">self</span>.lock <span class="op">=</span> threading.Lock()</span>
+<span id="cb5-71"><a></a></span>
+<span id="cb5-72"><a></a>    <span class="at">@property</span></span>
+<span id="cb5-73"><a></a>    <span class="kw">def</span> __key(<span class="va">self</span>) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb5-74"><a></a>        <span class="co">"""Return next key for sampling while updating internal state."""</span></span>
+<span id="cb5-75"><a></a>        <span class="cf">with</span> <span class="va">self</span>.lock:</span>
+<span id="cb5-76"><a></a>            <span class="va">self</span>.key, key <span class="op">=</span> jax.random.split(<span class="va">self</span>.key)</span>
+<span id="cb5-77"><a></a>        <span class="cf">return</span> key</span>
+<span id="cb5-78"><a></a></span>
+<span id="cb5-79"><a></a>    <span class="kw">def</span> split(<span class="va">self</span>, size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb5-80"><a></a>        <span class="co">"""Split random key."""</span></span>
+<span id="cb5-81"><a></a>        shape <span class="op">=</span> _size(size)</span>
+<span id="cb5-82"><a></a>        <span class="cf">with</span> <span class="va">self</span>.lock:</span>
+<span id="cb5-83"><a></a>            keys <span class="op">=</span> jax.random.split(<span class="va">self</span>.key, <span class="dv">1</span> <span class="op">+</span> math.prod(shape))</span>
+<span id="cb5-84"><a></a>            <span class="va">self</span>.key <span class="op">=</span> keys[<span class="dv">0</span>]</span>
+<span id="cb5-85"><a></a>        <span class="cf">return</span> keys[<span class="dv">1</span>:].reshape(shape)</span>
+<span id="cb5-86"><a></a></span>
+<span id="cb5-87"><a></a>    <span class="kw">def</span> spawn(<span class="va">self</span>, n_children: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[Self]:</span>
+<span id="cb5-88"><a></a>        <span class="co">"""Create new independent child generators."""</span></span>
+<span id="cb5-89"><a></a>        <span class="cf">with</span> <span class="va">self</span>.lock:</span>
+<span id="cb5-90"><a></a>            <span class="va">self</span>.key, <span class="op">*</span>keys <span class="op">=</span> jax.random.split(<span class="va">self</span>.key, num<span class="op">=</span>n_children <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb5-91"><a></a>        <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="va">self</span>.from_key, keys))</span>
+<span id="cb5-92"><a></a></span>
+<span id="cb5-93"><a></a>    <span class="kw">def</span> random(</span>
+<span id="cb5-94"><a></a>        <span class="va">self</span>,</span>
+<span id="cb5-95"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-96"><a></a>        dtype: DTypeLike <span class="op">=</span> <span class="bu">float</span>,</span>
+<span id="cb5-97"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-98"><a></a>        <span class="co">"""Return random floats in the half-open interval [0.0, 1.0)."""</span></span>
+<span id="cb5-99"><a></a>        <span class="cf">return</span> jax.random.uniform(<span class="va">self</span>.__key, _size(size), dtype)</span>
+<span id="cb5-100"><a></a></span>
+<span id="cb5-101"><a></a>    <span class="kw">def</span> normal(</span>
+<span id="cb5-102"><a></a>        <span class="va">self</span>,</span>
+<span id="cb5-103"><a></a>        loc: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb5-104"><a></a>        scale: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb5-105"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-106"><a></a>        dtype: DTypeLike <span class="op">=</span> <span class="bu">float</span>,</span>
+<span id="cb5-107"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-108"><a></a>        <span class="co">"""Draw samples from a Normal distribution (mean=loc, stdev=scale)."""</span></span>
+<span id="cb5-109"><a></a>        <span class="cf">return</span> loc <span class="op">+</span> scale <span class="op">*</span> jax.random.normal(<span class="va">self</span>.__key, _size(size), dtype)</span>
+<span id="cb5-110"><a></a></span>
+<span id="cb5-111"><a></a>    <span class="kw">def</span> poisson(</span>
+<span id="cb5-112"><a></a>        <span class="va">self</span>,</span>
+<span id="cb5-113"><a></a>        lam: <span class="bu">float</span> <span class="op">|</span> FloatArray,</span>
+<span id="cb5-114"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-115"><a></a>        dtype: DTypeLike <span class="op">=</span> <span class="bu">int</span>,</span>
+<span id="cb5-116"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-117"><a></a>        <span class="co">"""Draw samples from a Poisson distribution."""</span></span>
+<span id="cb5-118"><a></a>        <span class="cf">return</span> jax.random.poisson(<span class="va">self</span>.__key, lam, size, dtype)</span>
+<span id="cb5-119"><a></a></span>
+<span id="cb5-120"><a></a>    <span class="kw">def</span> standard_normal(</span>
+<span id="cb5-121"><a></a>        <span class="va">self</span>,</span>
+<span id="cb5-122"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-123"><a></a>        dtype: DTypeLike <span class="op">=</span> <span class="bu">float</span>,</span>
+<span id="cb5-124"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-125"><a></a>        <span class="co">"""Draw samples from a standard Normal distribution (mean=0, stdev=1)."""</span></span>
+<span id="cb5-126"><a></a>        <span class="cf">return</span> jax.random.normal(<span class="va">self</span>.__key, _size(size), dtype)</span>
+<span id="cb5-127"><a></a></span>
+<span id="cb5-128"><a></a>    <span class="kw">def</span> uniform(</span>
+<span id="cb5-129"><a></a>        <span class="va">self</span>,</span>
+<span id="cb5-130"><a></a>        low: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb5-131"><a></a>        high: <span class="bu">float</span> <span class="op">|</span> FloatArray <span class="op">=</span> <span class="fl">1.0</span>,</span>
+<span id="cb5-132"><a></a>        size: <span class="bu">int</span> <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">int</span>, ...] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-133"><a></a>        dtype: DTypeLike <span class="op">=</span> <span class="bu">float</span>,</span>
+<span id="cb5-134"><a></a>    ) <span class="op">-&gt;</span> FloatArray:</span>
+<span id="cb5-135"><a></a>        <span class="co">"""Draw samples from a Uniform distribution."""</span></span>
+<span id="cb5-136"><a></a>        <span class="cf">return</span> jax.random.uniform(<span class="va">self</span>.__key, _size(size), dtype, low, high)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Further Work</h1>
+
+</section>
+<section class="slide level2" data-menu-title="Summary">
+<h2></h2>
+<ul>
+<li class="fragment">Test on CuPy following <a href="https://github.com/cupy/cupy/releases/tag/v14.0.0">v14 release</a>.</li>
+<li class="fragment">Create scripts to benchmark on ARCHER2 using different array backends.</li>
+<li class="fragment">Contribute remaining required functions to <a href="https://pypi.org/project/array-api-extra">array-api-extra</a> <i class="fa-brands fa-python" aria-label="python"></i>.</li>
+<li class="fragment">Implement spherical harmonic transforms that are array API compatible.</li>
+<li class="fragment">Tech debt…</li>
+</ul>
+</section></section>
+<section class="title-slide slide level1 center" data-menu-title="QR Code">
+<h1></h1>
+<div class="quarto-layout-panel" data-layout="[55,45]">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/porting-glass-to-the-python-array-api","width":"550"});
+  script.remove();
+})();
+</script>
+    
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 45.0%;justify-content: flex-start;">
+<p><a href="https://paddyroddy.github.io/talks" class="uri">https://paddyroddy.github.io/talks</a></p>
+</div>
+</div>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="https://www.gravatar.com/avatar/b991f7f475c334cc277869a709445d42?s=200" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Porting GLASS to the Python Array API</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":false,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"hideMissingTitles":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: true,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 10,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 10,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="text/javascript">
+      // Cache DOM elements (initialized after Reveal.js is ready)
+      let footer = null;
+      let slideMenu = null;
+      let logo = null;
+
+      function updateUiVisibility(slide) {
+        const isTitleSlide = slide.indexh === 0;
+        const hasFooterFalse =
+          slide.currentSlide.hasAttribute("data-footer") &&
+          slide.currentSlide.getAttribute("data-footer") === "false";
+
+        const hideFooter = isTitleSlide || hasFooterFalse;
+
+        const footerDisplay = hideFooter ? "none" : "block";
+        const otherDisplay = isTitleSlide ? "none" : "block";
+
+        // Guard before setting style to prevent runtime errors
+        if (footer) {
+          footer.style.display = footerDisplay;
+        }
+        if (slideMenu) {
+          slideMenu.style.display = otherDisplay;
+        }
+        if (logo) {
+          logo.style.display = otherDisplay;
+        }
+      }
+
+      Reveal.addEventListener("ready", (event) => {
+        // Cache DOM elements once Reveal.js is ready
+        footer = document.querySelector("div.footer.footer-default");
+        slideMenu = document.querySelector("div.slide-menu-button");
+        logo = document.querySelector("img.slide-logo");
+
+        updateUiVisibility(event);
+      });
+
+      Reveal.addEventListener("slidechanged", (event) => {
+        updateUiVisibility(event);
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("^https:\/\/paddyroddy\.github\.io");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+                // default icon
+                link.classList.add("external");
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
