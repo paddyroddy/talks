@@ -238,11 +238,9 @@ Patrick J. Roddy
 <li class="fragment">Installing a package into an environment enables re-use across projects.</li>
 <li class="fragment">Structuring code as a package is the first step.</li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Why Create a Python Package (i)">
 <h2>Why Create a Python Package</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Use your code across different projects:
 <ul>
@@ -281,11 +279,9 @@ Patrick J. Roddy
 <li class="fragment">Have you got documentation and tests?</li>
 <li class="fragment">How long will you be able to support it?</li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="The Elements of a Python Package (i)">
 <h2>The Elements of a Python Package</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Code: functions and classes that contain the functionality.</li>
 <li class="fragment">Documentation:
@@ -478,11 +474,9 @@ Patrick J. Roddy
 </div>
 </div></li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Dependencies and Requirements (i)" data-footer="false">
 <h2>Dependencies and Requirements</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment"><p>Dependencies are specified as follows.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb16-1"><a></a><span class="kw">[project]</span></span>
@@ -523,11 +517,9 @@ Patrick J. Roddy
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb20-1"><a></a><span class="kw">[project.gui-scripts]</span></span>
 <span id="cb20-2"><a></a><span class="dt">spam-gui</span> <span class="op">=</span> <span class="st">"spam:main_gui"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Project Metadata (i)">
 <h2>Project Metadata</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment"><p><code>authors</code>/<code>maintainers</code></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb21-1"><a></a><span class="kw">[project]</span></span>
@@ -774,11 +766,10 @@ Patrick J. Roddy
 <section>
 <section class="title-slide slide level1 center">
 <h1>Sharing Your Package</h1>
-<!-- vale RedHat.TermsWarnings = NO -->
+
 </section>
 <section class="slide level2" data-menu-title="TestPyPI (i)">
 <h2>TestPyPI</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ol type="1">
 <li class="fragment"><p><code>python3 -m pip install --upgrade build</code></p></li>
 <li class="fragment"><p><code>python3 -m build</code></p>
@@ -803,11 +794,9 @@ Patrick J. Roddy
 <span id="cb31-6"><a></a>100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE</code></p></li>
 </ol>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="PyPI (i)">
 <h2>PyPI</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <p>A similar set of steps can be done to upload to PyPI. TestPyPI allows one to test out their package. It is still public but much less obvious for people to look. People will often do these steps through GitHub Actions.</p>
 <ul>
 <li class="fragment"><a href="https://github.com/hynek/build-and-inspect-python-package">hynek/build-and-inspect-python-package</a> <i class="fa-brands fa-github" aria-label="github"></i></li>
@@ -825,11 +814,10 @@ Patrick J. Roddy
 <section>
 <section class="title-slide slide level1 center">
 <h1>Conclusions</h1>
-<!-- vale RedHat.TermsWarnings = NO -->
+
 </section>
 <section class="slide level2" data-menu-title="Resources (i)">
 <h2>Resources</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Accessible guides: <a href="https://www.pyopensci.org/python-package-guide" class="uri">https://www.pyopensci.org/python-package-guide</a>.</li>
 <li class="fragment">More technical guides: <a href="https://packaging.python.org/en/latest/tutorials" class="uri">https://packaging.python.org/en/latest/tutorials</a>.</li>

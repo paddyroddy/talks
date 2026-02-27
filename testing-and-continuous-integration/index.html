@@ -281,11 +281,9 @@ Patrick J. Roddy
 </figure>
 </div>
 </div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Coverage (i)">
 <h2>Coverage</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Shows how much of the application has been tested.</li>
 <li class="fragment">Helps evaluate testing completeness and identify gaps.</li>
@@ -320,11 +318,10 @@ Patrick J. Roddy
 <section>
 <section class="title-slide slide level1 center">
 <h1>Types of Tests</h1>
-<!-- vale RedHat.TermsWarnings = NO -->
+
 </section>
 <section class="slide level2" data-menu-title="Unit Tests (i)">
 <h2>Unit Tests</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Low level.</li>
 <li class="fragment">Close to the source of the application.</li>
@@ -367,11 +364,9 @@ Patrick J. Roddy
 <span id="cb2-19"><a></a>)</span>
 <span id="cb2-20"><a></a><span class="kw">def</span> test_divide_various_inputs(a, b, expected):</span>
 <span id="cb2-21"><a></a>    <span class="cf">assert</span> divide(a, b) <span class="op">==</span> expected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Integration Tests (i)">
 <h2>Integration Tests</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Verifies that different part of the application work well together.</li>
 <li class="fragment">e.g.&nbsp;test interaction with database/make sure microservices work together.</li>
@@ -420,11 +415,9 @@ Patrick J. Roddy
 <span id="cb4-17"><a></a>    updated_user <span class="op">=</span> user_repo.get_by_id(user_id)</span>
 <span id="cb4-18"><a></a></span>
 <span id="cb4-19"><a></a>    <span class="cf">assert</span> updated_user.email <span class="op">==</span> <span class="st">"newemail@example.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Functional Tests (i)">
 <h2>Functional Tests</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Focus on business requirements of application.</li>
 <li class="fragment">Only verify the output of an action.</li>
@@ -472,11 +465,9 @@ Patrick J. Roddy
 <span id="cb6-16"><a></a></span>
 <span id="cb6-17"><a></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ValueError</span>, match<span class="op">=</span><span class="st">"out of stock"</span>):</span>
 <span id="cb6-18"><a></a>        order_service.process_order(order.add_item(product, quantity<span class="op">=</span><span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="End-to-End Tests (i)">
 <h2>End-to-End Tests</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Replicates user behaviour in a complete application environment.</li>
 <li class="fragment">Verifies that user flows work as expected.</li>
@@ -543,11 +534,9 @@ Patrick J. Roddy
 <span id="cb8-25"><a></a>        EC.presence_of_element_located((By.ID, <span class="st">"order-confirmation"</span>))</span>
 <span id="cb8-26"><a></a>    )</span>
 <span id="cb8-27"><a></a>    <span class="cf">assert</span> <span class="st">"Order placed successfully"</span> <span class="kw">in</span> confirmation.text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Acceptance Testing (i)">
 <h2>Acceptance Testing</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Formal tests that verify if a system satisfies business requirements.</li>
 <li class="fragment">Require entire application to be running while testing.</li>
@@ -624,11 +613,9 @@ Patrick J. Roddy
 <span id="cb11-21"><a></a></span>
 <span id="cb11-22"><a></a>    <span class="cf">assert</span> response.status_code <span class="op">==</span> <span class="dv">200</span></span>
 <span id="cb11-23"><a></a>    <span class="cf">assert</span> response.json()[<span class="st">"username"</span>] <span class="op">==</span> <span class="st">"protecteduser"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Performance Testing (i)">
 <h2>Performance Testing</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Evaluate how a system performs under a particular workload.</li>
 <li class="fragment">Help measure reliability, speed, scalability, responsiveness.</li>
@@ -733,11 +720,9 @@ Patrick J. Roddy
 <span id="cb14-35"><a></a>    <span class="co"># Calculate requests per second</span></span>
 <span id="cb14-36"><a></a>    rps <span class="op">=</span> <span class="bu">len</span>(results) <span class="op">/</span> elapsed</span>
 <span id="cb14-37"><a></a>    <span class="cf">assert</span> rps <span class="op">&gt;</span> <span class="dv">20</span>, <span class="ss">f"Throughput: </span><span class="sc">{</span>rps<span class="sc">:.2f}</span><span class="ss"> req/s"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Smoke Testing (i)">
 <h2>Smoke Testing</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">Basic tests that check the basic functionality of an application.</li>
 <li class="fragment">Meant to be quick to run.</li>
@@ -864,11 +849,10 @@ Patrick J. Roddy
 <section>
 <section class="title-slide slide level1 center">
 <h1>Miscellaneous</h1>
-<!-- vale RedHat.TermsWarnings = NO -->
+
 </section>
 <section class="slide level2" data-menu-title="Mocking (i)">
 <h2>Mocking</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <blockquote>
 <p>Fowler describes mocks as pre-programmed objects with expectations which form a specification of the calls they are expected to receive. In other words, mocks are a replacement object for the dependency that has certain expectations that are placed on it; those expectations might be things such as validating a sub-method has been called a certain number of times or that arguments are passed down in a certain way.</p>
 </blockquote>
@@ -917,11 +901,9 @@ Patrick J. Roddy
 <span id="cb21-21"><a></a></span>
 <span id="cb21-22"><a></a>    <span class="co"># Should have been called twice (one failure, one success)</span></span>
 <span id="cb21-23"><a></a>    <span class="cf">assert</span> mock_client.send.call_count <span class="op">==</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Mutation Testing (i)">
 <h2>Mutation Testing</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <blockquote>
 <p>Mutation testing is a way to be reasonably certain your code actually tests the full behaviour of your code. Not just touches all lines such as a coverage report will tell you, but actually tests all behaviour, and all weird edge cases. It does this by changing the code in one place at a time, as subtly as possible, and running the test suite. If the test suite <em>succeeds</em> it counts as a failure, because it could change the code and your tests are blissfully unaware that anything is amiss.</p>
 </blockquote>

@@ -248,11 +248,10 @@ Patrick J. Roddy
 <section>
 <section class="title-slide slide level1 center">
 <h1>App Overview</h1>
-<!-- vale RedHat.TermsWarnings = NO -->
+
 </section>
 <section class="slide level2" data-menu-title="Overview (i)">
 <h2></h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <ul>
 <li class="fragment">In <code>safe-settings</code>, all the settings are stored centrally in an <code>admin</code> repo within the organisation. Unlike the <a href="https://github.com/repository-settings/app">GitHub Repository Settings App</a>, the settings files cannot be in individual repositories.</li>
 <li class="fragment">The <strong>settings</strong> in the <strong>default</strong> branch are applied. If the settings are changed on a non-default branch and a PR is created to merge the changes, the app runs in a <code>dry-run</code> mode to evaluate and validate the changes. Checks pass or fail based on the <code>dry-run</code> results.</li>
@@ -355,11 +354,9 @@ Patrick J. Roddy
 <span id="cb1-36"><a></a>      Some error</span>
 <span id="cb1-37"><a></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|</span></span>
 <span id="cb1-38"><a></a>      return true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Performance (i)">
 <h2>Performance</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <p>When there are 1000s of repos to be managed – and there is a global settings change – safe-settings will have to work efficiently and only make the necessary API calls.</p>
 <p>The app also has to complete the work within an hour: the lifetime of the GitHub app token.</p>
 <p>To address these constraints the following design decisions have been implemented:</p>
@@ -693,11 +690,9 @@ Patrick J. Roddy
 <li class="fragment">Disable webhook (assuming using GHA workflow).</li>
 <li class="fragment">Give the following permissions:</li>
 </ul>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Permissions (i)">
 <h2>Permissions</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <h3>Repository</h3>
 <table class="caption-top">
 <thead>
@@ -735,11 +730,9 @@ Patrick J. Roddy
 </tr>
 </tbody>
 </table>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
 <section class="slide level2" data-menu-title="Permissions (i)">
 <h2>Permissions</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <h3>Organisation</h3>
 <table class="caption-top">
 <thead>
@@ -761,11 +754,9 @@ Patrick J. Roddy
 </table>
 <h3>Account</h3>
 <p>None</p>
-<!-- vale RedHat.TermsWarnings = NO -->
 </section>
-<section class="slide level2" data-menu-title="Next Septs (i)">
+<section class="slide level2" data-menu-title="Next Steps (i)">
 <h2>Next Steps</h2>
-<!-- vale RedHat.TermsWarnings = YES -->
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
