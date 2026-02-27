@@ -3,8 +3,8 @@ author: Patrick J. Roddy
 date: 2024-06-25
 format: revealjs
 institute:
-  "[UCL Centre for Advanced Research
-  Computing](https://www.ucl.ac.uk/advanced-research-computing)"
+  "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "DevOps: An Introduction"
 ---

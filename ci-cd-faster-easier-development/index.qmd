@@ -6,10 +6,10 @@ author:
 date: 2024-09-10
 format: revealjs
 institute:
-  - "[UCL Centre for Advanced Research
-    Computing](https://www.ucl.ac.uk/advanced-research-computing)"
-  - "[UCL Centre for Advanced Research
-    Computing](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+    (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+    (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "CI/CD: Faster, Easier Development"
 ---
