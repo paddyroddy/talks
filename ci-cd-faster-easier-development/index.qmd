@@ -73,7 +73,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Key Differences {data-menu-title="DevOps (i)"}
+## Key Differences {data-menu-title="Key Differences (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
@@ -84,7 +84,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
   - _CI/CD_: Primarily technical practices
   - _DevOps_: Emphasises cultural change and cross-functional collaboration
 
-## Key Differences {data-menu-title="DevOps (ii)"}
+## Key Differences {data-menu-title="Key Differences (ii)"}
 
 - _Goals_:
   - _CI/CD_: Faster, more reliable software releases

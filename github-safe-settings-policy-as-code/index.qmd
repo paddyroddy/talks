@@ -551,7 +551,7 @@ None
 
 <!-- vale RedHat.TermsWarnings = NO -->
 
-## Next Steps {data-menu-title="Next Septs (i)"}
+## Next Steps {data-menu-title="Next Steps (i)"}
 
 <!-- vale RedHat.TermsWarnings = YES -->
 
