@@ -125,7 +125,7 @@ libraries."}
 
 ## Motivation: Array _Consuming_ Libraries
 
-- Offer users with hardware acceleration and interoperability.
+- Support hardware-accelerated and vendor-specific array types.
 - But without additional maintenance burden.
 - Library remains relevant when the community switches to a new array library.
 
