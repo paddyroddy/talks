@@ -161,6 +161,7 @@ since working on the grant."}
 ## Testing on Different Array Backends
 
 [./noxfile.py](https://github.com/glass-dev/glass/blob/c3037edbfccd60ff2de308e7d4b480d68f89b10d/noxfile.py#L1-L299)
+run as `uv run nox -s tests-3.14`.
 
 ```{.python code-line-numbers="84-92|95-102"}
 """Nox config."""
