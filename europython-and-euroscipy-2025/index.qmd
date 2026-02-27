@@ -75,11 +75,7 @@ centre."}
 - The Mighty Dot - Customize Attribute Access with Descriptors
 - [Accelerating Scientific Python: JAX, Numba, and Ray in Action](https://github.com/coobas/europython-25)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Talks – Highlights {data-menu-title="Talks – Highlights (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Myths and fairy tales around Python performance
 - Typing at scale: statically type-checking a large codebase
@@ -91,7 +87,6 @@ centre."}
 
 <!-- vale RedHat.CaseSensitiveTerms = NO -->
 <!-- vale RedHat.Symbols = NO -->
-<!-- vale RedHat.TermsWarnings = NO -->
 
 - What comes after Rust in the Python ecosystem?
 - What does = do?
@@ -100,7 +95,6 @@ centre."}
 
 <!-- vale RedHat.CaseSensitiveTerms = YES -->
 <!-- vale RedHat.Symbols = YES -->
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ## Sprints {footer=false}
 
@@ -279,11 +273,7 @@ m
 - 20+ speakers
 - One social
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Tutorials {{< fa brands github >}} {data-menu-title="Tutorials (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 <!-- vale RedHat.Hyphens = NO -->
 

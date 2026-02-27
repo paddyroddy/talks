@@ -31,11 +31,7 @@ title: "DevOps: An Introduction"
 
 # DevOps
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## What is DevOps? {data-menu-title="What is DevOps? (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 {{< include /quarto-making-talks/_slides/quotes.qmd >}}
 

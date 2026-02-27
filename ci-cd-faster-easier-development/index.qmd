@@ -35,11 +35,7 @@ title: "CI/CD: Faster, Easier Development"
   - No manual intervention required
 - _Goal_: Reduce time between writing code and its use in production
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## DevOps {data-menu-title="DevOps (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ::: {layout-ncol=2}
 
@@ -71,11 +67,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
   - Monitoring and Logging
   - Incident Response
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
-## Key Differences {data-menu-title="DevOps (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
+## Key Differences {data-menu-title="Key Differences (i)"}
 
 - _Scope_:
   - _CI/CD_: Focused on automating specific parts of the development pipeline
@@ -84,7 +76,7 @@ colorDark="#ffffff" colorLight="#000000" height=550 width=550 >}}
   - _CI/CD_: Primarily technical practices
   - _DevOps_: Emphasises cultural change and cross-functional collaboration
 
-## Key Differences {data-menu-title="DevOps (ii)"}
+## Key Differences {data-menu-title="Key Differences (ii)"}
 
 - _Goals_:
   - _CI/CD_: Faster, more reliable software releases
@@ -99,11 +91,7 @@ DevOps requires a broader cultural and operational shift.
 
 # GitHub Actions
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## What Are GitHub Actions? {data-menu-title="What Are GitHub Actions? (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 GitHub Actions is a continuous integration and continuous delivery (CI/CD)
 platform that allows one to automate your build, test, and deployment pipeline.
@@ -144,11 +132,7 @@ jobs:
         run: echo Hello, world!
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Example Uses {data-menu-title="Example Uses (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - _Continuous Integration_: Automatically build and test your code every time
   you push to your repository or open a pull request.
@@ -180,11 +164,7 @@ jobs:
 - Minimise workflow run time by using build matrices and caching
 - Use status badges in your README to show your workflow status
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Avoiding Duplication {data-menu-title="Avoiding Duplication (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 {{< include /quarto-making-talks/_slides/tables.qmd >}}
 

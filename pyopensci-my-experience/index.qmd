@@ -85,11 +85,7 @@ title: "pyOpenSci: My Experience"
 
 [![](figures/pyopensci_presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Review Process {data-menu-title="Review Process (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 {{< include /quarto-making-talks/_slides/checkboxes.qmd >}}
 

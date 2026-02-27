@@ -41,11 +41,7 @@ organisation.
 
 # App Overview
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## {data-menu-title="Overview (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - In `safe-settings`, all the settings are stored centrally in an `admin` repo
   within the organisation. Unlike the
@@ -157,11 +153,7 @@ overridevalidators:
       return true
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Performance {data-menu-title="Performance (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 When there are 1000s of repos to be managed -- and there is a global settings
 change -- safe-settings will have to work efficiently and only make the
@@ -516,11 +508,7 @@ for my earlier talk on Renovate.
 - Disable webhook (assuming using GHA workflow).
 - Give the following permissions:
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Permissions {data-menu-title="Permissions (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ### Repository
 
@@ -532,11 +520,7 @@ for my earlier talk on Renovate.
 |           | Contents          | Variables     |
 |           | Custom properties |               |
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Permissions {data-menu-title="Permissions (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ### Organisation
 
@@ -549,11 +533,7 @@ for my earlier talk on Renovate.
 
 None
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
-## Next Steps {data-menu-title="Next Septs (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
+## Next Steps {data-menu-title="Next Steps (i)"}
 
 ::: {layout-ncol=2}
 

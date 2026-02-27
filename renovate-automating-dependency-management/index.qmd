@@ -35,11 +35,7 @@ title: "Renovate: Automating Dependency Management"
 
 ![](figures/renovate.jpg)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Why Use Renovate? {data-menu-title="Why Use Renovate? (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 {{< include /quarto-making-talks/_slides/lists.qmd >}}
 

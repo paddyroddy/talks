@@ -25,9 +25,7 @@ Reasons you might have heard of it:
 
 - Tacoma Narrows Bridge Collapse
 - Toyota Tacoma
-<!-- vale RedHat.TermsWarnings = NO -->
 - 10 Things I Hate About You
-<!-- vale RedHat.TermsWarnings = YES -->
 - Sea-Tac Airport
 - Mount Rainier
 - Dale Chihuly

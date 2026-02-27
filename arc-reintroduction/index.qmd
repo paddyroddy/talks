@@ -276,9 +276,9 @@ m
 
 ## {data-menu-title="Summary"}
 
-<!-- vale RedHat.Symbols = NO -->
-
 ::: {layout-ncol=2}
+
+<!-- vale RedHat.Symbols = NO -->
 
 - 2011 Two Castles Run (Warwick → Kenilworth).
 - Met most friends through running.
@@ -286,10 +286,10 @@ m
 - Clubs: Kenilworth Runners, CUH&H, UCL RAX, TH&H, Cottage Relocated.
 - PBs: 14:38, 30:13, 1:06:24, 2:18:08.
 
+<!-- vale RedHat.Symbols = YES -->
+
 ![2025 Lincoln 10km](figures/lincoln.jpg){width=70%}
 
 :::
-
-<!-- vale RedHat.Symbols = NO -->
 
 {{< include /_includes/qr-code.qmd >}}

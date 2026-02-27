@@ -29,11 +29,7 @@ title: Python Packaging
 - Installing a package into an environment enables re-use across projects.
 - Structuring code as a package is the first step.
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Why Create a Python Package {data-menu-title="Why Create a Python Package (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Use your code across different projects:
   - Allows one to install code into any Python environment.
@@ -61,11 +57,7 @@ title: Python Packaging
 - Have you got documentation and tests?
 - How long will you be able to support it?
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## The Elements of a Python Package {data-menu-title="The Elements of a Python Package (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Code: functions and classes that contain the functionality.
 - Documentation:
@@ -299,11 +291,7 @@ dynamic = [
 
   :::
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Dependencies and Requirements {data-menu-title="Dependencies and Requirements (i)" footer=false}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Dependencies are specified as follows.
 
@@ -361,11 +349,7 @@ dynamic = [
   spam-gui = "spam:main_gui"
   ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Project Metadata {data-menu-title="Project Metadata (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - `authors`/`maintainers`
 
@@ -632,11 +616,7 @@ overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
 
 # Sharing Your Package
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## TestPyPI {data-menu-title="TestPyPI (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 1. `python3 -m pip install --upgrade build`
 2. `python3 -m build`
@@ -670,11 +650,7 @@ overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
 
 7. `python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE`
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## PyPI {data-menu-title="PyPI (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 A similar set of steps can be done to upload to PyPI. TestPyPI allows one to
 test out their package. It is still public but much less obvious for people to
@@ -695,11 +671,7 @@ look. People will often do these steps through GitHub Actions.
 
 # Conclusions
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Resources {data-menu-title="Resources (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Accessible guides: <https://www.pyopensci.org/python-package-guide>.
 - More technical guides: <https://packaging.python.org/en/latest/tutorials>.
