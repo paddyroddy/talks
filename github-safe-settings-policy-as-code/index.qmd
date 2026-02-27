@@ -2,6 +2,9 @@
 author: Patrick J. Roddy
 date: 2025-02-11
 format: revealjs
+institute:
+  "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "GitHub Safe-Settings: Policy as Code"
 ---

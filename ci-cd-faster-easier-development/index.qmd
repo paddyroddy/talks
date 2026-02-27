@@ -5,6 +5,11 @@ author:
     Subgroup](https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations)"
 date: 2024-09-10
 format: revealjs
+institute:
+  - "[UCL Advanced Research Computing
+    (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+    (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "CI/CD: Faster, Easier Development"
 ---
