@@ -29,11 +29,7 @@ Organisation-wide discussions, rather than project specific.
 
 ![](figures/discussions.png)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Projects {data-menu-title="Projects (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 > A project is an adaptable spreadsheet, task-board, and road map that
 > integrates with your issues and pull requests on GitHub to help you plan and
@@ -80,11 +76,7 @@ profile, visible only to organisation members.
 
 ![](figures/private_readme.png)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## .github {data-menu-title=".github (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 The `/profile/README.md` will appear on the organisation's profile.
 
@@ -126,11 +118,7 @@ Add a default `/CODE_OF_CONDUCT.md`.
 
 # Tools
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Renovate {data-menu-title="Renovate (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 ::: {layout-ncol=2}
 
@@ -225,11 +213,7 @@ This can then be debugged at <https://developer.mend.io>.
 
 ![](figures/renovate.png)
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## pre-commit {data-menu-title="pre-commit (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 Metahooks
 [pre-commit/pre-commit#731](https://github.com/pre-commit/pre-commit/issues/731)?
@@ -444,11 +428,7 @@ repos:
       - id: mirsg-hooks
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Composite Actions {data-menu-title="Composite Actions (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 > Composite actions allows one to collect a series of workflow job steps into a
 > single action which you can then run as a single job step in many workflows.
@@ -524,11 +504,7 @@ e.g. `APP_ID`, `APP_PEM`.
 
 :::
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## GitHub Apps {data-menu-title="GitHub Apps (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 All installed apps can be seen in the organisation's settings.
 

@@ -11,11 +11,7 @@ title: "Quarto: Making Talks"
 
 # Talk Motivation
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## {data-menu-title="Talk Motivation (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Always found making presentations tedious.
 - Prefer non-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editors since
@@ -43,11 +39,7 @@ Promised this talk before.
 
 # Quarto
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## What is Quarto {data-menu-title="What is Quarto (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 An open source scientific and technical publishing system
 
@@ -69,11 +61,7 @@ An open source scientific and technical publishing system
 - Write using `Pandoc` markdown, including equations, citations, crossrefs,
   figure panels, callouts, advanced layout, and more.
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Why Quarto for Presentations {data-menu-title="Why Quarto for Presentations (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - _Markdown Simplicity_: Write slides using intuitive Markdown syntax.
 - _Code Integration_: Seamlessly embed and run code (R, Python, and so on)

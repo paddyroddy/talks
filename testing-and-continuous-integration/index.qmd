@@ -61,11 +61,7 @@ depiction of the test driven development cycle."}
 
 :::
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Coverage {data-menu-title="Coverage (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Shows how much of the application has been tested.
 - Helps evaluate testing completeness and identify gaps.
@@ -93,11 +89,7 @@ coverage output from Coveralls for the glass-dev/glass repository."}
 
 # Types of Tests
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Unit Tests {data-menu-title="Unit Tests (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Low level.
 - Close to the source of the application.
@@ -144,11 +136,7 @@ def test_divide_various_inputs(a, b, expected):
     assert divide(a, b) == expected
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Integration Tests {data-menu-title="Integration Tests (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Verifies that different part of the application work well together.
 - e.g. test interaction with database/make sure microservices work together.
@@ -201,11 +189,7 @@ def test_update_user_email(user_repo):
     assert updated_user.email == "newemail@example.com"
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Functional Tests {data-menu-title="Functional Tests (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Focus on business requirements of application.
 - Only verify the output of an action.
@@ -258,11 +242,7 @@ def test_out_of_stock_items_cannot_be_ordered(order_service):
         order_service.process_order(order.add_item(product, quantity=1))
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## End-to-End Tests {data-menu-title="End-to-End Tests (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Replicates user behaviour in a complete application environment.
 - Verifies that user flows work as expected.
@@ -333,11 +313,7 @@ def test_complete_purchase_flow(browser):
     assert "Order placed successfully" in confirmation.text
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Acceptance Testing {data-menu-title="Acceptance Testing (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Formal tests that verify if a system satisfies business requirements.
 - Require entire application to be running while testing.
@@ -420,11 +396,7 @@ def test_registered_user_can_access_protected_resources(api_client):
     assert response.json()["username"] == "protecteduser"
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Performance Testing {data-menu-title="Performance Testing (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Evaluate how a system performs under a particular workload.
 - Help measure reliability, speed, scalability, responsiveness.
@@ -535,11 +507,7 @@ def test_endpoint_throughput(endpoint):
     assert rps > 20, f"Throughput: {rps:.2f} req/s"
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Smoke Testing {data-menu-title="Smoke Testing (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 - Basic tests that check the basic functionality of an application.
 - Meant to be quick to run.
@@ -673,11 +641,7 @@ jobs:
 
 # Miscellaneous
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Mocking {data-menu-title="Mocking (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 > Fowler describes mocks as pre-programmed objects with expectations which form
 > a specification of the calls they are expected to receive. In other words,
@@ -735,11 +699,7 @@ def test_email_service_retries_on_failure():
     assert mock_client.send.call_count == 2
 ```
 
-<!-- vale RedHat.TermsWarnings = NO -->
-
 ## Mutation Testing {data-menu-title="Mutation Testing (i)"}
-
-<!-- vale RedHat.TermsWarnings = YES -->
 
 > Mutation testing is a way to be reasonably certain your code actually tests
 > the full behaviour of your code. Not just touches all lines such as a coverage
