@@ -398,7 +398,7 @@ Patrick J. Roddy
 <span id="cb1-14"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
 <span id="cb1-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb1-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb1-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@fc1f4d5abb1562679c33f38faf171f5cfc81c969</span><span class="co"> # v0</span></span>
+<span id="cb1-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@d8081a80ce0003b82fc662944c69bb61db85e518</span><span class="co"> # v0</span></span>
 <span id="cb1-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb1-19"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
@@ -423,7 +423,7 @@ Patrick J. Roddy
 <span id="cb2-14"><a></a><span class="at">    </span><span class="fu">timeout-minutes</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
 <span id="cb2-15"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb2-16"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb2-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/links@fc1f4d5abb1562679c33f38faf171f5cfc81c969</span><span class="co"> # v0</span></span>
+<span id="cb2-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/links@d8081a80ce0003b82fc662944c69bb61db85e518</span><span class="co"> # v0</span></span>
 <span id="cb2-18"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb2-19"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
@@ -447,12 +447,12 @@ Patrick J. Roddy
 <span id="cb3-13"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
 <span id="cb3-14"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb3-15"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb3-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/linting@fc1f4d5abb1562679c33f38faf171f5cfc81c969</span><span class="co"> # v0</span></span>
+<span id="cb3-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/linting@d8081a80ce0003b82fc662944c69bb61db85e518</span><span class="co"> # v0</span></span>
 <span id="cb3-17"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb3-18"><a></a><span class="at">          </span><span class="fu">pre-commit-config</span><span class="kw">:</span><span class="at"> ./.pre-commit-config.yaml</span></span>
 <span id="cb3-19"><a></a></span>
 <span id="cb3-20"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb3-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/vale@fc1f4d5abb1562679c33f38faf171f5cfc81c969</span><span class="co"> # v0</span></span>
+<span id="cb3-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/vale@d8081a80ce0003b82fc662944c69bb61db85e518</span><span class="co"> # v0</span></span>
 <span id="cb3-22"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb3-23"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
@@ -478,7 +478,7 @@ Patrick J. Roddy
 <span id="cb4-15"><a></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
 <span id="cb4-16"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb4-17"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb4-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/github-pages/quarto@fc1f4d5abb1562679c33f38faf171f5cfc81c969</span><span class="co"> # v0</span></span>
+<span id="cb4-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/github-pages/quarto@d8081a80ce0003b82fc662944c69bb61db85e518</span><span class="co"> # v0</span></span>
 <span id="cb4-19"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb4-20"><a></a><span class="at">          </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
 <span id="cb4-21"><a></a><span class="at">          </span><span class="fu">requirements-txt</span><span class="kw">:</span><span class="at"> ${{ github.workspace }}/requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
