@@ -90,6 +90,16 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 6. Embed GLASS within N-body simulations running on GPU infrastructure for
    post-processing.
 
+## How Can This be Achieved
+
+- Adopt the [Python Array API Standard](https://data-apis.org/array-api) to
+  write hardware-agnostic code.
+- Core physics logic maps perfectly to the standard.
+- The remaining gaps:
+  - Handling RNG seeds consistently across CPU/GPU backends.
+  - Falling back to library-specific code for FFTs and so on.
+  - Minimising the cost of moving arrays between different devices.
+
 # Python Array API Standard
 
 ## What Are Arrays
