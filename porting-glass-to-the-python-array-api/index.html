@@ -290,6 +290,19 @@ Patrick J. Roddy
 <li class="fragment">Enable differentiable simulations using JAX (in part or in full).</li>
 <li class="fragment">Embed GLASS within N-body simulations running on GPU infrastructure for post-processing.</li>
 </ol>
+</section>
+<section class="slide level2">
+<h2>How Can This be Achieved</h2>
+<ul>
+<li class="fragment">Adopt the <a href="https://data-apis.org/array-api">Python Array API Standard</a> to write hardware-agnostic code.</li>
+<li class="fragment">Core physics logic maps perfectly to the standard.</li>
+<li class="fragment">The remaining gaps:
+<ul>
+<li class="fragment">Handling RNG seeds consistently across CPU/GPU backends.</li>
+<li class="fragment">Falling back to library-specific code for FFTs and so on.</li>
+<li class="fragment">Minimising the cost of moving arrays between different devices.</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
