@@ -7,9 +7,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Patrick J. Roddy">
   <meta name="dcterms.date" content="2024-06-25">
@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3d6aa65b37be2e1788c803a5f5036e9d.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5c53b6bb0b9d2c937bce8b5145aa6415.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -272,7 +275,7 @@ Patrick J. Roddy
 </blockquote>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/azure_boards.png" style="width:35.0%" alt="Azure Boards"> <img data-src="figures/asana.png" style="width:100.0%" alt="Asana"> <img data-src="figures/monday.png" style="width:100.0%" alt="Monday.com"></p>
+<p><img data-src="figures/azure-boards.png" style="width:35.0%" alt="Azure Boards"> <img data-src="figures/asana.png" style="width:100.0%" alt="Asana"> <img data-src="figures/monday.png" style="width:100.0%" alt="Monday.com"></p>
 </div>
 </div>
 </div>
@@ -288,7 +291,7 @@ Patrick J. Roddy
 </blockquote>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/jenkins.png" style="width:35.0%" alt="Jenkins"> <img data-src="figures/gitlab_ci.png" style="width:35.0%" alt="GitLab CI"> <img data-src="figures/github_actions.png" style="width:35.0%" alt="GitHub Actions"></p>
+<p><img data-src="figures/jenkins.png" style="width:35.0%" alt="Jenkins"> <img data-src="figures/gitlab-ci.png" style="width:35.0%" alt="GitLab CI"> <img data-src="figures/github-actions.png" style="width:35.0%" alt="GitHub Actions"></p>
 </div>
 </div>
 </div>
@@ -352,7 +355,7 @@ Patrick J. Roddy
 </blockquote>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/prometheus.png" style="width:35.0%" alt="Prometheus"> <img data-src="figures/grafana.png" style="width:35.0%" alt="Grafana"> <img data-src="figures/new_relic.png" style="width:35.0%" alt="New Relic"></p>
+<p><img data-src="figures/prometheus.png" style="width:35.0%" alt="Prometheus"> <img data-src="figures/grafana.png" style="width:35.0%" alt="Grafana"> <img data-src="figures/new-relic.png" style="width:35.0%" alt="New Relic"></p>
 </div>
 </div>
 </div>
@@ -368,7 +371,7 @@ Patrick J. Roddy
 </blockquote>
 </div>
 <div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/slack.png" style="width:35.0%" alt="Slack"> <img data-src="figures/microsoft_teams.png" style="width:35.0%" alt="Microsoft Teams"> <img data-src="figures/pager_duty.png" style="width:35.0%" alt="PagerDuty"></p>
+<p><img data-src="figures/slack.png" style="width:35.0%" alt="Slack"> <img data-src="figures/microsoft-teams.png" style="width:35.0%" alt="Microsoft Teams"> <img data-src="figures/pager-duty.png" style="width:35.0%" alt="PagerDuty"></p>
 </div>
 </div>
 </div>
@@ -405,7 +408,8 @@ Patrick J. Roddy
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/devops-an-introduction","width":"550"});
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#ffffff","colorLight":"#000000","height":"550","text":"https://paddyroddy.github.io/talks/devops-an-introduction
+","width":"550"});
   script.remove();
 })();
 </script>
