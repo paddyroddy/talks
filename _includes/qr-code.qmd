@@ -4,7 +4,7 @@
 
 ::: {.cell}
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?data=https://paddyroddy.github.io/talks/{{< meta slug >}}&bgcolor=000000&color=ffffff&size=550x550" alt="QR code linking to this talk's web page" style="display:block;margin:auto;width:550px;"/>
+<img alt="QR code linking to this talk's web page." src="https://api.qrserver.com/v1/create-qr-code/?data=https://paddyroddy.github.io/talks/{{< meta slug >}}&amp;bgcolor=000000&amp;color=ffffff&amp;size=550x550" style="display:block;margin:auto;width:550px;"/>
 
 :::
 
