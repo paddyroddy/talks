@@ -242,7 +242,7 @@ import re
 
 with open("../_includes/qr-code.qmd") as f:
     contents = f.read()
-    escaped = re.sub(r"\{\{< qrcode(.*?)>\}\}", r"{{{< qrcode\1>}}}", contents)
+    escaped = re.sub(r"\{\{< meta(.*?)>\}\}", r"{{{< meta\1>}}}", contents)
     print(f"````{{.markdown}}\n{escaped}\n````")
 `````
 
