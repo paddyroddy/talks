@@ -278,6 +278,8 @@ m
 
 ::: {layout-ncol=2}
 
+::: {.cell}
+
 <!-- vale RedHat.Symbols = NO -->
 
 - 2011 Two Castles Run (Warwick → Kenilworth).
@@ -288,7 +290,13 @@ m
 
 <!-- vale RedHat.Symbols = YES -->
 
+:::
+
+::: {.cell}
+
 ![2025 Lincoln 10km](figures/lincoln.jpg){width=70%}
+
+:::
 
 :::
 
