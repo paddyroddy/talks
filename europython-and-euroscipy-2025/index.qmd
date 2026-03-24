@@ -112,7 +112,7 @@ centre."}
 
 :::{.fragment .fade-left}
 
-[![apache/arrow#47609](figures/apache_arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
+[![apache/arrow#47609](figures/apache-arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
 
 :::
 
@@ -124,7 +124,7 @@ centre."}
 
 ::: {.cell}
 
-![](figures/heatmap_prague.jpg){fig-alt="A map of my runs in Prague." width=65%}
+![](figures/heatmap-prague.jpg){fig-alt="A map of my runs in Prague." width=65%}
 
 :::
 
@@ -350,7 +350,7 @@ array([ 1.79769313e+308 + 0.00000000e+000j, 0.00000000e+000 + 0.00000000e+000j,
 
 ## Running {{< fa brands strava >}} {footer=false}
 
-![](figures/heatmap_krakow.jpg){width=90%}
+![](figures/heatmap-krakow.jpg){width=90%}
 
 ## Photos – Kraków
 

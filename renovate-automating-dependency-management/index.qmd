@@ -119,11 +119,11 @@ See in action:
 
 ::: {layout-ncol=2}
 
-![](figures/pull_requests_1.png)
+![](figures/pull-requests-1.png)
 
 ::: {.fragment .fade-left}
 
-![](figures/pull_requests_2.png)
+![](figures/pull-requests-2.png)
 
 :::
 
@@ -133,11 +133,11 @@ See in action:
 
 ::: {layout-ncol=2}
 
-![](figures/logging_1.png)
+![](figures/logging-1.png)
 
 ::: {.fragment .fade-left}
 
-![](figures/logging_2.png)
+![](figures/logging-2.png)
 
 :::
 

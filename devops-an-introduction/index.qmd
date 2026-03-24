@@ -91,7 +91,7 @@ title: "DevOps: An Introduction"
 
 ::: {.fragment .fade-left}
 
-![Azure Boards](figures/azure_boards.png){width=35%}
+![Azure Boards](figures/azure-boards.png){width=35%}
 ![Asana](figures/asana.png){width=100%}
 ![Monday.com](figures/monday.png){width=100%}
 
@@ -116,8 +116,8 @@ title: "DevOps: An Introduction"
 ::: {.fragment .fade-left}
 
 ![Jenkins](figures/jenkins.png){width=35%}
-![GitLab CI](figures/gitlab_ci.png){width=35%}
-![GitHub Actions](figures/github_actions.png){width=35%}
+![GitLab CI](figures/gitlab-ci.png){width=35%}
+![GitHub Actions](figures/github-actions.png){width=35%}
 
 :::
 
@@ -216,7 +216,7 @@ title: "DevOps: An Introduction"
 
 ![Prometheus](figures/prometheus.png){width=35%}
 ![Grafana](figures/grafana.png){width=35%}
-![New Relic](figures/new_relic.png){width=35%}
+![New Relic](figures/new-relic.png){width=35%}
 
 :::
 
@@ -239,8 +239,8 @@ title: "DevOps: An Introduction"
 ::: {.fragment .fade-left}
 
 ![Slack](figures/slack.png){width=35%}
-![Microsoft Teams](figures/microsoft_teams.png){width=35%}
-![PagerDuty](figures/pager_duty.png){width=35%}
+![Microsoft Teams](figures/microsoft-teams.png){width=35%}
+![PagerDuty](figures/pager-duty.png){width=35%}
 
 :::
 
