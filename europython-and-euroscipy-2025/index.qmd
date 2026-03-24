@@ -112,7 +112,7 @@ centre."}
 
 :::{.fragment .fade-left}
 
-[![apache/arrow#47609](figures/apache_arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
+[![apache/arrow#47609](figures/apache-arrow.png){fig-alt="The typing stubs pull request." height=550}](https://github.com/apache/arrow/pull/47609)
 
 :::
 

@@ -249,7 +249,7 @@ m
 
 ![2018 Planck Lensing Map](figures/planck.png){width=80%}
 
-![An Example Slepian Wavelet](figures/slepian_wavelets_south_america_3B_2jmin_2j_L128_res512_real.png)
+![An Example Slepian Wavelet](figures/slepian-wavelets-south-america-3B-2jmin-2j-L128-res512-real.png)
 
 :::
 

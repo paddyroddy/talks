@@ -15,7 +15,7 @@ title: "pyOpenSci: My Experience"
 
 ::: {layout-ncol=2}
 
-[![](figures/joss_logo.png)](https://joss.theoj.org)
+[![](figures/joss-logo.png)](https://joss.theoj.org)
 
 - JOSS is a **developer friendly**, open access journal for research software
   packages.
@@ -57,7 +57,7 @@ title: "pyOpenSci: My Experience"
 
 [![](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2/status.svg)](https://joss.theoj.org/papers/55d9cf16a27bf2d3141f0f66c676b7f2)
 
-[![](figures/joss_review.png)](https://joss.theoj.org/papers/10.21105/joss.05221)
+[![](figures/joss-review.png)](https://joss.theoj.org/papers/10.21105/joss.05221)
 
 # pyOpenSci
 
@@ -77,13 +77,13 @@ title: "pyOpenSci: My Experience"
 
 :::
 
-![](figures/pyopensci_logo.png)
+![](figures/pyopensci-logo.png)
 
 :::
 
 ## Pre-Submission Enquiry
 
-[![](figures/pyopensci_presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
+[![](figures/pyopensci-presubmission.png){width=90%}](https://github.com/pyOpenSci/software-submission/issues/148)
 
 ## Review Process {data-menu-title="Review Process (i)"}
 
@@ -185,7 +185,7 @@ Functionality:
 
 ::: {layout-ncol=2}
 
-[![](figures/pyopensci_packages.png)](https://www.pyopensci.org/python-packages.html)
+[![](figures/pyopensci-packages.png)](https://www.pyopensci.org/python-packages.html)
 
 > If the package has an **obvious research application** according to JOSS's
 > definition in their
@@ -198,7 +198,7 @@ Functionality:
 
 ## Blog Post (Optional)
 
-[![](figures/pyopensci_blog.png){width=80%}](https://www.pyopensci.org/blog/sleplet-slepian-wavelets)
+[![](figures/pyopensci-blog.png){width=80%}](https://www.pyopensci.org/blog/sleplet-slepian-wavelets)
 
 # Conclusions
 
