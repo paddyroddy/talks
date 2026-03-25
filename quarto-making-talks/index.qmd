@@ -43,7 +43,7 @@ Promised this talk before.
 
 An open source scientific and technical publishing system
 
-[![Quarto](figures/quarto.jpg)](https://quarto.org)
+[![Quarto](figures/quarto.jpg){width=80%}](https://quarto.org)
 
 ## What is Quarto {data-menu-title="What is Quarto (ii)"}
 
