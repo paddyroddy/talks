@@ -9,6 +9,7 @@ listing:
   exclude:
     title: Page Not Found
   field-display-names:
+    institute: Organisation
     subtitle: Event
   fields:
     - date
