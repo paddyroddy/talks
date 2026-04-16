@@ -10,12 +10,12 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-slim
     permissions:
       contents: write
+    runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/github-pages/quarto@d8081a80ce0003b82fc662944c69bb61db85e518 # v0
+      - uses: paddyroddy/.github/actions/github-pages/quarto@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           requirements-txt: ${{ github.workspace }}/requirements.txt
