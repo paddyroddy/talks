@@ -10,9 +10,9 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-slim
     permissions:
       contents: write
+    runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/github-pages/quarto@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
