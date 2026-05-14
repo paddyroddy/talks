@@ -11,7 +11,9 @@ author:
   - "[Samantha Ahern](https://github.com/quirksahern)"
   - "[Sofía Miñano](https://github.com/sfmig)"
 date: 2026-06-09
-format: revealjs
+format:
+  revealjs:
+    logo: https://avatars.githubusercontent.com/u/87066407?s=200&v=4
 institute:
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
@@ -27,4 +29,89 @@ subtitle: "[ARC Forum](https://www.ucl.ac.uk/arc)"
 title: Collaborations Workshop 2026
 ---
 
-#
+# Overview
+
+## Collaborations Workshop
+
+- Organised by the Software Sustainability Institute (SSI).
+- Past outputs include the Research Software Engineering as a career path and the `CITATION.cff` file format.
+- Three day "unconference".
+- Emphasis on collaborations, dynamic discussions, and hands-on problem-solving.
+- This years theme was _Strengthening the Research Software Community_.
+
+## Location
+
+ICC Belfast
+
+```{python}
+from ipyleaflet import Map, Marker, basemap_to_tiles, basemaps
+
+belfast = (54.59738870680214, -5.919148269637861)
+ucl = (51.52460622303972, -0.13441106476677847)
+places = (belfast, ucl)
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik, "2026-04-27"),
+    center=(
+        sum(coord[0] for coord in places) / len(places),
+        sum(coord[1] for coord in places) / len(places),
+    ),
+    zoom=6,
+)
+for place in places:
+    m.add_layer(Marker(location=place))
+m
+```
+
+# Our Experience
+
+## Paddy {.smaller}
+
+::: {layout-ncol=2}
+
+::: {.cell}
+
+- Third Collaborations Workshop.
+- The unlikely weather was welcome.
+- Belfast is good place to run.
+- Enjoy a good mural.
+- Discussion session was a about good practices for AI-generated software.
+- Collaborative idea was about better education on how to perform a _good_ code review.
+- Hack day <https://github.com/green-actions> {{< fa brands github >}}. A tool to compute the action usage for a given repository.
+
+:::
+
+::: {.r-stack}
+
+![](figures/paddy/1.jpg){.fragment fig-alt="Rainbow cake." height=550}
+
+![](figures/paddy/2.jpg){.fragment fig-alt="A mural of a woman and a dog." height=550}
+
+![](figures/paddy/3.jpg){.fragment fig-alt="A building being demolished." height=550}
+
+![](figures/paddy/4.jpg){.fragment fig-alt="Beacon of Hope sculpture." height=550}
+
+![](figures/paddy/5.jpg){.fragment fig-alt="The Salmon of Knowledge sculpture." height=550}
+
+![](figures/paddy/6.jpg){.fragment fig-alt="Sunflower pub." height=550}
+
+![](figures/paddy/7.jpg){.fragment fig-alt="Belfast City Hall at night." height=550}
+
+![](figures/paddy/8.jpg){.fragment fig-alt="A physics mural." height=550}
+
+![](figures/paddy/9.jpg){.fragment fig-alt="Bluebells." height=550}
+
+![](figures/paddy/10.jpg){.fragment fig-alt="Lit up umbrellas." height=550}
+
+![](figures/paddy/11.jpg){.fragment fig-alt="Interior décor of a pub." height=550}
+
+![](figures/paddy/12.jpg){.fragment fig-alt="A high stair sculpture." height=550}
+
+![](figures/paddy/13.jpg){.fragment fig-alt="A small bandstand." height=550}
+
+![](figures/paddy/14.jpg){.fragment fig-alt="Some of the UCL cohort."}
+
+![](figures/paddy/15.jpg){.fragment fig-alt="My hack day team."}
+
+:::
+
+:::
