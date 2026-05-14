@@ -11,3 +11,5 @@ index-listing.json
 site_libs
 
 **/*.quarto_ipynb*
+
+**/*.quarto_ipynb

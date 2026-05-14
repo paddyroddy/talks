@@ -125,3 +125,5 @@ height=550}
 :::
 
 :::
+
+{{< include /_includes/qr-code.qmd >}}
