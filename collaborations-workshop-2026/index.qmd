@@ -1,0 +1,39 @@
+---
+author:
+  - Patrick Roddy
+  - "[Chris Gutschow](https://github.com/20DM)"
+  - "[Connor Aird](https://github.com/connoraird)"
+  - "[David Pérez Suárez](https://github.com/dpshelio)"
+  - "[Duncan Leggat](https://github.com/dleggat)"
+  - "[Hollie Rowland](https://github.com/hjrucl90)"
+  - "[Jeremy Stein](https://github.com/jeremyestein)"
+  - "[Jonathan Cooper](https://github.com/jonc125)"
+  - "[Samantha Ahern](https://github.com/quirksahern)"
+  - "[Sofía Miñano](https://github.com/sfmig)"
+date: 2026-06-09
+format: revealjs
+institute:
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[UCL Advanced Research Computing
+  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+  - "[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/)"
+subtitle: "[ARC Forum](https://www.ucl.ac.uk/arc)"
+title: Collaborations Workshop 2026
+---
+
+#
