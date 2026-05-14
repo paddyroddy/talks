@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.280Z</lastmod>
-  </url>
-  <url>
     <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.162Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/porting-glass-to-the-python-array-api/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.228Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.251Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/python-packaging/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.236Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/europython-and-euroscipy-2025/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.207Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.299Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/arc-reintroduction/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.117Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/quarto-making-talks/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.237Z</lastmod>
+    <lastmod>2026-05-14T22:08:52.747Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/testing-and-continuous-integration/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/linting-prose-with-vale/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.221Z</lastmod>
+    <lastmod>2026-05-14T22:08:52.816Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.117Z</lastmod>
+    <lastmod>2026-05-14T22:08:52.694Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/europython-and-euroscipy-2025/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/arc-reintroduction/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.897Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.836Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/porting-glass-to-the-python-array-api/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.830Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/linting-prose-with-vale/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/testing-and-continuous-integration/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.884Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/collaborations-workshop-2026/index.html</loc>
-    <lastmod>2026-05-14T22:05:50.155Z</lastmod>
+    <lastmod>2026-05-14T22:08:52.736Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/python-packaging/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/quarto-making-talks/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/index.html</loc>
+    <lastmod>2026-05-14T22:08:52.816Z</lastmod>
   </url>
 </urlset>
