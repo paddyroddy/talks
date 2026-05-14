@@ -1,5 +1,11 @@
 /*-- scss:rules --*/
 
+/* Shrink author names on title slide */
+.reveal .quarto-title-authors {
+  font-size: 0.7em;
+  line-height: 1.2;
+}
+
 .reveal .slide-logo {
   /* circular image */
   border-radius: 50%;
