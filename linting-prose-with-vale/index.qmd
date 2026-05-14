@@ -1,5 +1,5 @@
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2025-06-03
 format: revealjs
 institute:

@@ -1,6 +1,6 @@
 ---
 author:
-  - Patrick J. Roddy
+  - Patrick Roddy
   - "[Stephen Thompson](https://profiles.ucl.ac.uk/23126-stephen-thompson)"
 date: 2025-12-03
 format: revealjs

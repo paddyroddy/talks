@@ -1,5 +1,5 @@
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2025-09-02
 format: revealjs
 institute:
@@ -408,7 +408,7 @@ specified in `/index.qmd` mapped `subtitle` to `Events`.
 
 ```{.yaml}
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2025-09-02
 format: revealjs
 institute:
