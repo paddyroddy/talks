@@ -1,10 +1,8 @@
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2026-03-19
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle:
   "[ARCHER2 Celebration of Science
   2026](https://www.archer2.ac.uk/community/events/celebration-of-science-2026)"

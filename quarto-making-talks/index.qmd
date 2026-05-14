@@ -1,10 +1,8 @@
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2025-09-02
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Quarto: Making Talks"
 ---
@@ -408,12 +406,10 @@ specified in `/index.qmd` mapped `subtitle` to `Events`.
 
 ```{.yaml}
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2025-09-02
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Quarto: Making Talks"
 ---

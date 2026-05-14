@@ -1,10 +1,8 @@
 ---
-author: Patrick J. Roddy
+author: Patrick Roddy
 date: 2026-02-26
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle:
   "[UCL Hawkes Institute: Reproducible Analytical
   Pipelines](https://www.ucl.ac.uk/hawkes-institute)"
