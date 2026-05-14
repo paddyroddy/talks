@@ -37,7 +37,7 @@ title: Collaborations Workshop 2026
 - Past outputs include the Research Software Engineering as a career path and the `CITATION.cff` file format.
 - Three day "unconference".
 - Emphasis on collaborations, dynamic discussions, and hands-on problem-solving.
-- This years theme was _Strengthening the Research Software Community_.
+- This year's theme was _Strengthening the Research Software Community_.
 
 ## Location
 
