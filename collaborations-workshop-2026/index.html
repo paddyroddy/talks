@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../_assets/images/favicon.ico" rel="icon">
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Patrick Roddy">
-  <meta name="dcterms.date" content="2024-06-25">
-  <title>Patrick Roddy – DevOps: An Introduction</title>
+  <meta name="author" content="Chris Gutschow">
+  <meta name="author" content="Connor Aird">
+  <meta name="author" content="David Pérez Suárez">
+  <meta name="author" content="Duncan Leggat">
+  <meta name="author" content="Hollie Rowland">
+  <meta name="author" content="Jeremy Stein">
+  <meta name="author" content="Jonathan Cooper">
+  <meta name="author" content="Samantha Ahern">
+  <meta name="author" content="Sofía Miñano">
+  <meta name="dcterms.date" content="2026-06-09">
+  <title>Patrick Roddy – Collaborations Workshop 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,18 +138,18 @@
     }
   </style>
   <script async="" data-goatcounter="https://paddyroddy-talks.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
-  <meta name="mermaid-theme" content="dark">
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section data-footer="false" class="quarto-title-block center">
-  <h1 class="title">DevOps: An Introduction</h1>
-  <p class="subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Collaborations Hour</a></p>
+  <h1 class="title">Collaborations Workshop 2026</h1>
+  <p class="subtitle"><a href="https://www.ucl.ac.uk/arc">ARC Forum</a></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -149,260 +160,154 @@ Patrick Roddy
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
           </p>
     </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/20DM">Chris Gutschow</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/connoraird">Connor Aird</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/dpshelio">David Pérez Suárez</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/dleggat">Duncan Leggat</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/hjrucl90">Hollie Rowland</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/jeremyestein">Jeremy Stein</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/jonc125">Jonathan Cooper</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/quirksahern">Samantha Ahern</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://github.com/sfmig">Sofía Miñano</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            <a href="https://www.sainsburywellcome.org/">Sainsbury Wellcome Centre</a>
+          </p>
+    </div>
 </div>
 
-  <p class="date">2024-06-25</p>
+  <p class="date">2026-06-09</p>
 </section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>ARC</h1>
+<h1>Overview</h1>
 
 </section>
 <section class="slide level2">
-<h2>Current Subgroups</h2>
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB;
-    Collaborations --&gt; _["Data Science"] &amp; DevOps &amp; Healthcare &amp; HPC &amp; MIRSG &amp; WebDev;
-    _["Data Science"] -.-&gt; data_science_responsibilities["
-                             AI
-                             Machine learning
-                             Signal processing
-                             Statistics
-                           "];
-    DevOps -.-&gt; ?;
-    Healthcare -.-&gt; healthcare_responsibilities["
-                      EMAP
-                      Hospital projects
-                    "];
-    HPC -.-&gt; hpc_responsibilities["
-               C++
-               FPGAs
-               Fortran
-               GPUs
-               MPI
-               OpenMP
-             "];
-    MIRSG -.-&gt; mirsg_responsibilities["
-                 Medical imaging
-                 OMERO
-                 XNAT
-               "];
-    WebDev -.-&gt; webdev_responsibilities["
-                  CSS
-                  HTML
-                  JavaScript
-                "];
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>A New Subgroup</h2>
+<h2>Collaborations Workshop</h2>
 <ul>
-<li class="fragment">What skills are there currently in the group?</li>
-<li class="fragment">Monthly HPC Hour-like meeting?</li>
-<li class="fragment"><code>Area: DevOps</code> label in <code>research-software-opportunities</code></li>
-<li class="fragment">Resume (again) at TI</li>
-<li class="fragment">What training/skills do we want as a group?</li>
-<li class="fragment">What overlap does DevOps have with the other subgroups?</li>
-<li class="fragment">How can we work together with ISD to share training opportunities?</li>
+<li class="fragment">Organised by the Software Sustainability Institute (SSI).</li>
+<li class="fragment">Past outputs include the Research Software Engineering as a career path and the <code>CITATION.cff</code> file format.</li>
+<li class="fragment">Three day “unconference”.</li>
+<li class="fragment">Emphasis on collaborations, dynamic discussions, and hands-on problem-solving.</li>
+<li class="fragment">This year’s theme was <em>Strengthening the Research Software Community</em>.</li>
 </ul>
 </section>
 <section class="slide level2">
-<h2>ISD Training</h2>
-<p><img data-src="figures/isd.png"></p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>DevOps</h1>
-
-</section>
-<section class="slide level2" data-menu-title="What is DevOps? (i)">
-<h2>What is DevOps?</h2>
-<p><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia</a>:</p>
-<blockquote>
-<p>DevOps is a method in the software development and IT industry. Used as a set of practices and tools, DevOps integrates and automates the work of software development (Dev) and IT operations (Ops) as a means for improving and shortening the systems development life cycle. DevOps is complementary to agile software development; many DevOps aspects came from the agile way of working. Automation is an important part of DevOps. Software programmers and architects should use “fitness functions” to keep their software in check.</p>
-</blockquote>
-</section>
-<section class="slide level2" data-menu-title="What is DevOps? (ii)">
-<h2>What is DevOps?</h2>
-<p><a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia</a>:</p>
-<blockquote>
-<p>… academics and practitioners have not developed a universal definition for the term “DevOps”. Most often, DevOps is characterised by key principles: <code>shared ownership</code>, <code>workflow automation</code>, and <code>rapid feedback</code>. … “a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality”. … At its most successful, DevOps is a combination of specific practices, culture change, and tools.</p>
-</blockquote>
-</section>
-<section class="slide level2">
-<h2>DevOps Lifecycle</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/lifecycle.png"></p>
-<figcaption>Atlassian</figcaption>
-</figure>
-</div>
-</section>
-<section class="slide level2">
-<h2>Discover</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Building software is a team sport. In preparation for the upcoming sprint, teams must workshop to explore, organise, and prioritise ideas. Ideas must align to strategic goals and deliver customer impact. Agile can help guide DevOps teams.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/jira.png" style="width:35.0%" alt="Jira"> <img data-src="figures/trello.png" style="width:100.0%" alt="Trello"> <img data-src="figures/confluence.png" style="width:35.0%" alt="Confluence"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Plan</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>DevOps teams should adopt agile practices to improve speed and quality. Agile is an iterative approach to project management and software development that helps teams break work into smaller pieces to deliver incremental value.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/azure-boards.png" style="width:35.0%" alt="Azure Boards"> <img data-src="figures/asana.png" style="width:100.0%" alt="Asana"> <img data-src="figures/monday.png" style="width:100.0%" alt="Monday.com"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Build</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Git is a free and open source version control system. It offers support for branching, merging, and rewriting repository history, which has led to many innovative and powerful workflows and tools for the development build process.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/jenkins.png" style="width:35.0%" alt="Jenkins"> <img data-src="figures/gitlab-ci.png" style="width:35.0%" alt="GitLab CI"> <img data-src="figures/github-actions.png" style="width:35.0%" alt="GitHub Actions"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Test</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Continuous integration (CI) allows many developers to contribute to a single shared repository. When code changes are merged, automated tests are run to ensure correctness before integration. Merging and testing code often help development teams gain reassurance in the quality and predictability of code once deployed.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/selenium.png" style="width:35.0%" alt="Selenium"> <img data-src="figures/junit.png" style="width:35.0%" alt="JUnit"> <img data-src="figures/postman.png" style="width:35.0%" alt="Postman"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Deploy</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Continuous deployment (CD) allows teams to release features often into production in an automated fashion. Teams also have the option to deploy with feature flags, delivering new code to users steadily and methodically rather than all at once. This approach improves velocity, productivity, and sustainability of software development teams.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/ansible.png" style="width:35.0%" alt="Ansible"> <img data-src="figures/terraform.png" style="width:35.0%" alt="Terraform"> <img data-src="figures/kubernetes.png" style="width:35.0%" alt="Kubernetes"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Operate</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Manage the end-to-end delivery of IT services to customers. This includes the practices involved in design, implementation, configuration, deployment, and maintenance of all IT infrastructure that supports an organisation’s services.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/docker.png" style="width:35.0%" alt="Docker"> <img data-src="figures/puppet.png" style="width:35.0%" alt="Puppet"> <img data-src="figures/chef.png" style="width:35.0%" alt="Chef"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Observe</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>Quickly identify and resolve issues that impact product uptime, speed, and functionality. Automatically inform your team of changes, high-risk actions, or failures, so you can keep services on.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/prometheus.png" style="width:35.0%" alt="Prometheus"> <img data-src="figures/grafana.png" style="width:35.0%" alt="Grafana"> <img data-src="figures/new-relic.png" style="width:35.0%" alt="New Relic"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Continuous Feedback</h2>
-<div class="quarto-layout-panel" data-layout="[70,30]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><a href="https://www.atlassian.com/devops">Atlassian</a>:</p>
-<blockquote>
-<p>DevOps teams should evaluate each release and generate reports to improve future releases. By gathering continuous feedback, teams can improve their processes and incorporate customer feedback to improve the next release.</p>
-</blockquote>
-</div>
-<div class="fragment fade-left quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><img data-src="figures/slack.png" style="width:35.0%" alt="Slack"> <img data-src="figures/microsoft-teams.png" style="width:35.0%" alt="Microsoft Teams"> <img data-src="figures/pager-duty.png" style="width:35.0%" alt="PagerDuty"></p>
-</div>
+<h2>Location</h2>
+<p>ICC Belfast</p>
+<div id="a9707f7e" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"39a1790c30e0460fb9c99057811f4203","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
 </div>
 </div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>Conclusions</h1>
+<h1>Our Experience</h1>
 
 </section>
-<section class="slide level2" data-menu-title="Summary">
-<h2></h2>
+<section class="slide level2 smaller">
+<h2>Paddy</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li class="fragment">Portmanteau of “development” and “operations”</li>
-<li class="fragment">Many different definitions out there</li>
-<li class="fragment">Everyone is doing some part of the DevOps lifecycle</li>
-<li class="fragment">New subgroup = new opportunities</li>
-<li class="fragment">Training opportunities out there</li>
-<li class="fragment">Need to identify skill gaps/requirements</li>
-<li class="fragment">Join the <code>#subgroup-devops</code> Slack channel</li>
-<li class="fragment">Talk at TI</li>
+<li class="fragment">Third Collaborations Workshop.</li>
+<li class="fragment">The unlikely weather was welcome.</li>
+<li class="fragment">Belfast is a good place to run.</li>
+<li class="fragment">Enjoy a good mural.</li>
+<li class="fragment">Discussion session was a about good practices for AI-generated software.</li>
+<li class="fragment">Collaborative idea was about better education on how to perform a <em>good</em> code review.</li>
+<li class="fragment">Hack day <a href="https://github.com/green-actions" class="uri">https://github.com/green-actions</a> <i class="fa-brands fa-github" aria-label="github"></i>. A tool to compute the action usage for a given repository.</li>
 </ul>
-</section>
-<section class="slide level2" data-menu-title="Fin">
-<h2></h2>
-<p><img data-src="figures/meme.jpg"></p>
+</div>
+<div class="r-stack quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/paddy/1.jpg" class="fragment" alt="Rainbow cake."></p>
+<p><img data-src="figures/paddy/2.jpg" class="fragment" alt="A mural of a woman and a dog." height="550"></p>
+<p><img data-src="figures/paddy/3.jpg" class="fragment" alt="A building being demolished." height="550"></p>
+<p><img data-src="figures/paddy/4.jpg" class="fragment" alt="Beacon of Hope sculpture." height="550"></p>
+<p><img data-src="figures/paddy/5.jpg" class="fragment" alt="The Salmon of Knowledge sculpture." height="550"></p>
+<p><img data-src="figures/paddy/6.jpg" class="fragment" alt="Sunflower pub." height="550"></p>
+<p><img data-src="figures/paddy/7.jpg" class="fragment" alt="Belfast City Hall at night." height="550"></p>
+<p><img data-src="figures/paddy/8.jpg" class="fragment" alt="A physics mural." height="550"></p>
+<p><img data-src="figures/paddy/9.jpg" class="fragment" alt="Bluebells." height="550"></p>
+<p><img data-src="figures/paddy/10.jpg" class="fragment" alt="Lit up umbrellas." height="550"></p>
+<p><img data-src="figures/paddy/11.jpg" class="fragment" alt="Interior décor of a pub." height="550"></p>
+<p><img data-src="figures/paddy/12.jpg" class="fragment" alt="A high stair sculpture." height="550"></p>
+<p><img data-src="figures/paddy/13.jpg" class="fragment" alt="A small bandstand." height="550"></p>
+<p><img data-src="figures/paddy/14.jpg" class="fragment" alt="Some of the UCL cohort."></p>
+<p><img data-src="figures/paddy/15.jpg" class="fragment" alt="My hack day team."></p>
+</div>
+</div>
+</div>
 </section></section>
 <section class="title-slide slide level1 center" data-menu-title="QR Code">
 <h1></h1>
 <div class="quarto-layout-panel" data-layout="[55,45]">
 <div class="quarto-layout-row">
 <div class="cell quarto-layout-cell" style="flex-basis: 55.0%;justify-content: flex-start;">
-<p><img alt="QR code linking to this talk's web page." src="https://api.qrserver.com/v1/create-qr-code/?data=https://paddyroddy.github.io/talks/devops-an-introduction
+<p><img alt="QR code linking to this talk's web page." src="https://api.qrserver.com/v1/create-qr-code/?data=https://paddyroddy.github.io/talks/collaborations-workshop-2026
 &amp;bgcolor=000000&amp;color=ffffff&amp;size=550x550" style="display:block;margin:auto;width:550px;"></p>
 </div>
 <div class="cell quarto-layout-cell" style="flex-basis: 45.0%;justify-content: flex-start;">
@@ -415,9 +320,9 @@ Patrick Roddy
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="https://www.gravatar.com/avatar/b991f7f475c334cc277869a709445d42?s=200" class="slide-logo"></p>
+<p><img src="https://avatars.githubusercontent.com/u/87066407?s=200&amp;v=4" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>DevOps: An Introduction</p>
+<p>Collaborations Workshop 2026</p>
 </div>
 </div></div>
 
@@ -659,6 +564,9 @@ Patrick Roddy
       Reveal.addEventListener("slidechanged", (event) => {
         updateUiVisibility(event);
       });
+    </script>
+    <script type="application/vnd.jupyter.widget-state+json">
+    {"state":{"1771e74fcbce4b66bd74456b8fb442fe":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"188bba2d7b0445f98160517ef655b99d":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[51.52460622303972,-0.13441106476677847],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"39a1790c30e0460fb9c99057811f4203":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[53.06099746492093,-3.02677966720232],"close_popup_on_click":true,"controls":["IPY_MODEL_55b1292602694eaf9553216a479d170f","IPY_MODEL_d2c47bc4e04248b09d9fda9e3d24a31d"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_3c63602d41de48258ff2483c87a8a7e8","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_915ee03aeaba4897b70754a1188c08c3","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_e048a38834e44e91a92c49bc427c7e21","IPY_MODEL_54f8992b71b24aacbd2c1b5c0c7e8593","IPY_MODEL_188bba2d7b0445f98160517ef655b99d"],"layout":"IPY_MODEL_b106362c33b3460abb3372f79363ca8f","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2026-05-13","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_1771e74fcbce4b66bd74456b8fb442fe","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":6,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"3c63602d41de48258ff2483c87a8a7e8":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"54f8992b71b24aacbd2c1b5c0c7e8593":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[54.59738870680214,-5.919148269637861],"name":"","opacity":1,"options":["alt","draggable","keyboard","pm_ignore","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","snap_ignore":true,"subitems":[],"title":"","visible":true,"z_index_offset":0}},"55b1292602694eaf9553216a479d170f":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"915ee03aeaba4897b70754a1188c08c3":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"b106362c33b3460abb3372f79363ca8f":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d2c47bc4e04248b09d9fda9e3d24a31d":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"e048a38834e44e91a92c49bc427c7e21":{"model_module":"jupyter-leaflet","model_module_version":"^0.20","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.20","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.20","_view_name":"LeafletTileLayerView","attribution":"&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":19,"min_native_zoom":null,"min_zoom":1,"name":"OpenStreetMap.Mapnik","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","pm_ignore","tile_size","tms","zoom_offset"],"pane":"","pm_ignore":true,"popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"snap_ignore":true,"subitems":[],"tile_size":256,"tms":false,"url":"https://tile.openstreetmap.org/{z}/{x}/{y}.png","visible":true,"zoom_offset":0}}},"version_major":2,"version_minor":0}
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
