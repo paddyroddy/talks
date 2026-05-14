@@ -74,7 +74,7 @@ m
 - The unlikely weather was welcome.
 - Belfast is a good place to run.
 - Enjoy a good mural.
-- Discussion session was a about good practices for AI-generated software.
+- Discussion session was about good practices for AI-generated software.
 - Collaborative idea was about better education on how to perform a _good_ code review.
 - Hack day <https://github.com/green-actions> {{< fa brands github >}}. A tool to compute the action usage for a given repository.
 
