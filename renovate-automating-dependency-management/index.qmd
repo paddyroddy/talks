@@ -2,9 +2,7 @@
 author: Patrick Roddy
 date: 2023-11-14
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle: "[ARC Collaborations Hour](https://www.ucl.ac.uk/arc)"
 title: "Renovate: Automating Dependency Management"
 ---

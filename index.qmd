@@ -17,7 +17,7 @@ listing:
     - subtitle
     - author
     - institute
-  page-size: 8
+  page-size: 7
   sort: date desc
   type: table
 ---

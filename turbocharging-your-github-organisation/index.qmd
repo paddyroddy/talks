@@ -2,9 +2,7 @@
 author: Patrick Roddy
 date: 2024-12-12
 format: revealjs
-institute:
-  "[UCL Advanced Research Computing
-  (ARC)](https://www.ucl.ac.uk/advanced-research-computing)"
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
 subtitle:
   "[ARC DevOps
   Hour](https://www.ucl.ac.uk/advanced-research-computing/collaborations-consultancy/devops-collaborations)"
