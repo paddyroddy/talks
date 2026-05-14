@@ -72,7 +72,7 @@ m
 
 - Third Collaborations Workshop.
 - The unlikely weather was welcome.
-- Belfast is good place to run.
+- Belfast is a good place to run.
 - Enjoy a good mural.
 - Discussion session was a about good practices for AI-generated software.
 - Collaborative idea was about better education on how to perform a _good_ code review.
