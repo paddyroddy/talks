@@ -34,7 +34,8 @@ title: Collaborations Workshop 2026
 ## Collaborations Workshop
 
 - Organised by the Software Sustainability Institute (SSI).
-- Past outputs include the Research Software Engineering as a career path and the `CITATION.cff` file format.
+- Past outputs include the Research Software Engineering as a career path and
+  the `CITATION.cff` file format.
 - Three day "unconference".
 - Emphasis on collaborations, dynamic discussions, and hands-on problem-solving.
 - This year's theme was _Strengthening the Research Software Community_.
@@ -74,9 +75,11 @@ m
 - The unlikely weather was welcome.
 - Belfast is a good place to run.
 - Enjoy a good mural.
-- Discussion session was about good practices for AI-generated software.
-- Collaborative idea was about better education on how to perform a _good_ code review.
-- Hack day <https://github.com/green-actions> {{< fa brands github >}}. A tool to compute the action usage for a given repository.
+- Discussion session was a about good practices for AI-generated software.
+- Collaborative idea was about better education on how to perform a _good_ code
+  review.
+- Hack day <https://github.com/green-actions> {{< fa brands github >}}. A tool
+  to compute the action usage for a given repository.
 
 :::
 
@@ -84,17 +87,22 @@ m
 
 ![](figures/paddy/1.jpg){.fragment fig-alt="Rainbow cake." height=550}
 
-![](figures/paddy/2.jpg){.fragment fig-alt="A mural of a woman and a dog." height=550}
+![](figures/paddy/2.jpg){.fragment fig-alt="A mural of a woman and a dog."
+height=550}
 
-![](figures/paddy/3.jpg){.fragment fig-alt="A building being demolished." height=550}
+![](figures/paddy/3.jpg){.fragment fig-alt="A building being demolished."
+height=550}
 
-![](figures/paddy/4.jpg){.fragment fig-alt="Beacon of Hope sculpture." height=550}
+![](figures/paddy/4.jpg){.fragment fig-alt="Beacon of Hope sculpture."
+height=550}
 
-![](figures/paddy/5.jpg){.fragment fig-alt="The Salmon of Knowledge sculpture." height=550}
+![](figures/paddy/5.jpg){.fragment fig-alt="The Salmon of Knowledge sculpture."
+height=550}
 
 ![](figures/paddy/6.jpg){.fragment fig-alt="Sunflower pub." height=550}
 
-![](figures/paddy/7.jpg){.fragment fig-alt="Belfast City Hall at night." height=550}
+![](figures/paddy/7.jpg){.fragment fig-alt="Belfast City Hall at night."
+height=550}
 
 ![](figures/paddy/8.jpg){.fragment fig-alt="A physics mural." height=550}
 
@@ -102,9 +110,11 @@ m
 
 ![](figures/paddy/10.jpg){.fragment fig-alt="Lit up umbrellas." height=550}
 
-![](figures/paddy/11.jpg){.fragment fig-alt="Interior décor of a pub." height=550}
+![](figures/paddy/11.jpg){.fragment fig-alt="Interior décor of a pub."
+height=550}
 
-![](figures/paddy/12.jpg){.fragment fig-alt="A high stair sculpture." height=550}
+![](figures/paddy/12.jpg){.fragment fig-alt="A high stair sculpture."
+height=550}
 
 ![](figures/paddy/13.jpg){.fragment fig-alt="A small bandstand." height=550}
 
