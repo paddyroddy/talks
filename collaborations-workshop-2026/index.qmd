@@ -7,7 +7,7 @@ author:
   - "[Duncan Leggat](https://github.com/dleggat)"
   - "[Hollie Rowland](https://github.com/hjrucl90)"
   - "[Jeremy Stein](https://github.com/jeremyestein)"
-  - "[Jonathan Cooper](https://github.com/jonc125)"
+  - "[Jonathan Cooper](https://profiles.ucl.ac.uk/59377)"
   - "[Samantha Ahern](https://github.com/quirksahern)"
   - "[Sofía Miñano](https://github.com/sfmig)"
 date: 2026-06-09
@@ -125,5 +125,16 @@ height=550}
 :::
 
 :::
+
+## Jonathan
+
+- First time invited to speak at CW, and first experience of a fireside chat
+  (minus fire)
+- Helped run 2 mini-workshops despite not being involved in submitting either
+  proposal
+- Plugged [DisCouRSE](https://discourse-network.github.io/) in an attempt to get
+  NI engagement
+  - Some useful chats, including with people who won round 1 projects
+- Distracted by ARC admin work and missed several sessions
 
 {{< include /_includes/qr-code.qmd >}}
