@@ -5,13 +5,15 @@ on:
   issues:
     types:
       - opened
-  pull_request:
+  pull_request_target: # zizmor: ignore[dangerous-triggers]
     types:
       - opened
 
 jobs:
   add-issue-to-project:
-    permissions: {}
+    permissions:
+      issues: read
+      pull-requests: read
     runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
