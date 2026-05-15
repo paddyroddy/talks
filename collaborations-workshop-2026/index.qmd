@@ -126,4 +126,47 @@ height=550}
 
 :::
 
+## Duncan {.smaller}
+
+::: {layout-ncol=2}
+
+::: {.cell}
+
+- Second Collaborations Workshop.
+- Belfast has a great vibe - many murals and live music everywhere!
+- Many welcome opportunities for large animal photos.
+- **Conference itself**
+- **Speed blog**: Can AI ever be 'Green'?
+- **Collaborative idea sessions**: Domain2RSE
+ - Framework to help guide conversations between domain experts and RSE
+- **Hack day**: Green actions
+
+:::
+
+::: {.r-stack}
+
+![](figures/duncan/1.jpg){.fragment fig-alt="The cathedral of the eponymous Cathedral Quarter" height=550}
+
+![](figures/duncan/2.jpg){.fragment fig-alt="St. Albert monument" height=550}
+
+![](figures/duncan/3.jpg){.fragment fig-alt="Mural #1" height=550}
+
+![](figures/duncan/4.jpg){.fragment fig-alt="Mural #2" height=550}
+
+![](figures/duncan/5.jpg){.fragment fig-alt="Delicious chips" height=550}
+
+![](figures/duncan/6.jpg){.fragment fig-alt="Golden gorilla"}
+
+![](figures/duncan/7.jpg){.fragment fig-alt="Sheep!" height=550}
+
+![](figures/duncan/8.jpg){.fragment fig-alt="The Big Fish" height=550}
+
+![](figures/duncan/9.jpg){.fragment fig-alt="Duck" height=550}
+
+:::
+
+:::
+
+
+
 {{< include /_includes/qr-code.qmd >}}
