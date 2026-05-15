@@ -391,20 +391,22 @@ Patrick Roddy
 <span id="cb1-5"><a></a><span class="at">  </span><span class="fu">issues</span><span class="kw">:</span></span>
 <span id="cb1-6"><a></a><span class="at">    </span><span class="fu">types</span><span class="kw">:</span></span>
 <span id="cb1-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> opened</span></span>
-<span id="cb1-8"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-8"><a></a><span class="at">  </span><span class="fu">pull_request_target</span><span class="kw">:</span><span class="co"> # zizmor: ignore[dangerous-triggers]</span></span>
 <span id="cb1-9"><a></a><span class="at">    </span><span class="fu">types</span><span class="kw">:</span></span>
 <span id="cb1-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> opened</span></span>
 <span id="cb1-11"><a></a></span>
 <span id="cb1-12"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
 <span id="cb1-13"><a></a><span class="at">  </span><span class="fu">add-issue-to-project</span><span class="kw">:</span></span>
-<span id="cb1-14"><a></a><span class="at">    </span><span class="fu">permissions</span><span class="kw">:</span><span class="at"> </span><span class="kw">{}</span></span>
-<span id="cb1-15"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
-<span id="cb1-16"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb1-17"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
-<span id="cb1-18"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@dca9a13d483fe335f0b9edbd08494e6e4cd3b498</span><span class="co"> # v0</span></span>
-<span id="cb1-19"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb1-20"><a></a><span class="co">          # yamllint disable-line rule:line-length</span></span>
-<span id="cb1-21"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span><span class="co"> # zizmor: ignore[secrets-outside-env]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-14"><a></a><span class="at">    </span><span class="fu">permissions</span><span class="kw">:</span></span>
+<span id="cb1-15"><a></a><span class="at">      </span><span class="fu">issues</span><span class="kw">:</span><span class="at"> read</span></span>
+<span id="cb1-16"><a></a><span class="at">      </span><span class="fu">pull-requests</span><span class="kw">:</span><span class="at"> read</span></span>
+<span id="cb1-17"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
+<span id="cb1-18"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-19"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
+<span id="cb1-20"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@dca9a13d483fe335f0b9edbd08494e6e4cd3b498</span><span class="co"> # v0</span></span>
+<span id="cb1-21"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-22"><a></a><span class="co">          # yamllint disable-line rule:line-length</span></span>
+<span id="cb1-23"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span><span class="co"> # zizmor: ignore[secrets-outside-env]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
