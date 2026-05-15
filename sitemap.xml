@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://paddyroddy.github.io/talks/quarto-making-talks/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.155Z</lastmod>
-  </url>
-  <url>
     <loc>https://paddyroddy.github.io/talks/linting-prose-with-vale/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.138Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.070Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/testing-and-continuous-integration/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.208Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/porting-glass-to-the-python-array-api/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.144Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/arc-reintroduction/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.027Z</lastmod>
+    <lastmod>2026-05-15T13:48:08.710Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/scipy-2024/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.205Z</lastmod>
+    <lastmod>2026-05-15T13:48:08.758Z</lastmod>
   </url>
   <url>
-    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.223Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/europython-and-euroscipy-2025/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.126Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/collaborations-workshop-2026/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.063Z</lastmod>
-  </url>
-  <url>
-    <loc>https://paddyroddy.github.io/talks/python-packaging/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.150Z</lastmod>
+    <loc>https://paddyroddy.github.io/talks/testing-and-continuous-integration/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.761Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/renovate-automating-dependency-management/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.162Z</lastmod>
+    <lastmod>2026-05-15T13:48:08.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/github-safe-settings-policy-as-code/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/europython-and-euroscipy-2025/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.696Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/porting-glass-to-the-python-array-api/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.716Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/turbocharging-your-github-organisation/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.785Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/collaborations-workshop-2026/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/pyopensci-my-experience/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.722Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/quarto-making-talks/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.724Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/python-packaging/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.723Z</lastmod>
   </url>
   <url>
     <loc>https://paddyroddy.github.io/talks/index.html</loc>
-    <lastmod>2026-05-15T09:57:20.131Z</lastmod>
+    <lastmod>2026-05-15T13:48:08.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/devops-an-introduction/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.648Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/ci-cd-faster-easier-development/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.610Z</lastmod>
+  </url>
+  <url>
+    <loc>https://paddyroddy.github.io/talks/arc-reintroduction/index.html</loc>
+    <lastmod>2026-05-15T13:48:08.610Z</lastmod>
   </url>
 </urlset>
