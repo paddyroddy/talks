@@ -128,10 +128,13 @@ height=550}
 
 ## Jonathan
 
-- First time invited to speak at CW, and first experience of a fireside chat (minus fire)
-- Helped run 2 mini-workshops despite not being involved in submitting either proposal
-- Plugged [DisCouRSE](https://discourse-network.github.io/) in an attempt to get NI engagement
-    - Some useful chats, including with people who won round 1 projects
+- First time invited to speak at CW, and first experience of a fireside chat
+  (minus fire)
+- Helped run 2 mini-workshops despite not being involved in submitting either
+  proposal
+- Plugged [DisCouRSE](https://discourse-network.github.io/) in an attempt to get
+  NI engagement
+  - Some useful chats, including with people who won round 1 projects
 - Distracted by ARC admin work and missed several sessions
 
 {{< include /_includes/qr-code.qmd >}}
