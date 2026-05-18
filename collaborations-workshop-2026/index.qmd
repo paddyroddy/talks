@@ -138,7 +138,7 @@ height=550}
 - **Conference itself**
 - **Speed blog**: Can AI ever be 'Green'?
 - **Collaborative idea sessions**: Domain2RSE
- - Framework to help guide conversations between domain experts and RSE
+  - Framework to help guide conversations between domain experts and RSE
 - **Hack day**: Green actions
 
 :::
