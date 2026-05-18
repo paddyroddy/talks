@@ -156,7 +156,8 @@ height=550}
 
 ::: {.r-stack}
 
-![](figures/duncan/1.jpg){.fragment fig-alt="The cathedral of the eponymous Cathedral Quarter" height=550}
+![](figures/duncan/1.jpg){.fragment fig-alt="The cathedral of the eponymous
+Cathedral Quarter" height=550}
 
 ![](figures/duncan/2.jpg){.fragment fig-alt="St. Albert monument" height=550}
 
