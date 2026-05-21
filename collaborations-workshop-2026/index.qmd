@@ -179,7 +179,7 @@ Cathedral Quarter" height=550}
 
 :::
 
-## Connor {.smaller}
+## Connor {.smaller footer=false}
 
 ::: {layout-ncol=2}
 
@@ -201,7 +201,7 @@ Cathedral Quarter" height=550}
 ::: {.r-stack}
 
 ![](figures/connor/shoes.jpg){.fragment fig-alt="A stranger and I with the same
-shoes." height=300}
+shoes." width=400}
 
 ![](figures/connor/castle.jpg){.fragment fig-alt="Belfast castle." height=550}
 
