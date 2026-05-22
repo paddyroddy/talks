@@ -248,7 +248,7 @@ chocolate in Belfast." height=550}
 
 ::: {layout-ncol=2}
 
-::: {.cell}
+::: {.cell .nonincremental}
 
 ::: {.fragment fragment-index=1}
 - First Collaborations Workshop
@@ -256,18 +256,18 @@ chocolate in Belfast." height=550}
   - The fellowship is to work further on the [Charlas RSE en español](https://charlas-rse-espanol.github.io/)
 :::
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=3}
 - Meet some lovely people!
   - Led a mini-workshop with Salma Thalji on multilingualism in the RSE world 🗺️🗣️ (and went together to a Rosalía concert the following week)
   - Hui Ling's [Git for researchers](https://wong-hl.github.io/git-for-researchers/)
 :::
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index=4}
 - And caught up with ARCians 😍
   - Excellent pubs were visited
 :::
 
-::: {.fragment fragment-index=4}
+::: {.fragment fragment-index=5}
 - 2nd prize at HackDay with [Up-Goer-Five](https://softwaresaved.github.io/up-goer-five/) project
   - (no photographic evidence 😬)
 :::
@@ -278,12 +278,12 @@ chocolate in Belfast." height=550}
 
 ![](figures/sofia/charlas-transp-blanco.png){.fragment fragment-index=1 fig-alt="Charlas logo"}
 
-![](figures/sofia/ssi-2026-cohort.jpg){.fragment fragment-index=1 fig-alt="SSI Fellows cohort 2026"}
+![](figures/sofia/ssi-2026-cohort.jpg){.fragment fragment-index=2 fig-alt="SSI Fellows cohort 2026"}
 
 
-![](figures/sofia/mini-workshop.jpg){.fragment fragment-index=2 fig-alt="Mini workshop"}
+![](figures/sofia/mini-workshop.jpg){.fragment fragment-index=3 fig-alt="Mini workshop"}
 
-![](figures/sofia/no-evidence.jpg){.fragment fragment-index=4 fig-alt="2nd prize hackday"}
+![](figures/sofia/no-evidence.jpg){.fragment fragment-index=5 fig-alt="2nd prize hackday"}
 
 
 :::
