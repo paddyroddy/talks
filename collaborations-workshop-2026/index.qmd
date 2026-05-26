@@ -310,68 +310,17 @@ hackday"}
 
 ## Samantha {.smaller footer=false}
 
-::: {layout-ncol=2}
-
-::: {.cell .nonincremental}
-
 - **Came into CW26 tired, but excited**
   - Nice dinner with SSI Fellows celebrating DIRECT's 3rd birthday
 - **Unconference**
   - Learnt that 2hrs doesn't condense to 30mins well
   - Came third in the Discussion Sessions
   - Had hoped to revisit RunTime, but not to be
-  - Worked with some great folks on the Queer Coded website, creating drafts of logos
+  - Worked with some great folks on the Queer Coded website, creating drafts of
+    logos
 - **Bank Holiday weekend**
   - Spend the weekend visitng my Aunt
   - Nice walk around Donaghadee
   - Tormented in the best way by Autumn, my Aunt's dog
-
-:::
-
-::: {.r-stack}
-
-![](figures/connor/shoes.jpg){.fragment fig-alt="A stranger and I with the same
-shoes." width=400}
-
-![](figures/connor/castle.jpg){.fragment fig-alt="Belfast castle." height=550}
-
-![](figures/connor/cavehill-path.jpg){.fragment fig-alt="The path up Cavehill."
-height=550}
-
-![](figures/connor/cavehill-view.jpg){.fragment fig-alt="The view from
-Cavehill." height=450}
-
-![](figures/connor/cave.jpg){.fragment fig-alt="Cavehill cave." height=450}
-
-![](figures/connor/stromboli.jpg){.fragment fig-alt="My stromboli dessert."
-height=550}
-
-![](figures/connor/bad-photo.jpg){.fragment fig-alt="A bad photo of Connor."
-height=350}
-
-![](figures/connor/better-photo.jpg){.fragment fig-alt="A better photo of
-Connor." height=350}
-
-![](figures/connor/poetic-computing.jpg){.fragment fig-alt="Poetic computing
-poem." height=550}
-
-![](figures/connor/mural.jpg){.fragment fig-alt="A photo realistic mural."
-height=550}
-
-![](figures/connor/no-entry.jpg){.fragment fig-alt="A graffitied no entry sign."
-height=550}
-
-![](figures/connor/peace-walls.png){.fragment fig-alt="Map of Belfast peace
-wall." height=250}
-
-![](figures/connor/dragons.jpg){.fragment fig-alt="Dragons sculpture from Ulster
-Museum." height=400}
-
-![](figures/connor/hot-chocolate.jpg){.fragment fig-alt="Frontage of Daisies hot
-chocolate in Belfast." height=550}
-
-:::
-
-:::
 
 {{< include /_includes/qr-code.qmd >}}
