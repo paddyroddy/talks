@@ -323,8 +323,6 @@ hackday"}
   - Nice walk around Donaghadee
   - Tormented in the best way by Autumn, my Aunt's dog
 
-{{< include /_includes/qr-code.qmd >}}
-
 ## David {.smaller footer=false}
 
 ::: {style="font-size: 0.85em"}
@@ -398,3 +396,5 @@ singing and dancing karaoke while others do knitting in the front"}
 :::
 
 :::
+
+{{< include /_includes/qr-code.qmd >}}
