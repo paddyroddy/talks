@@ -179,6 +179,53 @@ Cathedral Quarter" height=550}
 
 :::
 
+## Hollie {.smaller}
+
+::: {style="font-size: 0.85em"}
+
+::: {layout-ncol=2}
+
+::: {.cell}
+
+- Second Collaborations Workshop
+- My first time in N.Ireland
+  - Austin joined me after the conference for the bank holiday weekend
+- Collaborative Ideas Day was a lot of fun!
+  - Third place prize for 'ACT Skills', promoting research community management
+    skills among young people
+- Joined up with similar group from Collab Ideas Day that got shortlisted for
+  the Hack Day
+  - First place prize for
+    [Community Supporter Compass](https://rcmcooperative.com/community-supporter-types/),
+    online quiz asking: 'what type of community supporter are you?'
+- Did Giant's Causeway while Belfast marathon was on, Street Art Festival,
+  Cathedral Quarter Arts Festival screening of Battlefield Earth
+
+:::
+
+::: {.r-stack}
+
+![](figures/hollie/cw26-slide.jpg){.fragment fig-alt="Community Supporter
+Compass quiz" height=550}
+
+![](figures/hollie/cw26-first-prize.jpg){.fragment fig-alt="We won first prize!"
+height=550}
+
+![](figures/hollie/belfast-gc.jpg){.fragment fig-alt="Me and Austin at The
+Giant's Causeway" height=550}
+
+![](figures/hollie/belfast-gc.jpg){.fragment fig-alt="CQAF film screening of
+Battlefield Earth" height=550}
+
+![](figures/hollie/belfast-animals.jpg){.fragment fig-alt="A selection of
+animals I politely greeted"}
+
+:::
+
+:::
+
+:::
+
 ## Connor {.smaller footer=false}
 
 ::: {layout-ncol=2}
