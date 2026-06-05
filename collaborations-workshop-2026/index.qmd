@@ -348,7 +348,7 @@ hackday"}
 Great talks by
 
 - [Malvika: 5 conditions for a sustainable research ecosystem](https://www.youtube.com/watch?v=sjmRJQL8PoE&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=17)
-  > when #AI acelerates the visible works it makes even more invisible the
+  > when #AI accelerates the visible works it makes even more invisible the
   > non-visible work
 - [Eleanor: The work behind the work: Building community & careers](https://www.youtube.com/watch?v=yV045U7Ot2w&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=16)
 
