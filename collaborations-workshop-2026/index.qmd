@@ -179,6 +179,27 @@ Cathedral Quarter" height=550}
 
 :::
 
+## Hollie {.smaller}
+
+::: {layout-ncol=2}
+
+::: {.cell}
+
+- Second Collaborations Workshop
+- My first time in N.Ireland
+  - Austin joined me after the conference for the bank holiday weekend
+- Collaborative Ideas Day was a lot of fun!
+  - Third place prize for 'ACT Skills', promoting research community management skills among young people
+- Joined up with similar group from Collab Ideas Day that got shortlisted for the Hack Day
+  - First place prize for [Community Supporter Compass](https://rcmcooperative.com/community-supporter-types/), online quiz asking: 'what type of community supporter are you?'
+- Did Giant's Causeway while Belfast marathon was on, Street Art Festival, Cathedral Quarter Arts Festival screening of Battlefield Earth
+
+:::
+
+::: {.r-stack}
+
+![](figures/hollie/slide1.jpg){.fragment fig-alt="Rainbow cake." height=550}
+
 ## Connor {.smaller footer=false}
 
 ::: {layout-ncol=2}
