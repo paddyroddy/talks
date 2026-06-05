@@ -218,7 +218,7 @@ Giant's Causeway" height=550}
 Battlefield Earth" height=550}
 
 ![](figures/hollie/belfast-animals.jpg){.fragment fig-alt="A selection of
-animals I politely greeted" height=550}
+animals I politely greeted"}
 
 :::
 
