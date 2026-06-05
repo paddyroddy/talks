@@ -205,7 +205,7 @@ Cathedral Quarter" height=550}
 
 ::: {.r-stack}
 
-![](figures/hollie/cw26-slide.jpg){.fragment fig-alt="Comminity Supporter
+![](figures/hollie/cw26-slide.jpg){.fragment fig-alt="Community Supporter
 Compass quiz" height=550}
 
 ![](figures/hollie/cw26-first-prize.jpg){.fragment fig-alt="We won first prize!"
