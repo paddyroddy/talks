@@ -181,6 +181,8 @@ Cathedral Quarter" height=550}
 
 ## Hollie {.smaller}
 
+::: {style="font-size: 0.85em"}
+
 ::: {layout-ncol=2}
 
 ::: {.cell}
@@ -217,6 +219,8 @@ Battlefield Earth" height=550}
 
 ![](figures/hollie/belfast-animals.jpg){.fragment fig-alt="A selection of
 animals I politely greeted" height=550}
+
+:::
 
 ## Connor {.smaller footer=false}
 
