@@ -144,7 +144,7 @@ height=550}
 ::: {.cell}
 
 - Second Collaborations Workshop.
-- Belfast has a great vibe - many murals and live music everywhere!
+- Belfast has a great vibe - many murals and live music everywhere.
 - Ample welcome opportunities for large animal photos.
 - **Conference itself**
 - **Speed blog**: Can AI ever be 'Green'?
@@ -397,7 +397,7 @@ Great talks by
   > when #AI accelerates the visible works it makes even more invisible the
   > non-visible work
 
-- [Eleanor: The work behind the work: Building community & careers](https://www.youtube.com/watch?v=yV045U7Ot2w&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=16)
+- [Eleanor: The work behind the work: Building community and careers](https://www.youtube.com/watch?v=yV045U7Ot2w&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=16)
 
 :::
 
@@ -409,7 +409,7 @@ Great talks by
 Collaboration Workshop. The Turing Way family posing with TTW socks"}
 
 ![](figures/david/20260513_Malvika_DavidThinking.png){width=70% .fragment
-fragment-index=3 fig-alt="I may have not believe everything Malvika said"}
+fragment-index=3 fig-alt="I might have not believe everything Malvika said"}
 
 :::
 
@@ -427,10 +427,10 @@ fragment-index=3 fig-alt="I may have not believe everything Malvika said"}
 
 CW is not about talks or sessions, but
 
-- Meeting new friends!
-- Learning new skills!
-- And karaoke! 🎤
-- And dance! 🕺
+- Meeting new friends
+- Learning new skills
+- And karaoke 🎤
+- And dance 🕺
 
 ::: {.fragment fragment-index=6}
 
