@@ -144,7 +144,7 @@ height=550}
 ::: {.cell}
 
 - Second Collaborations Workshop.
-- Belfast has a great vibe - many murals and live music everywhere!
+- Belfast has a great vibe - many murals and live music everywhere.
 - Ample welcome opportunities for large animal photos.
 - **Conference itself**
 - **Speed blog**: Can AI ever be 'Green'?
@@ -369,5 +369,98 @@ hackday"}
   - Spend the weekend visiting my Aunt
   - Nice walk around Donaghadee
   - Tormented in the best way by Autumn, my Aunt's dog
+
+## David {.smaller data-menu-title="David (i)" footer=false}
+
+::: {style="font-size: 0.85em"}
+
+::: {layout-ncol=2}
+
+::: {.cell .nonincremental}
+
+::: {.fragment fragment-index=1}
+
+- Ninth Collaborations Workshop
+  - ~~Nice to see some of the 2016 SSI Fellows~~
+  - but many from newer generations and one from 2014 🤗
+  - It was nice to see 🧦 The Turing Way, OLS and SSI friends, including my RSE
+    mentee
+
+:::
+
+::: {.fragment fragment-index=3}
+
+Great talks by
+
+- [Malvika: 5 conditions for a sustainable research ecosystem](https://www.youtube.com/watch?v=sjmRJQL8PoE&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=17)
+
+  > when #AI accelerates the visible works it makes even more invisible the
+  > non-visible work
+
+- [Eleanor: The work behind the work: Building community and careers](https://www.youtube.com/watch?v=yV045U7Ot2w&list=PLpX1jXuNTXGpnINIF2xORaytoVhYrmk0p&index=16)
+
+:::
+
+:::
+
+::: {.r-stack}
+
+![](figures/david/TTWsocks.jpg){.fragment fragment-index=1 fig-alt="SSI /
+Collaboration Workshop. The Turing Way family posing with TTW socks"}
+
+![](figures/david/20260513_Malvika_DavidThinking.png){width=70% .fragment
+fragment-index=3 fig-alt="I might have not believe everything Malvika said"}
+
+:::
+
+:::
+
+:::
+
+## David {.smaller data-menu-title="David (ii)" footer=false}
+
+::: {style="font-size: 0.85em"}
+
+::: {layout-ncol=2}
+
+::: {.cell .nonincremental}
+
+CW is not about talks or sessions, but
+
+- Meeting new friends
+- Learning new skills
+- And karaoke 🎤
+- And dance 🕺
+
+::: {.fragment fragment-index=6}
+
+{{< video figures/david/CI.webm >}}
+
+:::
+
+::: {.fragment fragment-index=7}
+
+🥇🥈🥉
+
+:::
+
+:::
+
+::: {.r-stack}
+
+![](figures/david/ARCFriends.jpg){.fragment fragment-index=3 fig-alt="An ARC
+friend"}
+
+![](figures/david/Knitting.jpg){.fragment fragment-index=4 fig-alt="David
+talking about OSPOs while knitting"}
+
+![](figures/david/karaoke.jpg){.fragment fragment-index=5 fig-alt="people
+singing and dancing karaoke while others do knitting in the front"}
+
+:::
+
+:::
+
+:::
 
 {{< include /_includes/qr-code.qmd >}}
