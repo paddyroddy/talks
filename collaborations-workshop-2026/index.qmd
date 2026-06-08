@@ -381,7 +381,7 @@ hackday"}
 ::: {.fragment fragment-index=1}
 
 - Ninth Collaborations Workshop
-  - ~~Nice to see some of the 2016 SSI Fellows~~ 
+  - ~~Nice to see some of the 2016 SSI Fellows~~
   - but many from newer generations and one from 2014 🤗
   - It was nice to see 🧦 The Turing Way, OLS and SSI friends, including my RSE
     mentee
@@ -401,7 +401,6 @@ Great talks by
 
 :::
 
-
 :::
 
 ::: {.r-stack}
@@ -409,15 +408,14 @@ Great talks by
 ![](figures/david/TTWsocks.jpg){.fragment fragment-index=1 fig-alt="SSI /
 Collaboration Workshop. The Turing Way family posing with TTW socks"}
 
-![](figures/david/20260513_Malvika_DavidThinking.png){width=70% .fragment fragment-index=3
-fig-alt="I may have not believe everything Malvika said"}
+![](figures/david/20260513_Malvika_DavidThinking.png){width=70% .fragment
+fragment-index=3 fig-alt="I may have not believe everything Malvika said"}
 
 :::
 
 :::
 
 :::
-
 
 ## David {.smaller footer=false}
 
@@ -427,14 +425,12 @@ fig-alt="I may have not believe everything Malvika said"}
 
 ::: {.cell .nonincremental}
 
-
 CW is not about talks or sessions, but
 
 - Meeting new friends!
 - Learning new skills!
 - And karaoke! 🎤
 - And dance! 🕺
-
 
 ::: {.fragment fragment-index=6}
 
@@ -455,18 +451,16 @@ CW is not about talks or sessions, but
 ![](figures/david/ARCFriends.jpg){.fragment fragment-index=3 fig-alt="An ARC
 friend"}
 
-![](figures/david/Knitting.jpg){.fragment fragment-index=4
-fig-alt="David talking about OSPOs while knitting"}
+![](figures/david/Knitting.jpg){.fragment fragment-index=4 fig-alt="David
+talking about OSPOs while knitting"}
 
 ![](figures/david/karaoke.jpg){.fragment fragment-index=5 fig-alt="people
 singing and dancing karaoke while others do knitting in the front"}
 
-
 :::
 
 :::
 
 :::
-
 
 {{< include /_includes/qr-code.qmd >}}
