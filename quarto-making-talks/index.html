@@ -653,26 +653,27 @@ Patrick Roddy
 <span id="cb12-15"><a></a><span class="dt">                write-good</span></span>
 <span id="cb12-16"><a></a></span>
 <span id="cb12-17"><a></a><span class="co"># Disable</span></span>
-<span id="cb12-18"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-19"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-20"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-21"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-22"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-23"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-24"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-25"><a></a><span class="dt">RedHat.SimpleWords </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-26"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-27"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-28"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-29"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-30"><a></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-31"><a></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-32"><a></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-33"><a></a><span class="dt">write-good.Weasel </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb12-34"><a></a></span>
-<span id="cb12-35"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
-<span id="cb12-36"><a></a><span class="kw">[.github/styles/**]</span></span>
-<span id="cb12-37"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-18"><a></a><span class="dt">RedHat.CaseSensitiveTerms </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-19"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-20"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-21"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-22"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-23"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-24"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-25"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-26"><a></a><span class="dt">RedHat.SimpleWords </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-27"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-28"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-29"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-30"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-31"><a></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-32"><a></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-33"><a></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-34"><a></a><span class="dt">write-good.Weasel </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb12-35"><a></a></span>
+<span id="cb12-36"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb12-37"><a></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb12-38"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
