@@ -226,6 +226,22 @@ animals I politely greeted"}
 
 :::
 
+## Jeremy
+
+::: {layout-ncol=2}
+
+::: {.cell .nonincremental}
+- It's not a technical conference
+
+- Could YOU describe your job using only the top 1000 words?
+:::
+
+::: {.r-stack}
+![](figures/jeremy/poem.jpg){fig-alt="a blackout poem describing my experience of CW26" width=700}
+:::
+
+:::
+
 ## Connor {.smaller footer=false}
 
 ::: {layout-ncol=2}
