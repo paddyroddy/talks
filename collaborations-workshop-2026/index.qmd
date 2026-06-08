@@ -370,7 +370,7 @@ hackday"}
   - Nice walk around Donaghadee
   - Tormented in the best way by Autumn, my Aunt's dog
 
-## David {.smaller footer=false}
+## David {.smaller data-menu-title="David (i)" footer=false}
 
 ::: {style="font-size: 0.85em"}
 
@@ -417,7 +417,7 @@ fragment-index=3 fig-alt="I may have not believe everything Malvika said"}
 
 :::
 
-## David {.smaller footer=false}
+## David {.smaller data-menu-title="David (ii)" footer=false}
 
 ::: {style="font-size: 0.85em"}
 
