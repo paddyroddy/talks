@@ -233,7 +233,6 @@ animals I politely greeted"}
 ::: {.cell .nonincremental}
 - It's not a technical conference
 
-- Could YOU describe your job using only the top 1000 words?
 :::
 
 ::: {.r-stack}
