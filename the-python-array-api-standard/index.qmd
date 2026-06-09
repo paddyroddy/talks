@@ -1,0 +1,11 @@
+---
+author: Patrick Roddy
+date: 2026-06-29
+format: revealjs
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
+subtitle:
+  "[STEP-UP RSLondon Conference 2026](https://step-up.ac.uk/events/step-up-2026)"
+title: The Python Array API Standard
+---
+
+{{< include /_includes/qr-code.qmd >}}
