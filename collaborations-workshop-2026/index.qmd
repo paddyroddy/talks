@@ -169,7 +169,7 @@ Cathedral Quarter" height=550}
 
 ![](figures/duncan/6.jpg){.fragment fig-alt="Golden gorilla"}
 
-![](figures/duncan/7.jpg){.fragment fig-alt="Sheep!" height=550}
+![](figures/duncan/7.jpg){.fragment fig-alt="Sheep" height=550}
 
 ![](figures/duncan/8.jpg){.fragment fig-alt="The Big Fish" height=550}
 
@@ -190,7 +190,7 @@ Cathedral Quarter" height=550}
 - Second Collaborations Workshop
 - My first time in N.Ireland
   - Austin joined me after the conference for the bank holiday weekend
-- Collaborative Ideas Day was a lot of fun!
+- Collaborative Ideas Day was a lot of fun
   - Third place prize for 'ACT Skills', promoting research community management
     skills among young people
 - Joined up with similar group from Collab Ideas Day that got shortlisted for
@@ -208,7 +208,7 @@ Cathedral Quarter" height=550}
 ![](figures/hollie/cw26-slide.jpg){.fragment fig-alt="Community Supporter
 Compass quiz" height=550}
 
-![](figures/hollie/cw26-first-prize.jpg){.fragment fig-alt="We won first prize!"
+![](figures/hollie/cw26-first-prize.jpg){.fragment fig-alt="We won first prize"
 height=550}
 
 ![](figures/hollie/belfast-gc.jpg){.fragment fig-alt="Me and Austin at The
@@ -321,7 +321,7 @@ chocolate in Belfast." height=550}
 
 ::: {.fragment fragment-index=3}
 
-- Meet some lovely people!
+- Meet some lovely people
   - Led a mini-workshop with Salma Thalji on multilingualism in the RSE world
     🗺️🗣️ (and went together to a Rosalía concert the following week)
   - Hui Ling's
