@@ -230,7 +230,7 @@ animals I politely greeted"}
 
 ::: {layout-ncol=2}
 
-It's not a technical conference
+It is not a technical conference
 
 ![](figures/jeremy/poem.jpg){fig-alt="a blackout poem describing my experience
 of CW26" width=700}
