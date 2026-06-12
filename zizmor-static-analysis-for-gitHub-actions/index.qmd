@@ -1,0 +1,10 @@
+---
+author: Patrick Roddy
+date: 2026-07-28
+format: revealjs
+institute: "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
+subtitle: "[ARC Forum](https://www.ucl.ac.uk/arc)"
+title: "Zizmor: Static Analysis for GitHub Actions"
+---
+
+{{< include /_includes/qr-code.qmd >}}
