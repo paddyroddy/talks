@@ -97,4 +97,64 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 
 # Python Array API Standard
 
+# Our Experience
+
+## Wrapping Functions Outside the Specification
+
+```{.python code-line-numbers="|1-5|6|8-9|11-14"}
+import numpy as np
+from glass._types import AnyArray
+
+def gradient(f: AnyArray) -> AnyArray:
+    """Return the gradient of an N-dimensional array."""
+    xp = f.__array_namespace__()
+
+    if xp.__name__ in {"numpy", "jax.numpy"}:
+        return xp.gradient(f)
+
+    # If any other backend use default
+    f_np = np.asarray(f, copy=True)
+    result_np = np.gradient(f_np)
+    return xp.asarray(result_np, copy=True)
+```
+
+## Handling the immutability of JAX {footer=false}
+
+::: {.panel-tabset}
+
+## NumPy
+
+```{.python code-line-numbers="3|1|1,4-5|7-8|7-9|10|"}
+import numpy as np
+
+def yield_numpy_only_implementation(x):
+    n = 10
+    y = np.zeros((n, *x.shape))
+
+    for i in range(n):
+        for j, x_j in enumerate(x):
+            y[i,...] = x_j * (i + j + 1)
+        yield y
+```
+
+## Array API (JAX)
+
+```{.python code-line-numbers="3|4|4-7|9-10|1,9-11|12-13|"}
+import array_api_extra as xpx
+
+def yield_array_api_compatible_implementation(x):
+    xp = x.__array_namespace__()
+
+    n = 10
+    y = xp.zeros((n, *x.shape))
+
+    for i in range(n):
+        for j, x_j in enumerate(x):
+            y = xpx.at(y)[i,...].set(x_j * (i + j + 1))
+        # to avoid mutating in subsequent iterations
+        yield xp.asarray(y, copy=True)
+```
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
