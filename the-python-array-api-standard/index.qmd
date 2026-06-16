@@ -200,8 +200,44 @@ test_radialwindow[numpy] (NOW)                              453.7619 (>1000.0)  
 
 :::
 
+## Other
+
+- No support for random number generation {{< fa brands github >}}
+  [data-apis/array-api#874](https://github.com/data-apis/array-api/discussions/874).
+- Typing is currently performed using unions of array typing awaiting
+  {{< fa brands github >}}
+  [data-apis/array-api-typing](https://github.com/data-apis/array-api-typing).
+
+  ```{.python}
+  from typing import TypeAlias
+  import jaxtyping
+  import numpy as np
+  from array_api_strict._array_object import Array
+
+  FloatArray: TypeAlias = (
+      np.typing.NDArray[np.float64] | jaxtyping.Array | Array
+  )
+  ```
+
+- Can contribute more functions to {{< fa brands github >}}
+  [data-apis/array-api-extra](https://github.com/data-apis/array-api-extra).
+
 # Conclusions
 
 ## {data-menu-title="Summary"}
+
+- The Python Array API allows library maintainers to support multiple array
+  backends.
+- The framework is still new so only a few libraries have full support: `NumPy`,
+  `JAX`, `CuPy`.
+- Not all aspects of array backends are supported, e.g. random number
+  generation, typing, …
+- The standard comes with several packages to aid support:
+  [`array-api-compat`](https://github.com/data-apis/array-api-compat),
+  [`array-api-extra`](https://github.com/data-apis/array-api-extra),
+  [`array-api-strict`](https://github.com/data-apis/array-api-strict),
+  [`array-api-tests`](https://github.com/data-apis/array-api-tests),
+  [`array-api-typing`](https://github.com/data-apis/array-api-typing).
+- A route to GPU support and automatic differentiation.
 
 {{< include /_includes/qr-code.qmd >}}
