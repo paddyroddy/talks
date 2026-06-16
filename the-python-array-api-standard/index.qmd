@@ -8,15 +8,6 @@ subtitle:
 title: The Python Array API Standard
 ---
 
-## Me
-
-- Natural Sciences at University of Cambridge (Astrophysics).
-- CDT in Data Intensive Science, UCL.
-- Senior RSE at Advanced Research Computing (ARC), UCL.
-- Five years and counting…
-- Worked on this project for two years on and off.
-- Enjoy running {{< fa person-running >}}.
-
 # GLASS: Generator for Large Scale Structure
 
 ## Overview
