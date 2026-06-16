@@ -88,6 +88,65 @@ Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
 
 # Python Array API Standard
 
+## The Array Ecosystem
+
+![[Aaron Meurer: Python Array API Standard, SciPy 2023](https://youtu.be/16rB-fosAWw)](figures/ecosystem.png){fig-alt="A
+graphic denoting popular array provider libraries and array consumer
+libraries."}
+
+## Simple Example
+
+::: {.panel-tabset}
+
+## NumPy
+
+```{.python}
+from typing import Any
+import numpy as np
+from numpy.typing import NDArray
+
+def unit_vector_numpy(
+    x: NDArray[Any],
+) -> NDArray[Any]:
+    """Only works with NumPy."""
+    return x / np.sqrt(np.sum(x * x))
+```
+
+## Array API
+
+```{.python}
+from glass._types import AnyArray
+
+def unit_vector_array_api(x: AnyArray) -> AnyArray:
+    """Works with any supported array backend."""
+    # NumPy, CuPy, PyTorch, JAX, ...
+    xp = x.__array_namespace__()
+    return x / xp.sqrt(xp.sum(x * x))
+```
+
+:::
+
+::: {.fragment}
+
+Alternatively the helper function `array_api_compat.array_namespace(x)` can be
+used to compute the `xp`.
+
+:::
+
+## Array API Libraries
+
+- [array-api](https://github.com/data-apis/array-api): outlines the standard.
+- [array-api-tests](https://github.com/data-apis/array-api-tests): testing suite
+  for array providing libraries.
+- [array-api-compat](https://github.com/data-apis/array-api-compat):
+  compatibility layer and helper functions.
+- [array-api-strict](https://github.com/data-apis/array-api-strict): strict
+  implementation useful for testing array consuming libraries.
+- [array-api-extra](https://github.com/data-apis/array-api-extra): extra array
+  functions.
+- [array-api-typing](https://github.com/data-apis/array-api-typing): future
+  static typing support.
+
 # Our Experience
 
 ## Wrapping Functions Outside the Specification
@@ -163,8 +222,8 @@ def test_radialwindow(benchmark, xp) -> None:
     arr_length = 100_000
     expected_zeff = xp.asarray(66_666.0)
 
-    wa = xp.arange(arr_length) # typos: ignore
-    za = xp.arange(arr_length) # typos: ignore
+    wa = xp.arange(arr_length)
+    za = xp.arange(arr_length)
 
     w = benchmark(glass.RadialWindow, za, wa)
 
@@ -232,12 +291,8 @@ test_radialwindow[numpy] (NOW)                              453.7619 (>1000.0)  
   `JAX`, `CuPy`.
 - Not all aspects of array backends are supported, e.g. random number
   generation, typing, …
-- The standard comes with several packages to aid support:
-  [`array-api-compat`](https://github.com/data-apis/array-api-compat),
-  [`array-api-extra`](https://github.com/data-apis/array-api-extra),
-  [`array-api-strict`](https://github.com/data-apis/array-api-strict),
-  [`array-api-tests`](https://github.com/data-apis/array-api-tests),
-  [`array-api-typing`](https://github.com/data-apis/array-api-typing).
+- The standard comes with several packages to aid support: `array-api-compat`,
+  `array-api-extra`, `array-api-strict`, `array-api-tests`, `array-api-typing`.
 - A route to GPU support and automatic differentiation.
 
 {{< include /_includes/qr-code.qmd >}}

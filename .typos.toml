@@ -5,3 +5,10 @@ extend-ignore-re = [
     ".*(?:#|--|//|/*).*(?:typos):\\s?ignore[^\\n]*\\n",
     ".*(?:typos):\\s?ignore-next-line[^\\n]*\\n[^\\n]*",
 ]
+
+[type.qmd]
+extend-glob = [
+    "*.qmd",
+]
+extend-words.ND = "ND"
+extend-words.arange = "arange"
