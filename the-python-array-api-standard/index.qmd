@@ -8,4 +8,71 @@ subtitle:
 title: The Python Array API Standard
 ---
 
+# GLASS: Generator for Large Scale Structure
+
+## Overview
+
+::: {layout-nrow="2"}
+
+::: {.cell}
+
+[GLASS](https://glass.readthedocs.io) is a code used in cosmology to generate
+simulations of the full observable universe. In its current form, the primary
+user base of the code are collaborations for large galaxy surveys, which are a
+cornerstone of modern cosmology.
+
+:::
+
+::: {.cell}
+
+![](figures/spheres.png){fig-alt="A three-part diagram of the GLASS code
+simulation process. Left-to-right the diagram shows nested spherical shells of
+the universe, a full-sky projection of cosmic matter density, and a
+high-resolution zoomed-in view of density fluctuations."}
+
+:::
+
+:::
+
+## The Team
+
+::: {layout-ncol="4"}
+
+::: {.fragment}
+
+![[Nicolas Tessore](https://github.com/ntessore) (Principal Investigator + Technical Staff)](https://github.com/ntessore.png){fig-alt="Nicolas
+Tessore"}
+
+:::
+
+::: {.fragment}
+
+![[Connor Aird](https://github.com/connoraird) (Technical Staff)](https://github.com/connoraird.png){fig-alt="Connor
+Aird"}
+
+:::
+
+::: {.fragment}
+
+![[Saransh Chopra](https://github.com/saransh-cpp) (Technical Staff)](https://github.com/saransh-cpp.png){fig-alt="Saransh
+Chopra"}
+
+:::
+
+::: {.fragment}
+
+Me (Co-Investigator + Technical Staff) {{< fa arrow-turn-down >}}
+
+:::
+
+:::
+
+::: {style="font-size: 50%; margin-top: -2em;"}
+
+- Co-Investigators: Alessio Spurio Mancini, Arthur Loureiro, Benjamin Joachimi,
+  Jason McEwen, Niall Jeffrey.
+- Research Administration: Rebecca Martin.
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
