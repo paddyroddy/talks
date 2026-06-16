@@ -157,4 +157,56 @@ def yield_array_api_compatible_implementation(x):
 
 :::
 
+## Benchmarking with `pytest-benchmark` {footer=false}
+
+::: {.panel-tabset}
+
+## Code Example
+
+```{.python code-line-numbers="4-5|6,8-10|2,4,12|1,7,14|"}
+import array_api_extra as xpx
+import glass
+
+def test_radialwindow(benchmark, xp) -> None:
+    """check zeff is computed when not provided"""
+    arr_length = 100_000
+    expected_zeff = xp.asarray(66_666.0)
+
+    wa = xp.arange(arr_length) # typos: ignore
+    za = xp.arange(arr_length) # typos: ignore
+
+    w = benchmark(glass.RadialWindow, za, wa)
+
+    xpx.testing.assert_close(w.zeff, expected_zeff)
+```
+
+## Benchmarking Output
+
+```{.python}
+------------------------------------------ benchmark: 18 tests -------------------------------------------
+Name (time in us)                                               Mean              StdDev            Rounds
+----------------------------------------------------------------------------------------------------------
+test_broadcast_leading_axes[numpy] (0001_5daafb9)            14.3906 (32.86)      0.8640 (91.93)      7884
+test_broadcast_leading_axes[numpy] (NOW)                     14.0193 (32.02)      0.3437 (36.56)      8038
+test_cumulative_trapezoid_1d[numpy] (0001_5daafb9)           74.8633 (170.97)     1.2138 (129.15)     8075
+test_cumulative_trapezoid_1d[numpy] (NOW)                    75.4069 (172.21)     1.4036 (149.35)     8263
+test_cumulative_trapezoid_2d[numpy] (0001_5daafb9)           73.7475 (168.42)     1.4709 (156.50)     7343
+test_cumulative_trapezoid_2d[numpy] (NOW)                    73.8911 (168.75)     1.4670 (156.09)     7867
+test_galaxy_shear[numpy-False] (0001_5daafb9)             2,756.7223 (>1000.0)   30.8210 (>1000.0)    1744
+test_galaxy_shear[numpy-False] (NOW)                      2,724.6682 (>1000.0)   30.0616 (>1000.0)    1756
+test_galaxy_shear[numpy-True] (0001_5daafb9)              3,458.8037 (>1000.0)   46.0236 (>1000.0)    1229
+test_galaxy_shear[numpy-True] (NOW)                       3,378.0130 (>1000.0)  208.7110 (>1000.0)    1226
+test_getcl_lmax_0[numpy] (0001_5daafb9)                       0.4582 (1.05)       0.0094 (1.0)        8066
+test_getcl_lmax_0[numpy] (NOW)                                0.4379 (1.0)        0.0098 (1.04)       8223
+test_getcl_lmax_larger_than_cls[numpy] (0001_5daafb9)        11.7196 (26.76)      0.3221 (34.27)      8172
+test_getcl_lmax_larger_than_cls[numpy] (NOW)                 11.7613 (26.86)      0.4315 (45.91)      8230
+test_multalm[numpy] (0001_5daafb9)                          122.6629 (280.14)     2.1285 (226.47)     8124
+test_multalm[numpy] (NOW)                                   122.7557 (280.35)     2.2902 (243.68)     8087
+test_radialwindow[numpy] (0001_5daafb9)                     455.4797 (>1000.0)    9.0447 (962.36)     7364
+test_radialwindow[numpy] (NOW)                              453.7619 (>1000.0)   10.7064 (>1000.0)    6981
+----------------------------------------------------------------------------------------------------------
+```
+
+:::
+
 {{< include /_includes/qr-code.qmd >}}
