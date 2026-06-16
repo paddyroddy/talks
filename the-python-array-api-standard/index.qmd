@@ -209,4 +209,8 @@ test_radialwindow[numpy] (NOW)                              453.7619 (>1000.0)  
 
 :::
 
+# Conclusions
+
+## {data-menu-title="Summary"}
+
 {{< include /_includes/qr-code.qmd >}}
