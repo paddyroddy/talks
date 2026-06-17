@@ -133,17 +133,33 @@ used to compute the `xp`.
 
 :::
 
+## Migration Guide {footer=false}
+
+```{.python}
+import numpy as np
+xp = np
+```
+
+- `np.transpose(x, axes)` → `xp.permute_dims(x, axes)`
+- `np.concatenate(...)` → `xp.concat(...)`
+- `np.absolute(x)` → `xp.abs(x)`
+- `np.bool_` → `xp.bool`
+- `np.array(x)` → `xp.asarray(x)`
+- `x.astype(dtype)` → `xp.astype(x, dtype)`
+- `np.trace(x)` → `xp.linalg.trace(x)`
+- …
+
 ## Array API Libraries
 
 - [array-api](https://github.com/data-apis/array-api): outlines the standard.
-- [array-api-tests](https://github.com/data-apis/array-api-tests): testing suite
-  for array providing libraries.
 - [array-api-compat](https://github.com/data-apis/array-api-compat):
   compatibility layer and helper functions.
-- [array-api-strict](https://github.com/data-apis/array-api-strict): strict
-  implementation useful for testing array consuming libraries.
 - [array-api-extra](https://github.com/data-apis/array-api-extra): extra array
   functions.
+- [array-api-strict](https://github.com/data-apis/array-api-strict): strict
+  implementation useful for testing array consuming libraries.
+- [array-api-tests](https://github.com/data-apis/array-api-tests): testing suite
+  for array providing libraries.
 - [array-api-typing](https://github.com/data-apis/array-api-typing): future
   static typing support.
 
@@ -151,7 +167,7 @@ used to compute the `xp`.
 
 ## Wrapping Functions Outside the Specification
 
-```{.python code-line-numbers="|1-5|6|8-9|11-14"}
+```{.python code-line-numbers="1-5|6|8-9|11-14|"}
 import numpy as np
 from glass._types import AnyArray
 
