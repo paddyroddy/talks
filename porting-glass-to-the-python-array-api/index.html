@@ -709,11 +709,11 @@ Patrick Roddy
 <span id="cb2-17"><a></a>    R <span class="op">=</span> TypeVar(<span class="st">"R"</span>)</span>
 <span id="cb2-18"><a></a>    T <span class="op">=</span> TypeVar(<span class="st">"T"</span>)</span>
 <span id="cb2-19"><a></a></span>
-<span id="cb2-20"><a></a>    AnyArray: TypeAlias <span class="op">=</span> np.typing.NDArray[Any] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
-<span id="cb2-21"><a></a>    ComplexArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.complex128] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
-<span id="cb2-22"><a></a>    DTypeLike: TypeAlias <span class="op">=</span> np.typing.DTypeLike <span class="op">|</span> jaxtyping.DTypeLike <span class="op">|</span> DType <span class="co"># typos: ignore</span></span>
-<span id="cb2-23"><a></a>    FloatArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.float64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
-<span id="cb2-24"><a></a>    IntArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.int64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array <span class="co"># typos: ignore</span></span>
+<span id="cb2-20"><a></a>    AnyArray: TypeAlias <span class="op">=</span> np.typing.NDArray[Any] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
+<span id="cb2-21"><a></a>    ComplexArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.complex128] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
+<span id="cb2-22"><a></a>    DTypeLike: TypeAlias <span class="op">=</span> np.typing.DTypeLike <span class="op">|</span> jaxtyping.DTypeLike <span class="op">|</span> DType</span>
+<span id="cb2-23"><a></a>    FloatArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.float64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
+<span id="cb2-24"><a></a>    IntArray: TypeAlias <span class="op">=</span> np.typing.NDArray[np.int64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
 <span id="cb2-25"><a></a>    UnifiedGenerator: TypeAlias <span class="op">=</span> (</span>
 <span id="cb2-26"><a></a>        np.random.Generator <span class="op">|</span> glass.jax.Generator <span class="op">|</span> _rng.Generator</span>
 <span id="cb2-27"><a></a>    )</span>

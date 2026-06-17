@@ -592,7 +592,7 @@ Patrick Roddy
 <span id="cb8-7"><a></a>  )$</span>
 <span id="cb8-8"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
 <span id="cb8-9"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/paddyroddy/.github</span></span>
-<span id="cb8-10"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.417.0</span></span>
+<span id="cb8-10"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.422.0</span></span>
 <span id="cb8-11"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
 <span id="cb8-12"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> general-hooks</span></span>
 <span id="cb8-13"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lua-hooks</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -629,7 +629,14 @@ Patrick Roddy
 <span id="cb11-4"><a></a>    <span class="co"># https://github.com/crate-ci/typos/blob/master/docs/reference.md#example-configurations</span></span>
 <span id="cb11-5"><a></a>    <span class="st">".*(?:#|--|//|/*).*(?:typos):</span><span class="sc">\\</span><span class="st">s?ignore[^</span><span class="sc">\\</span><span class="st">n]*</span><span class="sc">\\</span><span class="st">n"</span><span class="op">,</span></span>
 <span id="cb11-6"><a></a>    <span class="st">".*(?:typos):</span><span class="sc">\\</span><span class="st">s?ignore-next-line[^</span><span class="sc">\\</span><span class="st">n]*</span><span class="sc">\\</span><span class="st">n[^</span><span class="sc">\\</span><span class="st">n]*"</span><span class="op">,</span></span>
-<span id="cb11-7"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-7"><a></a><span class="op">]</span></span>
+<span id="cb11-8"><a></a></span>
+<span id="cb11-9"><a></a><span class="kw">[type.qmd]</span></span>
+<span id="cb11-10"><a></a><span class="dt">extend-glob</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb11-11"><a></a>    <span class="st">"*.qmd"</span><span class="op">,</span></span>
+<span id="cb11-12"><a></a><span class="op">]</span></span>
+<span id="cb11-13"><a></a><span class="dt">extend-words.ND</span> <span class="op">=</span> <span class="st">"ND"</span></span>
+<span id="cb11-14"><a></a><span class="dt">extend-words.arange</span> <span class="op">=</span> <span class="st">"arange"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2" data-footer="false">
