@@ -217,6 +217,20 @@ Patrick Roddy
 
   <p class="date">2026-06-29</p>
 </section>
+<section class="slide level2">
+<h2>The Target Audience</h2>
+<ul>
+<li class="fragment">Most Python users.</li>
+<li class="fragment">In particular, maintainers of:
+<ul>
+<li class="fragment">Array “providing” libraries (e.g.&nbsp;NumPy).</li>
+<li class="fragment">Array “consuming” libraries (e.g.&nbsp;this work).</li>
+<li class="fragment">Downstream libraries that work with arrays.</li>
+</ul></li>
+<li class="fragment">Anyone with an interest in benchmarking.</li>
+<li class="fragment">Cosmologists, maybe…</li>
+</ul>
+</section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>GLASS: Generator for Large Scale Structure</h1>
@@ -489,10 +503,10 @@ Patrick Roddy
 <h2></h2>
 <ul>
 <li class="fragment">The Python Array API allows library maintainers to support multiple array backends.</li>
+<li class="fragment">Recommended to consult the standard and use <code>xp</code>/<code>.__array_namespace__()</code> for new code.</li>
 <li class="fragment">The framework is still new so only a few libraries have full support: <code>NumPy</code>, <code>JAX</code>, <code>CuPy</code>.</li>
 <li class="fragment">Not all aspects of array backends are supported, e.g.&nbsp;random number generation, typing, …</li>
 <li class="fragment">The standard comes with several packages to aid support: <code>array-api-compat</code>, <code>array-api-extra</code>, <code>array-api-strict</code>, <code>array-api-tests</code>, <code>array-api-typing</code>.</li>
-<li class="fragment">A route to GPU support and automatic differentiation.</li>
 </ul>
 </section></section>
 <section class="title-slide slide level1 center" data-menu-title="QR Code">
