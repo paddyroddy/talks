@@ -8,6 +8,16 @@ subtitle:
 title: The Python Array API Standard
 ---
 
+## The Target Audience
+
+- Most Python users.
+- In particular, maintainers of:
+  - Array "providing" libraries (e.g. NumPy).
+  - Array "consuming" libraries (e.g. this work).
+  - Downstream libraries that work with arrays.
+- Anyone with an interest in benchmarking.
+- Cosmologists, maybe…
+
 # GLASS: Generator for Large Scale Structure
 
 ## Overview
@@ -303,12 +313,13 @@ test_radialwindow[numpy] (NOW)                              453.7619 (>1000.0)  
 
 - The Python Array API allows library maintainers to support multiple array
   backends.
+- Recommended to consult the standard and use `xp`/`.__array_namespace__()` for
+  new code.
 - The framework is still new so only a few libraries have full support: `NumPy`,
   `JAX`, `CuPy`.
 - Not all aspects of array backends are supported, e.g. random number
   generation, typing, …
 - The standard comes with several packages to aid support: `array-api-compat`,
   `array-api-extra`, `array-api-strict`, `array-api-tests`, `array-api-typing`.
-- A route to GPU support and automatic differentiation.
 
 {{< include /_includes/qr-code.qmd >}}
