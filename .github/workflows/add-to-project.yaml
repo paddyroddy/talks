@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/add-to-project@95df55339346244d6434eda9edfc05d53aa6c9cc # v0
+      - uses: paddyroddy/.github/actions/add-to-project@3b5a73012982bdeb04d02bcf81cc28bdfe5d4ee5 # v0
         with:
           # yamllint disable-line rule:line-length
           project-token: ${{ secrets.PROJECT_PAT }} # zizmor: ignore[secrets-outside-env]
