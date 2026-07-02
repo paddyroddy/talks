@@ -404,9 +404,10 @@ Patrick Roddy
 <span id="cb1-18"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb1-19"><a></a><span class="co">      # yamllint disable-line rule:line-length</span></span>
 <span id="cb1-20"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> paddyroddy/.github/actions/add-to-project@3b5a73012982bdeb04d02bcf81cc28bdfe5d4ee5</span><span class="co"> # v0</span></span>
-<span id="cb1-21"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb1-22"><a></a><span class="co">          # yamllint disable-line rule:line-length</span></span>
-<span id="cb1-23"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span><span class="co"> # zizmor: ignore[secrets-outside-env]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-21"><a></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb1-22"><a></a><span class="at">          </span><span class="fu">PROJECT_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.PROJECT_PAT }}</span></span>
+<span id="cb1-23"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-24"><a></a><span class="at">          </span><span class="fu">project-token</span><span class="kw">:</span><span class="at"> ${{ env.PROJECT_TOKEN }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- prettier-ignore-end -->
 </section>
 <section class="slide level2">
