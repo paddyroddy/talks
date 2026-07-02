@@ -18,6 +18,7 @@ jobs:
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/add-to-project@3b5a73012982bdeb04d02bcf81cc28bdfe5d4ee5 # v0
+        env:
+          PROJECT_TOKEN: ${{ secrets.PROJECT_PAT }}
         with:
-          # yamllint disable-line rule:line-length
-          project-token: ${{ secrets.PROJECT_PAT }} # zizmor: ignore[secrets-outside-env]
+          project-token: ${{ env.PROJECT_TOKEN }}
