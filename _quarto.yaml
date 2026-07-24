@@ -1,5 +1,7 @@
 ---
 project:
+  resources:
+    - _assets/json/human.json
   type: website
 
 execute:
