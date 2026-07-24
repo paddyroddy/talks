@@ -20,6 +20,6 @@ jobs:
         with:
           branch: ${{ github.event.pull_request.head.sha || github.sha }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          lychee-args: >-
+          lychee-args:
             --exclude-path ^_extensions/ --no-progress --root-dir ${{
             github.workspace }} --verbose .
