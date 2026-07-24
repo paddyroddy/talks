@@ -1,0 +1,4 @@
+exclude = [
+  # Root-relative paths are valid on the deployed site but can't be resolved by the link checker
+  "^/_assets/",
+]
