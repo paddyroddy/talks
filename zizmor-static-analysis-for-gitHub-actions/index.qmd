@@ -7,4 +7,14 @@ subtitle: "[ARC Forum](https://www.ucl.ac.uk/arc)"
 title: "Zizmor: Static Analysis for GitHub Actions"
 ---
 
+# GitHub Actions
+
+## Overview
+
+GitHub Actions is a CI/CD platform that allows one to automate your build, test, and deployment pipeline. Workflows can build and test every pull request to a repository, or deploy merged pull requests to production.
+
+A
+
+
+
 {{< include /_includes/qr-code.qmd >}}
