@@ -423,4 +423,159 @@ Related rules:
 - [unpinned-tools](https://docs.zizmor.sh/audits/#unpinned-tools)
 - [use-trusted-publishing](https://docs.zizmor.sh/audits/#use-trusted-publishing)
 
+# Demo
+
+## Original Code
+
+`cat .github/workflow/demo.yaml`
+
+```{.yaml}
+name: Check pull request
+
+on:
+  pull_request_target:
+
+permissions: write-all
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Print pull request title
+        run: echo "${{ github.event.pull_request.title }}"
+```
+
+## Initial Zizmor Run
+
+`zizmor .github/workflows/demo.yaml`
+
+```{.sh code-line-numbers="false"}
+ INFO zizmor: 🌈 zizmor v1.28.0
+ INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              help[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/demo.yaml:12:9
+   |
+12 |       - uses: actions/checkout@v7
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+
+error[dangerous-triggers]: use of fundamentally insecure workflow trigger
+ --> .github/workflows/demo.yaml:3:1
+  |
+3 | / on:
+4 | |   pull_request_target:
+  | |______________________^ pull_request_target is almost always used insecurely
+  |
+  = note: audit confidence → Medium
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/demo.yaml:15:24
+   |
+15 |         run: echo "${{ github.event.pull_request.title }}"
+   |         ---            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |         |
+   |         this run block
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/demo.yaml:12:15
+   |
+12 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+
+7 findings (3 suppressed, 2 unsafe fixes): 0 informational, 1 low, 0 medium, 3 high
+```
+
+## Using Pinact
+
+`pinact run .github/workflows/demo.yaml`
+
+```{.sh code-line-numbers="false"}
+.github/workflows/demo.yaml:12
+-       - uses: actions/checkout@v7
++       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+```
+
+## Attempt to Autofix
+
+`zizmor --fix .github/workflows/demo.yaml`
+
+```{.sh code-line-numbers="false"}
+ INFO zizmor: 🌈 zizmor v1.28.0
+ INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/demo.yaml:12:9
+   |
+12 |       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+
+error[dangerous-triggers]: use of fundamentally insecure workflow trigger
+ --> .github/workflows/demo.yaml:3:1
+  |
+3 | / on:
+4 | |   pull_request_target:
+  | |______________________^ pull_request_target is almost always used insecurely
+  |
+  = note: audit confidence → Medium
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/demo.yaml:15:24
+   |
+15 |         run: echo "${{ github.event.pull_request.title }}"
+   |         ---            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |         |
+   |         this run block
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+
+6 findings (3 suppressed, 2 unsafe fixes): 0 informational, 0 low, 1 medium, 2 high
+No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or --fix=all to apply unsafe fixes.
+```
+
+## Manual Fixes
+
+`git diff .github/workflows/demo.yaml`
+
+```{.sh code-line-numbers="false"}
+ name: Check pull request
+
+ on:
+-  pull_request_target:
++  pull_request:
+
+ permissions: write-all
+
+@@ -10,6 +10,10 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
++        with:
++          persist-credentials: false
+
+       - name: Print pull request title
+-        run: echo "${{ github.event.pull_request.title }}"
++        run: echo "${GITHUB_EVENT_PULL_REQUEST_TITLE}"
++        env:
++          GITHUB_EVENT_PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
+```
+
+## Final Check
+
+`zizmor .github/workflows/demo.yaml`
+
+```{.sh code-line-numbers="false"}
+ INFO zizmor: 🌈 zizmor v1.28.0
+ INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              No findings to report. Good job! (3 suppressed)
+```
+
 {{< include /_includes/qr-code.qmd >}}
