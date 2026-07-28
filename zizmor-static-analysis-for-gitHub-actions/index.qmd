@@ -76,10 +76,10 @@ flowchart LR
   C --> D("Tokens, secrets,<br/>caches and release<br/>artefacts")
 ```
 
-1. What **code** are we running?
-2. Who controls its **inputs**?
-3. What **authority** does it have?
-4. What **state** can it read, modify or publish?
+1. What <span style="color:green;">code</span> are we running?
+2. Who controls its <span style="color:green;">inputs</span>?
+3. What <span style="color:green;">authority</span> does it have?
+4. What <span style="color:green;">state</span> can it read, modify or publish?
 
 ## Zizmor {footer=false}
 
@@ -102,5 +102,157 @@ unsafe Git references.
 - YAML parser: validates YAML syntax.
 - Schema validator: validates GitHub Actions syntax.
 - `zizmor`: checks for possible workflow exploitation.
+
+# Dependencies
+
+## Mutable References {data-menu-title="Mutable References (i)"}
+
+::: {.fragment .fade-in-then-semi-out}
+
+The standard way to use a GitHub Action is to reference the major version. Where
+the major-version tag here currently identifies the latest `v7` release.
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@v7
+```
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+An alternative approach would be to reference the specific patch release. These
+references resolve to the same release **today**.
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@v7.0.1
+```
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+But `v7` may later be moved to a new patch release.
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@v7.0.2
+```
+
+:::
+
+## Mutable References {data-menu-title="Mutable References (ii)"}
+
+::: {.fragment}
+
+- `v7` and `v7.0.1` currently resolve to the same commit.
+- They are not equivalent guarantees.
+- `v7.0.1` is also a tag and therefore mutable.
+- Only a full commit SHA identifies immutable Git content from the workflow’s
+  perspective.
+
+:::
+
+::: {.fragment}
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+```
+
+The exact code being executed is now explicit.
+
+::: {.callout-important}
+
+Need to check the SHA is not from a fork.
+
+:::
+
+:::
+
+## Immutable Releases {data-menu-title="Immutable Releases (i)"}
+
+::: {.fragment .fade-in-then-semi-out}
+
+An
+[immutable GitHub release](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases)
+protects its associated tag from being moved or deleted and prevents release
+assets from being modified. It also creates a release attestation covering the
+tag, commit SHA and assets.
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+Immutable releases improve what publishers can guarantee; SHA pinning gives
+consumers an explicit, reviewable dependency lock.
+
+:::
+
+## Immutable Releases {data-menu-title="Immutable Releases (ii)"}
+
+1. Organisation (`Settings` -> `Repository` -> `General` -> `Releases`)
+
+   ![](figures/immutable-releases-org.png){fig-alt="Enabling immutable releases
+   for a GitHub organisation."}
+
+## Immutable Releases {data-menu-title="Immutable Releases (iii)"}
+
+2. Repository (`Settings` -> `General` -> `Releases`)
+
+   ![](figures/immutable-releases-repo.png){fig-alt="Enabling immutable releases
+   for a GitHub repository."}
+
+::: {.fragment}
+
+Immutable releases are being increasingly used throughout GitHub, for example
+[astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
+{{< fa brands github >}} no longer used major versions. The current version is
+`v9.0.0`, not `v9`.
+
+:::
+
+## Pinact: Automating GitHub Action Pinning
+
+[pinact](https://github.com/suzuki-shunsuke/pinact) {{< fa brands github >}} is
+a CLI tool that converts tagged action references to full SHAs while retaining a
+human-readable version comment. It can also check whether references are pinned,
+update them and verify that version annotations match their SHAs. This can
+alternatively be done though tools like
+[Renovate](https://github.com/renovatebot/renovate).
+
+::: {.fragment}
+
+```{.sh code-line-numbers="false"}
+pinact run -update
+```
+
+:::
+
+## Rule 1: [unpinned-uses](https://docs.zizmor.sh/audits/#unpinned-uses) {footer=false}
+
+> When a `uses:` clause is not pinned by branch, tag, or SHA reference, GitHub
+> Actions will use the latest commit on the referenced repository's default
+> branch (or, in the case of Docker actions, the `:latest` tag).
+
+Related rules:
+
+::: {layout-ncol="2"}
+
+::: {.cell}
+
+- [archived-uses](https://docs.zizmor.sh/audits/#archived-uses)
+- [impostor-commit](https://docs.zizmor.sh/audits/#impostor-commit)
+- [known-vulnerable-actions](https://docs.zizmor.sh/audits/#known-vulnerable-actions)
+- [ref-confusion](https://docs.zizmor.sh/audits/#ref-confusion)
+
+:::
+
+::: {.cell}
+
+- [ref-version-mismatch](https://docs.zizmor.sh/audits/#ref-version-mismatch)
+- [stale-action-refs](https://docs.zizmor.sh/audits/#stale-action-refs)
+- [typosquat-uses](https://docs.zizmor.sh/audits/#typosquat-uses)
+
+:::
+
+:::
 
 {{< include /_includes/qr-code.qmd >}}
