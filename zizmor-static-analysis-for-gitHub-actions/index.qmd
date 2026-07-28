@@ -427,7 +427,7 @@ Related rules:
 
 ## Original Code
 
-`cat .github/workflow/demo.yaml`
+`cat .github/workflows/demo.yaml`
 
 ```{.yaml}
 name: Check pull request
