@@ -52,51 +52,50 @@ jobs:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-YAML is executable security-sensitive code, not just configuration. A
-compromised action may have access to repository secrets and a write-capable
-`GITHUB_TOKEN`. A single compromised step can have much larger repercussions.
+A GitHub Actions workflow is an executable, security-sensitive program, not just
+configuration. A compromised step may have access to secrets, repository
+contents and a write-capable `GITHUB_TOKEN`.
 
 :::
 
 ::: {.fragment}
 
-Teams will review many lines of Python code carefully, then approve a YAML file
-without much thought.
+Teams carefully review hundreds of lines of Python, then approve a twenty-line
+workflow without much thought.
 
 :::
 
-## A Possible Security Model
+## A Workflow Security Model
 
 ```{mermaid}
 %%| fig-align: center
-%%| fig-alt: Flowchart showing a potential security model to adopt.
+%%| fig-alt: Flowchart showing a workflow security model to adopt.
 flowchart LR
   A(Untrusted inputs) --> B("Workflow<br/>expressions and<br/>shell commands")
   B --> C("Third-party<br/>code and<br/>build tools")
   C --> D("Tokens, secrets,<br/>caches and release<br/>artefacts")
 ```
 
-1. What code are we running?
-2. Who controls its inputs?
-3. What authority does it have?
-4. What state can it read, modify or publish?
+1. What **code** are we running?
+2. Who controls its **inputs**?
+3. What **authority** does it have?
+4. What **state** can it read, modify or publish?
 
 ## Zizmor {footer=false}
 
 ::: {.fragment .fade-in-then-semi-out}
 
-[zizmor](github.com/zizmorcore/zizmor) {{< fa brands github >}} statically
-analyses the workflow definition to find dangerous relationships between these
-things — without needing to execute the workflow.
+[zizmor](https://github.com/zizmorcore/zizmor) {{< fa brands github >}}
+statically analyses the workflow definition to find dangerous relationships
+between these things — without needing to execute the workflow.
 
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
 
-It analyses GitHub Actions workflows and action definitions, as well as
-Dependabot/Renovate and `pre-commit`/`prek` configuration, and reports problems
-such as template injection, credential persistence, excessive permissions and
-confusing Git references.
+It analyses GitHub Actions workflows and action definitions, reporting issues
+such as template injection, persisted credentials, excessive permissions and
+unsafe Git references.
 
 :::
 
