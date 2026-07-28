@@ -578,4 +578,29 @@ No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or
  INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              No findings to report. Good job! (3 suppressed)
 ```
 
+# Conclusions
+
+## Treat Workflows as Production Code
+
+- Pin what you use.
+- Limit what it can access.
+- Separate trusted and untrusted input.
+- Do not trust mutable build state.
+- Automate the review with `zizmor`.
+
+## Summary
+
+- Thanks to [David](https://github.com/dpshelio) for telling me about `zizmor`.
+- Thanks to [MIRSG](https://github.com/UCL-MIRSG) for letting me try it across
+  many repos, used in our
+  [centralised `prek` hooks](https://github.com/UCL-MIRSG/.github/blob/ee53b1a497918d8f7c5cc4051c71b3e27ce15b7f/prek/mirsg-hooks.yaml#L152-L157).
+- Astral have a good
+  [blog on open source security](https://astral.sh/blog/open-source-security-at-astral)
+  written by the `zizmor` author
+  [William Woodruff](https://github.com/woodruffw).
+- Can be installed from Homebrew, PyPI, crates.io, Docker, …
+- <https://docs.zizmor.sh/audits> is a great resource to understand what each
+  rule looks for, what the problem is, and how to fix it.
+- See you soon from Leeds 😢.
+
 {{< include /_includes/qr-code.qmd >}}
