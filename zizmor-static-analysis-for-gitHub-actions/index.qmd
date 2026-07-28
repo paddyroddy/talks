@@ -264,4 +264,46 @@ Related rules:
 
 :::
 
+# Authority
+
+## Permissions Are Part of the Program
+
+::: {.fragment .fade-in-then-semi-out}
+
+Overzealous permissions are risky.
+
+```{.yaml code-fold="false"}
+permissions: write-all
+```
+
+:::
+
+::: {.fragment}
+
+Safer instead to specify at the `job` level.
+
+```{.yaml}
+permissions: {}  # Disables default permissions
+
+jobs:
+  release:
+    permissions:
+      contents: write
+```
+
+:::
+
+## Rule: `excessive-permissions`
+
+Permissions should describe what the job does, rather than what it might
+conceivably need.
+
+The following rules can help with this:
+
+- [excessive-permissions](https://docs.zizmor.sh/audits/#excessive-permissions)
+- [github-app](https://docs.zizmor.sh/audits/#github-app)
+- [overprovisioned-secrets](https://docs.zizmor.sh/audits/#overprovisioned-secrets)
+- [secrets-inherit](https://docs.zizmor.sh/audits/#secrets-inherit)
+- [undocumented-permissions](https://docs.zizmor.sh/audits/#undocumented-permissions)
+
 {{< include /_includes/qr-code.qmd >}}
