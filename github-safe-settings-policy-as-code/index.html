@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2025-02-11">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -206,7 +209,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -319,44 +322,44 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2><a href="https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/sample-deployment-settings.yml">Deployment Settings</a></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1|1-5|1,6-7|8|8-14|15|16-33|34-38"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">restrictedRepos</span><span class="kw">:</span></span>
-<span id="cb1-2"><a></a><span class="co">  # You can exclude certain repos from safe-settings processing</span></span>
-<span id="cb1-3"><a></a><span class="co">  # If no file is specified, then the following repositories -</span></span>
-<span id="cb1-4"><a></a><span class="co">  # 'admin', '.github', 'safe-settings' are exempted by default</span></span>
-<span id="cb1-5"><a></a><span class="at">  </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'^admin$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'^\.github$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'^safe-settings$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'.*-test'</span><span class="kw">]</span></span>
-<span id="cb1-6"><a></a><span class="co">  # Alternatively you can only include certain repos</span></span>
-<span id="cb1-7"><a></a><span class="at">  </span><span class="fu">include</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'^test$'</span><span class="kw">]</span></span>
-<span id="cb1-8"><a></a><span class="fu">configvalidators</span><span class="kw">:</span></span>
-<span id="cb1-9"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> collaborators</span></span>
-<span id="cb1-10"><a></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb1-11"><a></a>      `Admin cannot be assigned to collaborators`</span>
-<span id="cb1-12"><a></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|-</span></span>
-<span id="cb1-13"><a></a>      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)</span>
-<span id="cb1-14"><a></a>      return baseconfig.permission != 'admin'</span>
-<span id="cb1-15"><a></a><span class="fu">overridevalidators</span><span class="kw">:</span></span>
-<span id="cb1-16"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> branches</span></span>
-<span id="cb1-17"><a></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|-</span></span>
-<span id="cb1-18"><a></a>      `Branch protection required_approving_review_count</span>
-<span id="cb1-19"><a></a>      cannot be overridden to a lower value`</span>
-<span id="cb1-20"><a></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|-</span></span>
-<span id="cb1-21"><a></a>      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)</span>
-<span id="cb1-22"><a></a>      console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)</span>
-<span id="cb1-23"><a></a>      if (</span>
-<span id="cb1-24"><a></a>        baseconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
-<span id="cb1-25"><a></a>        &amp;&amp;</span>
-<span id="cb1-26"><a></a>        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
-<span id="cb1-27"><a></a>      ) {</span>
-<span id="cb1-28"><a></a>        return</span>
-<span id="cb1-29"><a></a>        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
-<span id="cb1-30"><a></a>        &gt;=</span>
-<span id="cb1-31"><a></a>        baseconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
-<span id="cb1-32"><a></a>      }</span>
-<span id="cb1-33"><a></a>      return true</span>
-<span id="cb1-34"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> labels</span></span>
-<span id="cb1-35"><a></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb1-36"><a></a>      Some error</span>
-<span id="cb1-37"><a></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb1-38"><a></a>      return true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1|1-5|1,6-7|8|8-14|15|16-33|34-38"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-label="1"></a><span class="fu">restrictedRepos</span><span class="kw">:</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co">  # You can exclude certain repos from safe-settings processing</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="co">  # If no file is specified, then the following repositories -</span></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="co">  # 'admin', '.github', 'safe-settings' are exempted by default</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="at">  </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'^admin$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'^\.github$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'^safe-settings$'</span><span class="kw">,</span><span class="at"> </span><span class="st">'.*-test'</span><span class="kw">]</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="co">  # Alternatively you can only include certain repos</span></span>
+<span id="cb1-7"><a aria-label="7"></a><span class="at">  </span><span class="fu">include</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">'^test$'</span><span class="kw">]</span></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="fu">configvalidators</span><span class="kw">:</span></span>
+<span id="cb1-9"><a aria-label="9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> collaborators</span></span>
+<span id="cb1-10"><a aria-label="10"></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-11"><a aria-label="11"></a>      `Admin cannot be assigned to collaborators`</span>
+<span id="cb1-12"><a aria-label="12"></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|-</span></span>
+<span id="cb1-13"><a aria-label="13"></a>      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)</span>
+<span id="cb1-14"><a aria-label="14"></a>      return baseconfig.permission != 'admin'</span>
+<span id="cb1-15"><a aria-label="15"></a><span class="fu">overridevalidators</span><span class="kw">:</span></span>
+<span id="cb1-16"><a aria-label="16"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> branches</span></span>
+<span id="cb1-17"><a aria-label="17"></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|-</span></span>
+<span id="cb1-18"><a aria-label="18"></a>      `Branch protection required_approving_review_count</span>
+<span id="cb1-19"><a aria-label="19"></a>      cannot be overridden to a lower value`</span>
+<span id="cb1-20"><a aria-label="20"></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|-</span></span>
+<span id="cb1-21"><a aria-label="21"></a>      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)</span>
+<span id="cb1-22"><a aria-label="22"></a>      console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)</span>
+<span id="cb1-23"><a aria-label="23"></a>      if (</span>
+<span id="cb1-24"><a aria-label="24"></a>        baseconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
+<span id="cb1-25"><a aria-label="25"></a>        &amp;&amp;</span>
+<span id="cb1-26"><a aria-label="26"></a>        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
+<span id="cb1-27"><a aria-label="27"></a>      ) {</span>
+<span id="cb1-28"><a aria-label="28"></a>        return</span>
+<span id="cb1-29"><a aria-label="29"></a>        overrideconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
+<span id="cb1-30"><a aria-label="30"></a>        &gt;=</span>
+<span id="cb1-31"><a aria-label="31"></a>        baseconfig.protection.required_pull_request_reviews.required_approving_review_count</span>
+<span id="cb1-32"><a aria-label="32"></a>      }</span>
+<span id="cb1-33"><a aria-label="33"></a>      return true</span>
+<span id="cb1-34"><a aria-label="34"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">plugin</span><span class="kw">:</span><span class="at"> labels</span></span>
+<span id="cb1-35"><a aria-label="35"></a><span class="fu">    error</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-36"><a aria-label="36"></a>      Some error</span>
+<span id="cb1-37"><a aria-label="37"></a><span class="fu">    script</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-38"><a aria-label="38"></a>      return true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Performance (i)">
 <h2>Performance</h2>
@@ -431,251 +434,251 @@ Patrick Roddy
 </section>
 <section class="slide level2" data-menu-title="Deployment Settings">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/deployment.yaml">./safe-settings/deployment.yaml</a></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="1|1-4|5-69"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="fu">restrictedRepos</span><span class="kw">:</span></span>
-<span id="cb2-2"><a></a><span class="co">  # these repos are all archived and will cause the GHA to fail</span></span>
-<span id="cb2-3"><a></a><span class="co">  # https://github.com/github/safe-settings/issues/443</span></span>
-<span id="cb2-4"><a></a><span class="at">  </span><span class="fu">exclude</span><span class="kw">:</span></span>
-<span id="cb2-5"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^AboutMeGateway$</span></span>
-<span id="cb2-6"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^admin$</span></span>
-<span id="cb2-7"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-infrastructure-archive$</span></span>
-<span id="cb2-8"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-omero$</span></span>
-<span id="cb2-9"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-xnat$</span></span>
-<span id="cb2-10"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-xnat-archive$</span></span>
-<span id="cb2-11"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-docker$</span></span>
-<span id="cb2-12"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-firewalld$</span></span>
-<span id="cb2-13"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-install-java$</span></span>
-<span id="cb2-14"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-install-python$</span></span>
-<span id="cb2-15"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-omero-web$</span></span>
-<span id="cb2-16"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-postgresql$</span></span>
-<span id="cb2-17"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-provision$</span></span>
-<span id="cb2-18"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-selinux-utils$</span></span>
-<span id="cb2-19"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-ssl-certificates$</span></span>
-<span id="cb2-20"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-template$</span></span>
-<span id="cb2-21"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-tomcat$</span></span>
-<span id="cb2-22"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^catch-srv-plugin$</span></span>
-<span id="cb2-23"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^chenies-mews-cleanup$</span></span>
-<span id="cb2-24"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^cmic-xnat-plugin$</span></span>
-<span id="cb2-25"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^comic100_dax_config$</span></span>
-<span id="cb2-26"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^despiad_customizations$</span></span>
-<span id="cb2-27"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^DevOps-Knowledge-Base$</span></span>
-<span id="cb2-28"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^DicomAnonUtils$</span></span>
-<span id="cb2-29"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^drc_cluster_dax_config$</span></span>
-<span id="cb2-30"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^exo-flim$</span></span>
-<span id="cb2-31"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ops$</span></span>
-<span id="cb2-32"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ops-scripts$</span></span>
-<span id="cb2-33"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ui$</span></span>
-<span id="cb2-34"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimlib$</span></span>
-<span id="cb2-35"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^general_bulk_uploader$</span></span>
-<span id="cb2-36"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^gif_extras$</span></span>
-<span id="cb2-37"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^github-actions-maven$</span></span>
-<span id="cb2-38"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^Infrastructure$</span></span>
-<span id="cb2-39"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^LocalDevMedicalImagingEnv$</span></span>
-<span id="cb2-40"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^MIRSE-Research-and-Documentation$</span></span>
-<span id="cb2-41"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-github-runner-docker$</span></span>
-<span id="cb2-42"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-harvester-terraform-modules$</span></span>
-<span id="cb2-43"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-xnat-user-documentation$</span></span>
-<span id="cb2-44"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^module_segmentation$</span></span>
-<span id="cb2-45"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NCCID-clinical-datatype-for-Covid19-XNAT$</span></span>
-<span id="cb2-46"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NCCID-clinical-datatype-release$</span></span>
-<span id="cb2-47"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nccid-data-transfer$</span></span>
-<span id="cb2-48"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NiftyPipe$</span></span>
-<span id="cb2-49"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NiftyPipe-Data$</span></span>
-<span id="cb2-50"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nimg1946-legacy-scripts$</span></span>
-<span id="cb2-51"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nipype$</span></span>
-<span id="cb2-52"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^omero-ansible-sandpit$</span></span>
-<span id="cb2-53"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^OmeroInstaller$</span></span>
-<span id="cb2-54"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^OmeroInstallerConfig$</span></span>
-<span id="cb2-55"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^promis-omero-import$</span><span class="co"> # typos: ignore</span></span>
-<span id="cb2-56"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^protocols$</span></span>
-<span id="cb2-57"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^reimagine-bulk-uploader$</span></span>
-<span id="cb2-58"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^SUMMITCOVIDGateway$</span></span>
-<span id="cb2-59"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^test-gha-arc$</span></span>
-<span id="cb2-60"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ucl-xsync$</span></span>
-<span id="cb2-61"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^uclh-gae-clinical-gateway$</span><span class="co"> # typos: ignore</span></span>
-<span id="cb2-62"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat$</span></span>
-<span id="cb2-63"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-1946$</span></span>
-<span id="cb2-64"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-azure-template-terraform$</span></span>
-<span id="cb2-65"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-azure-terraform$</span></span>
-<span id="cb2-66"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^XNAT-FTD$</span></span>
-<span id="cb2-67"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-helper$</span></span>
-<span id="cb2-68"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-setup$</span></span>
-<span id="cb2-69"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^XnatInstaller$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="1|1-4|5-69"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-label="1"></a><span class="fu">restrictedRepos</span><span class="kw">:</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="co">  # these repos are all archived and will cause the GHA to fail</span></span>
+<span id="cb2-3"><a aria-label="3"></a><span class="co">  # https://github.com/github/safe-settings/issues/443</span></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="at">  </span><span class="fu">exclude</span><span class="kw">:</span></span>
+<span id="cb2-5"><a aria-label="5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^AboutMeGateway$</span></span>
+<span id="cb2-6"><a aria-label="6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^admin$</span></span>
+<span id="cb2-7"><a aria-label="7"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-infrastructure-archive$</span></span>
+<span id="cb2-8"><a aria-label="8"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-omero$</span></span>
+<span id="cb2-9"><a aria-label="9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-xnat$</span></span>
+<span id="cb2-10"><a aria-label="10"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-collection-xnat-archive$</span></span>
+<span id="cb2-11"><a aria-label="11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-docker$</span></span>
+<span id="cb2-12"><a aria-label="12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-firewalld$</span></span>
+<span id="cb2-13"><a aria-label="13"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-install-java$</span></span>
+<span id="cb2-14"><a aria-label="14"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-install-python$</span></span>
+<span id="cb2-15"><a aria-label="15"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-omero-web$</span></span>
+<span id="cb2-16"><a aria-label="16"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-postgresql$</span></span>
+<span id="cb2-17"><a aria-label="17"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-provision$</span></span>
+<span id="cb2-18"><a aria-label="18"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-selinux-utils$</span></span>
+<span id="cb2-19"><a aria-label="19"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-ssl-certificates$</span></span>
+<span id="cb2-20"><a aria-label="20"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-template$</span></span>
+<span id="cb2-21"><a aria-label="21"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ansible-role-tomcat$</span></span>
+<span id="cb2-22"><a aria-label="22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^catch-srv-plugin$</span></span>
+<span id="cb2-23"><a aria-label="23"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^chenies-mews-cleanup$</span></span>
+<span id="cb2-24"><a aria-label="24"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^cmic-xnat-plugin$</span></span>
+<span id="cb2-25"><a aria-label="25"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^comic100_dax_config$</span></span>
+<span id="cb2-26"><a aria-label="26"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^despiad_customizations$</span></span>
+<span id="cb2-27"><a aria-label="27"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^DevOps-Knowledge-Base$</span></span>
+<span id="cb2-28"><a aria-label="28"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^DicomAnonUtils$</span></span>
+<span id="cb2-29"><a aria-label="29"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^drc_cluster_dax_config$</span></span>
+<span id="cb2-30"><a aria-label="30"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^exo-flim$</span></span>
+<span id="cb2-31"><a aria-label="31"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ops$</span></span>
+<span id="cb2-32"><a aria-label="32"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ops-scripts$</span></span>
+<span id="cb2-33"><a aria-label="33"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimj-ui$</span></span>
+<span id="cb2-34"><a aria-label="34"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^flimlib$</span></span>
+<span id="cb2-35"><a aria-label="35"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^general_bulk_uploader$</span></span>
+<span id="cb2-36"><a aria-label="36"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^gif_extras$</span></span>
+<span id="cb2-37"><a aria-label="37"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^github-actions-maven$</span></span>
+<span id="cb2-38"><a aria-label="38"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^Infrastructure$</span></span>
+<span id="cb2-39"><a aria-label="39"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^LocalDevMedicalImagingEnv$</span></span>
+<span id="cb2-40"><a aria-label="40"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^MIRSE-Research-and-Documentation$</span></span>
+<span id="cb2-41"><a aria-label="41"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-github-runner-docker$</span></span>
+<span id="cb2-42"><a aria-label="42"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-harvester-terraform-modules$</span></span>
+<span id="cb2-43"><a aria-label="43"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^mirsg-xnat-user-documentation$</span></span>
+<span id="cb2-44"><a aria-label="44"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^module_segmentation$</span></span>
+<span id="cb2-45"><a aria-label="45"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NCCID-clinical-datatype-for-Covid19-XNAT$</span></span>
+<span id="cb2-46"><a aria-label="46"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NCCID-clinical-datatype-release$</span></span>
+<span id="cb2-47"><a aria-label="47"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nccid-data-transfer$</span></span>
+<span id="cb2-48"><a aria-label="48"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NiftyPipe$</span></span>
+<span id="cb2-49"><a aria-label="49"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^NiftyPipe-Data$</span></span>
+<span id="cb2-50"><a aria-label="50"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nimg1946-legacy-scripts$</span></span>
+<span id="cb2-51"><a aria-label="51"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^nipype$</span></span>
+<span id="cb2-52"><a aria-label="52"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^omero-ansible-sandpit$</span></span>
+<span id="cb2-53"><a aria-label="53"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^OmeroInstaller$</span></span>
+<span id="cb2-54"><a aria-label="54"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^OmeroInstallerConfig$</span></span>
+<span id="cb2-55"><a aria-label="55"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^promis-omero-import$</span><span class="co"> # typos: ignore</span></span>
+<span id="cb2-56"><a aria-label="56"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^protocols$</span></span>
+<span id="cb2-57"><a aria-label="57"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^reimagine-bulk-uploader$</span></span>
+<span id="cb2-58"><a aria-label="58"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^SUMMITCOVIDGateway$</span></span>
+<span id="cb2-59"><a aria-label="59"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^test-gha-arc$</span></span>
+<span id="cb2-60"><a aria-label="60"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^ucl-xsync$</span></span>
+<span id="cb2-61"><a aria-label="61"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^uclh-gae-clinical-gateway$</span><span class="co"> # typos: ignore</span></span>
+<span id="cb2-62"><a aria-label="62"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat$</span></span>
+<span id="cb2-63"><a aria-label="63"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-1946$</span></span>
+<span id="cb2-64"><a aria-label="64"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-azure-template-terraform$</span></span>
+<span id="cb2-65"><a aria-label="65"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-azure-terraform$</span></span>
+<span id="cb2-66"><a aria-label="66"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^XNAT-FTD$</span></span>
+<span id="cb2-67"><a aria-label="67"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-helper$</span></span>
+<span id="cb2-68"><a aria-label="68"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^xnat-setup$</span></span>
+<span id="cb2-69"><a aria-label="69"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ^XnatInstaller$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Organisation Settings">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/organisation.yaml">./safe-settings/organisation.yaml</a></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="1-4|6-15|17-19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="fu">autolinks</span><span class="kw">:</span></span>
-<span id="cb3-2"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">key_prefix</span><span class="kw">:</span><span class="at"> ARCMYS-</span></span>
-<span id="cb3-3"><a></a><span class="at">    </span><span class="fu">url_template</span><span class="kw">:</span><span class="at"> https://myservices-arc.uk.4me.com/requests/&lt;num&gt;</span></span>
-<span id="cb3-4"><a></a><span class="at">    </span><span class="fu">is_alphanumeric</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a><span class="fu">repository</span><span class="kw">:</span></span>
-<span id="cb3-7"><a></a><span class="at">  </span><span class="fu">allow_auto_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb3-8"><a></a><span class="at">  </span><span class="fu">allow_merge_commit</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-9"><a></a><span class="at">  </span><span class="fu">allow_rebase_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-10"><a></a><span class="at">  </span><span class="fu">delete_branch_on_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb3-11"><a></a><span class="at">  </span><span class="fu">has_discussions</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-12"><a></a><span class="at">  </span><span class="fu">has_downloads</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-13"><a></a><span class="at">  </span><span class="fu">has_wiki</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-14"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_message</span><span class="kw">:</span><span class="at"> PR_BODY</span></span>
-<span id="cb3-15"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_title</span><span class="kw">:</span><span class="at"> PR_TITLE</span></span>
-<span id="cb3-16"><a></a></span>
-<span id="cb3-17"><a></a><span class="fu">teams</span><span class="kw">:</span></span>
-<span id="cb3-18"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mirsg</span></span>
-<span id="cb3-19"><a></a><span class="at">    </span><span class="fu">permission</span><span class="kw">:</span><span class="at"> admin</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="1-4|6-15|17-19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-label="1"></a><span class="fu">autolinks</span><span class="kw">:</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">key_prefix</span><span class="kw">:</span><span class="at"> ARCMYS-</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">url_template</span><span class="kw">:</span><span class="at"> https://myservices-arc.uk.4me.com/requests/&lt;num&gt;</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">is_alphanumeric</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-5"><a aria-label="5"></a></span>
+<span id="cb3-6"><a aria-label="6"></a><span class="fu">repository</span><span class="kw">:</span></span>
+<span id="cb3-7"><a aria-label="7"></a><span class="at">  </span><span class="fu">allow_auto_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-8"><a aria-label="8"></a><span class="at">  </span><span class="fu">allow_merge_commit</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-9"><a aria-label="9"></a><span class="at">  </span><span class="fu">allow_rebase_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-10"><a aria-label="10"></a><span class="at">  </span><span class="fu">delete_branch_on_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-11"><a aria-label="11"></a><span class="at">  </span><span class="fu">has_discussions</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-12"><a aria-label="12"></a><span class="at">  </span><span class="fu">has_downloads</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-13"><a aria-label="13"></a><span class="at">  </span><span class="fu">has_wiki</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-14"><a aria-label="14"></a><span class="at">  </span><span class="fu">squash_merge_commit_message</span><span class="kw">:</span><span class="at"> PR_BODY</span></span>
+<span id="cb3-15"><a aria-label="15"></a><span class="at">  </span><span class="fu">squash_merge_commit_title</span><span class="kw">:</span><span class="at"> PR_TITLE</span></span>
+<span id="cb3-16"><a aria-label="16"></a></span>
+<span id="cb3-17"><a aria-label="17"></a><span class="fu">teams</span><span class="kw">:</span></span>
+<span id="cb3-18"><a aria-label="18"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mirsg</span></span>
+<span id="cb3-19"><a aria-label="19"></a><span class="at">    </span><span class="fu">permission</span><span class="kw">:</span><span class="at"> admin</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Suborgs Settings">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/safe-settings/suborgs/rulesets.yaml">./safe-settings/suborgs/rulesets.yaml</a></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1-2|4|4-17|19-43|45-64"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">suborgrepos</span><span class="kw">:</span></span>
-<span id="cb4-2"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"*"</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="fu">rulesets</span><span class="kw">:</span></span>
-<span id="cb4-5"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Default</span></span>
-<span id="cb4-6"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
-<span id="cb4-7"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
-<span id="cb4-8"><a></a></span>
-<span id="cb4-9"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
-<span id="cb4-10"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
-<span id="cb4-11"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
-<span id="cb4-12"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
-<span id="cb4-13"><a></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
-<span id="cb4-14"><a></a></span>
-<span id="cb4-15"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
-<span id="cb4-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> deletion</span></span>
-<span id="cb4-17"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> non_fast_forward</span><span class="co"> # prevents force pushes</span></span>
-<span id="cb4-18"><a></a></span>
-<span id="cb4-19"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Pull Requests</span></span>
-<span id="cb4-20"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
-<span id="cb4-21"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
-<span id="cb4-22"><a></a></span>
-<span id="cb4-23"><a></a><span class="at">    </span><span class="fu">bypass_actors</span><span class="kw">:</span></span>
-<span id="cb4-24"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">actor_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">2740</span><span class="co"> # Renovate Bot</span></span>
-<span id="cb4-25"><a></a><span class="at">        </span><span class="fu">actor_type</span><span class="kw">:</span><span class="at"> Integration</span></span>
-<span id="cb4-26"><a></a><span class="at">        </span><span class="fu">bypass_mode</span><span class="kw">:</span><span class="at"> always</span></span>
-<span id="cb4-27"><a></a></span>
-<span id="cb4-28"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
-<span id="cb4-29"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
-<span id="cb4-30"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
-<span id="cb4-31"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
-<span id="cb4-32"><a></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
-<span id="cb4-33"><a></a></span>
-<span id="cb4-34"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
-<span id="cb4-35"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> pull_request</span></span>
-<span id="cb4-36"><a></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
-<span id="cb4-37"><a></a><span class="at">          </span><span class="fu">allowed_merge_types</span><span class="kw">:</span></span>
-<span id="cb4-38"><a></a><span class="at">            </span><span class="kw">-</span><span class="at"> squash</span></span>
-<span id="cb4-39"><a></a><span class="at">          </span><span class="fu">dismiss_stale_reviews_on_push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb4-40"><a></a><span class="at">          </span><span class="fu">require_code_owner_review</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb4-41"><a></a><span class="at">          </span><span class="fu">require_last_push_approval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb4-42"><a></a><span class="at">          </span><span class="fu">required_approving_review_count</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb4-43"><a></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb4-44"><a></a></span>
-<span id="cb4-45"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Status Checks</span></span>
-<span id="cb4-46"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
-<span id="cb4-47"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
-<span id="cb4-48"><a></a></span>
-<span id="cb4-49"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
-<span id="cb4-50"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
-<span id="cb4-51"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
-<span id="cb4-52"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
-<span id="cb4-53"><a></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
-<span id="cb4-54"><a></a></span>
-<span id="cb4-55"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
-<span id="cb4-56"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> required_status_checks</span></span>
-<span id="cb4-57"><a></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
-<span id="cb4-58"><a></a><span class="at">          </span><span class="fu">do_not_enforce_on_create</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb4-59"><a></a><span class="at">          </span><span class="fu">required_status_checks</span><span class="kw">:</span></span>
-<span id="cb4-60"><a></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">context</span><span class="kw">:</span><span class="at"> links</span></span>
-<span id="cb4-61"><a></a><span class="at">              </span><span class="fu">integration_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">15368</span></span>
-<span id="cb4-62"><a></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">context</span><span class="kw">:</span><span class="at"> linting</span></span>
-<span id="cb4-63"><a></a><span class="at">              </span><span class="fu">integration_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">15368</span></span>
-<span id="cb4-64"><a></a><span class="at">          </span><span class="fu">strict_required_status_checks_policy</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1-2|4|4-17|19-43|45-64"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a aria-label="1"></a><span class="fu">suborgrepos</span><span class="kw">:</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"*"</span></span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="fu">rulesets</span><span class="kw">:</span></span>
+<span id="cb4-5"><a aria-label="5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Default</span></span>
+<span id="cb4-6"><a aria-label="6"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb4-7"><a aria-label="7"></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb4-8"><a aria-label="8"></a></span>
+<span id="cb4-9"><a aria-label="9"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb4-10"><a aria-label="10"></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb4-11"><a aria-label="11"></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb4-12"><a aria-label="12"></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb4-13"><a aria-label="13"></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
+<span id="cb4-14"><a aria-label="14"></a></span>
+<span id="cb4-15"><a aria-label="15"></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb4-16"><a aria-label="16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> deletion</span></span>
+<span id="cb4-17"><a aria-label="17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> non_fast_forward</span><span class="co"> # prevents force pushes</span></span>
+<span id="cb4-18"><a aria-label="18"></a></span>
+<span id="cb4-19"><a aria-label="19"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Pull Requests</span></span>
+<span id="cb4-20"><a aria-label="20"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb4-21"><a aria-label="21"></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb4-22"><a aria-label="22"></a></span>
+<span id="cb4-23"><a aria-label="23"></a><span class="at">    </span><span class="fu">bypass_actors</span><span class="kw">:</span></span>
+<span id="cb4-24"><a aria-label="24"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">actor_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">2740</span><span class="co"> # Renovate Bot</span></span>
+<span id="cb4-25"><a aria-label="25"></a><span class="at">        </span><span class="fu">actor_type</span><span class="kw">:</span><span class="at"> Integration</span></span>
+<span id="cb4-26"><a aria-label="26"></a><span class="at">        </span><span class="fu">bypass_mode</span><span class="kw">:</span><span class="at"> always</span></span>
+<span id="cb4-27"><a aria-label="27"></a></span>
+<span id="cb4-28"><a aria-label="28"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb4-29"><a aria-label="29"></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb4-30"><a aria-label="30"></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb4-31"><a aria-label="31"></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb4-32"><a aria-label="32"></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
+<span id="cb4-33"><a aria-label="33"></a></span>
+<span id="cb4-34"><a aria-label="34"></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb4-35"><a aria-label="35"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> pull_request</span></span>
+<span id="cb4-36"><a aria-label="36"></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb4-37"><a aria-label="37"></a><span class="at">          </span><span class="fu">allowed_merge_types</span><span class="kw">:</span></span>
+<span id="cb4-38"><a aria-label="38"></a><span class="at">            </span><span class="kw">-</span><span class="at"> squash</span></span>
+<span id="cb4-39"><a aria-label="39"></a><span class="at">          </span><span class="fu">dismiss_stale_reviews_on_push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-40"><a aria-label="40"></a><span class="at">          </span><span class="fu">require_code_owner_review</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb4-41"><a aria-label="41"></a><span class="at">          </span><span class="fu">require_last_push_approval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb4-42"><a aria-label="42"></a><span class="at">          </span><span class="fu">required_approving_review_count</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb4-43"><a aria-label="43"></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb4-44"><a aria-label="44"></a></span>
+<span id="cb4-45"><a aria-label="45"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Status Checks</span></span>
+<span id="cb4-46"><a aria-label="46"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb4-47"><a aria-label="47"></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb4-48"><a aria-label="48"></a></span>
+<span id="cb4-49"><a aria-label="49"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb4-50"><a aria-label="50"></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb4-51"><a aria-label="51"></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb4-52"><a aria-label="52"></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb4-53"><a aria-label="53"></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
+<span id="cb4-54"><a aria-label="54"></a></span>
+<span id="cb4-55"><a aria-label="55"></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb4-56"><a aria-label="56"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> required_status_checks</span></span>
+<span id="cb4-57"><a aria-label="57"></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb4-58"><a aria-label="58"></a><span class="at">          </span><span class="fu">do_not_enforce_on_create</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb4-59"><a aria-label="59"></a><span class="at">          </span><span class="fu">required_status_checks</span><span class="kw">:</span></span>
+<span id="cb4-60"><a aria-label="60"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">context</span><span class="kw">:</span><span class="at"> links</span></span>
+<span id="cb4-61"><a aria-label="61"></a><span class="at">              </span><span class="fu">integration_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">15368</span></span>
+<span id="cb4-62"><a aria-label="62"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">context</span><span class="kw">:</span><span class="at"> linting</span></span>
+<span id="cb4-63"><a aria-label="63"></a><span class="at">              </span><span class="fu">integration_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">15368</span></span>
+<span id="cb4-64"><a aria-label="64"></a><span class="at">          </span><span class="fu">strict_required_status_checks_policy</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="GitHub Action">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/.github/workflows/safe-settings.yaml">GitHub Action</a></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="1|2|2-5|2,6-9|2,10-11|2,12|14-18|20-22|20,23-25|20,26|26-28|30-35|37-43|45-47|49-52|52-53,55-59,64,66|54,60-63,65"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Safe Settings Sync</span></span>
-<span id="cb5-2"><a></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb5-3"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb5-4"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
-<span id="cb5-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
-<span id="cb5-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
-<span id="cb5-7"><a></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb5-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> safe-settings/**</span></span>
-<span id="cb5-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> .github/workflows/safe-settings.yaml</span></span>
-<span id="cb5-10"><a></a><span class="at">  </span><span class="fu">schedule</span><span class="kw">:</span></span>
-<span id="cb5-11"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">cron</span><span class="kw">:</span><span class="at"> 0 */4 * * *</span></span>
-<span id="cb5-12"><a></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span><span class="at"> </span><span class="kw">{}</span></span>
-<span id="cb5-13"><a></a></span>
-<span id="cb5-14"><a></a><span class="fu">concurrency</span><span class="kw">:</span></span>
-<span id="cb5-15"><a></a><span class="at">  </span><span class="fu">cancel-in-progress</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-16"><a></a><span class="fu">  group</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="cb5-17"><a></a>    ${{ github.workflow }}-${{</span>
-<span id="cb5-18"><a></a>    github.event.pull_request.number || github.ref }}</span>
-<span id="cb5-19"><a></a></span>
-<span id="cb5-20"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb5-21"><a></a><span class="at">  </span><span class="fu">safe-settings-sync</span><span class="kw">:</span></span>
-<span id="cb5-22"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
-<span id="cb5-23"><a></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span></span>
-<span id="cb5-24"><a></a><span class="at">      </span><span class="fu">SAFE_SETTINGS_VERSION</span><span class="kw">:</span><span class="at"> </span><span class="fl">2.1.14</span></span>
-<span id="cb5-25"><a></a><span class="at">      </span><span class="fu">SAFE_SETTINGS_CODE_DIR</span><span class="kw">:</span><span class="at"> .safe-settings-code</span></span>
-<span id="cb5-26"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb5-27"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
-<span id="cb5-28"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
-<span id="cb5-29"><a></a></span>
-<span id="cb5-30"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout GitHub Safe-Settings repository</span></span>
-<span id="cb5-31"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
-<span id="cb5-32"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb5-33"><a></a><span class="at">          </span><span class="fu">path</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
-<span id="cb5-34"><a></a><span class="at">          </span><span class="fu">ref</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_VERSION }}</span></span>
-<span id="cb5-35"><a></a><span class="at">          </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> github/safe-settings</span></span>
-<span id="cb5-36"><a></a></span>
-<span id="cb5-37"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Setup Node.js</span></span>
-<span id="cb5-38"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af</span><span class="co"> # v4</span></span>
-<span id="cb5-39"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb5-40"><a></a><span class="at">          </span><span class="fu">cache-dependency-path</span><span class="kw">:</span></span>
-<span id="cb5-41"><a></a><span class="at">            ${{ env.SAFE_SETTINGS_CODE_DIR }}/package-lock.json</span></span>
-<span id="cb5-42"><a></a><span class="at">          </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> npm</span></span>
-<span id="cb5-43"><a></a><span class="at">          </span><span class="fu">node-version-file</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}/.nvmrc</span></span>
-<span id="cb5-44"><a></a></span>
-<span id="cb5-45"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
-<span id="cb5-46"><a></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm install</span></span>
-<span id="cb5-47"><a></a><span class="at">        </span><span class="fu">working-directory</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
-<span id="cb5-48"><a></a></span>
-<span id="cb5-49"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run application</span></span>
-<span id="cb5-50"><a></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm run full-sync</span></span>
-<span id="cb5-51"><a></a><span class="at">        </span><span class="fu">working-directory</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
-<span id="cb5-52"><a></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
-<span id="cb5-53"><a></a><span class="at">          </span><span class="fu">ADMIN_REPO</span><span class="kw">:</span><span class="at"> .github</span></span>
-<span id="cb5-54"><a></a><span class="at">          </span><span class="fu">APP_ID</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_APP_ID }}</span></span>
-<span id="cb5-55"><a></a><span class="at">          </span><span class="fu">BLOCK_REPO_RENAME_BY_HUMAN</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb5-56"><a></a><span class="at">          </span><span class="fu">CONFIG_PATH</span><span class="kw">:</span><span class="at"> safe-settings</span></span>
-<span id="cb5-57"><a></a><span class="at">          </span><span class="fu">DEPLOYMENT_CONFIG_FILE</span><span class="kw">:</span></span>
-<span id="cb5-58"><a></a><span class="at">            ${{ github.workspace }}/safe-settings/deployment.yaml</span></span>
-<span id="cb5-59"><a></a><span class="at">          </span><span class="fu">ENABLE_PR_COMMENT</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-60"><a></a><span class="at">          </span><span class="fu">GH_ORG</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_GH_ORG }}</span></span>
-<span id="cb5-61"><a></a><span class="at">          </span><span class="fu">GITHUB_CLIENT_ID</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}</span></span>
-<span id="cb5-62"><a></a><span class="at">          </span><span class="fu">GITHUB_CLIENT_SECRET</span><span class="kw">:</span></span>
-<span id="cb5-63"><a></a><span class="at">            ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}</span></span>
-<span id="cb5-64"><a></a><span class="at">          </span><span class="fu">LOG_LEVEL</span><span class="kw">:</span><span class="at"> trace</span></span>
-<span id="cb5-65"><a></a><span class="at">          </span><span class="fu">PRIVATE_KEY</span><span class="kw">:</span><span class="at"> ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}</span></span>
-<span id="cb5-66"><a></a><span class="at">          </span><span class="fu">SETTINGS_FILE_PATH</span><span class="kw">:</span><span class="at"> organisation.yaml</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="1|2|2-5|2,6-9|2,10-11|2,12|14-18|20-22|20,23-25|20,26|26-28|30-35|37-43|45-47|49-52|52-53,55-59,64,66|54,60-63,65"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a aria-label="1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Safe Settings Sync</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb5-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb5-5"><a aria-label="5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb5-7"><a aria-label="7"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb5-8"><a aria-label="8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> safe-settings/**</span></span>
+<span id="cb5-9"><a aria-label="9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> .github/workflows/safe-settings.yaml</span></span>
+<span id="cb5-10"><a aria-label="10"></a><span class="at">  </span><span class="fu">schedule</span><span class="kw">:</span></span>
+<span id="cb5-11"><a aria-label="11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">cron</span><span class="kw">:</span><span class="at"> 0 */4 * * *</span></span>
+<span id="cb5-12"><a aria-label="12"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span><span class="at"> </span><span class="kw">{}</span></span>
+<span id="cb5-13"><a aria-label="13"></a></span>
+<span id="cb5-14"><a aria-label="14"></a><span class="fu">concurrency</span><span class="kw">:</span></span>
+<span id="cb5-15"><a aria-label="15"></a><span class="at">  </span><span class="fu">cancel-in-progress</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-16"><a aria-label="16"></a><span class="fu">  group</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb5-17"><a aria-label="17"></a>    ${{ github.workflow }}-${{</span>
+<span id="cb5-18"><a aria-label="18"></a>    github.event.pull_request.number || github.ref }}</span>
+<span id="cb5-19"><a aria-label="19"></a></span>
+<span id="cb5-20"><a aria-label="20"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb5-21"><a aria-label="21"></a><span class="at">  </span><span class="fu">safe-settings-sync</span><span class="kw">:</span></span>
+<span id="cb5-22"><a aria-label="22"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
+<span id="cb5-23"><a aria-label="23"></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb5-24"><a aria-label="24"></a><span class="at">      </span><span class="fu">SAFE_SETTINGS_VERSION</span><span class="kw">:</span><span class="at"> </span><span class="fl">2.1.14</span></span>
+<span id="cb5-25"><a aria-label="25"></a><span class="at">      </span><span class="fu">SAFE_SETTINGS_CODE_DIR</span><span class="kw">:</span><span class="at"> .safe-settings-code</span></span>
+<span id="cb5-26"><a aria-label="26"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb5-27"><a aria-label="27"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
+<span id="cb5-28"><a aria-label="28"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
+<span id="cb5-29"><a aria-label="29"></a></span>
+<span id="cb5-30"><a aria-label="30"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout GitHub Safe-Settings repository</span></span>
+<span id="cb5-31"><a aria-label="31"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
+<span id="cb5-32"><a aria-label="32"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb5-33"><a aria-label="33"></a><span class="at">          </span><span class="fu">path</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
+<span id="cb5-34"><a aria-label="34"></a><span class="at">          </span><span class="fu">ref</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_VERSION }}</span></span>
+<span id="cb5-35"><a aria-label="35"></a><span class="at">          </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> github/safe-settings</span></span>
+<span id="cb5-36"><a aria-label="36"></a></span>
+<span id="cb5-37"><a aria-label="37"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Setup Node.js</span></span>
+<span id="cb5-38"><a aria-label="38"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af</span><span class="co"> # v4</span></span>
+<span id="cb5-39"><a aria-label="39"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb5-40"><a aria-label="40"></a><span class="at">          </span><span class="fu">cache-dependency-path</span><span class="kw">:</span></span>
+<span id="cb5-41"><a aria-label="41"></a><span class="at">            ${{ env.SAFE_SETTINGS_CODE_DIR }}/package-lock.json</span></span>
+<span id="cb5-42"><a aria-label="42"></a><span class="at">          </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> npm</span></span>
+<span id="cb5-43"><a aria-label="43"></a><span class="at">          </span><span class="fu">node-version-file</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}/.nvmrc</span></span>
+<span id="cb5-44"><a aria-label="44"></a></span>
+<span id="cb5-45"><a aria-label="45"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb5-46"><a aria-label="46"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm install</span></span>
+<span id="cb5-47"><a aria-label="47"></a><span class="at">        </span><span class="fu">working-directory</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
+<span id="cb5-48"><a aria-label="48"></a></span>
+<span id="cb5-49"><a aria-label="49"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run application</span></span>
+<span id="cb5-50"><a aria-label="50"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm run full-sync</span></span>
+<span id="cb5-51"><a aria-label="51"></a><span class="at">        </span><span class="fu">working-directory</span><span class="kw">:</span><span class="at"> ${{ env.SAFE_SETTINGS_CODE_DIR }}</span></span>
+<span id="cb5-52"><a aria-label="52"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb5-53"><a aria-label="53"></a><span class="at">          </span><span class="fu">ADMIN_REPO</span><span class="kw">:</span><span class="at"> .github</span></span>
+<span id="cb5-54"><a aria-label="54"></a><span class="at">          </span><span class="fu">APP_ID</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_APP_ID }}</span></span>
+<span id="cb5-55"><a aria-label="55"></a><span class="at">          </span><span class="fu">BLOCK_REPO_RENAME_BY_HUMAN</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb5-56"><a aria-label="56"></a><span class="at">          </span><span class="fu">CONFIG_PATH</span><span class="kw">:</span><span class="at"> safe-settings</span></span>
+<span id="cb5-57"><a aria-label="57"></a><span class="at">          </span><span class="fu">DEPLOYMENT_CONFIG_FILE</span><span class="kw">:</span></span>
+<span id="cb5-58"><a aria-label="58"></a><span class="at">            ${{ github.workspace }}/safe-settings/deployment.yaml</span></span>
+<span id="cb5-59"><a aria-label="59"></a><span class="at">          </span><span class="fu">ENABLE_PR_COMMENT</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-60"><a aria-label="60"></a><span class="at">          </span><span class="fu">GH_ORG</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_GH_ORG }}</span></span>
+<span id="cb5-61"><a aria-label="61"></a><span class="at">          </span><span class="fu">GITHUB_CLIENT_ID</span><span class="kw">:</span><span class="at"> ${{ vars.SAFE_SETTINGS_GITHUB_CLIENT_ID }}</span></span>
+<span id="cb5-62"><a aria-label="62"></a><span class="at">          </span><span class="fu">GITHUB_CLIENT_SECRET</span><span class="kw">:</span></span>
+<span id="cb5-63"><a aria-label="63"></a><span class="at">            ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}</span></span>
+<span id="cb5-64"><a aria-label="64"></a><span class="at">          </span><span class="fu">LOG_LEVEL</span><span class="kw">:</span><span class="at"> trace</span></span>
+<span id="cb5-65"><a aria-label="65"></a><span class="at">          </span><span class="fu">PRIVATE_KEY</span><span class="kw">:</span><span class="at"> ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}</span></span>
+<span id="cb5-66"><a aria-label="66"></a><span class="at">          </span><span class="fu">SETTINGS_FILE_PATH</span><span class="kw">:</span><span class="at"> organisation.yaml</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2><a href="https://github.com/UCL-MIRSG/.github/blob/main/.renovaterc.json5">Renovate Configuration</a></h2>
 <p>See <a href="https://paddyroddy.github.io/talks/renovate-automating-dependency-management" class="uri">https://paddyroddy.github.io/talks/renovate-automating-dependency-management</a> for my earlier talk on Renovate.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="2|3|4-13"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a></a><span class="fu">{</span></span>
-<span id="cb6-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
-<span id="cb6-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-MIRSG/.github//renovate/default-config.json5"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-4"><a></a>  <span class="er">customManagers</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb6-5"><a></a>    <span class="fu">{</span></span>
-<span id="cb6-6"><a></a>      <span class="er">customType</span><span class="fu">:</span> <span class="st">"regex"</span><span class="fu">,</span></span>
-<span id="cb6-7"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Update GitHub Safe-Settings version"</span><span class="fu">,</span></span>
-<span id="cb6-8"><a></a>      <span class="er">fileMatch</span><span class="fu">:</span> <span class="ot">[</span><span class="st">".github/workflows/safe-settings.yaml$"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-9"><a></a>      <span class="er">matchStrings</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"SAFE_SETTINGS_VERSION:</span><span class="ch">\\</span><span class="st">s(?&lt;currentValue&gt;.*)"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-10"><a></a>      <span class="er">depNameTemplate</span><span class="fu">:</span> <span class="st">"github/safe-settings"</span><span class="fu">,</span></span>
-<span id="cb6-11"><a></a>      <span class="er">datasourceTemplate</span><span class="fu">:</span> <span class="st">"github-releases"</span><span class="fu">,</span></span>
-<span id="cb6-12"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb6-13"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-14"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="2|3|4-13"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a aria-label="2"></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb6-3"><a aria-label="3"></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-MIRSG/.github//renovate/default-config.json5"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-4"><a aria-label="4"></a>  <span class="er">customManagers</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-5"><a aria-label="5"></a>    <span class="fu">{</span></span>
+<span id="cb6-6"><a aria-label="6"></a>      <span class="er">customType</span><span class="fu">:</span> <span class="st">"regex"</span><span class="fu">,</span></span>
+<span id="cb6-7"><a aria-label="7"></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Update GitHub Safe-Settings version"</span><span class="fu">,</span></span>
+<span id="cb6-8"><a aria-label="8"></a>      <span class="er">fileMatch</span><span class="fu">:</span> <span class="ot">[</span><span class="st">".github/workflows/safe-settings.yaml$"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-9"><a aria-label="9"></a>      <span class="er">matchStrings</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"SAFE_SETTINGS_VERSION:</span><span class="ch">\\</span><span class="st">s(?&lt;currentValue&gt;.*)"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-10"><a aria-label="10"></a>      <span class="er">depNameTemplate</span><span class="fu">:</span> <span class="st">"github/safe-settings"</span><span class="fu">,</span></span>
+<span id="cb6-11"><a aria-label="11"></a>      <span class="er">datasourceTemplate</span><span class="fu">:</span> <span class="st">"github-releases"</span><span class="fu">,</span></span>
+<span id="cb6-12"><a aria-label="12"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-13"><a aria-label="13"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-14"><a aria-label="14"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -794,40 +797,40 @@ Patrick Roddy
 <section class="slide level2">
 <h2>Alternative Set Up</h2>
 <p>Follow the steps to <a href="https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest">register a GitHub App from a manifest</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="1-13|14-28|30|32|34"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="fu">default_events</span><span class="kw">:</span></span>
-<span id="cb7-2"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> branch_protection_rule</span></span>
-<span id="cb7-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> check_run</span></span>
-<span id="cb7-4"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> check_suite</span></span>
-<span id="cb7-5"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> create</span></span>
-<span id="cb7-6"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> custom_property_values</span></span>
-<span id="cb7-7"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> member</span></span>
-<span id="cb7-8"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> pull_request</span></span>
-<span id="cb7-9"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> push</span></span>
-<span id="cb7-10"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> repository</span></span>
-<span id="cb7-11"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> repository_ruleset</span></span>
-<span id="cb7-12"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> team</span></span>
-<span id="cb7-13"><a></a></span>
-<span id="cb7-14"><a></a><span class="fu">default_permissions</span><span class="kw">:</span></span>
-<span id="cb7-15"><a></a><span class="at">    </span><span class="fu">actions</span><span class="kw">:</span><span class="at"> read</span></span>
-<span id="cb7-16"><a></a><span class="at">    </span><span class="fu">administration</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-17"><a></a><span class="at">    </span><span class="fu">checks</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-18"><a></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-19"><a></a><span class="at">    </span><span class="fu">environments</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-20"><a></a><span class="at">    </span><span class="fu">issues</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-21"><a></a><span class="at">    </span><span class="fu">members</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-22"><a></a><span class="at">    </span><span class="fu">metadata</span><span class="kw">:</span><span class="at"> read</span></span>
-<span id="cb7-23"><a></a><span class="at">    </span><span class="fu">organization_administration</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-24"><a></a><span class="at">    </span><span class="fu">organization_custom_properties</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb7-25"><a></a><span class="at">    </span><span class="fu">pull_requests</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-26"><a></a><span class="at">    </span><span class="fu">repository_custom_properties</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-27"><a></a><span class="at">    </span><span class="fu">statuses</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-28"><a></a><span class="at">    </span><span class="fu">variables</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb7-29"><a></a></span>
-<span id="cb7-30"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Safe Settings</span></span>
-<span id="cb7-31"><a></a></span>
-<span id="cb7-32"><a></a><span class="fu">url</span><span class="kw">:</span><span class="at"> https://github.com/github/safe-settings</span></span>
-<span id="cb7-33"><a></a></span>
-<span id="cb7-34"><a></a><span class="fu">public</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="1-13|14-28|30|32|34"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-label="1"></a><span class="fu">default_events</span><span class="kw">:</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="at">  </span><span class="kw">-</span><span class="at"> branch_protection_rule</span></span>
+<span id="cb7-3"><a aria-label="3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> check_run</span></span>
+<span id="cb7-4"><a aria-label="4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> check_suite</span></span>
+<span id="cb7-5"><a aria-label="5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> create</span></span>
+<span id="cb7-6"><a aria-label="6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> custom_property_values</span></span>
+<span id="cb7-7"><a aria-label="7"></a><span class="at">  </span><span class="kw">-</span><span class="at"> member</span></span>
+<span id="cb7-8"><a aria-label="8"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pull_request</span></span>
+<span id="cb7-9"><a aria-label="9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> push</span></span>
+<span id="cb7-10"><a aria-label="10"></a><span class="at">  </span><span class="kw">-</span><span class="at"> repository</span></span>
+<span id="cb7-11"><a aria-label="11"></a><span class="at">  </span><span class="kw">-</span><span class="at"> repository_ruleset</span></span>
+<span id="cb7-12"><a aria-label="12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> team</span></span>
+<span id="cb7-13"><a aria-label="13"></a></span>
+<span id="cb7-14"><a aria-label="14"></a><span class="fu">default_permissions</span><span class="kw">:</span></span>
+<span id="cb7-15"><a aria-label="15"></a><span class="at">    </span><span class="fu">actions</span><span class="kw">:</span><span class="at"> read</span></span>
+<span id="cb7-16"><a aria-label="16"></a><span class="at">    </span><span class="fu">administration</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-17"><a aria-label="17"></a><span class="at">    </span><span class="fu">checks</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-18"><a aria-label="18"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-19"><a aria-label="19"></a><span class="at">    </span><span class="fu">environments</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-20"><a aria-label="20"></a><span class="at">    </span><span class="fu">issues</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-21"><a aria-label="21"></a><span class="at">    </span><span class="fu">members</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-22"><a aria-label="22"></a><span class="at">    </span><span class="fu">metadata</span><span class="kw">:</span><span class="at"> read</span></span>
+<span id="cb7-23"><a aria-label="23"></a><span class="at">    </span><span class="fu">organization_administration</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-24"><a aria-label="24"></a><span class="at">    </span><span class="fu">organization_custom_properties</span><span class="kw">:</span><span class="at"> admin</span></span>
+<span id="cb7-25"><a aria-label="25"></a><span class="at">    </span><span class="fu">pull_requests</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-26"><a aria-label="26"></a><span class="at">    </span><span class="fu">repository_custom_properties</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-27"><a aria-label="27"></a><span class="at">    </span><span class="fu">statuses</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-28"><a aria-label="28"></a><span class="at">    </span><span class="fu">variables</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-29"><a aria-label="29"></a></span>
+<span id="cb7-30"><a aria-label="30"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Safe Settings</span></span>
+<span id="cb7-31"><a aria-label="31"></a></span>
+<span id="cb7-32"><a aria-label="32"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> https://github.com/github/safe-settings</span></span>
+<span id="cb7-33"><a aria-label="33"></a></span>
+<span id="cb7-34"><a aria-label="34"></a><span class="fu">public</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">

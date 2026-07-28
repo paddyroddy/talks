@@ -7,10 +7,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2026-02-26">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -208,7 +211,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -349,45 +352,45 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2><code>LICENSE</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Copyright (c) 2018 The Python Packaging Authority</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>Permission is hereby granted, free of charge, to any person obtaining a copy</span>
-<span id="cb3-4"><a></a>of this software and associated documentation files (the "Software"), to deal</span>
-<span id="cb3-5"><a></a>in the Software without restriction, including without limitation the rights</span>
-<span id="cb3-6"><a></a>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
-<span id="cb3-7"><a></a>copies of the Software, and to permit persons to whom the Software is</span>
-<span id="cb3-8"><a></a>furnished to do so, subject to the following conditions:</span>
-<span id="cb3-9"><a></a></span>
-<span id="cb3-10"><a></a>The above copyright notice and this permission notice shall be included in all</span>
-<span id="cb3-11"><a></a>copies or substantial portions of the Software.</span>
-<span id="cb3-12"><a></a></span>
-<span id="cb3-13"><a></a>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
-<span id="cb3-14"><a></a>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
-<span id="cb3-15"><a></a>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
-<span id="cb3-16"><a></a>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
-<span id="cb3-17"><a></a>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
-<span id="cb3-18"><a></a>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
-<span id="cb3-19"><a></a>SOFTWARE.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Copyright (c) 2018 The Python Packaging Authority</span>
+<span id="cb3-2"><a aria-label="2"></a></span>
+<span id="cb3-3"><a aria-label="3"></a>Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="cb3-4"><a aria-label="4"></a>of this software and associated documentation files (the "Software"), to deal</span>
+<span id="cb3-5"><a aria-label="5"></a>in the Software without restriction, including without limitation the rights</span>
+<span id="cb3-6"><a aria-label="6"></a>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="cb3-7"><a aria-label="7"></a>copies of the Software, and to permit persons to whom the Software is</span>
+<span id="cb3-8"><a aria-label="8"></a>furnished to do so, subject to the following conditions:</span>
+<span id="cb3-9"><a aria-label="9"></a></span>
+<span id="cb3-10"><a aria-label="10"></a>The above copyright notice and this permission notice shall be included in all</span>
+<span id="cb3-11"><a aria-label="11"></a>copies or substantial portions of the Software.</span>
+<span id="cb3-12"><a aria-label="12"></a></span>
+<span id="cb3-13"><a aria-label="13"></a>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="cb3-14"><a aria-label="14"></a>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="cb3-15"><a aria-label="15"></a>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="cb3-16"><a aria-label="16"></a>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="cb3-17"><a aria-label="17"></a>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="cb3-18"><a aria-label="18"></a>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span id="cb3-19"><a aria-label="19"></a>SOFTWARE.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2><code>README.md</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="fu"># Example Package</span></span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>This is a simple example package. You can use</span>
-<span id="cb4-4"><a></a><span class="co">[</span><span class="ot">GitHub-flavored Markdown</span><span class="co">](https://guides.github.com/features/mastering-markdown/)</span></span>
-<span id="cb4-5"><a></a>to write your content.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-label="1"></a><span class="fu"># Example Package</span></span>
+<span id="cb4-2"><a aria-label="2"></a></span>
+<span id="cb4-3"><a aria-label="3"></a>This is a simple example package. You can use</span>
+<span id="cb4-4"><a aria-label="4"></a><span class="co">[</span><span class="ot">GitHub-flavored Markdown</span><span class="co">](https://guides.github.com/features/mastering-markdown/)</span></span>
+<span id="cb4-5"><a aria-label="5"></a>to write your content.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>Python Files</h2>
 <ul>
 <li class="fragment"><p><code>src/example_package/__init__.py</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co">"""</span></span>
-<span id="cb5-2"><a></a><span class="co">The existence of an __init__.py file allows users to import the</span></span>
-<span id="cb5-3"><a></a><span class="co">directory as a regular package, even if __init__.py is empty.</span></span>
-<span id="cb5-4"><a></a><span class="co">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="co">"""</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="co">The existence of an __init__.py file allows users to import the</span></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="co">directory as a regular package, even if __init__.py is empty.</span></span>
+<span id="cb5-4"><a aria-label="4"></a><span class="co">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>src/example_package/example.py</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> add_one(number):</span>
-<span id="cb6-2"><a></a>    <span class="cf">return</span> number <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="kw">def</span> add_one(number):</span>
+<span id="cb6-2"><a aria-label="2"></a>    <span class="cf">return</span> number <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>tests/</code></p>
 <p>A placeholder for test files.</p></li>
 </ul>
@@ -408,39 +411,39 @@ Patrick Roddy
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Hatchling</a></li><li><a href="#tabset-1-2">setuptools</a></li><li><a href="#tabset-1-3">Flit</a></li><li><a href="#tabset-1-4">PDM</a></li><li><a href="#tabset-1-5">uv-build</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb7-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb7-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"hatchling.build"</span></span>
-<span id="cb7-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb7-4"><a></a>    <span class="st">"hatchling"</span><span class="op">,</span></span>
-<span id="cb7-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb7-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"hatchling.build"</span></span>
+<span id="cb7-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb7-4"><a aria-label="4"></a>    <span class="st">"hatchling"</span><span class="op">,</span></span>
+<span id="cb7-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb8-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb8-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"setuptools.build_meta"</span></span>
-<span id="cb8-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb8-4"><a></a>    <span class="st">"setuptools"</span><span class="op">,</span></span>
-<span id="cb8-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb8-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb8-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"setuptools.build_meta"</span></span>
+<span id="cb8-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb8-4"><a aria-label="4"></a>    <span class="st">"setuptools"</span><span class="op">,</span></span>
+<span id="cb8-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb9-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb9-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"flit_core.buildapi"</span></span>
-<span id="cb9-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb9-4"><a></a>    <span class="st">"flit_core"</span><span class="op">,</span></span>
-<span id="cb9-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb9-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"flit_core.buildapi"</span></span>
+<span id="cb9-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb9-4"><a aria-label="4"></a>    <span class="st">"flit_core"</span><span class="op">,</span></span>
+<span id="cb9-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb10-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb10-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"pdm.backend"</span></span>
-<span id="cb10-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb10-4"><a></a>    <span class="st">"pdm-backend"</span><span class="op">,</span></span>
-<span id="cb10-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb10-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb10-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"pdm.backend"</span></span>
+<span id="cb10-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb10-4"><a aria-label="4"></a>    <span class="st">"pdm-backend"</span><span class="op">,</span></span>
+<span id="cb10-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb11-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"uv_build"</span></span>
-<span id="cb11-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb11-4"><a></a>    <span class="st">"uv_build"</span><span class="op">,</span></span>
-<span id="cb11-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"uv_build"</span></span>
+<span id="cb11-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb11-4"><a aria-label="4"></a>    <span class="st">"uv_build"</span><span class="op">,</span></span>
+<span id="cb11-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -449,30 +452,30 @@ Patrick Roddy
 <h2>Dynamic Metadata</h2>
 <p>Most of the time static metadata can be written directly in the <code>[project]</code> table. For example, <code>requires-python = "&gt;= 3.10"</code> or <code>version = "1.0"</code>.</p>
 <p>However, it is best when possible to set this metadata dynamically. One can automate the <code>__version__</code> attribute by using the following.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb12-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb12-2"><a></a><span class="dt">dynamic</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb12-3"><a></a>    <span class="st">"version"</span><span class="op">,</span></span>
-<span id="cb12-4"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb12-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb12-2"><a aria-label="2"></a><span class="dt">dynamic</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb12-3"><a aria-label="3"></a>    <span class="st">"version"</span><span class="op">,</span></span>
+<span id="cb12-4"><a aria-label="4"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>Basic Information</h2>
 <ul>
 <li class="fragment"><p><code>name</code>: The name of the project on PyPI. Required field and cannot be made dynamic.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb13-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb13-2"><a></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"spam-eggs"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb13-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb13-2"><a aria-label="2"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"spam-eggs"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>version</code>: The version of the project.</p>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Static</a></li><li><a href="#tabset-2-2">Dynamic</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb14-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb14-2"><a></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"2020.0.0"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb14-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb14-2"><a aria-label="2"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"2020.0.0"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb15-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb15-2"><a></a><span class="dt">dynamic</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb15-3"><a></a>  <span class="st">"version"</span><span class="op">,</span></span>
-<span id="cb15-4"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb15-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb15-2"><a aria-label="2"></a><span class="dt">dynamic</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb15-3"><a aria-label="3"></a>  <span class="st">"version"</span><span class="op">,</span></span>
+<span id="cb15-4"><a aria-label="4"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div></li>
@@ -482,22 +485,22 @@ Patrick Roddy
 <h2>Dependencies and Requirements</h2>
 <ul>
 <li class="fragment"><p>Dependencies are specified as follows.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb16-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb16-2"><a></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb16-3"><a></a>    <span class="st">"django&gt;2.0; os_name == 'nt'"</span><span class="op">,</span></span>
-<span id="cb16-4"><a></a>    <span class="st">"django&gt;2.1; os_name != 'nt'"</span><span class="op">,</span></span>
-<span id="cb16-5"><a></a>    <span class="st">"gidgethub[httpx]&gt;4.0.0"</span><span class="op">,</span></span>
-<span id="cb16-6"><a></a>    <span class="st">"httpx"</span><span class="op">,</span></span>
-<span id="cb16-7"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb16-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb16-2"><a aria-label="2"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb16-3"><a aria-label="3"></a>    <span class="st">"django&gt;2.0; os_name == 'nt'"</span><span class="op">,</span></span>
+<span id="cb16-4"><a aria-label="4"></a>    <span class="st">"django&gt;2.1; os_name != 'nt'"</span><span class="op">,</span></span>
+<span id="cb16-5"><a aria-label="5"></a>    <span class="st">"gidgethub[httpx]&gt;4.0.0"</span><span class="op">,</span></span>
+<span id="cb16-6"><a aria-label="6"></a>    <span class="st">"httpx"</span><span class="op">,</span></span>
+<span id="cb16-7"><a aria-label="7"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Optional dependencies are further specified as follows.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb17-1"><a></a><span class="kw">[project.optional-dependencies]</span></span>
-<span id="cb17-2"><a></a><span class="dt">cli</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb17-3"><a></a>    <span class="st">"rich"</span><span class="op">,</span></span>
-<span id="cb17-4"><a></a>    <span class="st">"click"</span><span class="op">,</span></span>
-<span id="cb17-5"><a></a><span class="op">]</span></span>
-<span id="cb17-6"><a></a><span class="dt">gui</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb17-7"><a></a>    <span class="st">"PyQt5"</span><span class="op">,</span></span>
-<span id="cb17-8"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb17-1"><a aria-label="1"></a><span class="kw">[project.optional-dependencies]</span></span>
+<span id="cb17-2"><a aria-label="2"></a><span class="dt">cli</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb17-3"><a aria-label="3"></a>    <span class="st">"rich"</span><span class="op">,</span></span>
+<span id="cb17-4"><a aria-label="4"></a>    <span class="st">"click"</span><span class="op">,</span></span>
+<span id="cb17-5"><a aria-label="5"></a><span class="op">]</span></span>
+<span id="cb17-6"><a aria-label="6"></a><span class="dt">gui</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb17-7"><a aria-label="7"></a>    <span class="st">"PyQt5"</span><span class="op">,</span></span>
+<span id="cb17-8"><a aria-label="8"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Dependencies and Requirements (ii)">
@@ -506,265 +509,265 @@ Patrick Roddy
 <li class="fragment"><p>Optional dependencies can be installed by specifying the name in square brackets: <code>pip install example-project[gui]</code>.</p></li>
 <li class="fragment"><p>A new feature exists <a href="https://packaging.python.org/en/latest/specifications/dependency-groups">dependency groups</a> which is for optional dependencies that are only intended for development (linters, testing, …).</p></li>
 <li class="fragment"><p>The minimum Python version to support is specified as:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb18-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb18-2"><a></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;= 3.10"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb18-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb18-2"><a aria-label="2"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;= 3.10"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2">
 <h2>Executable Scripts</h2>
 <ul>
 <li class="fragment"><p>A <code>spam-cli</code> command can be made using the following:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb19-1"><a></a><span class="kw">[project.scripts]</span></span>
-<span id="cb19-2"><a></a><span class="dt">spam-cli</span> <span class="op">=</span> <span class="st">"spam:main_cli"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb19-1"><a aria-label="1"></a><span class="kw">[project.scripts]</span></span>
+<span id="cb19-2"><a aria-label="2"></a><span class="dt">spam-cli</span> <span class="op">=</span> <span class="st">"spam:main_cli"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>On Windows, scripts sometimes require the following command instead:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb20-1"><a></a><span class="kw">[project.gui-scripts]</span></span>
-<span id="cb20-2"><a></a><span class="dt">spam-gui</span> <span class="op">=</span> <span class="st">"spam:main_gui"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb20-1"><a aria-label="1"></a><span class="kw">[project.gui-scripts]</span></span>
+<span id="cb20-2"><a aria-label="2"></a><span class="dt">spam-gui</span> <span class="op">=</span> <span class="st">"spam:main_gui"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Project Metadata (i)">
 <h2>Project Metadata</h2>
 <ul>
 <li class="fragment"><p><code>authors</code>/<code>maintainers</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb21-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb21-2"><a></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb21-3"><a></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Pradyun Gedam"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"pradyun@example.com"</span><span class="op">},</span></span>
-<span id="cb21-4"><a></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Tzu-Ping Chung"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"tzu-ping@example.com"</span><span class="op">},</span></span>
-<span id="cb21-5"><a></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Another person"</span><span class="op">},</span></span>
-<span id="cb21-6"><a></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"different.person@example.com"</span><span class="op">},</span></span>
-<span id="cb21-7"><a></a><span class="op">]</span></span>
-<span id="cb21-8"><a></a><span class="dt">maintainers</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb21-9"><a></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Brett Cannon"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"brett@example.com"</span><span class="op">},</span></span>
-<span id="cb21-10"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb21-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb21-2"><a aria-label="2"></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb21-3"><a aria-label="3"></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Pradyun Gedam"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"pradyun@example.com"</span><span class="op">},</span></span>
+<span id="cb21-4"><a aria-label="4"></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Tzu-Ping Chung"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"tzu-ping@example.com"</span><span class="op">},</span></span>
+<span id="cb21-5"><a aria-label="5"></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Another person"</span><span class="op">},</span></span>
+<span id="cb21-6"><a aria-label="6"></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"different.person@example.com"</span><span class="op">},</span></span>
+<span id="cb21-7"><a aria-label="7"></a><span class="op">]</span></span>
+<span id="cb21-8"><a aria-label="8"></a><span class="dt">maintainers</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb21-9"><a aria-label="9"></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Brett Cannon"</span><span class="op">, </span><span class="dt">email</span><span class="op"> =</span> <span class="st">"brett@example.com"</span><span class="op">},</span></span>
+<span id="cb21-10"><a aria-label="10"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>description</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb22-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb22-2"><a></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Lovely Spam! Wonderful Spam!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb22-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb22-2"><a aria-label="2"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Lovely Spam! Wonderful Spam!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Project Metadata (ii)">
 <h2>Project Metadata</h2>
 <ul>
 <li class="fragment"><p><code>readme</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb23-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb23-2"><a></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb23-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb23-2"><a aria-label="2"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Licences should be declared using the following two fields.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb24-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb24-2"><a></a><span class="dt">license</span> <span class="op">=</span> <span class="st">"MIT"</span></span>
-<span id="cb24-3"><a></a><span class="dt">license-files</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb24-4"><a></a>    <span class="st">"LICENSE"</span><span class="op">,</span></span>
-<span id="cb24-5"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb24-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb24-2"><a aria-label="2"></a><span class="dt">license</span> <span class="op">=</span> <span class="st">"MIT"</span></span>
+<span id="cb24-3"><a aria-label="3"></a><span class="dt">license-files</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb24-4"><a aria-label="4"></a>    <span class="st">"LICENSE"</span><span class="op">,</span></span>
+<span id="cb24-5"><a aria-label="5"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>keywords</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb25-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb25-2"><a></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span><span class="st">"egg"</span><span class="op">,</span> <span class="st">"bacon"</span><span class="op">,</span> <span class="st">"sausage"</span><span class="op">,</span> <span class="st">"tomatoes"</span><span class="op">,</span> <span class="st">"Lobster Thermidor"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb25-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb25-2"><a aria-label="2"></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span><span class="st">"egg"</span><span class="op">,</span> <span class="st">"bacon"</span><span class="op">,</span> <span class="st">"sausage"</span><span class="op">,</span> <span class="st">"tomatoes"</span><span class="op">,</span> <span class="st">"Lobster Thermidor"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Project Metadata (iii)">
 <h2>Project Metadata</h2>
 <ul>
 <li class="fragment"><p><code>classifiers</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb26-1"><a></a><span class="kw">[project]</span></span>
-<span id="cb26-2"><a></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb26-3"><a></a>    <span class="co"># How mature is this project? Common values are</span></span>
-<span id="cb26-4"><a></a>    <span class="co">#   3 - Alpha</span></span>
-<span id="cb26-5"><a></a>    <span class="co">#   4 - Beta</span></span>
-<span id="cb26-6"><a></a>    <span class="co">#   5 - Production/Stable</span></span>
-<span id="cb26-7"><a></a>    <span class="st">"Development Status :: 4 - Beta"</span><span class="op">,</span></span>
-<span id="cb26-8"><a></a></span>
-<span id="cb26-9"><a></a>    <span class="co"># Indicate who your project is intended for</span></span>
-<span id="cb26-10"><a></a>    <span class="st">"Intended Audience :: Developers"</span><span class="op">,</span></span>
-<span id="cb26-11"><a></a>    <span class="st">"Topic :: Software Development :: Build Tools"</span><span class="op">,</span></span>
-<span id="cb26-12"><a></a></span>
-<span id="cb26-13"><a></a>    <span class="co"># Specify the Python versions you support here.</span></span>
-<span id="cb26-14"><a></a>    <span class="st">"Programming Language :: Python :: 3"</span><span class="op">,</span></span>
-<span id="cb26-15"><a></a>    <span class="st">"Programming Language :: Python :: 3.10"</span><span class="op">,</span></span>
-<span id="cb26-16"><a></a>    <span class="st">"Programming Language :: Python :: 3.11"</span><span class="op">,</span></span>
-<span id="cb26-17"><a></a>    <span class="st">"Programming Language :: Python :: 3.12"</span><span class="op">,</span></span>
-<span id="cb26-18"><a></a>    <span class="st">"Programming Language :: Python :: 3.13"</span><span class="op">,</span></span>
-<span id="cb26-19"><a></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb26-1"><a aria-label="1"></a><span class="kw">[project]</span></span>
+<span id="cb26-2"><a aria-label="2"></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb26-3"><a aria-label="3"></a>    <span class="co"># How mature is this project? Common values are</span></span>
+<span id="cb26-4"><a aria-label="4"></a>    <span class="co">#   3 - Alpha</span></span>
+<span id="cb26-5"><a aria-label="5"></a>    <span class="co">#   4 - Beta</span></span>
+<span id="cb26-6"><a aria-label="6"></a>    <span class="co">#   5 - Production/Stable</span></span>
+<span id="cb26-7"><a aria-label="7"></a>    <span class="st">"Development Status :: 4 - Beta"</span><span class="op">,</span></span>
+<span id="cb26-8"><a aria-label="8"></a></span>
+<span id="cb26-9"><a aria-label="9"></a>    <span class="co"># Indicate who your project is intended for</span></span>
+<span id="cb26-10"><a aria-label="10"></a>    <span class="st">"Intended Audience :: Developers"</span><span class="op">,</span></span>
+<span id="cb26-11"><a aria-label="11"></a>    <span class="st">"Topic :: Software Development :: Build Tools"</span><span class="op">,</span></span>
+<span id="cb26-12"><a aria-label="12"></a></span>
+<span id="cb26-13"><a aria-label="13"></a>    <span class="co"># Specify the Python versions you support here.</span></span>
+<span id="cb26-14"><a aria-label="14"></a>    <span class="st">"Programming Language :: Python :: 3"</span><span class="op">,</span></span>
+<span id="cb26-15"><a aria-label="15"></a>    <span class="st">"Programming Language :: Python :: 3.10"</span><span class="op">,</span></span>
+<span id="cb26-16"><a aria-label="16"></a>    <span class="st">"Programming Language :: Python :: 3.11"</span><span class="op">,</span></span>
+<span id="cb26-17"><a aria-label="17"></a>    <span class="st">"Programming Language :: Python :: 3.12"</span><span class="op">,</span></span>
+<span id="cb26-18"><a aria-label="18"></a>    <span class="st">"Programming Language :: Python :: 3.13"</span><span class="op">,</span></span>
+<span id="cb26-19"><a aria-label="19"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2" data-menu-title="Project Metadata (iv)">
 <h2>Project Metadata</h2>
 <ul>
 <li class="fragment"><p><code>urls</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb27-1"><a></a><span class="kw">[project.urls]</span></span>
-<span id="cb27-2"><a></a><span class="dt">Homepage</span> <span class="op">=</span> <span class="st">"https://example.com"</span></span>
-<span id="cb27-3"><a></a><span class="dt">Documentation</span> <span class="op">=</span> <span class="st">"https://readthedocs.org"</span></span>
-<span id="cb27-4"><a></a><span class="dt">Repository</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam.git"</span></span>
-<span id="cb27-5"><a></a><span class="dt">Issues</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/issues"</span></span>
-<span id="cb27-6"><a></a><span class="dt">Changelog</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/blob/master/CHANGELOG.md"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb27-1"><a aria-label="1"></a><span class="kw">[project.urls]</span></span>
+<span id="cb27-2"><a aria-label="2"></a><span class="dt">Homepage</span> <span class="op">=</span> <span class="st">"https://example.com"</span></span>
+<span id="cb27-3"><a aria-label="3"></a><span class="dt">Documentation</span> <span class="op">=</span> <span class="st">"https://readthedocs.org"</span></span>
+<span id="cb27-4"><a aria-label="4"></a><span class="dt">Repository</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam.git"</span></span>
+<span id="cb27-5"><a aria-label="5"></a><span class="dt">Issues</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/issues"</span></span>
+<span id="cb27-6"><a aria-label="6"></a><span class="dt">Changelog</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/blob/master/CHANGELOG.md"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section class="slide level2">
 <h2>Full Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-code-line-numbers="1|1-2|1,3-5|7|7-13|7,14-17|7,18-23|24|25|26-32|33-36|37-39|40|41-46|47|48|49|50|51|52-56"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb28-1"><a></a><span class="kw">[build-system]</span></span>
-<span id="cb28-2"><a></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"hatchling.build"</span></span>
-<span id="cb28-3"><a></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-4"><a></a>    <span class="st">"hatchling"</span><span class="op">,</span></span>
-<span id="cb28-5"><a></a><span class="op">]</span></span>
-<span id="cb28-6"><a></a></span>
-<span id="cb28-7"><a></a><span class="kw">[project]</span></span>
-<span id="cb28-8"><a></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-9"><a></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"different.person@example.com"</span><span class="op">},</span></span>
-<span id="cb28-10"><a></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"pradyun@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Pradyun Gedam"</span><span class="op">},</span></span>
-<span id="cb28-11"><a></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"tzu-ping@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Tzu-Ping Chung"</span><span class="op">},</span></span>
-<span id="cb28-12"><a></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Another person"</span><span class="op">},</span></span>
-<span id="cb28-13"><a></a><span class="op">]</span></span>
-<span id="cb28-14"><a></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-15"><a></a>    <span class="st">"Development Status :: 4 - Beta"</span><span class="op">,</span></span>
-<span id="cb28-16"><a></a>    <span class="st">"Programming Language :: Python"</span><span class="op">,</span></span>
-<span id="cb28-17"><a></a><span class="op">]</span></span>
-<span id="cb28-18"><a></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-19"><a></a>    <span class="st">"django&gt;2.0; os_name == 'nt'"</span><span class="op">,</span></span>
-<span id="cb28-20"><a></a>    <span class="st">"django&gt;2.1; os_name != 'nt'"</span><span class="op">,</span></span>
-<span id="cb28-21"><a></a>    <span class="st">"gidgethub[httpx]&gt;4.0.0"</span><span class="op">,</span></span>
-<span id="cb28-22"><a></a>    <span class="st">"httpx"</span><span class="op">,</span></span>
-<span id="cb28-23"><a></a><span class="op">]</span></span>
-<span id="cb28-24"><a></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Lovely Spam! Wonderful Spam!"</span></span>
-<span id="cb28-25"><a></a><span class="dt">gui-scripts</span> <span class="op">=</span> <span class="op">{</span><span class="dt">spam-gui</span><span class="op"> =</span> <span class="st">"spam:main_gui"</span><span class="op">}</span></span>
-<span id="cb28-26"><a></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-27"><a></a>    <span class="st">"Lobster Thermidor"</span><span class="op">,</span></span>
-<span id="cb28-28"><a></a>    <span class="st">"bacon"</span><span class="op">,</span></span>
-<span id="cb28-29"><a></a>    <span class="st">"egg"</span><span class="op">,</span></span>
-<span id="cb28-30"><a></a>    <span class="st">"sausage"</span><span class="op">,</span></span>
-<span id="cb28-31"><a></a>    <span class="st">"tomatoes"</span><span class="op">,</span></span>
-<span id="cb28-32"><a></a><span class="op">]</span></span>
-<span id="cb28-33"><a></a><span class="dt">license</span> <span class="op">=</span> <span class="st">"MIT"</span></span>
-<span id="cb28-34"><a></a><span class="dt">license-files</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-35"><a></a>    <span class="st">"LICEN[CS]E.*"</span><span class="op">,</span></span>
-<span id="cb28-36"><a></a><span class="op">]</span></span>
-<span id="cb28-37"><a></a><span class="dt">maintainers</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb28-38"><a></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"brett@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Brett Cannon"</span><span class="op">},</span></span>
-<span id="cb28-39"><a></a><span class="op">]</span></span>
-<span id="cb28-40"><a></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"spam-eggs"</span></span>
-<span id="cb28-41"><a></a><span class="dt">optional-dependencies</span> <span class="op">=</span> <span class="op">{</span><span class="dt">cli</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb28-42"><a></a>    <span class="st">"click"</span><span class="op">,</span></span>
-<span id="cb28-43"><a></a>    <span class="st">"rich"</span><span class="op">,</span></span>
-<span id="cb28-44"><a></a><span class="op">], </span><span class="dt">gui</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb28-45"><a></a>    <span class="st">"PyQt5"</span><span class="op">,</span></span>
-<span id="cb28-46"><a></a><span class="op">]}</span></span>
-<span id="cb28-47"><a></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.rst"</span></span>
-<span id="cb28-48"><a></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
-<span id="cb28-49"><a></a><span class="dt">scripts</span> <span class="op">=</span> <span class="op">{</span><span class="dt">spam-cli</span><span class="op"> =</span> <span class="st">"spam:main_cli"</span><span class="op">}</span></span>
-<span id="cb28-50"><a></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"2020.0.0"</span></span>
-<span id="cb28-51"><a></a><span class="dt">entry-points."spam.magical"</span> <span class="op">=</span> <span class="op">{</span><span class="dt">tomatoes</span><span class="op"> =</span> <span class="st">"spam:main_tomatoes"</span><span class="op">}</span></span>
-<span id="cb28-52"><a></a><span class="dt">urls."Bug Tracker"</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/issues"</span></span>
-<span id="cb28-53"><a></a><span class="dt">urls.Changelog</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/blob/master/CHANGELOG.md"</span></span>
-<span id="cb28-54"><a></a><span class="dt">urls.Documentation</span> <span class="op">=</span> <span class="st">"https://readthedocs.org"</span></span>
-<span id="cb28-55"><a></a><span class="dt">urls.Homepage</span> <span class="op">=</span> <span class="st">"https://example.com"</span></span>
-<span id="cb28-56"><a></a><span class="dt">urls.Repository</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam.git"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-code-line-numbers="1|1-2|1,3-5|7|7-13|7,14-17|7,18-23|24|25|26-32|33-36|37-39|40|41-46|47|48|49|50|51|52-56"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb28-1"><a aria-label="1"></a><span class="kw">[build-system]</span></span>
+<span id="cb28-2"><a aria-label="2"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"hatchling.build"</span></span>
+<span id="cb28-3"><a aria-label="3"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-4"><a aria-label="4"></a>    <span class="st">"hatchling"</span><span class="op">,</span></span>
+<span id="cb28-5"><a aria-label="5"></a><span class="op">]</span></span>
+<span id="cb28-6"><a aria-label="6"></a></span>
+<span id="cb28-7"><a aria-label="7"></a><span class="kw">[project]</span></span>
+<span id="cb28-8"><a aria-label="8"></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-9"><a aria-label="9"></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"different.person@example.com"</span><span class="op">},</span></span>
+<span id="cb28-10"><a aria-label="10"></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"pradyun@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Pradyun Gedam"</span><span class="op">},</span></span>
+<span id="cb28-11"><a aria-label="11"></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"tzu-ping@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Tzu-Ping Chung"</span><span class="op">},</span></span>
+<span id="cb28-12"><a aria-label="12"></a>    <span class="op">{</span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Another person"</span><span class="op">},</span></span>
+<span id="cb28-13"><a aria-label="13"></a><span class="op">]</span></span>
+<span id="cb28-14"><a aria-label="14"></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-15"><a aria-label="15"></a>    <span class="st">"Development Status :: 4 - Beta"</span><span class="op">,</span></span>
+<span id="cb28-16"><a aria-label="16"></a>    <span class="st">"Programming Language :: Python"</span><span class="op">,</span></span>
+<span id="cb28-17"><a aria-label="17"></a><span class="op">]</span></span>
+<span id="cb28-18"><a aria-label="18"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-19"><a aria-label="19"></a>    <span class="st">"django&gt;2.0; os_name == 'nt'"</span><span class="op">,</span></span>
+<span id="cb28-20"><a aria-label="20"></a>    <span class="st">"django&gt;2.1; os_name != 'nt'"</span><span class="op">,</span></span>
+<span id="cb28-21"><a aria-label="21"></a>    <span class="st">"gidgethub[httpx]&gt;4.0.0"</span><span class="op">,</span></span>
+<span id="cb28-22"><a aria-label="22"></a>    <span class="st">"httpx"</span><span class="op">,</span></span>
+<span id="cb28-23"><a aria-label="23"></a><span class="op">]</span></span>
+<span id="cb28-24"><a aria-label="24"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Lovely Spam! Wonderful Spam!"</span></span>
+<span id="cb28-25"><a aria-label="25"></a><span class="dt">gui-scripts</span> <span class="op">=</span> <span class="op">{</span><span class="dt">spam-gui</span><span class="op"> =</span> <span class="st">"spam:main_gui"</span><span class="op">}</span></span>
+<span id="cb28-26"><a aria-label="26"></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-27"><a aria-label="27"></a>    <span class="st">"Lobster Thermidor"</span><span class="op">,</span></span>
+<span id="cb28-28"><a aria-label="28"></a>    <span class="st">"bacon"</span><span class="op">,</span></span>
+<span id="cb28-29"><a aria-label="29"></a>    <span class="st">"egg"</span><span class="op">,</span></span>
+<span id="cb28-30"><a aria-label="30"></a>    <span class="st">"sausage"</span><span class="op">,</span></span>
+<span id="cb28-31"><a aria-label="31"></a>    <span class="st">"tomatoes"</span><span class="op">,</span></span>
+<span id="cb28-32"><a aria-label="32"></a><span class="op">]</span></span>
+<span id="cb28-33"><a aria-label="33"></a><span class="dt">license</span> <span class="op">=</span> <span class="st">"MIT"</span></span>
+<span id="cb28-34"><a aria-label="34"></a><span class="dt">license-files</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-35"><a aria-label="35"></a>    <span class="st">"LICEN[CS]E.*"</span><span class="op">,</span></span>
+<span id="cb28-36"><a aria-label="36"></a><span class="op">]</span></span>
+<span id="cb28-37"><a aria-label="37"></a><span class="dt">maintainers</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb28-38"><a aria-label="38"></a>    <span class="op">{</span><span class="dt">email</span><span class="op"> =</span> <span class="st">"brett@example.com"</span><span class="op">, </span><span class="dt">name</span><span class="op"> =</span> <span class="st">"Brett Cannon"</span><span class="op">},</span></span>
+<span id="cb28-39"><a aria-label="39"></a><span class="op">]</span></span>
+<span id="cb28-40"><a aria-label="40"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"spam-eggs"</span></span>
+<span id="cb28-41"><a aria-label="41"></a><span class="dt">optional-dependencies</span> <span class="op">=</span> <span class="op">{</span><span class="dt">cli</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb28-42"><a aria-label="42"></a>    <span class="st">"click"</span><span class="op">,</span></span>
+<span id="cb28-43"><a aria-label="43"></a>    <span class="st">"rich"</span><span class="op">,</span></span>
+<span id="cb28-44"><a aria-label="44"></a><span class="op">], </span><span class="dt">gui</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb28-45"><a aria-label="45"></a>    <span class="st">"PyQt5"</span><span class="op">,</span></span>
+<span id="cb28-46"><a aria-label="46"></a><span class="op">]}</span></span>
+<span id="cb28-47"><a aria-label="47"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.rst"</span></span>
+<span id="cb28-48"><a aria-label="48"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
+<span id="cb28-49"><a aria-label="49"></a><span class="dt">scripts</span> <span class="op">=</span> <span class="op">{</span><span class="dt">spam-cli</span><span class="op"> =</span> <span class="st">"spam:main_cli"</span><span class="op">}</span></span>
+<span id="cb28-50"><a aria-label="50"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"2020.0.0"</span></span>
+<span id="cb28-51"><a aria-label="51"></a><span class="dt">entry-points."spam.magical"</span> <span class="op">=</span> <span class="op">{</span><span class="dt">tomatoes</span><span class="op"> =</span> <span class="st">"spam:main_tomatoes"</span><span class="op">}</span></span>
+<span id="cb28-52"><a aria-label="52"></a><span class="dt">urls."Bug Tracker"</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/issues"</span></span>
+<span id="cb28-53"><a aria-label="53"></a><span class="dt">urls.Changelog</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam/blob/master/CHANGELOG.md"</span></span>
+<span id="cb28-54"><a aria-label="54"></a><span class="dt">urls.Documentation</span> <span class="op">=</span> <span class="st">"https://readthedocs.org"</span></span>
+<span id="cb28-55"><a aria-label="55"></a><span class="dt">urls.Homepage</span> <span class="op">=</span> <span class="st">"https://example.com"</span></span>
+<span id="cb28-56"><a aria-label="56"></a><span class="dt">urls.Repository</span> <span class="op">=</span> <span class="st">"https://github.com/me/spam.git"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>Tools</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-code-line-numbers="1-8|10-14|16-31|33-50|52-102|104-106|108-110"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb29-1"><a></a><span class="kw">[tool.check-manifest]</span></span>
-<span id="cb29-2"><a></a><span class="dt">ignore</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-3"><a></a>    <span class="st">"*.cff"</span><span class="op">,</span></span>
-<span id="cb29-4"><a></a>    <span class="st">"*.md"</span><span class="op">,</span></span>
-<span id="cb29-5"><a></a>    <span class="st">"*.off"</span><span class="op">,</span></span>
-<span id="cb29-6"><a></a>    <span class="st">"*.toml"</span><span class="op">,</span></span>
-<span id="cb29-7"><a></a>    <span class="st">"src/sleplet/_version.py"</span><span class="op">,</span></span>
-<span id="cb29-8"><a></a><span class="op">]</span></span>
-<span id="cb29-9"><a></a></span>
-<span id="cb29-10"><a></a><span class="kw">[tool.coverage]</span></span>
-<span id="cb29-11"><a></a><span class="dt">report</span> <span class="op">=</span> <span class="op">{</span><span class="dt">skip_covered</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">sort</span><span class="op"> =</span> <span class="st">"cover"</span><span class="op">}</span></span>
-<span id="cb29-12"><a></a><span class="dt">run</span> <span class="op">=</span> <span class="op">{</span><span class="dt">branch</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">parallel</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">source</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-13"><a></a>    <span class="st">"sleplet"</span><span class="op">,</span></span>
-<span id="cb29-14"><a></a><span class="op">]}</span></span>
-<span id="cb29-15"><a></a></span>
-<span id="cb29-16"><a></a><span class="kw">[tool.mypy]</span></span>
-<span id="cb29-17"><a></a><span class="dt">disallow_subclassing_any</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb29-18"><a></a><span class="dt">disallow_untyped_decorators</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb29-19"><a></a><span class="dt">enable_error_code</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-20"><a></a>    <span class="st">"ignore-without-code"</span><span class="op">,</span></span>
-<span id="cb29-21"><a></a>    <span class="st">"redundant-expr"</span><span class="op">,</span></span>
-<span id="cb29-22"><a></a>    <span class="st">"truthy-bool"</span><span class="op">,</span></span>
-<span id="cb29-23"><a></a><span class="op">]</span></span>
-<span id="cb29-24"><a></a><span class="dt">explicit_package_bases</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-25"><a></a><span class="dt">ignore_missing_imports</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-26"><a></a><span class="dt">plugins</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-27"><a></a>    <span class="st">"pydantic.mypy"</span><span class="op">,</span></span>
-<span id="cb29-28"><a></a><span class="op">]</span></span>
-<span id="cb29-29"><a></a><span class="dt">strict</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-30"><a></a><span class="dt">warn_return_any</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb29-31"><a></a><span class="dt">warn_unreachable</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-32"><a></a></span>
-<span id="cb29-33"><a></a><span class="kw">[tool.pytest.ini_options]</span></span>
-<span id="cb29-34"><a></a><span class="dt">addopts</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-35"><a></a>    <span class="st">"--color=yes"</span><span class="op">,</span></span>
-<span id="cb29-36"><a></a>    <span class="st">"--import-mode=importlib"</span><span class="op">,</span></span>
-<span id="cb29-37"><a></a>    <span class="st">"--strict-config"</span><span class="op">,</span></span>
-<span id="cb29-38"><a></a>    <span class="st">"--strict-markers"</span><span class="op">,</span></span>
-<span id="cb29-39"><a></a>    <span class="st">"--verbose"</span><span class="op">,</span></span>
-<span id="cb29-40"><a></a>    <span class="st">"-ra"</span><span class="op">,</span></span>
-<span id="cb29-41"><a></a><span class="op">]</span></span>
-<span id="cb29-42"><a></a><span class="dt">filterwarnings</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-43"><a></a>    <span class="st">"error"</span><span class="op">,</span></span>
-<span id="cb29-44"><a></a><span class="op">]</span></span>
-<span id="cb29-45"><a></a><span class="dt">log_cli_level</span> <span class="op">=</span> <span class="st">"INFO"</span></span>
-<span id="cb29-46"><a></a><span class="dt">minversion</span> <span class="op">=</span> <span class="st">"6"</span></span>
-<span id="cb29-47"><a></a><span class="dt">testpaths</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-48"><a></a>    <span class="st">"tests"</span><span class="op">,</span></span>
-<span id="cb29-49"><a></a><span class="op">]</span></span>
-<span id="cb29-50"><a></a><span class="dt">xfail_strict</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-51"><a></a></span>
-<span id="cb29-52"><a></a><span class="kw">[tool.ruff]</span></span>
-<span id="cb29-53"><a></a><span class="dt">fix</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-54"><a></a><span class="dt">force-exclude</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb29-55"><a></a><span class="dt">src</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-56"><a></a>    <span class="st">"src"</span><span class="op">,</span></span>
-<span id="cb29-57"><a></a><span class="op">]</span></span>
-<span id="cb29-58"><a></a><span class="dt">lint.ignore</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-59"><a></a>    <span class="st">"COM812"</span><span class="op">,</span></span>
-<span id="cb29-60"><a></a>    <span class="st">"D105"</span><span class="op">,</span></span>
-<span id="cb29-61"><a></a>    <span class="st">"D203"</span><span class="op">,</span></span>
-<span id="cb29-62"><a></a>    <span class="st">"D205"</span><span class="op">,</span></span>
-<span id="cb29-63"><a></a>    <span class="st">"D212"</span><span class="op">,</span></span>
-<span id="cb29-64"><a></a>    <span class="st">"D407"</span><span class="op">,</span></span>
-<span id="cb29-65"><a></a>    <span class="st">"D413"</span><span class="op">,</span></span>
-<span id="cb29-66"><a></a>    <span class="st">"ISC001"</span><span class="op">,</span></span>
-<span id="cb29-67"><a></a>    <span class="st">"N803"</span><span class="op">,</span></span>
-<span id="cb29-68"><a></a>    <span class="st">"N806"</span><span class="op">,</span></span>
-<span id="cb29-69"><a></a><span class="op">]</span></span>
-<span id="cb29-70"><a></a><span class="dt">lint.isort</span> <span class="op">=</span> <span class="op">{</span><span class="dt">known-first-party</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-71"><a></a>    <span class="st">"sleplet"</span><span class="op">,</span></span>
-<span id="cb29-72"><a></a><span class="op">], </span><span class="dt">section-order</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-73"><a></a>    <span class="st">"future"</span><span class="op">,</span></span>
-<span id="cb29-74"><a></a>    <span class="st">"standard-library"</span><span class="op">,</span></span>
-<span id="cb29-75"><a></a>    <span class="st">"third-party"</span><span class="op">,</span></span>
-<span id="cb29-76"><a></a>    <span class="st">"astro-info"</span><span class="op">,</span></span>
-<span id="cb29-77"><a></a>    <span class="st">"first-party"</span><span class="op">,</span></span>
-<span id="cb29-78"><a></a>    <span class="st">"local-folder"</span><span class="op">,</span></span>
-<span id="cb29-79"><a></a><span class="op">], </span><span class="dt">sections</span><span class="op"> =</span> <span class="op">{</span><span class="dt">"astro-info"</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-80"><a></a>    <span class="st">"pys2let"</span><span class="op">,</span></span>
-<span id="cb29-81"><a></a>    <span class="st">"pyssht"</span><span class="op">,</span></span>
-<span id="cb29-82"><a></a><span class="op">]}}</span></span>
-<span id="cb29-83"><a></a><span class="dt">lint.per-file-ignores</span> <span class="op">=</span> <span class="op">{</span><span class="dt">"examples*"</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-84"><a></a>    <span class="st">"D100"</span><span class="op">,</span></span>
-<span id="cb29-85"><a></a>    <span class="st">"INP001"</span><span class="op">,</span></span>
-<span id="cb29-86"><a></a>    <span class="st">"T201"</span><span class="op">,</span></span>
-<span id="cb29-87"><a></a><span class="op">], </span><span class="dt">"src*"</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-88"><a></a>    <span class="st">"SLF001"</span><span class="op">,</span></span>
-<span id="cb29-89"><a></a><span class="op">], </span><span class="dt">"tests*"</span><span class="op"> =</span> <span class="op">[</span></span>
-<span id="cb29-90"><a></a>    <span class="st">"D100"</span><span class="op">,</span></span>
-<span id="cb29-91"><a></a>    <span class="st">"INP001"</span><span class="op">,</span></span>
-<span id="cb29-92"><a></a>    <span class="st">"S101"</span><span class="op">,</span></span>
-<span id="cb29-93"><a></a>    <span class="st">"SLF001"</span><span class="op">,</span></span>
-<span id="cb29-94"><a></a><span class="op">]}</span></span>
-<span id="cb29-95"><a></a><span class="dt">lint.select</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-96"><a></a>    <span class="st">"ALL"</span><span class="op">,</span></span>
-<span id="cb29-97"><a></a><span class="op">]</span></span>
-<span id="cb29-98"><a></a><span class="dt">lint.mccabe.max-complexity</span> <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb29-99"><a></a><span class="dt">lint.pep8-naming.classmethod-decorators</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb29-100"><a></a>    <span class="st">"classmethod"</span><span class="op">,</span></span>
-<span id="cb29-101"><a></a>    <span class="st">"pydantic.field_validator"</span><span class="op">,</span></span>
-<span id="cb29-102"><a></a><span class="op">]</span></span>
-<span id="cb29-103"><a></a></span>
-<span id="cb29-104"><a></a><span class="kw">[tool.setuptools_scm]</span></span>
-<span id="cb29-105"><a></a><span class="dt">local_scheme</span> <span class="op">=</span> <span class="st">"no-local-version"</span></span>
-<span id="cb29-106"><a></a><span class="dt">write_to</span> <span class="op">=</span> <span class="st">"src/sleplet/_version.py"</span></span>
-<span id="cb29-107"><a></a></span>
-<span id="cb29-108"><a></a><span class="kw">[tool.tomlsort]</span></span>
-<span id="cb29-109"><a></a><span class="dt">overrides."project.classifiers".inline_arrays</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb29-110"><a></a><span class="dt">overrides."tool.ruff.lint.isort.section-order".inline_arrays</span> <span class="op">=</span> <span class="cn">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-code-line-numbers="1-8|10-14|16-31|33-50|52-102|104-106|108-110"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb29-1"><a aria-label="1"></a><span class="kw">[tool.check-manifest]</span></span>
+<span id="cb29-2"><a aria-label="2"></a><span class="dt">ignore</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-3"><a aria-label="3"></a>    <span class="st">"*.cff"</span><span class="op">,</span></span>
+<span id="cb29-4"><a aria-label="4"></a>    <span class="st">"*.md"</span><span class="op">,</span></span>
+<span id="cb29-5"><a aria-label="5"></a>    <span class="st">"*.off"</span><span class="op">,</span></span>
+<span id="cb29-6"><a aria-label="6"></a>    <span class="st">"*.toml"</span><span class="op">,</span></span>
+<span id="cb29-7"><a aria-label="7"></a>    <span class="st">"src/sleplet/_version.py"</span><span class="op">,</span></span>
+<span id="cb29-8"><a aria-label="8"></a><span class="op">]</span></span>
+<span id="cb29-9"><a aria-label="9"></a></span>
+<span id="cb29-10"><a aria-label="10"></a><span class="kw">[tool.coverage]</span></span>
+<span id="cb29-11"><a aria-label="11"></a><span class="dt">report</span> <span class="op">=</span> <span class="op">{</span><span class="dt">skip_covered</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">sort</span><span class="op"> =</span> <span class="st">"cover"</span><span class="op">}</span></span>
+<span id="cb29-12"><a aria-label="12"></a><span class="dt">run</span> <span class="op">=</span> <span class="op">{</span><span class="dt">branch</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">parallel</span><span class="op"> =</span> <span class="cn">true</span><span class="op">, </span><span class="dt">source</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-13"><a aria-label="13"></a>    <span class="st">"sleplet"</span><span class="op">,</span></span>
+<span id="cb29-14"><a aria-label="14"></a><span class="op">]}</span></span>
+<span id="cb29-15"><a aria-label="15"></a></span>
+<span id="cb29-16"><a aria-label="16"></a><span class="kw">[tool.mypy]</span></span>
+<span id="cb29-17"><a aria-label="17"></a><span class="dt">disallow_subclassing_any</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb29-18"><a aria-label="18"></a><span class="dt">disallow_untyped_decorators</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb29-19"><a aria-label="19"></a><span class="dt">enable_error_code</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-20"><a aria-label="20"></a>    <span class="st">"ignore-without-code"</span><span class="op">,</span></span>
+<span id="cb29-21"><a aria-label="21"></a>    <span class="st">"redundant-expr"</span><span class="op">,</span></span>
+<span id="cb29-22"><a aria-label="22"></a>    <span class="st">"truthy-bool"</span><span class="op">,</span></span>
+<span id="cb29-23"><a aria-label="23"></a><span class="op">]</span></span>
+<span id="cb29-24"><a aria-label="24"></a><span class="dt">explicit_package_bases</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-25"><a aria-label="25"></a><span class="dt">ignore_missing_imports</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-26"><a aria-label="26"></a><span class="dt">plugins</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-27"><a aria-label="27"></a>    <span class="st">"pydantic.mypy"</span><span class="op">,</span></span>
+<span id="cb29-28"><a aria-label="28"></a><span class="op">]</span></span>
+<span id="cb29-29"><a aria-label="29"></a><span class="dt">strict</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-30"><a aria-label="30"></a><span class="dt">warn_return_any</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb29-31"><a aria-label="31"></a><span class="dt">warn_unreachable</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-32"><a aria-label="32"></a></span>
+<span id="cb29-33"><a aria-label="33"></a><span class="kw">[tool.pytest.ini_options]</span></span>
+<span id="cb29-34"><a aria-label="34"></a><span class="dt">addopts</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-35"><a aria-label="35"></a>    <span class="st">"--color=yes"</span><span class="op">,</span></span>
+<span id="cb29-36"><a aria-label="36"></a>    <span class="st">"--import-mode=importlib"</span><span class="op">,</span></span>
+<span id="cb29-37"><a aria-label="37"></a>    <span class="st">"--strict-config"</span><span class="op">,</span></span>
+<span id="cb29-38"><a aria-label="38"></a>    <span class="st">"--strict-markers"</span><span class="op">,</span></span>
+<span id="cb29-39"><a aria-label="39"></a>    <span class="st">"--verbose"</span><span class="op">,</span></span>
+<span id="cb29-40"><a aria-label="40"></a>    <span class="st">"-ra"</span><span class="op">,</span></span>
+<span id="cb29-41"><a aria-label="41"></a><span class="op">]</span></span>
+<span id="cb29-42"><a aria-label="42"></a><span class="dt">filterwarnings</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-43"><a aria-label="43"></a>    <span class="st">"error"</span><span class="op">,</span></span>
+<span id="cb29-44"><a aria-label="44"></a><span class="op">]</span></span>
+<span id="cb29-45"><a aria-label="45"></a><span class="dt">log_cli_level</span> <span class="op">=</span> <span class="st">"INFO"</span></span>
+<span id="cb29-46"><a aria-label="46"></a><span class="dt">minversion</span> <span class="op">=</span> <span class="st">"6"</span></span>
+<span id="cb29-47"><a aria-label="47"></a><span class="dt">testpaths</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-48"><a aria-label="48"></a>    <span class="st">"tests"</span><span class="op">,</span></span>
+<span id="cb29-49"><a aria-label="49"></a><span class="op">]</span></span>
+<span id="cb29-50"><a aria-label="50"></a><span class="dt">xfail_strict</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-51"><a aria-label="51"></a></span>
+<span id="cb29-52"><a aria-label="52"></a><span class="kw">[tool.ruff]</span></span>
+<span id="cb29-53"><a aria-label="53"></a><span class="dt">fix</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-54"><a aria-label="54"></a><span class="dt">force-exclude</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb29-55"><a aria-label="55"></a><span class="dt">src</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-56"><a aria-label="56"></a>    <span class="st">"src"</span><span class="op">,</span></span>
+<span id="cb29-57"><a aria-label="57"></a><span class="op">]</span></span>
+<span id="cb29-58"><a aria-label="58"></a><span class="dt">lint.ignore</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-59"><a aria-label="59"></a>    <span class="st">"COM812"</span><span class="op">,</span></span>
+<span id="cb29-60"><a aria-label="60"></a>    <span class="st">"D105"</span><span class="op">,</span></span>
+<span id="cb29-61"><a aria-label="61"></a>    <span class="st">"D203"</span><span class="op">,</span></span>
+<span id="cb29-62"><a aria-label="62"></a>    <span class="st">"D205"</span><span class="op">,</span></span>
+<span id="cb29-63"><a aria-label="63"></a>    <span class="st">"D212"</span><span class="op">,</span></span>
+<span id="cb29-64"><a aria-label="64"></a>    <span class="st">"D407"</span><span class="op">,</span></span>
+<span id="cb29-65"><a aria-label="65"></a>    <span class="st">"D413"</span><span class="op">,</span></span>
+<span id="cb29-66"><a aria-label="66"></a>    <span class="st">"ISC001"</span><span class="op">,</span></span>
+<span id="cb29-67"><a aria-label="67"></a>    <span class="st">"N803"</span><span class="op">,</span></span>
+<span id="cb29-68"><a aria-label="68"></a>    <span class="st">"N806"</span><span class="op">,</span></span>
+<span id="cb29-69"><a aria-label="69"></a><span class="op">]</span></span>
+<span id="cb29-70"><a aria-label="70"></a><span class="dt">lint.isort</span> <span class="op">=</span> <span class="op">{</span><span class="dt">known-first-party</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-71"><a aria-label="71"></a>    <span class="st">"sleplet"</span><span class="op">,</span></span>
+<span id="cb29-72"><a aria-label="72"></a><span class="op">], </span><span class="dt">section-order</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-73"><a aria-label="73"></a>    <span class="st">"future"</span><span class="op">,</span></span>
+<span id="cb29-74"><a aria-label="74"></a>    <span class="st">"standard-library"</span><span class="op">,</span></span>
+<span id="cb29-75"><a aria-label="75"></a>    <span class="st">"third-party"</span><span class="op">,</span></span>
+<span id="cb29-76"><a aria-label="76"></a>    <span class="st">"astro-info"</span><span class="op">,</span></span>
+<span id="cb29-77"><a aria-label="77"></a>    <span class="st">"first-party"</span><span class="op">,</span></span>
+<span id="cb29-78"><a aria-label="78"></a>    <span class="st">"local-folder"</span><span class="op">,</span></span>
+<span id="cb29-79"><a aria-label="79"></a><span class="op">], </span><span class="dt">sections</span><span class="op"> =</span> <span class="op">{</span><span class="dt">"astro-info"</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-80"><a aria-label="80"></a>    <span class="st">"pys2let"</span><span class="op">,</span></span>
+<span id="cb29-81"><a aria-label="81"></a>    <span class="st">"pyssht"</span><span class="op">,</span></span>
+<span id="cb29-82"><a aria-label="82"></a><span class="op">]}}</span></span>
+<span id="cb29-83"><a aria-label="83"></a><span class="dt">lint.per-file-ignores</span> <span class="op">=</span> <span class="op">{</span><span class="dt">"examples*"</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-84"><a aria-label="84"></a>    <span class="st">"D100"</span><span class="op">,</span></span>
+<span id="cb29-85"><a aria-label="85"></a>    <span class="st">"INP001"</span><span class="op">,</span></span>
+<span id="cb29-86"><a aria-label="86"></a>    <span class="st">"T201"</span><span class="op">,</span></span>
+<span id="cb29-87"><a aria-label="87"></a><span class="op">], </span><span class="dt">"src*"</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-88"><a aria-label="88"></a>    <span class="st">"SLF001"</span><span class="op">,</span></span>
+<span id="cb29-89"><a aria-label="89"></a><span class="op">], </span><span class="dt">"tests*"</span><span class="op"> =</span> <span class="op">[</span></span>
+<span id="cb29-90"><a aria-label="90"></a>    <span class="st">"D100"</span><span class="op">,</span></span>
+<span id="cb29-91"><a aria-label="91"></a>    <span class="st">"INP001"</span><span class="op">,</span></span>
+<span id="cb29-92"><a aria-label="92"></a>    <span class="st">"S101"</span><span class="op">,</span></span>
+<span id="cb29-93"><a aria-label="93"></a>    <span class="st">"SLF001"</span><span class="op">,</span></span>
+<span id="cb29-94"><a aria-label="94"></a><span class="op">]}</span></span>
+<span id="cb29-95"><a aria-label="95"></a><span class="dt">lint.select</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-96"><a aria-label="96"></a>    <span class="st">"ALL"</span><span class="op">,</span></span>
+<span id="cb29-97"><a aria-label="97"></a><span class="op">]</span></span>
+<span id="cb29-98"><a aria-label="98"></a><span class="dt">lint.mccabe.max-complexity</span> <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb29-99"><a aria-label="99"></a><span class="dt">lint.pep8-naming.classmethod-decorators</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb29-100"><a aria-label="100"></a>    <span class="st">"classmethod"</span><span class="op">,</span></span>
+<span id="cb29-101"><a aria-label="101"></a>    <span class="st">"pydantic.field_validator"</span><span class="op">,</span></span>
+<span id="cb29-102"><a aria-label="102"></a><span class="op">]</span></span>
+<span id="cb29-103"><a aria-label="103"></a></span>
+<span id="cb29-104"><a aria-label="104"></a><span class="kw">[tool.setuptools_scm]</span></span>
+<span id="cb29-105"><a aria-label="105"></a><span class="dt">local_scheme</span> <span class="op">=</span> <span class="st">"no-local-version"</span></span>
+<span id="cb29-106"><a aria-label="106"></a><span class="dt">write_to</span> <span class="op">=</span> <span class="st">"src/sleplet/_version.py"</span></span>
+<span id="cb29-107"><a aria-label="107"></a></span>
+<span id="cb29-108"><a aria-label="108"></a><span class="kw">[tool.tomlsort]</span></span>
+<span id="cb29-109"><a aria-label="109"></a><span class="dt">overrides."project.classifiers".inline_arrays</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb29-110"><a aria-label="110"></a><span class="dt">overrides."tool.ruff.lint.isort.section-order".inline_arrays</span> <span class="op">=</span> <span class="cn">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -776,9 +779,9 @@ Patrick Roddy
 <ol type="1">
 <li class="fragment"><p><code>python3 -m pip install --upgrade build</code></p></li>
 <li class="fragment"><p><code>python3 -m build</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a></a>dist/</span>
-<span id="cb30-2"><a></a>├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl</span>
-<span id="cb30-3"><a></a>└── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a aria-label="1"></a>dist/</span>
+<span id="cb30-2"><a aria-label="2"></a>├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl</span>
+<span id="cb30-3"><a aria-label="3"></a>└── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>tar.gz</code> file is a source distribution whereas the <code>.whl file</code> is a built distribution. Newer <code>pip</code> will install the built distribution and only use the source as a fallback.</p></li>
 <li class="fragment"><p>Create an account on <a href="https://test.pypi.org/account/register/">TestPyPI</a>.</p></li>
 <li class="fragment"><p>Set up API token and so on.</p></li>
@@ -789,12 +792,12 @@ Patrick Roddy
 <ol start="5" type="1">
 <li class="fragment"><p><code>python3 -m pip install --upgrade twine</code></p></li>
 <li class="fragment"><p><code>python3 -m twine upload --repository testpypi dist/*</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a></a>Uploading distributions to https://test.pypi.org/legacy/</span>
-<span id="cb31-2"><a></a>Enter your API token:</span>
-<span id="cb31-3"><a></a>Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl</span>
-<span id="cb31-4"><a></a>100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?</span>
-<span id="cb31-5"><a></a>Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz</span>
-<span id="cb31-6"><a></a>100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a aria-label="1"></a>Uploading distributions to https://test.pypi.org/legacy/</span>
+<span id="cb31-2"><a aria-label="2"></a>Enter your API token:</span>
+<span id="cb31-3"><a aria-label="3"></a>Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl</span>
+<span id="cb31-4"><a aria-label="4"></a>100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?</span>
+<span id="cb31-5"><a aria-label="5"></a>Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz</span>
+<span id="cb31-6"><a aria-label="6"></a>100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><code>python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE</code></p></li>
 </ol>
 </section>

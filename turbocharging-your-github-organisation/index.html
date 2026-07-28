@@ -7,9 +7,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2024-12-12">
@@ -23,10 +23,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -207,7 +210,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -299,11 +302,11 @@ Patrick Roddy
 <section class="slide level2" data-menu-title=".github (iii)">
 <h2>.github</h2>
 <p>Configure <code>/.github/ISSUE_TEMPLATE/config.yml</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">blank_issues_enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-2"><a></a><span class="fu">contact_links</span><span class="kw">:</span></span>
-<span id="cb1-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> General MIRSG issue</span></span>
-<span id="cb1-4"><a></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/MIRSG/issues/new/choose</span></span>
-<span id="cb1-5"><a></a><span class="at">    </span><span class="fu">about</span><span class="kw">:</span><span class="at"> If your issue is a general…</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-label="1"></a><span class="fu">blank_issues_enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="fu">contact_links</span><span class="kw">:</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> General MIRSG issue</span></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/MIRSG/issues/new/choose</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="at">    </span><span class="fu">about</span><span class="kw">:</span><span class="at"> If your issue is a general…</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img data-src="figures/config.png"></p>
 </section>
 <section class="slide level2" data-menu-title=".github (iv)">
@@ -346,70 +349,70 @@ Patrick Roddy
 <section class="slide level2" data-menu-title="Renovate (ii)" data-footer="false">
 <h2>Renovate</h2>
 <p>Organisation-wide <code>Renovate</code> configuration, e.g. <code>/renovate/default-config.json</code>. <a href="https://github.com/UCL-ARC/.github/tree/main/renovate">UCL-ARC/.github</a>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a></a><span class="fu">{</span></span>
-<span id="cb2-2"><a></a>  <span class="dt">"$schema"</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
-<span id="cb2-3"><a></a>  <span class="dt">"extends"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-4"><a></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
-<span id="cb2-5"><a></a>    <span class="st">"schedule:automergeWeekdays"</span><span class="ot">,</span></span>
-<span id="cb2-6"><a></a>    <span class="st">"schedule:monthly"</span><span class="ot">,</span></span>
-<span id="cb2-7"><a></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
-<span id="cb2-8"><a></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
-<span id="cb2-9"><a></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
-<span id="cb2-10"><a></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
-<span id="cb2-11"><a></a>    <span class="st">":prHourlyLimitNone"</span></span>
-<span id="cb2-12"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-13"><a></a>  <span class="dt">"commitMessageAction"</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
-<span id="cb2-14"><a></a>  <span class="dt">"packageRules"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-15"><a></a>    <span class="fu">{</span></span>
-<span id="cb2-16"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Automatically merge, minor and patch-level updates"</span><span class="fu">,</span></span>
-<span id="cb2-17"><a></a>      <span class="dt">"automerge"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb2-18"><a></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-19"><a></a>        <span class="st">"dockerfile"</span><span class="ot">,</span></span>
-<span id="cb2-20"><a></a>        <span class="st">"github-actions"</span><span class="ot">,</span></span>
-<span id="cb2-21"><a></a>        <span class="st">"pre-commit"</span><span class="ot">,</span></span>
-<span id="cb2-22"><a></a>        <span class="st">"terraform"</span></span>
-<span id="cb2-23"><a></a>      <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-24"><a></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"digest"</span><span class="ot">,</span> <span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">]</span></span>
-<span id="cb2-25"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb2-26"><a></a>    <span class="fu">{</span></span>
-<span id="cb2-27"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
-<span id="cb2-28"><a></a>      <span class="dt">"commitMessageTopic"</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
-<span id="cb2-29"><a></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span></span>
-<span id="cb2-30"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb2-31"><a></a>    <span class="fu">{</span></span>
-<span id="cb2-32"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Combine action artefact updates together"</span><span class="fu">,</span></span>
-<span id="cb2-33"><a></a>      <span class="dt">"groupName"</span><span class="fu">:</span> <span class="st">"artefacts"</span><span class="fu">,</span></span>
-<span id="cb2-34"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-35"><a></a>        <span class="st">"actions/deploy-pages"</span><span class="ot">,</span></span>
-<span id="cb2-36"><a></a>        <span class="st">"actions/download-artifact"</span><span class="ot">,</span></span>
-<span id="cb2-37"><a></a>        <span class="st">"actions/upload-artifact"</span><span class="ot">,</span></span>
-<span id="cb2-38"><a></a>        <span class="st">"actions/upload-pages-artifact"</span></span>
-<span id="cb2-39"><a></a>      <span class="ot">]</span></span>
-<span id="cb2-40"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb2-41"><a></a>    <span class="fu">{</span></span>
-<span id="cb2-42"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
-<span id="cb2-43"><a></a>      <span class="dt">"enabled"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
-<span id="cb2-44"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-45"><a></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span></span>
-<span id="cb2-46"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb2-47"><a></a>    <span class="fu">{</span></span>
-<span id="cb2-48"><a></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Support loose versioning"</span><span class="fu">,</span></span>
-<span id="cb2-49"><a></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-50"><a></a>        <span class="st">"cmhughes/latexindent.pl"</span><span class="ot">,</span></span>
-<span id="cb2-51"><a></a>        <span class="st">"shellcheck-py/shellcheck-py"</span></span>
-<span id="cb2-52"><a></a>      <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-53"><a></a>      <span class="dt">"versioning"</span><span class="fu">:</span> <span class="st">"loose"</span></span>
-<span id="cb2-54"><a></a>    <span class="fu">}</span></span>
-<span id="cb2-55"><a></a>  <span class="ot">]</span></span>
-<span id="cb2-56"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="2|3-12|13|14,55|15-25|26-30|31-40|41-46|47-54"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  <span class="dt">"$schema"</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a aria-label="3"></a>  <span class="dt">"extends"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-4"><a aria-label="4"></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
+<span id="cb2-5"><a aria-label="5"></a>    <span class="st">"schedule:automergeWeekdays"</span><span class="ot">,</span></span>
+<span id="cb2-6"><a aria-label="6"></a>    <span class="st">"schedule:monthly"</span><span class="ot">,</span></span>
+<span id="cb2-7"><a aria-label="7"></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
+<span id="cb2-8"><a aria-label="8"></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
+<span id="cb2-9"><a aria-label="9"></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
+<span id="cb2-10"><a aria-label="10"></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
+<span id="cb2-11"><a aria-label="11"></a>    <span class="st">":prHourlyLimitNone"</span></span>
+<span id="cb2-12"><a aria-label="12"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-13"><a aria-label="13"></a>  <span class="dt">"commitMessageAction"</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
+<span id="cb2-14"><a aria-label="14"></a>  <span class="dt">"packageRules"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-15"><a aria-label="15"></a>    <span class="fu">{</span></span>
+<span id="cb2-16"><a aria-label="16"></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Automatically merge, minor and patch-level updates"</span><span class="fu">,</span></span>
+<span id="cb2-17"><a aria-label="17"></a>      <span class="dt">"automerge"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-18"><a aria-label="18"></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-19"><a aria-label="19"></a>        <span class="st">"dockerfile"</span><span class="ot">,</span></span>
+<span id="cb2-20"><a aria-label="20"></a>        <span class="st">"github-actions"</span><span class="ot">,</span></span>
+<span id="cb2-21"><a aria-label="21"></a>        <span class="st">"pre-commit"</span><span class="ot">,</span></span>
+<span id="cb2-22"><a aria-label="22"></a>        <span class="st">"terraform"</span></span>
+<span id="cb2-23"><a aria-label="23"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-24"><a aria-label="24"></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"digest"</span><span class="ot">,</span> <span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">]</span></span>
+<span id="cb2-25"><a aria-label="25"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-26"><a aria-label="26"></a>    <span class="fu">{</span></span>
+<span id="cb2-27"><a aria-label="27"></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
+<span id="cb2-28"><a aria-label="28"></a>      <span class="dt">"commitMessageTopic"</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
+<span id="cb2-29"><a aria-label="29"></a>      <span class="dt">"matchManagers"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span></span>
+<span id="cb2-30"><a aria-label="30"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-31"><a aria-label="31"></a>    <span class="fu">{</span></span>
+<span id="cb2-32"><a aria-label="32"></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Combine action artefact updates together"</span><span class="fu">,</span></span>
+<span id="cb2-33"><a aria-label="33"></a>      <span class="dt">"groupName"</span><span class="fu">:</span> <span class="st">"artefacts"</span><span class="fu">,</span></span>
+<span id="cb2-34"><a aria-label="34"></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-35"><a aria-label="35"></a>        <span class="st">"actions/deploy-pages"</span><span class="ot">,</span></span>
+<span id="cb2-36"><a aria-label="36"></a>        <span class="st">"actions/download-artifact"</span><span class="ot">,</span></span>
+<span id="cb2-37"><a aria-label="37"></a>        <span class="st">"actions/upload-artifact"</span><span class="ot">,</span></span>
+<span id="cb2-38"><a aria-label="38"></a>        <span class="st">"actions/upload-pages-artifact"</span></span>
+<span id="cb2-39"><a aria-label="39"></a>      <span class="ot">]</span></span>
+<span id="cb2-40"><a aria-label="40"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-41"><a aria-label="41"></a>    <span class="fu">{</span></span>
+<span id="cb2-42"><a aria-label="42"></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
+<span id="cb2-43"><a aria-label="43"></a>      <span class="dt">"enabled"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-44"><a aria-label="44"></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-45"><a aria-label="45"></a>      <span class="dt">"matchUpdateTypes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span></span>
+<span id="cb2-46"><a aria-label="46"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-47"><a aria-label="47"></a>    <span class="fu">{</span></span>
+<span id="cb2-48"><a aria-label="48"></a>      <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Support loose versioning"</span><span class="fu">,</span></span>
+<span id="cb2-49"><a aria-label="49"></a>      <span class="dt">"matchDepNames"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-50"><a aria-label="50"></a>        <span class="st">"cmhughes/latexindent.pl"</span><span class="ot">,</span></span>
+<span id="cb2-51"><a aria-label="51"></a>        <span class="st">"shellcheck-py/shellcheck-py"</span></span>
+<span id="cb2-52"><a aria-label="52"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-53"><a aria-label="53"></a>      <span class="dt">"versioning"</span><span class="fu">:</span> <span class="st">"loose"</span></span>
+<span id="cb2-54"><a aria-label="54"></a>    <span class="fu">}</span></span>
+<span id="cb2-55"><a aria-label="55"></a>  <span class="ot">]</span></span>
+<span id="cb2-56"><a aria-label="56"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Renovate (iii)">
 <h2>Renovate</h2>
 <p>This can be then be used in organisation repositories as follows, e.g. <code>/.renovaterc.json5</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a></a><span class="fu">{</span></span>
-<span id="cb3-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-ARC/.github//renovate/default-config.json"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-4"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a aria-label="3"></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github&gt;UCL-ARC/.github//renovate/default-config.json"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Renovate (iv)">
 <h2>Renovate</h2>
@@ -428,189 +431,189 @@ Patrick Roddy
 <section class="slide level2" data-menu-title="pre-commit (ii)" data-footer="false">
 <h2>pre-commit</h2>
 <p>Organisation-wide <code>pre-commit</code> configuration, e.g. <code>/precommit/mirsg-hooks.yaml</code>. <a href="https://github.com/UCL-MIRSG/.github/blob/main/precommit/mirsg-hooks.yaml">UCL-MIRSG/.github</a>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .crt$</span></span>
-<span id="cb4-2"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
-<span id="cb4-3"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/adrienverge/yamllint</span></span>
-<span id="cb4-4"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.35.1</span></span>
-<span id="cb4-5"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-6"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> yamllint</span></span>
-<span id="cb4-7"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-8"><a></a><span class="kw">          - </span><span class="ch">&gt;-</span></span>
-<span id="cb4-9"><a></a>            --config-data={</span>
-<span id="cb4-10"><a></a>              extends: default,</span>
-<span id="cb4-11"><a></a>              rules: {</span>
-<span id="cb4-12"><a></a>                anchors: enable,</span>
-<span id="cb4-13"><a></a>                braces: {</span>
-<span id="cb4-14"><a></a>                  forbid: non-empty</span>
-<span id="cb4-15"><a></a>                },</span>
-<span id="cb4-16"><a></a>                brackets: {</span>
-<span id="cb4-17"><a></a>                  forbid: non-empty</span>
-<span id="cb4-18"><a></a>                },</span>
-<span id="cb4-19"><a></a>                colons: enable,</span>
-<span id="cb4-20"><a></a>                commas: enable,</span>
-<span id="cb4-21"><a></a>                comments: {</span>
-<span id="cb4-22"><a></a>                  min-spaces-from-content: 1</span>
-<span id="cb4-23"><a></a>                },</span>
-<span id="cb4-24"><a></a>                comments-indentation: enable,</span>
-<span id="cb4-25"><a></a>                document-end: disable,</span>
-<span id="cb4-26"><a></a>                document-start: enable,</span>
-<span id="cb4-27"><a></a>                empty-lines: enable,</span>
-<span id="cb4-28"><a></a>                empty-values: disable,</span>
-<span id="cb4-29"><a></a>                float-values: enable,</span>
-<span id="cb4-30"><a></a>                hyphens: enable,</span>
-<span id="cb4-31"><a></a>                indentation: enable,</span>
-<span id="cb4-32"><a></a>                key-duplicates: enable,</span>
-<span id="cb4-33"><a></a>                key-ordering: disable,</span>
-<span id="cb4-34"><a></a>                line-length: {</span>
-<span id="cb4-35"><a></a>                  max: 160</span>
-<span id="cb4-36"><a></a>                },</span>
-<span id="cb4-37"><a></a>                new-line-at-end-of-file: enable,</span>
-<span id="cb4-38"><a></a>                new-lines: enable,</span>
-<span id="cb4-39"><a></a>                octal-values: enable,</span>
-<span id="cb4-40"><a></a>                quoted-strings: {</span>
-<span id="cb4-41"><a></a>                  quote-type: double,</span>
-<span id="cb4-42"><a></a>                  required: only-when-needed</span>
-<span id="cb4-43"><a></a>                },</span>
-<span id="cb4-44"><a></a>                trailing-spaces: enable,</span>
-<span id="cb4-45"><a></a>                truthy: {</span>
-<span id="cb4-46"><a></a>                  check-keys: false</span>
-<span id="cb4-47"><a></a>                }</span>
-<span id="cb4-48"><a></a>              }</span>
-<span id="cb4-49"><a></a>            }</span>
-<span id="cb4-50"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/AleksaC/hadolint-py</span></span>
-<span id="cb4-51"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v2.12.1b3</span></span>
-<span id="cb4-52"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-53"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> hadolint</span></span>
-<span id="cb4-54"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-55"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --ignore=DL3008</span></span>
-<span id="cb4-56"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/ansible-community/ansible-lint.git</span></span>
-<span id="cb4-57"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v24.10.0</span></span>
-<span id="cb4-58"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-59"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ansible-lint</span></span>
-<span id="cb4-60"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-61"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=.github</span></span>
-<span id="cb4-62"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=docker-compose.yml</span></span>
-<span id="cb4-63"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/astral-sh/ruff-pre-commit</span></span>
-<span id="cb4-64"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.8.1</span></span>
-<span id="cb4-65"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-66"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff</span></span>
-<span id="cb4-67"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-68"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exit-non-zero-on-fix</span></span>
-<span id="cb4-69"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix</span></span>
-<span id="cb4-70"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff-format</span></span>
-<span id="cb4-71"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/crate-ci/typos</span></span>
-<span id="cb4-72"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.28.1</span></span>
-<span id="cb4-73"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-74"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> typos</span></span>
-<span id="cb4-75"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-76"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --force-exclude</span></span>
-<span id="cb4-77"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --hidden</span></span>
-<span id="cb4-78"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/igorshubovych/markdownlint-cli</span></span>
-<span id="cb4-79"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.43.0</span></span>
-<span id="cb4-80"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-81"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> markdownlint-fix</span></span>
-<span id="cb4-82"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-83"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --dot</span></span>
-<span id="cb4-84"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/Lucas-C/pre-commit-hooks</span></span>
-<span id="cb4-85"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.5.5</span></span>
-<span id="cb4-86"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-87"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> forbid-tabs</span></span>
-<span id="cb4-88"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pappasam/toml-sort</span></span>
-<span id="cb4-89"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.24.2</span></span>
-<span id="cb4-90"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-91"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> toml-sort-fix</span></span>
-<span id="cb4-92"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-93"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --all</span></span>
-<span id="cb4-94"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --in-place</span></span>
-<span id="cb4-95"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --spaces-indent-inline-array=4</span></span>
-<span id="cb4-96"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --trailing-comma-inline-array</span></span>
-<span id="cb4-97"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/mirrors-prettier</span></span>
-<span id="cb4-98"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v3.1.0</span></span>
-<span id="cb4-99"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-100"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> prettier</span></span>
-<span id="cb4-101"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-102"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --prose-wrap=always</span></span>
-<span id="cb4-103"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --quote-props=as-needed</span></span>
-<span id="cb4-104"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/pre-commit-hooks</span></span>
-<span id="cb4-105"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v5.0.0</span></span>
-<span id="cb4-106"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-107"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-added-large-files</span></span>
-<span id="cb4-108"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-case-conflict</span></span>
-<span id="cb4-109"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-executables-have-shebangs</span></span>
-<span id="cb4-110"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-merge-conflict</span></span>
-<span id="cb4-111"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-shebang-scripts-are-executable</span></span>
-<span id="cb4-112"><a></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .j2$</span></span>
-<span id="cb4-113"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> destroyed-symlinks</span></span>
-<span id="cb4-114"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> end-of-file-fixer</span></span>
-<span id="cb4-115"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mixed-line-ending</span></span>
-<span id="cb4-116"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-117"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix=lf</span></span>
-<span id="cb4-118"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> trailing-whitespace</span></span>
-<span id="cb4-119"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/python-jsonschema/check-jsonschema</span></span>
-<span id="cb4-120"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.30.0</span></span>
-<span id="cb4-121"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-122"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-github-workflows</span></span>
-<span id="cb4-123"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/shellcheck-py/shellcheck-py</span></span>
-<span id="cb4-124"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.10.0.1</span></span>
-<span id="cb4-125"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-126"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> shellcheck</span></span>
-<span id="cb4-127"><a></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
-<span id="cb4-128"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --external-sources</span></span>
-<span id="cb4-129"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> --shell=bash</span></span>
-<span id="cb4-130"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/rhysd/actionlint</span></span>
-<span id="cb4-131"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.7.4</span></span>
-<span id="cb4-132"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb4-133"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> actionlint</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1|2|3-49|50-55|56-62|63-70|71-77|78-83|84-87|88-96|97-103|104-118|119-122|123-129|130-133"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a aria-label="1"></a><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .crt$</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb4-3"><a aria-label="3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/adrienverge/yamllint</span></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.35.1</span></span>
+<span id="cb4-5"><a aria-label="5"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-6"><a aria-label="6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> yamllint</span></span>
+<span id="cb4-7"><a aria-label="7"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-8"><a aria-label="8"></a><span class="kw">          - </span><span class="ch">&gt;-</span></span>
+<span id="cb4-9"><a aria-label="9"></a>            --config-data={</span>
+<span id="cb4-10"><a aria-label="10"></a>              extends: default,</span>
+<span id="cb4-11"><a aria-label="11"></a>              rules: {</span>
+<span id="cb4-12"><a aria-label="12"></a>                anchors: enable,</span>
+<span id="cb4-13"><a aria-label="13"></a>                braces: {</span>
+<span id="cb4-14"><a aria-label="14"></a>                  forbid: non-empty</span>
+<span id="cb4-15"><a aria-label="15"></a>                },</span>
+<span id="cb4-16"><a aria-label="16"></a>                brackets: {</span>
+<span id="cb4-17"><a aria-label="17"></a>                  forbid: non-empty</span>
+<span id="cb4-18"><a aria-label="18"></a>                },</span>
+<span id="cb4-19"><a aria-label="19"></a>                colons: enable,</span>
+<span id="cb4-20"><a aria-label="20"></a>                commas: enable,</span>
+<span id="cb4-21"><a aria-label="21"></a>                comments: {</span>
+<span id="cb4-22"><a aria-label="22"></a>                  min-spaces-from-content: 1</span>
+<span id="cb4-23"><a aria-label="23"></a>                },</span>
+<span id="cb4-24"><a aria-label="24"></a>                comments-indentation: enable,</span>
+<span id="cb4-25"><a aria-label="25"></a>                document-end: disable,</span>
+<span id="cb4-26"><a aria-label="26"></a>                document-start: enable,</span>
+<span id="cb4-27"><a aria-label="27"></a>                empty-lines: enable,</span>
+<span id="cb4-28"><a aria-label="28"></a>                empty-values: disable,</span>
+<span id="cb4-29"><a aria-label="29"></a>                float-values: enable,</span>
+<span id="cb4-30"><a aria-label="30"></a>                hyphens: enable,</span>
+<span id="cb4-31"><a aria-label="31"></a>                indentation: enable,</span>
+<span id="cb4-32"><a aria-label="32"></a>                key-duplicates: enable,</span>
+<span id="cb4-33"><a aria-label="33"></a>                key-ordering: disable,</span>
+<span id="cb4-34"><a aria-label="34"></a>                line-length: {</span>
+<span id="cb4-35"><a aria-label="35"></a>                  max: 160</span>
+<span id="cb4-36"><a aria-label="36"></a>                },</span>
+<span id="cb4-37"><a aria-label="37"></a>                new-line-at-end-of-file: enable,</span>
+<span id="cb4-38"><a aria-label="38"></a>                new-lines: enable,</span>
+<span id="cb4-39"><a aria-label="39"></a>                octal-values: enable,</span>
+<span id="cb4-40"><a aria-label="40"></a>                quoted-strings: {</span>
+<span id="cb4-41"><a aria-label="41"></a>                  quote-type: double,</span>
+<span id="cb4-42"><a aria-label="42"></a>                  required: only-when-needed</span>
+<span id="cb4-43"><a aria-label="43"></a>                },</span>
+<span id="cb4-44"><a aria-label="44"></a>                trailing-spaces: enable,</span>
+<span id="cb4-45"><a aria-label="45"></a>                truthy: {</span>
+<span id="cb4-46"><a aria-label="46"></a>                  check-keys: false</span>
+<span id="cb4-47"><a aria-label="47"></a>                }</span>
+<span id="cb4-48"><a aria-label="48"></a>              }</span>
+<span id="cb4-49"><a aria-label="49"></a>            }</span>
+<span id="cb4-50"><a aria-label="50"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/AleksaC/hadolint-py</span></span>
+<span id="cb4-51"><a aria-label="51"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v2.12.1b3</span></span>
+<span id="cb4-52"><a aria-label="52"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-53"><a aria-label="53"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> hadolint</span></span>
+<span id="cb4-54"><a aria-label="54"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-55"><a aria-label="55"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --ignore=DL3008</span></span>
+<span id="cb4-56"><a aria-label="56"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/ansible-community/ansible-lint.git</span></span>
+<span id="cb4-57"><a aria-label="57"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v24.10.0</span></span>
+<span id="cb4-58"><a aria-label="58"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-59"><a aria-label="59"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ansible-lint</span></span>
+<span id="cb4-60"><a aria-label="60"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-61"><a aria-label="61"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=.github</span></span>
+<span id="cb4-62"><a aria-label="62"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exclude=docker-compose.yml</span></span>
+<span id="cb4-63"><a aria-label="63"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/astral-sh/ruff-pre-commit</span></span>
+<span id="cb4-64"><a aria-label="64"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.8.1</span></span>
+<span id="cb4-65"><a aria-label="65"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-66"><a aria-label="66"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff</span></span>
+<span id="cb4-67"><a aria-label="67"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-68"><a aria-label="68"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --exit-non-zero-on-fix</span></span>
+<span id="cb4-69"><a aria-label="69"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix</span></span>
+<span id="cb4-70"><a aria-label="70"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ruff-format</span></span>
+<span id="cb4-71"><a aria-label="71"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/crate-ci/typos</span></span>
+<span id="cb4-72"><a aria-label="72"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.28.1</span></span>
+<span id="cb4-73"><a aria-label="73"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-74"><a aria-label="74"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> typos</span></span>
+<span id="cb4-75"><a aria-label="75"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-76"><a aria-label="76"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --force-exclude</span></span>
+<span id="cb4-77"><a aria-label="77"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --hidden</span></span>
+<span id="cb4-78"><a aria-label="78"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/igorshubovych/markdownlint-cli</span></span>
+<span id="cb4-79"><a aria-label="79"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.43.0</span></span>
+<span id="cb4-80"><a aria-label="80"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-81"><a aria-label="81"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> markdownlint-fix</span></span>
+<span id="cb4-82"><a aria-label="82"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-83"><a aria-label="83"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --dot</span></span>
+<span id="cb4-84"><a aria-label="84"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/Lucas-C/pre-commit-hooks</span></span>
+<span id="cb4-85"><a aria-label="85"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.5.5</span></span>
+<span id="cb4-86"><a aria-label="86"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-87"><a aria-label="87"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> forbid-tabs</span></span>
+<span id="cb4-88"><a aria-label="88"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pappasam/toml-sort</span></span>
+<span id="cb4-89"><a aria-label="89"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.24.2</span></span>
+<span id="cb4-90"><a aria-label="90"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-91"><a aria-label="91"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> toml-sort-fix</span></span>
+<span id="cb4-92"><a aria-label="92"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-93"><a aria-label="93"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --all</span></span>
+<span id="cb4-94"><a aria-label="94"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --in-place</span></span>
+<span id="cb4-95"><a aria-label="95"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --spaces-indent-inline-array=4</span></span>
+<span id="cb4-96"><a aria-label="96"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --trailing-comma-inline-array</span></span>
+<span id="cb4-97"><a aria-label="97"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/mirrors-prettier</span></span>
+<span id="cb4-98"><a aria-label="98"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v3.1.0</span></span>
+<span id="cb4-99"><a aria-label="99"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-100"><a aria-label="100"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> prettier</span></span>
+<span id="cb4-101"><a aria-label="101"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-102"><a aria-label="102"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --prose-wrap=always</span></span>
+<span id="cb4-103"><a aria-label="103"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --quote-props=as-needed</span></span>
+<span id="cb4-104"><a aria-label="104"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/pre-commit/pre-commit-hooks</span></span>
+<span id="cb4-105"><a aria-label="105"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v5.0.0</span></span>
+<span id="cb4-106"><a aria-label="106"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-107"><a aria-label="107"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-added-large-files</span></span>
+<span id="cb4-108"><a aria-label="108"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-case-conflict</span></span>
+<span id="cb4-109"><a aria-label="109"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-executables-have-shebangs</span></span>
+<span id="cb4-110"><a aria-label="110"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-merge-conflict</span></span>
+<span id="cb4-111"><a aria-label="111"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-shebang-scripts-are-executable</span></span>
+<span id="cb4-112"><a aria-label="112"></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span><span class="at"> .j2$</span></span>
+<span id="cb4-113"><a aria-label="113"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> destroyed-symlinks</span></span>
+<span id="cb4-114"><a aria-label="114"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> end-of-file-fixer</span></span>
+<span id="cb4-115"><a aria-label="115"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mixed-line-ending</span></span>
+<span id="cb4-116"><a aria-label="116"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-117"><a aria-label="117"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --fix=lf</span></span>
+<span id="cb4-118"><a aria-label="118"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> trailing-whitespace</span></span>
+<span id="cb4-119"><a aria-label="119"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/python-jsonschema/check-jsonschema</span></span>
+<span id="cb4-120"><a aria-label="120"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.30.0</span></span>
+<span id="cb4-121"><a aria-label="121"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-122"><a aria-label="122"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> check-github-workflows</span></span>
+<span id="cb4-123"><a aria-label="123"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/shellcheck-py/shellcheck-py</span></span>
+<span id="cb4-124"><a aria-label="124"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.10.0.1</span></span>
+<span id="cb4-125"><a aria-label="125"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-126"><a aria-label="126"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> shellcheck</span></span>
+<span id="cb4-127"><a aria-label="127"></a><span class="at">        </span><span class="fu">args</span><span class="kw">:</span></span>
+<span id="cb4-128"><a aria-label="128"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --external-sources</span></span>
+<span id="cb4-129"><a aria-label="129"></a><span class="at">          </span><span class="kw">-</span><span class="at"> --shell=bash</span></span>
+<span id="cb4-130"><a aria-label="130"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/rhysd/actionlint</span></span>
+<span id="cb4-131"><a aria-label="131"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v1.7.4</span></span>
+<span id="cb4-132"><a aria-label="132"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb4-133"><a aria-label="133"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> actionlint</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="pre-commit (iii)">
 <h2>pre-commit</h2>
 <p>To set this up a <code>/.pre-commit-hooks.yaml</code> must be defined.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span>
-<span id="cb5-2"><a></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> MIRSG hooks</span></span>
-<span id="cb5-3"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Default pre-commit hooks for MIRSG repos</span></span>
-<span id="cb5-4"><a></a><span class="at">  </span><span class="fu">entry</span><span class="kw">:</span><span class="at"> ./precommit/run-mirsg-hooks.py</span></span>
-<span id="cb5-5"><a></a><span class="at">  </span><span class="fu">language</span><span class="kw">:</span><span class="at"> script</span></span>
-<span id="cb5-6"><a></a><span class="at">  </span><span class="fu">require_serial</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-7"><a></a><span class="at">  </span><span class="fu">verbose</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a aria-label="1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> MIRSG hooks</span></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Default pre-commit hooks for MIRSG repos</span></span>
+<span id="cb5-4"><a aria-label="4"></a><span class="at">  </span><span class="fu">entry</span><span class="kw">:</span><span class="at"> ./precommit/run-mirsg-hooks.py</span></span>
+<span id="cb5-5"><a aria-label="5"></a><span class="at">  </span><span class="fu">language</span><span class="kw">:</span><span class="at"> script</span></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="at">  </span><span class="fu">require_serial</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-7"><a aria-label="7"></a><span class="at">  </span><span class="fu">verbose</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="pre-commit (iv)" data-footer="false">
 <h2>pre-commit</h2>
 <p>Which, in turn, calls the script, e.g.&nbsp;<code>/precommit/run-mirsg-hooks.py</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="1|2-4|6|9-22|25-26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co">#!/usr/bin/env python</span></span>
-<span id="cb6-2"><a></a><span class="im">import</span> pathlib</span>
-<span id="cb6-3"><a></a><span class="im">import</span> subprocess</span>
-<span id="cb6-4"><a></a><span class="im">import</span> sys</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>HERE <span class="op">=</span> pathlib.Path(<span class="va">__file__</span>).resolve()</span>
-<span id="cb6-7"><a></a></span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb6-10"><a></a>    cfg <span class="op">=</span> HERE.parent <span class="op">/</span> <span class="st">"mirsg-hooks.yaml"</span></span>
-<span id="cb6-11"><a></a>    result <span class="op">=</span> subprocess.run(</span>
-<span id="cb6-12"><a></a>        [</span>
-<span id="cb6-13"><a></a>            <span class="st">"pre-commit"</span>,</span>
-<span id="cb6-14"><a></a>            <span class="st">"run"</span>,</span>
-<span id="cb6-15"><a></a>            <span class="st">"--config"</span>,</span>
-<span id="cb6-16"><a></a>            <span class="ss">f"</span><span class="sc">{</span>cfg<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb6-17"><a></a>            <span class="st">"--files"</span>,</span>
-<span id="cb6-18"><a></a>        ]</span>
-<span id="cb6-19"><a></a>        <span class="op">+</span> sys.argv[<span class="dv">1</span>:],</span>
-<span id="cb6-20"><a></a>        check<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb6-21"><a></a>    )</span>
-<span id="cb6-22"><a></a>    <span class="cf">return</span> result.returncode</span>
-<span id="cb6-23"><a></a></span>
-<span id="cb6-24"><a></a></span>
-<span id="cb6-25"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb6-26"><a></a>    exit(main())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="1|2-4|6|9-22|25-26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="co">#!/usr/bin/env python</span></span>
+<span id="cb6-2"><a aria-label="2"></a><span class="im">import</span> pathlib</span>
+<span id="cb6-3"><a aria-label="3"></a><span class="im">import</span> subprocess</span>
+<span id="cb6-4"><a aria-label="4"></a><span class="im">import</span> sys</span>
+<span id="cb6-5"><a aria-label="5"></a></span>
+<span id="cb6-6"><a aria-label="6"></a>HERE <span class="op">=</span> pathlib.Path(<span class="va">__file__</span>).resolve()</span>
+<span id="cb6-7"><a aria-label="7"></a></span>
+<span id="cb6-8"><a aria-label="8"></a></span>
+<span id="cb6-9"><a aria-label="9"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb6-10"><a aria-label="10"></a>    cfg <span class="op">=</span> HERE.parent <span class="op">/</span> <span class="st">"mirsg-hooks.yaml"</span></span>
+<span id="cb6-11"><a aria-label="11"></a>    result <span class="op">=</span> subprocess.run(</span>
+<span id="cb6-12"><a aria-label="12"></a>        [</span>
+<span id="cb6-13"><a aria-label="13"></a>            <span class="st">"pre-commit"</span>,</span>
+<span id="cb6-14"><a aria-label="14"></a>            <span class="st">"run"</span>,</span>
+<span id="cb6-15"><a aria-label="15"></a>            <span class="st">"--config"</span>,</span>
+<span id="cb6-16"><a aria-label="16"></a>            <span class="ss">f"</span><span class="sc">{</span>cfg<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb6-17"><a aria-label="17"></a>            <span class="st">"--files"</span>,</span>
+<span id="cb6-18"><a aria-label="18"></a>        ]</span>
+<span id="cb6-19"><a aria-label="19"></a>        <span class="op">+</span> sys.argv[<span class="dv">1</span>:],</span>
+<span id="cb6-20"><a aria-label="20"></a>        check<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb6-21"><a aria-label="21"></a>    )</span>
+<span id="cb6-22"><a aria-label="22"></a>    <span class="cf">return</span> result.returncode</span>
+<span id="cb6-23"><a aria-label="23"></a></span>
+<span id="cb6-24"><a aria-label="24"></a></span>
+<span id="cb6-25"><a aria-label="25"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb6-26"><a aria-label="26"></a>    exit(main())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="pre-commit (v)">
 <h2>pre-commit</h2>
 <p>This can be then be used in organisation repositories as follows, e.g. <code>/.pre-commit-config.yaml</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="fu">repos</span><span class="kw">:</span></span>
-<span id="cb7-2"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/.github</span></span>
-<span id="cb7-3"><a></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.133.0</span></span>
-<span id="cb7-4"><a></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb7-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-label="1"></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/UCL-MIRSG/.github</span></span>
+<span id="cb7-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.133.0</span></span>
+<span id="cb7-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb7-5"><a aria-label="5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> mirsg-hooks</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Composite Actions (i)">
 <h2>Composite Actions</h2>
@@ -622,50 +625,50 @@ Patrick Roddy
 <section class="slide level2" data-menu-title="Composite Actions (ii)" data-footer="false">
 <h2>Composite Actions</h2>
 <p>Example add to project action used in <a href="https://github.com/UCL-MIRSG/.github">UCL-MIRSG/.github</a>, e.g. <code>/actions/add-to-project/action.yml</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers="1-2|4|5-7|9-11|13-15|17|17-18|17-19|20-25|27-31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add Issues to Project</span></span>
-<span id="cb8-2"><a></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Add issues to the GitHub project board</span></span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="fu">inputs</span><span class="kw">:</span></span>
-<span id="cb8-5"><a></a><span class="at">  </span><span class="fu">app-id</span><span class="kw">:</span></span>
-<span id="cb8-6"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application ID</span></span>
-<span id="cb8-7"><a></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb8-8"><a></a></span>
-<span id="cb8-9"><a></a><span class="at">  </span><span class="fu">app-pem</span><span class="kw">:</span></span>
-<span id="cb8-10"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application private key</span></span>
-<span id="cb8-11"><a></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb8-12"><a></a></span>
-<span id="cb8-13"><a></a><span class="at">  </span><span class="fu">project-url</span><span class="kw">:</span></span>
-<span id="cb8-14"><a></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> URL of the project board to add issues to</span></span>
-<span id="cb8-15"><a></a><span class="at">    </span><span class="fu">default</span><span class="kw">:</span><span class="at"> https://github.com/orgs/UCL-MIRSG/projects/3</span></span>
-<span id="cb8-16"><a></a></span>
-<span id="cb8-17"><a></a><span class="fu">runs</span><span class="kw">:</span></span>
-<span id="cb8-18"><a></a><span class="at">  </span><span class="fu">using</span><span class="kw">:</span><span class="at"> composite</span></span>
-<span id="cb8-19"><a></a><span class="at">  </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb8-20"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Generate token</span></span>
-<span id="cb8-21"><a></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> generate-token</span></span>
-<span id="cb8-22"><a></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/create-github-app-token@v1</span></span>
-<span id="cb8-23"><a></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-24"><a></a><span class="at">        </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ inputs.app-id }}</span></span>
-<span id="cb8-25"><a></a><span class="at">        </span><span class="fu">private-key</span><span class="kw">:</span><span class="at"> ${{ inputs.app-pem }}</span></span>
-<span id="cb8-26"><a></a></span>
-<span id="cb8-27"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Get project data</span></span>
-<span id="cb8-28"><a></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/add-to-project@v1.0.2</span></span>
-<span id="cb8-29"><a></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-30"><a></a><span class="at">        </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> ${{ inputs.project-url }}</span></span>
-<span id="cb8-31"><a></a><span class="at">        </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ steps.generate-token.outputs.token }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers="1-2|4|5-7|9-11|13-15|17|17-18|17-19|20-25|27-31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a aria-label="1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Add Issues to Project</span></span>
+<span id="cb8-2"><a aria-label="2"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Add issues to the GitHub project board</span></span>
+<span id="cb8-3"><a aria-label="3"></a></span>
+<span id="cb8-4"><a aria-label="4"></a><span class="fu">inputs</span><span class="kw">:</span></span>
+<span id="cb8-5"><a aria-label="5"></a><span class="at">  </span><span class="fu">app-id</span><span class="kw">:</span></span>
+<span id="cb8-6"><a aria-label="6"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application ID</span></span>
+<span id="cb8-7"><a aria-label="7"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-8"><a aria-label="8"></a></span>
+<span id="cb8-9"><a aria-label="9"></a><span class="at">  </span><span class="fu">app-pem</span><span class="kw">:</span></span>
+<span id="cb8-10"><a aria-label="10"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> Application private key</span></span>
+<span id="cb8-11"><a aria-label="11"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-12"><a aria-label="12"></a></span>
+<span id="cb8-13"><a aria-label="13"></a><span class="at">  </span><span class="fu">project-url</span><span class="kw">:</span></span>
+<span id="cb8-14"><a aria-label="14"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> URL of the project board to add issues to</span></span>
+<span id="cb8-15"><a aria-label="15"></a><span class="at">    </span><span class="fu">default</span><span class="kw">:</span><span class="at"> https://github.com/orgs/UCL-MIRSG/projects/3</span></span>
+<span id="cb8-16"><a aria-label="16"></a></span>
+<span id="cb8-17"><a aria-label="17"></a><span class="fu">runs</span><span class="kw">:</span></span>
+<span id="cb8-18"><a aria-label="18"></a><span class="at">  </span><span class="fu">using</span><span class="kw">:</span><span class="at"> composite</span></span>
+<span id="cb8-19"><a aria-label="19"></a><span class="at">  </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-20"><a aria-label="20"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Generate token</span></span>
+<span id="cb8-21"><a aria-label="21"></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> generate-token</span></span>
+<span id="cb8-22"><a aria-label="22"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/create-github-app-token@v1</span></span>
+<span id="cb8-23"><a aria-label="23"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-24"><a aria-label="24"></a><span class="at">        </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ inputs.app-id }}</span></span>
+<span id="cb8-25"><a aria-label="25"></a><span class="at">        </span><span class="fu">private-key</span><span class="kw">:</span><span class="at"> ${{ inputs.app-pem }}</span></span>
+<span id="cb8-26"><a aria-label="26"></a></span>
+<span id="cb8-27"><a aria-label="27"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Get project data</span></span>
+<span id="cb8-28"><a aria-label="28"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/add-to-project@v1.0.2</span></span>
+<span id="cb8-29"><a aria-label="29"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-30"><a aria-label="30"></a><span class="at">        </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> ${{ inputs.project-url }}</span></span>
+<span id="cb8-31"><a aria-label="31"></a><span class="at">        </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ steps.generate-token.outputs.token }}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Composite Actions (iii)">
 <h2>Composite Actions</h2>
 <p>This can be then be used in organisation repositories as follows, e.g. <code>/.github/workflows/manage-projects.yaml</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb9-2"><a></a><span class="at">  </span><span class="fu">add-issue-to-project</span><span class="kw">:</span></span>
-<span id="cb9-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
-<span id="cb9-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb9-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> UCL-MIRSG/.github/actions/add-to-project@v0</span></span>
-<span id="cb9-6"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb9-7"><a></a><span class="at">          </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_ID }}</span></span>
-<span id="cb9-8"><a></a><span class="at">          </span><span class="fu">app-pem</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_PEM }}</span></span>
-<span id="cb9-9"><a></a><span class="at">          </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> project_board_url</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a aria-label="1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">add-issue-to-project</span><span class="kw">:</span></span>
+<span id="cb9-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
+<span id="cb9-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-5"><a aria-label="5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> UCL-MIRSG/.github/actions/add-to-project@v0</span></span>
+<span id="cb9-6"><a aria-label="6"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb9-7"><a aria-label="7"></a><span class="at">          </span><span class="fu">app-id</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_ID }}</span></span>
+<span id="cb9-8"><a aria-label="8"></a><span class="at">          </span><span class="fu">app-pem</span><span class="kw">:</span><span class="at"> ${{ secrets.APP_PEM }}</span></span>
+<span id="cb9-9"><a aria-label="9"></a><span class="at">          </span><span class="fu">project-url</span><span class="kw">:</span><span class="at"> project_board_url</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="Composite Actions (iv)">
 <h2>Composite Actions</h2>
@@ -777,57 +780,57 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Example Configuration</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-code-line-numbers="1-10|12-14|16-28|30-51"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a></a><span class="fu">repository</span><span class="kw">:</span></span>
-<span id="cb10-2"><a></a><span class="at">  </span><span class="fu">allow_auto_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-3"><a></a><span class="at">  </span><span class="fu">allow_merge_commit</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-4"><a></a><span class="at">  </span><span class="fu">allow_rebase_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-5"><a></a><span class="at">  </span><span class="fu">delete_branch_on_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-6"><a></a><span class="at">  </span><span class="fu">has_discussions</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-7"><a></a><span class="at">  </span><span class="fu">has_downloads</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-8"><a></a><span class="at">  </span><span class="fu">has_wiki</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-9"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_message</span><span class="kw">:</span><span class="at"> PR_BODY</span></span>
-<span id="cb10-10"><a></a><span class="at">  </span><span class="fu">squash_merge_commit_title</span><span class="kw">:</span><span class="at"> PR_TITLE</span></span>
-<span id="cb10-11"><a></a></span>
-<span id="cb10-12"><a></a><span class="fu">teams</span><span class="kw">:</span></span>
-<span id="cb10-13"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mirsg</span></span>
-<span id="cb10-14"><a></a><span class="at">    </span><span class="fu">permission</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb10-15"><a></a></span>
-<span id="cb10-16"><a></a><span class="fu">rulesets</span><span class="kw">:</span></span>
-<span id="cb10-17"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Default</span></span>
-<span id="cb10-18"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
-<span id="cb10-19"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
-<span id="cb10-20"><a></a></span>
-<span id="cb10-21"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
-<span id="cb10-22"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
-<span id="cb10-23"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
-<span id="cb10-24"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
-<span id="cb10-25"><a></a></span>
-<span id="cb10-26"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
-<span id="cb10-27"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> deletion</span></span>
-<span id="cb10-28"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> non_fast_forward</span><span class="co"> # prevents force pushes</span></span>
-<span id="cb10-29"><a></a></span>
-<span id="cb10-30"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Pull Requests</span></span>
-<span id="cb10-31"><a></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
-<span id="cb10-32"><a></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
-<span id="cb10-33"><a></a></span>
-<span id="cb10-34"><a></a><span class="at">    </span><span class="fu">bypass_actors</span><span class="kw">:</span></span>
-<span id="cb10-35"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">actor_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">2740</span><span class="co"> # Renovate Bot</span></span>
-<span id="cb10-36"><a></a><span class="at">        </span><span class="fu">actor_type</span><span class="kw">:</span><span class="at"> Integration</span></span>
-<span id="cb10-37"><a></a><span class="at">        </span><span class="fu">bypass_mode</span><span class="kw">:</span><span class="at"> always</span></span>
-<span id="cb10-38"><a></a></span>
-<span id="cb10-39"><a></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
-<span id="cb10-40"><a></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
-<span id="cb10-41"><a></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
-<span id="cb10-42"><a></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
-<span id="cb10-43"><a></a></span>
-<span id="cb10-44"><a></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
-<span id="cb10-45"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> pull_request</span></span>
-<span id="cb10-46"><a></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
-<span id="cb10-47"><a></a><span class="at">          </span><span class="fu">dismiss_stale_reviews_on_push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-48"><a></a><span class="at">          </span><span class="fu">require_code_owner_review</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-49"><a></a><span class="at">          </span><span class="fu">require_last_push_approval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-50"><a></a><span class="at">          </span><span class="fu">required_approving_review_count</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb10-51"><a></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-code-line-numbers="1-10|12-14|16-28|30-51"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a aria-label="1"></a><span class="fu">repository</span><span class="kw">:</span></span>
+<span id="cb10-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">allow_auto_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-3"><a aria-label="3"></a><span class="at">  </span><span class="fu">allow_merge_commit</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-4"><a aria-label="4"></a><span class="at">  </span><span class="fu">allow_rebase_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-5"><a aria-label="5"></a><span class="at">  </span><span class="fu">delete_branch_on_merge</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-6"><a aria-label="6"></a><span class="at">  </span><span class="fu">has_discussions</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-7"><a aria-label="7"></a><span class="at">  </span><span class="fu">has_downloads</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-8"><a aria-label="8"></a><span class="at">  </span><span class="fu">has_wiki</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-9"><a aria-label="9"></a><span class="at">  </span><span class="fu">squash_merge_commit_message</span><span class="kw">:</span><span class="at"> PR_BODY</span></span>
+<span id="cb10-10"><a aria-label="10"></a><span class="at">  </span><span class="fu">squash_merge_commit_title</span><span class="kw">:</span><span class="at"> PR_TITLE</span></span>
+<span id="cb10-11"><a aria-label="11"></a></span>
+<span id="cb10-12"><a aria-label="12"></a><span class="fu">teams</span><span class="kw">:</span></span>
+<span id="cb10-13"><a aria-label="13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> mirsg</span></span>
+<span id="cb10-14"><a aria-label="14"></a><span class="at">    </span><span class="fu">permission</span><span class="kw">:</span><span class="at"> admin</span></span>
+<span id="cb10-15"><a aria-label="15"></a></span>
+<span id="cb10-16"><a aria-label="16"></a><span class="fu">rulesets</span><span class="kw">:</span></span>
+<span id="cb10-17"><a aria-label="17"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Default</span></span>
+<span id="cb10-18"><a aria-label="18"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb10-19"><a aria-label="19"></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb10-20"><a aria-label="20"></a></span>
+<span id="cb10-21"><a aria-label="21"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb10-22"><a aria-label="22"></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb10-23"><a aria-label="23"></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb10-24"><a aria-label="24"></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb10-25"><a aria-label="25"></a></span>
+<span id="cb10-26"><a aria-label="26"></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb10-27"><a aria-label="27"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> deletion</span></span>
+<span id="cb10-28"><a aria-label="28"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> non_fast_forward</span><span class="co"> # prevents force pushes</span></span>
+<span id="cb10-29"><a aria-label="29"></a></span>
+<span id="cb10-30"><a aria-label="30"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Pull Requests</span></span>
+<span id="cb10-31"><a aria-label="31"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> branch</span></span>
+<span id="cb10-32"><a aria-label="32"></a><span class="at">    </span><span class="fu">enforcement</span><span class="kw">:</span><span class="at"> active</span></span>
+<span id="cb10-33"><a aria-label="33"></a></span>
+<span id="cb10-34"><a aria-label="34"></a><span class="at">    </span><span class="fu">bypass_actors</span><span class="kw">:</span></span>
+<span id="cb10-35"><a aria-label="35"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">actor_id</span><span class="kw">:</span><span class="at"> </span><span class="dv">2740</span><span class="co"> # Renovate Bot</span></span>
+<span id="cb10-36"><a aria-label="36"></a><span class="at">        </span><span class="fu">actor_type</span><span class="kw">:</span><span class="at"> Integration</span></span>
+<span id="cb10-37"><a aria-label="37"></a><span class="at">        </span><span class="fu">bypass_mode</span><span class="kw">:</span><span class="at"> always</span></span>
+<span id="cb10-38"><a aria-label="38"></a></span>
+<span id="cb10-39"><a aria-label="39"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb10-40"><a aria-label="40"></a><span class="at">      </span><span class="fu">ref_name</span><span class="kw">:</span></span>
+<span id="cb10-41"><a aria-label="41"></a><span class="at">        </span><span class="fu">include</span><span class="kw">:</span></span>
+<span id="cb10-42"><a aria-label="42"></a><span class="at">          </span><span class="kw">-</span><span class="at"> ~DEFAULT_BRANCH</span></span>
+<span id="cb10-43"><a aria-label="43"></a></span>
+<span id="cb10-44"><a aria-label="44"></a><span class="at">    </span><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb10-45"><a aria-label="45"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> pull_request</span></span>
+<span id="cb10-46"><a aria-label="46"></a><span class="at">        </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb10-47"><a aria-label="47"></a><span class="at">          </span><span class="fu">dismiss_stale_reviews_on_push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-48"><a aria-label="48"></a><span class="at">          </span><span class="fu">require_code_owner_review</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-49"><a aria-label="49"></a><span class="at">          </span><span class="fu">require_last_push_approval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-50"><a aria-label="50"></a><span class="at">          </span><span class="fu">required_approving_review_count</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb10-51"><a aria-label="51"></a><span class="at">          </span><span class="fu">required_review_thread_resolution</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section class="title-slide slide level1 center">
 <h1>Other Ideas</h1>

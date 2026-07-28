@@ -7,10 +7,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2026-06-29">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -208,7 +211,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -323,24 +326,24 @@ Patrick Roddy
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">NumPy</a></li><li><a href="#tabset-1-2">Array API</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> typing <span class="im">import</span> Any</span>
-<span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a></a><span class="im">from</span> numpy.typing <span class="im">import</span> NDArray</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="kw">def</span> unit_vector_numpy(</span>
-<span id="cb1-6"><a></a>    x: NDArray[Any],</span>
-<span id="cb1-7"><a></a>) <span class="op">-&gt;</span> NDArray[Any]:</span>
-<span id="cb1-8"><a></a>    <span class="co">"""Only works with NumPy."""</span></span>
-<span id="cb1-9"><a></a>    <span class="cf">return</span> x <span class="op">/</span> np.sqrt(np.<span class="bu">sum</span>(x <span class="op">*</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">from</span> typing <span class="im">import</span> Any</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="im">from</span> numpy.typing <span class="im">import</span> NDArray</span>
+<span id="cb1-4"><a aria-label="4"></a></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="kw">def</span> unit_vector_numpy(</span>
+<span id="cb1-6"><a aria-label="6"></a>    x: NDArray[Any],</span>
+<span id="cb1-7"><a aria-label="7"></a>) <span class="op">-&gt;</span> NDArray[Any]:</span>
+<span id="cb1-8"><a aria-label="8"></a>    <span class="co">"""Only works with NumPy."""</span></span>
+<span id="cb1-9"><a aria-label="9"></a>    <span class="cf">return</span> x <span class="op">/</span> np.sqrt(np.<span class="bu">sum</span>(x <span class="op">*</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">from</span> glass._types <span class="im">import</span> AnyArray</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a><span class="kw">def</span> unit_vector_array_api(x: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
-<span id="cb2-4"><a></a>    <span class="co">"""Works with any supported array backend."""</span></span>
-<span id="cb2-5"><a></a>    <span class="co"># NumPy, CuPy, PyTorch, JAX, ...</span></span>
-<span id="cb2-6"><a></a>    xp <span class="op">=</span> x.__array_namespace__()</span>
-<span id="cb2-7"><a></a>    <span class="cf">return</span> x <span class="op">/</span> xp.sqrt(xp.<span class="bu">sum</span>(x <span class="op">*</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">from</span> glass._types <span class="im">import</span> AnyArray</span>
+<span id="cb2-2"><a aria-label="2"></a></span>
+<span id="cb2-3"><a aria-label="3"></a><span class="kw">def</span> unit_vector_array_api(x: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb2-4"><a aria-label="4"></a>    <span class="co">"""Works with any supported array backend."""</span></span>
+<span id="cb2-5"><a aria-label="5"></a>    <span class="co"># NumPy, CuPy, PyTorch, JAX, ...</span></span>
+<span id="cb2-6"><a aria-label="6"></a>    xp <span class="op">=</span> x.__array_namespace__()</span>
+<span id="cb2-7"><a aria-label="7"></a>    <span class="cf">return</span> x <span class="op">/</span> xp.sqrt(xp.<span class="bu">sum</span>(x <span class="op">*</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -350,8 +353,8 @@ Patrick Roddy
 </section>
 <section class="slide level2" data-footer="false">
 <h2>Migration Guide</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a></a>xp <span class="op">=</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a aria-label="2"></a>xp <span class="op">=</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li class="fragment"><code>np.transpose(x, axes)</code> → <code>xp.permute_dims(x, axes)</code></li>
 <li class="fragment"><code>np.concatenate(...)</code> → <code>xp.concat(...)</code></li>
@@ -381,20 +384,20 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Wrapping Functions Outside the Specification</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1-5|6|8-9|11-14|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a></a><span class="im">from</span> glass._types <span class="im">import</span> AnyArray</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="kw">def</span> gradient(f: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
-<span id="cb4-5"><a></a>    <span class="co">"""Return the gradient of an N-dimensional array."""</span></span>
-<span id="cb4-6"><a></a>    xp <span class="op">=</span> f.__array_namespace__()</span>
-<span id="cb4-7"><a></a></span>
-<span id="cb4-8"><a></a>    <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
-<span id="cb4-9"><a></a>        <span class="cf">return</span> xp.gradient(f)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a>    <span class="co"># If any other backend use default</span></span>
-<span id="cb4-12"><a></a>    f_np <span class="op">=</span> np.asarray(f, copy<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-13"><a></a>    result_np <span class="op">=</span> np.gradient(f_np)</span>
-<span id="cb4-14"><a></a>    <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="1-5|6|8-9|11-14|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-label="2"></a><span class="im">from</span> glass._types <span class="im">import</span> AnyArray</span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="kw">def</span> gradient(f: AnyArray) <span class="op">-&gt;</span> AnyArray:</span>
+<span id="cb4-5"><a aria-label="5"></a>    <span class="co">"""Return the gradient of an N-dimensional array."""</span></span>
+<span id="cb4-6"><a aria-label="6"></a>    xp <span class="op">=</span> f.__array_namespace__()</span>
+<span id="cb4-7"><a aria-label="7"></a></span>
+<span id="cb4-8"><a aria-label="8"></a>    <span class="cf">if</span> xp.<span class="va">__name__</span> <span class="kw">in</span> {<span class="st">"numpy"</span>, <span class="st">"jax.numpy"</span>}:</span>
+<span id="cb4-9"><a aria-label="9"></a>        <span class="cf">return</span> xp.gradient(f)</span>
+<span id="cb4-10"><a aria-label="10"></a></span>
+<span id="cb4-11"><a aria-label="11"></a>    <span class="co"># If any other backend use default</span></span>
+<span id="cb4-12"><a aria-label="12"></a>    f_np <span class="op">=</span> np.asarray(f, copy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-13"><a aria-label="13"></a>    result_np <span class="op">=</span> np.gradient(f_np)</span>
+<span id="cb4-14"><a aria-label="14"></a>    <span class="cf">return</span> xp.asarray(result_np, copy<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-footer="false">
 <h2>Handling the immutability of JAX</h2>
@@ -402,31 +405,31 @@ Patrick Roddy
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">NumPy</a></li><li><a href="#tabset-2-2">Array API (JAX)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="3|1|1,4-5|7-8|7-9|10|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="kw">def</span> yield_numpy_only_implementation(x):</span>
-<span id="cb5-4"><a></a>    n <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb5-5"><a></a>    y <span class="op">=</span> np.zeros((n, <span class="op">*</span>x.shape))</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb5-8"><a></a>        <span class="cf">for</span> j, x_j <span class="kw">in</span> <span class="bu">enumerate</span>(x):</span>
-<span id="cb5-9"><a></a>            y[i,...] <span class="op">=</span> x_j <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb5-10"><a></a>        <span class="cf">yield</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="3|1|1,4-5|7-8|7-9|10|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a aria-label="2"></a></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="kw">def</span> yield_numpy_only_implementation(x):</span>
+<span id="cb5-4"><a aria-label="4"></a>    n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-5"><a aria-label="5"></a>    y <span class="op">=</span> np.zeros((n, <span class="op">*</span>x.shape))</span>
+<span id="cb5-6"><a aria-label="6"></a></span>
+<span id="cb5-7"><a aria-label="7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb5-8"><a aria-label="8"></a>        <span class="cf">for</span> j, x_j <span class="kw">in</span> <span class="bu">enumerate</span>(x):</span>
+<span id="cb5-9"><a aria-label="9"></a>            y[i,...] <span class="op">=</span> x_j <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb5-10"><a aria-label="10"></a>        <span class="cf">yield</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="3|4|4-7|9-10|1,9-11|12-13|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
-<span id="cb6-2"><a></a></span>
-<span id="cb6-3"><a></a><span class="kw">def</span> yield_array_api_compatible_implementation(x):</span>
-<span id="cb6-4"><a></a>    xp <span class="op">=</span> x.__array_namespace__()</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>    n <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb6-7"><a></a>    y <span class="op">=</span> xp.zeros((n, <span class="op">*</span>x.shape))</span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb6-10"><a></a>        <span class="cf">for</span> j, x_j <span class="kw">in</span> <span class="bu">enumerate</span>(x):</span>
-<span id="cb6-11"><a></a>            y <span class="op">=</span> xpx.at(y)[i,...].<span class="bu">set</span>(x_j <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb6-12"><a></a>        <span class="co"># to avoid mutating in subsequent iterations</span></span>
-<span id="cb6-13"><a></a>        <span class="cf">yield</span> xp.asarray(y, copy<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="3|4|4-7|9-10|1,9-11|12-13|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
+<span id="cb6-2"><a aria-label="2"></a></span>
+<span id="cb6-3"><a aria-label="3"></a><span class="kw">def</span> yield_array_api_compatible_implementation(x):</span>
+<span id="cb6-4"><a aria-label="4"></a>    xp <span class="op">=</span> x.__array_namespace__()</span>
+<span id="cb6-5"><a aria-label="5"></a></span>
+<span id="cb6-6"><a aria-label="6"></a>    n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb6-7"><a aria-label="7"></a>    y <span class="op">=</span> xp.zeros((n, <span class="op">*</span>x.shape))</span>
+<span id="cb6-8"><a aria-label="8"></a></span>
+<span id="cb6-9"><a aria-label="9"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb6-10"><a aria-label="10"></a>        <span class="cf">for</span> j, x_j <span class="kw">in</span> <span class="bu">enumerate</span>(x):</span>
+<span id="cb6-11"><a aria-label="11"></a>            y <span class="op">=</span> xpx.at(y)[i,...].<span class="bu">set</span>(x_j <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb6-12"><a aria-label="12"></a>        <span class="co"># to avoid mutating in subsequent iterations</span></span>
+<span id="cb6-13"><a aria-label="13"></a>        <span class="cf">yield</span> xp.asarray(y, copy<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -437,44 +440,44 @@ Patrick Roddy
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code Example</a></li><li><a href="#tabset-3-2">Benchmarking Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="4-5|6,8-10|2,4,12|1,7,14|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
-<span id="cb7-2"><a></a><span class="im">import</span> glass</span>
-<span id="cb7-3"><a></a></span>
-<span id="cb7-4"><a></a><span class="kw">def</span> test_radialwindow(benchmark, xp) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb7-5"><a></a>    <span class="co">"""check zeff is computed when not provided"""</span></span>
-<span id="cb7-6"><a></a>    arr_length <span class="op">=</span> <span class="dv">100_000</span></span>
-<span id="cb7-7"><a></a>    expected_zeff <span class="op">=</span> xp.asarray(<span class="fl">66_666.0</span>)</span>
-<span id="cb7-8"><a></a></span>
-<span id="cb7-9"><a></a>    wa <span class="op">=</span> xp.arange(arr_length)</span>
-<span id="cb7-10"><a></a>    za <span class="op">=</span> xp.arange(arr_length)</span>
-<span id="cb7-11"><a></a></span>
-<span id="cb7-12"><a></a>    w <span class="op">=</span> benchmark(glass.RadialWindow, za, wa)</span>
-<span id="cb7-13"><a></a></span>
-<span id="cb7-14"><a></a>    xpx.testing.assert_close(w.zeff, expected_zeff)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="4-5|6,8-10|2,4,12|1,7,14|"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
+<span id="cb7-2"><a aria-label="2"></a><span class="im">import</span> glass</span>
+<span id="cb7-3"><a aria-label="3"></a></span>
+<span id="cb7-4"><a aria-label="4"></a><span class="kw">def</span> test_radialwindow(benchmark, xp) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb7-5"><a aria-label="5"></a>    <span class="co">"""check zeff is computed when not provided"""</span></span>
+<span id="cb7-6"><a aria-label="6"></a>    arr_length <span class="op">=</span> <span class="dv">100_000</span></span>
+<span id="cb7-7"><a aria-label="7"></a>    expected_zeff <span class="op">=</span> xp.asarray(<span class="fl">66_666.0</span>)</span>
+<span id="cb7-8"><a aria-label="8"></a></span>
+<span id="cb7-9"><a aria-label="9"></a>    wa <span class="op">=</span> xp.arange(arr_length)</span>
+<span id="cb7-10"><a aria-label="10"></a>    za <span class="op">=</span> xp.arange(arr_length)</span>
+<span id="cb7-11"><a aria-label="11"></a></span>
+<span id="cb7-12"><a aria-label="12"></a>    w <span class="op">=</span> benchmark(glass.RadialWindow, za, wa)</span>
+<span id="cb7-13"><a aria-label="13"></a></span>
+<span id="cb7-14"><a aria-label="14"></a>    xpx.testing.assert_close(w.zeff, expected_zeff)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-3-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="op">------------------------------------------</span> benchmark: <span class="dv">18</span> tests <span class="op">-------------------------------------------</span></span>
-<span id="cb8-2"><a></a>Name (time <span class="kw">in</span> us)                                               Mean              StdDev            Rounds</span>
-<span id="cb8-3"><a></a><span class="op">----------------------------------------------------------------------------------------------------------</span></span>
-<span id="cb8-4"><a></a>test_broadcast_leading_axes[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)            <span class="fl">14.3906</span> (<span class="fl">32.86</span>)      <span class="fl">0.8640</span> (<span class="fl">91.93</span>)      <span class="dv">7884</span></span>
-<span id="cb8-5"><a></a>test_broadcast_leading_axes[numpy] (NOW)                     <span class="fl">14.0193</span> (<span class="fl">32.02</span>)      <span class="fl">0.3437</span> (<span class="fl">36.56</span>)      <span class="dv">8038</span></span>
-<span id="cb8-6"><a></a>test_cumulative_trapezoid_1d[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)           <span class="fl">74.8633</span> (<span class="fl">170.97</span>)     <span class="fl">1.2138</span> (<span class="fl">129.15</span>)     <span class="dv">8075</span></span>
-<span id="cb8-7"><a></a>test_cumulative_trapezoid_1d[numpy] (NOW)                    <span class="fl">75.4069</span> (<span class="fl">172.21</span>)     <span class="fl">1.4036</span> (<span class="fl">149.35</span>)     <span class="dv">8263</span></span>
-<span id="cb8-8"><a></a>test_cumulative_trapezoid_2d[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)           <span class="fl">73.7475</span> (<span class="fl">168.42</span>)     <span class="fl">1.4709</span> (<span class="fl">156.50</span>)     <span class="dv">7343</span></span>
-<span id="cb8-9"><a></a>test_cumulative_trapezoid_2d[numpy] (NOW)                    <span class="fl">73.8911</span> (<span class="fl">168.75</span>)     <span class="fl">1.4670</span> (<span class="fl">156.09</span>)     <span class="dv">7867</span></span>
-<span id="cb8-10"><a></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">False</span>] (<span class="dv">000</span><span class="er">1_5daafb9</span>)             <span class="dv">2</span>,<span class="fl">756.7223</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">30.8210</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1744</span></span>
-<span id="cb8-11"><a></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">False</span>] (NOW)                      <span class="dv">2</span>,<span class="fl">724.6682</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">30.0616</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1756</span></span>
-<span id="cb8-12"><a></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">True</span>] (<span class="dv">000</span><span class="er">1_5daafb9</span>)              <span class="dv">3</span>,<span class="fl">458.8037</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">46.0236</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1229</span></span>
-<span id="cb8-13"><a></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">True</span>] (NOW)                       <span class="dv">3</span>,<span class="fl">378.0130</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)  <span class="fl">208.7110</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1226</span></span>
-<span id="cb8-14"><a></a>test_getcl_lmax_0[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                       <span class="fl">0.4582</span> (<span class="fl">1.05</span>)       <span class="fl">0.0094</span> (<span class="fl">1.0</span>)        <span class="dv">8066</span></span>
-<span id="cb8-15"><a></a>test_getcl_lmax_0[numpy] (NOW)                                <span class="fl">0.4379</span> (<span class="fl">1.0</span>)        <span class="fl">0.0098</span> (<span class="fl">1.04</span>)       <span class="dv">8223</span></span>
-<span id="cb8-16"><a></a>test_getcl_lmax_larger_than_cls[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)        <span class="fl">11.7196</span> (<span class="fl">26.76</span>)      <span class="fl">0.3221</span> (<span class="fl">34.27</span>)      <span class="dv">8172</span></span>
-<span id="cb8-17"><a></a>test_getcl_lmax_larger_than_cls[numpy] (NOW)                 <span class="fl">11.7613</span> (<span class="fl">26.86</span>)      <span class="fl">0.4315</span> (<span class="fl">45.91</span>)      <span class="dv">8230</span></span>
-<span id="cb8-18"><a></a>test_multalm[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                          <span class="fl">122.6629</span> (<span class="fl">280.14</span>)     <span class="fl">2.1285</span> (<span class="fl">226.47</span>)     <span class="dv">8124</span></span>
-<span id="cb8-19"><a></a>test_multalm[numpy] (NOW)                                   <span class="fl">122.7557</span> (<span class="fl">280.35</span>)     <span class="fl">2.2902</span> (<span class="fl">243.68</span>)     <span class="dv">8087</span></span>
-<span id="cb8-20"><a></a>test_radialwindow[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                     <span class="fl">455.4797</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="fl">9.0447</span> (<span class="fl">962.36</span>)     <span class="dv">7364</span></span>
-<span id="cb8-21"><a></a>test_radialwindow[numpy] (NOW)                              <span class="fl">453.7619</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">10.7064</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">6981</span></span>
-<span id="cb8-22"><a></a><span class="op">----------------------------------------------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="op">------------------------------------------</span> benchmark: <span class="dv">18</span> tests <span class="op">-------------------------------------------</span></span>
+<span id="cb8-2"><a aria-label="2"></a>Name (time <span class="kw">in</span> us)                                               Mean              StdDev            Rounds</span>
+<span id="cb8-3"><a aria-label="3"></a><span class="op">----------------------------------------------------------------------------------------------------------</span></span>
+<span id="cb8-4"><a aria-label="4"></a>test_broadcast_leading_axes[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)            <span class="fl">14.3906</span> (<span class="fl">32.86</span>)      <span class="fl">0.8640</span> (<span class="fl">91.93</span>)      <span class="dv">7884</span></span>
+<span id="cb8-5"><a aria-label="5"></a>test_broadcast_leading_axes[numpy] (NOW)                     <span class="fl">14.0193</span> (<span class="fl">32.02</span>)      <span class="fl">0.3437</span> (<span class="fl">36.56</span>)      <span class="dv">8038</span></span>
+<span id="cb8-6"><a aria-label="6"></a>test_cumulative_trapezoid_1d[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)           <span class="fl">74.8633</span> (<span class="fl">170.97</span>)     <span class="fl">1.2138</span> (<span class="fl">129.15</span>)     <span class="dv">8075</span></span>
+<span id="cb8-7"><a aria-label="7"></a>test_cumulative_trapezoid_1d[numpy] (NOW)                    <span class="fl">75.4069</span> (<span class="fl">172.21</span>)     <span class="fl">1.4036</span> (<span class="fl">149.35</span>)     <span class="dv">8263</span></span>
+<span id="cb8-8"><a aria-label="8"></a>test_cumulative_trapezoid_2d[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)           <span class="fl">73.7475</span> (<span class="fl">168.42</span>)     <span class="fl">1.4709</span> (<span class="fl">156.50</span>)     <span class="dv">7343</span></span>
+<span id="cb8-9"><a aria-label="9"></a>test_cumulative_trapezoid_2d[numpy] (NOW)                    <span class="fl">73.8911</span> (<span class="fl">168.75</span>)     <span class="fl">1.4670</span> (<span class="fl">156.09</span>)     <span class="dv">7867</span></span>
+<span id="cb8-10"><a aria-label="10"></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">False</span>] (<span class="dv">000</span><span class="er">1_5daafb9</span>)             <span class="dv">2</span>,<span class="fl">756.7223</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">30.8210</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1744</span></span>
+<span id="cb8-11"><a aria-label="11"></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">False</span>] (NOW)                      <span class="dv">2</span>,<span class="fl">724.6682</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">30.0616</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1756</span></span>
+<span id="cb8-12"><a aria-label="12"></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">True</span>] (<span class="dv">000</span><span class="er">1_5daafb9</span>)              <span class="dv">3</span>,<span class="fl">458.8037</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">46.0236</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1229</span></span>
+<span id="cb8-13"><a aria-label="13"></a>test_galaxy_shear[numpy<span class="op">-</span><span class="va">True</span>] (NOW)                       <span class="dv">3</span>,<span class="fl">378.0130</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)  <span class="fl">208.7110</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">1226</span></span>
+<span id="cb8-14"><a aria-label="14"></a>test_getcl_lmax_0[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                       <span class="fl">0.4582</span> (<span class="fl">1.05</span>)       <span class="fl">0.0094</span> (<span class="fl">1.0</span>)        <span class="dv">8066</span></span>
+<span id="cb8-15"><a aria-label="15"></a>test_getcl_lmax_0[numpy] (NOW)                                <span class="fl">0.4379</span> (<span class="fl">1.0</span>)        <span class="fl">0.0098</span> (<span class="fl">1.04</span>)       <span class="dv">8223</span></span>
+<span id="cb8-16"><a aria-label="16"></a>test_getcl_lmax_larger_than_cls[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)        <span class="fl">11.7196</span> (<span class="fl">26.76</span>)      <span class="fl">0.3221</span> (<span class="fl">34.27</span>)      <span class="dv">8172</span></span>
+<span id="cb8-17"><a aria-label="17"></a>test_getcl_lmax_larger_than_cls[numpy] (NOW)                 <span class="fl">11.7613</span> (<span class="fl">26.86</span>)      <span class="fl">0.4315</span> (<span class="fl">45.91</span>)      <span class="dv">8230</span></span>
+<span id="cb8-18"><a aria-label="18"></a>test_multalm[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                          <span class="fl">122.6629</span> (<span class="fl">280.14</span>)     <span class="fl">2.1285</span> (<span class="fl">226.47</span>)     <span class="dv">8124</span></span>
+<span id="cb8-19"><a aria-label="19"></a>test_multalm[numpy] (NOW)                                   <span class="fl">122.7557</span> (<span class="fl">280.35</span>)     <span class="fl">2.2902</span> (<span class="fl">243.68</span>)     <span class="dv">8087</span></span>
+<span id="cb8-20"><a aria-label="20"></a>test_radialwindow[numpy] (<span class="dv">000</span><span class="er">1_5daafb9</span>)                     <span class="fl">455.4797</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="fl">9.0447</span> (<span class="fl">962.36</span>)     <span class="dv">7364</span></span>
+<span id="cb8-21"><a aria-label="21"></a>test_radialwindow[numpy] (NOW)                              <span class="fl">453.7619</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)   <span class="fl">10.7064</span> (<span class="op">&gt;</span><span class="fl">1000.0</span>)    <span class="dv">6981</span></span>
+<span id="cb8-22"><a aria-label="22"></a><span class="op">----------------------------------------------------------------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -484,14 +487,14 @@ Patrick Roddy
 <ul>
 <li class="fragment"><p>No support for random number generation <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/data-apis/array-api/discussions/874">data-apis/array-api#874</a>.</p></li>
 <li class="fragment"><p>Typing is currently performed using unions of array typing awaiting <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/data-apis/array-api-typing">data-apis/array-api-typing</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">from</span> typing <span class="im">import</span> TypeAlias</span>
-<span id="cb9-2"><a></a><span class="im">import</span> jaxtyping</span>
-<span id="cb9-3"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-4"><a></a><span class="im">from</span> array_api_strict._array_object <span class="im">import</span> Array</span>
-<span id="cb9-5"><a></a></span>
-<span id="cb9-6"><a></a>FloatArray: TypeAlias <span class="op">=</span> (</span>
-<span id="cb9-7"><a></a>    np.typing.NDArray[np.float64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
-<span id="cb9-8"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a><span class="im">from</span> typing <span class="im">import</span> TypeAlias</span>
+<span id="cb9-2"><a aria-label="2"></a><span class="im">import</span> jaxtyping</span>
+<span id="cb9-3"><a aria-label="3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-4"><a aria-label="4"></a><span class="im">from</span> array_api_strict._array_object <span class="im">import</span> Array</span>
+<span id="cb9-5"><a aria-label="5"></a></span>
+<span id="cb9-6"><a aria-label="6"></a>FloatArray: TypeAlias <span class="op">=</span> (</span>
+<span id="cb9-7"><a aria-label="7"></a>    np.typing.NDArray[np.float64] <span class="op">|</span> jaxtyping.Array <span class="op">|</span> Array</span>
+<span id="cb9-8"><a aria-label="8"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Can contribute more functions to <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/data-apis/array-api-extra">data-apis/array-api-extra</a>.</p></li>
 </ul>
 </section></section>

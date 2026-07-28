@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2023-11-14">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -206,7 +209,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -317,65 +320,65 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Example Config</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
-<span id="cb1-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb1-4"><a></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
-<span id="cb1-5"><a></a>    <span class="st">"schedule:weekdays"</span><span class="ot">,</span></span>
-<span id="cb1-6"><a></a>    <span class="st">":assignAndReview(paddyroddy)"</span><span class="ot">,</span></span>
-<span id="cb1-7"><a></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
-<span id="cb1-8"><a></a>    <span class="st">":automergeDigest"</span><span class="ot">,</span></span>
-<span id="cb1-9"><a></a>    <span class="st">":automergeMinor"</span><span class="ot">,</span></span>
-<span id="cb1-10"><a></a>    <span class="st">":automergePatch"</span><span class="ot">,</span></span>
-<span id="cb1-11"><a></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
-<span id="cb1-12"><a></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
-<span id="cb1-13"><a></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
-<span id="cb1-14"><a></a>    <span class="st">":maintainLockFilesMonthly"</span><span class="ot">,</span></span>
-<span id="cb1-15"><a></a>    <span class="st">":noUnscheduledUpdates"</span><span class="ot">,</span></span>
-<span id="cb1-16"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-17"><a></a>  <span class="er">commitMessageAction</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
-<span id="cb1-18"><a></a>  <span class="dt">"git-submodules"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-19"><a></a>    <span class="er">enabled</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb1-20"><a></a>  <span class="fu">},</span></span>
-<span id="cb1-21"><a></a>  <span class="er">packageRules</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb1-22"><a></a>    <span class="fu">{</span></span>
-<span id="cb1-23"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
-<span id="cb1-24"><a></a>      <span class="er">enabled</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
-<span id="cb1-25"><a></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-26"><a></a>      <span class="er">matchUpdateTypes</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-27"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-28"><a></a>    <span class="fu">{</span></span>
-<span id="cb1-29"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Combine updates together"</span><span class="fu">,</span></span>
-<span id="cb1-30"><a></a>      <span class="er">groupName</span><span class="fu">:</span> <span class="st">"paddyroddy/.github"</span><span class="fu">,</span></span>
-<span id="cb1-31"><a></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"paddyroddy/.github"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-32"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-33"><a></a>    <span class="fu">{</span></span>
-<span id="cb1-34"><a></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
-<span id="cb1-35"><a></a>      <span class="er">commitMessageTopic</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
-<span id="cb1-36"><a></a>      <span class="er">matchManagers</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-37"><a></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-38"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-39"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="2|3,16|4|5|6,13|7-10|11|12,18-20|14|15|17|21,38|22-27|28-32|33-37"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a aria-label="2"></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a aria-label="3"></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-4"><a aria-label="4"></a>    <span class="st">"config:best-practices"</span><span class="ot">,</span></span>
+<span id="cb1-5"><a aria-label="5"></a>    <span class="st">"schedule:weekdays"</span><span class="ot">,</span></span>
+<span id="cb1-6"><a aria-label="6"></a>    <span class="st">":assignAndReview(paddyroddy)"</span><span class="ot">,</span></span>
+<span id="cb1-7"><a aria-label="7"></a>    <span class="st">":automergeBranch"</span><span class="ot">,</span></span>
+<span id="cb1-8"><a aria-label="8"></a>    <span class="st">":automergeDigest"</span><span class="ot">,</span></span>
+<span id="cb1-9"><a aria-label="9"></a>    <span class="st">":automergeMinor"</span><span class="ot">,</span></span>
+<span id="cb1-10"><a aria-label="10"></a>    <span class="st">":automergePatch"</span><span class="ot">,</span></span>
+<span id="cb1-11"><a aria-label="11"></a>    <span class="st">":disableDependencyDashboard"</span><span class="ot">,</span></span>
+<span id="cb1-12"><a aria-label="12"></a>    <span class="st">":enablePreCommit"</span><span class="ot">,</span></span>
+<span id="cb1-13"><a aria-label="13"></a>    <span class="st">":label(renovate)"</span><span class="ot">,</span></span>
+<span id="cb1-14"><a aria-label="14"></a>    <span class="st">":maintainLockFilesMonthly"</span><span class="ot">,</span></span>
+<span id="cb1-15"><a aria-label="15"></a>    <span class="st">":noUnscheduledUpdates"</span><span class="ot">,</span></span>
+<span id="cb1-16"><a aria-label="16"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-17"><a aria-label="17"></a>  <span class="er">commitMessageAction</span><span class="fu">:</span> <span class="st">"Renovate:"</span><span class="fu">,</span></span>
+<span id="cb1-18"><a aria-label="18"></a>  <span class="dt">"git-submodules"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-19"><a aria-label="19"></a>    <span class="er">enabled</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-20"><a aria-label="20"></a>  <span class="fu">},</span></span>
+<span id="cb1-21"><a aria-label="21"></a>  <span class="er">packageRules</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-22"><a aria-label="22"></a>    <span class="fu">{</span></span>
+<span id="cb1-23"><a aria-label="23"></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Only allow major updates"</span><span class="fu">,</span></span>
+<span id="cb1-24"><a aria-label="24"></a>      <span class="er">enabled</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb1-25"><a aria-label="25"></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"renovatebot/pre-commit-hooks"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-26"><a aria-label="26"></a>      <span class="er">matchUpdateTypes</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"minor"</span><span class="ot">,</span> <span class="st">"patch"</span><span class="ot">,</span> <span class="st">"pin"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-27"><a aria-label="27"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-28"><a aria-label="28"></a>    <span class="fu">{</span></span>
+<span id="cb1-29"><a aria-label="29"></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Combine updates together"</span><span class="fu">,</span></span>
+<span id="cb1-30"><a aria-label="30"></a>      <span class="er">groupName</span><span class="fu">:</span> <span class="st">"paddyroddy/.github"</span><span class="fu">,</span></span>
+<span id="cb1-31"><a aria-label="31"></a>      <span class="er">matchDepNames</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"paddyroddy/.github"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-32"><a aria-label="32"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-33"><a aria-label="33"></a>    <span class="fu">{</span></span>
+<span id="cb1-34"><a aria-label="34"></a>      <span class="er">description</span><span class="fu">:</span> <span class="st">"Shorten commit titles"</span><span class="fu">,</span></span>
+<span id="cb1-35"><a aria-label="35"></a>      <span class="er">commitMessageTopic</span><span class="fu">:</span> <span class="st">"{{depName}}"</span><span class="fu">,</span></span>
+<span id="cb1-36"><a aria-label="36"></a>      <span class="er">matchManagers</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"github-actions"</span><span class="ot">,</span> <span class="st">"pre-commit"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-37"><a aria-label="37"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-38"><a aria-label="38"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-39"><a aria-label="39"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="footer">
 <p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/renovate/default-config.json5</a></p>
 </div>
 </section>
 <section class="slide level2">
 <h2>Config is Reusable</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="2|4|5|7-13"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a></a><span class="fu">{</span></span>
-<span id="cb2-2"><a></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
-<span id="cb2-3"><a></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-4"><a></a>    <span class="st">"github&gt;paddyroddy/.github//renovate/default-config.json5"</span><span class="ot">,</span></span>
-<span id="cb2-5"><a></a>    <span class="st">"schedule:monthly"</span><span class="ot">,</span></span>
-<span id="cb2-6"><a></a>  <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-7"><a></a>  <span class="dt">"pre-commit"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb2-8"><a></a>    <span class="er">fileMatch</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb2-9"><a></a>      <span class="st">"precommit/general/general-hooks.yaml"</span><span class="ot">,</span></span>
-<span id="cb2-10"><a></a>      <span class="st">"precommit/latex/latex-hooks.yaml"</span><span class="ot">,</span></span>
-<span id="cb2-11"><a></a>      <span class="st">"precommit/python/python-hooks.yaml"</span><span class="ot">,</span></span>
-<span id="cb2-12"><a></a>    <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-13"><a></a>  <span class="fu">},</span></span>
-<span id="cb2-14"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="2|4|5|7-13"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  <span class="er">$schema</span><span class="fu">:</span> <span class="st">"https://docs.renovatebot.com/renovate-schema.json"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a aria-label="3"></a>  <span class="er">extends</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-4"><a aria-label="4"></a>    <span class="st">"github&gt;paddyroddy/.github//renovate/default-config.json5"</span><span class="ot">,</span></span>
+<span id="cb2-5"><a aria-label="5"></a>    <span class="st">"schedule:monthly"</span><span class="ot">,</span></span>
+<span id="cb2-6"><a aria-label="6"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-7"><a aria-label="7"></a>  <span class="dt">"pre-commit"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-8"><a aria-label="8"></a>    <span class="er">fileMatch</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-9"><a aria-label="9"></a>      <span class="st">"precommit/general/general-hooks.yaml"</span><span class="ot">,</span></span>
+<span id="cb2-10"><a aria-label="10"></a>      <span class="st">"precommit/latex/latex-hooks.yaml"</span><span class="ot">,</span></span>
+<span id="cb2-11"><a aria-label="11"></a>      <span class="st">"precommit/python/python-hooks.yaml"</span><span class="ot">,</span></span>
+<span id="cb2-12"><a aria-label="12"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-13"><a aria-label="13"></a>  <span class="fu">},</span></span>
+<span id="cb2-14"><a aria-label="14"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="footer">
 <p>See in action: <a href="https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5" class="uri">https://github.com/paddyroddy/.github/blob/main/.renovaterc.json5</a></p>
 </div>
@@ -386,12 +389,12 @@ Patrick Roddy
 <p><img data-src="../renovate-automating-dependency-management/figures/automerge.png"></p>
 <div class="fragment fade-left">
 <p>It is <strong>highly recommended</strong> to ensure you have tests that will operate on the Renovate branches.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb3-2"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb3-3"><a></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
-<span id="cb3-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
-<span id="cb3-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
-<span id="cb3-6"><a></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-label="1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb3-5"><a aria-label="5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"renovate/**"</span></span>
+<span id="cb3-6"><a aria-label="6"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">

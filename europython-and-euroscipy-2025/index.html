@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2025-11-18">
@@ -26,10 +26,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -214,7 +217,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -235,7 +238,7 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Flight</h2>
-<div id="96c131de" class="cell" data-execution_count="1">
+<div id="96c131de" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"a98d369479964c0a9e3407cc349fdeac","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -390,7 +393,7 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Flight</h2>
-<div id="d5f71db3" class="cell" data-execution_count="2">
+<div id="d5f71db3" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"ed1447151768466da76a483229db339c","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -413,7 +416,7 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Train</h2>
-<div id="e6f8ebd6" class="cell" data-execution_count="3">
+<div id="e6f8ebd6" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"a70ca3cfa0b44a3f8176f4bb37950d9a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -485,16 +488,16 @@ Patrick Roddy
 <li class="fragment">Implemented the <a href="https://data-apis.org/array-api-extra/generated/array_api_extra.nan_to_num.html">nan_to_num</a> function (<a href="https://github.com/data-apis/array-api-extra/pull/398">data-apis/array-api-extra#398</a>).</li>
 </ul>
 <div class="fragment fade-up">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
-<span id="cb1-2"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> array_api_strict <span class="im">as</span> xp</span>
-<span id="cb1-3"><a></a><span class="op">&gt;&gt;&gt;</span> x <span class="op">=</span> xp.asarray([xp.inf, <span class="op">-</span>xp.inf, xp.nan, <span class="op">-</span><span class="dv">128</span>, <span class="dv">128</span>])</span>
-<span id="cb1-4"><a></a><span class="op">&gt;&gt;&gt;</span> xpx.nan_to_num(x)</span>
-<span id="cb1-5"><a></a>array([ <span class="fl">1.79769313e+308</span>, <span class="op">-</span><span class="fl">1.79769313e+308</span>,  <span class="fl">0.00000000e+000</span>,</span>
-<span id="cb1-6"><a></a>       <span class="op">-</span><span class="fl">1.28000000e+002</span>,  <span class="fl">1.28000000e+002</span>])</span>
-<span id="cb1-7"><a></a><span class="op">&gt;&gt;&gt;</span> y <span class="op">=</span> xp.asarray([<span class="bu">complex</span>(xp.inf, xp.nan), xp.nan, <span class="bu">complex</span>(xp.nan, xp.inf)])</span>
-<span id="cb1-8"><a></a><span class="op">&gt;&gt;&gt;</span> xpx.nan_to_num(y)</span>
-<span id="cb1-9"><a></a>array([ <span class="fl">1.79769313e+308</span> <span class="op">+</span> <span class="ot">0.00000000e+000j</span>, <span class="fl">0.00000000e+000</span> <span class="op">+</span> <span class="ot">0.00000000e+000j</span>,</span>
-<span id="cb1-10"><a></a>        <span class="fl">0.00000000e+000</span> <span class="op">+</span> <span class="ot">1.79769313e+308j</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> array_api_extra <span class="im">as</span> xpx</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> array_api_strict <span class="im">as</span> xp</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="op">&gt;&gt;&gt;</span> x <span class="op">=</span> xp.asarray([xp.inf, <span class="op">-</span>xp.inf, xp.nan, <span class="op">-</span><span class="dv">128</span>, <span class="dv">128</span>])</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="op">&gt;&gt;&gt;</span> xpx.nan_to_num(x)</span>
+<span id="cb1-5"><a aria-label="5"></a>array([ <span class="fl">1.79769313e+308</span>, <span class="op">-</span><span class="fl">1.79769313e+308</span>,  <span class="fl">0.00000000e+000</span>,</span>
+<span id="cb1-6"><a aria-label="6"></a>       <span class="op">-</span><span class="fl">1.28000000e+002</span>,  <span class="fl">1.28000000e+002</span>])</span>
+<span id="cb1-7"><a aria-label="7"></a><span class="op">&gt;&gt;&gt;</span> y <span class="op">=</span> xp.asarray([<span class="bu">complex</span>(xp.inf, xp.nan), xp.nan, <span class="bu">complex</span>(xp.nan, xp.inf)])</span>
+<span id="cb1-8"><a aria-label="8"></a><span class="op">&gt;&gt;&gt;</span> xpx.nan_to_num(y)</span>
+<span id="cb1-9"><a aria-label="9"></a>array([ <span class="fl">1.79769313e+308</span> <span class="op">+</span> <span class="ot">0.00000000e+000j</span>, <span class="fl">0.00000000e+000</span> <span class="op">+</span> <span class="ot">0.00000000e+000j</span>,</span>
+<span id="cb1-10"><a aria-label="10"></a>        <span class="fl">0.00000000e+000</span> <span class="op">+</span> <span class="ot">1.79769313e+308j</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2" data-footer="false">

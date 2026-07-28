@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="dcterms.date" content="2025-06-03">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -206,7 +209,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -302,27 +305,27 @@ Patrick Roddy
 </section>
 <section class="slide level2">
 <h2>Example Rule</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1-4|5-6|7-9|10-21"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="co"># `extends` specifies the extension point you're using. Here, we're</span></span>
-<span id="cb1-2"><a></a><span class="co"># using `substitution` to ensure correct usage of some technical and</span></span>
-<span id="cb1-3"><a></a><span class="co"># brand-specific terminology.</span></span>
-<span id="cb1-4"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
-<span id="cb1-5"><a></a><span class="co"># `message` allows you to customize the output shown to your users.</span></span>
-<span id="cb1-6"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s'.</span></span>
-<span id="cb1-7"><a></a><span class="co"># We're setting this rule's severity to `error`, which will cause</span></span>
-<span id="cb1-8"><a></a><span class="co"># CI builds to fail.</span></span>
-<span id="cb1-9"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb1-10"><a></a><span class="co"># We're using case-insensitive patterns.</span></span>
-<span id="cb1-11"><a></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-12"><a></a><span class="fu">swap</span><span class="kw">:</span></span>
-<span id="cb1-13"><a></a><span class="at">  </span><span class="fu">"(?:LetsEncrypt|Let's Encrypt)"</span><span class="kw">:</span><span class="at"> Let's Encrypt</span></span>
-<span id="cb1-14"><a></a><span class="at">  </span><span class="fu">'node[.]?js'</span><span class="kw">:</span><span class="at"> Node.js</span></span>
-<span id="cb1-15"><a></a><span class="at">  </span><span class="fu">'Post?gr?e(?:SQL)'</span><span class="kw">:</span><span class="at"> PostgreSQL</span></span>
-<span id="cb1-16"><a></a><span class="at">  </span><span class="fu">'java[ -]?scripts?'</span><span class="kw">:</span><span class="at"> JavaScript</span></span>
-<span id="cb1-17"><a></a><span class="at">  </span><span class="fu">linode cli</span><span class="kw">:</span><span class="at"> Linode CLI</span></span>
-<span id="cb1-18"><a></a><span class="at">  </span><span class="fu">linode manager</span><span class="kw">:</span><span class="at"> Linode Manager</span></span>
-<span id="cb1-19"><a></a><span class="at">  </span><span class="fu">linode</span><span class="kw">:</span><span class="at"> Linode</span></span>
-<span id="cb1-20"><a></a><span class="at">  </span><span class="fu">longview</span><span class="kw">:</span><span class="at"> Longview</span></span>
-<span id="cb1-21"><a></a><span class="at">  </span><span class="fu">nodebalancer</span><span class="kw">:</span><span class="at"> NodeBalancer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1-4|5-6|7-9|10-21"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-label="1"></a><span class="co"># `extends` specifies the extension point you're using. Here, we're</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co"># using `substitution` to ensure correct usage of some technical and</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="co"># brand-specific terminology.</span></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="co"># `message` allows you to customize the output shown to your users.</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s'.</span></span>
+<span id="cb1-7"><a aria-label="7"></a><span class="co"># We're setting this rule's severity to `error`, which will cause</span></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="co"># CI builds to fail.</span></span>
+<span id="cb1-9"><a aria-label="9"></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
+<span id="cb1-10"><a aria-label="10"></a><span class="co"># We're using case-insensitive patterns.</span></span>
+<span id="cb1-11"><a aria-label="11"></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-12"><a aria-label="12"></a><span class="fu">swap</span><span class="kw">:</span></span>
+<span id="cb1-13"><a aria-label="13"></a><span class="at">  </span><span class="fu">"(?:LetsEncrypt|Let's Encrypt)"</span><span class="kw">:</span><span class="at"> Let's Encrypt</span></span>
+<span id="cb1-14"><a aria-label="14"></a><span class="at">  </span><span class="fu">'node[.]?js'</span><span class="kw">:</span><span class="at"> Node.js</span></span>
+<span id="cb1-15"><a aria-label="15"></a><span class="at">  </span><span class="fu">'Post?gr?e(?:SQL)'</span><span class="kw">:</span><span class="at"> PostgreSQL</span></span>
+<span id="cb1-16"><a aria-label="16"></a><span class="at">  </span><span class="fu">'java[ -]?scripts?'</span><span class="kw">:</span><span class="at"> JavaScript</span></span>
+<span id="cb1-17"><a aria-label="17"></a><span class="at">  </span><span class="fu">linode cli</span><span class="kw">:</span><span class="at"> Linode CLI</span></span>
+<span id="cb1-18"><a aria-label="18"></a><span class="at">  </span><span class="fu">linode manager</span><span class="kw">:</span><span class="at"> Linode Manager</span></span>
+<span id="cb1-19"><a aria-label="19"></a><span class="at">  </span><span class="fu">linode</span><span class="kw">:</span><span class="at"> Linode</span></span>
+<span id="cb1-20"><a aria-label="20"></a><span class="at">  </span><span class="fu">longview</span><span class="kw">:</span><span class="at"> Longview</span></span>
+<span id="cb1-21"><a aria-label="21"></a><span class="at">  </span><span class="fu">nodebalancer</span><span class="kw">:</span><span class="at"> NodeBalancer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>Contextual Support</h2>
@@ -437,17 +440,17 @@ Patrick Roddy
 </section>
 <section class="slide level2" data-menu-title=".vale.ini (i)">
 <h2><code>.vale.ini</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="1-2|4-7|8-11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="co"># Core settings appear at the top</span></span>
-<span id="cb2-2"><a></a><span class="co"># (the "global" section).</span></span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="kw">[</span><span class="at">formats</span><span class="kw">]</span></span>
-<span id="cb2-5"><a></a><span class="co"># Format associations appear under</span></span>
-<span id="cb2-6"><a></a><span class="co"># the optional "formats" section.</span></span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a><span class="kw">[</span><span class="ot">*]</span></span>
-<span id="cb2-9"><a></a><span class="co"># Format-specific settings appear</span></span>
-<span id="cb2-10"><a></a><span class="co"># under a user-provided "glob"</span></span>
-<span id="cb2-11"><a></a><span class="co"># pattern.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="1-2|4-7|8-11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-label="1"></a><span class="co"># Core settings appear at the top</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="co"># (the "global" section).</span></span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="kw">[</span><span class="at">formats</span><span class="kw">]</span></span>
+<span id="cb2-5"><a aria-label="5"></a><span class="co"># Format associations appear under</span></span>
+<span id="cb2-6"><a aria-label="6"></a><span class="co"># the optional "formats" section.</span></span>
+<span id="cb2-7"><a aria-label="7"></a></span>
+<span id="cb2-8"><a aria-label="8"></a><span class="kw">[</span><span class="ot">*]</span></span>
+<span id="cb2-9"><a aria-label="9"></a><span class="co"># Format-specific settings appear</span></span>
+<span id="cb2-10"><a aria-label="10"></a><span class="co"># under a user-provided "glob"</span></span>
+<span id="cb2-11"><a aria-label="11"></a><span class="co"># pattern.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Core settings:</p>
 <table class="caption-top">
 <thead>
@@ -508,60 +511,60 @@ Patrick Roddy
 <section class="slide level2" data-menu-title="This Repository (i)">
 <h2>This Repository</h2>
 <p>The <code>/.vale.ini</code> file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb3-1"><a></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="co"># https://github.com/errata-ai/packages</span></span>
-<span id="cb3-4"><a></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
-<span id="cb3-5"><a></a><span class="dt">           RedHat,\</span></span>
-<span id="cb3-6"><a></a><span class="dt">           write-good</span></span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a><span class="kw">[formats]</span></span>
-<span id="cb3-9"><a></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
-<span id="cb3-10"><a></a></span>
-<span id="cb3-11"><a></a><span class="kw">[*.{md,qmd}]</span></span>
-<span id="cb3-12"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
-<span id="cb3-13"><a></a><span class="dt">                RedHat,\</span></span>
-<span id="cb3-14"><a></a><span class="dt">                Vale,\</span></span>
-<span id="cb3-15"><a></a><span class="dt">                write-good</span></span>
-<span id="cb3-16"><a></a></span>
-<span id="cb3-17"><a></a><span class="co"># Disable</span></span>
-<span id="cb3-18"><a></a><span class="dt">RedHat.CaseSensitiveTerms </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-19"><a></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-20"><a></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-21"><a></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-22"><a></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-23"><a></a><span class="dt">RedHat.NoGerundsInTitles </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-24"><a></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-25"><a></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-26"><a></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-27"><a></a><span class="dt">RedHat.SimpleWords </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-28"><a></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-29"><a></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-30"><a></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-31"><a></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-32"><a></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-33"><a></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-34"><a></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-35"><a></a><span class="dt">write-good.Weasel </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
-<span id="cb3-36"><a></a></span>
-<span id="cb3-37"><a></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
-<span id="cb3-38"><a></a><span class="kw">[.github/styles/**]</span></span>
-<span id="cb3-39"><a></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb3-1"><a aria-label="1"></a><span class="dt">StylesPath </span><span class="ot">=</span><span class="st"> .github/styles</span></span>
+<span id="cb3-2"><a aria-label="2"></a></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="co"># https://github.com/errata-ai/packages</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="dt">Packages </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb3-5"><a aria-label="5"></a><span class="dt">           RedHat,\</span></span>
+<span id="cb3-6"><a aria-label="6"></a><span class="dt">           write-good</span></span>
+<span id="cb3-7"><a aria-label="7"></a></span>
+<span id="cb3-8"><a aria-label="8"></a><span class="kw">[formats]</span></span>
+<span id="cb3-9"><a aria-label="9"></a><span class="dt">qmd </span><span class="ot">=</span><span class="st"> md</span></span>
+<span id="cb3-10"><a aria-label="10"></a></span>
+<span id="cb3-11"><a aria-label="11"></a><span class="kw">[*.{md,qmd}]</span></span>
+<span id="cb3-12"><a aria-label="12"></a><span class="dt">BasedOnStyles </span><span class="ot">=</span><span class="st"> proselint,\</span></span>
+<span id="cb3-13"><a aria-label="13"></a><span class="dt">                RedHat,\</span></span>
+<span id="cb3-14"><a aria-label="14"></a><span class="dt">                Vale,\</span></span>
+<span id="cb3-15"><a aria-label="15"></a><span class="dt">                write-good</span></span>
+<span id="cb3-16"><a aria-label="16"></a></span>
+<span id="cb3-17"><a aria-label="17"></a><span class="co"># Disable</span></span>
+<span id="cb3-18"><a aria-label="18"></a><span class="dt">RedHat.CaseSensitiveTerms </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-19"><a aria-label="19"></a><span class="dt">RedHat.Definitions </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-20"><a aria-label="20"></a><span class="dt">RedHat.Ellipses </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-21"><a aria-label="21"></a><span class="dt">RedHat.GitLinks </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-22"><a aria-label="22"></a><span class="dt">RedHat.Headings </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-23"><a aria-label="23"></a><span class="dt">RedHat.NoGerundsInTitles </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-24"><a aria-label="24"></a><span class="dt">RedHat.PascalCamelCase </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-25"><a aria-label="25"></a><span class="dt">RedHat.PassiveVoice </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-26"><a aria-label="26"></a><span class="dt">RedHat.ReadabilityGrade </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-27"><a aria-label="27"></a><span class="dt">RedHat.SimpleWords </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-28"><a aria-label="28"></a><span class="dt">RedHat.Slash </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-29"><a aria-label="29"></a><span class="dt">RedHat.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-30"><a aria-label="30"></a><span class="dt">RedHat.TermsErrors </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-31"><a aria-label="31"></a><span class="dt">Vale.Spelling </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-32"><a aria-label="32"></a><span class="dt">write-good.E-Prime </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-33"><a aria-label="33"></a><span class="dt">write-good.Passive </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-34"><a aria-label="34"></a><span class="dt">write-good.TooWordy </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-35"><a aria-label="35"></a><span class="dt">write-good.Weasel </span><span class="ot">=</span><span class="st"> </span><span class="kw">NO</span></span>
+<span id="cb3-36"><a aria-label="36"></a></span>
+<span id="cb3-37"><a aria-label="37"></a><span class="co"># `vale sync` in CI means the packages are then linted, so turn them off</span></span>
+<span id="cb3-38"><a aria-label="38"></a><span class="kw">[.github/styles/**]</span></span>
+<span id="cb3-39"><a aria-label="39"></a><span class="dt">BasedOnStyles </span><span class="ot">=</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2" data-menu-title="This Repository (ii)">
 <h2>This Repository</h2>
 <p>The <code>/.gitignore</code> file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># We want to ignore our StylesPath *except* for our local</span></span>
-<span id="cb4-2"><a></a><span class="co"># `vocabularies/Base` directory.</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="ex">.github/styles/*</span></span>
-<span id="cb4-5"><a></a><span class="ex">!.github/styles/config/</span></span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="ex">.github/styles/config/*</span></span>
-<span id="cb4-8"><a></a><span class="ex">!.github/styles/config/vocabularies/</span></span>
-<span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a><span class="ex">.github/styles/config/vocabularies/*</span></span>
-<span id="cb4-11"><a></a><span class="ex">!.github/styles/config/vocabularies/Base</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-label="1"></a><span class="co"># We want to ignore our StylesPath *except* for our local</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="co"># `vocabularies/Base` directory.</span></span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="ex">.github/styles/*</span></span>
+<span id="cb4-5"><a aria-label="5"></a><span class="ex">!.github/styles/config/</span></span>
+<span id="cb4-6"><a aria-label="6"></a></span>
+<span id="cb4-7"><a aria-label="7"></a><span class="ex">.github/styles/config/*</span></span>
+<span id="cb4-8"><a aria-label="8"></a><span class="ex">!.github/styles/config/vocabularies/</span></span>
+<span id="cb4-9"><a aria-label="9"></a></span>
+<span id="cb4-10"><a aria-label="10"></a><span class="ex">.github/styles/config/vocabularies/*</span></span>
+<span id="cb4-11"><a aria-label="11"></a><span class="ex">!.github/styles/config/vocabularies/Base</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Styles specified in <code>Packages</code> can be retrieved by running <code>vale sync</code>, hence the <code>.gitignore</code> file.</p>
 </section>
 <section class="slide level2" data-menu-title="Built-In Packages (i)">
@@ -587,65 +590,65 @@ Patrick Roddy
 <h2>Custom Rules</h2>
 <p>More rules can be found at: <a href="https://hyperlint.com/vale/rules" class="uri">https://hyperlint.com/vale/rules</a>.</p>
 <p><code>/.github/styles/custom/no-contractions.yml</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
-<span id="cb5-2"><a></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s.'</span></span>
-<span id="cb5-3"><a></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
-<span id="cb5-4"><a></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-5"><a></a><span class="fu">swap</span><span class="kw">:</span></span>
-<span id="cb5-6"><a></a><span class="at">  </span><span class="fu">aren't</span><span class="kw">:</span><span class="at"> are not</span></span>
-<span id="cb5-7"><a></a><span class="at">  </span><span class="fu">can't</span><span class="kw">:</span><span class="at"> cannot</span></span>
-<span id="cb5-8"><a></a><span class="at">  </span><span class="fu">couldn't</span><span class="kw">:</span><span class="at"> could not</span></span>
-<span id="cb5-9"><a></a><span class="at">  </span><span class="fu">didn't</span><span class="kw">:</span><span class="at"> did not</span></span>
-<span id="cb5-10"><a></a><span class="at">  </span><span class="fu">doesn't</span><span class="kw">:</span><span class="at"> does not</span></span>
-<span id="cb5-11"><a></a><span class="at">  </span><span class="fu">don't</span><span class="kw">:</span><span class="at"> do not</span></span>
-<span id="cb5-12"><a></a><span class="at">  </span><span class="fu">hasn't</span><span class="kw">:</span><span class="at"> has not</span></span>
-<span id="cb5-13"><a></a><span class="at">  </span><span class="fu">haven't</span><span class="kw">:</span><span class="at"> have not</span></span>
-<span id="cb5-14"><a></a><span class="at">  </span><span class="fu">how'll</span><span class="kw">:</span><span class="at"> how will</span></span>
-<span id="cb5-15"><a></a><span class="at">  </span><span class="fu">how's</span><span class="kw">:</span><span class="at"> how is</span></span>
-<span id="cb5-16"><a></a><span class="at">  </span><span class="fu">isn't</span><span class="kw">:</span><span class="at"> is not</span></span>
-<span id="cb5-17"><a></a><span class="at">  </span><span class="fu">it'll</span><span class="kw">:</span><span class="at"> it will</span></span>
-<span id="cb5-18"><a></a><span class="at">  </span><span class="fu">it's</span><span class="kw">:</span><span class="at"> it is</span></span>
-<span id="cb5-19"><a></a><span class="at">  </span><span class="fu">shouldn't</span><span class="kw">:</span><span class="at"> should not</span></span>
-<span id="cb5-20"><a></a><span class="at">  </span><span class="fu">that'll</span><span class="kw">:</span><span class="at"> that will</span></span>
-<span id="cb5-21"><a></a><span class="at">  </span><span class="fu">that's</span><span class="kw">:</span><span class="at"> that is</span></span>
-<span id="cb5-22"><a></a><span class="at">  </span><span class="fu">they'll</span><span class="kw">:</span><span class="at"> they will</span></span>
-<span id="cb5-23"><a></a><span class="at">  </span><span class="fu">they're</span><span class="kw">:</span><span class="at"> they are</span></span>
-<span id="cb5-24"><a></a><span class="at">  </span><span class="fu">wasn't</span><span class="kw">:</span><span class="at"> was not</span></span>
-<span id="cb5-25"><a></a><span class="at">  </span><span class="fu">we'll</span><span class="kw">:</span><span class="at"> we will</span></span>
-<span id="cb5-26"><a></a><span class="at">  </span><span class="fu">we're</span><span class="kw">:</span><span class="at"> we are</span></span>
-<span id="cb5-27"><a></a><span class="at">  </span><span class="fu">we've</span><span class="kw">:</span><span class="at"> we have</span></span>
-<span id="cb5-28"><a></a><span class="at">  </span><span class="fu">weren't</span><span class="kw">:</span><span class="at"> were not</span></span>
-<span id="cb5-29"><a></a><span class="at">  </span><span class="fu">what'll</span><span class="kw">:</span><span class="at"> what will</span></span>
-<span id="cb5-30"><a></a><span class="at">  </span><span class="fu">what's</span><span class="kw">:</span><span class="at"> what is</span></span>
-<span id="cb5-31"><a></a><span class="at">  </span><span class="fu">when'll</span><span class="kw">:</span><span class="at"> when will</span></span>
-<span id="cb5-32"><a></a><span class="at">  </span><span class="fu">when's</span><span class="kw">:</span><span class="at"> when is</span></span>
-<span id="cb5-33"><a></a><span class="at">  </span><span class="fu">where'll</span><span class="kw">:</span><span class="at"> where will</span></span>
-<span id="cb5-34"><a></a><span class="at">  </span><span class="fu">where's</span><span class="kw">:</span><span class="at"> where is</span></span>
-<span id="cb5-35"><a></a><span class="at">  </span><span class="fu">who'll</span><span class="kw">:</span><span class="at"> who will</span></span>
-<span id="cb5-36"><a></a><span class="at">  </span><span class="fu">who's</span><span class="kw">:</span><span class="at"> who is</span></span>
-<span id="cb5-37"><a></a><span class="at">  </span><span class="fu">why'll</span><span class="kw">:</span><span class="at"> why will</span></span>
-<span id="cb5-38"><a></a><span class="at">  </span><span class="fu">why's</span><span class="kw">:</span><span class="at"> why is</span></span>
-<span id="cb5-39"><a></a><span class="at">  </span><span class="fu">won't</span><span class="kw">:</span><span class="at"> will not</span></span>
-<span id="cb5-40"><a></a><span class="at">  </span><span class="fu">you're</span><span class="kw">:</span><span class="at"> you are</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a aria-label="1"></a><span class="fu">extends</span><span class="kw">:</span><span class="at"> substitution</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="fu">message</span><span class="kw">:</span><span class="at"> Use '%s' instead of '%s.'</span></span>
+<span id="cb5-3"><a aria-label="3"></a><span class="fu">level</span><span class="kw">:</span><span class="at"> error</span></span>
+<span id="cb5-4"><a aria-label="4"></a><span class="fu">ignorecase</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-5"><a aria-label="5"></a><span class="fu">swap</span><span class="kw">:</span></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="at">  </span><span class="fu">aren't</span><span class="kw">:</span><span class="at"> are not</span></span>
+<span id="cb5-7"><a aria-label="7"></a><span class="at">  </span><span class="fu">can't</span><span class="kw">:</span><span class="at"> cannot</span></span>
+<span id="cb5-8"><a aria-label="8"></a><span class="at">  </span><span class="fu">couldn't</span><span class="kw">:</span><span class="at"> could not</span></span>
+<span id="cb5-9"><a aria-label="9"></a><span class="at">  </span><span class="fu">didn't</span><span class="kw">:</span><span class="at"> did not</span></span>
+<span id="cb5-10"><a aria-label="10"></a><span class="at">  </span><span class="fu">doesn't</span><span class="kw">:</span><span class="at"> does not</span></span>
+<span id="cb5-11"><a aria-label="11"></a><span class="at">  </span><span class="fu">don't</span><span class="kw">:</span><span class="at"> do not</span></span>
+<span id="cb5-12"><a aria-label="12"></a><span class="at">  </span><span class="fu">hasn't</span><span class="kw">:</span><span class="at"> has not</span></span>
+<span id="cb5-13"><a aria-label="13"></a><span class="at">  </span><span class="fu">haven't</span><span class="kw">:</span><span class="at"> have not</span></span>
+<span id="cb5-14"><a aria-label="14"></a><span class="at">  </span><span class="fu">how'll</span><span class="kw">:</span><span class="at"> how will</span></span>
+<span id="cb5-15"><a aria-label="15"></a><span class="at">  </span><span class="fu">how's</span><span class="kw">:</span><span class="at"> how is</span></span>
+<span id="cb5-16"><a aria-label="16"></a><span class="at">  </span><span class="fu">isn't</span><span class="kw">:</span><span class="at"> is not</span></span>
+<span id="cb5-17"><a aria-label="17"></a><span class="at">  </span><span class="fu">it'll</span><span class="kw">:</span><span class="at"> it will</span></span>
+<span id="cb5-18"><a aria-label="18"></a><span class="at">  </span><span class="fu">it's</span><span class="kw">:</span><span class="at"> it is</span></span>
+<span id="cb5-19"><a aria-label="19"></a><span class="at">  </span><span class="fu">shouldn't</span><span class="kw">:</span><span class="at"> should not</span></span>
+<span id="cb5-20"><a aria-label="20"></a><span class="at">  </span><span class="fu">that'll</span><span class="kw">:</span><span class="at"> that will</span></span>
+<span id="cb5-21"><a aria-label="21"></a><span class="at">  </span><span class="fu">that's</span><span class="kw">:</span><span class="at"> that is</span></span>
+<span id="cb5-22"><a aria-label="22"></a><span class="at">  </span><span class="fu">they'll</span><span class="kw">:</span><span class="at"> they will</span></span>
+<span id="cb5-23"><a aria-label="23"></a><span class="at">  </span><span class="fu">they're</span><span class="kw">:</span><span class="at"> they are</span></span>
+<span id="cb5-24"><a aria-label="24"></a><span class="at">  </span><span class="fu">wasn't</span><span class="kw">:</span><span class="at"> was not</span></span>
+<span id="cb5-25"><a aria-label="25"></a><span class="at">  </span><span class="fu">we'll</span><span class="kw">:</span><span class="at"> we will</span></span>
+<span id="cb5-26"><a aria-label="26"></a><span class="at">  </span><span class="fu">we're</span><span class="kw">:</span><span class="at"> we are</span></span>
+<span id="cb5-27"><a aria-label="27"></a><span class="at">  </span><span class="fu">we've</span><span class="kw">:</span><span class="at"> we have</span></span>
+<span id="cb5-28"><a aria-label="28"></a><span class="at">  </span><span class="fu">weren't</span><span class="kw">:</span><span class="at"> were not</span></span>
+<span id="cb5-29"><a aria-label="29"></a><span class="at">  </span><span class="fu">what'll</span><span class="kw">:</span><span class="at"> what will</span></span>
+<span id="cb5-30"><a aria-label="30"></a><span class="at">  </span><span class="fu">what's</span><span class="kw">:</span><span class="at"> what is</span></span>
+<span id="cb5-31"><a aria-label="31"></a><span class="at">  </span><span class="fu">when'll</span><span class="kw">:</span><span class="at"> when will</span></span>
+<span id="cb5-32"><a aria-label="32"></a><span class="at">  </span><span class="fu">when's</span><span class="kw">:</span><span class="at"> when is</span></span>
+<span id="cb5-33"><a aria-label="33"></a><span class="at">  </span><span class="fu">where'll</span><span class="kw">:</span><span class="at"> where will</span></span>
+<span id="cb5-34"><a aria-label="34"></a><span class="at">  </span><span class="fu">where's</span><span class="kw">:</span><span class="at"> where is</span></span>
+<span id="cb5-35"><a aria-label="35"></a><span class="at">  </span><span class="fu">who'll</span><span class="kw">:</span><span class="at"> who will</span></span>
+<span id="cb5-36"><a aria-label="36"></a><span class="at">  </span><span class="fu">who's</span><span class="kw">:</span><span class="at"> who is</span></span>
+<span id="cb5-37"><a aria-label="37"></a><span class="at">  </span><span class="fu">why'll</span><span class="kw">:</span><span class="at"> why will</span></span>
+<span id="cb5-38"><a aria-label="38"></a><span class="at">  </span><span class="fu">why's</span><span class="kw">:</span><span class="at"> why is</span></span>
+<span id="cb5-39"><a aria-label="39"></a><span class="at">  </span><span class="fu">won't</span><span class="kw">:</span><span class="at"> will not</span></span>
+<span id="cb5-40"><a aria-label="40"></a><span class="at">  </span><span class="fu">you're</span><span class="kw">:</span><span class="at"> you are</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 <h2>GitHub Action</h2>
 <p>One might be happy to accept warnings and therefore it does not make sense to run as a pre-commit hook.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
-<span id="cb6-3"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
-<span id="cb6-4"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
-<span id="cb6-6"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
-<span id="cb6-7"><a></a></span>
-<span id="cb6-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Vale</span></span>
-<span id="cb6-9"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c</span><span class="co"> # v2</span></span>
-<span id="cb6-10"><a></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
-<span id="cb6-11"><a></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb6-12"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb6-13"><a></a><span class="at">          </span><span class="fu">fail_on_error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb6-14"><a></a><span class="at">          </span><span class="fu">filter_mode</span><span class="kw">:</span><span class="at"> nofilter</span></span>
-<span id="cb6-15"><a></a><span class="at">          </span><span class="fu">reporter</span><span class="kw">:</span><span class="at"> github-pr-review</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="1-4|5-6|8-9|8-11|8-12|8-15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a aria-label="1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">lint-prose</span><span class="kw">:</span></span>
+<span id="cb6-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-slim</span></span>
+<span id="cb6-4"><a aria-label="4"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-5"><a aria-label="5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout source</span></span>
+<span id="cb6-6"><a aria-label="6"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="co"> # v4</span></span>
+<span id="cb6-7"><a aria-label="7"></a></span>
+<span id="cb6-8"><a aria-label="8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run Vale</span></span>
+<span id="cb6-9"><a aria-label="9"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c</span><span class="co"> # v2</span></span>
+<span id="cb6-10"><a aria-label="10"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb6-11"><a aria-label="11"></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb6-12"><a aria-label="12"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb6-13"><a aria-label="13"></a><span class="at">          </span><span class="fu">fail_on_error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-14"><a aria-label="14"></a><span class="at">          </span><span class="fu">filter_mode</span><span class="kw">:</span><span class="at"> nofilter</span></span>
+<span id="cb6-15"><a aria-label="15"></a><span class="at">          </span><span class="fu">reporter</span><span class="kw">:</span><span class="at"> github-pr-review</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">

@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Patrick Roddy">
   <meta name="author" content="Chris Gutschow">
@@ -35,10 +35,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -157,7 +160,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Patrick Roddy 
+Patrick Roddy
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -165,7 +168,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/20DM">Chris Gutschow</a> 
+<a href="https://github.com/20DM">Chris Gutschow</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -173,7 +176,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/connoraird">Connor Aird</a> 
+<a href="https://github.com/connoraird">Connor Aird</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -181,7 +184,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/dpshelio">David Pérez Suárez</a> 
+<a href="https://github.com/dpshelio">David Pérez Suárez</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -189,7 +192,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/dleggat">Duncan Leggat</a> 
+<a href="https://github.com/dleggat">Duncan Leggat</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -197,7 +200,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/hjrucl90">Hollie Rowland</a> 
+<a href="https://github.com/hjrucl90">Hollie Rowland</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -205,7 +208,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/jeremyestein">Jeremy Stein</a> 
+<a href="https://github.com/jeremyestein">Jeremy Stein</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -213,7 +216,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://profiles.ucl.ac.uk/59377">Jonathan Cooper</a> 
+<a href="https://profiles.ucl.ac.uk/59377">Jonathan Cooper</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -221,7 +224,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/quirksahern">Samantha Ahern</a> 
+<a href="https://github.com/quirksahern">Samantha Ahern</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.ucl.ac.uk/advanced-research-computing">UCL ARC</a>
@@ -229,7 +232,7 @@ Patrick Roddy
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://github.com/sfmig">Sofía Miñano</a> 
+<a href="https://github.com/sfmig">Sofía Miñano</a>
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://www.sainsburywellcome.org/">Sainsbury Wellcome Centre</a>
@@ -257,7 +260,7 @@ Patrick Roddy
 <section class="slide level2">
 <h2>Location</h2>
 <p>ICC Belfast</p>
-<div id="10dea6df" class="cell" data-execution_count="1">
+<div id="10dea6df" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"aedc2a0e9db248879910a64905fad411","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
