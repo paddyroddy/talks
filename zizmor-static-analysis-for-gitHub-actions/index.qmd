@@ -52,9 +52,9 @@ jobs:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-A GitHub Actions workflow is an executable, security-sensitive program, not just
-configuration. A compromised step may have access to secrets, repository
-contents and a write-capable `GITHUB_TOKEN`.
+A GitHub Actions workflow is an executable program, security-sensitive program,
+not just configuration. A compromised step can have access to secrets,
+repository contents and a write-capable `GITHUB_TOKEN`.
 
 :::
 
@@ -87,7 +87,7 @@ flowchart LR
 
 [zizmor](https://github.com/zizmorcore/zizmor) {{< fa brands github >}}
 statically analyses the workflow definition to find dangerous relationships
-between these things — without needing to execute the workflow.
+between these things, without needing to run the workflow.
 
 :::
 
@@ -120,7 +120,7 @@ tag. At the time of writing, `v7` identifies the latest `v7` release.
 
 ::: {.fragment .fade-in-then-semi-out}
 
-An alternative approach would be to reference the specific patch release. These
+A more specific approach is to reference the individual patch release. These
 references resolve to the same release **today**.
 
 ```{.yaml code-line-numbers="false"}
@@ -131,11 +131,13 @@ references resolve to the same release **today**.
 
 ::: {.fragment .fade-in-then-semi-out}
 
-But `v7` may later be moved to a new patch release.
+Later, the same unchanged reference might resolve to a new patch release.
 
 ```{.yaml code-line-numbers="false"}
-- uses: actions/checkout@v7.0.2
+- uses: actions/checkout@v7
 ```
+
+`v7` → `v7.0.2`
 
 :::
 
@@ -145,7 +147,7 @@ But `v7` may later be moved to a new patch release.
 
 - `v7` and `v7.0.1` currently resolve to the same commit.
 - `v7` is a moving compatibility tag.
-- A release-specific tag may be protected by an immutable release.
+- A release-specific tag could be protected by an immutable release.
 - A full SHA identifies the exact Git object without relying on the publisher's
   tag policy.
 
@@ -161,8 +163,8 @@ The exact Git commit being executed is now explicit.
 
 ::: {.callout-important}
 
-Verify that the SHA belongs to the action's original repository, rather than to
-a fork.
+A full SHA is not automatically trustworthy. Verify that it exists in the
+action's original repository and was not copied from a fork.
 
 :::
 
@@ -183,20 +185,20 @@ tag, commit SHA and assets.
 ::: {.fragment .fade-in-then-semi-out}
 
 Immutable releases protect what the **publisher** releases; SHA pinning records
-exactly what the **consumer** has reviewed and chosen to execute.
+exactly what the **consumer** has reviewed and chosen to run.
 
 :::
 
 ## Immutable Releases {data-menu-title="Immutable Releases (ii)"}
 
-1. Organisation (`Settings` -> `Repository` -> `General` -> `Releases`)
+1. Organisation (`Settings` → `Repository` → `General` → `Releases`)
 
    ![](figures/immutable-releases-org.png){fig-alt="Enabling immutable releases
    for a GitHub organisation."}
 
 ## Immutable Releases {data-menu-title="Immutable Releases (iii)"}
 
-2. Repository (`Settings` -> `General` -> `Releases`)
+2. Repository (`Settings` → `General` → `Releases`)
 
    ![](figures/immutable-releases-repo.png){fig-alt="Enabling immutable releases
    for a GitHub repository."}
@@ -205,8 +207,8 @@ exactly what the **consumer** has reviewed and chosen to execute.
 
 Since adopting immutable releases,
 [astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
-{{< fa brands github >}} has stopped publishing moving major-version tags. For
-example, it publishes `v9.0.0`, but not a moving `v9` tag.
+{{< fa brands github >}} has stopped publishing moving major-version tags. It
+publishes `v9.0.0`, for example, but no moving `v9` tag.
 
 :::
 
@@ -215,15 +217,16 @@ example, it publishes `v9.0.0`, but not a moving `v9` tag.
 [pinact](https://github.com/suzuki-shunsuke/pinact) {{< fa brands github >}} is
 a CLI tool that converts tagged action references to full SHAs while retaining a
 human-readable version comment. It can also check whether references are pinned,
-update them and verify that version annotations match their SHAs. This can
-alternatively be done though tools like
-[Renovate](https://github.com/renovatebot/renovate).
+update them and verify that version annotations match their SHAs.
+Dependency-update tools such as
+[Renovate](https://github.com/renovatebot/renovate) can then maintain these
+pinned references.
 
 ::: {.fragment}
 
 ```{.sh code-line-numbers="false"}
-pinact run
-pinact run -update
+pinact run          # Pin existing references
+pinact run -update  # Update actions to newer releases
 ```
 
 :::
