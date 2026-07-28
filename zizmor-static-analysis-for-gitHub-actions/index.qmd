@@ -628,9 +628,8 @@ help[concurrency-limits]: insufficient job-level concurrency limits
   [centralised `prek` hooks](https://github.com/UCL-MIRSG/.github/blob/ee53b1a497918d8f7c5cc4051c71b3e27ce15b7f/prek/mirsg-hooks.yaml#L152-L157).
 - Astral have a good
   [blog on open source security](https://astral.sh/blog/open-source-security-at-astral)
-  written by the `zizmor` author
-  [William Woodruff](https://github.com/woodruffw).
-- Can be installed from Homebrew, PyPI, crates.io, Docker, …
+  written by `zizmor`'s author [William Woodruff](https://github.com/woodruffw).
+- `zizmor` can be installed from Homebrew, PyPI, crates.io, Docker, …
 - <https://docs.zizmor.sh/audits> is a great resource to understand what each
   rule looks for, what the problem is, and how to fix it.
 
