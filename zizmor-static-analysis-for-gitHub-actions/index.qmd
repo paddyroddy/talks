@@ -542,7 +542,7 @@ error[template-injection]: code injection via template expansion
 No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or --fix=all to apply unsafe fixes.
 ```
 
-## Manual Fixes
+## Fixing the Active Findings
 
 `git diff .github/workflows/demo.yaml`
 
@@ -572,6 +572,9 @@ No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or
 ## Pedantic Mode
 
 `zizmor --pedantic .github/workflows/demo.yaml`
+
+The default persona prioritises actionable security findings; pedantic mode also
+reports broader hardening and maintainability issues.
 
 ```{.sh code-line-numbers="false"}
  INFO zizmor: 🌈 zizmor v1.28.0
