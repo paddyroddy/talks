@@ -11,9 +11,6 @@ title: "Zizmor: Static Analysis for GitHub Actions"
 
 ## GitHub Actions {footer=false}
 
-A GitHub Actions workflow is a program with dependencies, inputs, privileges and
-persistent state.
-
 ```{.yaml code-line-numbers="|3-4|6|12|15|"}
 name: Check pull request
 
