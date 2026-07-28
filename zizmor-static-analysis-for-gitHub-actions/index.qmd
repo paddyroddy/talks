@@ -569,7 +569,7 @@ No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or
 +          GITHUB_EVENT_PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
 ```
 
-## Pedantic Mode
+## Pedantic Mode {footer=false}
 
 `zizmor --pedantic .github/workflows/demo.yaml`
 
