@@ -318,7 +318,8 @@ The following rules can help with this:
 ::: {.fragment .fade-in-then-semi-out}
 
 The expression is expanded while GitHub is constructing the temporary shell
-script. It is not equivalent to safely passing an ordinary string argument.
+prompt script. It is not equivalent to safely passing an ordinary string
+argument.
 
 ```{.yaml}
 run: echo "${{ github.event.pull_request.title }}"
@@ -342,7 +343,7 @@ context values used by inline scripts.
 
 ## Rule: `template-injection`
 
-Keep data as data. Do not accidentally turn it into shell syntax.
+Keep data as data. Do not accidentally turn it into shell prompt syntax.
 
 Relevant rules:
 
@@ -411,8 +412,8 @@ unwanted credentials after checkout.
 
 ## Rule: `artipacked` {footer=false}
 
-A release workflow should build from reviewed source and locked dependencies—not
-from mutable cache state supplied by an earlier, less-trusted workflow.
+A release workflow should build from reviewed source and locked dependencies,
+not from mutable cache state supplied by an earlier, less-trusted workflow.
 
 Related rules:
 
