@@ -52,7 +52,7 @@ jobs:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-A GitHub Actions workflow is an security-sensitive, executable program, not just
+A GitHub Actions workflow is a security-sensitive executable program, not just
 configuration. A compromised step can have access to secrets, repository
 contents and a write-capable `GITHUB_TOKEN`.
 
@@ -184,8 +184,8 @@ tag, commit SHA and assets.
 
 ::: {.fragment .fade-in-then-semi-out}
 
-Immutable releases protect what the **publisher** releases; SHA pinning records
-exactly what the **consumer** has reviewed and chosen to run.
+Immutable releases protect what the publisher releases; SHA pinning records
+exactly what the consumer has reviewed and chosen to run.
 
 :::
 
@@ -342,14 +342,14 @@ context values used by inline scripts.
 
 ## Rule: `template-injection`
 
-Keep data as data. Do not accidentally turn it into shell prompt syntax.
+Keep data as data. Do not let untrusted data become executable code.
 
 Relevant rules:
 
 - [github-env](https://docs.zizmor.sh/audits/#github-env)
 - [insecure-commands](https://docs.zizmor.sh/audits/#insecure-commands)
 - [obfuscation](https://docs.zizmor.sh/audits/#obfuscation)
-- [secrets-outside-env](https://docs.zizmor.sh/audits/#obfuscation)
+- [secrets-outside-env](https://docs.zizmor.sh/audits/#secrets-outside-env)
 - [template-injection](https://docs.zizmor.sh/audits/#template-injection)
 - [unredacted-secrets](https://docs.zizmor.sh/audits/#unredacted-secrets)
 
@@ -398,8 +398,8 @@ Rather than simply doing this.
 
 ::: {.fragment}
 
-Unless later Git operations genuinely require credentials, better to disable the
-unwanted credentials after checkout.
+Unless later Git operations require authentication, prevent checkout from
+persisting its credentials.
 
 ```{.yaml code-line-numbers="false"}
 - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -505,7 +505,7 @@ error[unpinned-uses]: unpinned action reference
 
 ## Attempt to Autofix
 
-`zizmor --fix .github/workflows/demo.yaml`
+`zizmor --fix=safe .github/workflows/demo.yaml`
 
 ```{.sh code-line-numbers="false"}
  INFO zizmor: 🌈 zizmor v1.28.0
@@ -617,7 +617,7 @@ help[concurrency-limits]: insufficient job-level concurrency limits
 - Do not trust mutable build state.
 - Automate the review with `zizmor`.
 
-## Summary
+## Resources and Thanks
 
 - Thanks to [David](https://github.com/dpshelio) for telling me about `zizmor`.
 - Thanks to [MIRSG](https://github.com/UCL-MIRSG) for letting me try it across
@@ -630,6 +630,11 @@ help[concurrency-limits]: insufficient job-level concurrency limits
 - Can be installed from Homebrew, PyPI, crates.io, Docker, …
 - <https://docs.zizmor.sh/audits> is a great resource to understand what each
   rule looks for, what the problem is, and how to fix it.
-- See you soon from Leeds 😢.
+
+::: footer
+
+See you soon from Leeds 😢
+
+:::
 
 {{< include /_includes/qr-code.qmd >}}
