@@ -7,14 +7,104 @@ subtitle: "[ARC Forum](https://www.ucl.ac.uk/arc)"
 title: "Zizmor: Static Analysis for GitHub Actions"
 ---
 
-# GitHub Actions
+# Introduction
 
-## Overview
+## GitHub Actions {footer=false}
 
-GitHub Actions is a CI/CD platform that allows one to automate your build, test, and deployment pipeline. Workflows can build and test every pull request to a repository, or deploy merged pull requests to production.
+A GitHub Actions workflow is a program with dependencies, inputs, privileges and
+persistent state.
 
-A
+```{.yaml code-line-numbers="|3-4|6|12|15|"}
+name: Check pull request
 
+on:
+  pull_request_target:
 
+permissions: write-all
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Print pull request title
+        run: echo "${{ github.event.pull_request.title }}"
+```
+
+::: {layout-ncol="2"}
+
+::: {.cell}
+
+- Dangerous triggers.
+- Excessive permissions.
+- Mutable dependency.
+
+:::
+
+::: {.cell}
+
+- Persistent credentials.
+- Template injection.
+
+:::
+
+:::
+
+## The Problem
+
+::: {.fragment .fade-in-then-semi-out}
+
+YAML is executable security-sensitive code, not just configuration. A
+compromised action may have access to repository secrets and a write-capable
+`GITHUB_TOKEN`. A single compromised step can have much larger repercussions.
+
+:::
+
+::: {.fragment}
+
+Teams will review many lines of Python code carefully, then approve a YAML file
+without much thought.
+
+:::
+
+## A Possible Security Model
+
+```{mermaid}
+%%| fig-align: center
+%%| fig-alt: Flowchart showing a potential security model to adopt.
+flowchart LR
+  A(Untrusted inputs) --> B("Workflow<br/>expressions and<br/>shell commands")
+  B --> C("Third-party<br/>code and<br/>build tools")
+  C --> D("Tokens, secrets,<br/>caches and release<br/>artefacts")
+```
+
+1. What code are we running?
+2. Who controls its inputs?
+3. What authority does it have?
+4. What state can it read, modify or publish?
+
+## Zizmor {footer=false}
+
+::: {.fragment .fade-in-then-semi-out}
+
+[zizmor](github.com/zizmorcore/zizmor) {{< fa brands github >}} statically
+analyses the workflow definition to find dangerous relationships between these
+things — without needing to execute the workflow.
+
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+
+It analyses GitHub Actions workflows and action definitions, as well as
+Dependabot/Renovate and `pre-commit`/`prek` configuration, and reports problems
+such as template injection, credential persistence, excessive permissions and
+confusing Git references.
+
+:::
+
+- YAML parser: validates YAML syntax.
+- Schema validator: validates GitHub Actions syntax.
+- `zizmor`: checks for possible workflow exploitation.
 
 {{< include /_includes/qr-code.qmd >}}
