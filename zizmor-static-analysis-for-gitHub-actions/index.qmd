@@ -280,7 +280,8 @@ permissions: write-all  # Introduces a broadly privileged GITHUB_TOKEN
 
 ::: {.fragment}
 
-Deny permissions by default at workflow level, then grant each job only what it needs.
+Deny permissions by default at workflow level, then grant each job only what it
+needs.
 
 ```{.yaml}
 permissions: {}  # Disables default permissions
@@ -309,5 +310,47 @@ The following rules can help with this:
 - [overprovisioned-secrets](https://docs.zizmor.sh/audits/#overprovisioned-secrets)
 - [secrets-inherit](https://docs.zizmor.sh/audits/#secrets-inherit)
 - [undocumented-permissions](https://docs.zizmor.sh/audits/#undocumented-permissions)
+
+# Untrusted Inputs
+
+## Template Injection
+
+::: {.fragment .fade-in-then-semi-out}
+
+The expression is expanded while GitHub is constructing the temporary shell
+script. It is not equivalent to safely passing an ordinary string argument.
+
+```{.yaml}
+run: echo "${{ github.event.pull_request.title }}"
+```
+
+:::
+
+::: {.fragment}
+
+GitHub recommends using an intermediate environment variable for untrusted
+context values used by inline scripts.
+
+```{.yaml}
+- name: Print pull request title
+  env:
+    PR_TITLE: ${{ github.event.pull_request.title }}
+  run: printf '%s\n' "$PR_TITLE"
+```
+
+:::
+
+## Rule: `template-injection`
+
+Keep data as data. Do not accidentally turn it into shell syntax.
+
+Relevant rules:
+
+- [github-env](https://docs.zizmor.sh/audits/#github-env)
+- [insecure-commands](https://docs.zizmor.sh/audits/#insecure-commands)
+- [obfuscation](https://docs.zizmor.sh/audits/#obfuscation)
+- [secrets-outside-env](https://docs.zizmor.sh/audits/#obfuscation)
+- [template-injection](https://docs.zizmor.sh/audits/#template-injection)
+- [unredacted-secrets](https://docs.zizmor.sh/audits/#unredacted-secrets)
 
 {{< include /_includes/qr-code.qmd >}}
