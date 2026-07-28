@@ -109,8 +109,8 @@ unsafe Git references.
 
 ::: {.fragment .fade-in-then-semi-out}
 
-The standard way to use a GitHub Action is to reference the major version. Where
-the major-version tag here currently identifies the latest `v7` release.
+A common way to use a GitHub Action is to reference its moving major-version
+tag. At the time of writing, `v7` identifies the latest `v7` release.
 
 ```{.yaml code-line-numbers="false"}
 - uses: actions/checkout@v7
@@ -144,10 +144,10 @@ But `v7` may later be moved to a new patch release.
 ::: {.fragment}
 
 - `v7` and `v7.0.1` currently resolve to the same commit.
-- They are not equivalent guarantees.
-- `v7.0.1` is also a tag and therefore mutable.
-- Only a full commit SHA identifies immutable Git content from the workflow’s
-  perspective.
+- `v7` is a moving compatibility tag.
+- A release-specific tag may be protected by an immutable release.
+- A full SHA identifies the exact Git object without relying on the publisher's
+  tag policy.
 
 :::
 
@@ -157,11 +157,12 @@ But `v7` may later be moved to a new patch release.
 - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 ```
 
-The exact code being executed is now explicit.
+The exact Git commit being executed is now explicit.
 
 ::: {.callout-important}
 
-Need to check the SHA is not from a fork.
+Verify that the SHA belongs to the action's original repository, rather than to
+a fork.
 
 :::
 
@@ -181,8 +182,8 @@ tag, commit SHA and assets.
 
 ::: {.fragment .fade-in-then-semi-out}
 
-Immutable releases improve what publishers can guarantee; SHA pinning gives
-consumers an explicit, reviewable dependency lock.
+Immutable releases protect what the **publisher** releases; SHA pinning records
+exactly what the **consumer** has reviewed and chosen to execute.
 
 :::
 
@@ -202,10 +203,10 @@ consumers an explicit, reviewable dependency lock.
 
 ::: {.fragment}
 
-Immutable releases are being increasingly used throughout GitHub, for example
+Since adopting immutable releases,
 [astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
-{{< fa brands github >}} no longer used major versions. The current version is
-`v9.0.0`, not `v9`.
+{{< fa brands github >}} has stopped publishing moving major-version tags. For
+example, it publishes `v9.0.0`, but not a moving `v9` tag.
 
 :::
 
@@ -221,16 +222,17 @@ alternatively be done though tools like
 ::: {.fragment}
 
 ```{.sh code-line-numbers="false"}
+pinact run
 pinact run -update
 ```
 
 :::
 
-## Rule 1: [unpinned-uses](https://docs.zizmor.sh/audits/#unpinned-uses) {footer=false}
+## Rule: `unpinned-uses` {footer=false}
 
-> When a `uses:` clause is not pinned by branch, tag, or SHA reference, GitHub
-> Actions will use the latest commit on the referenced repository's default
-> branch (or, in the case of Docker actions, the `:latest` tag).
+By default, [unpinned-uses](https://docs.zizmor.sh/audits/#unpinned-uses)
+requires all actions to be pinned to a full commit SHA, although this policy can
+be configured for trusted repositories or namespaces.
 
 Related rules:
 
@@ -238,18 +240,22 @@ Related rules:
 
 ::: {.cell}
 
-- [archived-uses](https://docs.zizmor.sh/audits/#archived-uses)
+### Reference integrity
+
 - [impostor-commit](https://docs.zizmor.sh/audits/#impostor-commit)
-- [known-vulnerable-actions](https://docs.zizmor.sh/audits/#known-vulnerable-actions)
 - [ref-confusion](https://docs.zizmor.sh/audits/#ref-confusion)
+- [ref-version-mismatch](https://docs.zizmor.sh/audits/#ref-version-mismatch)
+- [typosquat-uses](https://docs.zizmor.sh/audits/#typosquat-uses)
 
 :::
 
 ::: {.cell}
 
-- [ref-version-mismatch](https://docs.zizmor.sh/audits/#ref-version-mismatch)
+### Dependency health
+
+- [archived-uses](https://docs.zizmor.sh/audits/#archived-uses)
+- [known-vulnerable-actions](https://docs.zizmor.sh/audits/#known-vulnerable-actions)
 - [stale-action-refs](https://docs.zizmor.sh/audits/#stale-action-refs)
-- [typosquat-uses](https://docs.zizmor.sh/audits/#typosquat-uses)
 
 :::
 
