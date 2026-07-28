@@ -212,7 +212,7 @@ publishes `v9.0.0`, for example, but no moving `v9` tag.
 
 :::
 
-## Pinact: Automating GitHub Action Pinning
+## Pinact: Automated Action Pinning
 
 [pinact](https://github.com/suzuki-shunsuke/pinact) {{< fa brands github >}} is
 a CLI tool that converts tagged action references to full SHAs while retaining a
