@@ -52,9 +52,9 @@ jobs:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-A GitHub Actions workflow is an executable program, security-sensitive program,
-not just configuration. A compromised step can have access to secrets,
-repository contents and a write-capable `GITHUB_TOKEN`.
+A GitHub Actions workflow is an security-sensitive, executable program, not just
+configuration. A compromised step can have access to secrets, repository
+contents and a write-capable `GITHUB_TOKEN`.
 
 :::
 
@@ -317,9 +317,8 @@ The following rules can help with this:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-The expression is expanded while GitHub is constructing the temporary shell
-prompt script. It is not equivalent to safely passing an ordinary string
-argument.
+The expression is expanded while GitHub is constructing the temporary script. It
+is not equivalent to safely passing an ordinary string argument.
 
 ```{.yaml}
 run: echo "${{ github.event.pull_request.title }}"
