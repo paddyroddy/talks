@@ -270,17 +270,17 @@ Related rules:
 
 ::: {.fragment .fade-in-then-semi-out}
 
-Overzealous permissions are risky.
+Broad permissions increase the potential impact of a compromised step.
 
 ```{.yaml code-fold="false"}
-permissions: write-all
+permissions: write-all  # Introduces a broadly privileged GITHUB_TOKEN
 ```
 
 :::
 
 ::: {.fragment}
 
-Safer instead to specify at the `job` level.
+Deny permissions by default at workflow level, then grant each job only what it needs.
 
 ```{.yaml}
 permissions: {}  # Disables default permissions
@@ -288,7 +288,11 @@ permissions: {}  # Disables default permissions
 jobs:
   release:
     permissions:
-      contents: write
+      contents: write  # Needed to create the release
+
+  test:
+    permissions:
+      contents: read
 ```
 
 :::
