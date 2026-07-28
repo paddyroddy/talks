@@ -353,4 +353,74 @@ Relevant rules:
 - [template-injection](https://docs.zizmor.sh/audits/#template-injection)
 - [unredacted-secrets](https://docs.zizmor.sh/audits/#unredacted-secrets)
 
+# Trust Boundaries
+
+## Events Are Not Merely Scheduling
+
+```{.yaml}
+on:
+  pull_request_target:
+```
+
+Triggers determine much more than when the workflow runs, including:
+
+- which repository context is used;
+- which workflow definition is loaded;
+- what token permissions are available;
+- whether the triggering party can influence inputs or checked-out code.
+
+## Rule: `dangerous-triggers`
+
+GitHub advises avoiding `pull_request_target` where it is unnecessary and warns
+against combining privileged triggers with untrusted pull-request code.
+
+Relevant rules:
+
+- [bot-conditions](https://docs.zizmor.sh/audits/#bot-conditions)
+- [dangerous-triggers](https://docs.zizmor.sh/audits/#dangerous-triggers)
+- [self-hosted-runner](https://docs.zizmor.sh/audits/#self-hosted-runner)
+- [unsound-condition](https://docs.zizmor.sh/audits/#unsound-condition)
+- [unsound-contains](https://docs.zizmor.sh/audits/#unsound-contains)
+
+# Persistent State
+
+## Credentials Survive
+
+::: {.fragment .fade-in-then-semi-out}
+
+Rather than simply doing this.
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+```
+
+:::
+
+::: {.fragment}
+
+Unless later Git operations genuinely require credentials, better to disable the
+unwanted credentials after checkout.
+
+```{.yaml code-line-numbers="false"}
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+  with:
+    persist-credentials: false
+```
+
+:::
+
+## Rule: `artipacked` {footer=false}
+
+A release workflow should build from reviewed source and locked dependencies—not
+from mutable cache state supplied by an earlier, less-trusted workflow.
+
+Related rules:
+
+- [adhoc-packages](https://docs.zizmor.sh/audits/#adhoc-packages)
+- [artipacked](https://docs.zizmor.sh/audits/#artipacked)
+- [cache-poisoning](https://docs.zizmor.sh/audits/#cache-poisoning)
+- [unpinned-images](https://docs.zizmor.sh/audits/#unpinned-images)
+- [unpinned-tools](https://docs.zizmor.sh/audits/#unpinned-tools)
+- [use-trusted-publishing](https://docs.zizmor.sh/audits/#use-trusted-publishing)
+
 {{< include /_includes/qr-code.qmd >}}
