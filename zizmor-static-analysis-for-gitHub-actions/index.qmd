@@ -569,13 +569,42 @@ No fixes available to apply (2 held back by safe mode). Use --fix=unsafe-only or
 +          GITHUB_EVENT_PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
 ```
 
-## Final Check
+## Pedantic Mode
 
-`zizmor .github/workflows/demo.yaml`
+`zizmor --pedantic .github/workflows/demo.yaml`
 
 ```{.sh code-line-numbers="false"}
  INFO zizmor: 🌈 zizmor v1.28.0
- INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              No findings to report. Good job! (3 suppressed)
+ INFO audit: zizmor: 🌈 completed .github/workflows/demo.yaml                                                              error[excessive-permissions]: overly broad permissions
+ --> .github/workflows/demo.yaml:6:1
+  |
+6 | permissions: write-all
+  | ^^^^^^^^^^^^^^^^^^^^^^ uses write-all permissions
+  |
+  = note: audit confidence → High
+
+info[anonymous-definition]: workflow or action definition without a name
+ --> .github/workflows/demo.yaml:9:3
+  |
+9 |   check:
+  |   ^^^^^ this job
+  |
+  = note: audit confidence → High
+  = tip: use 'name: ...' to give this job a name
+
+help[concurrency-limits]: insufficient job-level concurrency limits
+ --> .github/workflows/demo.yaml:3:1
+  |
+3 | / on:
+4 | |   pull_request:
+  | |_______________^ workflow is missing concurrency setting
+...
+9 |     check:
+  |     ----- job affected by missing workflow concurrency
+  |
+  = note: audit confidence → High
+
+3 findings: 1 informational, 1 low, 0 medium, 1 high
 ```
 
 # Conclusions
