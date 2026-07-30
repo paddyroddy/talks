@@ -13,7 +13,7 @@ author:
 date: 2026-06-09
 format:
   revealjs:
-    logo: ../_assets/images/arc.png
+    logo: figures/arc.png
 institute:
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
