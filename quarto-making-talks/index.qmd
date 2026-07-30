@@ -30,7 +30,7 @@ Promised this talk before.
     height="550"
     src="https://paddyroddy.github.io/talks/pyopensci-my-experience/#/4"
     title="Earlier Talk"
-    width="1000"
+    width="1219"
 >
 </iframe>
 ```
@@ -632,7 +632,7 @@ Can include GitHub Markdown-like callouts.
     height="550"
     src="https://quarto.org/docs/presentations/revealjs/demo"
     title="Official Quarto Example"
-    width="1000"
+    width="1219"
 >
 </iframe>
 ```
@@ -644,7 +644,7 @@ Can include GitHub Markdown-like callouts.
     height="550"
     src="https://quarto.org/docs/gallery/#presentations"
     title="Quarto Presentation Gallery"
-    width="1000"
+    width="1219"
 >
 </iframe>
 ```
