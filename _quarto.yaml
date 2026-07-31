@@ -22,6 +22,7 @@ format:
       - _filters/slugify.lua
     footer: "{{< meta title >}}"
     hash-type: number
+    height: 720
     history: false
     include-after-body: _assets/html/hide-title-slide.html
     include-in-header:
@@ -30,12 +31,15 @@ format:
     incremental: true
     link-external-filter: ^https:\/\/paddyroddy\.github\.io
     link-external-icon: true
-    logo: https://www.gravatar.com/avatar/b991f7f475c334cc277869a709445d42?s=200
+    logo: _assets/images/paddy.png
+    margin: 0.1
+    max-scale: 4
     mermaid:
       theme: dark
     menu:
       hideMissingTitles: true
       useTextContentForMissingTitles: false
+    min-scale: 0.2
     mobile-view-distance: 10
     slide-number: c
     theme:
@@ -45,6 +49,7 @@ format:
       data-footer: false
     transition: fade
     view-distance: 10
+    width: 1280
 
 website:
   favicon: _assets/images/favicon.ico

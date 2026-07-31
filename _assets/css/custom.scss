@@ -10,7 +10,7 @@
   border-radius: 50%;
 
   /* resize image */
-  max-height: 10vh !important;
+  max-height: clamp(48px, 10vh, 100px) !important;
 }
 
 /* hide slide number on title slide */

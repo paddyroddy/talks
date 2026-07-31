@@ -13,7 +13,7 @@ author:
 date: 2026-06-09
 format:
   revealjs:
-    logo: https://avatars.githubusercontent.com/u/87066407?s=200&v=4
+    logo: figures/arc.png
 institute:
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
   - "[UCL ARC](https://www.ucl.ac.uk/advanced-research-computing)"
@@ -233,7 +233,7 @@ animals I politely greeted"}
 It is not a technical conference
 
 ![](figures/jeremy/poem.jpg){fig-alt="a blackout poem describing my experience
-of CW26" width=700}
+of CW26" width=850}
 
 :::
 
@@ -259,7 +259,7 @@ of CW26" width=700}
 ::: {.r-stack}
 
 ![](figures/connor/shoes.jpg){.fragment fig-alt="A stranger and I with the same
-shoes." width=400}
+shoes." width=500}
 
 ![](figures/connor/castle.jpg){.fragment fig-alt="Belfast castle." height=550}
 

@@ -43,7 +43,7 @@ Reasons you might have heard of it:
     height="550"
     src="https://docs.xarray.dev/en/stable/user-guide/data-structures.html"
     title="Xarray Documentation"
-    width="250"
+    width="305"
 >
 </iframe>
 ```
@@ -53,7 +53,7 @@ Reasons you might have heard of it:
     height="550"
     src="https://anywidget.dev/en/getting-started"
     title="anywidget Documentation"
-    width="250"
+    width="305"
 >
 </iframe>
 ```
@@ -63,7 +63,7 @@ Reasons you might have heard of it:
     height="550"
     src="https://hypothesis.readthedocs.io/en/latest/quickstart.html"
     title="Hypothesis Documentation"
-    width="250"
+    width="305"
 >
 </iframe>
 ```
