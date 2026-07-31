@@ -233,7 +233,7 @@ animals I politely greeted"}
 It is not a technical conference
 
 ![](figures/jeremy/poem.jpg){fig-alt="a blackout poem describing my experience
-of CW26" width=853}
+of CW26" width=850}
 
 :::
 
@@ -259,7 +259,7 @@ of CW26" width=853}
 ::: {.r-stack}
 
 ![](figures/connor/shoes.jpg){.fragment fig-alt="A stranger and I with the same
-shoes." width=488}
+shoes." width=500}
 
 ![](figures/connor/castle.jpg){.fragment fig-alt="Belfast castle." height=550}
 
